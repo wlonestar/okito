@@ -1,0 +1,5237 @@
+{
+  "info": {
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "1057c790-6185-4ea6-b181-4a1d9f4d6565",
+    "name": "vosa"
+  },
+  "item": [
+    {
+      "name": "pin comment controller",
+      "item": [
+        {
+          "name": "select all pinComments",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all pinComments",
+            "header": []
+          },
+          "description": "select all pinComments"
+        },
+        {
+          "name": "select all pinComments by pinId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/583",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                ":pinId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "pinId",
+                  "value": "583",
+                  "description": "pinId"
+                }
+              ]
+            },
+            "description": "select all pinComments by pinId",
+            "header": []
+          },
+          "description": "select all pinComments by pinId"
+        },
+        {
+          "name": "select all pinComments by authorId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/949",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                ":authorId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "authorId",
+                  "value": "949",
+                  "description": "authorId"
+                }
+              ]
+            },
+            "description": "select all pinComments by authorId",
+            "header": []
+          },
+          "description": "select all pinComments by authorId"
+        },
+        {
+          "name": "select secondary PinComments by id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/secondary/744",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                "secondary",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "744",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "select secondary PinComments by id",
+            "header": []
+          },
+          "description": "select secondary PinComments by id"
+        },
+        {
+          "name": "select all pinComments by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/page",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all pinComments by page",
+            "header": []
+          },
+          "description": "select all pinComments by page"
+        },
+        {
+          "name": "select all pinComments by pinId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/page/630",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                "page",
+                ":pinId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "pinId",
+                  "value": "630",
+                  "description": "   pinId"
+                }
+              ]
+            },
+            "description": "select all pinComments by pinId and page",
+            "header": []
+          },
+          "description": "select all pinComments by pinId and page"
+        },
+        {
+          "name": "select all pinComments by authorId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/page/1",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                "page",
+                ":authorId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "authorId",
+                  "value": "1",
+                  "description": "authorId"
+                }
+              ]
+            },
+            "description": "select all pinComments by authorId and page",
+            "header": []
+          },
+          "description": "select all pinComments by authorId and page"
+        },
+        {
+          "name": "select secondary comments by id and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/page/secondary/485",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                "page",
+                "secondary",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "485",
+                  "description": "      id"
+                }
+              ]
+            },
+            "description": "select secondary comments by id and page",
+            "header": []
+          },
+          "description": "select secondary comments by id and page"
+        },
+        {
+          "name": "select pinComment By id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/115",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "115",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "select pinComment By id",
+            "header": []
+          },
+          "description": "select pinComment By id"
+        },
+        {
+          "name": "add a pinComment",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 408,\n  \"content\": \"mjyvhn\",\n  \"uploadTime\": {},\n  \"authorId\": 543,\n  \"pinId\": 83,\n  \"parentId\": 929\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add a pinComment",
+            "header": []
+          },
+          "description": "add a pinComment"
+        },
+        {
+          "name": "delete pinComment By id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/59",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "59",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "delete pinComment By id",
+            "header": []
+          },
+          "description": "delete pinComment By id"
+        }
+      ]
+    },
+    {
+      "name": "pin comment like controller",
+      "item": [
+        {
+          "name": "select all pinCommentLikes",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/like",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all pinCommentLikes",
+            "header": []
+          },
+          "description": "select all pinCommentLikes"
+        },
+        {
+          "name": "select all pinCommentLikes by userId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/like/398",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                "like",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "398",
+                  "description": "userId"
+                }
+              ]
+            },
+            "description": "select all pinCommentLikes by userId",
+            "header": []
+          },
+          "description": "select all pinCommentLikes by userId"
+        },
+        {
+          "name": "select all pinCommentLikes by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/like/page",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                "like",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all pinCommentLikes by page",
+            "header": []
+          },
+          "description": "select all pinCommentLikes by page"
+        },
+        {
+          "name": "select all pinCommentLikes by userId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/like/page/456",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                "like",
+                "page",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "456",
+                  "description": "  userId"
+                }
+              ]
+            },
+            "description": "select all pinCommentLikes by userId and page",
+            "header": []
+          },
+          "description": "select all pinCommentLikes by userId and page"
+        },
+        {
+          "name": "select pinCommentLike by id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/like/single?commentId=52&userId=610",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                "like",
+                "single"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "commentId",
+                  "value": "52",
+                  "description": "commentId"
+                },
+                {
+                  "key": "userId",
+                  "value": "610",
+                  "description": "   userId"
+                }
+              ],
+              "variable": []
+            },
+            "description": "select pinCommentLike by id",
+            "header": []
+          },
+          "description": "select pinCommentLike by id"
+        },
+        {
+          "name": "add a pinCommentLike",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"commentId\": 937,\n  \"userId\": 166,\n  \"type\": 793\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/like/",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add a pinCommentLike",
+            "header": []
+          },
+          "description": "add a pinCommentLike"
+        },
+        {
+          "name": "update a pinCommentLike",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"commentId\": 676,\n  \"userId\": 637,\n  \"type\": 15084\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/like/",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "update a pinCommentLike",
+            "header": []
+          },
+          "description": "update a pinCommentLike"
+        },
+        {
+          "name": "delete pinCommentLike by id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/pin/like/?commentId=255&userId=3",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "pin",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "commentId",
+                  "value": "255",
+                  "description": "commentId"
+                },
+                {
+                  "key": "userId",
+                  "value": "3",
+                  "description": "   userId"
+                }
+              ],
+              "variable": []
+            },
+            "description": "delete pinCommentLike by id",
+            "header": []
+          },
+          "description": "delete pinCommentLike by id"
+        }
+      ]
+    },
+    {
+      "name": "post comment controller",
+      "item": [
+        {
+          "name": "select all postComments",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all postComments",
+            "header": []
+          },
+          "description": "select all postComments"
+        },
+        {
+          "name": "select all postComments by postId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/970",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                ":postId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "postId",
+                  "value": "970",
+                  "description": "postId"
+                }
+              ]
+            },
+            "description": "select all postComments by postId",
+            "header": []
+          },
+          "description": "select all postComments by postId"
+        },
+        {
+          "name": "select all postComments by authorId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/27",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                ":authorId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "authorId",
+                  "value": "27",
+                  "description": "authorId"
+                }
+              ]
+            },
+            "description": "select all postComments by authorId",
+            "header": []
+          },
+          "description": "select all postComments by authorId"
+        },
+        {
+          "name": "select secondary postComments by id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/secondary/994",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                "secondary",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "994",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "select secondary postComments by id",
+            "header": []
+          },
+          "description": "select secondary postComments by id"
+        },
+        {
+          "name": "select all postComments by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/page",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all postComments by page",
+            "header": []
+          },
+          "description": "select all postComments by page"
+        },
+        {
+          "name": "select all postComments by postId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/page/787",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                "page",
+                ":postId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "postId",
+                  "value": "787",
+                  "description": "  postId"
+                }
+              ]
+            },
+            "description": "select all postComments by postId and page",
+            "header": []
+          },
+          "description": "select all postComments by postId and page"
+        },
+        {
+          "name": "select all postComments by authorId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/page/522",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                "page",
+                ":authorId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "authorId",
+                  "value": "522",
+                  "description": "authorId"
+                }
+              ]
+            },
+            "description": "select all postComments by authorId and page",
+            "header": []
+          },
+          "description": "select all postComments by authorId and page"
+        },
+        {
+          "name": "select secondary comments by id and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/page/secondary/693",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                "page",
+                "secondary",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "693",
+                  "description": "      id"
+                }
+              ]
+            },
+            "description": "select secondary comments by id and page",
+            "header": []
+          },
+          "description": "select secondary comments by id and page"
+        },
+        {
+          "name": "select postComment By id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/842",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "842",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "select postComment By id",
+            "header": []
+          },
+          "description": "select postComment By id"
+        },
+        {
+          "name": "add a postComment",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 413,\n  \"content\": \"mkw1br\",\n  \"uploadTime\": {},\n  \"authorId\": 94,\n  \"postId\": 51,\n  \"parentId\": 819\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add a postComment",
+            "header": []
+          },
+          "description": "add a postComment"
+        },
+        {
+          "name": "delete pinComment By id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/785",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "785",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "delete pinComment By id",
+            "header": []
+          },
+          "description": "delete pinComment By id"
+        }
+      ]
+    },
+    {
+      "name": "post comment like controller",
+      "item": [
+        {
+          "name": "select all postCommentLikes",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/like",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all postCommentLikes",
+            "header": []
+          },
+          "description": "select all postCommentLikes"
+        },
+        {
+          "name": "select all postCommentLikes by userId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/like/276",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                "like",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "276",
+                  "description": "userId"
+                }
+              ]
+            },
+            "description": "select all postCommentLikes by userId",
+            "header": []
+          },
+          "description": "select all postCommentLikes by userId"
+        },
+        {
+          "name": "select all postCommentLikes by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/like/page",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                "like",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all postCommentLikes by page",
+            "header": []
+          },
+          "description": "select all postCommentLikes by page"
+        },
+        {
+          "name": "select all postCommentLikes by userId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/like/page/226",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                "like",
+                "page",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "226",
+                  "description": "  userId"
+                }
+              ]
+            },
+            "description": "select all postCommentLikes by userId and page",
+            "header": []
+          },
+          "description": "select all postCommentLikes by userId and page"
+        },
+        {
+          "name": "select postCommentLike by id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/like/single?commentId=810&userId=487",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                "like",
+                "single"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "commentId",
+                  "value": "810",
+                  "description": "commentId"
+                },
+                {
+                  "key": "userId",
+                  "value": "487",
+                  "description": "   userId"
+                }
+              ],
+              "variable": []
+            },
+            "description": "select postCommentLike by id",
+            "header": []
+          },
+          "description": "select postCommentLike by id"
+        },
+        {
+          "name": "add a postCommentLike",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"commentId\": 463,\n  \"userId\": 21,\n  \"type\": 29502\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/like/",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add a postCommentLike",
+            "header": []
+          },
+          "description": "add a postCommentLike"
+        },
+        {
+          "name": "update a postCommentLike",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"commentId\": 393,\n  \"userId\": 583,\n  \"type\": 21875\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/like/",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "update a postCommentLike",
+            "header": []
+          },
+          "description": "update a postCommentLike"
+        },
+        {
+          "name": "delete postCommentLike by id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/comment/post/like/?commentId=463&userId=800",
+              "protocol": "http",
+              "path": [
+                "comment",
+                "post",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "commentId",
+                  "value": "463",
+                  "description": "commentId"
+                },
+                {
+                  "key": "userId",
+                  "value": "800",
+                  "description": "   userId"
+                }
+              ],
+              "variable": []
+            },
+            "description": "delete postCommentLike by id",
+            "header": []
+          },
+          "description": "delete postCommentLike by id"
+        }
+      ]
+    },
+    {
+      "name": "pin controller",
+      "item": [
+        {
+          "name": "select all pins",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin",
+              "protocol": "http",
+              "path": [
+                "pin",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all pins",
+            "header": []
+          },
+          "description": "select all pins"
+        },
+        {
+          "name": "select all pins by authorId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/400",
+              "protocol": "http",
+              "path": [
+                "pin",
+                ":authorId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "authorId",
+                  "value": "400",
+                  "description": "authorId"
+                }
+              ]
+            },
+            "description": "select all pins by authorId",
+            "header": []
+          },
+          "description": "select all pins by authorId"
+        },
+        {
+          "name": "select all pins by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/page",
+              "protocol": "http",
+              "path": [
+                "pin",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all pins by page",
+            "header": []
+          },
+          "description": "select all pins by page"
+        },
+        {
+          "name": "select all pins by page and by authorId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/page/229",
+              "protocol": "http",
+              "path": [
+                "pin",
+                "page",
+                ":authorId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "authorId",
+                  "value": "229",
+                  "description": "authorId"
+                }
+              ]
+            },
+            "description": "select all pins by page and by authorId",
+            "header": []
+          },
+          "description": "select all pins by page and by authorId"
+        },
+        {
+          "name": "select pin by id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/424",
+              "protocol": "http",
+              "path": [
+                "pin",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "424",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "select pin by id",
+            "header": []
+          },
+          "description": "select pin by id"
+        },
+        {
+          "name": "add a pin",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 428,\n  \"content\": \"yy6nls\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\",\n  \"authorId\": 511\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/",
+              "protocol": "http",
+              "path": [
+                "pin",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add a pin",
+            "header": []
+          },
+          "description": "add a pin"
+        },
+        {
+          "name": "update pin",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 620,\n  \"content\": \"n0x126\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\",\n  \"authorId\": 503\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/",
+              "protocol": "http",
+              "path": [
+                "pin",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "update pin",
+            "header": []
+          },
+          "description": "update pin"
+        },
+        {
+          "name": "delete pin by id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/216",
+              "protocol": "http",
+              "path": [
+                "pin",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "216",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "delete pin by id",
+            "header": []
+          },
+          "description": "delete pin by id"
+        }
+      ]
+    },
+    {
+      "name": "pin like controller",
+      "item": [
+        {
+          "name": "select all pinLikes",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/like",
+              "protocol": "http",
+              "path": [
+                "pin",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all pinLikes",
+            "header": []
+          },
+          "description": "select all pinLikes"
+        },
+        {
+          "name": "select all pinLikes by userId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/like/665",
+              "protocol": "http",
+              "path": [
+                "pin",
+                "like",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "665",
+                  "description": "userId"
+                }
+              ]
+            },
+            "description": "select all pinLikes by userId",
+            "header": []
+          },
+          "description": "select all pinLikes by userId"
+        },
+        {
+          "name": "select all pinLikes by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/like/page",
+              "protocol": "http",
+              "path": [
+                "pin",
+                "like",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all pinLikes by page",
+            "header": []
+          },
+          "description": "select all pinLikes by page"
+        },
+        {
+          "name": "select all pinLikes by userId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/like/page/422",
+              "protocol": "http",
+              "path": [
+                "pin",
+                "like",
+                "page",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "422",
+                  "description": "  userId"
+                }
+              ]
+            },
+            "description": "select all pinLikes by userId and page",
+            "header": []
+          },
+          "description": "select all pinLikes by userId and page"
+        },
+        {
+          "name": "select pinLike by id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/like/single?pinId=884&userId=309",
+              "protocol": "http",
+              "path": [
+                "pin",
+                "like",
+                "single"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "pinId",
+                  "value": "884",
+                  "description": " pinId"
+                },
+                {
+                  "key": "userId",
+                  "value": "309",
+                  "description": "userId"
+                }
+              ],
+              "variable": []
+            },
+            "description": "select pinLike by id",
+            "header": []
+          },
+          "description": "select pinLike by id"
+        },
+        {
+          "name": "add a pinLike",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pinId\": 623,\n  \"userId\": 711,\n  \"type\": 32319\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/like/",
+              "protocol": "http",
+              "path": [
+                "pin",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add a pinLike",
+            "header": []
+          },
+          "description": "add a pinLike"
+        },
+        {
+          "name": "update a pinLike\r\nTODO: have not been tested",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pinId\": 12,\n  \"userId\": 779,\n  \"type\": 3531\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/like/",
+              "protocol": "http",
+              "path": [
+                "pin",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "update a pinLike\r\nTODO: have not been tested",
+            "header": []
+          },
+          "description": "update a pinLike\r\nTODO: have not been tested"
+        },
+        {
+          "name": "delete pinLike by id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/like/?pinId=636&userId=559",
+              "protocol": "http",
+              "path": [
+                "pin",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "pinId",
+                  "value": "636",
+                  "description": "No comments found."
+                },
+                {
+                  "key": "userId",
+                  "value": "559",
+                  "description": "No comments found."
+                }
+              ],
+              "variable": []
+            },
+            "description": "delete pinLike by id",
+            "header": []
+          },
+          "description": "delete pinLike by id"
+        }
+      ]
+    },
+    {
+      "name": "category controller",
+      "item": [
+        {
+          "name": "select all categories",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/category",
+              "protocol": "http",
+              "path": [
+                "category",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all categories",
+            "header": []
+          },
+          "description": "select all categories"
+        },
+        {
+          "name": "select all categories by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/category/page",
+              "protocol": "http",
+              "path": [
+                "category",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all categories by page",
+            "header": []
+          },
+          "description": "select all categories by page"
+        },
+        {
+          "name": "select category by id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/category/607",
+              "protocol": "http",
+              "path": [
+                "category",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "607",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "select category by id",
+            "header": []
+          },
+          "description": "select category by id"
+        },
+        {
+          "name": "add a category",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 112,\n  \"name\": \"jinny.mcclure\",\n  \"cover\": \"d4m6bc\",\n  \"description\": \"22nd7j\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/category/",
+              "protocol": "http",
+              "path": [
+                "category",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add a category",
+            "header": []
+          },
+          "description": "add a category"
+        },
+        {
+          "name": "update category",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 691,\n  \"name\": \"jinny.mcclure\",\n  \"cover\": \"c9lnwl\",\n  \"description\": \"lrxdar\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/category/",
+              "protocol": "http",
+              "path": [
+                "category",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "update category",
+            "header": []
+          },
+          "description": "update category"
+        },
+        {
+          "name": "delete category by id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/category/520",
+              "protocol": "http",
+              "path": [
+                "category",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "520",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "delete category by id",
+            "header": []
+          },
+          "description": "delete category by id"
+        }
+      ]
+    },
+    {
+      "name": "collection controller",
+      "item": [
+        {
+          "name": "select all collections",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/collection",
+              "protocol": "http",
+              "path": [
+                "collection",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all collections",
+            "header": []
+          },
+          "description": "select all collections"
+        },
+        {
+          "name": "select all collections by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/collection/page",
+              "protocol": "http",
+              "path": [
+                "collection",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all collections by page",
+            "header": []
+          },
+          "description": "select all collections by page"
+        },
+        {
+          "name": "select collection by id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/collection/260",
+              "protocol": "http",
+              "path": [
+                "collection",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "260",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "select collection by id",
+            "header": []
+          },
+          "description": "select collection by id"
+        },
+        {
+          "name": "add a collection",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 403,\n  \"name\": \"jinny.mcclure\",\n  \"cover\": \"pn06t2\",\n  \"description\": \"1ix39r\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/collection/",
+              "protocol": "http",
+              "path": [
+                "collection",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add a collection",
+            "header": []
+          },
+          "description": "add a collection"
+        },
+        {
+          "name": "update collection",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 215,\n  \"name\": \"jinny.mcclure\",\n  \"cover\": \"yfguro\",\n  \"description\": \"xdzxb2\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/collection/",
+              "protocol": "http",
+              "path": [
+                "collection",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "update collection",
+            "header": []
+          },
+          "description": "update collection"
+        },
+        {
+          "name": "delete collection by id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/collection/261",
+              "protocol": "http",
+              "path": [
+                "collection",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "261",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "delete collection by id",
+            "header": []
+          },
+          "description": "delete collection by id"
+        }
+      ]
+    },
+    {
+      "name": "column controller",
+      "item": [
+        {
+          "name": "select all columns",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/column",
+              "protocol": "http",
+              "path": [
+                "column",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all columns",
+            "header": []
+          },
+          "description": "select all columns"
+        },
+        {
+          "name": "select all columns by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/column/page",
+              "protocol": "http",
+              "path": [
+                "column",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all columns by page",
+            "header": []
+          },
+          "description": "select all columns by page"
+        },
+        {
+          "name": "select column by id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/column/70",
+              "protocol": "http",
+              "path": [
+                "column",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "70",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "select column by id",
+            "header": []
+          },
+          "description": "select column by id"
+        },
+        {
+          "name": "add a column",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 794,\n  \"name\": \"jinny.mcclure\",\n  \"cover\": \"021a1w\",\n  \"description\": \"8rvpmm\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/column/",
+              "protocol": "http",
+              "path": [
+                "column",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add a column",
+            "header": []
+          },
+          "description": "add a column"
+        },
+        {
+          "name": "update column",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 330,\n  \"name\": \"jinny.mcclure\",\n  \"cover\": \"8d31xh\",\n  \"description\": \"njfsg3\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/column/",
+              "protocol": "http",
+              "path": [
+                "column",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "update column",
+            "header": []
+          },
+          "description": "update column"
+        },
+        {
+          "name": "delete column by id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/column/997",
+              "protocol": "http",
+              "path": [
+                "column",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "997",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "delete column by id",
+            "header": []
+          },
+          "description": "delete column by id"
+        }
+      ]
+    },
+    {
+      "name": "post controller",
+      "item": [
+        {
+          "name": "select all posts",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post",
+              "protocol": "http",
+              "path": [
+                "post",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all posts",
+            "header": []
+          },
+          "description": "select all posts"
+        },
+        {
+          "name": "select posts by cateId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/253",
+              "protocol": "http",
+              "path": [
+                "post",
+                ":cateId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "cateId",
+                  "value": "253",
+                  "description": "cateId"
+                }
+              ]
+            },
+            "description": "select posts by cateId",
+            "header": []
+          },
+          "description": "select posts by cateId"
+        },
+        {
+          "name": "select posts by tagId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/322",
+              "protocol": "http",
+              "path": [
+                "post",
+                ":tagId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "tagId",
+                  "value": "322",
+                  "description": "tagId"
+                }
+              ]
+            },
+            "description": "select posts by tagId",
+            "header": []
+          },
+          "description": "select posts by tagId"
+        },
+        {
+          "name": "select posts by collectionId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/569",
+              "protocol": "http",
+              "path": [
+                "post",
+                ":collectionId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "collectionId",
+                  "value": "569",
+                  "description": "collectionId"
+                }
+              ]
+            },
+            "description": "select posts by collectionId",
+            "header": []
+          },
+          "description": "select posts by collectionId"
+        },
+        {
+          "name": "select posts by columnId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/610",
+              "protocol": "http",
+              "path": [
+                "post",
+                ":columnId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "columnId",
+                  "value": "610",
+                  "description": "columnId"
+                }
+              ]
+            },
+            "description": "select posts by columnId",
+            "header": []
+          },
+          "description": "select posts by columnId"
+        },
+        {
+          "name": "select posts by authorId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/14",
+              "protocol": "http",
+              "path": [
+                "post",
+                ":authorId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "authorId",
+                  "value": "14",
+                  "description": "authorId"
+                }
+              ]
+            },
+            "description": "select posts by authorId",
+            "header": []
+          },
+          "description": "select posts by authorId"
+        },
+        {
+          "name": "select posts by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/page",
+              "protocol": "http",
+              "path": [
+                "post",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select posts by page",
+            "header": []
+          },
+          "description": "select posts by page"
+        },
+        {
+          "name": "select posts by cateId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/page/794",
+              "protocol": "http",
+              "path": [
+                "post",
+                "page",
+                ":cateId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "cateId",
+                  "value": "794",
+                  "description": "  cateId"
+                }
+              ]
+            },
+            "description": "select posts by cateId and page",
+            "header": []
+          },
+          "description": "select posts by cateId and page"
+        },
+        {
+          "name": "select posts by tagId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/page/686",
+              "protocol": "http",
+              "path": [
+                "post",
+                "page",
+                ":tagId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "tagId",
+                  "value": "686",
+                  "description": "   tagId"
+                }
+              ]
+            },
+            "description": "select posts by tagId and page",
+            "header": []
+          },
+          "description": "select posts by tagId and page"
+        },
+        {
+          "name": "select posts by collectionId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/page/912",
+              "protocol": "http",
+              "path": [
+                "post",
+                "page",
+                ":collectionId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "collectionId",
+                  "value": "912",
+                  "description": "collectionId"
+                }
+              ]
+            },
+            "description": "select posts by collectionId and page",
+            "header": []
+          },
+          "description": "select posts by collectionId and page"
+        },
+        {
+          "name": "select posts by columnId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/page/327",
+              "protocol": "http",
+              "path": [
+                "post",
+                "page",
+                ":columnId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "columnId",
+                  "value": "327",
+                  "description": "columnId"
+                }
+              ]
+            },
+            "description": "select posts by columnId and page",
+            "header": []
+          },
+          "description": "select posts by columnId and page"
+        },
+        {
+          "name": "select posts by authorId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/page/803",
+              "protocol": "http",
+              "path": [
+                "post",
+                "page",
+                ":authorId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "authorId",
+                  "value": "803",
+                  "description": "authorId"
+                }
+              ]
+            },
+            "description": "select posts by authorId and page",
+            "header": []
+          },
+          "description": "select posts by authorId and page"
+        },
+        {
+          "name": "select post by id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/890",
+              "protocol": "http",
+              "path": [
+                "post",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "890",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "select post by id",
+            "header": []
+          },
+          "description": "select post by id"
+        },
+        {
+          "name": "add a post",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 473,\n  \"title\": \"qio26z\",\n  \"summary\": \"xzjfj7\",\n  \"cover\": \"6x6251\",\n  \"content\": \"lqjlsj\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\",\n  \"draft\": true,\n  \"cateId\": 720,\n  \"authorId\": 301\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/",
+              "protocol": "http",
+              "path": [
+                "post",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add a post",
+            "header": []
+          },
+          "description": "add a post"
+        },
+        {
+          "name": "update post",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 773,\n  \"title\": \"lj3ovu\",\n  \"summary\": \"eboxjm\",\n  \"cover\": \"9ov84b\",\n  \"content\": \"z7vi1k\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\",\n  \"draft\": true,\n  \"cateId\": 929,\n  \"authorId\": 835\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/",
+              "protocol": "http",
+              "path": [
+                "post",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "update post",
+            "header": []
+          },
+          "description": "update post"
+        },
+        {
+          "name": "delete post by id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/291",
+              "protocol": "http",
+              "path": [
+                "post",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "291",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "delete post by id",
+            "header": []
+          },
+          "description": "delete post by id"
+        },
+        {
+          "name": "delete posts by ids",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/?ids=812,926",
+              "protocol": "http",
+              "path": [
+                "post",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "ids",
+                  "value": "812,926",
+                  "description": "list of id,[array of int64]"
+                }
+              ],
+              "variable": []
+            },
+            "description": "delete posts by ids",
+            "header": []
+          },
+          "description": "delete posts by ids"
+        }
+      ]
+    },
+    {
+      "name": "post like controller",
+      "item": [
+        {
+          "name": "select all postLikes",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/like",
+              "protocol": "http",
+              "path": [
+                "post",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all postLikes",
+            "header": []
+          },
+          "description": "select all postLikes"
+        },
+        {
+          "name": "select all postLikes by userId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/like/219",
+              "protocol": "http",
+              "path": [
+                "post",
+                "like",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "219",
+                  "description": "userId"
+                }
+              ]
+            },
+            "description": "select all postLikes by userId",
+            "header": []
+          },
+          "description": "select all postLikes by userId"
+        },
+        {
+          "name": "select all postLikes by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/like/page",
+              "protocol": "http",
+              "path": [
+                "post",
+                "like",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all postLikes by page",
+            "header": []
+          },
+          "description": "select all postLikes by page"
+        },
+        {
+          "name": "select all postLikes by userId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/like/page/557",
+              "protocol": "http",
+              "path": [
+                "post",
+                "like",
+                "page",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "557",
+                  "description": "  userId"
+                }
+              ]
+            },
+            "description": "select all postLikes by userId and page",
+            "header": []
+          },
+          "description": "select all postLikes by userId and page"
+        },
+        {
+          "name": "select postLike by id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/like/single?postId=78&userId=544",
+              "protocol": "http",
+              "path": [
+                "post",
+                "like",
+                "single"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "postId",
+                  "value": "78",
+                  "description": "postId"
+                },
+                {
+                  "key": "userId",
+                  "value": "544",
+                  "description": "userId"
+                }
+              ],
+              "variable": []
+            },
+            "description": "select postLike by id",
+            "header": []
+          },
+          "description": "select postLike by id"
+        },
+        {
+          "name": "add a postLike",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"postId\": 312,\n  \"userId\": 950,\n  \"type\": 3897\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/like/",
+              "protocol": "http",
+              "path": [
+                "post",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add a postLike",
+            "header": []
+          },
+          "description": "add a postLike"
+        },
+        {
+          "name": "update postLike",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"postId\": 40,\n  \"userId\": 879,\n  \"type\": 4841\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/like/",
+              "protocol": "http",
+              "path": [
+                "post",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "update postLike",
+            "header": []
+          },
+          "description": "update postLike"
+        },
+        {
+          "name": "delete postLike by id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/like/?postId=785&userId=505",
+              "protocol": "http",
+              "path": [
+                "post",
+                "like",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "postId",
+                  "value": "785",
+                  "description": "postId"
+                },
+                {
+                  "key": "userId",
+                  "value": "505",
+                  "description": "userId"
+                }
+              ],
+              "variable": []
+            },
+            "description": "delete postLike by id",
+            "header": []
+          },
+          "description": "delete postLike by id"
+        }
+      ]
+    },
+    {
+      "name": "tag controller",
+      "item": [
+        {
+          "name": "select all tags",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/tag",
+              "protocol": "http",
+              "path": [
+                "tag",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all tags",
+            "header": []
+          },
+          "description": "select all tags"
+        },
+        {
+          "name": "select all tags by postId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/tag/640",
+              "protocol": "http",
+              "path": [
+                "tag",
+                ":postId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "postId",
+                  "value": "640",
+                  "description": "postId"
+                }
+              ]
+            },
+            "description": "select all tags by postId",
+            "header": []
+          },
+          "description": "select all tags by postId"
+        },
+        {
+          "name": "select all tags by followerId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/tag/326",
+              "protocol": "http",
+              "path": [
+                "tag",
+                ":followerId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "followerId",
+                  "value": "326",
+                  "description": "followerId"
+                }
+              ]
+            },
+            "description": "select all tags by followerId",
+            "header": []
+          },
+          "description": "select all tags by followerId"
+        },
+        {
+          "name": "select all tags by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/tag/page",
+              "protocol": "http",
+              "path": [
+                "tag",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all tags by page",
+            "header": []
+          },
+          "description": "select all tags by page"
+        },
+        {
+          "name": "select all tags by postId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/tag/page/233",
+              "protocol": "http",
+              "path": [
+                "tag",
+                "page",
+                ":postId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "postId",
+                  "value": "233",
+                  "description": "  postId"
+                }
+              ]
+            },
+            "description": "select all tags by postId and page",
+            "header": []
+          },
+          "description": "select all tags by postId and page"
+        },
+        {
+          "name": "select all tags by followerId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/tag/page/622",
+              "protocol": "http",
+              "path": [
+                "tag",
+                "page",
+                ":followerId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "followerId",
+                  "value": "622",
+                  "description": "followerId"
+                }
+              ]
+            },
+            "description": "select all tags by followerId and page",
+            "header": []
+          },
+          "description": "select all tags by followerId and page"
+        },
+        {
+          "name": "select tag by id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/tag/384",
+              "protocol": "http",
+              "path": [
+                "tag",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "384",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "select tag by id",
+            "header": []
+          },
+          "description": "select tag by id"
+        },
+        {
+          "name": "add a tag",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 971,\n  \"name\": \"jinny.mcclure\",\n  \"cover\": \"r9jpia\",\n  \"description\": \"v1ddqp\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/tag/",
+              "protocol": "http",
+              "path": [
+                "tag",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add a tag",
+            "header": []
+          },
+          "description": "add a tag"
+        },
+        {
+          "name": "update tag",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 115,\n  \"name\": \"jinny.mcclure\",\n  \"cover\": \"bav1av\",\n  \"description\": \"2kysss\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/tag/",
+              "protocol": "http",
+              "path": [
+                "tag",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "update tag",
+            "header": []
+          },
+          "description": "update tag"
+        },
+        {
+          "name": "delete tag by id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/tag/572",
+              "protocol": "http",
+              "path": [
+                "tag",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "572",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "delete tag by id",
+            "header": []
+          },
+          "description": "delete tag by id"
+        }
+      ]
+    },
+    {
+      "name": "auth controller\r\nTODO: Sa-Token 1.33.0 currently not supported Spring Boot 3.x",
+      "item": [
+        {
+          "name": "user login\r\nTODO: can add login by username or email and password ?",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"jinny.mcclure\",\n  \"password\": \"k4bbhk\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/auth/login",
+              "protocol": "http",
+              "path": [
+                "auth",
+                "login"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "user login\r\nTODO: can add login by username or email and password ?",
+            "header": []
+          },
+          "description": "user login\r\nTODO: can add login by username or email and password ?"
+        },
+        {
+          "name": "user register\r\nTODO: before register should confirm captcha by email",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"jinny.mcclure\",\n  \"password\": \"uoyxxt\",\n  \"email\": \"jodie.bernhard@gmail.com\",\n  \"avatar\": \"yb0s3m\",\n  \"joinTime\": \"2023-01-19 13:30:56\",\n  \"roleId\": 661\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/auth/register",
+              "protocol": "http",
+              "path": [
+                "auth",
+                "register"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "user register\r\nTODO: before register should confirm captcha by email",
+            "header": []
+          },
+          "description": "user register\r\nTODO: before register should confirm captcha by email"
+        },
+        {
+          "name": "user logout",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "description": "token",
+                  "value": "pdipcu",
+                  "hasItems": false
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8088/auth/logout",
+              "protocol": "http",
+              "path": [
+                "auth",
+                "logout"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "user logout",
+            "header": []
+          },
+          "description": "user logout"
+        }
+      ]
+    },
+    {
+      "name": "role controller",
+      "item": [
+        {
+          "name": "select all role",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/role",
+              "protocol": "http",
+              "path": [
+                "role",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all role",
+            "header": []
+          },
+          "description": "select all role"
+        },
+        {
+          "name": "select all roles by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/role/page",
+              "protocol": "http",
+              "path": [
+                "role",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all roles by page",
+            "header": []
+          },
+          "description": "select all roles by page"
+        },
+        {
+          "name": "select role by id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/role/44",
+              "protocol": "http",
+              "path": [
+                "role",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "44",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "select role by id",
+            "header": []
+          },
+          "description": "select role by id"
+        },
+        {
+          "name": "add a role",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 479,\n  \"name\": \"jinny.mcclure\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/role/",
+              "protocol": "http",
+              "path": [
+                "role",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add a role",
+            "header": []
+          },
+          "description": "add a role"
+        },
+        {
+          "name": "update role",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 807,\n  \"name\": \"jinny.mcclure\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/role/",
+              "protocol": "http",
+              "path": [
+                "role",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "update role",
+            "header": []
+          },
+          "description": "update role"
+        },
+        {
+          "name": "delete role by id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/role/293",
+              "protocol": "http",
+              "path": [
+                "role",
+                ":id"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "293",
+                  "description": "id"
+                }
+              ]
+            },
+            "description": "delete role by id",
+            "header": []
+          },
+          "description": "delete role by id"
+        }
+      ]
+    },
+    {
+      "name": "user collection controller",
+      "item": [
+        {
+          "name": "select all userCollections",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/collection",
+              "protocol": "http",
+              "path": [
+                "user",
+                "collection",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all userCollections",
+            "header": []
+          },
+          "description": "select all userCollections"
+        },
+        {
+          "name": "select userCollections by userId and type",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/collection/688?type=13039",
+              "protocol": "http",
+              "path": [
+                "user",
+                "collection",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "type",
+                  "value": "13039",
+                  "description": "  collection type"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "688",
+                  "description": "userId"
+                }
+              ]
+            },
+            "description": "select userCollections by userId and type",
+            "header": []
+          },
+          "description": "select userCollections by userId and type"
+        },
+        {
+          "name": "select userCollections by collectionId and type",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/collection/953?type=20024",
+              "protocol": "http",
+              "path": [
+                "user",
+                "collection",
+                ":collectionId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "type",
+                  "value": "20024",
+                  "description": "        collection type"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "collectionId",
+                  "value": "953",
+                  "description": "collectionId"
+                }
+              ]
+            },
+            "description": "select userCollections by collectionId and type",
+            "header": []
+          },
+          "description": "select userCollections by collectionId and type"
+        },
+        {
+          "name": "select all userCollections by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/collection/page",
+              "protocol": "http",
+              "path": [
+                "user",
+                "collection",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all userCollections by page",
+            "header": []
+          },
+          "description": "select all userCollections by page"
+        },
+        {
+          "name": "select userCollections by userId, type and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/collection/page/884?type=2360",
+              "protocol": "http",
+              "path": [
+                "user",
+                "collection",
+                "page",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "type",
+                  "value": "2360",
+                  "description": "    collection type"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "884",
+                  "description": "  userID"
+                }
+              ]
+            },
+            "description": "select userCollections by userId, type and page",
+            "header": []
+          },
+          "description": "select userCollections by userId, type and page"
+        },
+        {
+          "name": "select userCollections by collectionId, type and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/collection/page/312?type=9098",
+              "protocol": "http",
+              "path": [
+                "user",
+                "collection",
+                "page",
+                ":collectionId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "type",
+                  "value": "9098",
+                  "description": "        collection type"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "collectionId",
+                  "value": "312",
+                  "description": "collectionId"
+                }
+              ]
+            },
+            "description": "select userCollections by collectionId, type and page",
+            "header": []
+          },
+          "description": "select userCollections by collectionId, type and page"
+        },
+        {
+          "name": "select userCollection by id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/collection/single?userId=392&collectionId=638",
+              "protocol": "http",
+              "path": [
+                "user",
+                "collection",
+                "single"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "392",
+                  "description": "      userId"
+                },
+                {
+                  "key": "collectionId",
+                  "value": "638",
+                  "description": "collectionId"
+                }
+              ],
+              "variable": []
+            },
+            "description": "select userCollection by id",
+            "header": []
+          },
+          "description": "select userCollection by id"
+        },
+        {
+          "name": "add a userCollection",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 572,\n  \"collectId\": 775,\n  \"type\": 1013\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/collection/",
+              "protocol": "http",
+              "path": [
+                "user",
+                "collection",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add a userCollection",
+            "header": []
+          },
+          "description": "add a userCollection"
+        },
+        {
+          "name": "update userCollection",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 153,\n  \"collectId\": 766,\n  \"type\": 13584\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/collection/",
+              "protocol": "http",
+              "path": [
+                "user",
+                "collection",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "update userCollection",
+            "header": []
+          },
+          "description": "update userCollection"
+        },
+        {
+          "name": "delete userCollection by id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/collection/?userId=440&collectionId=314",
+              "protocol": "http",
+              "path": [
+                "user",
+                "collection",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "440",
+                  "description": "      userId"
+                },
+                {
+                  "key": "collectionId",
+                  "value": "314",
+                  "description": "collectionId"
+                }
+              ],
+              "variable": []
+            },
+            "description": "delete userCollection by id",
+            "header": []
+          },
+          "description": "delete userCollection by id"
+        }
+      ]
+    },
+    {
+      "name": "user column controller",
+      "item": [
+        {
+          "name": "select all UserColumns",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/column",
+              "protocol": "http",
+              "path": [
+                "user",
+                "column",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all UserColumns",
+            "header": []
+          },
+          "description": "select all UserColumns"
+        },
+        {
+          "name": "select UserColumns by userId and type",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/column/614?type=4571",
+              "protocol": "http",
+              "path": [
+                "user",
+                "column",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "type",
+                  "value": "4571",
+                  "description": "  column type"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "614",
+                  "description": "userId"
+                }
+              ]
+            },
+            "description": "select UserColumns by userId and type",
+            "header": []
+          },
+          "description": "select UserColumns by userId and type"
+        },
+        {
+          "name": "select UserColumns by columnId and type",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/column/754?type=12804",
+              "protocol": "http",
+              "path": [
+                "user",
+                "column",
+                ":columnId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "type",
+                  "value": "12804",
+                  "description": "    column type"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "columnId",
+                  "value": "754",
+                  "description": "columnId"
+                }
+              ]
+            },
+            "description": "select UserColumns by columnId and type",
+            "header": []
+          },
+          "description": "select UserColumns by columnId and type"
+        },
+        {
+          "name": "select all UserColumns by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/column/page",
+              "protocol": "http",
+              "path": [
+                "user",
+                "column",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all UserColumns by page",
+            "header": []
+          },
+          "description": "select all UserColumns by page"
+        },
+        {
+          "name": "select UserColumns by userId, type and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/column/page/562?type=30695",
+              "protocol": "http",
+              "path": [
+                "user",
+                "column",
+                "page",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "type",
+                  "value": "30695",
+                  "description": "    column type"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "562",
+                  "description": "  userID"
+                }
+              ]
+            },
+            "description": "select UserColumns by userId, type and page",
+            "header": []
+          },
+          "description": "select UserColumns by userId, type and page"
+        },
+        {
+          "name": "select UserColumns by columnId, type and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/column/page/94?type=20035",
+              "protocol": "http",
+              "path": [
+                "user",
+                "column",
+                "page",
+                ":columnId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "type",
+                  "value": "20035",
+                  "description": "    column type"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "columnId",
+                  "value": "94",
+                  "description": "columnId"
+                }
+              ]
+            },
+            "description": "select UserColumns by columnId, type and page",
+            "header": []
+          },
+          "description": "select UserColumns by columnId, type and page"
+        },
+        {
+          "name": "select UserColumn by id",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/column/single?userId=101&columnId=962",
+              "protocol": "http",
+              "path": [
+                "user",
+                "column",
+                "single"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "101",
+                  "description": "  userId"
+                },
+                {
+                  "key": "columnId",
+                  "value": "962",
+                  "description": "columnId"
+                }
+              ],
+              "variable": []
+            },
+            "description": "select UserColumn by id",
+            "header": []
+          },
+          "description": "select UserColumn by id"
+        },
+        {
+          "name": "add a UserColumn",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 571,\n  \"columnId\": 885,\n  \"type\": 16738\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/column/",
+              "protocol": "http",
+              "path": [
+                "user",
+                "column",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add a UserColumn",
+            "header": []
+          },
+          "description": "add a UserColumn"
+        },
+        {
+          "name": "update UserColumn",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 488,\n  \"columnId\": 809,\n  \"type\": 15247\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/column/",
+              "protocol": "http",
+              "path": [
+                "user",
+                "column",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "update UserColumn",
+            "header": []
+          },
+          "description": "update UserColumn"
+        },
+        {
+          "name": "delete UserColumn by id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/column/?userId=744&columnId=601",
+              "protocol": "http",
+              "path": [
+                "user",
+                "column",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "744",
+                  "description": "  userId"
+                },
+                {
+                  "key": "columnId",
+                  "value": "601",
+                  "description": "columnId"
+                }
+              ],
+              "variable": []
+            },
+            "description": "delete UserColumn by id",
+            "header": []
+          },
+          "description": "delete UserColumn by id"
+        }
+      ]
+    },
+    {
+      "name": "user follow controller",
+      "item": [
+        {
+          "name": "select all userFollows",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/follow",
+              "protocol": "http",
+              "path": [
+                "user",
+                "follow",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all userFollows",
+            "header": []
+          },
+          "description": "select all userFollows"
+        },
+        {
+          "name": "select followers by userId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/follow/follower/360",
+              "protocol": "http",
+              "path": [
+                "user",
+                "follow",
+                "follower",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "360",
+                  "description": "userId"
+                }
+              ]
+            },
+            "description": "select followers by userId",
+            "header": []
+          },
+          "description": "select followers by userId"
+        },
+        {
+          "name": "select followeds by userId",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/follow/followed/863",
+              "protocol": "http",
+              "path": [
+                "user",
+                "follow",
+                "followed",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "863",
+                  "description": "userId"
+                }
+              ]
+            },
+            "description": "select followeds by userId",
+            "header": []
+          },
+          "description": "select followeds by userId"
+        },
+        {
+          "name": "select all userFollows by page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/follow/page",
+              "protocol": "http",
+              "path": [
+                "user",
+                "follow",
+                "page"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select all userFollows by page",
+            "header": []
+          },
+          "description": "select all userFollows by page"
+        },
+        {
+          "name": "select followers by userId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/follow/page/follower/395",
+              "protocol": "http",
+              "path": [
+                "user",
+                "follow",
+                "page",
+                "follower",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "395",
+                  "description": "  userId"
+                }
+              ]
+            },
+            "description": "select followers by userId and page",
+            "header": []
+          },
+          "description": "select followers by userId and page"
+        },
+        {
+          "name": "select followeds by userId and page",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/follow/page/followed/836",
+              "protocol": "http",
+              "path": [
+                "user",
+                "follow",
+                "page",
+                "followed",
+                ":userId"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "836",
+                  "description": "  userId"
+                }
+              ]
+            },
+            "description": "select followeds by userId and page",
+            "header": []
+          },
+          "description": "select followeds by userId and page"
+        },
+        {
+          "name": "add userFollow",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"followerId\": 592,\n  \"followedId\": 386,\n  \"type\": 26500\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/follow/",
+              "protocol": "http",
+              "path": [
+                "user",
+                "follow",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "add userFollow",
+            "header": []
+          },
+          "description": "add userFollow"
+        },
+        {
+          "name": "update userFollow",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"followerId\": 446,\n  \"followedId\": 886,\n  \"type\": 10904\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/follow/",
+              "protocol": "http",
+              "path": [
+                "user",
+                "follow",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "update userFollow",
+            "header": []
+          },
+          "description": "update userFollow"
+        },
+        {
+          "name": "delete userFollow by id",
+          "request": {
+            "method": "DELETE",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/user/follow/?followerId=329&followedId=391",
+              "protocol": "http",
+              "path": [
+                "user",
+                "follow",
+                ""
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [
+                {
+                  "key": "followerId",
+                  "value": "329",
+                  "description": "followerId"
+                },
+                {
+                  "key": "followedId",
+                  "value": "391",
+                  "description": "followedId"
+                }
+              ],
+              "variable": []
+            },
+            "description": "delete userFollow by id",
+            "header": []
+          },
+          "description": "delete userFollow by id"
+        }
+      ]
+    }
+  ]
+}

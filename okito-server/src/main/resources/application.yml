@@ -1,0 +1,50 @@
+server:
+  port: 8088
+
+management:
+  endpoints:
+    web:
+      base-path: /manage
+
+spring:
+  mvc:
+    static-path-pattern: /**
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/virosa
+    username: wjl
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 12
+      initialization-fail-timeout: 60000
+      connection-timeout: 20000
+      idle-timeout: 30000
+      max-lifetime: 1200000
+  jpa:
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      password:
+      lettuce:
+        pool:
+          max-idle: 8
+          max-active: 8
+          max-wait: -1ms
+          min-idle: 0
+
+sa-token:
+  token-name: satoken
+  timeout: 86400
+  activity-timeout: -1
+  is-share: false
+  token-style: uuid
+  is-log: true
