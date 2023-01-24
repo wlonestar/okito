@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "prepare": "cd .. && husky install vosa-admin/.husky"
+    "prepare": "cd .. && husky install okito-admin/.husky"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
