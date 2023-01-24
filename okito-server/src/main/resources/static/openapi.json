@@ -1,0 +1,6589 @@
+{
+  "components": {
+    "schemas": {
+      "RegisterParam": {
+        "properties": {
+          "username": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "mamie.gutkowski"
+          },
+          "password": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "t97dmf"
+          },
+          "email": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "marshall.spencer@hotmail.com"
+          },
+          "avatar": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "saw6rx"
+          },
+          "joinTime": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "2023-01-19 13:30:56"
+          },
+          "roleId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "499"
+          }
+        }
+      },
+      "PostCommentLikeParam": {
+        "properties": {
+          "commentId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "385"
+          },
+          "userId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "643"
+          },
+          "type": {
+            "description": "No comments found.",
+            "example": "30359"
+          }
+        }
+      },
+      "Category": {
+        "properties": {
+          "id": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "791"
+          },
+          "name": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "mamie.gutkowski"
+          },
+          "cover": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "gqqr0x"
+          },
+          "description": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "7aq89m"
+          }
+        }
+      },
+      "string": {
+        "format": "string",
+        "type": "string"
+      },
+      "PostLikeParam": {
+        "properties": {
+          "postId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "190"
+          },
+          "userId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "741"
+          },
+          "type": {
+            "description": "No comments found.",
+            "example": "27224"
+          }
+        }
+      },
+      "UserCollectionParam": {
+        "properties": {
+          "userId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "941"
+          },
+          "collectId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "35"
+          },
+          "type": {
+            "description": "No comments found.",
+            "example": "9919"
+          }
+        }
+      },
+      "Post": {
+        "properties": {
+          "id": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "167"
+          },
+          "title": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "7gzho8"
+          },
+          "summary": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "o69aeb"
+          },
+          "cover": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "pmc06i"
+          },
+          "content": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "w9n8sk"
+          },
+          "createTime": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "2023-01-19 13:30:56"
+          },
+          "updateTime": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "2023-01-19 13:30:56"
+          },
+          "draft": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          },
+          "cateId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "78"
+          },
+          "authorId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "824"
+          }
+        }
+      },
+      "PostComment": {
+        "properties": {
+          "id": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "250"
+          },
+          "content": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "2i2k2i"
+          },
+          "uploadTime": {
+            "description": "No comments found.(object)",
+            "type": "object",
+            "example": ""
+          },
+          "authorId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "993"
+          },
+          "postId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "934"
+          },
+          "parentId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "206"
+          }
+        }
+      },
+      "PinComment": {
+        "properties": {
+          "id": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "189"
+          },
+          "content": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "moq1no"
+          },
+          "uploadTime": {
+            "description": "No comments found.(object)",
+            "type": "object",
+            "example": ""
+          },
+          "authorId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "19"
+          },
+          "pinId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "165"
+          },
+          "parentId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "13"
+          }
+        }
+      },
+      "LoginParam": {
+        "properties": {
+          "username": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "mamie.gutkowski"
+          },
+          "password": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "bdzrt9"
+          }
+        }
+      },
+      "Role": {
+        "properties": {
+          "id": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "717"
+          },
+          "name": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "mamie.gutkowski"
+          }
+        }
+      },
+      "UserFollowParam": {
+        "properties": {
+          "followerId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "416"
+          },
+          "followedId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "78"
+          },
+          "type": {
+            "description": "No comments found.",
+            "example": "6097"
+          }
+        }
+      },
+      "RespResult": {
+        "properties": {
+          "timestamp": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "1674106255918"
+          },
+          "status": {
+            "format": "int32",
+            "description": "No comments found.",
+            "type": "integer",
+            "example": "29"
+          },
+          "message": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "success"
+          },
+          "data": {
+            "description": "No comments found.(object)",
+            "type": "object",
+            "example": ""
+          }
+        }
+      },
+      "Pin": {
+        "properties": {
+          "id": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "219"
+          },
+          "content": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "27n7gv"
+          },
+          "createTime": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "2023-01-19 13:30:56"
+          },
+          "updateTime": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "2023-01-19 13:30:56"
+          },
+          "authorId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "708"
+          }
+        }
+      },
+      "PinLikeParam": {
+        "properties": {
+          "pinId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "608"
+          },
+          "userId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "565"
+          },
+          "type": {
+            "description": "No comments found.",
+            "example": "3142"
+          }
+        }
+      },
+      "Column": {
+        "properties": {
+          "id": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "634"
+          },
+          "name": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "mamie.gutkowski"
+          },
+          "cover": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "wtn8kv"
+          },
+          "description": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "aiyo9f"
+          },
+          "createTime": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "2023-01-19 13:30:56"
+          },
+          "updateTime": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "2023-01-19 13:30:56"
+          }
+        }
+      },
+      "Collection": {
+        "properties": {
+          "id": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "53"
+          },
+          "name": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "mamie.gutkowski"
+          },
+          "cover": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "303pgo"
+          },
+          "description": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "pcv6h0"
+          },
+          "createTime": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "2023-01-19 13:30:56"
+          },
+          "updateTime": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "2023-01-19 13:30:56"
+          }
+        }
+      },
+      "UserColumnParam": {
+        "properties": {
+          "userId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "218"
+          },
+          "columnId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "234"
+          },
+          "type": {
+            "description": "No comments found.",
+            "example": "21873"
+          }
+        }
+      },
+      "Tag": {
+        "properties": {
+          "id": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "487"
+          },
+          "name": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "mamie.gutkowski"
+          },
+          "cover": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "xxqty0"
+          },
+          "description": {
+            "format": "string",
+            "description": "No comments found.",
+            "type": "string",
+            "example": "3fojbx"
+          }
+        }
+      },
+      "PinCommentLikeParam": {
+        "properties": {
+          "commentId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "983"
+          },
+          "userId": {
+            "format": "int64",
+            "description": "No comments found.",
+            "type": "number",
+            "example": "434"
+          },
+          "type": {
+            "description": "No comments found.",
+            "example": "6952"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8088/"
+    }
+  ],
+  "openapi": "3.0.3",
+  "paths": {
+    "/user/follow/": {
+      "post": {
+        "summary": "add userFollow",
+        "deprecated": false,
+        "description": "add userFollow",
+        "tags": [
+          "user follow controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserFollowParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"followerId\": 454,\n  \"followedId\": 591,\n  \"type\": 19142\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 43,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "userfollow",
+        "parameters": []
+      },
+      "delete": {
+        "summary": "delete userFollow by id",
+        "deprecated": false,
+        "description": "delete userFollow by id",
+        "tags": [
+          "user follow controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 566,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "userfollow",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "followerId",
+            "required": true,
+            "example": "497",
+            "name": "followerId"
+          },
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "followedId",
+            "required": true,
+            "example": "708",
+            "name": "followedId"
+          }
+        ]
+      },
+      "put": {
+        "summary": "update userFollow",
+        "deprecated": false,
+        "description": "update userFollow",
+        "tags": [
+          "user follow controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserFollowParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"followerId\": 802,\n  \"followedId\": 687,\n  \"type\": 11302\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 844,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "userfollow",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all userFollows",
+        "deprecated": false,
+        "description": "select all userFollows",
+        "tags": [
+          "user follow controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 16,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "userfollow",
+        "parameters": []
+      }
+    },
+    "/user/follow/page/follower/{userId}": {
+      "get": {
+        "summary": "select followers by userId and page",
+        "deprecated": false,
+        "description": "select followers by userId and page",
+        "tags": [
+          "user follow controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 620,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "userfollowpagefollower{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "  userId",
+            "required": true,
+            "example": "53",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/comment/pin/like/single": {
+      "get": {
+        "summary": "select pinCommentLike by id",
+        "deprecated": false,
+        "description": "select pinCommentLike by id",
+        "tags": [
+          "pin comment like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 548,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpinlikesingle",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "commentId",
+            "required": true,
+            "example": "258",
+            "name": "commentId"
+          },
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "   userId",
+            "required": true,
+            "example": "187",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/post/page/{columnId}": {
+      "get": {
+        "summary": "select posts by columnId and page",
+        "deprecated": false,
+        "description": "select posts by columnId and page",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 700,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postpage{columnId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "columnId",
+            "required": true,
+            "example": "322",
+            "name": "columnId"
+          }
+        ]
+      }
+    },
+    "/comment/post/{id}": {
+      "delete": {
+        "summary": "delete pinComment By id",
+        "deprecated": false,
+        "description": "delete pinComment By id",
+        "tags": [
+          "post comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 152,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpost{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "338",
+            "name": "id"
+          }
+        ]
+      },
+      "get": {
+        "summary": "select postComment By id",
+        "deprecated": false,
+        "description": "select postComment By id",
+        "tags": [
+          "post comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 627,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpost{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "764",
+            "name": "id"
+          }
+        ]
+      }
+    },
+    "/comment/post/like/{userId}": {
+      "get": {
+        "summary": "select all postCommentLikes by userId",
+        "deprecated": false,
+        "description": "select all postCommentLikes by userId",
+        "tags": [
+          "post comment like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 709,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpostlike{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "example": "94",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/user/column/single": {
+      "get": {
+        "summary": "select UserColumn by id",
+        "deprecated": false,
+        "description": "select UserColumn by id",
+        "tags": [
+          "user column controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 384,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercolumnsingle",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "  userId",
+            "required": true,
+            "example": "814",
+            "name": "userId"
+          },
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "columnId",
+            "required": true,
+            "example": "814",
+            "name": "columnId"
+          }
+        ]
+      }
+    },
+    "/user/collection/single": {
+      "get": {
+        "summary": "select userCollection by id",
+        "deprecated": false,
+        "description": "select userCollection by id",
+        "tags": [
+          "user collection controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 845,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercollectionsingle",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "      userId",
+            "required": true,
+            "example": "659",
+            "name": "userId"
+          },
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "collectionId",
+            "required": true,
+            "example": "147",
+            "name": "collectionId"
+          }
+        ]
+      }
+    },
+    "/comment/post/like/page": {
+      "get": {
+        "summary": "select all postCommentLikes by page",
+        "deprecated": false,
+        "description": "select all postCommentLikes by page",
+        "tags": [
+          "post comment like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 695,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpostlikepage",
+        "parameters": []
+      }
+    },
+    "/comment/post/{postId}": {
+      "get": {
+        "summary": "select all postComments by postId",
+        "deprecated": false,
+        "description": "select all postComments by postId",
+        "tags": [
+          "post comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 217,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpost{postId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "postId",
+            "required": true,
+            "example": "741",
+            "name": "postId"
+          }
+        ]
+      }
+    },
+    "/comment/pin/{id}": {
+      "delete": {
+        "summary": "delete pinComment By id",
+        "deprecated": false,
+        "description": "delete pinComment By id",
+        "tags": [
+          "pin comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 6,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpin{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "875",
+            "name": "id"
+          }
+        ]
+      },
+      "get": {
+        "summary": "select pinComment By id",
+        "deprecated": false,
+        "description": "select pinComment By id",
+        "tags": [
+          "pin comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 509,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpin{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "931",
+            "name": "id"
+          }
+        ]
+      }
+    },
+    "/post/like/": {
+      "post": {
+        "summary": "add a postLike",
+        "deprecated": false,
+        "description": "add a postLike",
+        "tags": [
+          "post like controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostLikeParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"postId\": 312,\n  \"userId\": 261,\n  \"type\": 23361\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 31,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postlike",
+        "parameters": []
+      },
+      "delete": {
+        "summary": "delete postLike by id",
+        "deprecated": false,
+        "description": "delete postLike by id",
+        "tags": [
+          "post like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 626,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postlike",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "postId",
+            "required": true,
+            "example": "466",
+            "name": "postId"
+          },
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "userId",
+            "required": true,
+            "example": "54",
+            "name": "userId"
+          }
+        ]
+      },
+      "put": {
+        "summary": "update postLike",
+        "deprecated": false,
+        "description": "update postLike",
+        "tags": [
+          "post like controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostLikeParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"postId\": 309,\n  \"userId\": 734,\n  \"type\": 10421\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 459,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postlike",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all postLikes",
+        "deprecated": false,
+        "description": "select all postLikes",
+        "tags": [
+          "post like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 1,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postlike",
+        "parameters": []
+      }
+    },
+    "/user/column/page/{userId}": {
+      "get": {
+        "summary": "select UserColumns by userId, type and page",
+        "deprecated": false,
+        "description": "select UserColumns by userId, type and page",
+        "tags": [
+          "user column controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 666,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercolumnpage{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "  userID",
+            "required": true,
+            "example": "200",
+            "name": "userId"
+          },
+          {
+            "schema": {
+              "type": "object"
+            },
+            "in": "query",
+            "description": "    column type",
+            "required": true,
+            "example": "7278",
+            "name": "type"
+          }
+        ]
+      }
+    },
+    "/comment/pin/secondary/{id}": {
+      "get": {
+        "summary": "select secondary PinComments by id",
+        "deprecated": false,
+        "description": "select secondary PinComments by id",
+        "tags": [
+          "pin comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 108,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpinsecondary{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "265",
+            "name": "id"
+          }
+        ]
+      }
+    },
+    "/comment/pin/page": {
+      "get": {
+        "summary": "select all pinComments by page",
+        "deprecated": false,
+        "description": "select all pinComments by page",
+        "tags": [
+          "pin comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 623,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpinpage",
+        "parameters": []
+      }
+    },
+    "/post/page/{cateId}": {
+      "get": {
+        "summary": "select posts by cateId and page",
+        "deprecated": false,
+        "description": "select posts by cateId and page",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 412,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postpage{cateId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "  cateId",
+            "required": true,
+            "example": "858",
+            "name": "cateId"
+          }
+        ]
+      }
+    },
+    "/comment/pin/like/": {
+      "post": {
+        "summary": "add a pinCommentLike",
+        "deprecated": false,
+        "description": "add a pinCommentLike",
+        "tags": [
+          "pin comment like controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PinCommentLikeParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"commentId\": 881,\n  \"userId\": 911,\n  \"type\": 2057\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 696,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpinlike",
+        "parameters": []
+      },
+      "delete": {
+        "summary": "delete pinCommentLike by id",
+        "deprecated": false,
+        "description": "delete pinCommentLike by id",
+        "tags": [
+          "pin comment like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 292,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpinlike",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "commentId",
+            "required": true,
+            "example": "919",
+            "name": "commentId"
+          },
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "   userId",
+            "required": true,
+            "example": "753",
+            "name": "userId"
+          }
+        ]
+      },
+      "put": {
+        "summary": "update a pinCommentLike",
+        "deprecated": false,
+        "description": "update a pinCommentLike",
+        "tags": [
+          "pin comment like controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PinCommentLikeParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"commentId\": 515,\n  \"userId\": 503,\n  \"type\": 4214\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 557,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpinlike",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all pinCommentLikes",
+        "deprecated": false,
+        "description": "select all pinCommentLikes",
+        "tags": [
+          "pin comment like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 185,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpinlike",
+        "parameters": []
+      }
+    },
+    "/category/{id}": {
+      "delete": {
+        "summary": "delete category by id",
+        "deprecated": false,
+        "description": "delete category by id",
+        "tags": [
+          "category controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 205,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "category{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "765",
+            "name": "id"
+          }
+        ]
+      },
+      "get": {
+        "summary": "select category by id",
+        "deprecated": false,
+        "description": "select category by id",
+        "tags": [
+          "category controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 593,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "category{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "281",
+            "name": "id"
+          }
+        ]
+      }
+    },
+    "/tag/": {
+      "post": {
+        "summary": "add a tag",
+        "deprecated": false,
+        "description": "add a tag",
+        "tags": [
+          "tag controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tag"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 459,\n  \"name\": \"mamie.gutkowski\",\n  \"cover\": \"0r4ife\",\n  \"description\": \"2md3zf\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 772,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "tag",
+        "parameters": []
+      },
+      "put": {
+        "summary": "update tag",
+        "deprecated": false,
+        "description": "update tag",
+        "tags": [
+          "tag controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tag"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 40,\n  \"name\": \"mamie.gutkowski\",\n  \"cover\": \"1rsomk\",\n  \"description\": \"u0eu7h\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 42,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "tag",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all tags",
+        "deprecated": false,
+        "description": "select all tags",
+        "tags": [
+          "tag controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 761,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "tag",
+        "parameters": []
+      }
+    },
+    "/comment/pin/": {
+      "post": {
+        "summary": "add a pinComment",
+        "deprecated": false,
+        "description": "add a pinComment",
+        "tags": [
+          "pin comment controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PinComment"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 864,\n  \"content\": \"afe58r\",\n  \"uploadTime\": {},\n  \"authorId\": 670,\n  \"pinId\": 413,\n  \"parentId\": 831\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 829,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpin",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all pinComments",
+        "deprecated": false,
+        "description": "select all pinComments",
+        "tags": [
+          "pin comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 604,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpin",
+        "parameters": []
+      }
+    },
+    "/post/": {
+      "post": {
+        "summary": "add a post",
+        "deprecated": false,
+        "description": "add a post",
+        "tags": [
+          "post controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Post"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 405,\n  \"title\": \"ptadt0\",\n  \"summary\": \"ldo0iq\",\n  \"cover\": \"2ihhe2\",\n  \"content\": \"q213rk\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\",\n  \"draft\": true,\n  \"cateId\": 834,\n  \"authorId\": 623\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 110,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post",
+        "parameters": []
+      },
+      "delete": {
+        "summary": "delete posts by ids",
+        "deprecated": false,
+        "description": "delete posts by ids",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 834,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post",
+        "parameters": [
+          {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "string"
+              }
+            },
+            "in": "query",
+            "description": "list of id,[array of int64]",
+            "required": true,
+            "example": "519,999",
+            "name": "ids"
+          }
+        ]
+      },
+      "put": {
+        "summary": "update post",
+        "deprecated": false,
+        "description": "update post",
+        "tags": [
+          "post controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Post"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 411,\n  \"title\": \"62pxd6\",\n  \"summary\": \"of709x\",\n  \"cover\": \"bli252\",\n  \"content\": \"um483v\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\",\n  \"draft\": true,\n  \"cateId\": 930,\n  \"authorId\": 708\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 265,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all posts",
+        "deprecated": false,
+        "description": "select all posts",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 431,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post",
+        "parameters": []
+      }
+    },
+    "/pin/{authorId}": {
+      "get": {
+        "summary": "select all pins by authorId",
+        "deprecated": false,
+        "description": "select all pins by authorId",
+        "tags": [
+          "pin controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 541,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pin{authorId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "authorId",
+            "required": true,
+            "example": "521",
+            "name": "authorId"
+          }
+        ]
+      }
+    },
+    "/post/{authorId}": {
+      "get": {
+        "summary": "select posts by authorId",
+        "deprecated": false,
+        "description": "select posts by authorId",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 965,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post{authorId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "authorId",
+            "required": true,
+            "example": "559",
+            "name": "authorId"
+          }
+        ]
+      }
+    },
+    "/user/collection/": {
+      "post": {
+        "summary": "add a userCollection",
+        "deprecated": false,
+        "description": "add a userCollection",
+        "tags": [
+          "user collection controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserCollectionParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"userId\": 581,\n  \"collectId\": 600,\n  \"type\": 30085\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 241,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercollection",
+        "parameters": []
+      },
+      "delete": {
+        "summary": "delete userCollection by id",
+        "deprecated": false,
+        "description": "delete userCollection by id",
+        "tags": [
+          "user collection controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 646,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercollection",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "      userId",
+            "required": true,
+            "example": "780",
+            "name": "userId"
+          },
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "collectionId",
+            "required": true,
+            "example": "382",
+            "name": "collectionId"
+          }
+        ]
+      },
+      "put": {
+        "summary": "update userCollection",
+        "deprecated": false,
+        "description": "update userCollection",
+        "tags": [
+          "user collection controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserCollectionParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"userId\": 688,\n  \"collectId\": 269,\n  \"type\": 29576\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 410,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercollection",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all userCollections",
+        "deprecated": false,
+        "description": "select all userCollections",
+        "tags": [
+          "user collection controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 221,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercollection",
+        "parameters": []
+      }
+    },
+    "/user/column/": {
+      "post": {
+        "summary": "add a UserColumn",
+        "deprecated": false,
+        "description": "add a UserColumn",
+        "tags": [
+          "user column controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserColumnParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"userId\": 170,\n  \"columnId\": 114,\n  \"type\": 7179\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 797,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercolumn",
+        "parameters": []
+      },
+      "delete": {
+        "summary": "delete UserColumn by id",
+        "deprecated": false,
+        "description": "delete UserColumn by id",
+        "tags": [
+          "user column controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 932,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercolumn",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "  userId",
+            "required": true,
+            "example": "108",
+            "name": "userId"
+          },
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "columnId",
+            "required": true,
+            "example": "879",
+            "name": "columnId"
+          }
+        ]
+      },
+      "put": {
+        "summary": "update UserColumn",
+        "deprecated": false,
+        "description": "update UserColumn",
+        "tags": [
+          "user column controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserColumnParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"userId\": 327,\n  \"columnId\": 104,\n  \"type\": 7749\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 981,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercolumn",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all UserColumns",
+        "deprecated": false,
+        "description": "select all UserColumns",
+        "tags": [
+          "user column controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 394,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercolumn",
+        "parameters": []
+      }
+    },
+    "/comment/pin/like/page": {
+      "get": {
+        "summary": "select all pinCommentLikes by page",
+        "deprecated": false,
+        "description": "select all pinCommentLikes by page",
+        "tags": [
+          "pin comment like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 258,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpinlikepage",
+        "parameters": []
+      }
+    },
+    "/category/page": {
+      "get": {
+        "summary": "select all categories by page",
+        "deprecated": false,
+        "description": "select all categories by page",
+        "tags": [
+          "category controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 720,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "categorypage",
+        "parameters": []
+      }
+    },
+    "/pin/page/{authorId}": {
+      "get": {
+        "summary": "select all pins by page and by authorId",
+        "deprecated": false,
+        "description": "select all pins by page and by authorId",
+        "tags": [
+          "pin controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 338,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pinpage{authorId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "authorId",
+            "required": true,
+            "example": "588",
+            "name": "authorId"
+          }
+        ]
+      }
+    },
+    "/column/": {
+      "post": {
+        "summary": "add a column",
+        "deprecated": false,
+        "description": "add a column",
+        "tags": [
+          "column controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Column"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 797,\n  \"name\": \"mamie.gutkowski\",\n  \"cover\": \"7ykd06\",\n  \"description\": \"nq1goc\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 532,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "column",
+        "parameters": []
+      },
+      "put": {
+        "summary": "update column",
+        "deprecated": false,
+        "description": "update column",
+        "tags": [
+          "column controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Column"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 117,\n  \"name\": \"mamie.gutkowski\",\n  \"cover\": \"cxegws\",\n  \"description\": \"mbj3n9\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 413,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "column",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all columns",
+        "deprecated": false,
+        "description": "select all columns",
+        "tags": [
+          "column controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 628,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "column",
+        "parameters": []
+      }
+    },
+    "/pin/like/page": {
+      "get": {
+        "summary": "select all pinLikes by page",
+        "deprecated": false,
+        "description": "select all pinLikes by page",
+        "tags": [
+          "pin like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 288,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pinlikepage",
+        "parameters": []
+      }
+    },
+    "/tag/{id}": {
+      "delete": {
+        "summary": "delete tag by id",
+        "deprecated": false,
+        "description": "delete tag by id",
+        "tags": [
+          "tag controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 55,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "tag{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "519",
+            "name": "id"
+          }
+        ]
+      },
+      "get": {
+        "summary": "select tag by id",
+        "deprecated": false,
+        "description": "select tag by id",
+        "tags": [
+          "tag controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 449,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "tag{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "233",
+            "name": "id"
+          }
+        ]
+      }
+    },
+    "/comment/pin/page/secondary/{id}": {
+      "get": {
+        "summary": "select secondary comments by id and page",
+        "deprecated": false,
+        "description": "select secondary comments by id and page",
+        "tags": [
+          "pin comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 505,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpinpagesecondary{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "      id",
+            "required": true,
+            "example": "321",
+            "name": "id"
+          }
+        ]
+      }
+    },
+    "/post/page/{tagId}": {
+      "get": {
+        "summary": "select posts by tagId and page",
+        "deprecated": false,
+        "description": "select posts by tagId and page",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 954,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postpage{tagId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "   tagId",
+            "required": true,
+            "example": "191",
+            "name": "tagId"
+          }
+        ]
+      }
+    },
+    "/tag/{postId}": {
+      "get": {
+        "summary": "select all tags by postId",
+        "deprecated": false,
+        "description": "select all tags by postId",
+        "tags": [
+          "tag controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 637,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "tag{postId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "postId",
+            "required": true,
+            "example": "857",
+            "name": "postId"
+          }
+        ]
+      }
+    },
+    "/comment/post/like/": {
+      "post": {
+        "summary": "add a postCommentLike",
+        "deprecated": false,
+        "description": "add a postCommentLike",
+        "tags": [
+          "post comment like controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostCommentLikeParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"commentId\": 966,\n  \"userId\": 759,\n  \"type\": 15723\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 529,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpostlike",
+        "parameters": []
+      },
+      "delete": {
+        "summary": "delete postCommentLike by id",
+        "deprecated": false,
+        "description": "delete postCommentLike by id",
+        "tags": [
+          "post comment like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 753,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpostlike",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "commentId",
+            "required": true,
+            "example": "317",
+            "name": "commentId"
+          },
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "   userId",
+            "required": true,
+            "example": "150",
+            "name": "userId"
+          }
+        ]
+      },
+      "put": {
+        "summary": "update a postCommentLike",
+        "deprecated": false,
+        "description": "update a postCommentLike",
+        "tags": [
+          "post comment like controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostCommentLikeParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"commentId\": 781,\n  \"userId\": 743,\n  \"type\": 22262\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 470,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpostlike",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all postCommentLikes",
+        "deprecated": false,
+        "description": "select all postCommentLikes",
+        "tags": [
+          "post comment like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 93,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpostlike",
+        "parameters": []
+      }
+    },
+    "/post/page/{collectionId}": {
+      "get": {
+        "summary": "select posts by collectionId and page",
+        "deprecated": false,
+        "description": "select posts by collectionId and page",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 845,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postpage{collectionId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "collectionId",
+            "required": true,
+            "example": "503",
+            "name": "collectionId"
+          }
+        ]
+      }
+    },
+    "/comment/pin/{authorId}": {
+      "get": {
+        "summary": "select all pinComments by authorId",
+        "deprecated": false,
+        "description": "select all pinComments by authorId",
+        "tags": [
+          "pin comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 177,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpin{authorId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "authorId",
+            "required": true,
+            "example": "482",
+            "name": "authorId"
+          }
+        ]
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "user login\r\nTODO: can add login by username or email and password ?",
+        "deprecated": false,
+        "description": "user login\r\nTODO: can add login by username or email and password ?",
+        "tags": [
+          "auth controller\r\nTODO: Sa-Token 1.33.0 currently not supported Spring Boot 3.x"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"username\": \"mamie.gutkowski\",\n  \"password\": \"zb6eii\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 204,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "authlogin",
+        "parameters": []
+      }
+    },
+    "/tag/page/{postId}": {
+      "get": {
+        "summary": "select all tags by postId and page",
+        "deprecated": false,
+        "description": "select all tags by postId and page",
+        "tags": [
+          "tag controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 323,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "tagpage{postId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "  postId",
+            "required": true,
+            "example": "74",
+            "name": "postId"
+          }
+        ]
+      }
+    },
+    "/post/like/{userId}": {
+      "get": {
+        "summary": "select all postLikes by userId",
+        "deprecated": false,
+        "description": "select all postLikes by userId",
+        "tags": [
+          "post like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 630,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postlike{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "example": "808",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/column/{id}": {
+      "delete": {
+        "summary": "delete column by id",
+        "deprecated": false,
+        "description": "delete column by id",
+        "tags": [
+          "column controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 63,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "column{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "395",
+            "name": "id"
+          }
+        ]
+      },
+      "get": {
+        "summary": "select column by id",
+        "deprecated": false,
+        "description": "select column by id",
+        "tags": [
+          "column controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 17,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "column{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "388",
+            "name": "id"
+          }
+        ]
+      }
+    },
+    "/comment/post/{authorId}": {
+      "get": {
+        "summary": "select all postComments by authorId",
+        "deprecated": false,
+        "description": "select all postComments by authorId",
+        "tags": [
+          "post comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 320,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpost{authorId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "authorId",
+            "required": true,
+            "example": "370",
+            "name": "authorId"
+          }
+        ]
+      }
+    },
+    "/comment/post/like/single": {
+      "get": {
+        "summary": "select postCommentLike by id",
+        "deprecated": false,
+        "description": "select postCommentLike by id",
+        "tags": [
+          "post comment like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 185,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpostlikesingle",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "commentId",
+            "required": true,
+            "example": "906",
+            "name": "commentId"
+          },
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "   userId",
+            "required": true,
+            "example": "837",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/comment/post/page/secondary/{id}": {
+      "get": {
+        "summary": "select secondary comments by id and page",
+        "deprecated": false,
+        "description": "select secondary comments by id and page",
+        "tags": [
+          "post comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 455,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpostpagesecondary{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "      id",
+            "required": true,
+            "example": "10",
+            "name": "id"
+          }
+        ]
+      }
+    },
+    "/user/column/{userId}": {
+      "get": {
+        "summary": "select UserColumns by userId and type",
+        "deprecated": false,
+        "description": "select UserColumns by userId and type",
+        "tags": [
+          "user column controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 35,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercolumn{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "example": "761",
+            "name": "userId"
+          },
+          {
+            "schema": {
+              "type": "object"
+            },
+            "in": "query",
+            "description": "  column type",
+            "required": true,
+            "example": "20288",
+            "name": "type"
+          }
+        ]
+      }
+    },
+    "/pin/like/{userId}": {
+      "get": {
+        "summary": "select all pinLikes by userId",
+        "deprecated": false,
+        "description": "select all pinLikes by userId",
+        "tags": [
+          "pin like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 424,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pinlike{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "example": "285",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/comment/post/page": {
+      "get": {
+        "summary": "select all postComments by page",
+        "deprecated": false,
+        "description": "select all postComments by page",
+        "tags": [
+          "post comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 967,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpostpage",
+        "parameters": []
+      }
+    },
+    "/pin/like/page/{userId}": {
+      "get": {
+        "summary": "select all pinLikes by userId and page",
+        "deprecated": false,
+        "description": "select all pinLikes by userId and page",
+        "tags": [
+          "pin like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 40,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pinlikepage{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "  userId",
+            "required": true,
+            "example": "300",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/user/follow/followed/{userId}": {
+      "get": {
+        "summary": "select followeds by userId",
+        "deprecated": false,
+        "description": "select followeds by userId",
+        "tags": [
+          "user follow controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 906,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "userfollowfollowed{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "example": "135",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/user/collection/{collectionId}": {
+      "get": {
+        "summary": "select userCollections by collectionId and type",
+        "deprecated": false,
+        "description": "select userCollections by collectionId and type",
+        "tags": [
+          "user collection controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 906,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercollection{collectionId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "collectionId",
+            "required": true,
+            "example": "724",
+            "name": "collectionId"
+          },
+          {
+            "schema": {
+              "type": "object"
+            },
+            "in": "query",
+            "description": "        collection type",
+            "required": true,
+            "example": "13655",
+            "name": "type"
+          }
+        ]
+      }
+    },
+    "/role/": {
+      "post": {
+        "summary": "add a role",
+        "deprecated": false,
+        "description": "add a role",
+        "tags": [
+          "role controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Role"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 244,\n  \"name\": \"mamie.gutkowski\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 18,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "role",
+        "parameters": []
+      },
+      "put": {
+        "summary": "update role",
+        "deprecated": false,
+        "description": "update role",
+        "tags": [
+          "role controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Role"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 326,\n  \"name\": \"mamie.gutkowski\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 878,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "role",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all role",
+        "deprecated": false,
+        "description": "select all role",
+        "tags": [
+          "role controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 992,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "role",
+        "parameters": []
+      }
+    },
+    "/pin/like/single": {
+      "get": {
+        "summary": "select pinLike by id",
+        "deprecated": false,
+        "description": "select pinLike by id",
+        "tags": [
+          "pin like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 861,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pinlikesingle",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": " pinId",
+            "required": true,
+            "example": "49",
+            "name": "pinId"
+          },
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "userId",
+            "required": true,
+            "example": "592",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/collection/page": {
+      "get": {
+        "summary": "select all collections by page",
+        "deprecated": false,
+        "description": "select all collections by page",
+        "tags": [
+          "collection controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 959,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "collectionpage",
+        "parameters": []
+      }
+    },
+    "/post/{id}": {
+      "delete": {
+        "summary": "delete post by id",
+        "deprecated": false,
+        "description": "delete post by id",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 477,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "169",
+            "name": "id"
+          }
+        ]
+      },
+      "get": {
+        "summary": "select post by id",
+        "deprecated": false,
+        "description": "select post by id",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 637,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "845",
+            "name": "id"
+          }
+        ]
+      }
+    },
+    "/post/{tagId}": {
+      "get": {
+        "summary": "select posts by tagId",
+        "deprecated": false,
+        "description": "select posts by tagId",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 696,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post{tagId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "tagId",
+            "required": true,
+            "example": "500",
+            "name": "tagId"
+          }
+        ]
+      }
+    },
+    "/pin/": {
+      "post": {
+        "summary": "add a pin",
+        "deprecated": false,
+        "description": "add a pin",
+        "tags": [
+          "pin controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pin"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 776,\n  \"content\": \"xndumh\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\",\n  \"authorId\": 993\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 775,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pin",
+        "parameters": []
+      },
+      "put": {
+        "summary": "update pin",
+        "deprecated": false,
+        "description": "update pin",
+        "tags": [
+          "pin controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pin"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 699,\n  \"content\": \"jlbpva\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\",\n  \"authorId\": 831\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 39,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pin",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all pins",
+        "deprecated": false,
+        "description": "select all pins",
+        "tags": [
+          "pin controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 243,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pin",
+        "parameters": []
+      }
+    },
+    "/pin/like/": {
+      "post": {
+        "summary": "add a pinLike",
+        "deprecated": false,
+        "description": "add a pinLike",
+        "tags": [
+          "pin like controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PinLikeParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"pinId\": 416,\n  \"userId\": 336,\n  \"type\": 24125\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 584,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pinlike",
+        "parameters": []
+      },
+      "delete": {
+        "summary": "delete pinLike by id",
+        "deprecated": false,
+        "description": "delete pinLike by id",
+        "tags": [
+          "pin like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 551,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pinlike",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "No comments found.",
+            "required": true,
+            "example": "446",
+            "name": "pinId"
+          },
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "No comments found.",
+            "required": true,
+            "example": "138",
+            "name": "userId"
+          }
+        ]
+      },
+      "put": {
+        "summary": "update a pinLike\r\nTODO: have not been tested",
+        "deprecated": false,
+        "description": "update a pinLike\r\nTODO: have not been tested",
+        "tags": [
+          "pin like controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PinLikeParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"pinId\": 391,\n  \"userId\": 123,\n  \"type\": 22281\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 941,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pinlike",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all pinLikes",
+        "deprecated": false,
+        "description": "select all pinLikes",
+        "tags": [
+          "pin like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 775,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pinlike",
+        "parameters": []
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "summary": "user register\r\nTODO: before register should confirm captcha by email",
+        "deprecated": false,
+        "description": "user register\r\nTODO: before register should confirm captcha by email",
+        "tags": [
+          "auth controller\r\nTODO: Sa-Token 1.33.0 currently not supported Spring Boot 3.x"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterParam"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"username\": \"mamie.gutkowski\",\n  \"password\": \"mln3xd\",\n  \"email\": \"marshall.spencer@hotmail.com\",\n  \"avatar\": \"ithee9\",\n  \"joinTime\": \"2023-01-19 13:30:56\",\n  \"roleId\": 821\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 540,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "authregister",
+        "parameters": []
+      }
+    },
+    "/column/page": {
+      "get": {
+        "summary": "select all columns by page",
+        "deprecated": false,
+        "description": "select all columns by page",
+        "tags": [
+          "column controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 882,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "columnpage",
+        "parameters": []
+      }
+    },
+    "/tag/page/{followerId}": {
+      "get": {
+        "summary": "select all tags by followerId and page",
+        "deprecated": false,
+        "description": "select all tags by followerId and page",
+        "tags": [
+          "tag controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 997,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "tagpage{followerId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "followerId",
+            "required": true,
+            "example": "96",
+            "name": "followerId"
+          }
+        ]
+      }
+    },
+    "/post/{cateId}": {
+      "get": {
+        "summary": "select posts by cateId",
+        "deprecated": false,
+        "description": "select posts by cateId",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 369,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post{cateId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "cateId",
+            "required": true,
+            "example": "818",
+            "name": "cateId"
+          }
+        ]
+      }
+    },
+    "/user/column/page/{columnId}": {
+      "get": {
+        "summary": "select UserColumns by columnId, type and page",
+        "deprecated": false,
+        "description": "select UserColumns by columnId, type and page",
+        "tags": [
+          "user column controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 539,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercolumnpage{columnId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "columnId",
+            "required": true,
+            "example": "988",
+            "name": "columnId"
+          },
+          {
+            "schema": {
+              "type": "object"
+            },
+            "in": "query",
+            "description": "    column type",
+            "required": true,
+            "example": "17747",
+            "name": "type"
+          }
+        ]
+      }
+    },
+    "/user/collection/{userId}": {
+      "get": {
+        "summary": "select userCollections by userId and type",
+        "deprecated": false,
+        "description": "select userCollections by userId and type",
+        "tags": [
+          "user collection controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 872,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercollection{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "example": "796",
+            "name": "userId"
+          },
+          {
+            "schema": {
+              "type": "object"
+            },
+            "in": "query",
+            "description": "  collection type",
+            "required": true,
+            "example": "9817",
+            "name": "type"
+          }
+        ]
+      }
+    },
+    "/comment/pin/page/{pinId}": {
+      "get": {
+        "summary": "select all pinComments by pinId and page",
+        "deprecated": false,
+        "description": "select all pinComments by pinId and page",
+        "tags": [
+          "pin comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 462,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpinpage{pinId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "   pinId",
+            "required": true,
+            "example": "871",
+            "name": "pinId"
+          }
+        ]
+      }
+    },
+    "/post/like/single": {
+      "get": {
+        "summary": "select postLike by id",
+        "deprecated": false,
+        "description": "select postLike by id",
+        "tags": [
+          "post like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 335,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postlikesingle",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "postId",
+            "required": true,
+            "example": "324",
+            "name": "postId"
+          },
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "userId",
+            "required": true,
+            "example": "629",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/user/follow/follower/{userId}": {
+      "get": {
+        "summary": "select followers by userId",
+        "deprecated": false,
+        "description": "select followers by userId",
+        "tags": [
+          "user follow controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 595,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "userfollowfollower{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "example": "132",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/comment/post/like/page/{userId}": {
+      "get": {
+        "summary": "select all postCommentLikes by userId and page",
+        "deprecated": false,
+        "description": "select all postCommentLikes by userId and page",
+        "tags": [
+          "post comment like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 929,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpostlikepage{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "  userId",
+            "required": true,
+            "example": "880",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/tag/{followerId}": {
+      "get": {
+        "summary": "select all tags by followerId",
+        "deprecated": false,
+        "description": "select all tags by followerId",
+        "tags": [
+          "tag controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 445,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "tag{followerId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "followerId",
+            "required": true,
+            "example": "275",
+            "name": "followerId"
+          }
+        ]
+      }
+    },
+    "/comment/pin/like/page/{userId}": {
+      "get": {
+        "summary": "select all pinCommentLikes by userId and page",
+        "deprecated": false,
+        "description": "select all pinCommentLikes by userId and page",
+        "tags": [
+          "pin comment like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 585,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpinlikepage{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "  userId",
+            "required": true,
+            "example": "288",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/comment/post/page/{postId}": {
+      "get": {
+        "summary": "select all postComments by postId and page",
+        "deprecated": false,
+        "description": "select all postComments by postId and page",
+        "tags": [
+          "post comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 749,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpostpage{postId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "  postId",
+            "required": true,
+            "example": "695",
+            "name": "postId"
+          }
+        ]
+      }
+    },
+    "/comment/post/secondary/{id}": {
+      "get": {
+        "summary": "select secondary postComments by id",
+        "deprecated": false,
+        "description": "select secondary postComments by id",
+        "tags": [
+          "post comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 271,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpostsecondary{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "628",
+            "name": "id"
+          }
+        ]
+      }
+    },
+    "/auth/logout": {
+      "post": {
+        "summary": "user logout",
+        "deprecated": false,
+        "description": "user logout",
+        "tags": [
+          "auth controller\r\nTODO: Sa-Token 1.33.0 currently not supported Spring Boot 3.x"
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded;charset=UTF-8": {
+              "schema": {},
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "&w5xmud"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 666,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "authlogout",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "description": "token",
+            "required": true,
+            "example": "w5xmud",
+            "name": "token"
+          }
+        ]
+      }
+    },
+    "/tag/page": {
+      "get": {
+        "summary": "select all tags by page",
+        "deprecated": false,
+        "description": "select all tags by page",
+        "tags": [
+          "tag controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 306,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "tagpage",
+        "parameters": []
+      }
+    },
+    "/category/": {
+      "post": {
+        "summary": "add a category",
+        "deprecated": false,
+        "description": "add a category",
+        "tags": [
+          "category controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Category"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 633,\n  \"name\": \"mamie.gutkowski\",\n  \"cover\": \"1cqd6m\",\n  \"description\": \"wucfhq\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 297,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "category",
+        "parameters": []
+      },
+      "put": {
+        "summary": "update category",
+        "deprecated": false,
+        "description": "update category",
+        "tags": [
+          "category controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Category"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 859,\n  \"name\": \"mamie.gutkowski\",\n  \"cover\": \"xjtu52\",\n  \"description\": \"8atawb\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 878,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "category",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all categories",
+        "deprecated": false,
+        "description": "select all categories",
+        "tags": [
+          "category controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 578,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "category",
+        "parameters": []
+      }
+    },
+    "/collection/{id}": {
+      "delete": {
+        "summary": "delete collection by id",
+        "deprecated": false,
+        "description": "delete collection by id",
+        "tags": [
+          "collection controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 604,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "collection{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "861",
+            "name": "id"
+          }
+        ]
+      },
+      "get": {
+        "summary": "select collection by id",
+        "deprecated": false,
+        "description": "select collection by id",
+        "tags": [
+          "collection controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 96,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "collection{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "296",
+            "name": "id"
+          }
+        ]
+      }
+    },
+    "/post/page": {
+      "get": {
+        "summary": "select posts by page",
+        "deprecated": false,
+        "description": "select posts by page",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 18,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postpage",
+        "parameters": []
+      }
+    },
+    "/user/follow/page": {
+      "get": {
+        "summary": "select all userFollows by page",
+        "deprecated": false,
+        "description": "select all userFollows by page",
+        "tags": [
+          "user follow controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 142,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "userfollowpage",
+        "parameters": []
+      }
+    },
+    "/comment/pin/page/{authorId}": {
+      "get": {
+        "summary": "select all pinComments by authorId and page",
+        "deprecated": false,
+        "description": "select all pinComments by authorId and page",
+        "tags": [
+          "pin comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 804,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpinpage{authorId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "authorId",
+            "required": true,
+            "example": "927",
+            "name": "authorId"
+          }
+        ]
+      }
+    },
+    "/post/{columnId}": {
+      "get": {
+        "summary": "select posts by columnId",
+        "deprecated": false,
+        "description": "select posts by columnId",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 214,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post{columnId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "columnId",
+            "required": true,
+            "example": "980",
+            "name": "columnId"
+          }
+        ]
+      }
+    },
+    "/comment/pin/like/{userId}": {
+      "get": {
+        "summary": "select all pinCommentLikes by userId",
+        "deprecated": false,
+        "description": "select all pinCommentLikes by userId",
+        "tags": [
+          "pin comment like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 182,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpinlike{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "example": "622",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/comment/post/": {
+      "post": {
+        "summary": "add a postComment",
+        "deprecated": false,
+        "description": "add a postComment",
+        "tags": [
+          "post comment controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostComment"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 695,\n  \"content\": \"ugpuw2\",\n  \"uploadTime\": {},\n  \"authorId\": 274,\n  \"postId\": 272,\n  \"parentId\": 553\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 131,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpost",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all postComments",
+        "deprecated": false,
+        "description": "select all postComments",
+        "tags": [
+          "post comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 614,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpost",
+        "parameters": []
+      }
+    },
+    "/comment/pin/{pinId}": {
+      "get": {
+        "summary": "select all pinComments by pinId",
+        "deprecated": false,
+        "description": "select all pinComments by pinId",
+        "tags": [
+          "pin comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 310,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpin{pinId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "pinId",
+            "required": true,
+            "example": "23",
+            "name": "pinId"
+          }
+        ]
+      }
+    },
+    "/post/{collectionId}": {
+      "get": {
+        "summary": "select posts by collectionId",
+        "deprecated": false,
+        "description": "select posts by collectionId",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 49,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post{collectionId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "collectionId",
+            "required": true,
+            "example": "791",
+            "name": "collectionId"
+          }
+        ]
+      }
+    },
+    "/user/follow/page/followed/{userId}": {
+      "get": {
+        "summary": "select followeds by userId and page",
+        "deprecated": false,
+        "description": "select followeds by userId and page",
+        "tags": [
+          "user follow controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 348,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "userfollowpagefollowed{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "  userId",
+            "required": true,
+            "example": "323",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/post/like/page/{userId}": {
+      "get": {
+        "summary": "select all postLikes by userId and page",
+        "deprecated": false,
+        "description": "select all postLikes by userId and page",
+        "tags": [
+          "post like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 339,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postlikepage{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "  userId",
+            "required": true,
+            "example": "210",
+            "name": "userId"
+          }
+        ]
+      }
+    },
+    "/user/column/{columnId}": {
+      "get": {
+        "summary": "select UserColumns by columnId and type",
+        "deprecated": false,
+        "description": "select UserColumns by columnId and type",
+        "tags": [
+          "user column controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 884,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercolumn{columnId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "columnId",
+            "required": true,
+            "example": "231",
+            "name": "columnId"
+          },
+          {
+            "schema": {
+              "type": "object"
+            },
+            "in": "query",
+            "description": "    column type",
+            "required": true,
+            "example": "21300",
+            "name": "type"
+          }
+        ]
+      }
+    },
+    "/post/page/{authorId}": {
+      "get": {
+        "summary": "select posts by authorId and page",
+        "deprecated": false,
+        "description": "select posts by authorId and page",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 680,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postpage{authorId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "authorId",
+            "required": true,
+            "example": "106",
+            "name": "authorId"
+          }
+        ]
+      }
+    },
+    "/user/collection/page/{userId}": {
+      "get": {
+        "summary": "select userCollections by userId, type and page",
+        "deprecated": false,
+        "description": "select userCollections by userId, type and page",
+        "tags": [
+          "user collection controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 931,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercollectionpage{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "  userID",
+            "required": true,
+            "example": "622",
+            "name": "userId"
+          },
+          {
+            "schema": {
+              "type": "object"
+            },
+            "in": "query",
+            "description": "    collection type",
+            "required": true,
+            "example": "6486",
+            "name": "type"
+          }
+        ]
+      }
+    },
+    "/pin/{id}": {
+      "delete": {
+        "summary": "delete pin by id",
+        "deprecated": false,
+        "description": "delete pin by id",
+        "tags": [
+          "pin controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 843,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pin{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "570",
+            "name": "id"
+          }
+        ]
+      },
+      "get": {
+        "summary": "select pin by id",
+        "deprecated": false,
+        "description": "select pin by id",
+        "tags": [
+          "pin controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 728,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pin{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "327",
+            "name": "id"
+          }
+        ]
+      }
+    },
+    "/collection/": {
+      "post": {
+        "summary": "add a collection",
+        "deprecated": false,
+        "description": "add a collection",
+        "tags": [
+          "collection controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Collection"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 453,\n  \"name\": \"mamie.gutkowski\",\n  \"cover\": \"lw0vzb\",\n  \"description\": \"c5hkwj\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 210,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "collection",
+        "parameters": []
+      },
+      "put": {
+        "summary": "update collection",
+        "deprecated": false,
+        "description": "update collection",
+        "tags": [
+          "collection controller"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Collection"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"id\": 519,\n  \"name\": \"mamie.gutkowski\",\n  \"cover\": \"j6kkef\",\n  \"description\": \"qvm4ff\",\n  \"createTime\": \"2023-01-19 13:30:56\",\n  \"updateTime\": \"2023-01-19 13:30:56\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 889,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "collection",
+        "parameters": []
+      },
+      "get": {
+        "summary": "select all collections",
+        "deprecated": false,
+        "description": "select all collections",
+        "tags": [
+          "collection controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 49,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "collection",
+        "parameters": []
+      }
+    },
+    "/post/like/page": {
+      "get": {
+        "summary": "select all postLikes by page",
+        "deprecated": false,
+        "description": "select all postLikes by page",
+        "tags": [
+          "post like controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 118,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postlikepage",
+        "parameters": []
+      }
+    },
+    "/role/page": {
+      "get": {
+        "summary": "select all roles by page",
+        "deprecated": false,
+        "description": "select all roles by page",
+        "tags": [
+          "role controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 310,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "rolepage",
+        "parameters": []
+      }
+    },
+    "/user/column/page": {
+      "get": {
+        "summary": "select all UserColumns by page",
+        "deprecated": false,
+        "description": "select all UserColumns by page",
+        "tags": [
+          "user column controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 741,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercolumnpage",
+        "parameters": []
+      }
+    },
+    "/user/collection/page": {
+      "get": {
+        "summary": "select all userCollections by page",
+        "deprecated": false,
+        "description": "select all userCollections by page",
+        "tags": [
+          "user collection controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 593,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercollectionpage",
+        "parameters": []
+      }
+    },
+    "/comment/post/page/{authorId}": {
+      "get": {
+        "summary": "select all postComments by authorId and page",
+        "deprecated": false,
+        "description": "select all postComments by authorId and page",
+        "tags": [
+          "post comment controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 524,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "commentpostpage{authorId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "authorId",
+            "required": true,
+            "example": "549",
+            "name": "authorId"
+          }
+        ]
+      }
+    },
+    "/role/{id}": {
+      "delete": {
+        "summary": "delete role by id",
+        "deprecated": false,
+        "description": "delete role by id",
+        "tags": [
+          "role controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 846,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "role{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "695",
+            "name": "id"
+          }
+        ]
+      },
+      "get": {
+        "summary": "select role by id",
+        "deprecated": false,
+        "description": "select role by id",
+        "tags": [
+          "role controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 962,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "role{id}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "example": "572",
+            "name": "id"
+          }
+        ]
+      }
+    },
+    "/pin/page": {
+      "get": {
+        "summary": "select all pins by page",
+        "deprecated": false,
+        "description": "select all pins by page",
+        "tags": [
+          "pin controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 625,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pinpage",
+        "parameters": []
+      }
+    },
+    "/user/collection/page/{collectionId}": {
+      "get": {
+        "summary": "select userCollections by collectionId, type and page",
+        "deprecated": false,
+        "description": "select userCollections by collectionId, type and page",
+        "tags": [
+          "user collection controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1674106255918,\n  \"status\": 472,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "usercollectionpage{collectionId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "collectionId",
+            "required": true,
+            "example": "785",
+            "name": "collectionId"
+          },
+          {
+            "schema": {
+              "type": "object"
+            },
+            "in": "query",
+            "description": "        collection type",
+            "required": true,
+            "example": "7386",
+            "name": "type"
+          }
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "vosa",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "collection controller",
+      "description": "collection controller"
+    },
+    {
+      "name": "category controller",
+      "description": "category controller"
+    },
+    {
+      "name": "post comment controller",
+      "description": "post comment controller"
+    },
+    {
+      "name": "tag controller",
+      "description": "tag controller"
+    },
+    {
+      "name": "pin comment controller",
+      "description": "pin comment controller"
+    },
+    {
+      "name": "pin controller",
+      "description": "pin controller"
+    },
+    {
+      "name": "post comment like controller",
+      "description": "post comment like controller"
+    },
+    {
+      "name": "role controller",
+      "description": "role controller"
+    },
+    {
+      "name": "auth controller\r\nTODO: Sa-Token 1.33.0 currently not supported Spring Boot 3.x",
+      "description": "auth controller\r\nTODO: Sa-Token 1.33.0 currently not supported Spring Boot 3.x"
+    },
+    {
+      "name": "user follow controller",
+      "description": "user follow controller"
+    },
+    {
+      "name": "user column controller",
+      "description": "user column controller"
+    },
+    {
+      "name": "pin like controller",
+      "description": "pin like controller"
+    },
+    {
+      "name": "pin comment like controller",
+      "description": "pin comment like controller"
+    },
+    {
+      "name": "post like controller",
+      "description": "post like controller"
+    },
+    {
+      "name": "user collection controller",
+      "description": "user collection controller"
+    },
+    {
+      "name": "column controller",
+      "description": "column controller"
+    },
+    {
+      "name": "post controller",
+      "description": "post controller"
+    }
+  ]
+}
