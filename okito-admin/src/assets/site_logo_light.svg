@@ -1,0 +1,11 @@
+<svg 
+  width="32" 
+  height="32" 
+  viewBox="0 0 32 32"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  >
+  <path 
+    d="M 8 4 C 8, 18, 15 50, 30 8" stroke="#463CE8" stroke-width="6"
+    />
+</svg>
