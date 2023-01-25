@@ -32,12 +32,12 @@ const AppBar = styled(MuiAppBar, {
       duration: theme.transitions.duration.enteringScreen,
     }),
   }),
-  boxShadow: 'none',
-  backdropFilter: 'blur(8px)',
-  borderStyle: 'solid',
-  borderColor: 'rgba(231, 235, 240)',
-  borderWidth: '0px 0px thin',
-  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  // boxShadow: 'none',
+  // backdropFilter: 'blur(8px)',
+  // borderStyle: 'solid',
+  // borderColor: 'rgba(231, 235, 240)',
+  // borderWidth: '0px 0px thin',
+  // backgroundColor: 'rgba(255, 255, 255, 0.8)',
 }))
 
 interface MyAppBarProps {

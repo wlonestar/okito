@@ -27,7 +27,7 @@ export async function selectCategoryById(id: number) {
   })
 }
 
-export async function addCategory(category: Category) {
+export async function addCategory(category?: Category) {
   return client({
     url: '/category',
     method: 'POST',
@@ -35,7 +35,7 @@ export async function addCategory(category: Category) {
   })
 }
 
-export async function updateCategory(category: Category) {
+export async function updateCategory(category?: Category) {
   return client({
     url: '/category',
     method: 'PUT',
@@ -43,7 +43,7 @@ export async function updateCategory(category: Category) {
   })
 }
 
-export async function deleteCategoryById(id: number) {
+export async function deleteCategoryById(id?: number) {
   return client({
     url: `/category/${id}`,
     method: 'DELETE',
