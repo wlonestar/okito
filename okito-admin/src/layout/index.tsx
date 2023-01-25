@@ -7,6 +7,7 @@ import { CustomAppBar } from '../components/appbar'
 import { Nav } from '../components/nav'
 import Toolbar from '@mui/material/Toolbar'
 import { Container } from '@mui/material'
+import { Copyright } from "../components/footer";
 
 export const ColorModeContext = React.createContext({
   toggleColorMode: () => {},
@@ -59,6 +60,7 @@ export default function Layout() {
             <Toolbar />
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
               <Outlet />
+              <Copyright sx={{ pt: 4 }} />
             </Container>
           </Box>
         </Box>
