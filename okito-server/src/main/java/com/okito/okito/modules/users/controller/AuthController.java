@@ -17,7 +17,6 @@ import java.util.Objects;
 
 /**
  * auth controller
- * TODO: Sa-Token 1.33.0 currently not supported Spring Boot 3.x
  *
  * @author <a href="mailto:wlonestar@163.com">wjl</a>
  * @version 0.0.1
