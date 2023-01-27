@@ -7,8 +7,16 @@ import {
 } from '../../api/category'
 import { Category } from '../../types/category'
 
-import Grid from '@mui/material/Grid'
-import Paper from '@mui/material/Paper'
+import {
+  Alert,
+  Box,
+  Button,
+  Collapse,
+  IconButton,
+  Grid,
+  Paper,
+  AlertColor,
+} from '@mui/material'
 import {
   DataGrid,
   GridActionsCellItem,
@@ -23,12 +31,12 @@ import {
   GridToolbarContainer,
   MuiEvent,
 } from '@mui/x-data-grid'
-import { Button } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add'
 import SaveIcon from '@mui/icons-material/Save'
 import CancelIcon from '@mui/icons-material/Cancel'
 import EditIcon from '@mui/icons-material/Edit'
 import DeleteIcon from '@mui/icons-material/Delete'
+import CloseIcon from '@mui/icons-material/Close'
 import { useMount } from '../../utils/hook'
 
 interface EditToolbarProps {
@@ -66,9 +74,11 @@ function EditToolbar(props: EditToolbarProps) {
 export const CategoryPage = () => {
   // data
   const [rows, setRows] = useState<Category[]>([])
-  const [rowModesModel, setRowModesModel] = React.useState<GridRowModesModel>(
-    {}
-  )
+  const [rowModesModel, setRowModesModel] = useState<GridRowModesModel>({})
+
+  const [open, setOpen] = useState(false)
+  const [alert, setAlert] = useState('')
+  const [alertType, setAlertType] = useState<AlertColor>('success')
 
   const columns: GridColumns = [
     { field: 'id', headerName: 'ID', editable: false, width: 70 },
@@ -137,6 +147,17 @@ export const CategoryPage = () => {
     })
   })
 
+  function useAllCategories() {
+    selectAllCategories().then((res) => {
+      if (res.status === 20) {
+        setRows(res.data)
+        console.log(rows)
+      } else {
+        console.error(res)
+      }
+    })
+  }
+
   // method
   const handleRowEditStart = (
     params: GridRowParams,
@@ -168,6 +189,14 @@ export const CategoryPage = () => {
     const categoryId = rows.find((row) => row.id === id)?.id
     deleteCategoryById(categoryId).then((res) => {
       console.log(res)
+      if (res.status === 20) {
+        setAlert('delete success')
+        setAlertType('success')
+      } else {
+        setAlert('delete error')
+        setAlertType('error')
+      }
+      setOpen(true)
     })
   }
 
@@ -191,12 +220,28 @@ export const CategoryPage = () => {
       // update category
       updateCategory(updatedRow).then((res) => {
         console.log(res)
-        // TODO: place update success reminder
+        if (res.status === 20) {
+          setAlert('update success')
+          setAlertType('success')
+        } else {
+          setAlert('update error')
+          setAlertType('error')
+        }
+        setOpen(true)
       })
     } else {
+      // add category
       addCategory(newRow).then((res) => {
         console.log(res)
-        // TODO: place add success reminder
+        useAllCategories()
+        if (res.status === 20) {
+          setAlert('add success')
+          setAlertType('success')
+        } else {
+          setAlert('add error')
+          setAlertType('error')
+        }
+        setOpen(true)
       })
     }
     return updatedRow
@@ -208,13 +253,38 @@ export const CategoryPage = () => {
         <Grid item xs={12}>
           <Paper
             sx={{ p: 2, display: 'flex', flexDirection: 'column' }}
-            style={{ height: 700, width: '100%' }}
+            style={{ height: 775, width: '100%' }}
           >
+            <Box sx={{ width: '100%' }}>
+              <Collapse in={open}>
+                <Alert
+                  action={
+                    <IconButton
+                      aria-label="close"
+                      color="inherit"
+                      size="small"
+                      onClick={() => {
+                        setOpen(false)
+                        setAlert('')
+                      }}
+                    >
+                      <CloseIcon fontSize="inherit" />
+                    </IconButton>
+                  }
+                  severity={alertType}
+                  sx={{ mb: 2 }}
+                >
+                  {alert}
+                </Alert>
+              </Collapse>
+            </Box>
             <DataGrid
               rows={rows}
               columns={columns}
               editMode="row"
               rowModesModel={rowModesModel}
+              pageSize={10}
+              rowsPerPageOptions={[10, 25, 50, 100]}
               onRowModesModelChange={(
                 newModel: React.SetStateAction<GridRowModesModel>
               ) => setRowModesModel(newModel)}
