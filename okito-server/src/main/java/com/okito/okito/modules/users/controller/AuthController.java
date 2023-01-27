@@ -4,6 +4,7 @@ import cn.dev33.satoken.stp.StpUtil;
 import com.okito.okito.common.annotation.TimeLog;
 import com.okito.okito.common.constant.consts.RespResult;
 import com.okito.okito.common.constant.enums.RespStatus;
+import com.okito.okito.common.utils.StringUtil;
 import com.okito.okito.modules.users.model.entity.User;
 import com.okito.okito.modules.users.model.param.LoginParam;
 import com.okito.okito.modules.users.model.param.RegisterParam;
@@ -33,14 +34,22 @@ public class AuthController {
 
   /**
    * user login
-   * TODO: can add login by username or email and password ?
    *
    * @param param login param
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.POST, path = "/login")
   public RespResult<?> login(@NonNull @RequestBody LoginParam param) {
-    User user = userService.selectByUsernameAndPassword(param.getUsername(), param.getPassword());
+    String loginInfo = StringUtil.getInstance().parseEmail(param.getLoginInfo());
+    String password = param.getPassword();
+    User user = new User();
+    if (loginInfo == null) {
+      // username
+      user = userService.selectByUsernameAndPassword(param.getLoginInfo(), password);
+    } else {
+      // email
+      user = userService.selectByEmailAndPassword(param.getLoginInfo(), password);
+    }
     if (!Objects.equals(user, null)) {
       log.info("login userid: {}", user.getId());
       StpUtil.login(user.getId());
@@ -56,6 +65,7 @@ public class AuthController {
 
   /**
    * user register
+   * <p>
    * TODO: before register should confirm captcha by email
    *
    * @param param register param
