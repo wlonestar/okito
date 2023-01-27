@@ -9,7 +9,6 @@ import { Category } from '../../types/category'
 
 import {
   Alert,
-  Box,
   Button,
   Collapse,
   IconButton,
@@ -251,33 +250,31 @@ export const CategoryPage = () => {
     <>
       <Grid container spacing={3}>
         <Grid item xs={12}>
+          <Collapse in={open}>
+            <Alert
+              action={
+                <IconButton
+                  aria-label="close"
+                  color="inherit"
+                  size="small"
+                  onClick={() => {
+                    setOpen(false)
+                    setAlert('')
+                  }}
+                >
+                  <CloseIcon fontSize="inherit" />
+                </IconButton>
+              }
+              severity={alertType}
+              sx={{ mb: 2 }}
+            >
+              {alert}
+            </Alert>
+          </Collapse>
           <Paper
             sx={{ p: 2, display: 'flex', flexDirection: 'column' }}
-            style={{ height: 775, width: '100%' }}
+            style={{ height: 702, width: '100%' }}
           >
-            <Box sx={{ width: '100%' }}>
-              <Collapse in={open}>
-                <Alert
-                  action={
-                    <IconButton
-                      aria-label="close"
-                      color="inherit"
-                      size="small"
-                      onClick={() => {
-                        setOpen(false)
-                        setAlert('')
-                      }}
-                    >
-                      <CloseIcon fontSize="inherit" />
-                    </IconButton>
-                  }
-                  severity={alertType}
-                  sx={{ mb: 2 }}
-                >
-                  {alert}
-                </Alert>
-              </Collapse>
-            </Box>
             <DataGrid
               rows={rows}
               columns={columns}
