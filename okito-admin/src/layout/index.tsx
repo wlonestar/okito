@@ -7,7 +7,7 @@ import { CustomAppBar } from '../components/appbar'
 import { Nav } from '../components/nav'
 import Toolbar from '@mui/material/Toolbar'
 import { Container } from '@mui/material'
-import { Copyright } from "../components/footer";
+import { Copyright } from '../components/footer'
 
 export const ColorModeContext = React.createContext({
   toggleColorMode: () => {},

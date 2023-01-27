@@ -32,7 +32,7 @@ const AppBar = styled(MuiAppBar, {
       duration: theme.transitions.duration.enteringScreen,
     }),
   }),
-  // boxShadow: 'none',
+  boxShadow: 'none',
   // backdropFilter: 'blur(8px)',
   // borderStyle: 'solid',
   // borderColor: 'rgba(231, 235, 240)',

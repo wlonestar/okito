@@ -1,13 +1,18 @@
 import React from 'react'
-import Toolbar from '@mui/material/Toolbar'
-import Divider from '@mui/material/Divider'
-import List from '@mui/material/List'
 import { mainListItems, secondaryListItems } from './list-items'
 import { styled } from '@mui/material/styles'
-import MuiDrawer from '@mui/material/Drawer'
-import { drawerWidth } from '../consts'
-import Typography from '@mui/material/Typography'
-import { ReactComponent as Logo } from '../../assets/vite.svg'
+import { drawerWidth, siteName, siteVersion } from '../consts'
+import {
+  Box,
+  IconButton,
+  Typography,
+  Toolbar,
+  Divider,
+  List,
+  Drawer as MuiDrawer,
+} from '@mui/material'
+import { ReactComponent as Logo } from '../../assets/okito_32.svg'
+import './index.css'
 
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -50,16 +55,48 @@ export const Nav = (props: AsideProps) => {
           px: [1],
         }}
       >
-        <Logo />
-        <Typography
-          component="h1"
-          variant="h6"
-          color="inherit"
-          noWrap
-          sx={{ flexGrow: 1 }}
+        <IconButton
+          className="siteLogo"
+          href="/"
+          sx={{
+            paddingRight: '12px',
+            marginRight: '4px',
+          }}
         >
-          Vosa Admin
-        </Typography>
+          <Logo />
+        </IconButton>
+        <Box sx={{ flexGrow: 1 }}>
+          <Typography
+            color="inherit"
+            noWrap
+            sx={{
+              flexGrow: 1,
+              marginLeft: '8px',
+              color: '#6F7E8C',
+              lineHeight: 1.5,
+              fontSize: '1.0625rem',
+              fontWeight: '600',
+            }}
+          >
+            {siteName}
+          </Typography>
+          <Box>
+            <Typography
+              color="inherit"
+              noWrap
+              sx={{
+                flexGrow: 1,
+                marginLeft: '8px',
+                color: '#0072E5',
+                lineHeight: 1.5,
+                fontSize: '0.75rem',
+                fontWeight: '600',
+              }}
+            >
+              {siteVersion}
+            </Typography>
+          </Box>
+        </Box>
       </Toolbar>
       <Divider />
       <List component="nav">
