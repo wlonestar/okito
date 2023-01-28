@@ -68,6 +68,12 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
+  public User selectByEmailAndPassword(String email, String password) {
+    User user = userRepository.findUserByEmailAndPassword(email, password);
+    return Objects.equals(user, null) ? null : user;
+  }
+
+  @Override
   public User selectById(Long id) {
     return userRepository.findById(id).orElse(null);
   }

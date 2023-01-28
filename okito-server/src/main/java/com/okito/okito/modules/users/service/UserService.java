@@ -28,6 +28,8 @@ public interface UserService {
 
   User selectByUsernameAndPassword(String username, String password);
 
+  User selectByEmailAndPassword(String email, String password);
+
   User selectById(Long id);
 
   boolean add(User user);
