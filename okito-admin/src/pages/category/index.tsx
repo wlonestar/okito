@@ -6,7 +6,7 @@ import {
   updateCategory,
 } from '../../api/category'
 import { Category } from '../../types/category'
-import { Grid, Paper, AlertColor } from '@mui/material'
+import { Grid, AlertColor } from '@mui/material'
 import {
   DataGrid,
   GridActionsCellItem,
@@ -26,12 +26,14 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import { useMount } from '../../utils/hook'
 import { CustomAlert } from '../../components/custom-alert'
 import { AlertMessage } from '../../components/consts'
-import { EditToolbar } from '../../components/edit-toolbar'
+import { EditToolbar } from '../../components/custom-table/edit-toolbar'
+import { renderCellExpand } from '../../components/custom-table/grid-cell-expand'
 
 export const CategoryPage = () => {
   // data
   const [rows, setRows] = useState<Category[]>([])
   const [rowModesModel, setRowModesModel] = useState<GridRowModesModel>({})
+  const [pageSize, setPageSize] = useState<number>(10)
   const [open, setOpen] = useState(false)
   const [alert, setAlert] = useState<AlertMessage>('default')
   const [alertType, setAlertType] = useState<AlertColor>('success')
@@ -45,6 +47,7 @@ export const CategoryPage = () => {
       type: 'string',
       editable: true,
       width: 300,
+      renderCell: renderCellExpand,
     },
     {
       field: 'actions',
@@ -206,17 +209,18 @@ export const CategoryPage = () => {
               setAlert('default')
             }}
           />
-          <Paper
-            sx={{ p: 2, display: 'flex', flexDirection: 'column' }}
-            style={{ height: 702, width: '100%' }}
-          >
+          <div style={{ height: 702, width: '100%' }}>
             <DataGrid
               rows={rows}
               columns={columns}
               editMode="row"
               rowModesModel={rowModesModel}
-              pageSize={10}
+              pageSize={pageSize}
+              onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
               rowsPerPageOptions={[10, 25, 50, 100]}
+              sx={{
+                boxSizing: 'border-box',
+              }}
               onRowModesModelChange={(
                 newModel: React.SetStateAction<GridRowModesModel>
               ) => setRowModesModel(newModel)}
@@ -231,7 +235,7 @@ export const CategoryPage = () => {
               }}
               experimentalFeatures={{ newEditingApi: true }}
             />
-          </Paper>
+          </div>
         </Grid>
       </Grid>
     </>

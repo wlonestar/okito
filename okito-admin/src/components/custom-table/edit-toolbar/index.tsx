@@ -3,7 +3,11 @@ import {
   GridRowModes,
   GridRowModesModel,
   GridRowsProp,
+  GridToolbarColumnsButton,
   GridToolbarContainer,
+  GridToolbarDensitySelector,
+  GridToolbarExport,
+  GridToolbarFilterButton,
 } from '@mui/x-data-grid'
 import AddIcon from '@mui/icons-material/Add'
 
@@ -32,6 +36,10 @@ export const EditToolbar = (props: EditToolbarProps) => {
       <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
         Add record
       </Button>
+      <GridToolbarColumnsButton />
+      <GridToolbarDensitySelector />
+      <GridToolbarFilterButton />
+      <GridToolbarExport />
     </GridToolbarContainer>
   )
 }
