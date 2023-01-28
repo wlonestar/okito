@@ -4,7 +4,6 @@ import Paper from '@mui/material/Paper'
 import Chart from '../../pages/home/chart'
 import Deposits from '../../pages/home/deposits'
 import Orders from '../../pages/home/orders'
-import { CustomTable } from '../../components/table'
 import { GridColDef, GridValueGetterParams } from '@mui/x-data-grid'
 
 export default function Dashboard() {
@@ -72,7 +71,7 @@ export default function Dashboard() {
           sx={{ p: 2, display: 'flex', flexDirection: 'column' }}
           style={{ height: 400, width: '100%' }}
         >
-          <CustomTable columns={columns} rows={rows} />
+          {/*<CustomTable columns={columns} rows={rows} />*/}
         </Paper>
       </Grid>
       <Grid item xs={12}>

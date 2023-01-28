@@ -9,7 +9,6 @@ export async function selectAllCategories() {
   })
 }
 
-// TODO
 export async function selectAllCategoriesByPage(param: PageParam) {
   return client({
     url: '/category/page',

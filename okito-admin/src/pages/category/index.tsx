@@ -6,16 +6,7 @@ import {
   updateCategory,
 } from '../../api/category'
 import { Category } from '../../types/category'
-
-import {
-  Alert,
-  Button,
-  Collapse,
-  IconButton,
-  Grid,
-  Paper,
-  AlertColor,
-} from '@mui/material'
+import { Grid, Paper, AlertColor } from '@mui/material'
 import {
   DataGrid,
   GridActionsCellItem,
@@ -26,59 +17,24 @@ import {
   GridRowModes,
   GridRowModesModel,
   GridRowParams,
-  GridRowsProp,
-  GridToolbarContainer,
   MuiEvent,
 } from '@mui/x-data-grid'
-import AddIcon from '@mui/icons-material/Add'
 import SaveIcon from '@mui/icons-material/Save'
 import CancelIcon from '@mui/icons-material/Cancel'
 import EditIcon from '@mui/icons-material/Edit'
 import DeleteIcon from '@mui/icons-material/Delete'
-import CloseIcon from '@mui/icons-material/Close'
 import { useMount } from '../../utils/hook'
-
-interface EditToolbarProps {
-  setRows: (newRows: (oldRows: GridRowsProp) => GridRowsProp) => void
-  setRowModesModel: (
-    newModel: (oldModel: GridRowModesModel) => GridRowModesModel
-  ) => void
-}
-
-function EditToolbar(props: EditToolbarProps) {
-  const { setRows, setRowModesModel } = props
-
-  const handleClick = () => {
-    // set new row id = 0
-    const id: number = 0
-    setRows((oldRows) => [
-      ...oldRows,
-      { id, name: '', cover: '', description: '', isNew: true },
-    ])
-    setRowModesModel((oldModel) => ({
-      ...oldModel,
-      [id]: { mode: GridRowModes.Edit, fieldToFocus: 'name' },
-    }))
-  }
-
-  return (
-    <GridToolbarContainer>
-      <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
-        Add record
-      </Button>
-    </GridToolbarContainer>
-  )
-}
+import { CustomAlert } from '../../components/custom-alert'
+import { AlertMessage } from '../../components/consts'
+import { EditToolbar } from '../../components/edit-toolbar'
 
 export const CategoryPage = () => {
   // data
   const [rows, setRows] = useState<Category[]>([])
   const [rowModesModel, setRowModesModel] = useState<GridRowModesModel>({})
-
   const [open, setOpen] = useState(false)
-  const [alert, setAlert] = useState('')
+  const [alert, setAlert] = useState<AlertMessage>('default')
   const [alertType, setAlertType] = useState<AlertColor>('success')
-
   const columns: GridColumns = [
     { field: 'id', headerName: 'ID', editable: false, width: 70 },
     { field: 'name', headerName: 'Name', editable: true, width: 130 },
@@ -98,7 +54,6 @@ export const CategoryPage = () => {
       cellClassName: 'actions',
       getActions: ({ id }) => {
         const isInEditMode = rowModesModel[id]?.mode === GridRowModes.Edit
-
         if (isInEditMode) {
           return [
             <GridActionsCellItem
@@ -135,17 +90,7 @@ export const CategoryPage = () => {
     },
   ]
 
-  useMount(() => {
-    selectAllCategories().then((res) => {
-      if (res.status === 20) {
-        setRows(res.data)
-        console.log(rows)
-      } else {
-        console.error(res)
-      }
-    })
-  })
-
+  // method
   function useAllCategories() {
     selectAllCategories().then((res) => {
       if (res.status === 20) {
@@ -157,7 +102,15 @@ export const CategoryPage = () => {
     })
   }
 
-  // method
+  useMount(() => {
+    useAllCategories()
+  })
+
+  function setAlertMessage(alert: AlertMessage, alertType: AlertColor) {
+    setAlert(alert)
+    setAlertType(alertType)
+  }
+
   const handleRowEditStart = (
     params: GridRowParams,
     event: MuiEvent<React.SyntheticEvent>
@@ -189,11 +142,9 @@ export const CategoryPage = () => {
     deleteCategoryById(categoryId).then((res) => {
       console.log(res)
       if (res.status === 20) {
-        setAlert('delete success')
-        setAlertType('success')
+        setAlertMessage('delete success', 'success')
       } else {
-        setAlert('delete error')
-        setAlertType('error')
+        setAlertMessage('delete error', 'error')
       }
       setOpen(true)
     })
@@ -220,11 +171,9 @@ export const CategoryPage = () => {
       updateCategory(updatedRow).then((res) => {
         console.log(res)
         if (res.status === 20) {
-          setAlert('update success')
-          setAlertType('success')
+          setAlertMessage('update success', 'success')
         } else {
-          setAlert('update error')
-          setAlertType('error')
+          setAlertMessage('update error', 'error')
         }
         setOpen(true)
       })
@@ -234,11 +183,9 @@ export const CategoryPage = () => {
         console.log(res)
         useAllCategories()
         if (res.status === 20) {
-          setAlert('add success')
-          setAlertType('success')
+          setAlertMessage('add success', 'success')
         } else {
-          setAlert('add error')
-          setAlertType('error')
+          setAlertMessage('add error', 'error')
         }
         setOpen(true)
       })
@@ -250,27 +197,15 @@ export const CategoryPage = () => {
     <>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Collapse in={open}>
-            <Alert
-              action={
-                <IconButton
-                  aria-label="close"
-                  color="inherit"
-                  size="small"
-                  onClick={() => {
-                    setOpen(false)
-                    setAlert('')
-                  }}
-                >
-                  <CloseIcon fontSize="inherit" />
-                </IconButton>
-              }
-              severity={alertType}
-              sx={{ mb: 2 }}
-            >
-              {alert}
-            </Alert>
-          </Collapse>
+          <CustomAlert
+            open={open}
+            alert={alert}
+            alertType={alertType}
+            onClose={() => {
+              setOpen(false)
+              setAlert('default')
+            }}
+          />
           <Paper
             sx={{ p: 2, display: 'flex', flexDirection: 'column' }}
             style={{ height: 702, width: '100%' }}

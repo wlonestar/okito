@@ -1,7 +1,10 @@
 import React from 'react'
-import ListItemButton from '@mui/material/ListItemButton'
-import ListItemIcon from '@mui/material/ListItemIcon'
-import ListItemText from '@mui/material/ListItemText'
+import {
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  ListSubheader,
+} from '@mui/material'
 
 import CategoryIcon from '@mui/icons-material/Category'
 import CollectionsIcon from '@mui/icons-material/Collections'
@@ -12,7 +15,6 @@ import KeyIcon from '@mui/icons-material/Key'
 import PersonIcon from '@mui/icons-material/Person'
 import LocalOfferIcon from '@mui/icons-material/LocalOffer'
 
-import ListSubheader from '@mui/material/ListSubheader'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import AssignmentIcon from '@mui/icons-material/Assignment'
 
@@ -80,6 +82,42 @@ export const secondaryListItems = (
     <ListSubheader component="div" inset>
       Saved reports
     </ListSubheader>
+    <ListItemButton>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Current month" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Last quarter" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Year-end sale" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Current month" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Last quarter" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Year-end sale" />
+    </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
         <AssignmentIcon />

@@ -1,75 +1,120 @@
 import React from 'react'
-import Toolbar from '@mui/material/Toolbar'
-import IconButton from '@mui/material/IconButton'
-import MenuIcon from '@mui/icons-material/Menu'
-import Typography from '@mui/material/Typography'
-import Badge from '@mui/material/Badge'
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Badge,
+} from '@mui/material'
+import { Theme } from '@mui/material/styles'
+import { siteName, siteVersion } from '../consts'
 import NotificationsIcon from '@mui/icons-material/Notifications'
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar'
-import { styled, Theme } from '@mui/material/styles'
-import { drawerWidth } from '../consts'
 import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 import { ColorModeContext } from '../../layout'
+import { ReactComponent as Logo } from '../../assets/okito_32.svg'
+import './index.css'
 
-interface AppBarProps extends MuiAppBarProps {
-  open?: boolean
-}
-
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})<AppBarProps>(({ theme, open }) => ({
-  zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(['width', 'margin'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
-  boxShadow: 'none',
-  // backdropFilter: 'blur(8px)',
-  // borderStyle: 'solid',
-  // borderColor: 'rgba(231, 235, 240)',
-  // borderWidth: '0px 0px thin',
-  // backgroundColor: 'rgba(255, 255, 255, 0.8)',
-}))
+// const AppBar = styled(MuiAppBar, {
+//   shouldForwardProp: (prop) => prop !== 'open',
+// })(({ theme }) => ({
+//   zIndex: theme.zIndex.drawer + 1,
+//   transition: theme.transitions.create(['width', 'margin'], {
+//     easing: theme.transitions.easing.sharp,
+//     duration: theme.transitions.duration.leavingScreen,
+//   }),
+//   ...({
+//     marginLeft: drawerWidth,
+//     width: `calc(100% - ${drawerWidth}px)`,
+//     transition: theme.transitions.create(['width', 'margin'], {
+//       easing: theme.transitions.easing.sharp,
+//       duration: theme.transitions.duration.enteringScreen,
+//     }),
+//   }),
+// boxShadow: 'none',
+// backdropFilter: 'blur(8px)',
+// borderStyle: 'solid',
+// borderColor: 'rgba(231, 235, 240)',
+// borderWidth: '0px 0px thin',
+// backgroundColor: 'rgba(255, 255, 255, 0.8)',
+// }))
 
 interface MyAppBarProps {
-  open: boolean
-  toggleDrawer: () => void
   theme: Theme
 }
 
-export const CustomAppBar = ({ open, toggleDrawer, theme }: MyAppBarProps) => {
+export const CustomAppBar = ({ theme }: MyAppBarProps) => {
   const colorMode = React.useContext(ColorModeContext)
 
   return (
-    <AppBar position="absolute" color="inherit" open={open}>
-      <Toolbar
-        sx={{
-          pr: '24px', // keep right padding when drawer closed
-        }}
-      >
+    <AppBar
+      position="fixed"
+      color="inherit"
+      sx={{
+        zIndex: (theme) => theme.zIndex.drawer + 1,
+        boxShadow: 'none',
+        backdropFilter: 'blur(8px)',
+        borderStyle: 'solid',
+        borderColor: (theme) =>
+          theme.palette.mode === 'light'
+            ? 'rgba(231, 235, 240)'
+            : 'rgba(194, 224, 255, 0.08)',
+        borderWidth: '0px 0px thin',
+        backgroundColor: (theme) =>
+          theme.palette.mode === 'light'
+            ? 'rgba(255, 255, 255, 0.8)'
+            : 'rgba(0, 0, 0, 0)',
+      }}
+    >
+      <Toolbar>
         <IconButton
-          edge="start"
-          color="inherit"
-          aria-label="open drawer"
-          onClick={toggleDrawer}
+          className="siteLogo"
+          href="/"
           sx={{
-            marginRight: '36px',
-            ...(open && { display: 'none' }),
+            paddingRight: '12px',
+            marginRight: '4px',
           }}
         >
-          <MenuIcon />
+          <Logo />
         </IconButton>
+        <Box sx={{ flexGrow: 1 }}>
+          <Typography
+            color="inherit"
+            noWrap
+            sx={{
+              flexGrow: 1,
+              marginLeft: '8px',
+              color: (theme) =>
+                theme.palette.mode === 'light'
+                  ? '#6F7E8C'
+                  : 'rgb(211, 226, 240)',
+              lineHeight: 1.5,
+              fontSize: '1.0625rem',
+              fontWeight: '600',
+            }}
+          >
+            {siteName}
+          </Typography>
+          <Box>
+            <Typography
+              color="inherit"
+              noWrap
+              sx={{
+                flexGrow: 1,
+                marginLeft: '8px',
+                color: '#0072E5',
+                lineHeight: 1.5,
+                fontSize: '0.75rem',
+                fontWeight: '600',
+              }}
+            >
+              {siteVersion}
+            </Typography>
+          </Box>
+        </Box>
         <Typography
-          component="h1"
+          component="div"
           variant="h6"
           color="inherit"
           noWrap

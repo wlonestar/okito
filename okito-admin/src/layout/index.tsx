@@ -14,11 +14,6 @@ export const ColorModeContext = React.createContext({
 })
 
 export default function Layout() {
-  const [open, setOpen] = React.useState(true)
-  const toggleDrawer = () => {
-    setOpen(!open)
-  }
-
   const [mode, setMode] = React.useState<'light' | 'dark'>('light')
   const colorMode = React.useMemo(
     () => ({
@@ -43,8 +38,8 @@ export default function Layout() {
       <ThemeProvider theme={theme}>
         <Box sx={{ display: 'flex' }}>
           <CssBaseline />
-          <CustomAppBar open={open} toggleDrawer={toggleDrawer} theme={theme} />
-          <Nav open={open} />
+          <CustomAppBar theme={theme} />
+          <Nav />
           <Box
             component="main"
             sx={{
@@ -53,7 +48,8 @@ export default function Layout() {
                   ? theme.palette.grey[100]
                   : theme.palette.grey[900],
               flexGrow: 1,
-              height: '100vh',
+              p: 3,
+              // height: '100vh',
               overflow: 'auto',
             }}
           >
