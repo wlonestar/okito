@@ -1,140 +1,36 @@
 import React from 'react'
-import {
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  ListSubheader,
-} from '@mui/material'
+import { Typography } from '@mui/material'
 
-import CategoryIcon from '@mui/icons-material/Category'
-import CollectionsIcon from '@mui/icons-material/Collections'
-import BookmarkIcon from '@mui/icons-material/Bookmark'
-import ShortTextIcon from '@mui/icons-material/ShortText'
-import ArticleIcon from '@mui/icons-material/Article'
-import KeyIcon from '@mui/icons-material/Key'
-import PersonIcon from '@mui/icons-material/Person'
-import LocalOfferIcon from '@mui/icons-material/LocalOffer'
+interface CustomListItemProps {
+  title: string
+}
 
-import DashboardIcon from '@mui/icons-material/Dashboard'
-import AssignmentIcon from '@mui/icons-material/Assignment'
-
-export const mainListItems = (
-  <React.Fragment>
-    <ListItemButton href="/">
-      <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
-      <ListItemText primary="Dashboard" />
-    </ListItemButton>
-    <ListItemButton href="/category">
-      <ListItemIcon>
-        <CategoryIcon />
-      </ListItemIcon>
-      <ListItemText primary="Category" />
-    </ListItemButton>
-    <ListItemButton href="/collection">
-      <ListItemIcon>
-        <CollectionsIcon />
-      </ListItemIcon>
-      <ListItemText primary="Collection" />
-    </ListItemButton>
-    <ListItemButton href="/column">
-      <ListItemIcon>
-        <BookmarkIcon />
-      </ListItemIcon>
-      <ListItemText primary="Column" />
-    </ListItemButton>
-    <ListItemButton href="/pin">
-      <ListItemIcon>
-        <ShortTextIcon />
-      </ListItemIcon>
-      <ListItemText primary="Pin" />
-    </ListItemButton>
-    <ListItemButton href="/post">
-      <ListItemIcon>
-        <ArticleIcon />
-      </ListItemIcon>
-      <ListItemText primary="Post" />
-    </ListItemButton>
-    <ListItemButton href="/role">
-      <ListItemIcon>
-        <KeyIcon />
-      </ListItemIcon>
-      <ListItemText primary="Role" />
-    </ListItemButton>
-    <ListItemButton href="/user">
-      <ListItemIcon>
-        <PersonIcon />
-      </ListItemIcon>
-      <ListItemText primary="User" />
-    </ListItemButton>
-    <ListItemButton href="/tag">
-      <ListItemIcon>
-        <LocalOfferIcon />
-      </ListItemIcon>
-      <ListItemText primary="Tag" />
-    </ListItemButton>
-  </React.Fragment>
-)
-
-export const secondaryListItems = (
-  <React.Fragment>
-    <ListSubheader component="div" inset>
-      Saved reports
-    </ListSubheader>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Current month" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Last quarter" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Current month" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Last quarter" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Current month" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Last quarter" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
-    </ListItemButton>
-  </React.Fragment>
-)
+export const CustomListItem = ({ title }: CustomListItemProps) => {
+  return (
+    <li style={{ display: 'block', padding: '2px 0' }}>
+      <Typography
+        component="a"
+        variant="inherit"
+        href={`/${title}`}
+        sx={{
+          margin: 0,
+          fontSize: '0.875rem',
+          lineHeight: 1.5,
+          letterSpacing: 0,
+          fontWeight: 500,
+          display: 'flex',
+          alignItems: 'center',
+          borderRadius: '5px',
+          outline: 0,
+          width: '100%',
+          justifyContent: 'flex-start',
+          textDecoration: 'none',
+          paddingLeft: '31px',
+          color: 'rgb(26, 32, 39)',
+        }}
+      >
+        {title}
+      </Typography>
+    </li>
+  )
+}

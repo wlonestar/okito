@@ -1,7 +1,7 @@
 import React from 'react'
-import { mainListItems, secondaryListItems } from './list-items'
 import { drawerWidth } from '../consts'
-import { Box, Toolbar, Divider, List, Drawer } from '@mui/material'
+import { Box, Toolbar, Drawer } from '@mui/material'
+import { NavList } from './list'
 
 export const Nav = () => {
   return (
@@ -15,9 +15,7 @@ export const Nav = () => {
     >
       <Toolbar />
       <Box sx={{ overflow: 'auto' }}>
-        <List>{mainListItems}</List>
-        <Divider sx={{ my: 1 }} />
-        <List>{secondaryListItems}</List>
+        <NavList />
       </Box>
     </Drawer>
   )
