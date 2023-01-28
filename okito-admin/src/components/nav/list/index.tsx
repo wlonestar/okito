@@ -1,90 +1,64 @@
-import { Box, Collapse, List, Typography } from '@mui/material'
-import DatasetIcon from '@mui/icons-material/Dataset'
-import { CustomListItem } from '../list-items'
+import React from 'react'
+import { CustomItem } from '../items'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemText from '@mui/material/ListItemText'
+import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown'
 
-export const NavList = () => {
+export interface NavListProps {
+  title: string
+  secondary: string
+  items: string[]
+}
+
+export const NavList = ({ title, secondary, items }: NavListProps) => {
+  const [open, setOpen] = React.useState(true)
+
   return (
-    <List
-      sx={{
-        listStyle: 'none',
-        margin: 0,
-        padding: 0,
-        marginTop: '4px',
-        marginBottom: '4px',
-      }}
-    >
-      <li style={{ display: 'block', padding: '8px 10px 0px 10px' }}>
-        <Typography
-          component="a"
-          variant="inherit"
-          sx={{
-            margin: 0,
-            textDecoration: 'none',
-            alignItems: 'center',
-            fontSize: '0.875rem',
-            lineHeight: 1.5,
-            fontWeight: 500,
-            display: 'flex',
-            justifyContent: 'flex-start',
-            paddingLeft: '2px',
-            color: '#1A2017',
+    <>
+      <ListItemButton
+        alignItems="flex-start"
+        onClick={() => setOpen(!open)}
+        sx={{
+          px: 3,
+          pt: 2.5,
+          pb: open ? 0 : 2.5,
+          '&:hover, &:focus': { '& svg': { opacity: open ? 1 : 0 } },
+        }}
+      >
+        <ListItemText
+          primary={title}
+          primaryTypographyProps={{
+            fontSize: 15,
+            fontWeight: 'medium',
+            lineHeight: '20px',
+            mb: '2px',
           }}
-        >
-          <Box
-            component="span"
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              height: '100%',
-              marginRight: '12px',
-              paddingTop: '2px',
-              paddingBottom: '2px',
-            }}
-          >
-            <DatasetIcon
-              sx={{
-                userSelect: 'none',
-                width: '1em',
-                height: '1em',
-                display: 'inline-block',
-                fill: 'currentColor',
-                flexShrink: 0,
-                color: 'rgba(0, 0, 0, 0.54)',
-              }}
-            />
-          </Box>
-          tables
-        </Typography>
-        <Collapse
-          component="div"
-          in={true}
-          sx={{
-            height: 'auto',
-            overflow: 'visible',
-            transition: 'height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+          secondary={secondary}
+          secondaryTypographyProps={{
+            noWrap: true,
+            fontSize: 12,
+            lineHeight: '16px',
+            color: (theme) =>
+              theme.palette.mode === 'light'
+                ? open
+                  ? 'rgba(0, 0, 0, 0)'
+                  : 'rgba(0, 0, 0, 0.5)'
+                : open
+                ? 'rgba(0, 0, 0, 0)'
+                : 'rgba(255, 255, 255, 0.5)',
           }}
-        >
-          <List
-            component="ul"
-            sx={{
-              listStyle: 'none',
-              position: 'relative',
-              padding: 0,
-              margin: '4px 0',
-              color: 'rgb(26, 32, 39)',
-            }}
-          >
-            <CustomListItem title={'category'} />
-            <CustomListItem title={'collection'} />
-            <CustomListItem title={'column'} />
-            <CustomListItem title={'pin'} />
-            <CustomListItem title={'post'} />
-            <CustomListItem title={'role'} />
-            <CustomListItem title={'user'} />
-            <CustomListItem title={'tag'} />
-          </List>
-        </Collapse>
-      </li>
-    </List>
+          sx={{ my: 0 }}
+        />
+        <KeyboardArrowDown
+          sx={{
+            mr: -1,
+            opacity: 0,
+            transform: open ? 'rotate(-180deg)' : 'rotate(0)',
+            transition: '0.2s',
+          }}
+        />
+      </ListItemButton>
+      {open && items.map((title) => <CustomItem title={title} />)}
+    </>
   )
 }
