@@ -6,9 +6,7 @@ import {
   updateCategory,
 } from '../../api/category'
 import { Category } from '../../types/category'
-
-import Grid from '@mui/material/Grid'
-import Paper from '@mui/material/Paper'
+import { Grid, AlertColor } from '@mui/material'
 import {
   DataGrid,
   GridActionsCellItem,
@@ -19,57 +17,26 @@ import {
   GridRowModes,
   GridRowModesModel,
   GridRowParams,
-  GridRowsProp,
-  GridToolbarContainer,
   MuiEvent,
 } from '@mui/x-data-grid'
-import { Button } from '@mui/material'
-import AddIcon from '@mui/icons-material/Add'
 import SaveIcon from '@mui/icons-material/Save'
 import CancelIcon from '@mui/icons-material/Cancel'
 import EditIcon from '@mui/icons-material/Edit'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { useMount } from '../../utils/hook'
-
-interface EditToolbarProps {
-  setRows: (newRows: (oldRows: GridRowsProp) => GridRowsProp) => void
-  setRowModesModel: (
-    newModel: (oldModel: GridRowModesModel) => GridRowModesModel
-  ) => void
-}
-
-function EditToolbar(props: EditToolbarProps) {
-  const { setRows, setRowModesModel } = props
-
-  const handleClick = () => {
-    // set new row id = 0
-    const id: number = 0
-    setRows((oldRows) => [
-      ...oldRows,
-      { id, name: '', cover: '', description: '', isNew: true },
-    ])
-    setRowModesModel((oldModel) => ({
-      ...oldModel,
-      [id]: { mode: GridRowModes.Edit, fieldToFocus: 'name' },
-    }))
-  }
-
-  return (
-    <GridToolbarContainer>
-      <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
-        Add record
-      </Button>
-    </GridToolbarContainer>
-  )
-}
+import { CustomAlert } from '../../components/custom-alert'
+import { AlertMessage } from '../../components/consts'
+import { EditToolbar } from '../../components/custom-table/edit-toolbar'
+import { renderCellExpand } from '../../components/custom-table/grid-cell-expand'
 
 export const CategoryPage = () => {
   // data
   const [rows, setRows] = useState<Category[]>([])
-  const [rowModesModel, setRowModesModel] = React.useState<GridRowModesModel>(
-    {}
-  )
-
+  const [rowModesModel, setRowModesModel] = useState<GridRowModesModel>({})
+  const [pageSize, setPageSize] = useState<number>(10)
+  const [open, setOpen] = useState(false)
+  const [alert, setAlert] = useState<AlertMessage>('default')
+  const [alertType, setAlertType] = useState<AlertColor>('success')
   const columns: GridColumns = [
     { field: 'id', headerName: 'ID', editable: false, width: 70 },
     { field: 'name', headerName: 'Name', editable: true, width: 130 },
@@ -80,6 +47,7 @@ export const CategoryPage = () => {
       type: 'string',
       editable: true,
       width: 300,
+      renderCell: renderCellExpand,
     },
     {
       field: 'actions',
@@ -89,7 +57,6 @@ export const CategoryPage = () => {
       cellClassName: 'actions',
       getActions: ({ id }) => {
         const isInEditMode = rowModesModel[id]?.mode === GridRowModes.Edit
-
         if (isInEditMode) {
           return [
             <GridActionsCellItem
@@ -126,7 +93,8 @@ export const CategoryPage = () => {
     },
   ]
 
-  useMount(() => {
+  // method
+  function useAllCategories() {
     selectAllCategories().then((res) => {
       if (res.status === 20) {
         setRows(res.data)
@@ -135,9 +103,17 @@ export const CategoryPage = () => {
         console.error(res)
       }
     })
+  }
+
+  useMount(() => {
+    useAllCategories()
   })
 
-  // method
+  function setAlertMessage(alert: AlertMessage, alertType: AlertColor) {
+    setAlert(alert)
+    setAlertType(alertType)
+  }
+
   const handleRowEditStart = (
     params: GridRowParams,
     event: MuiEvent<React.SyntheticEvent>
@@ -168,6 +144,12 @@ export const CategoryPage = () => {
     const categoryId = rows.find((row) => row.id === id)?.id
     deleteCategoryById(categoryId).then((res) => {
       console.log(res)
+      if (res.status === 20) {
+        setAlertMessage('delete success', 'success')
+      } else {
+        setAlertMessage('delete error', 'error')
+      }
+      setOpen(true)
     })
   }
 
@@ -191,12 +173,24 @@ export const CategoryPage = () => {
       // update category
       updateCategory(updatedRow).then((res) => {
         console.log(res)
-        // TODO: place update success reminder
+        if (res.status === 20) {
+          setAlertMessage('update success', 'success')
+        } else {
+          setAlertMessage('update error', 'error')
+        }
+        setOpen(true)
       })
     } else {
+      // add category
       addCategory(newRow).then((res) => {
         console.log(res)
-        // TODO: place add success reminder
+        useAllCategories()
+        if (res.status === 20) {
+          setAlertMessage('add success', 'success')
+        } else {
+          setAlertMessage('add error', 'error')
+        }
+        setOpen(true)
       })
     }
     return updatedRow
@@ -206,15 +200,27 @@ export const CategoryPage = () => {
     <>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Paper
-            sx={{ p: 2, display: 'flex', flexDirection: 'column' }}
-            style={{ height: 700, width: '100%' }}
-          >
+          <CustomAlert
+            open={open}
+            alert={alert}
+            alertType={alertType}
+            onClose={() => {
+              setOpen(false)
+              setAlert('default')
+            }}
+          />
+          <div style={{ height: 702, width: '100%' }}>
             <DataGrid
               rows={rows}
               columns={columns}
               editMode="row"
               rowModesModel={rowModesModel}
+              pageSize={pageSize}
+              onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+              rowsPerPageOptions={[10, 25, 50, 100]}
+              sx={{
+                boxSizing: 'border-box',
+              }}
               onRowModesModelChange={(
                 newModel: React.SetStateAction<GridRowModesModel>
               ) => setRowModesModel(newModel)}
@@ -229,7 +235,7 @@ export const CategoryPage = () => {
               }}
               experimentalFeatures={{ newEditingApi: true }}
             />
-          </Paper>
+          </div>
         </Grid>
       </Grid>
     </>
