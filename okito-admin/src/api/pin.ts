@@ -50,7 +50,7 @@ export function selectById(id: number) {
   })
 }
 
-export function addPin(pin: Pin) {
+export function addPin(pin?: Pin) {
   return client({
     url: '/pin',
     method: 'POST',
@@ -58,7 +58,7 @@ export function addPin(pin: Pin) {
   })
 }
 
-export function updatePin(pin: Pin) {
+export function updatePin(pin?: Pin) {
   return client({
     url: '/pin',
     method: 'PUT',
@@ -66,7 +66,7 @@ export function updatePin(pin: Pin) {
   })
 }
 
-export function updatePinById(id: number) {
+export function deletePinById(id?: number) {
   return client({
     url: `/pin/${id}`,
     method: 'DELETE',

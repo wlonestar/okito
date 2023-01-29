@@ -53,7 +53,13 @@ export default function Layout() {
             }}
           >
             <Toolbar />
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Container
+              maxWidth="lg"
+              sx={{
+                mt: 4,
+                mb: 4,
+              }}
+            >
               <Outlet />
               <Footer />
             </Container>

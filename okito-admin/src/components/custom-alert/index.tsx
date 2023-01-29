@@ -1,11 +1,10 @@
 import React from 'react'
 import { Alert, AlertColor, Collapse, IconButton } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import { AlertMessage } from '../consts'
 
 interface CustomAlertProps {
   open: boolean
-  alert: AlertMessage
+  alert: string
   alertType: AlertColor
   onClose: () => void
 }
