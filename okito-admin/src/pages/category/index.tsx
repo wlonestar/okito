@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { SetStateAction, useState } from 'react'
 import {
   addCategory,
   deleteCategoryById,
@@ -8,16 +8,12 @@ import {
 import { Category } from '../../types/category'
 import { Grid, AlertColor } from '@mui/material'
 import {
-  DataGrid,
   GridActionsCellItem,
   GridColumns,
-  GridEventListener,
   GridRowId,
   GridRowModel,
   GridRowModes,
   GridRowModesModel,
-  GridRowParams,
-  MuiEvent,
 } from '@mui/x-data-grid'
 import SaveIcon from '@mui/icons-material/Save'
 import CancelIcon from '@mui/icons-material/Cancel'
@@ -25,18 +21,17 @@ import EditIcon from '@mui/icons-material/Edit'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { useMount } from '../../utils/hook'
 import { CustomAlert } from '../../components/custom-alert'
-import { AlertMessage } from '../../components/consts'
-import { EditToolbar } from '../../components/custom-table/edit-toolbar'
 import { renderCellExpand } from '../../components/custom-table/grid-cell-expand'
+import { CustomTable } from '../../components/custom-table'
 
 export const CategoryPage = () => {
   // data
   const [rows, setRows] = useState<Category[]>([])
   const [rowModesModel, setRowModesModel] = useState<GridRowModesModel>({})
   const [pageSize, setPageSize] = useState<number>(10)
-  const [open, setOpen] = useState(false)
-  const [alert, setAlert] = useState<AlertMessage>('default')
-  const [alertType, setAlertType] = useState<AlertColor>('success')
+  const [alertOpen, setAlertOpen] = useState(false)
+  const [alertContent, setAlertContent] = useState<string>('')
+  const [alertType, setAlertType] = useState<AlertColor>('error')
   const columns: GridColumns = [
     { field: 'id', headerName: 'ID', editable: false, width: 70 },
     { field: 'name', headerName: 'Name', editable: true, width: 130 },
@@ -73,7 +68,6 @@ export const CategoryPage = () => {
             />,
           ]
         }
-
         return [
           <GridActionsCellItem
             icon={<EditIcon />}
@@ -109,23 +103,9 @@ export const CategoryPage = () => {
     useAllCategories()
   })
 
-  function setAlertMessage(alert: AlertMessage, alertType: AlertColor) {
-    setAlert(alert)
+  function setAlertMessage(alertContent: string, alertType: AlertColor) {
+    setAlertContent(alertContent)
     setAlertType(alertType)
-  }
-
-  const handleRowEditStart = (
-    params: GridRowParams,
-    event: MuiEvent<React.SyntheticEvent>
-  ) => {
-    event.defaultMuiPrevented = true
-  }
-
-  const handleRowEditStop: GridEventListener<'rowEditStop'> = (
-    params,
-    event
-  ) => {
-    event.defaultMuiPrevented = true
   }
 
   // edit mode
@@ -149,7 +129,7 @@ export const CategoryPage = () => {
       } else {
         setAlertMessage('delete error', 'error')
       }
-      setOpen(true)
+      setAlertOpen(true)
     })
   }
 
@@ -178,7 +158,7 @@ export const CategoryPage = () => {
         } else {
           setAlertMessage('update error', 'error')
         }
-        setOpen(true)
+        setAlertOpen(true)
       })
     } else {
       // add category
@@ -190,54 +170,41 @@ export const CategoryPage = () => {
         } else {
           setAlertMessage('add error', 'error')
         }
-        setOpen(true)
+        setAlertOpen(true)
       })
     }
     return updatedRow
   }
 
   return (
-    <>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <CustomAlert
-            open={open}
-            alert={alert}
-            alertType={alertType}
-            onClose={() => {
-              setOpen(false)
-              setAlert('default')
+    <Grid container spacing={3}>
+      <Grid item xs={12}>
+        <CustomAlert
+          open={alertOpen}
+          alert={alertContent}
+          alertType={alertType}
+          onClose={() => {
+            setAlertOpen(false)
+            setAlertContent('')
+          }}
+        />
+        <div style={{ height: 702, width: '100%' }}>
+          <CustomTable
+            rows={rows}
+            columns={columns}
+            rowModesModel={rowModesModel}
+            pageSize={pageSize}
+            onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+            onRowModesModelChange={(
+              newModel: SetStateAction<GridRowModesModel>
+            ) => setRowModesModel(newModel)}
+            processRowUpdate={processRowUpdate}
+            componentsProps={{
+              toolbar: { setRows, setRowModesModel },
             }}
           />
-          <div style={{ height: 702, width: '100%' }}>
-            <DataGrid
-              rows={rows}
-              columns={columns}
-              editMode="row"
-              rowModesModel={rowModesModel}
-              pageSize={pageSize}
-              onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-              rowsPerPageOptions={[10, 25, 50, 100]}
-              sx={{
-                boxSizing: 'border-box',
-              }}
-              onRowModesModelChange={(
-                newModel: React.SetStateAction<GridRowModesModel>
-              ) => setRowModesModel(newModel)}
-              onRowEditStart={handleRowEditStart}
-              onRowEditStop={handleRowEditStop}
-              processRowUpdate={processRowUpdate}
-              components={{
-                Toolbar: EditToolbar,
-              }}
-              componentsProps={{
-                toolbar: { setRows, setRowModesModel },
-              }}
-              experimentalFeatures={{ newEditingApi: true }}
-            />
-          </div>
-        </Grid>
+        </div>
       </Grid>
-    </>
+    </Grid>
   )
 }

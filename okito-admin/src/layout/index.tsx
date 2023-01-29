@@ -43,17 +43,23 @@ export default function Layout() {
           <Box
             component="main"
             sx={{
-              backgroundColor: (theme) =>
-                theme.palette.mode === 'light'
-                  ? theme.palette.grey[100]
-                  : theme.palette.grey[900],
+              // backgroundColor: (theme) =>
+              //   theme.palette.mode === 'light'
+              //     ? theme.palette.grey[100]
+              //     : theme.palette.grey[900],
               flexGrow: 1,
               p: 3,
               overflow: 'auto',
             }}
           >
             <Toolbar />
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Container
+              maxWidth="lg"
+              sx={{
+                mt: 4,
+                mb: 4,
+              }}
+            >
               <Outlet />
               <Footer />
             </Container>

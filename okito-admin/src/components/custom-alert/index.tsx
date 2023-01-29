@@ -39,3 +39,9 @@ export const CustomAlert = ({
     </Collapse>
   )
 }
+
+export interface CustomAlertProp {
+  open?: boolean
+  content: string
+  type: AlertColor
+}
