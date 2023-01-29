@@ -1,6 +1,5 @@
 import React from 'react'
-import ListItemText from '@mui/material/ListItemText'
-import ListItemButton from '@mui/material/ListItemButton'
+import { ListItemText, ListItemButton } from '@mui/material'
 
 interface CustomListItemProps {
   title: string
@@ -12,7 +11,9 @@ export const CustomItem = ({ title }: CustomListItemProps) => {
       href={`/${title}`}
       sx={{
         py: 0,
-        minHeight: 32,
+        borderStyle: 'solid',
+        borderRadius: '4px',
+        margin: '6px',
         color: (theme) =>
           theme.palette.mode === 'light'
             ? 'rgba(0, 0, 0, 0.8)'
@@ -22,8 +23,15 @@ export const CustomItem = ({ title }: CustomListItemProps) => {
       <ListItemText
         primary={title}
         primaryTypographyProps={{
-          fontSize: 14,
+          fontSize: 16,
           fontWeight: 'medium',
+          color: (theme) =>
+            theme.palette.mode === 'light'
+              ? theme.palette.grey[800]
+              : theme.palette.grey[200],
+        }}
+        sx={{
+          paddingLeft: '36px',
         }}
       />
     </ListItemButton>
