@@ -52,7 +52,7 @@ export const NavList = ({ title, items }: NavListProps) => {
           }}
         />
       </ListItemButton>
-      {open && items.map((title) => <CustomItem title={title} />)}
+      {open && items.map((title) => <CustomItem key={title} title={title} />)}
     </>
   )
 }

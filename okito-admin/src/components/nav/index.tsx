@@ -1,11 +1,12 @@
 import React from 'react'
 import { drawerWidth } from '../consts'
 import { Box, Drawer, Toolbar } from '@mui/material'
-import { NavList, NavListProps } from './list'
+import { NavList } from './list'
 
 export const Nav = () => {
-  const props: NavListProps[] = [
+  const props = [
     {
+      id: 1,
       title: 'Table',
       items: [
         'category',
@@ -31,8 +32,8 @@ export const Nav = () => {
     >
       <Toolbar />
       <Box sx={{ overflow: 'auto' }}>
-        {props.map(({ title, items }) => (
-          <NavList title={title} items={items} />
+        {props.map(({ id, title, items }) => (
+          <NavList key={id} title={title} items={items} />
         ))}
       </Box>
     </Drawer>

@@ -40,14 +40,14 @@ export const PinPage = () => {
       field: 'createTime',
       type: 'dateTime',
       headerName: 'Create Time',
-      editable: true,
+      editable: false,
       width: 220,
     },
     {
       field: 'updateTime',
       type: 'dateTime',
       headerName: 'Update Time',
-      editable: true,
+      editable: false,
       width: 220,
     },
     {
@@ -105,7 +105,7 @@ export const PinPage = () => {
     selectAllPins().then((res) => {
       if (res.status === 20) {
         setRows(res.data)
-        console.log(rows)
+        console.log(res.data)
       } else {
         console.error(res)
       }
@@ -163,7 +163,8 @@ export const PinPage = () => {
     const updatedRow = { ...newRow, isNew: false }
     setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)))
     if (newRow.id !== 0) {
-      // update pin
+      // @ts-ignore
+      updatedRow.updateTime = new Date()
       updatePin(updatedRow).then((res) => {
         console.log(res)
         if (res.status === 20) {
@@ -175,6 +176,8 @@ export const PinPage = () => {
       })
     } else {
       // add pin
+      newRow.createTime = new Date()
+      newRow.updateTime = new Date()
       addPin(newRow).then((res) => {
         console.log(res)
         useAllPins()
