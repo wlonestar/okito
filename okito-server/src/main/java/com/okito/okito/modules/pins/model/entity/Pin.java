@@ -27,11 +27,11 @@ public class Pin implements Serializable {
   private String content;
 
   @Column(name = "create_time")
-  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS")
+//  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS")
   private LocalDateTime createTime;
 
   @Column(name = "update_time")
-  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS")
+//  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS")
   private LocalDateTime updateTime;
 
   @Column(name = "author_id")
