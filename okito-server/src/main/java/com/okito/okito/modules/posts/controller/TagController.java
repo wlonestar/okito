@@ -47,7 +47,7 @@ public class TagController {
    * @param postId postId
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/{postId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/post/{postId}")
   public RespResult<?> selectAllByPostId(@PathVariable(name = "postId") Long postId) {
     return RespResult.success(tagService.selectAllByPostId(postId));
   }
@@ -58,7 +58,7 @@ public class TagController {
    * @param followerId followerId
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/{followerId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/follower/{followerId}")
   public RespResult<?> selectAllByFollowerId(@PathVariable(name = "followerId") Long followerId) {
     return RespResult.success(tagService.selectAllByFollowerId(followerId));
   }
@@ -82,7 +82,7 @@ public class TagController {
    * @param pageable format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/{postId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/page/post/{postId}")
   public RespResult<?> selectAllByPostId(
       @PathVariable(name = "postId") Long postId,
       @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
@@ -96,7 +96,7 @@ public class TagController {
    * @param pageable   format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/{followerId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/page/follower/{followerId}")
   public RespResult<?> selectAllByFollowerId(
       @PathVariable(name = "followerId") Long followerId,
       @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
