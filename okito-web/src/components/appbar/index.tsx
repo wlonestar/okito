@@ -9,6 +9,7 @@ import { CustomMobileMenu } from './mobile-menu'
 import { SiteLogo } from './site-logo'
 import { CustomSearch } from './search'
 import { DarkIcon } from '../dark-icon'
+import { CustomNav } from './nav'
 
 interface CustomAppBarProps {
   theme: Theme
@@ -61,8 +62,14 @@ export const CustomAppBar = ({ theme }: CustomAppBarProps) => {
               : 'rgba(0, 0, 0, 0)',
         }}
       >
-        <Toolbar>
+        <Toolbar
+          sx={{
+            width: '1080px',
+            margin: '0 auto',
+          }}
+        >
           <SiteLogo />
+          <CustomNav />
           <Box sx={{ flexGrow: 1 }} />
           <CustomSearch theme={theme} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
