@@ -4,6 +4,7 @@ import com.okito.okito.common.annotation.TimeLog;
 import com.okito.okito.common.constant.consts.RespResult;
 import com.okito.okito.common.constant.enums.RespStatus;
 import com.okito.okito.modules.users.model.entity.User;
+import com.okito.okito.modules.users.model.view.UserView;
 import com.okito.okito.modules.users.service.UserService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -34,7 +35,7 @@ public class UserController {
    */
   @RequestMapping(method = RequestMethod.GET, path = "/{id}")
   public RespResult<?> selectById(@NonNull @PathVariable(name = "id") Long id) {
-    User user = userService.selectById(id);
+    UserView user = userService.selectViewById(id);
     if (!Objects.equals(user, null)) {
       return RespResult.success(user);
     }

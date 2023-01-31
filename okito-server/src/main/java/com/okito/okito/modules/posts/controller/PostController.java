@@ -47,7 +47,7 @@ public class PostController {
    * @param cateId cateId
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/{cateId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/cate/{cateId}")
   public RespResult<?> selectAllByCateId(@NonNull @PathVariable(name = "cateId") Long cateId) {
     return RespResult.success(postService.selectAllByCateId(cateId));
   }
@@ -58,7 +58,7 @@ public class PostController {
    * @param tagId tagId
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/{tagId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/tag/{tagId}")
   public RespResult<?> selectAllByTagId(@NonNull @PathVariable(name = "tagId") Long tagId) {
     return RespResult.success(postService.selectAllByTagId(tagId));
   }
@@ -69,7 +69,7 @@ public class PostController {
    * @param collectionId collectionId
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/{collectionId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/collection/{collectionId}")
   public RespResult<?> selectAllByCollectionId(@NonNull @PathVariable(name = "collectionId") Long collectionId) {
     return RespResult.success(postService.selectAllByCollectionId(collectionId));
   }
@@ -80,7 +80,7 @@ public class PostController {
    * @param columnId columnId
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/{columnId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/column/{columnId}")
   public RespResult<?> selectAllByColumnId(@NonNull @PathVariable(name = "columnId") Long columnId) {
     return RespResult.success(postService.selectAllByColumnId(columnId));
   }
@@ -91,7 +91,7 @@ public class PostController {
    * @param authorId authorId
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/{authorId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
   public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
     return RespResult.success(postService.selectAllByAuthorId(authorId));
   }
@@ -115,7 +115,7 @@ public class PostController {
    * @param pageable format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/{cateId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/page/cate/{cateId}")
   public RespResult<?> selectAllByCateId(
       @NonNull @PathVariable(name = "cateId") Long cateId,
       @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
@@ -129,7 +129,7 @@ public class PostController {
    * @param pageable format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/{tagId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/page/tag/{tagId}")
   public RespResult<?> selectAllByTagId(
       @NonNull @PathVariable(name = "tagId") Long tagId,
       @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
@@ -143,7 +143,7 @@ public class PostController {
    * @param pageable     format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/{collectionId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/page/collection/{collectionId}")
   public RespResult<?> selectAllByCollectionId(
       @NonNull @PathVariable(name = "collectionId") Long collectionId,
       @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
@@ -157,7 +157,7 @@ public class PostController {
    * @param pageable format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/{columnId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/page/column/{columnId}")
   public RespResult<?> selectAllByColumnId(
       @NonNull @PathVariable(name = "columnId") Long columnId,
       @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
@@ -171,7 +171,7 @@ public class PostController {
    * @param pageable format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/{authorId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/page/author/{authorId}")
   public RespResult<?> selectAllByAuthorId(
       @NonNull @PathVariable(name = "authorId") Long authorId,
       @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
