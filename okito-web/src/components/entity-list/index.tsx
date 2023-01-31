@@ -22,7 +22,7 @@ export const EntityList = () => {
   return (
     <Box>
       {posts.map((post) => (
-        <PostCard key={'post-' + post.id} post={post} />
+        <PostCard key={'posts-' + post.id} post={post} />
       ))}
     </Box>
   )

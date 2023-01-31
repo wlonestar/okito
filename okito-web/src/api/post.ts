@@ -6,3 +6,10 @@ export function selectAllPosts() {
     method: 'GET',
   })
 }
+
+export function selectPostById(id: number) {
+  return client({
+    url: `/post/${id}`,
+    method: 'GET',
+  })
+}

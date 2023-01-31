@@ -14,3 +14,7 @@ export const useDebounce = <V>(value: V, delay?: number) => {
   }, [value, delay])
   return debouncedValue
 }
+
+export const useTimeout = (delay: number) => {
+  return new Promise((res) => setTimeout(res, delay))
+}
