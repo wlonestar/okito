@@ -59,8 +59,8 @@ export const PostCard = ({ post }: PostCardProps) => {
   return (
     <Card variant="outlined" sx={{ borderWidth: '0px 0px thin' }}>
       <CardContent>
-        <Grid container>
-          <Grid item xs={12} pb={1}>
+        <Grid container spacing={1}>
+          <Grid item xs={12}>
             <Typography
               component="div"
               sx={{ fontSize: 14 }}
@@ -87,9 +87,16 @@ export const PostCard = ({ post }: PostCardProps) => {
             </Typography>
           </Grid>
           <Grid item xs={12} md={9} lg={9}>
-            <Typography variant="h5" component="div" fontWeight="500">
-              {post.title}
-            </Typography>
+            <Link href={`/post/${post.id}`} underline="none">
+              <Typography
+                variant="h5"
+                component="div"
+                fontWeight="500"
+                sx={{ color: '#000' }}
+              >
+                {post.title}
+              </Typography>
+            </Link>
             <Typography sx={{ mb: 1.5 }} color="text.secondary">
               {post.summary}
             </Typography>

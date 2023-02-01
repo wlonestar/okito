@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Paper } from '@mui/material'
+import { Grid } from '@mui/material'
 import { Aside } from './aside'
 import { Main } from './main'
 
