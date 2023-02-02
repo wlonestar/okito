@@ -54,7 +54,10 @@ export const PostCard = ({ post }: PostCardProps) => {
   })
 
   return (
-    <Card variant="outlined" sx={{ borderWidth: '0px 0px thin' }}>
+    <Card
+      variant="outlined"
+      sx={{ borderWidth: '0px 0px thin', borderRadius: 0 }}
+    >
       <CardContent>
         <Grid container spacing={1}>
           <Grid item xs={12}>

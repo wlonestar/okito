@@ -7,6 +7,13 @@ export function selectAllPosts() {
   })
 }
 
+export function selectPostsByTagId(id: number) {
+  return client({
+    url: `/post/tag/${id}`,
+    method: 'GET',
+  })
+}
+
 export function selectPostById(id: number) {
   return client({
     url: `/post/${id}`,

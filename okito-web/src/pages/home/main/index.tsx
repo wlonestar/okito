@@ -1,38 +1,7 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { Box, Paper, Tab, Tabs } from '@mui/material'
 import { EntityList } from './entity-list'
-
-interface TabPanelProps {
-  children?: ReactNode
-  index: number
-  value: number
-}
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props
-
-  return (
-    <div
-      role="tab-panel"
-      hidden={value !== index}
-      id={`simple-tab-panel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-      style={{
-        padding: 0,
-      }}
-    >
-      {value === index && <Box>{children}</Box>}
-    </div>
-  )
-}
-
-function tabProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tab-panel-${index}`,
-  }
-}
+import { TabPanel, tabProps } from '../../../components/tab'
 
 export const Main = () => {
   const [value, setValue] = React.useState(0)

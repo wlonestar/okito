@@ -6,3 +6,10 @@ export function selectTagsByPostId(postId: number) {
     method: 'GET',
   })
 }
+
+export function selectTagById(id: number) {
+  return client({
+    url: `/tag/${id}`,
+    method: 'GET',
+  })
+}
