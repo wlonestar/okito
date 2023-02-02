@@ -14,7 +14,7 @@ export const ColorModeContext = React.createContext({
   toggleColorMode: () => {},
 })
 
-export default function Layout() {
+export const Layout = () => {
   const [mode, setMode] = React.useState<'light' | 'dark'>('light')
   const colorMode = React.useMemo(
     () => ({

@@ -21,7 +21,7 @@ export const SiteLogo = () => {
         variant="h5"
         noWrap
         component="div"
-        sx={{ display: { xs: 'none', sm: 'block' } }}
+        sx={{ display: { xs: 'none', sm: 'block' }, cursor: 'pointer', pr: 2 }}
       >
         okito
       </Typography>

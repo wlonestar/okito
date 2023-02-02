@@ -3,52 +3,22 @@ import { useMount } from '../../utils/hook'
 import { useParams } from 'react-router-dom'
 import { Box, Button, Grid, Paper, Typography } from '@mui/material'
 import { Aside } from '../home/aside'
-import { Post } from '../../types/post'
+import { Post, postDefault } from '../../types/post'
 import { selectPostById } from '../../api/post'
 import { AuthorLine } from '../../components/author-line'
-import { User } from '../../types/user'
+import { User, userDefault } from '../../types/user'
 import { selectUserById } from '../../api/user'
 import { Md2html } from '../../components/md2html'
-import { Category } from '../../types/category'
+import { Category, categoryDefault } from '../../types/category'
 import { Tag } from '../../types/tag'
 import { selectCategoryById } from '../../api/category'
 import { selectTagsByPostId } from '../../api/tag'
 
 export const PostPage = () => {
   const { id } = useParams()
-  const [post, setPost] = useState<Post>({
-    authorId: 0,
-    cateId: 0,
-    content: '',
-    cover: '',
-    createTime: new Date(),
-    draft: false,
-    id: 0,
-    likeNum: 0,
-    summary: '',
-    title: '',
-    updateTime: new Date(),
-  })
-  const [user, setUser] = useState<User>({
-    avatar: '',
-    bio: '',
-    email: '',
-    followedNum: 0,
-    followerNum: 0,
-    homepage: '',
-    id: 0,
-    intro: '',
-    joinTime: new Date(),
-    password: '',
-    postLikeNum: 0,
-    username: '',
-  })
-  const [cate, setCate] = useState<Category>({
-    cover: '',
-    description: '',
-    id: 0,
-    name: '',
-  })
+  const [post, setPost] = useState<Post>(postDefault)
+  const [user, setUser] = useState<User>(userDefault)
+  const [cate, setCate] = useState<Category>(categoryDefault)
   const [tags, setTags] = useState<Tag[]>([])
 
   useMount(async () => {
@@ -88,10 +58,11 @@ export const PostPage = () => {
             </Typography>
             {/*author*/}
             <AuthorLine
+              id={user.id}
               name={user.username}
               avatar={user.avatar}
               dateTime={post.createTime}
-              readNum={user.postLikeNum}
+              likeNum={user.postLikeNum}
             />
             {/*cover*/}
             <Box>

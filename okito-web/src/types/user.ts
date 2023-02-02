@@ -12,3 +12,18 @@ export interface User {
   followedNum: number
   postLikeNum: number
 }
+
+export const userDefault = {
+  id: 0,
+  username: '',
+  password: '',
+  email: '',
+  avatar: '',
+  bio: '',
+  homepage: '',
+  intro: '',
+  joinTime: new Date(),
+  followerNum: 0,
+  followedNum: 0,
+  postLikeNum: 0,
+}

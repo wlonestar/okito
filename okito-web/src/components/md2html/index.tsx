@@ -9,13 +9,7 @@ import rehypeRaw from 'rehype-raw'
 import CodeCopyButton from './copy-code'
 
 const components = {
-  code({
-    node,
-    inline,
-    className = 'blog-code',
-    children,
-    ...props
-  }: CodeProps) {
+  code({ node, inline, className, children, ...props }: CodeProps) {
     const match = /language-(\w+)/.exec(className || '')
     return !inline && match ? (
       <SyntaxHighlighter
@@ -38,7 +32,12 @@ const components = {
   },
   // @ts-ignore
   pre: ({ children }) => (
-    <pre className="blog-pre">
+    <pre
+      style={{
+        position: 'relative',
+        fontFamily: '"Fira Code", Roboto, serif !important',
+      }}
+    >
       <CodeCopyButton>{children}</CodeCopyButton>
       {children}
     </pre>
@@ -67,8 +66,6 @@ interface Md2htmlProps {
 export const Md2html = ({ content }: Md2htmlProps) => {
   return (
     <ReactMarkdown
-      className="post-markdown"
-      linkTarget="_blank"
       children={content}
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeKatex, rehypeRaw]}

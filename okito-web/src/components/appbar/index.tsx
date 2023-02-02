@@ -3,13 +3,11 @@ import { AppBar, Box, Toolbar, IconButton, Badge, Theme } from '@mui/material'
 import AccountCircle from '@mui/icons-material/AccountCircle'
 import MailIcon from '@mui/icons-material/Mail'
 import NotificationsIcon from '@mui/icons-material/Notifications'
-import MoreIcon from '@mui/icons-material/MoreVert'
 import { CustomMenu } from './menu'
-import { CustomMobileMenu } from './mobile-menu'
 import { SiteLogo } from './site-logo'
 import { CustomSearch } from './search'
-import { DarkIcon } from '../dark-icon'
-import { CustomNav } from './nav'
+import { DarkIcon } from './dark-icon'
+import { Nav } from './nav'
 
 interface CustomAppBarProps {
   theme: Theme
@@ -17,28 +15,15 @@ interface CustomAppBarProps {
 
 export const CustomAppBar = ({ theme }: CustomAppBarProps) => {
   const menuId = 'primary-search-account-menu'
-  const mobileMenuId = 'primary-search-account-menu-mobile'
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
-    useState<null | HTMLElement>(null)
   const isMenuOpen = Boolean(anchorEl)
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget)
   }
 
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null)
-  }
-
   const handleMenuClose = () => {
     setAnchorEl(null)
-    handleMobileMenuClose()
-  }
-
-  const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setMobileMoreAnchorEl(event.currentTarget)
   }
 
   return (
@@ -69,7 +54,7 @@ export const CustomAppBar = ({ theme }: CustomAppBarProps) => {
           }}
         >
           <SiteLogo />
-          <CustomNav />
+          <Nav />
           <Box sx={{ flexGrow: 1 }} />
           <CustomSearch theme={theme} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
@@ -103,28 +88,9 @@ export const CustomAppBar = ({ theme }: CustomAppBarProps) => {
               <AccountCircle />
             </IconButton>
           </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box>
           <DarkIcon theme={theme} />
         </Toolbar>
       </AppBar>
-      <CustomMobileMenu
-        mobileMoreAnchorEl={mobileMoreAnchorEl}
-        mobileMenuId={mobileMenuId}
-        isMobileMenuOpen={isMobileMenuOpen}
-        handleMobileMenuClose={handleProfileMenuOpen}
-        handleProfileMenuOpen={handleMobileMenuOpen}
-      />
       <CustomMenu
         anchorEl={anchorEl}
         menuId={menuId}

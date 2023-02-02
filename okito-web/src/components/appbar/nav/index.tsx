@@ -8,7 +8,7 @@ interface TabProps {
   to: To
 }
 
-export const CustomNav = () => {
+export const Nav = () => {
   const [value, setValue] = React.useState(0)
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)

@@ -1,18 +1,20 @@
-import { ButtonBase, Grid, Typography } from '@mui/material'
+import { ButtonBase, Grid, Link, Typography } from '@mui/material'
 import { formatDateTime } from '../../utils/date'
 
 interface AuthorLineProps {
+  id: number
   name?: string
   avatar?: string
   dateTime?: Date
-  readNum?: number
+  likeNum?: number
 }
 
 export const AuthorLine = ({
+  id,
   name,
   avatar,
   dateTime,
-  readNum,
+  likeNum,
 }: AuthorLineProps) => {
   return (
     <Grid
@@ -23,7 +25,7 @@ export const AuthorLine = ({
       }}
     >
       <Grid item>
-        <ButtonBase sx={{ width: 42, height: 42 }}>
+        <ButtonBase href={`/user/${id}`} sx={{ width: 42, height: 42 }}>
           <img
             style={{
               margin: 'auto',
@@ -40,13 +42,22 @@ export const AuthorLine = ({
       <Grid item xs={12} sm container>
         <Grid item xs container direction="column" spacing={2}>
           <Grid item xs>
-            <Typography variant="body2" gutterBottom>
-              {name}
-            </Typography>
+            <Link
+              href={`/user/${id}`}
+              underline="none"
+              sx={{
+                color: (theme) =>
+                  theme.palette.mode === 'light' ? '#222' : '#ddd',
+              }}
+            >
+              <Typography variant="body2" gutterBottom>
+                {name}
+              </Typography>
+            </Link>
             <Typography variant="body2" color="text.secondary">
               <>
                 {formatDateTime(dateTime)}
-                {readNum === 0 ? '' : readNum}
+                {likeNum === 0 ? '' : likeNum}
               </>
             </Typography>
           </Grid>

@@ -14,6 +14,7 @@ import { useMount } from '../../utils/hook'
 import { selectUserById } from '../../api/user'
 import { Tag } from '../../types/tag'
 import { selectTagsByPostId } from '../../api/tag'
+import { userDefault, User } from '../../types/user'
 
 const CustomDivider = () => {
   return (
@@ -42,18 +43,14 @@ interface PostCardProps {
 }
 
 export const PostCard = ({ post }: PostCardProps) => {
-  const [author, setAuthor] = useState<string>('')
+  const [author, setAuthor] = useState<User>(userDefault)
   const [tags, setTags] = useState<Tag[]>([])
 
-  useMount(() => {
-    selectUserById(post.authorId).then((res) => {
-      setAuthor(res.data.username)
-    })
-    selectTagsByPostId(post.id).then((res) => {
-      if (res.status === 20) {
-        setTags(res.data)
-      }
-    })
+  useMount(async () => {
+    const res1 = await selectUserById(post.authorId)
+    setAuthor(res1.data)
+    const res2 = await selectTagsByPostId(post.id)
+    setTags(res2.data)
   })
 
   return (
@@ -68,15 +65,19 @@ export const PostCard = ({ post }: PostCardProps) => {
             >
               {formatDateTime(post.createTime)}
               <CustomDivider />
-              <Link href="#" underline="none" color="text.secondary">
-                {author}
+              <Link
+                href={`/user/${author.id}`}
+                underline="none"
+                color="text.secondary"
+              >
+                {author.username}
               </Link>
               {tags.length === 0
                 ? ''
                 : tags.map((tag) => (
                     <Link
                       key={tag.id}
-                      href="#"
+                      href={`/tag/${tag.id}`}
                       underline="none"
                       color="text.secondary"
                     >
@@ -92,7 +93,11 @@ export const PostCard = ({ post }: PostCardProps) => {
                 variant="h5"
                 component="div"
                 fontWeight="500"
-                sx={{ color: '#000' }}
+                sx={{
+                  color: (theme) =>
+                    theme.palette.mode === 'light' ? '#000' : '#fff',
+                  pb: 1,
+                }}
               >
                 {post.title}
               </Typography>

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import { Box, Paper, Tab, Tabs } from '@mui/material'
-import { EntityList } from '../../../components/entity-list'
+import { EntityList } from './entity-list'
 
 interface TabPanelProps {
   children?: ReactNode
