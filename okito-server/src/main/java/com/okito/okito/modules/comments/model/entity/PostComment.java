@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 /**
  * @author <a href="mailto:wlonestar@163.com">wjl</a>
@@ -25,7 +25,7 @@ public class PostComment implements Serializable {
   private String content;
 
   @Column(name = "upload_time")
-  private Instant uploadTime;
+  private LocalDateTime uploadTime;
 
   @Column(name = "author_id")
   private Long authorId;

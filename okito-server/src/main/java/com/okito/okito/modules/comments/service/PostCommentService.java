@@ -32,6 +32,8 @@ public interface PostCommentService {
 
   PostCommentView selectById(Long id);
 
+  long countByPostId(Long postId);
+
   boolean add(PostComment postComment);
 
   @Deprecated
