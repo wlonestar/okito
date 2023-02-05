@@ -5,7 +5,7 @@ export interface Category {
   description: string
 }
 
-export const categoryDefault = {
+export const categoryDefault: Category = {
   id: 0,
   name: '',
   cover: '',

@@ -7,7 +7,7 @@ export interface Tag {
   postNum: number
 }
 
-export const tagDefault = {
+export const tagDefault: Tag = {
   id: 0,
   name: '',
   cover: '',

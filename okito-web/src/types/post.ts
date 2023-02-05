@@ -9,10 +9,11 @@ export interface Post {
   draft: boolean
   cateId: number
   authorId: number
+  viewNum: number
   likeNum: number
 }
 
-export const postDefault = {
+export const postDefault: Post = {
   id: 0,
   title: '',
   summary: '',
@@ -23,5 +24,6 @@ export const postDefault = {
   draft: false,
   cateId: 0,
   authorId: 0,
+  viewNum: 0,
   likeNum: 0,
 }

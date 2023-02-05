@@ -13,7 +13,7 @@ export interface User {
   postLikeNum: number
 }
 
-export const userDefault = {
+export const userDefault: User = {
   id: 0,
   username: '',
   password: '',

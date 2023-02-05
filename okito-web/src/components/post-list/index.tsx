@@ -1,4 +1,4 @@
-import { PostCard } from '../post-card'
+import { PostCard } from './post-card'
 import { Box } from '@mui/material'
 import { Post } from '../../types/post'
 

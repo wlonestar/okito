@@ -6,7 +6,7 @@ import { useMount } from '../../utils/hook'
 import { selectTagById } from '../../api/tag'
 import { selectPostsByTagId } from '../../api/post'
 import { Box, Tab, Tabs, Typography } from '@mui/material'
-import { PostCard } from '../../components/post-card'
+import { PostCard } from '../../components/post-list/post-card'
 import { TabPanel, tabProps } from '../../components/tab'
 
 interface TagTitleProps {
