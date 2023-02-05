@@ -1,9 +1,9 @@
 package com.okito.okito.modules.comments.repository;
 
-import com.okito.okito.common.repository.ReadOnlyRepository;
 import com.okito.okito.modules.comments.model.view.PostCommentView;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
  * @time 2023/1/6 15:09
  */
 @Repository
-public interface PostCommentViewRepository extends ReadOnlyRepository<PostCommentView, Long> {
+public interface PostCommentViewRepository extends JpaRepository<PostCommentView, Long> {
 
   List<PostCommentView> findAllByPostId(Long postId);
 

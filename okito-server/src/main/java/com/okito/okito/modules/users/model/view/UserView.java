@@ -35,6 +35,7 @@ public class UserView implements Serializable {
   private String joinTime;
   private Long followerNum;
   private Long followedNum;
+  private Long postViewNum;
   private Long postLikeNum;
 
 }

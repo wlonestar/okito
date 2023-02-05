@@ -49,4 +49,7 @@ public class Post implements Serializable {
   @Column(name = "author_id")
   private Long authorId;
 
+  @Column(name = "view_num")
+  private Long viewNum;
+
 }

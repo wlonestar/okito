@@ -7,7 +7,7 @@ import lombok.Data;
 import org.hibernate.annotations.Immutable;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 /**
  * @author <a href="mailto:wlonestar@163.com">wjl</a>
@@ -23,7 +23,7 @@ public class PostCommentView implements Serializable {
   @Id
   private Long id;
   private String content;
-  private Instant uploadTime;
+  private LocalDateTime uploadTime;
   private Long authorId;
   private Long postId;
   private Long parentId;

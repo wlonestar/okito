@@ -6,18 +6,22 @@ import com.okito.okito.modules.comments.repository.PostCommentRepository;
 import com.okito.okito.modules.comments.repository.PostCommentViewRepository;
 import com.okito.okito.modules.comments.service.PostCommentService;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * @author <a href="mailto:wlonestar@163.com">wjl</a>
  * @version 0.0.1
  * @time 2023/1/6 13:29
  */
+@Slf4j
 @Service
 public class PostCommentServiceImpl implements PostCommentService {
 
@@ -44,7 +48,34 @@ public class PostCommentServiceImpl implements PostCommentService {
 
   @Override
   public List<PostCommentView> selectSecondaryComments(Long id) {
-    return postCommentViewRepository.findAllByParentId(id);
+    List<PostCommentView> res = new ArrayList<>();
+    PostCommentView parentComment = postCommentViewRepository.findById(id).orElse(null);
+    if (!Objects.equals(parentComment, null)) {
+      // if no son, no grandson
+      List<PostCommentView> secondaryComments = postCommentViewRepository.findAllByParentId(id);
+      if (secondaryComments.size() != 0) {
+        res.addAll(secondaryComments);
+        List<PostCommentView> postCommentViews = selectAllByPostId(parentComment.getPostId());
+        postCommentViews = postCommentViews.stream()
+            .filter(comment -> !Objects.equals(comment.getParentId(), null))
+            .filter(comment -> !Objects.equals(comment.getParentId(), id))
+            .collect(Collectors.toList());
+        postCommentViews.forEach(comment -> {
+          PostCommentView commentParent = postCommentViewRepository.findById(comment.getParentId()).orElse(null);
+          while (!Objects.equals(commentParent, null)) {
+            if (res.contains(commentParent)) {
+              res.add(comment);
+              break;
+            }
+            if (Objects.equals(commentParent.getParentId(), null)) {
+              break;
+            }
+            commentParent = postCommentViewRepository.findById(commentParent.getParentId()).orElse(null);
+          }
+        });
+      }
+    }
+    return res;
   }
 
   @Override
@@ -70,6 +101,11 @@ public class PostCommentServiceImpl implements PostCommentService {
   @Override
   public PostCommentView selectById(Long id) {
     return postCommentViewRepository.findById(id).orElse(null);
+  }
+
+  @Override
+  public long countByPostId(Long postId) {
+    return postCommentRepository.countByPostId(postId);
   }
 
   @Override

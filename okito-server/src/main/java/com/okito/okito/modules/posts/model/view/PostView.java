@@ -35,6 +35,7 @@ public class PostView implements Serializable {
   private Boolean draft;
   private Long cateId;
   private Long authorId;
+  private Long viewNum;
   private Long likeNum;
 
 }

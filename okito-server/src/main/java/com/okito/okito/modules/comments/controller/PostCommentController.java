@@ -28,7 +28,7 @@ import java.util.Objects;
 @Slf4j
 @TimeLog
 @RestController
-@RequestMapping(path = "/comment/post")
+@RequestMapping(path = "/post/comment")
 public class PostCommentController {
 
   @Resource
@@ -56,7 +56,7 @@ public class PostCommentController {
    * @param postId postId
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/{postId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/post/{postId}")
   public RespResult<?> selectAllByPostId(@NonNull @PathVariable(name = "postId") Long postId) {
     return RespResult.success(postCommentService.selectAllByPostId(postId));
   }
@@ -67,7 +67,7 @@ public class PostCommentController {
    * @param authorId authorId
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/{authorId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
   public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
     return RespResult.success(postCommentService.selectAllByAuthorId(authorId));
   }
@@ -102,7 +102,7 @@ public class PostCommentController {
    * @param pageable format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/{postId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/page/post/{postId}")
   public RespResult<?> selectAllByPostId(
       @NonNull @PathVariable(name = "postId") Long postId,
       @NonNull @PageableDefault(sort = "uploadTime", direction = Sort.Direction.DESC) Pageable pageable) {
@@ -116,7 +116,7 @@ public class PostCommentController {
    * @param pageable format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/{authorId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/page/author/{authorId}")
   public RespResult<?> selectAllByAuthorId(
       @NonNull @PathVariable(name = "authorId") Long authorId,
       @NonNull @PageableDefault(sort = "uploadTime", direction = Sort.Direction.DESC) Pageable pageable) {
@@ -150,6 +150,18 @@ public class PostCommentController {
       return RespResult.success(postCommentView);
     }
     return RespResult.fail(RespStatus.NOT_EXIST);
+  }
+
+  /**
+   * count postComment By post id
+   *
+   * @param postId post id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/count/post/{postId}")
+  public RespResult<?> countByPostId(@NonNull @PathVariable(name = "postId") Long postId) {
+    long count = postCommentService.countByPostId(postId);
+    return RespResult.success(count);
   }
 
   /**
