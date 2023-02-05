@@ -79,6 +79,11 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
+  public UserView selectViewById(Long id) {
+    return userViewRepository.findById(id).orElse(null);
+  }
+
+  @Override
   public boolean add(User user) {
     userRepository.save(user);
     return true;

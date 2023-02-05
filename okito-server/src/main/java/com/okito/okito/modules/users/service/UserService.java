@@ -32,6 +32,8 @@ public interface UserService {
 
   User selectById(Long id);
 
+  UserView selectViewById(Long id);
+
   boolean add(User user);
 
   boolean update(User user);
