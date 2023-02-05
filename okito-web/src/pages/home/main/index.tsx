@@ -1,13 +1,27 @@
-import React from 'react'
+import React, { SyntheticEvent, useState } from 'react'
 import { Box, Paper, Tab, Tabs } from '@mui/material'
-import { EntityList } from './entity-list'
 import { TabPanel, tabProps } from '../../../components/tab'
+import { Post } from '../../../types/post'
+import { selectAllPosts } from '../../../api/post'
+import { useMount } from '../../../utils/hook'
+import { PostList } from '../../../components/post-list'
 
 export const Main = () => {
-  const [value, setValue] = React.useState(0)
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const [value, setValue] = useState(0)
+  const [posts, setPosts] = useState<Post[]>([])
+  const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
+
+  function useAllPosts() {
+    selectAllPosts().then((res) => {
+      setPosts(res.data)
+    })
+  }
+
+  useMount(() => {
+    useAllPosts()
+  })
 
   return (
     <Paper>
@@ -36,7 +50,7 @@ export const Main = () => {
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-          <EntityList />
+          <PostList posts={posts} />
         </TabPanel>
         <TabPanel value={value} index={1}>
           Item Two

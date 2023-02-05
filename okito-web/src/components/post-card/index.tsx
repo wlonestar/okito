@@ -4,6 +4,7 @@ import {
   CardContent,
   CardMedia,
   Grid,
+  Icon,
   Link,
   Typography,
 } from '@mui/material'
@@ -15,6 +16,9 @@ import { selectUserById } from '../../api/user'
 import { Tag } from '../../types/tag'
 import { selectTagsByPostId } from '../../api/tag'
 import { userDefault, User } from '../../types/user'
+import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined'
+import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
+import TextsmsOutlinedIcon from '@mui/icons-material/TextsmsOutlined'
 
 const CustomDivider = () => {
   return (
@@ -60,6 +64,7 @@ export const PostCard = ({ post }: PostCardProps) => {
     >
       <CardContent>
         <Grid container spacing={1}>
+          {/*time, author and tags*/}
           <Grid item xs={12}>
             <Typography
               component="div"
@@ -90,6 +95,7 @@ export const PostCard = ({ post }: PostCardProps) => {
                   ))}
             </Typography>
           </Grid>
+          {/*title and summary*/}
           <Grid item xs={12} md={9} lg={9}>
             <Link href={`/post/${post.id}`} underline="none">
               <Typography
@@ -108,13 +114,42 @@ export const PostCard = ({ post }: PostCardProps) => {
             <Typography sx={{ mb: 1.5 }} color="text.secondary">
               {post.summary}
             </Typography>
+            <Box
+              component="ul"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                margin: 0,
+                padding: 0,
+              }}
+            >
+              <Box sx={{ display: 'flex', pr: 3 }}>
+                <Icon sx={{ pr: 4, mt: '-2px' }}>
+                  <RemoveRedEyeOutlinedIcon />
+                </Icon>
+                <Typography>{'220w'}</Typography>
+              </Box>
+              <Box sx={{ display: 'flex', pr: 3 }}>
+                <Icon sx={{ pr: 4, mt: '-2px' }}>
+                  <ThumbUpOutlinedIcon />
+                </Icon>
+                <Typography>{'220w'}</Typography>
+              </Box>
+              <Box sx={{ display: 'flex' }}>
+                <Icon sx={{ pr: 4, mt: '-2px' }}>
+                  <TextsmsOutlinedIcon />
+                </Icon>
+                <Typography>{'220w'}</Typography>
+              </Box>
+            </Box>
           </Grid>
+          {/*cover*/}
           <Grid item xs={12} md={3} lg={3}>
             <CardMedia
               component="img"
-              height="120"
+              height="100"
               image={post.cover}
-              alt="Paella dish"
+              alt={post.cover}
             />
           </Grid>
         </Grid>
