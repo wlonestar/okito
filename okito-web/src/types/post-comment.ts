@@ -3,7 +3,7 @@ export interface PostComment {
   content: string
   uploadTime: Date
   authorId: number
-  parentId: number
+  parentId?: number
   likeNum: number
 }
 

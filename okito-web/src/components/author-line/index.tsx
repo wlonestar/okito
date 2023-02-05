@@ -25,7 +25,11 @@ export const AuthorLine = ({
       }}
     >
       <Grid item>
-        <ButtonBase href={`/user/${id}`} sx={{ width: 42, height: 42 }}>
+        <ButtonBase
+          href={`/user/${id}`}
+          target="_blank"
+          sx={{ width: 42, height: 42 }}
+        >
           <img
             style={{
               margin: 'auto',
