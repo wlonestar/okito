@@ -15,7 +15,6 @@ export const CustomRoutes = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route element={<Layout />} errorElement={<ErrorPage />}>
         <Route path="/" element={<HomePage />} />
-        {/*<Route path="/login" element={<LoginPage />} />*/}
         <Route path="/post" element={<PostsPage />} />
         <Route path="/post/:id" element={<PostPage />} />
         <Route path="/tag" element={<TagsPage />} />

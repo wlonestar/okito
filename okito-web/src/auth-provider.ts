@@ -1,36 +1,48 @@
-import { User } from './types/user'
+import { useState } from 'react'
 import { baseUrl } from './consts'
 import { LoginForm } from './types/login-param'
-import axios from 'axios'
 
 const localStorageKey = '__auth_provider_token__'
 
 export const getToken = () => {
-  window.localStorage.getItem(localStorageKey)
+  return window.localStorage.getItem(localStorageKey)
 }
 
 export const setToken = (token?: string) => {
   window.localStorage.setItem(localStorageKey, token || '')
 }
 
+export const useToken = () => {
+  const [token, setToken] = useState(getToken())
+  const saveToken = (userToken: string) => {
+    window.localStorage.setItem(localStorageKey, userToken)
+    setToken(userToken)
+  }
+  return [token, saveToken]
+}
+
+export const handleUserResponse = (token: string) => {
+  setToken(token)
+  return token
+}
+
 // TODO
 export const login = (data: LoginForm) => {
-  return axios
-    .create({
-      baseURL: baseUrl,
-      timeout: 5000,
-    })
-    .post('/auth/login', data)
-    .then((res) => {
-      if (res.data.status === 20) {
-        const data = res.data.data
-        setToken(data.tokenValue)
-        return res
-      } else {
-        console.error(res.data.message)
-        return Promise.reject(data)
-      }
-    })
+  return fetch(`${baseUrl}/auth/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  }).then(async (res) => {
+    if (res.ok) {
+      const data = await res.json()
+      const token = data.data.tokenValue
+      return handleUserResponse(token)
+    } else {
+      return Promise.reject(data)
+    }
+  })
 }
 
 // TODO
