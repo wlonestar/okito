@@ -8,18 +8,18 @@ import {
   Link,
   Typography,
 } from '@mui/material'
-import { formatDateTime } from '../../../../utils/date'
-import { defaultAvatar } from '../../../../consts'
-import { PostComment } from '../../../../types/post-comment'
+import { formatDateTime } from '../../../utils/date'
+import { defaultAvatar } from '../../../consts'
+import { PostComment } from '../../../types/post-comment'
 import { useState } from 'react'
-import { User, userDefault } from '../../../../types/user'
-import { useMount } from '../../../../utils/hook'
-import { selectUserById } from '../../../../api/user'
+import { User, userDefault } from '../../../types/user'
+import { useMount } from '../../../utils/hook'
+import { selectUserById } from '../../../api/user'
 import ThumbDownOffAltRoundedIcon from '@mui/icons-material/ThumbDownOffAltRounded'
 import ThumbUpOffAltRoundedIcon from '@mui/icons-material/ThumbUpOffAltRounded'
-import { selectPostCommentsSecondaryByPostId } from '../../../../api/post-comment'
-import { ReplyBox } from '../../reply'
-import { Secondary } from '../secondary'
+import { selectPostCommentsSecondaryByPostId } from '../../../api/post-comment'
+import { ReplyBox } from '../reply'
+import { Secondary } from './secondary'
 
 interface CommentCardProps {
   comment: PostComment

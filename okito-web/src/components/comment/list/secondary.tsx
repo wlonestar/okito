@@ -1,14 +1,14 @@
 import { Box, Button, ButtonBase, Grid, Link, Typography } from '@mui/material'
-import { defaultAvatar } from '../../../../consts'
-import { formatDateTime } from '../../../../utils/date'
+import { defaultAvatar } from '../../../consts'
+import { formatDateTime } from '../../../utils/date'
 import ThumbUpOffAltRoundedIcon from '@mui/icons-material/ThumbUpOffAltRounded'
 import ThumbDownOffAltRoundedIcon from '@mui/icons-material/ThumbDownOffAltRounded'
-import { PostComment } from '../../../../types/post-comment'
+import { PostComment } from '../../../types/post-comment'
 import { useState } from 'react'
-import { User, userDefault } from '../../../../types/user'
-import { useMount } from '../../../../utils/hook'
-import { selectUserById } from '../../../../api/user'
-import { selectPostCommentById } from '../../../../api/post-comment'
+import { User, userDefault } from '../../../types/user'
+import { useMount } from '../../../utils/hook'
+import { selectUserById } from '../../../api/user'
+import { selectPostCommentById } from '../../../api/post-comment'
 
 const ReplyUserLink = ({ user }: { user: User }) => {
   return (

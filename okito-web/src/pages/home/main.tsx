@@ -1,10 +1,10 @@
 import React, { SyntheticEvent, useState } from 'react'
 import { Box, Paper, Tab, Tabs } from '@mui/material'
-import { TabPanel, tabProps } from '../../../components/tab'
-import { Post } from '../../../types/post'
-import { selectAllPosts } from '../../../api/post'
-import { useMount } from '../../../utils/hook'
-import { PostList } from '../../../components/post-list'
+import { TabPanel, tabProps } from '../../components/tab'
+import { Post } from '../../types/post'
+import { selectAllPosts } from '../../api/post'
+import { useMount } from '../../utils/hook'
+import { PostList } from '../../components/post-list'
 
 export const Main = () => {
   const [value, setValue] = useState(0)

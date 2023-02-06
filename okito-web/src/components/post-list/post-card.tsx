@@ -9,18 +9,18 @@ import {
   Link,
   Typography,
 } from '@mui/material'
-import { Post } from '../../../types/post'
-import { formatDateTime } from '../../../utils/date'
+import { Post } from '../../types/post'
+import { formatDateTime } from '../../utils/date'
 import { useState } from 'react'
-import { useMount } from '../../../utils/hook'
-import { selectUserById } from '../../../api/user'
-import { Tag } from '../../../types/tag'
-import { selectTagsByPostId } from '../../../api/tag'
-import { userDefault, User } from '../../../types/user'
+import { useMount } from '../../utils/hook'
+import { selectUserById } from '../../api/user'
+import { Tag } from '../../types/tag'
+import { selectTagsByPostId } from '../../api/tag'
+import { userDefault, User } from '../../types/user'
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import TextsmsOutlinedIcon from '@mui/icons-material/TextsmsOutlined'
-import { countPostCommentsByPostId } from '../../../api/post-comment'
+import { countPostCommentsByPostId } from '../../api/post-comment'
 
 const CustomDivider = () => {
   return (

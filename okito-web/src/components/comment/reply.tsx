@@ -1,6 +1,6 @@
 import { Box, Button, ButtonBase, TextField } from '@mui/material'
 import React from 'react'
-import { defaultAvatar } from '../../../consts'
+import { defaultAvatar } from '../../consts'
 
 export const ReplyBox = () => {
   return (

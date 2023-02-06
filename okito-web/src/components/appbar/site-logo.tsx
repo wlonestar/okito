@@ -1,6 +1,6 @@
 import React from 'react'
 import { IconButton, Typography } from '@mui/material'
-import { ReactComponent as Logo } from '../../../assets/okito_32.svg'
+import { ReactComponent as Logo } from '../../assets/okito_32.svg'
 
 export const SiteLogo = () => {
   return (
