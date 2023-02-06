@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { AppBar, Box, Toolbar, IconButton, Badge, Theme } from '@mui/material'
-import AccountCircle from '@mui/icons-material/AccountCircle'
 import MailIcon from '@mui/icons-material/Mail'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import { CustomMenu } from './menu'
@@ -8,6 +7,70 @@ import { SiteLogo } from './site-logo'
 import { CustomSearch } from './search'
 import { DarkIcon } from './dark-icon'
 import { Nav } from './nav'
+import { defaultAvatar } from '../../consts'
+
+const Authenticated = () => {
+  return (
+    <>
+      <IconButton
+        size="large"
+        aria-label="show 17 new notifications"
+        sx={{
+          ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' },
+          mr: 1,
+        }}
+      >
+        <Badge badgeContent={17} color="error">
+          <NotificationsIcon />
+        </Badge>
+      </IconButton>
+      <IconButton
+        size="large"
+        aria-label="show 4 new mails"
+        sx={{
+          ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' },
+          mr: 1,
+        }}
+      >
+        <Badge badgeContent={4} color="error">
+          <MailIcon />
+        </Badge>
+      </IconButton>
+      <IconButton
+        href={`/user/${1}`}
+        target="_blank"
+        sx={{
+          padding: '4px',
+          width: 42,
+          height: 42,
+          ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' },
+        }}
+      >
+        <img
+          style={{
+            margin: 'auto',
+            display: 'block',
+            maxWidth: '100%',
+            maxHeight: '100%',
+            borderRadius: '21px',
+          }}
+          alt="complex"
+          src={defaultAvatar}
+        />
+      </IconButton>
+      {/*<IconButton*/}
+      {/*  size="large"*/}
+      {/*  edge="end"*/}
+      {/*  aria-label="account of current user"*/}
+      {/*  aria-controls={menuId}*/}
+      {/*  aria-haspopup="true"*/}
+      {/*  onClick={handleProfileMenuOpen}*/}
+      {/*>*/}
+      {/*  <AccountCircle />*/}
+      {/*</IconButton>*/}
+    </>
+  )
+}
 
 interface CustomAppBarProps {
   theme: Theme
@@ -57,36 +120,15 @@ export const CustomAppBar = ({ theme }: CustomAppBarProps) => {
           <Nav />
           <Box sx={{ flexGrow: 1 }} />
           <CustomSearch theme={theme} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
+          <Box
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              ml: 1,
+              mr: 1,
+              mt: '4px',
+            }}
+          >
+            <Authenticated />
           </Box>
           <DarkIcon theme={theme} />
         </Toolbar>

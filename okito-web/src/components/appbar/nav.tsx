@@ -16,17 +16,17 @@ export const Nav = () => {
 
   const tabs: TabProps[] = [
     {
-      label: 'Home',
+      label: '首页',
       key: 'Home',
       to: '/',
     },
+    // {
+    //   label: 'Post',
+    //   key: 'Post',
+    //   to: '/post',
+    // },
     {
-      label: 'Post',
-      key: 'Post',
-      to: '/post',
-    },
-    {
-      label: 'Pin',
+      label: '想法',
       key: 'Pin',
       to: '/pin',
     },
@@ -36,7 +36,7 @@ export const Nav = () => {
     <Box>
       <Tabs value={value} onChange={handleChange}>
         {tabs.map((tab) => (
-          <Tab {...tab} component={Link} />
+          <Tab {...tab} component={Link} sx={{ p: 0, minWidth: '70px' }} />
         ))}
       </Tabs>
     </Box>

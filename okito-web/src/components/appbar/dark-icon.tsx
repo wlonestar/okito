@@ -11,11 +11,7 @@ interface DarkIconProps {
 export const DarkIcon = ({ theme }: DarkIconProps) => {
   const colorMode = useContext(ColorModeContext)
   return (
-    <IconButton
-      sx={{ ml: 1 }}
-      onClick={colorMode.toggleColorMode}
-      color="inherit"
-    >
+    <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode}>
       {theme.palette.mode === 'dark' ? (
         <Brightness7Icon />
       ) : (
