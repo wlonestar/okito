@@ -12,6 +12,11 @@ export const setToken = (token?: string) => {
   window.localStorage.setItem(localStorageKey, token || '')
 }
 
+// TODO: add useUser method
+// if get token, set current user by user id -> login
+// otherwise set user null -> no login
+export const useUser = () => {}
+
 export const useToken = () => {
   const [token, setToken] = useState(getToken())
   const saveToken = (userToken: string) => {
