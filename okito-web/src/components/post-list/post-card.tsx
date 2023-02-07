@@ -163,6 +163,7 @@ export const PostCard = ({ post }: PostCardProps) => {
               height="100"
               image={post.cover}
               alt={post.cover}
+              loading="lazy"
             />
           </Grid>
         </Grid>

@@ -7,11 +7,34 @@ import { useMount } from '../../utils/hook'
 import { PostList } from '../../components/post-list'
 import { User } from '../../types/user'
 
+const tabs = [
+  {
+    index: 0,
+    label: '推荐',
+  },
+  {
+    index: 1,
+    label: '最新',
+  },
+  {
+    index: 2,
+    label: '热门',
+  },
+]
+
 export const Main = ({ user }: { user: User | null }) => {
   const [value, setValue] = useState(0)
   const [posts, setPosts] = useState<Post[]>([])
+
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
+    if (newValue === 0) {
+      posts.sort((a, b) => (a.id < b.id ? 1 : 0))
+    } else if (newValue === 1) {
+      posts.sort((a, b) => (a.createTime < b.createTime ? 1 : 0))
+    } else if (newValue === 2) {
+      posts.sort((a, b) => (a.viewNum < b.viewNum ? 1 : 0))
+    }
   }
 
   function useAllPosts() {
@@ -45,20 +68,16 @@ export const Main = ({ user }: { user: User | null }) => {
             onChange={handleChange}
             aria-label="basic tabs example"
           >
-            <Tab label="推荐" {...tabProps(0)} />
-            <Tab label="关注" {...tabProps(1)} />
-            <Tab label="热门" {...tabProps(2)} />
+            {tabs.map(({ index, label }) => (
+              <Tab key={index} label={label} {...tabProps(index)} />
+            ))}
           </Tabs>
         </Box>
-        <TabPanel value={value} index={0}>
-          <PostList posts={posts} />
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          Item Two
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          Item Three
-        </TabPanel>
+        {tabs.map(({ index }) => (
+          <TabPanel key={index} value={value} index={index}>
+            <PostList posts={posts} />
+          </TabPanel>
+        ))}
       </Box>
     </Paper>
   )

@@ -8,29 +8,29 @@ interface TabProps {
   to: To
 }
 
+const tabs: TabProps[] = [
+  {
+    label: '首页',
+    key: 'Home',
+    to: '/',
+  },
+  // {
+  //   label: 'Post',
+  //   key: 'Post',
+  //   to: '/post',
+  // },
+  {
+    label: '想法',
+    key: 'Pin',
+    to: '/pin',
+  },
+]
+
 export const Nav = () => {
   const [value, setValue] = React.useState(0)
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
-
-  const tabs: TabProps[] = [
-    {
-      label: '首页',
-      key: 'Home',
-      to: '/',
-    },
-    // {
-    //   label: 'Post',
-    //   key: 'Post',
-    //   to: '/post',
-    // },
-    {
-      label: '想法',
-      key: 'Pin',
-      to: '/pin',
-    },
-  ]
 
   return (
     <Box>
