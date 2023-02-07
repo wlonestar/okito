@@ -10,10 +10,13 @@ import java.time.LocalDateTime;
  * @time 2023/1/9 20:52
  */
 @Data
-public class RegisterParam {
+public class SignUpParam {
 
   private String username;
   private String password;
   private String email;
+  private String avatar;
+  private LocalDateTime joinTime;
+  private Long roleId;
 
 }
