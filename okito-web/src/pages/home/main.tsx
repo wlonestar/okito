@@ -5,8 +5,9 @@ import { Post } from '../../types/post'
 import { selectAllPosts } from '../../api/post'
 import { useMount } from '../../utils/hook'
 import { PostList } from '../../components/post-list'
+import { User } from '../../types/user'
 
-export const Main = () => {
+export const Main = ({ user }: { user: User | null }) => {
   const [value, setValue] = useState(0)
   const [posts, setPosts] = useState<Post[]>([])
   const handleChange = (event: SyntheticEvent, newValue: number) => {

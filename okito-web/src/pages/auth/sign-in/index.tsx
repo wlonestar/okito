@@ -28,7 +28,6 @@ export const SignInPage = () => {
       device: 'PC',
     }
     login(loginParam).then(() => {
-      // window.location.reload()
       window.location.assign('/')
     })
   }
@@ -85,7 +84,7 @@ export const SignInPage = () => {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="邮箱"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -95,14 +94,14 @@ export const SignInPage = () => {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="密码"
                 type="password"
                 id="password"
                 autoComplete="current-password"
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
+                label="记住我"
               />
               <Button
                 type="submit"
@@ -110,17 +109,17 @@ export const SignInPage = () => {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                {'登录'}
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
+                  <Link href="#" variant="body2" underline="hover">
+                    {'忘记密码？'}
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href={'/register'} variant="body2">
-                    {"Don't have an account? Sign Up"}
+                  <Link href={'/register'} variant="body2" underline="hover">
+                    {'还没有账号？先去注册'}
                   </Link>
                 </Grid>
               </Grid>

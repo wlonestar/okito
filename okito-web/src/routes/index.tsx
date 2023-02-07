@@ -9,16 +9,17 @@ import { TagsPage } from '../pages/tags'
 import { TagPage } from '../pages/tag'
 import { SignInPage } from '../pages/auth/sign-in'
 import { SignUpPage } from '../pages/auth/sign-up'
+import { UserProps } from '../types/user-props'
 
-export const CustomRoutes = () => {
+export const CustomRoutes = ({ user }: UserProps) => {
   return (
     <Routes>
       <Route path="/login" element={<SignInPage />} />
       <Route path="/register" element={<SignUpPage />} />
-      <Route element={<Layout />} errorElement={<ErrorPage />}>
-        <Route path="/" element={<HomePage />} />
+      <Route element={<Layout user={user} />} errorElement={<ErrorPage />}>
+        <Route path="/" element={<HomePage user={user} />} />
         <Route path="/post" element={<PostsPage />} />
-        <Route path="/post/:id" element={<PostPage />} />
+        <Route path="/post/:id" element={<PostPage user={user} />} />
         <Route path="/tag" element={<TagsPage />} />
         <Route path="/tag/:id" element={<TagPage />} />
         <Route path="/pin" element={<PinPage />} />

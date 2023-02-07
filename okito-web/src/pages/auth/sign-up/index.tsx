@@ -83,7 +83,7 @@ export const SignUpPage = () => {
                 fullWidth
                 id="email"
                 name="email"
-                label="Email Address"
+                label="邮箱"
                 autoComplete="email"
                 autoFocus
               />
@@ -93,7 +93,7 @@ export const SignUpPage = () => {
                 fullWidth
                 id="username"
                 name="username"
-                label="Username"
+                label="用户名"
                 autoComplete="current-username"
               />
               <TextField
@@ -102,31 +102,23 @@ export const SignUpPage = () => {
                 fullWidth
                 id="password"
                 name="password"
-                label="Password"
+                label="密码"
                 type="password"
                 autoComplete="current-password"
               />
-              {/*<FormControlLabel*/}
-              {/*  control={<Checkbox value="remember" color="primary" />}*/}
-              {/*  label="Remember me"*/}
-              {/*/>*/}
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign Up
+                {'注册'}
               </Button>
               <Grid container>
-                <Grid item xs>
-                  {/*<Link href="#" variant="body2">*/}
-                  {/*  Forgot password?*/}
-                  {/*</Link>*/}
-                </Grid>
+                <Grid item xs></Grid>
                 <Grid item>
                   <Link href={'/login'} variant="body2">
-                    {'Have an account? Sign In'}
+                    {'已有账号？去登录'}
                   </Link>
                 </Grid>
               </Grid>

@@ -4,12 +4,14 @@ import { TabPanel, tabProps } from '../tab'
 import { ReplyBox } from './reply'
 import { PostComment } from '../../types/post-comment'
 import { CommentList } from './list'
+import { User } from '../../types/user'
 
 export interface CommentListProps {
   comments: PostComment[]
+  user: User | null
 }
 
-export const CommentBox = ({ comments }: CommentListProps) => {
+export const CommentBox = ({ comments, user }: CommentListProps) => {
   const [value, setValue] = React.useState(0)
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
@@ -30,9 +32,9 @@ export const CommentBox = ({ comments }: CommentListProps) => {
           <Tab label="最新" {...tabProps(1)} />
         </Tabs>
       </Box>
-      <ReplyBox />
+      <ReplyBox user={user} />
       <TabPanel value={value} index={0}>
-        <CommentList comments={comments} />
+        <CommentList comments={comments} user={user} />
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two

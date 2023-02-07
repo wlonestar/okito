@@ -1,15 +1,23 @@
-import React, { useState } from 'react'
-import { AppBar, Box, Toolbar, IconButton, Badge, Theme } from '@mui/material'
+import React from 'react'
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Badge,
+  Theme,
+  Button,
+} from '@mui/material'
 import MailIcon from '@mui/icons-material/Mail'
 import NotificationsIcon from '@mui/icons-material/Notifications'
-import { CustomMenu } from './menu'
 import { SiteLogo } from './site-logo'
 import { CustomSearch } from './search'
 import { DarkIcon } from './dark-icon'
 import { Nav } from './nav'
-import { defaultAvatar } from '../../consts'
+import { User } from '../../types/user'
+import { UserProps } from '../../types/user-props'
 
-const Authenticated = () => {
+const Authenticated = ({ user }: UserProps) => {
   return (
     <>
       <IconButton
@@ -37,7 +45,7 @@ const Authenticated = () => {
         </Badge>
       </IconButton>
       <IconButton
-        href={`/user/${1}`}
+        href={`/user/${user?.id}`}
         target="_blank"
         sx={{
           padding: '4px',
@@ -54,41 +62,30 @@ const Authenticated = () => {
             maxHeight: '100%',
             borderRadius: '21px',
           }}
-          alt="complex"
-          src={defaultAvatar}
+          alt={user?.username}
+          src={user?.avatar}
         />
       </IconButton>
-      {/*<IconButton*/}
-      {/*  size="large"*/}
-      {/*  edge="end"*/}
-      {/*  aria-label="account of current user"*/}
-      {/*  aria-controls={menuId}*/}
-      {/*  aria-haspopup="true"*/}
-      {/*  onClick={handleProfileMenuOpen}*/}
-      {/*>*/}
-      {/*  <AccountCircle />*/}
-      {/*</IconButton>*/}
+    </>
+  )
+}
+
+const UnAuthenticated = () => {
+  return (
+    <>
+      <Button size="small" variant="outlined" href={'/login'}>
+        {'登录/注册'}
+      </Button>
     </>
   )
 }
 
 interface CustomAppBarProps {
   theme: Theme
+  user: User | null
 }
 
-export const CustomAppBar = ({ theme }: CustomAppBarProps) => {
-  const menuId = 'primary-search-account-menu'
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-  const isMenuOpen = Boolean(anchorEl)
-
-  const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleMenuClose = () => {
-    setAnchorEl(null)
-  }
-
+export const CustomAppBar = ({ theme, user }: CustomAppBarProps) => {
   return (
     <>
       <AppBar
@@ -128,17 +125,15 @@ export const CustomAppBar = ({ theme }: CustomAppBarProps) => {
               mt: '4px',
             }}
           >
-            <Authenticated />
+            {user === null ? (
+              <UnAuthenticated />
+            ) : (
+              <Authenticated user={user} />
+            )}
           </Box>
           <DarkIcon theme={theme} />
         </Toolbar>
       </AppBar>
-      <CustomMenu
-        anchorEl={anchorEl}
-        menuId={menuId}
-        isMenuOpen={isMenuOpen}
-        handleMenuClose={handleMenuClose}
-      />
     </>
   )
 }

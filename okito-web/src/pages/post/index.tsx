@@ -16,11 +16,12 @@ import { selectTagsByPostId } from '../../api/tag'
 import { CommentBox } from '../../components/comment'
 import { PostComment } from '../../types/post-comment'
 import { selectPostCommentsByPostId } from '../../api/post-comment'
+import { UserProps } from '../../types/user-props'
 
-export const PostPage = () => {
+export const PostPage = ({ user }: UserProps) => {
   const { id } = useParams()
   const [post, setPost] = useState<Post>(postDefault)
-  const [user, setUser] = useState<User>(userDefault)
+  const [author, setAuthor] = useState<User>(userDefault)
   const [cate, setCate] = useState<Category>(categoryDefault)
   const [tags, setTags] = useState<Tag[]>([])
   const [comments, setComments] = useState<PostComment[]>([])
@@ -30,7 +31,7 @@ export const PostPage = () => {
     const post = await selectPostById(id as unknown as number)
     setPost(post.data)
     const user = await selectUserById(post.data.authorId)
-    setUser(user.data)
+    setAuthor(user.data)
     const cate = await selectCategoryById(post.data.cateId)
     setCate(cate.data)
     const tags = await selectTagsByPostId(post.data.id)
@@ -69,11 +70,11 @@ export const PostPage = () => {
             </Typography>
             {/*author*/}
             <AuthorLine
-              id={user.id}
-              name={user.username}
-              avatar={user.avatar}
+              id={author.id}
+              name={author.username}
+              avatar={author.avatar}
               dateTime={post.createTime}
-              likeNum={user.postLikeNum}
+              likeNum={author.postLikeNum}
             />
             {/*cover*/}
             <Box>
@@ -129,7 +130,7 @@ export const PostPage = () => {
               maxWidth: '100%',
             }}
           >
-            <CommentBox comments={comments} />
+            <CommentBox comments={comments} user={user} />
           </Box>
         </Paper>
       </Grid>

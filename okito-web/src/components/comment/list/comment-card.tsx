@@ -23,9 +23,10 @@ import { Secondary } from './secondary'
 
 interface CommentCardProps {
   comment: PostComment
+  user: User | null
 }
 
-export const CommentCard = ({ comment }: CommentCardProps) => {
+export const CommentCard = ({ comment, user }: CommentCardProps) => {
   const [author, setAuthor] = useState<User>(userDefault)
   const [secondaryComments, setSecondaryComments] = useState<PostComment[]>([])
   const [open, setOpen] = useState<boolean>(false)
@@ -139,7 +140,7 @@ export const CommentCard = ({ comment }: CommentCardProps) => {
                   />
                 ))}
                 <Collapse in={open}>
-                  <ReplyBox />
+                  <ReplyBox user={user} />
                 </Collapse>
               </Box>
             </Grid>
