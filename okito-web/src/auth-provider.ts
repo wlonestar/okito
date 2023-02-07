@@ -1,6 +1,7 @@
-import { useState } from 'react'
 import { baseUrl } from './consts'
 import { LoginForm } from './types/login-param'
+import { User } from './types/user'
+import { RegisterForm } from './types/register-param'
 
 const localStorageKey = '__auth_provider_token__'
 
@@ -12,26 +13,11 @@ export const setToken = (token?: string) => {
   window.localStorage.setItem(localStorageKey, token || '')
 }
 
-// TODO: add useUser method
-// if get token, set current user by user id -> login
-// otherwise set user null -> no login
-export const useUser = () => {}
-
-export const useToken = () => {
-  const [token, setToken] = useState(getToken())
-  const saveToken = (userToken: string) => {
-    window.localStorage.setItem(localStorageKey, userToken)
-    setToken(userToken)
-  }
-  return [token, saveToken]
+export const handleUserResponse = (user: User) => {
+  setToken(user.token)
+  return user
 }
 
-export const handleUserResponse = (token: string) => {
-  setToken(token)
-  return token
-}
-
-// TODO
 export const login = (data: LoginForm) => {
   return fetch(`${baseUrl}/auth/login`, {
     method: 'POST',
@@ -42,16 +28,16 @@ export const login = (data: LoginForm) => {
   }).then(async (res) => {
     if (res.ok) {
       const data = await res.json()
-      const token = data.data.tokenValue
-      return handleUserResponse(token)
+      const user: User = data.data
+      console.log(user)
+      return handleUserResponse(user)
     } else {
       return Promise.reject(data)
     }
   })
 }
 
-// TODO
-export const register = (data: { username: string; password: string }) => {
+export const register = (data: RegisterForm) => {
   return fetch(`${baseUrl}/auth/register`, {
     method: 'POST',
     headers: {
@@ -60,7 +46,7 @@ export const register = (data: { username: string; password: string }) => {
     body: JSON.stringify(data),
   }).then(async (res) => {
     if (res.ok) {
-      // return handleUserResponse(await res.json())
+      return handleUserResponse(await res.json())
     } else {
       return Promise.reject(data)
     }

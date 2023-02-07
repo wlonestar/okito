@@ -11,18 +11,13 @@ import {
 } from '@mui/material'
 import Image from '../../../assets/img/background.jpg'
 import { siteName } from '../../../consts'
-import { FormEvent, useState } from 'react'
+import { FormEvent } from 'react'
 import { LoginForm } from '../../../types/login-param'
-import { getToken, login } from '../../../auth-provider'
 import { Navigate } from 'react-router-dom'
-import { useMount } from '../../../utils/hook'
+import { useAuth } from '../../../context/auth-context'
 
 export const LoginPage = () => {
-  const [auth, setAuth] = useState(getToken)
-
-  useMount(() => {
-    setAuth(getToken)
-  })
+  const { login, user } = useAuth()
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -30,13 +25,15 @@ export const LoginPage = () => {
     const loginParam: LoginForm = {
       email: data.get('email')?.toString(),
       password: data.get('password')?.toString(),
+      device: 'PC',
     }
-    await login(loginParam).then(() => {
-      window.location.reload()
+    login(loginParam).then(() => {
+      // window.location.reload()
+      window.location.assign('/')
     })
   }
 
-  if (auth !== null) {
+  if (user !== null) {
     return <Navigate replace to="/" />
   } else {
     return (
