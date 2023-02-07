@@ -1,7 +1,7 @@
 import { baseUrl } from './consts'
-import { LoginForm } from './types/login-param'
+import { SignInForm } from './types/sign-in-param'
 import { User } from './types/user'
-import { RegisterForm } from './types/register-param'
+import { SignUpForm } from './types/sign-up-param'
 
 const localStorageKey = '__auth_provider_token__'
 
@@ -18,7 +18,7 @@ export const handleUserResponse = (user: User) => {
   return user
 }
 
-export const login = (data: LoginForm) => {
+export const login = (data: SignInForm) => {
   return fetch(`${baseUrl}/auth/login`, {
     method: 'POST',
     headers: {
@@ -37,7 +37,7 @@ export const login = (data: LoginForm) => {
   })
 }
 
-export const register = (data: RegisterForm) => {
+export const register = (data: SignUpForm) => {
   return fetch(`${baseUrl}/auth/register`, {
     method: 'POST',
     headers: {

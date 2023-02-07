@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from 'react'
 import { User } from '../types/user'
-import { LoginForm } from '../types/login-param'
-import { RegisterForm } from '../types/register-param'
+import { SignInForm } from '../types/sign-in-param'
+import { SignUpForm } from '../types/sign-up-param'
 import * as auth from '../auth-provider'
 import { http } from '../utils/http'
 import { useMount } from '../utils/hook'
@@ -22,8 +22,8 @@ const bootstrapUser = async () => {
 const AuthContext = createContext<
   | {
       user: User | null
-      login: (form: LoginForm) => Promise<void>
-      register: (form: RegisterForm) => Promise<void>
+      login: (form: SignInForm) => Promise<void>
+      register: (form: SignUpForm) => Promise<void>
       logout: () => Promise<void>
     }
   | undefined
@@ -33,8 +33,8 @@ AuthContext.displayName = 'AuthContext'
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null)
 
-  const login = (form: LoginForm) => auth.login(form).then(setUser)
-  const register = (form: RegisterForm) => auth.register(form).then(setUser)
+  const login = (form: SignInForm) => auth.login(form).then(setUser)
+  const register = (form: SignUpForm) => auth.register(form).then(setUser)
   const logout = () => auth.logout().then(() => setUser(null))
 
   useMount(() => {

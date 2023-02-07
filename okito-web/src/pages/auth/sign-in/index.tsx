@@ -12,17 +12,17 @@ import {
 import Image from '../../../assets/img/background.jpg'
 import { siteName } from '../../../consts'
 import { FormEvent } from 'react'
-import { LoginForm } from '../../../types/login-param'
+import { SignInForm } from '../../../types/sign-in-param'
 import { Navigate } from 'react-router-dom'
 import { useAuth } from '../../../context/auth-context'
 
-export const LoginPage = () => {
+export const SignInPage = () => {
   const { login, user } = useAuth()
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
-    const loginParam: LoginForm = {
+    const loginParam: SignInForm = {
       email: data.get('email')?.toString(),
       password: data.get('password')?.toString(),
       device: 'PC',
@@ -119,7 +119,7 @@ export const LoginPage = () => {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link href={'/register'} variant="body2">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>

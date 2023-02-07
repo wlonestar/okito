@@ -7,12 +7,14 @@ import { PostsPage } from '../pages/posts'
 import { PostPage } from '../pages/post'
 import { TagsPage } from '../pages/tags'
 import { TagPage } from '../pages/tag'
-import { LoginPage } from '../pages/auth/login'
+import { SignInPage } from '../pages/auth/sign-in'
+import { SignUpPage } from '../pages/auth/sign-up'
 
 export const CustomRoutes = () => {
   return (
     <Routes>
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/login" element={<SignInPage />} />
+      <Route path="/register" element={<SignUpPage />} />
       <Route element={<Layout />} errorElement={<ErrorPage />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/post" element={<PostsPage />} />
