@@ -1,13 +1,19 @@
 import { Box, Button, ButtonBase, TextField } from '@mui/material'
 import React from 'react'
-import { defaultAvatar } from '../../../consts'
+import { defaultAvatar } from '../../consts'
+import { CurrentUserProps } from '../../types/current-user-props'
 
-export const ReplyBox = () => {
+export const ReplyBox = ({ currentUser }: CurrentUserProps) => {
+  const reply = {
+    href: currentUser === null ? '' : currentUser.id,
+    username: currentUser === null ? 'default' : currentUser.username,
+    avatar: currentUser === null ? defaultAvatar : currentUser.avatar,
+  }
+
   return (
     <Box sx={{ mt: 3, mb: 4 }}>
       <ButtonBase
-        // TODO: set the current user avatar
-        href={`/user/1`}
+        href={`/user/${reply.href}`}
         target="_blank"
         sx={{ width: 42, height: 42, mr: 2 }}
       >
@@ -19,8 +25,8 @@ export const ReplyBox = () => {
             maxHeight: '100%',
             borderRadius: '21px',
           }}
-          alt="complex"
-          src={defaultAvatar}
+          alt={reply.username}
+          src={reply.avatar}
         />
       </ButtonBase>
       <TextField

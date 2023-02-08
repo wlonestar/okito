@@ -9,12 +9,13 @@ import {
   Toolbar,
 } from '@mui/material'
 import { CustomAppBar } from '../components/appbar'
+import { CurrentUserProps } from '../types/current-user-props'
 
 export const ColorModeContext = React.createContext({
   toggleColorMode: () => {},
 })
 
-export const Layout = () => {
+export const Layout = ({ currentUser }: CurrentUserProps) => {
   const [mode, setMode] = React.useState<'light' | 'dark'>('light')
   const colorMode = React.useMemo(
     () => ({
@@ -39,7 +40,7 @@ export const Layout = () => {
       <ThemeProvider theme={theme}>
         <Box sx={{ display: 'flex', width: '100%', minHeight: 'calc(100vh)' }}>
           <CssBaseline />
-          <CustomAppBar theme={theme} />
+          <CustomAppBar theme={theme} user={currentUser} />
           <Box
             component="main"
             sx={{

@@ -1,31 +1,85 @@
-import React, { useState } from 'react'
-import { AppBar, Box, Toolbar, IconButton, Badge, Theme } from '@mui/material'
-import AccountCircle from '@mui/icons-material/AccountCircle'
-import MailIcon from '@mui/icons-material/Mail'
-import NotificationsIcon from '@mui/icons-material/Notifications'
-import { CustomMenu } from './menu'
+import React from 'react'
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Badge,
+  Theme,
+  Button,
+} from '@mui/material'
 import { SiteLogo } from './site-logo'
 import { CustomSearch } from './search'
 import { DarkIcon } from './dark-icon'
 import { Nav } from './nav'
+import { User } from '../../types/user'
+import { CurrentUserProps } from '../../types/current-user-props'
+import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined'
+import MailOutlinedIcon from '@mui/icons-material/MailOutlined'
+
+const Authenticated = ({ currentUser }: CurrentUserProps) => {
+  return (
+    <>
+      <IconButton
+        size="large"
+        aria-label="show 17 new notifications"
+        sx={{ ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' }, mr: 1 }}
+      >
+        <Badge badgeContent={17} color="error">
+          <NotificationsOutlinedIcon />
+        </Badge>
+      </IconButton>
+      <IconButton
+        size="large"
+        aria-label="show 4 new mails"
+        sx={{ ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' }, mr: 1 }}
+      >
+        <Badge badgeContent={4} color="error">
+          <MailOutlinedIcon />
+        </Badge>
+      </IconButton>
+      <IconButton
+        href={`/user/${currentUser?.id}`}
+        target="_blank"
+        sx={{
+          padding: '4px',
+          width: 42,
+          height: 42,
+          ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' },
+        }}
+      >
+        <img
+          style={{
+            margin: 'auto',
+            display: 'block',
+            maxWidth: '100%',
+            maxHeight: '100%',
+            borderRadius: '21px',
+          }}
+          alt={currentUser?.username}
+          src={currentUser?.avatar}
+        />
+      </IconButton>
+    </>
+  )
+}
+
+const UnAuthenticated = () => {
+  return (
+    <>
+      <Button size="small" variant="outlined" href={'/login'}>
+        {'登录/注册'}
+      </Button>
+    </>
+  )
+}
 
 interface CustomAppBarProps {
   theme: Theme
+  user: User | null
 }
 
-export const CustomAppBar = ({ theme }: CustomAppBarProps) => {
-  const menuId = 'primary-search-account-menu'
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-  const isMenuOpen = Boolean(anchorEl)
-
-  const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleMenuClose = () => {
-    setAnchorEl(null)
-  }
-
+export const CustomAppBar = ({ theme, user }: CustomAppBarProps) => {
   return (
     <>
       <AppBar
@@ -57,46 +111,23 @@ export const CustomAppBar = ({ theme }: CustomAppBarProps) => {
           <Nav />
           <Box sx={{ flexGrow: 1 }} />
           <CustomSearch theme={theme} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
+          <Box
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              ml: 1,
+              mr: 1,
+              mt: '4px',
+            }}
+          >
+            {user === null ? (
+              <UnAuthenticated />
+            ) : (
+              <Authenticated currentUser={user} />
+            )}
           </Box>
           <DarkIcon theme={theme} />
         </Toolbar>
       </AppBar>
-      <CustomMenu
-        anchorEl={anchorEl}
-        menuId={menuId}
-        isMenuOpen={isMenuOpen}
-        handleMenuClose={handleMenuClose}
-      />
     </>
   )
 }

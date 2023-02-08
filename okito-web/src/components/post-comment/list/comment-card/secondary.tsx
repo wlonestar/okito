@@ -1,14 +1,12 @@
-import { Box, Button, ButtonBase, Grid, Link, Typography } from '@mui/material'
-import { defaultAvatar } from '../../../../consts'
-import { formatDateTime } from '../../../../utils/date'
-import ThumbUpOffAltRoundedIcon from '@mui/icons-material/ThumbUpOffAltRounded'
-import ThumbDownOffAltRoundedIcon from '@mui/icons-material/ThumbDownOffAltRounded'
+import { Grid, Link, Typography } from '@mui/material'
 import { PostComment } from '../../../../types/post-comment'
 import { useState } from 'react'
 import { User, userDefault } from '../../../../types/user'
 import { useMount } from '../../../../utils/hook'
 import { selectUserById } from '../../../../api/user'
 import { selectPostCommentById } from '../../../../api/post-comment'
+import { CommentActionList } from './comment-action-list'
+import { CommentImage } from './comment-image'
 
 const ReplyUserLink = ({ user }: { user: User }) => {
   return (
@@ -55,23 +53,7 @@ export const Secondary = ({ comment, open, toggleOpen }: SecondaryProps) => {
       }}
     >
       <Grid item>
-        <ButtonBase
-          href={`/user/${author.id}`}
-          target="_blank"
-          sx={{ width: 42, height: 42 }}
-        >
-          <img
-            style={{
-              margin: 'auto',
-              display: 'block',
-              maxWidth: '100%',
-              maxHeight: '100%',
-              borderRadius: '21px',
-            }}
-            alt="complex"
-            src={defaultAvatar}
-          />
-        </ButtonBase>
+        <CommentImage author={author} />
       </Grid>
       <Grid item xs={12} sm container>
         <Grid item xs container direction="column" spacing={2}>
@@ -93,7 +75,7 @@ export const Secondary = ({ comment, open, toggleOpen }: SecondaryProps) => {
                 {author.username}
               </Link>
               {comment.parentId !== null ? (
-                <ReplyUserLink user={replyAuthor}></ReplyUserLink>
+                <ReplyUserLink user={replyAuthor} />
               ) : (
                 ''
               )}
@@ -105,43 +87,11 @@ export const Secondary = ({ comment, open, toggleOpen }: SecondaryProps) => {
             >
               {comment.content}
             </Typography>
-            <Box
-              sx={{
-                display: 'inline',
-              }}
-            >
-              <ul
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  listStyle: 'none',
-                  margin: 0,
-                  padding: 0,
-                }}
-              >
-                <li style={{ marginRight: '20px' }}>
-                  <Typography color="text.secondary" variant="body2">
-                    {formatDateTime(comment.uploadTime)}
-                  </Typography>
-                </li>
-                <li style={{ marginRight: '20px' }}>
-                  <ThumbUpOffAltRoundedIcon />
-                </li>
-                <li style={{ marginRight: '20px' }}>
-                  <ThumbDownOffAltRoundedIcon />
-                </li>
-                <li>
-                  <Button
-                    size="small"
-                    onClick={() => {
-                      toggleOpen(open)
-                    }}
-                  >
-                    {'回复'}
-                  </Button>
-                </li>
-              </ul>
-            </Box>
+            <CommentActionList
+              comment={comment}
+              open={open}
+              toggleOpen={toggleOpen}
+            />
           </Grid>
         </Grid>
       </Grid>

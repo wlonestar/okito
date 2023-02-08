@@ -3,6 +3,7 @@ export interface User {
   username: string
   password: string
   email: string
+  token: string
   avatar: string
   bio?: string
   homepage?: string
@@ -10,6 +11,7 @@ export interface User {
   joinTime: Date
   followerNum: number
   followedNum: number
+  postViewNum: number
   postLikeNum: number
 }
 
@@ -18,6 +20,7 @@ export const userDefault: User = {
   username: '',
   password: '',
   email: '',
+  token: '',
   avatar: '',
   bio: '',
   homepage: '',
@@ -25,5 +28,6 @@ export const userDefault: User = {
   joinTime: new Date(),
   followerNum: 0,
   followedNum: 0,
+  postViewNum: 0,
   postLikeNum: 0,
 }

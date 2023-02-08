@@ -1,7 +1,8 @@
 import axios from 'axios'
+import { baseUrl } from '../consts'
 
 const client = axios.create({
-  baseURL: 'http://localhost:8088',
+  baseURL: baseUrl,
   timeout: 5000,
 })
 
