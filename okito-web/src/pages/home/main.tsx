@@ -6,8 +6,9 @@ import { selectAllPosts } from '../../api/post'
 import { useMount } from '../../utils/hook'
 import { PostList } from '../../components/post-list'
 import { User } from '../../types/user'
+import { TabsProp } from '../../types/tabs-prop'
 
-const tabs = [
+const tabs: TabsProp[] = [
   {
     index: 0,
     label: '推荐',

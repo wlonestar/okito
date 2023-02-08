@@ -5,8 +5,9 @@ import { ReplyBox } from './reply'
 import { PostComment } from '../../types/post-comment'
 import { CommentList } from './list'
 import { User } from '../../types/user'
+import { TabsProp } from '../../types/tabs-prop'
 
-const tabs = [
+const tabs: TabsProp[] = [
   {
     index: 0,
     label: '最热',
