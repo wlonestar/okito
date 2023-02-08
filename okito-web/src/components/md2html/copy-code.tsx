@@ -33,10 +33,7 @@ export default function CodeCopyButton({ children }: { children: any }) {
           backgroundColor: '#333',
           borderStyle: 'solid',
           borderRadius: '5px',
-          '&:hover': {
-            transform: 'scale(1.1)',
-            opacity: '0.9',
-          },
+          '&:hover': { transform: 'scale(1.1)', opacity: '0.9' },
         }}
       >
         {copy}

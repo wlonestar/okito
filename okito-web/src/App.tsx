@@ -9,7 +9,7 @@ function App() {
     console.log(user)
   })
 
-  return <CustomRoutes user={user} />
+  return <CustomRoutes currentUser={user} />
 }
 
 export default App

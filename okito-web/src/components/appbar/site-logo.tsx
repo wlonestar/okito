@@ -10,9 +10,7 @@ export const SiteLogo = () => {
         sx={{
           paddingRight: '12px',
           marginRight: '4px',
-          ':hover': {
-            backgroundColor: 'rgba(0, 0, 0, 0)',
-          },
+          ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' },
         }}
       >
         <Logo />

@@ -13,12 +13,12 @@ import { Category, categoryDefault } from '../../types/category'
 import { Tag } from '../../types/tag'
 import { selectCategoryById } from '../../api/category'
 import { selectTagsByPostId } from '../../api/tag'
-import { CommentBox } from '../../components/comment'
+import { PostCommentBox } from '../../components/post-comment'
 import { PostComment } from '../../types/post-comment'
 import { selectPostCommentsByPostId } from '../../api/post-comment'
-import { UserProps } from '../../types/user-props'
+import { CurrentUserProps } from '../../types/current-user-props'
 
-export const PostPage = ({ user }: UserProps) => {
+export const PostPage = ({ currentUser }: CurrentUserProps) => {
   const { id } = useParams()
   const [post, setPost] = useState<Post>(postDefault)
   const [author, setAuthor] = useState<User>(userDefault)
@@ -130,7 +130,7 @@ export const PostPage = ({ user }: UserProps) => {
               maxWidth: '100%',
             }}
           >
-            <CommentBox comments={comments} user={user} />
+            <PostCommentBox postComments={comments} currentUser={currentUser} />
           </Box>
         </Paper>
       </Grid>

@@ -8,44 +8,38 @@ import {
   Theme,
   Button,
 } from '@mui/material'
-import MailIcon from '@mui/icons-material/Mail'
-import NotificationsIcon from '@mui/icons-material/Notifications'
 import { SiteLogo } from './site-logo'
 import { CustomSearch } from './search'
 import { DarkIcon } from './dark-icon'
 import { Nav } from './nav'
 import { User } from '../../types/user'
-import { UserProps } from '../../types/user-props'
+import { CurrentUserProps } from '../../types/current-user-props'
+import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined'
+import MailOutlinedIcon from '@mui/icons-material/MailOutlined'
 
-const Authenticated = ({ user }: UserProps) => {
+const Authenticated = ({ currentUser }: CurrentUserProps) => {
   return (
     <>
       <IconButton
         size="large"
         aria-label="show 17 new notifications"
-        sx={{
-          ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' },
-          mr: 1,
-        }}
+        sx={{ ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' }, mr: 1 }}
       >
         <Badge badgeContent={17} color="error">
-          <NotificationsIcon />
+          <NotificationsOutlinedIcon />
         </Badge>
       </IconButton>
       <IconButton
         size="large"
         aria-label="show 4 new mails"
-        sx={{
-          ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' },
-          mr: 1,
-        }}
+        sx={{ ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' }, mr: 1 }}
       >
         <Badge badgeContent={4} color="error">
-          <MailIcon />
+          <MailOutlinedIcon />
         </Badge>
       </IconButton>
       <IconButton
-        href={`/user/${user?.id}`}
+        href={`/user/${currentUser?.id}`}
         target="_blank"
         sx={{
           padding: '4px',
@@ -62,8 +56,8 @@ const Authenticated = ({ user }: UserProps) => {
             maxHeight: '100%',
             borderRadius: '21px',
           }}
-          alt={user?.username}
-          src={user?.avatar}
+          alt={currentUser?.username}
+          src={currentUser?.avatar}
         />
       </IconButton>
     </>
@@ -128,7 +122,7 @@ export const CustomAppBar = ({ theme, user }: CustomAppBarProps) => {
             {user === null ? (
               <UnAuthenticated />
             ) : (
-              <Authenticated user={user} />
+              <Authenticated currentUser={user} />
             )}
           </Box>
           <DarkIcon theme={theme} />

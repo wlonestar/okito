@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { IconButton, Theme } from '@mui/material'
-import Brightness7Icon from '@mui/icons-material/Brightness7'
-import Brightness4Icon from '@mui/icons-material/Brightness4'
+import Brightness4OutlinedIcon from '@mui/icons-material/Brightness4Outlined'
+import Brightness5OutlinedIcon from '@mui/icons-material/Brightness5Outlined'
 import { ColorModeContext } from '../../layout'
 
 interface DarkIconProps {
@@ -13,9 +13,9 @@ export const DarkIcon = ({ theme }: DarkIconProps) => {
   return (
     <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode}>
       {theme.palette.mode === 'dark' ? (
-        <Brightness7Icon />
+        <Brightness5OutlinedIcon />
       ) : (
-        <Brightness4Icon />
+        <Brightness4OutlinedIcon />
       )}
     </IconButton>
   )

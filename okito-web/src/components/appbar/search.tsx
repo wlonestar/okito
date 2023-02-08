@@ -1,7 +1,7 @@
 import React from 'react'
 import { InputBase, Theme } from '@mui/material'
 import { alpha, styled } from '@mui/material/styles'
-import SearchIcon from '@mui/icons-material/Search'
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -58,7 +58,7 @@ export const CustomSearch = ({ theme }: CustomSearchProps) => {
   return (
     <Search>
       <SearchIconWrapper>
-        <SearchIcon />
+        <SearchOutlinedIcon />
       </SearchIconWrapper>
       <StyledInputBase
         theme={theme}

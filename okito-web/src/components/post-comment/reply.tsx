@@ -1,13 +1,13 @@
 import { Box, Button, ButtonBase, TextField } from '@mui/material'
 import React from 'react'
 import { defaultAvatar } from '../../consts'
-import { UserProps } from '../../types/user-props'
+import { CurrentUserProps } from '../../types/current-user-props'
 
-export const ReplyBox = ({ user }: UserProps) => {
+export const ReplyBox = ({ currentUser }: CurrentUserProps) => {
   const reply = {
-    href: user === null ? '' : user.id,
-    username: user === null ? 'default' : user.username,
-    avatar: user === null ? defaultAvatar : user.avatar,
+    href: currentUser === null ? '' : currentUser.id,
+    username: currentUser === null ? 'default' : currentUser.username,
+    avatar: currentUser === null ? defaultAvatar : currentUser.avatar,
   }
 
   return (

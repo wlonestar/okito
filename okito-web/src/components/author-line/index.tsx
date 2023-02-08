@@ -17,13 +17,7 @@ export const AuthorLine = ({
   likeNum,
 }: AuthorLineProps) => {
   return (
-    <Grid
-      container
-      spacing={2}
-      sx={{
-        pt: 2,
-      }}
-    >
+    <Grid container spacing={2} sx={{ pt: 2 }}>
       <Grid item>
         <ButtonBase
           href={`/user/${id}`}
