@@ -21,7 +21,7 @@ import java.util.List;
 public interface PostCollectionRepository extends JpaRepository<PostCollection, PostCollectionId> {
 
   @Query(value = "select new PostView(p.id, p.title, p.summary, p.cover, p.content, " +
-      "p.createTime, p.updateTime, p.draft, p.cateId, p.authorId, p.likeNum) " +
+      "p.createTime, p.updateTime, p.draft, p.cateId, p.authorId, p.viewNum, p.likeNum) " +
       "from PostView p where p.id in (select pc.id.postId from PostCollection pc where pc.id.collectId = ?1)")
   List<PostView> findAllByCollectionId(Long collectionId);
 
@@ -31,7 +31,7 @@ public interface PostCollectionRepository extends JpaRepository<PostCollection, 
   List<Collection> findAllByPostId(Long postId);
 
   @Query(value = "select new PostView(p.id, p.title, p.summary, p.cover, p.content, " +
-      "p.createTime, p.updateTime, p.draft, p.cateId, p.authorId, p.likeNum) " +
+      "p.createTime, p.updateTime, p.draft, p.cateId, p.authorId, p.viewNum, p.likeNum) " +
       "from PostView p where p.id in (select pc.id.postId from PostCollection pc where pc.id.collectId = ?1)")
   Page<PostView> findAllByCollectionId(Long collectionId, Pageable pageable);
 

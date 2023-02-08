@@ -21,7 +21,7 @@ import java.util.List;
 public interface PostTagRepository extends JpaRepository<PostTag, PostTagId> {
 
   @Query(value = "select new PostView(p.id, p.title, p.summary, p.cover, p.content, " +
-      "p.createTime, p.updateTime, p.draft, p.cateId, p.authorId, p.likeNum) " +
+      "p.createTime, p.updateTime, p.draft, p.cateId, p.authorId, p.viewNum, p.likeNum) " +
       "from PostView p where p.id in (select pt.id.postId from PostTag pt where pt.id.tagId = ?1)")
   List<PostView> findAllByTagId(Long tagId);
 
@@ -30,7 +30,7 @@ public interface PostTagRepository extends JpaRepository<PostTag, PostTagId> {
   List<TagView> findAllByPostId(Long postId);
 
   @Query(value = "select new PostView(p.id, p.title, p.summary, p.cover, p.content, " +
-      "p.createTime, p.updateTime, p.draft, p.cateId, p.authorId, p.likeNum) " +
+      "p.createTime, p.updateTime, p.draft, p.cateId, p.authorId, p.viewNum, p.likeNum) " +
       "from PostView p where p.id in (select pt.id.postId from PostTag pt where pt.id.tagId = ?1)")
   Page<PostView> findAllByTagId(Long tagId, Pageable pageable);
 
