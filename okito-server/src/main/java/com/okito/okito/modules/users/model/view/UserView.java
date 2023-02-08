@@ -28,6 +28,7 @@ public class UserView implements Serializable {
   private String username;
   private String password;
   private String email;
+  private String token;
   private String avatar;
   private String bio;
   private String homepage;

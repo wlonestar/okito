@@ -28,13 +28,13 @@ public interface TagFollowRepository extends JpaRepository<TagFollow, TagFollowI
       "from TagView t where t.id in (select tf.id.tagId from TagFollow tf where tf.id.followerId = ?1)")
   Page<TagView> findAllByFollowerId(Long followerId, Pageable pageable);
 
-  @Query(value = "select new UserView(u.id, u.username, u.password, u.email, u.avatar, u.bio, u.homepage, " +
-      "u.intro, u.joinTime, u.followerNum, u.followedNum, u.postLikeNum) " +
+  @Query(value = "select new UserView(u.id, u.username, u.password, u.email, u.token, u.avatar, u.bio, u.homepage, " +
+      "u.intro, u.joinTime, u.followerNum, u.followedNum, u.postViewNum, u.postLikeNum) " +
       "from UserView u where u.id in (select tf.id.followerId from TagFollow tf where tf.id.tagId = ?1)")
   List<UserView> findAllByTagId(Long tagId);
 
-  @Query(value = "select new UserView(u.id, u.username, u.password, u.email, u.avatar, u.bio, u.homepage, " +
-      "u.intro, u.joinTime, u.followerNum, u.followedNum, u.postLikeNum) " +
+  @Query(value = "select new UserView(u.id, u.username, u.password, u.email, u.token, u.avatar, u.bio, u.homepage, " +
+      "u.intro, u.joinTime, u.followerNum, u.followedNum, u.postViewNum, u.postLikeNum) " +
       "from UserView u where u.id in (select tf.id.followerId from TagFollow tf where tf.id.tagId = ?1)")
   Page<UserView> findAllByTagId(Long tagId, Pageable pageable);
 
