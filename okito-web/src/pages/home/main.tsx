@@ -5,8 +5,8 @@ import { Post } from '../../types/post'
 import { selectAllPosts } from '../../api/post'
 import { useMount } from '../../utils/hook'
 import { PostList } from '../../components/post-list'
-import { User } from '../../types/user'
 import { TabsProp } from '../../types/tabs-prop'
+import { CurrentUserProps } from '../../types/current-user-props'
 
 const tabs: TabsProp[] = [
   {
@@ -23,7 +23,7 @@ const tabs: TabsProp[] = [
   },
 ]
 
-export const Main = ({ user }: { user: User | null }) => {
+export const Main = ({ currentUser }: CurrentUserProps) => {
   const [value, setValue] = useState(0)
   const [posts, setPosts] = useState<Post[]>([])
 
@@ -76,7 +76,7 @@ export const Main = ({ user }: { user: User | null }) => {
         </Box>
         {tabs.map(({ index }) => (
           <TabPanel key={index} value={value} index={index}>
-            <PostList posts={posts} />
+            <PostList posts={posts} currentUser={currentUser} />
           </TabPanel>
         ))}
       </Box>

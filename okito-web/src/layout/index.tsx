@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext, useMemo, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import {
   Box,
@@ -11,13 +11,23 @@ import {
 import { CustomAppBar } from '../components/appbar'
 import { CurrentUserProps } from '../types/current-user-props'
 
-export const ColorModeContext = React.createContext({
+export const ColorModeContext = createContext({
   toggleColorMode: () => {},
 })
 
+type colorMode = 'light' | 'dark'
+
 export const Layout = ({ currentUser }: CurrentUserProps) => {
-  const [mode, setMode] = React.useState<'light' | 'dark'>('light')
-  const colorMode = React.useMemo(
+  let defaultMode: colorMode = 'light'
+  if (
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  ) {
+    defaultMode = 'dark'
+  }
+
+  const [mode, setMode] = useState<colorMode>(defaultMode)
+  const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
         setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
@@ -25,7 +35,7 @@ export const Layout = ({ currentUser }: CurrentUserProps) => {
     }),
     []
   )
-  const theme = React.useMemo(
+  const theme = useMemo(
     () =>
       createTheme({
         palette: {

@@ -20,3 +20,32 @@ export function selectPostById(id: number) {
     method: 'GET',
   })
 }
+
+interface SelectPostLikeProp {
+  postId: number
+  userId: number
+}
+
+export function selectPostLikeById(param: SelectPostLikeProp) {
+  return client({
+    url: '/post/like/single',
+    method: 'GET',
+    params: {
+      ...param,
+    },
+  })
+}
+
+interface LikeActionToPostProp {
+  postId: number
+  userId: number
+  type: number
+}
+
+export function likeActionToPost(param: LikeActionToPostProp) {
+  return client({
+    url: '/post/like',
+    method: 'PUT',
+    data: param,
+  })
+}

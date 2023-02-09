@@ -2,14 +2,70 @@ import { Post } from '../../../types/post'
 import { Box, Grid, Icon, Link, Typography } from '@mui/material'
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
+import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined'
+import { likeActionToPost, selectPostLikeById } from '../../../api/post'
+import { User } from '../../../types/user'
+import { useMount } from '../../../utils/hook'
+import { useState } from 'react'
 
 interface ActionListProps {
   post: Post
   commentsNum: number
+  currentUser: User | null
 }
 
-export const ActionList = ({ post, commentsNum }: ActionListProps) => {
+export const ActionList = ({
+  post,
+  commentsNum,
+  currentUser,
+}: ActionListProps) => {
+  const [likeType, setLikeType] = useState<number>(0)
+  const [likeNum, setLikeNum] = useState<number>(post.likeNum)
+
+  useMount(async () => {
+    if (currentUser !== null) {
+      const param = {
+        postId: post.id,
+        userId: currentUser.id,
+      }
+      selectPostLikeById(param).then((res) => {
+        if (res.status === 20) {
+          const type = res.data.type
+          if (type === 0 || type === 2) {
+            setLikeType(0)
+          } else if (type === 1) {
+            setLikeType(1)
+          }
+        }
+      })
+    }
+  })
+
+  const handleClick = async () => {
+    if (currentUser !== null) {
+      let like = 0
+      if (likeType === 0 || likeType === 2) {
+        like = 1
+        setLikeType(1)
+        setLikeNum(likeNum + 1)
+      } else if (likeType === 1) {
+        setLikeType(0)
+        setLikeNum(likeNum - 1)
+      }
+      console.log(like)
+      const param = {
+        postId: post.id,
+        userId: currentUser.id,
+        type: like,
+      }
+      console.log(param)
+      await likeActionToPost(param)
+    } else {
+      window.location.assign('/')
+    }
+  }
+
   return (
     <Grid container>
       <Grid item xs={3} md={3}>
@@ -32,16 +88,22 @@ export const ActionList = ({ post, commentsNum }: ActionListProps) => {
         <Link
           underline="none"
           color="text.secondary"
+          onClick={handleClick}
           sx={{
             display: 'flex',
             pr: 3,
             ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' },
           }}
+          href="#"
         >
           <Icon sx={{ pr: 4 }}>
-            <ThumbUpOutlinedIcon />
+            {likeType === 0 || likeType === 2 ? (
+              <ThumbUpOutlinedIcon />
+            ) : (
+              <ThumbUpIcon color="primary" />
+            )}
           </Icon>
-          <Typography>{post.likeNum}</Typography>
+          <Typography>{likeNum}</Typography>
         </Link>
       </Grid>
       <Grid item xs={3} md={3}>

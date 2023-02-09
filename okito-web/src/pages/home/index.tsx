@@ -8,7 +8,7 @@ export const HomePage = ({ currentUser }: CurrentUserProps) => {
   return (
     <Grid container spacing={3}>
       <Grid item xs={12} md={8}>
-        <Main user={currentUser} />
+        <Main currentUser={currentUser} />
       </Grid>
       <Grid item xs={12} md={4}>
         <Aside />
