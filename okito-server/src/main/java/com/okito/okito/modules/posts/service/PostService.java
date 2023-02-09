@@ -44,6 +44,8 @@ public interface PostService {
 
   boolean update(Post post);
 
+  void updatePostViewNum(Long postId);
+
   boolean deleteById(Long id);
 
   boolean deleteBatch(List<Long> ids);

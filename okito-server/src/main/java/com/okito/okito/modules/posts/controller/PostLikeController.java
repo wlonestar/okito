@@ -128,7 +128,7 @@ public class PostLikeController {
       if (Objects.equals(postLike.getType(), param.getType())) {
         return RespResult.success("don't need to update");
       } else {
-        postLike.setType(postLike.getType());
+        postLike.setType(param.getType());
         postLikeService.update(postLike);
         return RespResult.success();
       }
