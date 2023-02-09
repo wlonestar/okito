@@ -27,7 +27,7 @@ const ReplyUserLink = ({ user }: { user: User }) => {
 interface SecondaryProps {
   comment: PostComment
   open: boolean
-  toggleOpen: (open: boolean) => void
+  toggleOpen: (open: boolean, commentId: number | null) => void
 }
 
 export const Secondary = ({ comment, open, toggleOpen }: SecondaryProps) => {
@@ -45,13 +45,7 @@ export const Secondary = ({ comment, open, toggleOpen }: SecondaryProps) => {
   })
 
   return (
-    <Grid
-      container
-      spacing={2}
-      sx={{
-        pt: 2,
-      }}
-    >
+    <Grid container spacing={2} sx={{ pt: 2 }}>
       <Grid item>
         <CommentImage author={author} />
       </Grid>
@@ -65,7 +59,8 @@ export const Secondary = ({ comment, open, toggleOpen }: SecondaryProps) => {
               component="span"
             >
               <Link
-                href={`/user/1`}
+                href={`/user/${author.id}`}
+                target="_blank"
                 underline="none"
                 sx={{
                   color: (theme) =>

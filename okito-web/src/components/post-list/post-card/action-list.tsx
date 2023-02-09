@@ -62,7 +62,7 @@ export const ActionList = ({
       console.log(param)
       await likeActionToPost(param)
     } else {
-      window.location.assign('/')
+      window.location.assign('/login')
     }
   }
 

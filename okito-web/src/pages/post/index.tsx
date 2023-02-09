@@ -130,7 +130,11 @@ export const PostPage = ({ currentUser }: CurrentUserProps) => {
               maxWidth: '100%',
             }}
           >
-            <PostCommentBox postComments={comments} currentUser={currentUser} />
+            <PostCommentBox
+              postId={post.id}
+              postComments={comments}
+              currentUser={currentUser}
+            />
           </Box>
         </Paper>
       </Grid>

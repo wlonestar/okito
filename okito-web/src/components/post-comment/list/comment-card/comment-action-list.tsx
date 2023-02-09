@@ -7,7 +7,7 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 interface ActionListProps {
   comment: PostComment
   open: boolean
-  toggleOpen: (open: boolean) => void
+  toggleOpen: (open: boolean, commentId: number | null) => void
 }
 
 export const CommentActionList = ({
@@ -45,7 +45,7 @@ export const CommentActionList = ({
           <Button
             size="small"
             onClick={() => {
-              toggleOpen(open)
+              toggleOpen(open, comment.id)
             }}
           >
             <Typography variant="body2" color="text.secondary">

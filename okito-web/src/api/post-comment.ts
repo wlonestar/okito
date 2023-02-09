@@ -1,4 +1,5 @@
 import client from '../utils/axios-client'
+import { PostCommentParam } from '../types/post-comment'
 
 export function selectPostCommentsByPostId(id: number) {
   return client({
@@ -25,5 +26,13 @@ export function selectPostCommentById(id: number | undefined) {
   return client({
     url: `/post/comment/${id}`,
     method: 'GET',
+  })
+}
+
+export function addPostComment(param: PostCommentParam) {
+  return client({
+    url: '/post/comment',
+    method: 'POST',
+    data: param,
   })
 }

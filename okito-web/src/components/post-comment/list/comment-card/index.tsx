@@ -11,14 +11,16 @@ import { CommentActionList } from './comment-action-list'
 import { CommentImage } from './comment-image'
 
 interface CommentCardProps {
+  postId: number
   comment: PostComment
   user: User | null
 }
 
-export const CommentCard = ({ comment, user }: CommentCardProps) => {
+export const CommentCard = ({ postId, comment, user }: CommentCardProps) => {
   const [author, setAuthor] = useState<User>(userDefault)
   const [secondaryComments, setSecondaryComments] = useState<PostComment[]>([])
   const [open, setOpen] = useState<boolean>(false)
+  const [replyCommentId, setReplyCommentId] = useState<number | null>(null)
 
   useMount(async () => {
     const author = await selectUserById(comment.authorId)
@@ -28,8 +30,9 @@ export const CommentCard = ({ comment, user }: CommentCardProps) => {
     console.log(comments)
   })
 
-  function toggleOpen(open: boolean) {
+  function toggleOpen(open: boolean, commentId: number | null) {
     setOpen(!open)
+    setReplyCommentId(commentId)
   }
 
   return (
@@ -75,7 +78,11 @@ export const CommentCard = ({ comment, user }: CommentCardProps) => {
                   />
                 ))}
                 <Collapse in={open}>
-                  <ReplyBox currentUser={user} />
+                  <ReplyBox
+                    currentUser={user}
+                    postId={postId}
+                    replyCommentId={replyCommentId}
+                  />
                 </Collapse>
               </Box>
             </Grid>
