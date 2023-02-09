@@ -23,7 +23,7 @@ export const ActionList = ({
   const [likeType, setLikeType] = useState<number>(0)
   const [likeNum, setLikeNum] = useState<number>(post.likeNum)
 
-  useMount(async () => {
+  useMount(() => {
     if (currentUser !== null) {
       const param = {
         postId: post.id,
@@ -94,7 +94,6 @@ export const ActionList = ({
             pr: 3,
             ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' },
           }}
-          href="#"
         >
           <Icon sx={{ pr: 4 }}>
             {likeType === 0 || likeType === 2 ? (
