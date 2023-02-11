@@ -14,6 +14,13 @@ export function selectPostsByTagId(tagId: number) {
   })
 }
 
+export function selectPostsByAuthorId(authorId: number) {
+  return client({
+    url: `/post/author/${authorId}`,
+    method: 'GET',
+  })
+}
+
 export function selectPostById(id: number) {
   return client({
     url: `/post/${id}`,

@@ -10,6 +10,7 @@ import { TagPage } from '../pages/tag'
 import { SignInPage } from '../pages/auth/sign-in'
 import { SignUpPage } from '../pages/auth/sign-up'
 import { CurrentUserProps } from '../types/current-user-props'
+import { UserPage } from '../pages/user'
 
 export const CustomRoutes = ({ currentUser }: CurrentUserProps) => {
   return (
@@ -29,6 +30,10 @@ export const CustomRoutes = ({ currentUser }: CurrentUserProps) => {
         <Route path="/tag" element={<TagsPage />} />
         <Route path="/tag/:id" element={<TagPage />} />
         <Route path="/pin" element={<PinPage />} />
+        <Route
+          path="/user/:id"
+          element={<UserPage currentUser={currentUser} />}
+        />
       </Route>
     </Routes>
   )

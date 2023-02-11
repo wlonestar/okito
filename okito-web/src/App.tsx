@@ -6,7 +6,7 @@ function App() {
   const { user } = useAuth()
 
   useMount(() => {
-    console.log(user)
+    // console.log(user)
   })
 
   return <CustomRoutes currentUser={user} />
