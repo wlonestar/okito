@@ -1,13 +1,27 @@
-import { Box, Divider, Icon, Paper, Typography } from '@mui/material'
+import {
+  Box,
+  Button,
+  Divider,
+  Grid,
+  Icon,
+  Link,
+  List,
+  ListItem,
+  ListItemText,
+  Paper,
+  Typography,
+} from '@mui/material'
 import { User } from '../../types/user'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import { VisibilityRounded } from '@mui/icons-material'
+import React from 'react'
+import { formatDate } from '../../utils/date'
 
 interface StickyProps {
   user: User
 }
 
-export const Sticky = ({ user }: StickyProps) => {
+const Achieve = ({ user }: StickyProps) => {
   return (
     <Paper
       sx={{
@@ -50,5 +64,63 @@ export const Sticky = ({ user }: StickyProps) => {
         <Typography color="text.secondary">{`文章被阅读 ${user.postViewNum}`}</Typography>
       </Box>
     </Paper>
+  )
+}
+
+const Follow = ({ user }: StickyProps) => {
+  return (
+    <Paper sx={{ mt: 2 }}>
+      <Grid container>
+        <Grid item xs>
+          <Button fullWidth>
+            <Typography variant="body1">{'关注了'}</Typography>
+            <Typography variant="body2">{user.followedNum}</Typography>
+          </Button>
+        </Grid>
+        <Divider orientation="vertical" flexItem />
+        <Grid item xs>
+          <Button fullWidth>
+            <Typography variant="body1">{'关注者'}</Typography>
+            <Typography variant="body2">{user.followerNum}</Typography>
+          </Button>
+        </Grid>
+      </Grid>
+    </Paper>
+  )
+}
+
+const MoreInfo = ({ user }: StickyProps) => {
+  return (
+    <Paper sx={{ mt: 2 }}>
+      <List dense={false}>
+        <ListItem secondaryAction={1}>
+          <ListItemText>
+            <Link underline="none" color="text.secondary" href={'/'}>
+              {'收藏夹'}
+            </Link>
+          </ListItemText>
+        </ListItem>
+        <ListItem secondaryAction={1}>
+          <ListItemText>
+            <Link underline="none" color="text.secondary" href={'/'}>
+              {'关注标签'}
+            </Link>
+          </ListItemText>
+        </ListItem>
+        <ListItem secondaryAction={formatDate(user.joinTime)}>
+          <ListItemText color="text.secondary">{'加入于'}</ListItemText>
+        </ListItem>
+      </List>
+    </Paper>
+  )
+}
+
+export const Sticky = ({ user }: StickyProps) => {
+  return (
+    <>
+      <Achieve user={user} />
+      <Follow user={user} />
+      <MoreInfo user={user} />
+    </>
   )
 }
