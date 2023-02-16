@@ -28,7 +28,6 @@ const Achieve = ({ user }: StickyProps) => {
         p: 2,
         display: 'flex',
         flexDirection: 'column',
-        height: 240,
       }}
     >
       <Box>
@@ -54,6 +53,7 @@ const Achieve = ({ user }: StickyProps) => {
         sx={{
           display: 'flex',
           pr: 3,
+          pt: 2,
           ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' },
           cursor: 'unset',
         }}
@@ -72,14 +72,14 @@ const Follow = ({ user }: StickyProps) => {
     <Paper sx={{ mt: 2 }}>
       <Grid container>
         <Grid item xs>
-          <Button fullWidth>
+          <Button fullWidth sx={{ p: 2 }}>
             <Typography variant="body1">{'关注了'}</Typography>
             <Typography variant="body2">{user.followedNum}</Typography>
           </Button>
         </Grid>
         <Divider orientation="vertical" flexItem />
         <Grid item xs>
-          <Button fullWidth>
+          <Button fullWidth sx={{ p: 2 }}>
             <Typography variant="body1">{'关注者'}</Typography>
             <Typography variant="body2">{user.followerNum}</Typography>
           </Button>
@@ -95,18 +95,30 @@ const MoreInfo = ({ user }: StickyProps) => {
       <List dense={false}>
         <ListItem secondaryAction={1}>
           <ListItemText>
-            <Link underline="none" color="text.secondary" href={'/'}>
+            <Link
+              underline="hover"
+              color="text.primary"
+              sx={{ ':hover': { color: 'text.secondary' } }}
+              href={'/'}
+            >
               {'收藏夹'}
             </Link>
           </ListItemText>
         </ListItem>
+        <Divider />
         <ListItem secondaryAction={1}>
           <ListItemText>
-            <Link underline="none" color="text.secondary" href={'/'}>
+            <Link
+              underline="hover"
+              color="text.primary"
+              sx={{ ':hover': { color: 'text.secondary' } }}
+              href={'/'}
+            >
               {'关注标签'}
             </Link>
           </ListItemText>
         </ListItem>
+        <Divider />
         <ListItem secondaryAction={formatDate(user.joinTime)}>
           <ListItemText color="text.secondary">{'加入于'}</ListItemText>
         </ListItem>

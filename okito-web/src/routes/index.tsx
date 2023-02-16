@@ -11,6 +11,11 @@ import { SignInPage } from '../pages/auth/sign-in'
 import { SignUpPage } from '../pages/auth/sign-up'
 import { CurrentUserProps } from '../types/current-user-props'
 import { UserPage } from '../pages/user'
+import { PostsTab } from '../pages/user/tabs/posts-tab'
+import { FollowsTab } from '../pages/user/tabs/follows-tab'
+import { CollectionsTab } from '../pages/user/tabs/collections-tab'
+import { PinsTab } from '../pages/user/tabs/pins-tab'
+import { ColumnsTab } from '../pages/user/tabs/columns-tab'
 
 export const CustomRoutes = ({ currentUser }: CurrentUserProps) => {
   return (
@@ -33,7 +38,13 @@ export const CustomRoutes = ({ currentUser }: CurrentUserProps) => {
         <Route
           path="/user/:id"
           element={<UserPage currentUser={currentUser} />}
-        />
+        >
+          <Route path="/user/:id/posts" element={<PostsTab />} />
+          <Route path="/user/:id/columns" element={<ColumnsTab />} />
+          <Route path="/user/:id/pins" element={<PinsTab />} />
+          <Route path="/user/:id/collections" element={<CollectionsTab />} />
+          <Route path="/user/:id/follows" element={<FollowsTab />} />
+        </Route>
       </Route>
     </Routes>
   )

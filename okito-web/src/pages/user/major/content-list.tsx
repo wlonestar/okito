@@ -1,34 +1,33 @@
 import React, { SyntheticEvent, useState } from 'react'
-import { Box, Paper, Tab, Tabs } from '@mui/material'
+import { Box, Divider, Paper, Tab, Tabs } from '@mui/material'
 import { User } from '../../../types/user'
-import { TabsProp } from '../../../types/tabs-prop'
-import { TabPanel, tabProps } from '../../../components/tab'
-import { selectPostsByAuthorId } from '../../../api/post'
-import { Post } from '../../../types/post'
-import { useMount } from '../../../utils/hook'
-import { PostList } from '../../../components/post-list'
-import { useParams } from 'react-router-dom'
+import { Link, Outlet, useParams } from 'react-router-dom'
 
-const tabs: TabsProp[] = [
+const tabs = [
   {
     index: 0,
     label: '文章',
+    path: '/posts',
   },
   {
     index: 1,
     label: '专栏',
+    path: '/columns',
   },
   {
     index: 2,
     label: '想法',
+    path: '/pins',
   },
   {
     index: 3,
     label: '收藏',
+    path: '/collections',
   },
   {
     index: 4,
     label: '关注',
+    path: '/follows',
   },
 ]
 
@@ -41,33 +40,10 @@ export const ContentList = ({ user, currentUser }: ContentListProps) => {
   const { id } = useParams()
 
   const [value, setValue] = useState(0)
-  const [posts, setPosts] = useState<Post[]>([])
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
-    // TODO: add different request for data
-    if (newValue === 0) {
-      selectPostsByAuthorId(user.id).then((res) => {
-        console.log(res)
-        setPosts(res.data)
-      })
-    }
   }
-
-  const usePosts = (userId: number) => {
-    return selectPostsByAuthorId(userId)
-  }
-
-  useMount(async () => {
-    usePosts(id as unknown as number).then((res) => {
-      console.log(res)
-      if (res.status === 20) {
-        setPosts(res.data)
-      }
-    })
-    // const posts = await usePosts(user.id)
-    // setPosts(posts.data)
-  })
 
   return (
     <Paper sx={{ mt: 2 }}>
@@ -84,19 +60,21 @@ export const ContentList = ({ user, currentUser }: ContentListProps) => {
           margin: 'auto',
         }}
       >
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Box sx={{ width: '100%' }}>
           <Tabs value={value} onChange={handleChange}>
-            {tabs.map(({ index, label }) => (
-              <Tab key={index} label={label} {...tabProps(index)} />
+            {tabs.map(({ index, label, path }) => (
+              <Tab
+                key={index}
+                label={label}
+                tabIndex={index}
+                component={Link}
+                to={`/user/${id}${path}`}
+              />
             ))}
           </Tabs>
         </Box>
-        {tabs.map(({ index, label }) => (
-          <TabPanel key={index} value={value} index={index}>
-            {/*<p>{label}</p>*/}
-            <PostList posts={posts} currentUser={currentUser} />
-          </TabPanel>
-        ))}
+        <Divider />
+        <Outlet />
       </Box>
     </Paper>
   )

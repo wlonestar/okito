@@ -31,10 +31,10 @@ export const UserPage = ({ currentUser }: UserPageProps) => {
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12} md={8}>
+      <Grid item xs={12} md={8.5}>
         <Major user={user} currentUser={currentUser} />
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid item xs={12} md={3.5}>
         <Sticky user={user} />
       </Grid>
     </Grid>

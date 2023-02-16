@@ -1,29 +1,31 @@
 import client from '../utils/axios-client'
 
+const prefix: string = '/post'
+
 export function selectAllPosts() {
   return client({
-    url: '/post',
+    url: `${prefix}`,
     method: 'GET',
   })
 }
 
 export function selectPostsByTagId(tagId: number) {
   return client({
-    url: `/post/tag/${tagId}`,
+    url: `${prefix}/tag/${tagId}`,
     method: 'GET',
   })
 }
 
 export function selectPostsByAuthorId(authorId: number) {
   return client({
-    url: `/post/author/${authorId}`,
+    url: `${prefix}/author/${authorId}`,
     method: 'GET',
   })
 }
 
 export function selectPostById(id: number) {
   return client({
-    url: `/post/${id}`,
+    url: `${prefix}/${id}`,
     method: 'GET',
   })
 }
@@ -35,7 +37,7 @@ interface SelectPostLikeProp {
 
 export function selectPostLikeById(param: SelectPostLikeProp) {
   return client({
-    url: '/post/like/single',
+    url: `${prefix}/like/single`,
     method: 'GET',
     params: {
       ...param,
@@ -51,7 +53,7 @@ interface LikeActionToPostProp {
 
 export function likeActionToPost(param: LikeActionToPostProp) {
   return client({
-    url: '/post/like',
+    url: `${prefix}/like`,
     method: 'PUT',
     data: param,
   })
