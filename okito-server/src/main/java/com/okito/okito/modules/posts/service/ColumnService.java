@@ -15,7 +15,7 @@ public interface ColumnService {
 
   List<Column> selectAll();
 
-  List<Column> selectAllByUserIdAndType(Long userId, Short type);
+  List<Column> selectAllByUserIdAndType(Long userId, Boolean follow);
 
   Page<Column> selectAll(Pageable pageable);
 

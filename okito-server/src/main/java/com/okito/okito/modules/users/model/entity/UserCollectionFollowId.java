@@ -17,7 +17,7 @@ import java.io.Serializable;
 @Embeddable
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserCollectionId implements Serializable {
+public class UserCollectionFollowId implements Serializable {
 
   @Column(name = "user_id")
   private Long userId;

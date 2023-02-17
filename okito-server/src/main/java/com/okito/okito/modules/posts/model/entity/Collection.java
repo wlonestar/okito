@@ -41,4 +41,7 @@ public class Collection implements Serializable {
   @Column(name = "update_time")
   private LocalDateTime updateTime;
 
+  @Column(name = "author_id")
+  private Long authorId;
+
 }

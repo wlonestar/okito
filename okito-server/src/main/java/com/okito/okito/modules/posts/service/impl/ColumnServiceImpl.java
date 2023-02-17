@@ -4,7 +4,7 @@ import com.okito.okito.modules.posts.model.entity.Column;
 import com.okito.okito.modules.posts.repository.ColumnRepository;
 import com.okito.okito.modules.posts.repository.PostColumnRepository;
 import com.okito.okito.modules.posts.service.ColumnService;
-import com.okito.okito.modules.users.repository.UserColumnRepository;
+import com.okito.okito.modules.users.repository.UserColumnFollowRepository;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -30,7 +30,7 @@ public class ColumnServiceImpl implements ColumnService {
   private PostColumnRepository postColumnRepository;
 
   @Resource
-  private UserColumnRepository userColumnRepository;
+  private UserColumnFollowRepository userColumnFollowRepository;
 
   @Override
   public List<Column> selectAll() {
@@ -38,8 +38,8 @@ public class ColumnServiceImpl implements ColumnService {
   }
 
   @Override
-  public List<Column> selectAllByUserIdAndType(Long userId, Short type) {
-    return columnRepository.findByUserIdAndType(userId, type);
+  public List<Column> selectAllByUserIdAndType(Long userId, Boolean follow) {
+    return columnRepository.findByUserIdAndType(userId, follow);
   }
 
   @Override
@@ -59,7 +59,7 @@ public class ColumnServiceImpl implements ColumnService {
 
   @Override
   public long countFollowByColumnId(Long columnId) {
-    return userColumnRepository.countFollowByColumnId(columnId);
+    return userColumnFollowRepository.countFollowByColumnId(columnId);
   }
 
   @Override

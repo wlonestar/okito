@@ -2,7 +2,6 @@ package com.okito.okito.modules.posts.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -41,6 +40,9 @@ public class Column implements Serializable {
   @jakarta.persistence.Column(name = "update_time")
   private LocalDateTime updateTime;
 
+  @jakarta.persistence.Column(name = "author_id")
+  private Long authorId;
+
   public Long getId() {
     return id;
   }
@@ -63,6 +65,10 @@ public class Column implements Serializable {
 
   public LocalDateTime getUpdateTime() {
     return updateTime;
+  }
+
+  public Long getAuthorId() {
+    return authorId;
   }
 
 }

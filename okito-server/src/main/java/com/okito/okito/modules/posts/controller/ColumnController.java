@@ -45,13 +45,13 @@ public class ColumnController {
    * select all columns by userId and type
    *
    * @param userId userId
-   * @param type type
+   * @param follow follow
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/user/{userId}")
   public RespResult<?> selectAllByUserIdAndType(
-    @NonNull @PathVariable(name = "userId") Long userId, @NonNull @RequestParam(name = "type") Short type) {
-    return RespResult.success(columnService.selectAllByUserIdAndType(userId, type));
+    @NonNull @PathVariable(name = "userId") Long userId, @NonNull @RequestParam(name = "follow") Boolean follow) {
+    return RespResult.success(columnService.selectAllByUserIdAndType(userId, follow));
   }
 
   /**

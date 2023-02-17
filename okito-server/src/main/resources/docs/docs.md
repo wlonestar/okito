@@ -5005,7 +5005,7 @@ curl -X GET -i http://localhost:8088/user/collection/page/655?type=8092 --data '
 }
 ```
 
-### select userCollection by id
+### select userCollectionFollow by id
 **URL:** http://localhost:8088/user/collection/single
 
 **Type:** GET
@@ -5014,7 +5014,7 @@ curl -X GET -i http://localhost:8088/user/collection/page/655?type=8092 --data '
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select userCollection by id
+**Description:** select userCollectionFollow by id
 
 **Query-parameters:**
 
@@ -5046,7 +5046,7 @@ curl -X GET -i http://localhost:8088/user/collection/single?userId=103&collectio
 }
 ```
 
-### add a userCollection
+### add a userCollectionFollow
 **URL:** http://localhost:8088/user/collection
 
 **Type:** POST
@@ -5055,7 +5055,7 @@ curl -X GET -i http://localhost:8088/user/collection/single?userId=103&collectio
 
 **Content-Type:** application/json
 
-**Description:** add a userCollection
+**Description:** add a userCollectionFollow
 
 **Body-parameters:**
 
@@ -5092,7 +5092,7 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/user/c
 }
 ```
 
-### update userCollection
+### update userCollectionFollow
 **URL:** http://localhost:8088/user/collection
 
 **Type:** PUT
@@ -5101,7 +5101,7 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/user/c
 
 **Content-Type:** application/json
 
-**Description:** update userCollection
+**Description:** update userCollectionFollow
 
 **Body-parameters:**
 
@@ -5138,7 +5138,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/user/co
 }
 ```
 
-### delete userCollection by id
+### delete userCollectionFollow by id
 **URL:** http://localhost:8088/user/collection
 
 **Type:** DELETE
@@ -5147,7 +5147,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/user/co
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** delete userCollection by id
+**Description:** delete userCollectionFollow by id
 
 **Query-parameters:**
 

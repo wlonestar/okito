@@ -15,8 +15,8 @@ import java.util.List;
 @Repository
 public interface ColumnRepository extends JpaRepository<Column, Long> {
 
-  @Query(value = "select id, name, cover, description, create_time, update_time from \"column\" " +
-    "where id in (select column_id from user_column where user_id = ?1 and type = ?2)", nativeQuery = true)
-  List<Column> findByUserIdAndType(Long userId, Short type);
+  @Query(value = "select id, name, cover, description, create_time, update_time, author_id from \"column\" " +
+    "where id in (select column_id from user_column_follow where user_id = ?1 and follow = ?2)", nativeQuery = true)
+  List<Column> findByUserIdAndType(Long userId, Boolean follow);
 
 }

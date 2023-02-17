@@ -8,10 +8,10 @@ import lombok.Data;
  * @time 2023/1/17 21:49
  */
 @Data
-public class UserColumnParam {
+public class UserColumnFollowParam {
 
   private Long userId;
   private Long columnId;
-  private Short type;
+  private Boolean follow;
 
 }
