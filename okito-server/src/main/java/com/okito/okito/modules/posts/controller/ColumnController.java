@@ -42,6 +42,19 @@ public class ColumnController {
   }
 
   /**
+   * select all columns by userId and type
+   *
+   * @param userId userId
+   * @param type type
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/user/{userId}")
+  public RespResult<?> selectAllByUserIdAndType(
+    @NonNull @PathVariable(name = "userId") Long userId, @NonNull @RequestParam(name = "type") Short type) {
+    return RespResult.success(columnService.selectAllByUserIdAndType(userId, type));
+  }
+
+  /**
    * select all columns by page
    *
    * @param pageable format => page=1&size=5&sort=id,asc
@@ -66,6 +79,28 @@ public class ColumnController {
       return RespResult.success(column);
     }
     return RespResult.fail(RespStatus.NOT_EXIST);
+  }
+
+  /**
+   * count posts num by column id
+   *
+   * @param columnId column id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/count/post/{columnId}")
+  public RespResult<?> countPostsByColumnId(@NonNull @PathVariable(name = "columnId") Long columnId) {
+    return RespResult.success(columnService.countPostsByColumnId(columnId));
+  }
+
+  /**
+   * count posts num by column id
+   *
+   * @param columnId column id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/count/follow/{columnId}")
+  public RespResult<?> countFollowByColumnId(@NonNull @PathVariable(name = "columnId") Long columnId) {
+    return RespResult.success(columnService.countFollowByColumnId(columnId));
   }
 
   /**

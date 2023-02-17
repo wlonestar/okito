@@ -34,4 +34,7 @@ public interface UserColumnRepository extends JpaRepository<UserColumn, UserColu
       "where u.id.columnId = ?1 and u.type = ?2")
   Page<UserColumn> findAllByColumnIdAndType(Long columnId, Short type, Pageable pageable);
 
+  @Query(value = "select count(*) from user_column where column_id = ?1 and type = 2", nativeQuery = true)
+  long countFollowByColumnId(Long columnId);
+
 }

@@ -115,7 +115,7 @@ public class UserColumnController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/page/{columnId}")
-  public RespResult<?> selectByColumonIdAndType(
+  public RespResult<?> selectByColumnIdAndType(
       @NonNull @PathVariable(name = "columnId") Long columnId, @NonNull @RequestParam(name = "type") Short type,
       @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
     if (type > 0 && type < 4) {
