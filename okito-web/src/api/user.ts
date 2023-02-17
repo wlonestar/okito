@@ -6,3 +6,21 @@ export function selectUserById(id: number) {
     method: 'GET',
   })
 }
+
+interface ColumnType {
+  userId: number
+  columnId: number
+}
+
+export function selectColumnTypeByUserIdAndColumnId(param: {
+  columnId: number
+  userId: number | undefined
+}) {
+  return client({
+    url: '/user/column/single',
+    method: 'GET',
+    params: {
+      ...param,
+    },
+  })
+}

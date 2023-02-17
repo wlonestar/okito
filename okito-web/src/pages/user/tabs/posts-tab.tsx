@@ -5,8 +5,7 @@ import React, { SyntheticEvent, useState } from 'react'
 import { Post } from '../../../types/post'
 import { selectPostsByAuthorId } from '../../../api/post'
 import { Link, useParams } from 'react-router-dom'
-import { Box, Tab, Tabs } from '@mui/material'
-import { sortPostByHot, sortPostByNew } from '../../../utils/sort'
+import { Box, Divider, Tab, Tabs } from '@mui/material'
 
 export const PostsTab = () => {
   const { id } = useParams()
@@ -21,11 +20,13 @@ export const PostsTab = () => {
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
-    console.log(newValue)
+    // console.log(newValue)
     if (newValue === 0) {
-      sortPostByHot(posts)
+      posts.sort((a, b) => (a.viewNum > b.viewNum ? 0 : 1))
+      setPosts(posts)
     } else if (newValue === 1) {
-      sortPostByNew(posts)
+      posts.sort((a, b) => (a.createTime > b.createTime ? 0 : 1))
+      setPosts(posts)
     }
   }
 
@@ -33,7 +34,6 @@ export const PostsTab = () => {
     usePosts(id as unknown as number).then((res) => {
       if (res.status === 20) {
         const posts: Post[] = res.data
-        sortPostByHot(posts)
         setPosts(posts)
       }
     })
@@ -64,6 +64,7 @@ export const PostsTab = () => {
           />
         </Tabs>
       </Box>
+      <Divider />
       <PostList posts={posts} currentUser={currentUser} />
     </>
   )

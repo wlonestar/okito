@@ -38,7 +38,6 @@ interface ContentListProps {
 
 export const ContentList = ({ user, currentUser }: ContentListProps) => {
   const { id } = useParams()
-
   const [value, setValue] = useState(0)
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {

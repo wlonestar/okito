@@ -1,30 +1,9 @@
 import { Post } from '../../../types/post'
 import { User } from '../../../types/user'
 import { Tag } from '../../../types/tag'
-import { Box, Grid, Link, Typography } from '@mui/material'
+import { Grid, Link, Typography } from '@mui/material'
 import { formatDateTime } from '../../../utils/date'
-
-const CustomDivider = () => {
-  return (
-    <Box
-      component="span"
-      sx={{ display: 'inline-block', mx: '6px', transform: 'scale(1.2)' }}
-    >
-      {'|'}
-    </Box>
-  )
-}
-
-const Pointer = () => {
-  return (
-    <Box
-      component="span"
-      sx={{ display: 'inline-block', mx: '6px', transform: 'scale(1.2)' }}
-    >
-      {'·'}
-    </Box>
-  )
-}
+import { VerticalDivider, PointerDivider } from '../../inline-divider'
 
 interface MetaListProps {
   post: Post
@@ -37,7 +16,7 @@ export const MetaList = ({ post, author, tags }: MetaListProps) => {
     <Grid item xs={12}>
       <Typography component="div" sx={{ fontSize: 14 }} color="text.secondary">
         {formatDateTime(post.createTime)}
-        <CustomDivider />
+        <VerticalDivider />
         <Link
           href={`/user/${author.id}`}
           target="_blank"
@@ -55,7 +34,7 @@ export const MetaList = ({ post, author, tags }: MetaListProps) => {
                 underline="none"
                 color="text.secondary"
               >
-                <Pointer />
+                <PointerDivider />
                 {tag.name}
               </Link>
             ))}
