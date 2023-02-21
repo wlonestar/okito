@@ -1,8 +1,8 @@
 plugins {
   id 'java'
-  id 'org.springframework.boot' version '3.0.1'
+  id 'org.springframework.boot' version '3.0.2'
   id 'io.spring.dependency-management' version '1.1.0'
-  id "com.github.shalousun.smart-doc" version '2.6.3'
+  id "com.github.shalousun.smart-doc" version '2.6.4'
 }
 
 smartdoc {
@@ -21,6 +21,7 @@ configurations {
 
 repositories {
   mavenCentral()
+  mavenLocal()
 }
 
 dependencies {
@@ -41,7 +42,7 @@ dependencies {
 
   implementation 'org.apache.commons:commons-pool2'
   implementation 'com.google.guava:guava:31.1-jre'
-  implementation 'com.qcloud:cos_api:5.6.129'
+  implementation 'com.qcloud:cos_api:5.6.134'
 
   implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
   implementation 'com.apifan.common:common-random:1.0.18'

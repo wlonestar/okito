@@ -145,6 +145,15 @@ public class PostServiceImpl implements PostService {
   }
 
   @Override
+  public void updatePostViewNum(Long postId) {
+    Post post = postRepository.findById(postId).orElse(null);
+    if (!Objects.equals(post, null)) {
+      post.setViewNum(post.getViewNum() + 1);
+      postRepository.save(post);
+    }
+  }
+
+  @Override
   public boolean deleteById(Long id) {
     Post post = postRepository.findById(id).orElse(null);
     if (!Objects.equals(post, null)) {

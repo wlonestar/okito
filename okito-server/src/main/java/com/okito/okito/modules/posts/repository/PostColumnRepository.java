@@ -29,4 +29,7 @@ public interface PostColumnRepository extends JpaRepository<PostColumn, PostColu
       "from PostView p where p.id in (select pc.id.postId from PostColumn pc where pc.id.columnId = ?1)")
   Page<PostView> findAllByColumnId(Long columnId, Pageable pageable);
 
+  @Query(value = "select count(*) from post_column where column_id = ?1", nativeQuery = true)
+  long countByColumnId(Long columnId);
+
 }

@@ -4,6 +4,7 @@ import com.okito.okito.common.annotation.TimeLog;
 import com.okito.okito.common.constant.consts.RespResult;
 import com.okito.okito.common.constant.enums.RespStatus;
 import com.okito.okito.modules.posts.model.entity.Post;
+import com.okito.okito.modules.posts.model.view.PostView;
 import com.okito.okito.modules.posts.service.PostService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -14,6 +15,7 @@ import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * post controller
@@ -186,7 +188,12 @@ public class PostController {
    */
   @RequestMapping(method = RequestMethod.GET, path = "/{id}")
   public RespResult<?> selectById(@NonNull @PathVariable(name = "id") Long id) {
-    return RespResult.success(postService.selectById(id));
+    PostView postView = postService.selectById(id);
+    if (!Objects.equals(postView, null)) {
+      postService.updatePostViewNum(id);
+      return RespResult.success(postView);
+    }
+    return RespResult.fail(RespStatus.NOT_EXIST);
   }
 
   /**

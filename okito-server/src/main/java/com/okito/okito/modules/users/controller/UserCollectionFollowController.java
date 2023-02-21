@@ -3,10 +3,10 @@ package com.okito.okito.modules.users.controller;
 import com.okito.okito.common.annotation.TimeLog;
 import com.okito.okito.common.constant.consts.RespResult;
 import com.okito.okito.common.constant.enums.RespStatus;
-import com.okito.okito.modules.users.model.entity.UserCollection;
-import com.okito.okito.modules.users.model.entity.UserCollectionId;
-import com.okito.okito.modules.users.model.param.UserCollectionParam;
-import com.okito.okito.modules.users.service.UserCollectionService;
+import com.okito.okito.modules.users.model.entity.UserCollectionFollow;
+import com.okito.okito.modules.users.model.entity.UserCollectionFollowId;
+import com.okito.okito.modules.users.model.param.UserCollectionFollowParam;
+import com.okito.okito.modules.users.service.UserCollectionFollowService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
@@ -28,10 +28,10 @@ import java.util.Objects;
 @TimeLog
 @RestController
 @RequestMapping(path = "/user/collection")
-public class UserCollectionController {
+public class UserCollectionFollowController {
 
   @Resource
-  private UserCollectionService userCollectionService;
+  private UserCollectionFollowService userCollectionFollowService;
 
   /**
    * select all userCollections
@@ -40,39 +40,43 @@ public class UserCollectionController {
    */
   @RequestMapping(method = RequestMethod.GET, path = "")
   public RespResult<?> selectAll() {
-    return RespResult.success(userCollectionService.selectAll());
+    return RespResult.success(userCollectionFollowService.selectAll());
   }
 
   /**
+   * TODO
+   * <p></p>
    * select userCollections by userId and type
    *
    * @param userId userId
-   * @param type   collection type
+   * @param follow follow
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/{userId}")
   public RespResult<?> selectByUserIdAndType(
-      @NonNull @PathVariable(name = "userId") Long userId, @NonNull @RequestParam(name = "type") Short type) {
-    if (type > 0 && type < 4) {
-      return RespResult.success(userCollectionService.selectByUserIdAndType(userId, type));
-    }
-    return RespResult.fail(RespStatus.PARAM_ERROR);
+      @NonNull @PathVariable(name = "userId") Long userId, @NonNull @RequestParam(name = "follow") Boolean follow) {
+//    if (follow) {
+      return RespResult.success(userCollectionFollowService.selectByUserIdAndType(userId, follow));
+//    }
+//    return RespResult.fail(RespStatus.PARAM_ERROR);
   }
 
   /**
+   * TODO
+   * <p></p>
    * select userCollections by collectionId and type
    *
    * @param collectionId collectionId
-   * @param type         collection type
+   * @param follow follow
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/{collectionId}")
   public RespResult<?> selectByCollectionIdAndType(
-      @NonNull @PathVariable(name = "collectionId") Long collectionId, @NonNull @RequestParam(name = "type") Short type) {
-    if (type > 0 && type < 4) {
-      return RespResult.success(userCollectionService.selectByCollectionIdAndType(collectionId, type));
-    }
-    return RespResult.fail(RespStatus.PARAM_ERROR);
+      @NonNull @PathVariable(name = "collectionId") Long collectionId, @NonNull @RequestParam(name = "follow") Boolean follow) {
+//    if (type > 0 && type < 4) {
+      return RespResult.success(userCollectionFollowService.selectByCollectionIdAndType(collectionId, follow));
+//    }
+//    return RespResult.fail(RespStatus.PARAM_ERROR);
   }
 
   /**
@@ -84,43 +88,47 @@ public class UserCollectionController {
   @RequestMapping(method = RequestMethod.GET, path = "/page")
   public RespResult<?> selectAll(
       @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(userCollectionService.selectAll(pageable));
+    return RespResult.success(userCollectionFollowService.selectAll(pageable));
   }
 
   /**
+   * TODO
+   * <p></p>
    * select userCollections by userId, type and page
    *
    * @param userId   userID
-   * @param type     collection type
+   * @param follow  follow
    * @param pageable format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/page/{userId}")
   public RespResult<?> selectByUserIdAndType(
-      @NonNull @PathVariable(name = "userId") Long userId, @NonNull @RequestParam(name = "type") Short type,
+      @NonNull @PathVariable(name = "userId") Long userId, @NonNull @RequestParam(name = "follow") Boolean follow,
       @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
-    if (type > 0 && type < 4) {
-      return RespResult.success(userCollectionService.selectByUserIdAndType(userId, type, pageable));
-    }
-    return RespResult.fail(RespStatus.PARAM_ERROR);
+//    if (type > 0 && type < 4) {
+      return RespResult.success(userCollectionFollowService.selectByUserIdAndType(userId, follow, pageable));
+//    }
+//    return RespResult.fail(RespStatus.PARAM_ERROR);
   }
 
   /**
+   * TODO
+   * <p></p>
    * select userCollections by collectionId, type and page
    *
    * @param collectionId collectionId
-   * @param type         collection type
+   * @param follow follow
    * @param pageable     format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/page/{collectionId}")
   public RespResult<?> selectByCollectionIdAndType(
-      @NonNull @PathVariable(name = "collectionId") Long collectionId, @NonNull @RequestParam(name = "type") Short type,
+      @NonNull @PathVariable(name = "collectionId") Long collectionId, @NonNull @RequestParam(name = "follow") Boolean follow,
       @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
-    if (type > 0 && type < 4) {
-      return RespResult.success(userCollectionService.selectByCollectionIdAndType(collectionId, type, pageable));
-    }
-    return RespResult.fail(RespStatus.PARAM_ERROR);
+//    if (type > 0 && type < 4) {
+      return RespResult.success(userCollectionFollowService.selectByCollectionIdAndType(collectionId, follow, pageable));
+//    }
+//    return RespResult.fail(RespStatus.PARAM_ERROR);
   }
 
   /**
@@ -134,8 +142,8 @@ public class UserCollectionController {
   public RespResult<?> selectById(
       @NonNull @RequestParam(name = "userId") Long userId,
       @NonNull @RequestParam(name = "collectionId") Long collectionId) {
-    UserCollectionId id = new UserCollectionId(userId, collectionId);
-    UserCollection collection = userCollectionService.selectById(id);
+    UserCollectionFollowId id = new UserCollectionFollowId(userId, collectionId);
+    UserCollectionFollow collection = userCollectionFollowService.selectById(id);
     if (!Objects.equals(collection, null)) {
       return RespResult.success(collection);
     }
@@ -149,11 +157,11 @@ public class UserCollectionController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.POST, path = "")
-  public RespResult<?> add(@NonNull @RequestBody UserCollectionParam param) {
-    UserCollectionId id = new UserCollectionId(param.getUserId(), param.getCollectId());
-    UserCollection collection = userCollectionService.selectById(id);
+  public RespResult<?> add(@NonNull @RequestBody UserCollectionFollowParam param) {
+    UserCollectionFollowId id = new UserCollectionFollowId(param.getUserId(), param.getCollectId());
+    UserCollectionFollow collection = userCollectionFollowService.selectById(id);
     if (!Objects.equals(collection, null)) {
-      userCollectionService.add(new UserCollection(id, param.getType()));
+      userCollectionFollowService.add(new UserCollectionFollow(id, param.getFollow()));
       return RespResult.success();
     }
     return RespResult.fail(RespStatus.ALREADY_EXIST);
@@ -166,12 +174,12 @@ public class UserCollectionController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.PUT, path = "")
-  public RespResult<?> update(@NonNull @RequestBody UserCollectionParam param) {
-    UserCollectionId id = new UserCollectionId(param.getUserId(), param.getCollectId());
-    UserCollection collection = userCollectionService.selectById(id);
+  public RespResult<?> update(@NonNull @RequestBody UserCollectionFollowParam param) {
+    UserCollectionFollowId id = new UserCollectionFollowId(param.getUserId(), param.getCollectId());
+    UserCollectionFollow collection = userCollectionFollowService.selectById(id);
     if (!Objects.equals(collection, null)) {
-      collection.setType(param.getType());
-      userCollectionService.update(collection);
+      collection.setFollow(param.getFollow());
+      userCollectionFollowService.update(collection);
       return RespResult.success();
     }
     return RespResult.fail(RespStatus.NOT_EXIST);
@@ -188,8 +196,8 @@ public class UserCollectionController {
   public RespResult<?> deleteById(
       @NonNull @RequestParam(name = "userId") Long userId,
       @NonNull @RequestParam(name = "collectionId") Long collectionId) {
-    UserCollectionId id = new UserCollectionId(userId, collectionId);
-    boolean flag = userCollectionService.deleteById(id);
+    UserCollectionFollowId id = new UserCollectionFollowId(userId, collectionId);
+    boolean flag = userCollectionFollowService.deleteById(id);
     if (flag) {
       return RespResult.success();
     }

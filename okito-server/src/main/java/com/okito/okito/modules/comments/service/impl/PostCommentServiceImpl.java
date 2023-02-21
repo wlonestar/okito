@@ -108,19 +108,35 @@ public class PostCommentServiceImpl implements PostCommentService {
     return postCommentRepository.countByPostId(postId);
   }
 
+  /**
+   * if the parent id is null
+   * means this comment have no parent
+   * just add a new record of it
+   * <p></p>
+   * if the parent id is not null
+   * find the parent comment in the table
+   * if not exists
+   * return false
+   * otherwise
+   * just add a new record of it
+   */
   @Override
   public boolean add(PostComment postComment) {
     Long postId = postComment.getPostId();
-    PostComment parentComment = postCommentRepository.findById(postComment.getParentId()).orElse(null);
-    if (!Objects.equals(parentComment, null)) {
-      if (parentComment.getPostId().equals(postId)) {
-        postCommentRepository.save(postComment);
-        return true;
+    if (!Objects.isNull(postId)) {
+      Long parentId = postComment.getParentId();
+      if (!Objects.isNull(parentId)) {
+        PostComment parentComment = postCommentRepository.findById(parentId).orElse(null);
+        if (!Objects.isNull(parentComment) && postId.equals(parentComment.getPostId())) {
+          postCommentRepository.save(postComment);
+          return true;
+        }
+        return false;
       }
-      return false;
+      postCommentRepository.save(postComment);
+      return true;
     }
-    postCommentRepository.save(postComment);
-    return true;
+    return false;
   }
 
   @Override

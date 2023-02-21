@@ -15,9 +15,17 @@ public interface ColumnService {
 
   List<Column> selectAll();
 
+  List<Column> selectAllByAuthorId(Long authorId);
+
+  List<Column> selectAllFollowedByUserId(Long userId);
+
   Page<Column> selectAll(Pageable pageable);
 
   Column selectById(Long id);
+
+  long countPostsByColumnId(Long columnId);
+
+  long countFollowByColumnId(Long columnId);
 
   boolean add(Column column);
 

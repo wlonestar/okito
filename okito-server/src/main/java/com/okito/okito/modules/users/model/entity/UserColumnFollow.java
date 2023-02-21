@@ -17,15 +17,15 @@ import java.io.Serializable;
  */
 @Data
 @Entity
-@Table(name = "user_Column")
+@Table(name = "user_Column_follow")
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserColumn implements Serializable {
+public class UserColumnFollow implements Serializable {
 
   @EmbeddedId
-  private UserColumnId id;
+  private UserColumnFollowId id;
 
-  @Column(name = "type")
-  private Short type;
+  @Column(name = "follow")
+  private Boolean follow;
 
 }
