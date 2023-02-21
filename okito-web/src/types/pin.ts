@@ -4,6 +4,7 @@ export interface Pin {
   createTime: Date
   updateTime: Date
   authorId: number
+  // TODO: add viewNum
   likeNum: number
 }
 
