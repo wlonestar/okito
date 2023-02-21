@@ -44,40 +44,25 @@ public class UserColumnFollowController {
   }
 
   /**
-   * TODO
-   * <p></p>
-   * select UserColumns by userId and type
+   * select all UserColumnFollows by userId
    *
    * @param userId userId
-   * @param type   column type
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/{userId}")
-  public RespResult<?> selectByUserIdAndType(
-      @NonNull @PathVariable(name = "userId") Long userId, @NonNull @RequestParam(name = "type") Boolean type) {
-//    if (type > 0 && type < 4) {
-      return RespResult.success(userColumnFollowService.selectByUserIdAndType(userId, type));
-//    }
-//    return RespResult.fail(RespStatus.PARAM_ERROR);
+  @RequestMapping(method = RequestMethod.GET, path = "/user/{userId}")
+  public RespResult<?> selectAllByUserId(@NonNull @PathVariable(name = "userId") Long userId) {
+    return RespResult.success(userColumnFollowService.selectByUserIdAndType(userId));
   }
 
   /**
-   * TODO
-   * <p></p>
-   * select UserColumns by columnId and type
+   * select all UserColumnFollows by columnId
    *
    * @param columnId columnId
-   * @param type     column type
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/{columnId}")
-  public RespResult<?> selectByColumnIdAndType(
-      @NonNull @PathVariable(name = "columnId") Long columnId,
-      @NonNull @RequestParam(name = "type") Boolean type) {
-//    if (type > 0 && type < 4) {
-      return RespResult.success(userColumnFollowService.selectByColumnIdAndType(columnId, type));
-//    }
-//    return RespResult.fail(RespStatus.PARAM_ERROR);
+  @RequestMapping(method = RequestMethod.GET, path = "/column/{columnId}")
+  public RespResult<?> selectByColumnIdAndType(@NonNull @PathVariable(name = "columnId") Long columnId) {
+    return RespResult.success(userColumnFollowService.selectByColumnIdAndType(columnId));
   }
 
   /**
@@ -93,43 +78,31 @@ public class UserColumnFollowController {
   }
 
   /**
-   * TODO
-   * <p></p>
    * select UserColumns by userId, type and page
    *
    * @param userId   userID
-   * @param type     column type
    * @param pageable format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/page/{userId}")
-  public RespResult<?> selectByUserIdAndType(
-      @NonNull @PathVariable(name = "userId") Long userId, @NonNull @RequestParam(name = "type") Boolean type,
+  public RespResult<?> selectAllByUserId(
+      @NonNull @PathVariable(name = "userId") Long userId,
       @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
-//    if (type > 0 && type < 4) {
-      return RespResult.success(userColumnFollowService.selectByUserIdAndType(userId, type, pageable));
-//    }
-//    return RespResult.fail(RespStatus.PARAM_ERROR);
+    return RespResult.success(userColumnFollowService.selectByUserIdAndType(userId, pageable));
   }
 
   /**
-   * TODO
-   * <p></p>
-   * select UserColumns by columnId, type and page
+   * select UserColumns by columnId and page
    *
    * @param columnId columnId
-   * @param type     column type
    * @param pageable format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/page/{columnId}")
   public RespResult<?> selectByColumnIdAndType(
-      @NonNull @PathVariable(name = "columnId") Long columnId, @NonNull @RequestParam(name = "type") Boolean type,
+      @NonNull @PathVariable(name = "columnId") Long columnId,
       @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
-//    if (type > 0 && type < 4) {
-      return RespResult.success(userColumnFollowService.selectByColumnIdAndType(columnId, type, pageable));
-//    }
-//    return RespResult.fail(RespStatus.PARAM_ERROR);
+    return RespResult.success(userColumnFollowService.selectByColumnIdAndType(columnId, pageable));
   }
 
   /**
@@ -148,7 +121,7 @@ public class UserColumnFollowController {
     if (!Objects.equals(collection, null)) {
       return RespResult.success(collection);
     }
-    return RespResult.fail(RespStatus.NOT_EXIST);
+    return RespResult.success(new UserColumnFollow(new UserColumnFollowId(userId, columnId), false));
   }
 
   /**
@@ -181,9 +154,11 @@ public class UserColumnFollowController {
     if (!Objects.equals(collection, null)) {
       collection.setFollow(param.getFollow());
       userColumnFollowService.update(collection);
-      return RespResult.success();
+    } else {
+      collection = new UserColumnFollow(new UserColumnFollowId(param.getUserId(), param.getColumnId()), param.getFollow());
+      userColumnFollowService.add(collection);
     }
-    return RespResult.fail(RespStatus.NOT_EXIST);
+    return RespResult.success(collection);
   }
 
   /**

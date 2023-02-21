@@ -16,15 +16,15 @@ public interface UserColumnFollowService {
 
   List<UserColumnFollow> selectAll();
 
-  List<UserColumnFollow> selectByUserIdAndType(Long userId, Boolean follow);
+  List<UserColumnFollow> selectByUserIdAndType(Long userId);
 
-  List<UserColumnFollow> selectByColumnIdAndType(Long columnId, Boolean follow);
+  List<UserColumnFollow> selectByColumnIdAndType(Long columnId);
 
   Page<UserColumnFollow> selectAll(Pageable pageable);
 
-  Page<UserColumnFollow> selectByUserIdAndType(Long userId, Boolean follow, Pageable pageable);
+  Page<UserColumnFollow> selectByUserIdAndType(Long userId, Pageable pageable);
 
-  Page<UserColumnFollow> selectByColumnIdAndType(Long columnId, Boolean follow, Pageable pageable);
+  Page<UserColumnFollow> selectByColumnIdAndType(Long columnId, Pageable pageable);
 
   UserColumnFollow selectById(UserColumnFollowId id);
 

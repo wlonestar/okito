@@ -2,6 +2,7 @@ package com.okito.okito.modules.posts.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -15,7 +16,8 @@ import java.time.LocalDateTime;
  */
 @Setter
 @Entity
-@Table(name = "column")
+@Builder
+@Table(name = "p_column")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Column implements Serializable {

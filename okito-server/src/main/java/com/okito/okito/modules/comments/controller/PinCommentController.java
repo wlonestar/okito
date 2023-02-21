@@ -56,7 +56,7 @@ public class PinCommentController {
    * @param pinId pinId
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/{pinId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/pin/{pinId}")
   public RespResult<?> selectAllByPinId(@NonNull @PathVariable(name = "pinId") Long pinId) {
     return RespResult.success(pinCommentService.selectAllByPinId(pinId));
   }
@@ -67,7 +67,7 @@ public class PinCommentController {
    * @param authorId authorId
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/{authorId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
   public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
     return RespResult.success(pinCommentService.selectAllByAuthorId(authorId));
   }
@@ -102,7 +102,7 @@ public class PinCommentController {
    * @param pageable format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/{pinId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/page/pin/{pinId}")
   public RespResult<?> selectAllByPinId(
       @NonNull @PathVariable(name = "pinId") Long pinId,
       @NonNull @PageableDefault(sort = "uploadTime", direction = Sort.Direction.DESC) Pageable pageable) {
@@ -116,7 +116,7 @@ public class PinCommentController {
    * @param pageable format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/{authorId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/page/author/{authorId}")
   public RespResult<?> selectAllByAuthorId(
       @NonNull @PathVariable(name = "authorId") Long authorId,
       @NonNull @PageableDefault(sort = "uploadTime", direction = Sort.Direction.DESC) Pageable pageable) {

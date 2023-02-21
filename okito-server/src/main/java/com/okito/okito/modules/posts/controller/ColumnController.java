@@ -42,16 +42,25 @@ public class ColumnController {
   }
 
   /**
-   * select all columns by userId and type
+   * select all followed columns by authorId
    *
-   * @param userId userId
-   * @param follow follow
+   * @param authorId authorId
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/user/{userId}")
-  public RespResult<?> selectAllByUserIdAndType(
-    @NonNull @PathVariable(name = "userId") Long userId, @NonNull @RequestParam(name = "follow") Boolean follow) {
-    return RespResult.success(columnService.selectAllByUserIdAndType(userId, follow));
+  @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
+  public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
+    return RespResult.success(columnService.selectAllByAuthorId(authorId));
+  }
+
+  /**
+   * select all followed columns by userId
+   *
+   * @param userId userId
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/follow/{userId}")
+  public RespResult<?> selectAllFollowedByUserId(@NonNull @PathVariable(name = "userId") Long userId) {
+    return RespResult.success(columnService.selectAllFollowedByUserId(userId));
   }
 
   /**

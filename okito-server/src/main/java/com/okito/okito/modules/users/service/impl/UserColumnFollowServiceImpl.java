@@ -29,13 +29,13 @@ public class UserColumnFollowServiceImpl implements UserColumnFollowService {
   }
 
   @Override
-  public List<UserColumnFollow> selectByUserIdAndType(Long userId, Boolean follow) {
-    return userColumnFollowRepository.findAllByUserIdAndType(userId, follow);
+  public List<UserColumnFollow> selectByUserIdAndType(Long userId) {
+    return userColumnFollowRepository.findAllByUserIdAndType(userId);
   }
 
   @Override
-  public List<UserColumnFollow> selectByColumnIdAndType(Long columnId, Boolean follow) {
-    return userColumnFollowRepository.findAllByColumnIdAndType(columnId, follow);
+  public List<UserColumnFollow> selectByColumnIdAndType(Long columnId) {
+    return userColumnFollowRepository.findAllByColumnIdAndType(columnId);
   }
 
   @Override
@@ -44,13 +44,13 @@ public class UserColumnFollowServiceImpl implements UserColumnFollowService {
   }
 
   @Override
-  public Page<UserColumnFollow> selectByUserIdAndType(Long userId, Boolean follow, Pageable pageable) {
-    return userColumnFollowRepository.findAllByUserIdAndType(userId, follow, pageable);
+  public Page<UserColumnFollow> selectByUserIdAndType(Long userId, Pageable pageable) {
+    return userColumnFollowRepository.findAllByUserIdAndType(userId, pageable);
   }
 
   @Override
-  public Page<UserColumnFollow> selectByColumnIdAndType(Long columnId, Boolean follow, Pageable pageable) {
-    return userColumnFollowRepository.findAllByColumnIdAndType(columnId, follow, pageable);
+  public Page<UserColumnFollow> selectByColumnIdAndType(Long columnId, Pageable pageable) {
+    return userColumnFollowRepository.findAllByColumnIdAndType(columnId, pageable);
   }
 
   @Override

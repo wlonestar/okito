@@ -38,8 +38,13 @@ public class ColumnServiceImpl implements ColumnService {
   }
 
   @Override
-  public List<Column> selectAllByUserIdAndType(Long userId, Boolean follow) {
-    return columnRepository.findByUserIdAndType(userId, follow);
+  public List<Column> selectAllByAuthorId(Long authorId) {
+    return columnRepository.findAllByAuthorId(authorId);
+  }
+
+  @Override
+  public List<Column> selectAllFollowedByUserId(Long userId) {
+    return columnRepository.findFollowByUserId(userId);
   }
 
   @Override

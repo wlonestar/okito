@@ -19,22 +19,22 @@ import java.util.List;
 public interface UserColumnFollowRepository extends JpaRepository<UserColumnFollow, UserColumnFollowId> {
 
   @Query(value = "select new UserColumnFollow(u.id, u.follow) from UserColumnFollow u " +
-      "where u.id.userId = ?1 and u.follow = ?2")
-  List<UserColumnFollow> findAllByUserIdAndType(Long userId, Boolean follow);
+      "where u.id.userId = ?1")
+  List<UserColumnFollow> findAllByUserIdAndType(Long userId);
 
   @Query(value = "select new UserColumnFollow(u.id, u.follow) from UserColumnFollow u " +
-      "where u.id.userId = ?1 and u.follow = ?2")
-  Page<UserColumnFollow> findAllByUserIdAndType(Long userId, Boolean follow, Pageable pageable);
+      "where u.id.userId = ?1")
+  Page<UserColumnFollow> findAllByUserIdAndType(Long userId, Pageable pageable);
 
   @Query(value = "select new UserColumnFollow(u.id, u.follow) from UserColumnFollow u " +
-      "where u.id.columnId = ?1 and u.follow = ?2")
-  List<UserColumnFollow> findAllByColumnIdAndType(Long columnId, Boolean follow);
+      "where u.id.columnId = ?1")
+  List<UserColumnFollow> findAllByColumnIdAndType(Long columnId);
 
   @Query(value = "select new UserColumnFollow(u.id, u.follow) from UserColumnFollow u " +
-      "where u.id.columnId = ?1 and u.follow = ?2")
-  Page<UserColumnFollow> findAllByColumnIdAndType(Long columnId, Boolean follow, Pageable pageable);
+      "where u.id.columnId = ?1")
+  Page<UserColumnFollow> findAllByColumnIdAndType(Long columnId, Pageable pageable);
 
-  @Query(value = "select count(*) from user_column where column_id = ?1 and type = 2", nativeQuery = true)
+  @Query(value = "select count(*) from user_column_follow where column_id = ?1 and follow = true", nativeQuery = true)
   long countFollowByColumnId(Long columnId);
 
 }
