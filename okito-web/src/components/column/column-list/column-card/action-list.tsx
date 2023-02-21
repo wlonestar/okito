@@ -1,6 +1,6 @@
 import { Menu, MenuItem, Typography } from '@mui/material'
-import { Column } from '../../../types/column'
-import { useMount } from '../../../utils/hook'
+import { Column } from '../../../../types/column'
+import { useMount } from '../../../../utils/hook'
 import React from 'react'
 
 const actions = ['管理内容', '修改介绍', '删除']

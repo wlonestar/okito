@@ -1,26 +1,19 @@
 import { ButtonBase, Grid, Link, Typography } from '@mui/material'
 import { formatDateTime } from '../../utils/date'
+import { User } from '../../types/user'
+import { PointerDivider } from '../inline-divider'
 
-interface AuthorLineProps {
-  id: number
-  name?: string
-  avatar?: string
+export interface AuthorLineProps {
+  author: User
   dateTime?: Date
-  likeNum?: number
 }
 
-export default function AuthorLine({
-  id,
-  name,
-  avatar,
-  dateTime,
-  likeNum,
-}: AuthorLineProps) {
+export default function AuthorLine({ author, dateTime }: AuthorLineProps) {
   return (
-    <Grid container spacing={2} sx={{ pt: 2 }}>
+    <Grid container spacing={2}>
       <Grid item>
         <ButtonBase
-          href={`/user/${id}`}
+          href={`/user/${author.id}`}
           target="_blank"
           sx={{ width: 42, height: 42 }}
         >
@@ -33,7 +26,7 @@ export default function AuthorLine({
               borderRadius: '21px',
             }}
             alt="complex"
-            src={avatar}
+            src={author.avatar}
           />
         </ButtonBase>
       </Grid>
@@ -41,7 +34,7 @@ export default function AuthorLine({
         <Grid item xs container direction="column" spacing={2}>
           <Grid item xs>
             <Link
-              href={`/user/${id}`}
+              href={`/user/${author.id}`}
               underline="none"
               sx={{
                 color: (theme) =>
@@ -49,13 +42,15 @@ export default function AuthorLine({
               }}
             >
               <Typography variant="body2" gutterBottom>
-                {name}
+                {author.username}
               </Typography>
             </Link>
             <Typography variant="body2" color="text.secondary">
               <>
                 {formatDateTime(dateTime)}
-                {likeNum === 0 ? '' : likeNum}
+                <PointerDivider />
+                {'阅读 '}
+                {author.postLikeNum === 0 ? '' : author.postLikeNum}
               </>
             </Typography>
           </Grid>

@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import React, { SyntheticEvent, useState } from 'react'
 import { Tag, tagDefault } from '../../types/tag'
 import { Post } from '../../types/post'
-import { useMount } from '../../utils/hook'
+import { useMount, useSort } from '../../utils/hook'
 import { selectTagById } from '../../api/tag'
 import { selectPostsByTagId } from '../../api/post'
 import { Box, Tab, Tabs, Typography } from '@mui/material'
@@ -12,18 +12,9 @@ import { TabsProp } from '../../types/tabs-prop'
 import { useAuth } from '../../context/auth-context'
 
 const tabs: TabsProp[] = [
-  {
-    index: 0,
-    label: '推荐',
-  },
-  {
-    index: 1,
-    label: '最新',
-  },
-  {
-    index: 2,
-    label: '最热',
-  },
+  { index: 0, label: '推荐' },
+  { index: 1, label: '最新' },
+  { index: 2, label: '最热' },
 ]
 
 interface TagTitleProps {
@@ -60,11 +51,14 @@ export default function TagPage() {
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
     if (newValue === 0) {
-      posts.sort((a, b) => (a.id > b.id ? 0 : 1))
+      const data = useSort(posts, 'id', 'desc')
+      setPosts(data)
     } else if (newValue === 1) {
-      posts.sort((a, b) => (a.createTime > b.createTime ? 0 : 1))
+      const data = useSort(posts, 'createTime', 'desc')
+      setPosts(data)
     } else if (newValue === 2) {
-      posts.sort((a, b) => (a.viewNum > b.viewNum ? 0 : 1))
+      const data = useSort(posts, 'viewNum', 'desc')
+      setPosts(data)
     }
   }
 

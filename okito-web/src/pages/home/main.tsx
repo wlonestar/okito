@@ -38,7 +38,9 @@ export const Main = ({ currentUser }: CurrentUserProps) => {
 
   useMount(() => {
     useAllPosts().then((res) => {
-      setPosts(res.data)
+      const posts: Post[] = res.data
+      const data = useSort(posts, 'id', 'desc')
+      setPosts(data)
     })
   })
 

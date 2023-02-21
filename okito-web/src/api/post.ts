@@ -9,6 +9,13 @@ export function selectAllPosts() {
   })
 }
 
+export function selectPostsByColumnId(columnId: number) {
+  return client({
+    url: `${prefix}/column/${columnId}`,
+    method: 'GET',
+  })
+}
+
 export function selectPostsByTagId(tagId: number) {
   return client({
     url: `${prefix}/tag/${tagId}`,

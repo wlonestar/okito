@@ -65,17 +65,14 @@ export default function PostPage({ currentUser }: CurrentUserProps) {
             }}
           >
             {/*title*/}
-            <Typography component="div" sx={{ fontSize: 34, fontWeight: 600 }}>
+            <Typography
+              component="div"
+              sx={{ fontSize: 34, fontWeight: 600, pb: 2 }}
+            >
               {post.title}
             </Typography>
             {/*author*/}
-            <AuthorLine
-              id={author.id}
-              name={author.username}
-              avatar={author.avatar}
-              dateTime={post.createTime}
-              likeNum={author.postLikeNum}
-            />
+            <AuthorLine author={author} dateTime={post.createTime} />
             {/*cover*/}
             <Box>
               <img
