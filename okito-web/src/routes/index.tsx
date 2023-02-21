@@ -15,6 +15,7 @@ const ColumnPage = lazy(() => import('../pages/column'))
 const PinPage = lazy(() => import('../pages/pin'))
 const UserPage = lazy(() => import('../pages/user'))
 
+const HomeTab = lazy(() => import('../pages/user/tabs/home-tab'))
 const PostsTab = lazy(() => import('../pages/user/tabs/posts-tab'))
 const ColumnsTab = lazy(() => import('../pages/user/tabs/columns-tab'))
 const PinsTab = lazy(() => import('../pages/user/tabs/pins-tab'))

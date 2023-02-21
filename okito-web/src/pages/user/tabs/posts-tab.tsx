@@ -1,7 +1,7 @@
+import React, { SyntheticEvent, useEffect, useState } from 'react'
 import PostList from '../../../components/post-list'
 import { useAuth } from '../../../context/auth-context'
-import { useMount } from '../../../utils/hook'
-import React, { SyntheticEvent, useState } from 'react'
+import { useMount, useSort } from '../../../utils/hook'
 import { Post } from '../../../types/post'
 import { selectPostsByAuthorId } from '../../../api/post'
 import { Link, useParams } from 'react-router-dom'
@@ -20,13 +20,12 @@ export default function PostsTab() {
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
-    // console.log(newValue)
     if (newValue === 0) {
-      posts.sort((a, b) => (a.viewNum > b.viewNum ? 0 : 1))
-      setPosts(posts)
+      const data = useSort(posts, 'viewNum', 'desc')
+      setPosts(data)
     } else if (newValue === 1) {
-      posts.sort((a, b) => (a.createTime > b.createTime ? 0 : 1))
-      setPosts(posts)
+      const data = useSort(posts, 'createTime', 'desc')
+      setPosts(data)
     }
   }
 
@@ -34,10 +33,15 @@ export default function PostsTab() {
     usePosts(id as unknown as number).then((res) => {
       if (res.status === 20) {
         const posts: Post[] = res.data
-        setPosts(posts)
+        const data = useSort(posts, 'viewNum', 'desc')
+        setPosts(data)
       }
     })
   })
+
+  useEffect(() => {
+    console.log(posts)
+  }, [posts])
 
   return (
     <>
