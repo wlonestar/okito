@@ -28,7 +28,7 @@ import java.util.Objects;
 @Slf4j
 @TimeLog
 @RestController
-@RequestMapping(path = "/comment/pin")
+@RequestMapping(path = "/pin/comment")
 public class PinCommentController {
 
   @Resource
@@ -135,6 +135,18 @@ public class PinCommentController {
       @NonNull @PathVariable(name = "id") Long id,
       @NonNull @PageableDefault(sort = "uploadTime", direction = Sort.Direction.DESC) Pageable pageable) {
     return RespResult.success(pinCommentService.selectSecondaryComments(id, pageable));
+  }
+
+  /**
+   * count pinComments by pin id
+   *
+   * @param pinId pin id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/count/pin/{pinId}")
+  public RespResult<?> countByPinId(@NonNull @PathVariable(name = "pinId") Long pinId) {
+    long count = pinCommentService.countByPinId(pinId);
+    return RespResult.success(count);
   }
 
   /**

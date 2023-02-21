@@ -32,6 +32,8 @@ public interface PinCommentService {
 
   PinCommentView selectById(Long id);
 
+  long countByPinId(Long pinId);
+
   boolean add(PinComment pinComment);
 
   @Deprecated
