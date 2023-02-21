@@ -18,7 +18,7 @@ import { PinsTab } from '../pages/user/tabs/pins-tab'
 import { ColumnsTab } from '../pages/user/tabs/columns-tab'
 import { ColumnPage } from '../pages/column'
 
-export const CustomRoutes = ({ currentUser }: CurrentUserProps) => {
+export default function CustomRoutes({ currentUser }: CurrentUserProps) {
   return (
     <Routes>
       <Route path="/login" element={<SignInPage />} />

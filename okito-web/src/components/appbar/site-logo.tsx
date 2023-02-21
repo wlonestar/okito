@@ -2,7 +2,7 @@ import React from 'react'
 import { IconButton, Link, Typography } from '@mui/material'
 import { ReactComponent as Logo } from '../../assets/okito_32.svg'
 
-export const SiteLogo = () => {
+export default function SiteLogo() {
   return (
     <>
       <IconButton

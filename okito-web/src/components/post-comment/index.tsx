@@ -1,9 +1,9 @@
 import React, { SyntheticEvent, useState } from 'react'
 import { Box, Tab, Tabs, Typography } from '@mui/material'
 import { TabPanel, tabProps } from '../tab'
-import { ReplyBox } from './reply'
+import ReplyBox from './reply'
 import { PostComment } from '../../types/post-comment'
-import { CommentList } from './list'
+import CommentList from './list'
 import { User } from '../../types/user'
 import { TabsProp } from '../../types/tabs-prop'
 
@@ -24,11 +24,11 @@ export interface PostCommentListProps {
   currentUser: User | null
 }
 
-export const PostCommentBox = ({
+export default function PostCommentBox({
   postId,
   postComments,
   currentUser,
-}: PostCommentListProps) => {
+}: PostCommentListProps) {
   const [value, setValue] = useState(0)
   const replyCommentId = null
 

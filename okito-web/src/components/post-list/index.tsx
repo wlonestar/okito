@@ -8,7 +8,7 @@ interface PostListProps {
   currentUser: User | null
 }
 
-export const PostList = ({ posts, currentUser }: PostListProps) => {
+export default function PostList({ posts, currentUser }: PostListProps) {
   return (
     <Box>
       {posts.map((post) => (

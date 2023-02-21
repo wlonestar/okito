@@ -11,9 +11,13 @@ export const ColumnPage = () => {
 
   useMount(() => {
     selectColumnById(id as unknown as number).then((res) => {
-      setColumn(column)
+      setColumn(res.data)
     })
   })
 
-  return <Box>{column.name}</Box>
+  return (
+    <Box sx={{ margin: '0 auto', textAlign: 'center', pt: 5, pb: 5 }}>
+      {column.name}
+    </Box>
+  )
 }

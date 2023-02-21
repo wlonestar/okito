@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const CollectionsTab = () => {
+export function CollectionsTab() {
   return (
     <Box>
       <Typography>collections tab</Typography>

@@ -8,7 +8,7 @@ interface DarkIconProps {
   theme: Theme
 }
 
-export const DarkIcon = ({ theme }: DarkIconProps) => {
+export default function DarkIcon({ theme }: DarkIconProps) {
   const colorMode = useContext(ColorModeContext)
   return (
     <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode}>

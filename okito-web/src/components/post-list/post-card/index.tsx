@@ -14,8 +14,8 @@ import { Tag } from '../../../types/tag'
 import { selectTagsByPostId } from '../../../api/tag'
 import { userDefault, User } from '../../../types/user'
 import { countPostCommentsByPostId } from '../../../api/post-comment'
-import { ActionList } from './action-list'
-import { MetaList } from './meta-list'
+import ActionList from './action-list'
+import MetaList from './meta-list'
 
 interface PostCardProps {
   post: Post

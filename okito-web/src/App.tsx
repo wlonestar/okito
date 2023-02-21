@@ -1,4 +1,4 @@
-import { CustomRoutes } from './routes'
+import CustomRoutes from './routes'
 import { useAuth } from './context/auth-context'
 import { useMount } from './utils/hook'
 

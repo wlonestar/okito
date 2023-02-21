@@ -4,10 +4,8 @@ import { useParams } from 'react-router-dom'
 import { selectUserById } from '../../api/user'
 import React, { useState } from 'react'
 import { useMount } from '../../utils/hook'
-import { Major } from './major'
-import { Sticky } from './sticky'
-import { UserInfo } from './major/user-info'
-import { ContentList } from './major/content-list'
+import Major from './major'
+import Sticky from './sticky'
 
 interface UserPageProps {
   currentUser: User | null

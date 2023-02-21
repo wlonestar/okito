@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const FollowsTab = () => {
+export function FollowsTab() {
   return (
     <Box>
       <Typography>follows tabs</Typography>

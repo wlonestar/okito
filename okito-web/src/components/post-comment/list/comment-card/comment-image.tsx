@@ -5,7 +5,7 @@ interface CommentImageProps {
   author: User
 }
 
-export const CommentImage = ({ author }: CommentImageProps) => {
+export default function CommentImage({ author }: CommentImageProps) {
   return (
     <ButtonBase
       href={`/user/${author.id}`}

@@ -11,7 +11,7 @@ interface MetaListProps {
   tags: Tag[]
 }
 
-export const MetaList = ({ post, author, tags }: MetaListProps) => {
+export default function MetaList({ post, author, tags }: MetaListProps) {
   return (
     <Grid item xs={12}>
       <Typography component="div" sx={{ fontSize: 14 }} color="text.secondary">

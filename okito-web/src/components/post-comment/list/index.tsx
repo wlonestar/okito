@@ -1,12 +1,12 @@
 import { Box } from '@mui/material'
 import { PostCommentListProps } from '../index'
-import { CommentCard } from './comment-card'
+import CommentCard from './comment-card'
 
-export const CommentList = ({
+export default function CommentList({
   postId,
   postComments,
   currentUser,
-}: PostCommentListProps) => {
+}: PostCommentListProps) {
   return (
     <Box>
       {postComments.map((comment) => (

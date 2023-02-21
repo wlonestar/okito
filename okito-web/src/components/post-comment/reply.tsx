@@ -11,11 +11,11 @@ interface ReplyBoxProps {
   replyCommentId: number | null
 }
 
-export const ReplyBox = ({
+export default function ReplyBox({
   currentUser,
   postId,
   replyCommentId,
-}: ReplyBoxProps) => {
+}: ReplyBoxProps) {
   const reply = {
     href: currentUser === null ? '' : currentUser.id,
     username: currentUser === null ? 'default' : currentUser.username,

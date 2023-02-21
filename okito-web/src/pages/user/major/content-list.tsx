@@ -41,7 +41,7 @@ interface ContentListProps {
   currentUser: User | null
 }
 
-export const ContentList = ({ user, currentUser }: ContentListProps) => {
+export default function ContentList({ user, currentUser }: ContentListProps) {
   const { id } = useParams()
   const [value, setValue] = useState(0)
 

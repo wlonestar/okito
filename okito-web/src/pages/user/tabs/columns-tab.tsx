@@ -2,11 +2,11 @@ import { Box } from '@mui/material'
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
 import { Column } from '../../../types/column'
-import { ColumnList } from '../../../components/column-list'
+import ColumnList from '../../../components/column-list'
 import { selectColumnsByAuthorId } from '../../../api/column'
 import { useMount } from '../../../utils/hook'
 
-export const ColumnsTab = () => {
+export function ColumnsTab() {
   const { id } = useParams()
   const [columns, setColumns] = useState<Column[]>([])
 

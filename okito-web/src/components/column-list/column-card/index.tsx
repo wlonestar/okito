@@ -11,7 +11,7 @@ import {
 } from '@mui/material'
 import { Column } from '../../../types/column'
 import { User } from '../../../types/user'
-import { MetaData } from './meta-data'
+import MetaData from './meta-data'
 import React, { useState } from 'react'
 import { useMount } from '../../../utils/hook'
 import {
@@ -25,7 +25,7 @@ import {
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined'
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined'
-import { ActionList } from './action-list'
+import ActionList from './action-list'
 
 interface ColumnCardProps {
   column: Column
@@ -33,11 +33,11 @@ interface ColumnCardProps {
   homepage: boolean
 }
 
-export const ColumnCard = ({
+export default function ColumnCard({
   column,
   currentUser,
   homepage,
-}: ColumnCardProps) => {
+}: ColumnCardProps) {
   const [postsNum, setPostsNum] = useState<number>(0)
   const [followNum, setFollowNum] = useState<number>(0)
   const [followed, setFollowed] = useState<boolean>(false)

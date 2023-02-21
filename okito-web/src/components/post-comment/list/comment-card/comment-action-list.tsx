@@ -10,11 +10,11 @@ interface ActionListProps {
   toggleOpen: (open: boolean, commentId: number | null) => void
 }
 
-export const CommentActionList = ({
+export default function CommentActionList({
   comment,
   open,
   toggleOpen,
-}: ActionListProps) => {
+}: ActionListProps) {
   return (
     <Box sx={{ display: 'inline' }}>
       <ul

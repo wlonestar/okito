@@ -9,13 +9,13 @@ interface AuthorLineProps {
   likeNum?: number
 }
 
-export const AuthorLine = ({
+export default function AuthorLine({
   id,
   name,
   avatar,
   dateTime,
   likeNum,
-}: AuthorLineProps) => {
+}: AuthorLineProps) {
   return (
     <Grid container spacing={2} sx={{ pt: 2 }}>
       <Grid item>

@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export const PinsTab = () => {
+export function PinsTab() {
   return (
     <Box>
       <Typography>pins tab</Typography>

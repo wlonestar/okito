@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 import { Column } from '../../types/column'
-import { ColumnCard } from './column-card'
+import ColumnCard from './column-card'
 import { useAuth } from '../../context/auth-context'
 import { useMount } from '../../utils/hook'
 import { useState } from 'react'
@@ -9,7 +9,7 @@ interface ColumnListProps {
   columns: Column[]
 }
 
-export const ColumnList = ({ columns }: ColumnListProps) => {
+export default function ColumnList({ columns }: ColumnListProps) {
   const { user } = useAuth()
   const currentUser = user
   const [homepage, setHomepage] = useState<boolean>(false)

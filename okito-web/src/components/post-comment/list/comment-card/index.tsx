@@ -5,10 +5,10 @@ import { User, userDefault } from '../../../../types/user'
 import { useMount } from '../../../../utils/hook'
 import { selectUserById } from '../../../../api/user'
 import { selectPostCommentsSecondaryByPostId } from '../../../../api/post-comment'
-import { ReplyBox } from '../../reply'
-import { Secondary } from './secondary'
-import { CommentActionList } from './comment-action-list'
-import { CommentImage } from './comment-image'
+import ReplyBox from '../../reply'
+import Secondary from './secondary'
+import CommentActionList from './comment-action-list'
+import CommentImage from './comment-image'
 
 interface CommentCardProps {
   postId: number
@@ -16,7 +16,11 @@ interface CommentCardProps {
   user: User | null
 }
 
-export const CommentCard = ({ postId, comment, user }: CommentCardProps) => {
+export default function CommentCard({
+  postId,
+  comment,
+  user,
+}: CommentCardProps) {
   const [author, setAuthor] = useState<User>(userDefault)
   const [secondaryComments, setSecondaryComments] = useState<PostComment[]>([])
   const [open, setOpen] = useState<boolean>(false)

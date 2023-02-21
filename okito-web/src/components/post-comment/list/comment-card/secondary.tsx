@@ -5,8 +5,8 @@ import { User, userDefault } from '../../../../types/user'
 import { useMount } from '../../../../utils/hook'
 import { selectUserById } from '../../../../api/user'
 import { selectPostCommentById } from '../../../../api/post-comment'
-import { CommentActionList } from './comment-action-list'
-import { CommentImage } from './comment-image'
+import CommentActionList from './comment-action-list'
+import CommentImage from './comment-image'
 
 const ReplyUserLink = ({ user }: { user: User }) => {
   return (
@@ -30,7 +30,11 @@ interface SecondaryProps {
   toggleOpen: (open: boolean, commentId: number | null) => void
 }
 
-export const Secondary = ({ comment, open, toggleOpen }: SecondaryProps) => {
+export default function Secondary({
+  comment,
+  open,
+  toggleOpen,
+}: SecondaryProps) {
   const [author, setAuthor] = useState<User>(userDefault)
   const [replyAuthor, setReplyAuthor] = useState<User>(userDefault)
 

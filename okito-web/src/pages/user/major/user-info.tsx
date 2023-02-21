@@ -2,7 +2,6 @@ import React from 'react'
 import {
   Box,
   Button,
-  ButtonBase,
   Grid,
   Link,
   Paper,
@@ -23,7 +22,7 @@ interface UserInfoProps {
   currentUser: User | null
 }
 
-export const UserInfo = ({ user, currentUser }: UserInfoProps) => {
+export default function UserInfo({ user, currentUser }: UserInfoProps) {
   return (
     <Paper>
       <Box
@@ -54,7 +53,7 @@ export const UserInfo = ({ user, currentUser }: UserInfoProps) => {
           {/*info*/}
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
+              <Grid item xs sx={{ ml: 1 }}>
                 <Typography gutterBottom variant="subtitle1" component="div">
                   {user.username}
                 </Typography>
@@ -67,9 +66,6 @@ export const UserInfo = ({ user, currentUser }: UserInfoProps) => {
               </Grid>
               <Grid item>
                 <Button>{'编辑个人资料'}</Button>
-                {/*<Typography sx={{ cursor: 'pointer' }} variant="body2">*/}
-                {/*  edit info*/}
-                {/*</Typography>*/}
               </Grid>
             </Grid>
             <Grid item>

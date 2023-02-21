@@ -8,10 +8,10 @@ import {
   Theme,
   Button,
 } from '@mui/material'
-import { SiteLogo } from './site-logo'
-import { CustomSearch } from './search'
-import { DarkIcon } from './dark-icon'
-import { Nav } from './nav'
+import SiteLogo from './site-logo'
+import CustomSearch from './search'
+import DarkIcon from './dark-icon'
+import Nav from './nav'
 import { User } from '../../types/user'
 import { CurrentUserProps } from '../../types/current-user-props'
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined'

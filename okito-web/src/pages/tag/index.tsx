@@ -9,6 +9,7 @@ import { Box, Tab, Tabs, Typography } from '@mui/material'
 import { PostCard } from '../../components/post-list/post-card'
 import { TabPanel, tabProps } from '../../components/tab'
 import { TabsProp } from '../../types/tabs-prop'
+import { useAuth } from '../../context/auth-context'
 
 const tabs: TabsProp[] = [
   {
@@ -50,6 +51,8 @@ const TagTitle = ({ tag, posts }: TagTitleProps) => {
 
 export const TagPage = () => {
   const { id } = useParams()
+  const { user } = useAuth()
+  const currentUser = user
   const [tag, setTag] = useState<Tag>(tagDefault)
   const [posts, setPosts] = useState<Post[]>([])
   const [value, setValue] = useState(0)
@@ -105,7 +108,7 @@ export const TagPage = () => {
         <TabPanel key={index} value={value} index={index}>
           <Box>
             {posts.map((post) => (
-              <PostCard key={post.id} post={post} />
+              <PostCard key={post.id} post={post} currentUser={currentUser} />
             ))}
           </Box>
         </TabPanel>

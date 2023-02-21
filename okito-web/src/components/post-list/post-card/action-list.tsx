@@ -15,11 +15,11 @@ interface ActionListProps {
   currentUser: User | null
 }
 
-export const ActionList = ({
+export default function ActionList({
   post,
   commentsNum,
   currentUser,
-}: ActionListProps) => {
+}: ActionListProps) {
   const [likeType, setLikeType] = useState<number>(0)
   const [likeNum, setLikeNum] = useState<number>(post.likeNum)
 

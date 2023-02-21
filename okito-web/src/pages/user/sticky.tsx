@@ -127,7 +127,7 @@ const MoreInfo = ({ user }: StickyProps) => {
   )
 }
 
-export const Sticky = ({ user }: StickyProps) => {
+export default function Sticky({ user }: StickyProps) {
   return (
     <>
       <Achieve user={user} />

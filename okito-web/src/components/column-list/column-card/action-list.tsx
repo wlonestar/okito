@@ -12,11 +12,11 @@ interface ActionListProps {
 }
 
 // TODO: add action handler
-export const ActionList = ({
+export default function ActionList({
   column,
   anchorElColumn,
   handleCloseActionMenu,
-}: ActionListProps) => {
+}: ActionListProps) {
   useMount(() => {
     console.log(column)
   })

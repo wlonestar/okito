@@ -1,4 +1,4 @@
-import { PostList } from '../../../components/post-list'
+import PostList from '../../../components/post-list'
 import { useAuth } from '../../../context/auth-context'
 import { useMount } from '../../../utils/hook'
 import React, { SyntheticEvent, useState } from 'react'
@@ -7,7 +7,7 @@ import { selectPostsByAuthorId } from '../../../api/post'
 import { Link, useParams } from 'react-router-dom'
 import { Box, Divider, Tab, Tabs } from '@mui/material'
 
-export const PostsTab = () => {
+export function PostsTab() {
   const { id } = useParams()
   const { user } = useAuth()
   const currentUser = user

@@ -54,7 +54,7 @@ interface CustomSearchProps {
   theme: Theme
 }
 
-export const CustomSearch = ({ theme }: CustomSearchProps) => {
+export default function CustomSearch({ theme }: CustomSearchProps) {
   return (
     <Search>
       <SearchIconWrapper>
