@@ -59,7 +59,6 @@ export const Layout = ({ currentUser }: CurrentUserProps) => {
                   ? theme.palette.grey[100]
                   : theme.palette.grey[900],
               flexGrow: 1,
-              p: 3,
               overflow: 'auto',
             }}
           >
@@ -67,7 +66,7 @@ export const Layout = ({ currentUser }: CurrentUserProps) => {
             <Container
               maxWidth={false}
               sx={{
-                maxWidth: '1080px',
+                maxWidth: '1200px',
               }}
             >
               <Outlet />

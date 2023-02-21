@@ -103,7 +103,7 @@ export const CustomAppBar = ({ theme, user }: CustomAppBarProps) => {
       >
         <Toolbar
           sx={{
-            width: '1080px',
+            width: '1200px',
             margin: '0 auto',
           }}
         >

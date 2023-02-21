@@ -6,7 +6,7 @@ import { CurrentUserProps } from '../../types/current-user-props'
 
 export default function HomePage({ currentUser }: CurrentUserProps) {
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={3} sx={{ maxWidth: '1080px', margin: '0 auto' }}>
       <Grid item xs={12} md={8}>
         <Main currentUser={currentUser} />
       </Grid>
