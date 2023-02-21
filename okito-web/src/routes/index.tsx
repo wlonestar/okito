@@ -16,6 +16,7 @@ import { FollowsTab } from '../pages/user/tabs/follows-tab'
 import { CollectionsTab } from '../pages/user/tabs/collections-tab'
 import { PinsTab } from '../pages/user/tabs/pins-tab'
 import { ColumnsTab } from '../pages/user/tabs/columns-tab'
+import { ColumnPage } from '../pages/column'
 
 export const CustomRoutes = ({ currentUser }: CurrentUserProps) => {
   return (
@@ -34,6 +35,7 @@ export const CustomRoutes = ({ currentUser }: CurrentUserProps) => {
         />
         <Route path="/tag" element={<TagsPage />} />
         <Route path="/tag/:id" element={<TagPage />} />
+        <Route path="/column/:id" element={<ColumnPage />} />
         <Route path="/pin" element={<PinPage />} />
         <Route
           path="/user/:id"
