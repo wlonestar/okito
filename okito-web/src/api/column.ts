@@ -2,13 +2,17 @@ import client from '../utils/axios-client'
 
 const prefix: string = '/column'
 
-export function selectColumnsByUserIdAndType(userId: number, type: number) {
+export function selectColumnsByAuthorId(authorId: number) {
   return client({
-    url: `${prefix}/user/${userId}`,
+    url: `${prefix}/author/${authorId}`,
     method: 'GET',
-    params: {
-      type: type,
-    },
+  })
+}
+
+export function selectColumnsFollowedByUserId(userId: number) {
+  return client({
+    url: `${prefix}/follow/${userId}`,
+    method: 'GET',
   })
 }
 

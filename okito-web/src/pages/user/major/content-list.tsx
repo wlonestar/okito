@@ -6,26 +6,31 @@ import { Link, Outlet, useParams } from 'react-router-dom'
 const tabs = [
   {
     index: 0,
+    label: '动态',
+    path: '',
+  },
+  {
+    index: 1,
     label: '文章',
     path: '/posts',
   },
   {
-    index: 1,
+    index: 2,
     label: '专栏',
     path: '/columns',
   },
   {
-    index: 2,
+    index: 3,
     label: '想法',
     path: '/pins',
   },
   {
-    index: 3,
+    index: 4,
     label: '收藏',
     path: '/collections',
   },
   {
-    index: 4,
+    index: 5,
     label: '关注',
     path: '/follows',
   },
@@ -42,6 +47,7 @@ export const ContentList = ({ user, currentUser }: ContentListProps) => {
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
+    // TODO
   }
 
   return (

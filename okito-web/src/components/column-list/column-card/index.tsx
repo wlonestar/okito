@@ -10,38 +10,58 @@ import {
   Typography,
 } from '@mui/material'
 import { Column } from '../../../types/column'
-import { User, userDefault } from '../../../types/user'
-import { MetaList } from './meta-list'
-import { useState } from 'react'
+import { User } from '../../../types/user'
+import { MetaData } from './meta-data'
+import React, { useState } from 'react'
 import { useMount } from '../../../utils/hook'
 import {
   countFollowByColumnId,
   countPostsByColumnId,
 } from '../../../api/column'
-import { useParams } from 'react-router-dom'
 import {
-  selectColumnTypeByUserIdAndColumnId,
-  selectUserById,
+  selectUserColumnFollowByUserIdAndColumnId,
+  updateFollowColumn,
 } from '../../../api/user'
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined'
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined'
+import { ActionList } from './action-list'
 
 interface ColumnCardProps {
   column: Column
   currentUser: User | null
+  homepage: boolean
 }
 
-export const ColumnCard = ({ column, currentUser }: ColumnCardProps) => {
-  const { id } = useParams()
+export const ColumnCard = ({
+  column,
+  currentUser,
+  homepage,
+}: ColumnCardProps) => {
   const [postsNum, setPostsNum] = useState<number>(0)
   const [followNum, setFollowNum] = useState<number>(0)
-  const [user, setUser] = useState<User>(userDefault)
-  const [homepage, setHomepage] = useState<boolean>(false)
   const [followed, setFollowed] = useState<boolean>(false)
+  const [anchorElColumn, setAnchorElColumn] = useState<null | HTMLElement>(null)
 
   const handleClick = () => {
-    console.log('click')
+    const param = {
+      columnId: column.id,
+      userId: currentUser?.id,
+      follow: !followed,
+    }
+    updateFollowColumn(param).then((res) => {
+      if (res.status === 20) {
+        setFollowed(!followed)
+      }
+    })
+  }
+
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElColumn(event.currentTarget)
+  }
+
+  const handleCloseActionMenu = () => {
+    setAnchorElColumn(null)
   }
 
   useMount(async () => {
@@ -49,29 +69,15 @@ export const ColumnCard = ({ column, currentUser }: ColumnCardProps) => {
     setPostsNum(postsNum.data)
     const followNum = await countFollowByColumnId(column.id)
     setFollowNum(followNum.data)
-    // TODO: need to rewrite
-    if ((id as unknown as number) === currentUser?.id) {
-      console.log('登录用户和当前页面用户是同一人')
-      setHomepage(true)
-    } else {
-      console.log('登录用户和当前页面用户不是同一人')
-      setHomepage(false)
-      const user = await selectUserById(id as unknown as number)
-      setUser(user.data)
-      const param = {
-        userId: currentUser?.id,
-        columnId: column.id,
-      }
-      const type = await selectColumnTypeByUserIdAndColumnId(param)
-      if (type.status === 20) {
-        const data = type.data
-        console.log(data.type)
-        if (data.type === 2) {
-          setFollowed(true)
-        }
-      } else {
-        // 当前专栏未关注
-        console.log(type)
+    const param = {
+      userId: currentUser?.id,
+      columnId: column.id,
+    }
+    const res = await selectUserColumnFollowByUserIdAndColumnId(param)
+    if (res.status === 20) {
+      const data = res.data
+      if (data.follow) {
+        setFollowed(true)
       }
     }
   })
@@ -117,9 +123,11 @@ export const ColumnCard = ({ column, currentUser }: ColumnCardProps) => {
                   {column.name}
                 </Typography>
               </Link>
-              {/*TODO*/}
               {homepage ? (
-                <IconButton sx={{ marginLeft: 'auto' }}>
+                <IconButton
+                  sx={{ size: 'small', marginLeft: 'auto' }}
+                  onClick={handleOpenUserMenu}
+                >
                   <MoreHorizOutlinedIcon />
                 </IconButton>
               ) : followed ? (
@@ -128,6 +136,7 @@ export const ColumnCard = ({ column, currentUser }: ColumnCardProps) => {
                   size="small"
                   onClick={handleClick}
                   sx={{ marginLeft: 'auto' }}
+                  color="inherit"
                 >
                   <CheckOutlinedIcon />
                   {'已关注'}
@@ -143,6 +152,11 @@ export const ColumnCard = ({ column, currentUser }: ColumnCardProps) => {
                   {'关注'}
                 </Button>
               )}
+              <ActionList
+                column={column}
+                anchorElColumn={anchorElColumn}
+                handleCloseActionMenu={handleCloseActionMenu}
+              />
             </Box>
             <Typography
               sx={{
@@ -157,7 +171,7 @@ export const ColumnCard = ({ column, currentUser }: ColumnCardProps) => {
             >
               {column.description}
             </Typography>
-            <MetaList
+            <MetaData
               column={column}
               postsNum={postsNum}
               followNum={followNum}

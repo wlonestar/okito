@@ -1,20 +1,17 @@
 import { Box } from '@mui/material'
 import { useParams } from 'react-router-dom'
-import { useAuth } from '../../../context/auth-context'
 import { useState } from 'react'
 import { Column } from '../../../types/column'
 import { ColumnList } from '../../../components/column-list'
-import { selectColumnsByUserIdAndType } from '../../../api/column'
+import { selectColumnsByAuthorId } from '../../../api/column'
 import { useMount } from '../../../utils/hook'
 
 export const ColumnsTab = () => {
   const { id } = useParams()
-  const { user } = useAuth()
-  const currentUser = user
   const [columns, setColumns] = useState<Column[]>([])
 
   const useColumns = (userId: number) => {
-    return selectColumnsByUserIdAndType(userId, 1)
+    return selectColumnsByAuthorId(userId)
   }
 
   useMount(() => {
@@ -27,7 +24,7 @@ export const ColumnsTab = () => {
 
   return (
     <Box>
-      <ColumnList columns={columns} currentUser={currentUser} />
+      <ColumnList columns={columns} />
     </Box>
   )
 }

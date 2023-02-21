@@ -9,7 +9,7 @@ interface ActionListProps {
   followNum: number
 }
 
-export const MetaList = ({ column, postsNum, followNum }: ActionListProps) => {
+export const MetaData = ({ column, postsNum, followNum }: ActionListProps) => {
   return (
     <Box>
       <Typography color="text.secondary" component="div">

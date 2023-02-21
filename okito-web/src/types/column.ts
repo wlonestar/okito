@@ -5,6 +5,7 @@ export interface Column {
   description: string
   createTime: Date
   updateTime: Date
+  authorId: number
 }
 
 export const columnDefault: Column = {
@@ -14,4 +15,5 @@ export const columnDefault: Column = {
   description: '',
   createTime: new Date(),
   updateTime: new Date(),
+  authorId: 0,
 }

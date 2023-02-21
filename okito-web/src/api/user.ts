@@ -7,12 +7,7 @@ export function selectUserById(id: number) {
   })
 }
 
-interface ColumnType {
-  userId: number
-  columnId: number
-}
-
-export function selectColumnTypeByUserIdAndColumnId(param: {
+export function selectUserColumnFollowByUserIdAndColumnId(param: {
   columnId: number
   userId: number | undefined
 }) {
@@ -20,6 +15,20 @@ export function selectColumnTypeByUserIdAndColumnId(param: {
     url: '/user/column/single',
     method: 'GET',
     params: {
+      ...param,
+    },
+  })
+}
+
+export function updateFollowColumn(param: {
+  columnId: number
+  userId: number | undefined
+  follow: boolean
+}) {
+  return client({
+    url: `/user/column`,
+    method: 'PUT',
+    data: {
       ...param,
     },
   })
