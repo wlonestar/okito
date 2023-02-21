@@ -49,7 +49,7 @@ const TagTitle = ({ tag, posts }: TagTitleProps) => {
   )
 }
 
-export const TagPage = () => {
+export default function TagPage() {
   const { id } = useParams()
   const { user } = useAuth()
   const currentUser = user

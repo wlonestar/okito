@@ -1,53 +1,49 @@
 import { Route, Routes } from 'react-router-dom'
 import { Layout } from '../layout'
-import { HomePage } from '../pages/home'
 import { ErrorPage } from '../pages/error'
-import { PinPage } from '../pages/pin'
-import { PostsPage } from '../pages/posts'
-import { PostPage } from '../pages/post'
-import { TagsPage } from '../pages/tags'
-import { TagPage } from '../pages/tag'
-import { SignInPage } from '../pages/auth/sign-in'
-import { SignUpPage } from '../pages/auth/sign-up'
 import { CurrentUserProps } from '../types/current-user-props'
-import { UserPage } from '../pages/user'
-import { PostsTab } from '../pages/user/tabs/posts-tab'
-import { FollowsTab } from '../pages/user/tabs/follows-tab'
-import { CollectionsTab } from '../pages/user/tabs/collections-tab'
-import { PinsTab } from '../pages/user/tabs/pins-tab'
-import { ColumnsTab } from '../pages/user/tabs/columns-tab'
-import { ColumnPage } from '../pages/column'
+import { lazy, Suspense } from 'react'
 
-export default function CustomRoutes({ currentUser }: CurrentUserProps) {
+const SignInPage = lazy(() => import('../pages/auth/sign-in'))
+const SignUpPage = lazy(() => import('../pages/auth/sign-up'))
+const HomePage = lazy(() => import('../pages/home'))
+const PostsPage = lazy(() => import('../pages/posts'))
+const PostPage = lazy(() => import('../pages/post'))
+const TagsPage = lazy(() => import('../pages/tags'))
+const TagPage = lazy(() => import('../pages/tag'))
+const ColumnPage = lazy(() => import('../pages/column'))
+const PinPage = lazy(() => import('../pages/pin'))
+const UserPage = lazy(() => import('../pages/user'))
+
+const PostsTab = lazy(() => import('../pages/user/tabs/posts-tab'))
+const ColumnsTab = lazy(() => import('../pages/user/tabs/columns-tab'))
+const PinsTab = lazy(() => import('../pages/user/tabs/pins-tab'))
+const CollectionsTab = lazy(() => import('../pages/user/tabs/collections-tab'))
+const FollowsTab = lazy(() => import('../pages/user/tabs/follows-tab'))
+
+export default function CustomRoutes(params: CurrentUserProps) {
   return (
-    <Routes>
-      <Route path="/login" element={<SignInPage />} />
-      <Route path="/register" element={<SignUpPage />} />
-      <Route
-        element={<Layout currentUser={currentUser} />}
-        errorElement={<ErrorPage />}
-      >
-        <Route path="/" element={<HomePage currentUser={currentUser} />} />
-        <Route path="/post" element={<PostsPage />} />
-        <Route
-          path="/post/:id"
-          element={<PostPage currentUser={currentUser} />}
-        />
-        <Route path="/tag" element={<TagsPage />} />
-        <Route path="/tag/:id" element={<TagPage />} />
-        <Route path="/column/:id" element={<ColumnPage />} />
-        <Route path="/pin" element={<PinPage />} />
-        <Route
-          path="/user/:id"
-          element={<UserPage currentUser={currentUser} />}
-        >
-          <Route path="/user/:id/posts" element={<PostsTab />} />
-          <Route path="/user/:id/columns" element={<ColumnsTab />} />
-          <Route path="/user/:id/pins" element={<PinsTab />} />
-          <Route path="/user/:id/collections" element={<CollectionsTab />} />
-          <Route path="/user/:id/follows" element={<FollowsTab />} />
+    <Suspense fallback={<div className="container">Loading...</div>}>
+      <Routes>
+        <Route path="/login" element={<SignInPage />} />
+        <Route path="/register" element={<SignUpPage />} />
+        <Route element={<Layout {...params} />} errorElement={<ErrorPage />}>
+          <Route path="/" element={<HomePage {...params} />} />
+          <Route path="/post" element={<PostsPage />} />
+          <Route path="/post/:id" element={<PostPage {...params} />} />
+          <Route path="/tag" element={<TagsPage />} />
+          <Route path="/tag/:id" element={<TagPage />} />
+          <Route path="/column/:id" element={<ColumnPage />} />
+          <Route path="/pin" element={<PinPage />} />
+          <Route path="/user/:id" element={<UserPage {...params} />}>
+            <Route path="/user/:id/posts" element={<PostsTab />} />
+            <Route path="/user/:id/columns" element={<ColumnsTab />} />
+            <Route path="/user/:id/pins" element={<PinsTab />} />
+            <Route path="/user/:id/collections" element={<CollectionsTab />} />
+            <Route path="/user/:id/follows" element={<FollowsTab />} />
+          </Route>
         </Route>
-      </Route>
-    </Routes>
+      </Routes>
+    </Suspense>
   )
 }

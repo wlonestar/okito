@@ -11,7 +11,7 @@ interface UserPageProps {
   currentUser: User | null
 }
 
-export const UserPage = ({ currentUser }: UserPageProps) => {
+export default function UserPage({ currentUser }: UserPageProps) {
   const { id } = useParams()
   const [user, setUser] = useState<User>(userDefault)
 

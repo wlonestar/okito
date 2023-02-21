@@ -18,7 +18,7 @@ import { PostComment } from '../../types/post-comment'
 import { selectPostCommentsByPostId } from '../../api/post-comment'
 import { CurrentUserProps } from '../../types/current-user-props'
 
-export const PostPage = ({ currentUser }: CurrentUserProps) => {
+export default function PostPage({ currentUser }: CurrentUserProps) {
   const { id } = useParams()
   const [post, setPost] = useState<Post>(postDefault)
   const [author, setAuthor] = useState<User>(userDefault)

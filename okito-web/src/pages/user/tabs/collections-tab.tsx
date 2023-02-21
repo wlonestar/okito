@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-export function CollectionsTab() {
+export default function CollectionsTab() {
   return (
     <Box>
       <Typography>collections tab</Typography>

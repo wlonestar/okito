@@ -7,7 +7,7 @@ import { selectPostsByAuthorId } from '../../../api/post'
 import { Link, useParams } from 'react-router-dom'
 import { Box, Divider, Tab, Tabs } from '@mui/material'
 
-export function PostsTab() {
+export default function PostsTab() {
   const { id } = useParams()
   const { user } = useAuth()
   const currentUser = user

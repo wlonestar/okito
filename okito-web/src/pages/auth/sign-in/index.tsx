@@ -16,7 +16,7 @@ import { SignInForm } from '../../../types/sign-in-param'
 import { Navigate } from 'react-router-dom'
 import { useAuth } from '../../../context/auth-context'
 
-export const SignInPage = () => {
+export default function SignInPage() {
   const { login, user } = useAuth()
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {

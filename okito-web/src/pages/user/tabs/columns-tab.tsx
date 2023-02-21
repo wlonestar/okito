@@ -6,7 +6,7 @@ import ColumnList from '../../../components/column-list'
 import { selectColumnsByAuthorId } from '../../../api/column'
 import { useMount } from '../../../utils/hook'
 
-export function ColumnsTab() {
+export default function ColumnsTab() {
   const { id } = useParams()
   const [columns, setColumns] = useState<Column[]>([])
 

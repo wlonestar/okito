@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { Column, columnDefault } from '../../types/column'
 import { selectColumnById } from '../../api/column'
 
-export const ColumnPage = () => {
+export default function ColumnPage() {
   const { id } = useParams()
   const [column, setColumn] = useState<Column>(columnDefault)
 
