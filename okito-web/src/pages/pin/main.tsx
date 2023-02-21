@@ -1,14 +1,33 @@
 import { Box, Button, Paper, TextField } from '@mui/material'
 import { FormEvent } from 'react'
-import { Pin } from '../../types/pin'
+import { Pin, PinParam } from '../../types/pin'
 import PinCard from '../../components/pin-card'
+import { User } from '../../types/user'
+import { addPin } from '../../api/pin'
 
-function InputBox() {
+interface InputBoxProps {
+  currentUser: User | null
+}
+
+function InputBox({ currentUser }: InputBoxProps) {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    // TODO
-    const data = new FormData(event.currentTarget)
-    console.log(data.get('content')?.toString())
+    if (currentUser !== null) {
+      event.preventDefault()
+      const data = new FormData(event.currentTarget)
+      const pinParam: PinParam = {
+        id: 0,
+        content: data.get('content')?.toString(),
+        createTime: new Date(),
+        updateTime: new Date(),
+        authorId: currentUser.id,
+      }
+      console.log(pinParam)
+      addPin(pinParam).then((res) => {
+        console.log(res)
+      })
+    } else {
+      window.location.assign('/login')
+    }
   }
 
   return (
@@ -37,23 +56,24 @@ function InputBox() {
 
 interface MainProps {
   pins: Pin[]
+  currentUser: User | null
 }
 
-function PinList({ pins }: MainProps) {
+function PinList({ pins, currentUser }: MainProps) {
   return (
     <>
       {pins.map((pin) => (
-        <PinCard key={pin.id} pin={pin} />
+        <PinCard key={pin.id} pin={pin} currentUser={currentUser} />
       ))}
     </>
   )
 }
 
-export default function Main({ pins }: MainProps) {
+export default function Main({ pins, currentUser }: MainProps) {
   return (
     <Box>
-      <InputBox />
-      <PinList pins={pins} />
+      <InputBox currentUser={currentUser} />
+      <PinList pins={pins} currentUser={currentUser} />
     </Box>
   )
 }

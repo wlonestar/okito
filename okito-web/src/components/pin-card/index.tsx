@@ -10,9 +10,10 @@ import ActionList from './action-list'
 
 interface PinCardProps {
   pin: Pin
+  currentUser: User | null
 }
 
-export default function PinCard({ pin }: PinCardProps) {
+export default function PinCard({ pin, currentUser }: PinCardProps) {
   const [author, setAuthor] = useState<User>(userDefault)
   const [commentNum, setCommentNum] = useState<number>(0)
 

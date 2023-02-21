@@ -35,7 +35,7 @@ export default function CustomRoutes(params: CurrentUserProps) {
           <Route path="/tag" element={<TagsPage />} />
           <Route path="/tag/:id" element={<TagPage />} />
           <Route path="/column/:id" element={<ColumnPage {...params} />} />
-          <Route path="/pin" element={<PinPage />} />
+          <Route path="/pin" element={<PinPage {...params} />} />
           <Route path="/user/:id" element={<UserPage {...params} />}>
             <Route path="/user/:id/" element={<HomeTab />} />
             <Route path="/user/:id/posts" element={<PostsTab />} />

@@ -6,11 +6,17 @@ import { useState } from 'react'
 import { Pin } from '../../types/pin'
 import { useMount } from '../../utils/hook'
 import { selectAllPins } from '../../api/pin'
+import { User } from '../../types/user'
 
-export default function PinPage() {
+interface PinPageProps {
+  currentUser: User | null
+}
+
+export default function PinPage({ currentUser }: PinPageProps) {
   const [pins, setPins] = useState<Pin[]>([])
 
   useMount(() => {
+    console.log('pin page', currentUser)
     selectAllPins().then((res) => {
       setPins(res.data)
     })
@@ -22,7 +28,7 @@ export default function PinPage() {
         <Nav />
       </Grid>
       <Grid item xs={12} md={7}>
-        <Main pins={pins} />
+        <Main pins={pins} currentUser={currentUser} />
       </Grid>
       <Grid item xs={12} md={3}>
         <Side />
