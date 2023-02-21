@@ -1,9 +1,9 @@
 import React, { SyntheticEvent, useState } from 'react'
 import { Box, Tab, Tabs, Typography } from '@mui/material'
 import { TabPanel, tabProps } from '../tab'
-import { ReplyBox } from './reply'
+import ReplyBox from './reply'
 import { PostComment } from '../../types/post-comment'
-import { CommentList } from './list'
+import CommentList from './list'
 import { User } from '../../types/user'
 import { TabsProp } from '../../types/tabs-prop'
 
@@ -19,15 +19,18 @@ const tabs: TabsProp[] = [
 ]
 
 export interface PostCommentListProps {
+  postId: number
   postComments: PostComment[]
   currentUser: User | null
 }
 
-export const PostCommentBox = ({
+export default function PostCommentBox({
+  postId,
   postComments,
   currentUser,
-}: PostCommentListProps) => {
+}: PostCommentListProps) {
   const [value, setValue] = useState(0)
+  const replyCommentId = null
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
@@ -50,10 +53,18 @@ export const PostCommentBox = ({
           ))}
         </Tabs>
       </Box>
-      <ReplyBox currentUser={currentUser} />
+      <ReplyBox
+        currentUser={currentUser}
+        postId={postId}
+        replyCommentId={replyCommentId}
+      />
       {tabs.map(({ index }) => (
         <TabPanel key={index} value={value} index={index}>
-          <CommentList postComments={postComments} currentUser={currentUser} />
+          <CommentList
+            postId={postId}
+            postComments={postComments}
+            currentUser={currentUser}
+          />
         </TabPanel>
       ))}
     </Box>

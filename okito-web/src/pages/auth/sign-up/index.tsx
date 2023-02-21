@@ -14,7 +14,7 @@ import { siteName } from '../../../consts'
 import { useAuth } from '../../../context/auth-context'
 import { SignUpForm } from '../../../types/sign-up-param'
 
-export const SignUpPage = () => {
+export default function SignUpPage() {
   const { register, user } = useAuth()
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {

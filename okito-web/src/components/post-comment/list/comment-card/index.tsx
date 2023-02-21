@@ -5,20 +5,26 @@ import { User, userDefault } from '../../../../types/user'
 import { useMount } from '../../../../utils/hook'
 import { selectUserById } from '../../../../api/user'
 import { selectPostCommentsSecondaryByPostId } from '../../../../api/post-comment'
-import { ReplyBox } from '../../reply'
-import { Secondary } from './secondary'
-import { CommentActionList } from './comment-action-list'
-import { CommentImage } from './comment-image'
+import ReplyBox from '../../reply'
+import Secondary from './secondary'
+import CommentActionList from './comment-action-list'
+import CommentImage from './comment-image'
 
 interface CommentCardProps {
+  postId: number
   comment: PostComment
   user: User | null
 }
 
-export const CommentCard = ({ comment, user }: CommentCardProps) => {
+export default function CommentCard({
+  postId,
+  comment,
+  user,
+}: CommentCardProps) {
   const [author, setAuthor] = useState<User>(userDefault)
   const [secondaryComments, setSecondaryComments] = useState<PostComment[]>([])
   const [open, setOpen] = useState<boolean>(false)
+  const [replyCommentId, setReplyCommentId] = useState<number | null>(null)
 
   useMount(async () => {
     const author = await selectUserById(comment.authorId)
@@ -28,8 +34,9 @@ export const CommentCard = ({ comment, user }: CommentCardProps) => {
     console.log(comments)
   })
 
-  function toggleOpen(open: boolean) {
+  function toggleOpen(open: boolean, commentId: number | null) {
     setOpen(!open)
+    setReplyCommentId(commentId)
   }
 
   return (
@@ -75,7 +82,11 @@ export const CommentCard = ({ comment, user }: CommentCardProps) => {
                   />
                 ))}
                 <Collapse in={open}>
-                  <ReplyBox currentUser={user} />
+                  <ReplyBox
+                    currentUser={user}
+                    postId={postId}
+                    replyCommentId={replyCommentId}
+                  />
                 </Collapse>
               </Box>
             </Grid>

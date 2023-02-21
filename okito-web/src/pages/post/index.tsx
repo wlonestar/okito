@@ -5,20 +5,20 @@ import { Box, Button, Grid, Paper, Typography } from '@mui/material'
 import { Aside } from '../home/aside'
 import { Post, postDefault } from '../../types/post'
 import { selectPostById } from '../../api/post'
-import { AuthorLine } from '../../components/author-line'
+import AuthorLine from '../../components/author-line'
 import { User, userDefault } from '../../types/user'
 import { selectUserById } from '../../api/user'
-import { Md2html } from '../../components/md2html'
+import Md2html from '../../components/md2html'
 import { Category, categoryDefault } from '../../types/category'
 import { Tag } from '../../types/tag'
 import { selectCategoryById } from '../../api/category'
 import { selectTagsByPostId } from '../../api/tag'
-import { PostCommentBox } from '../../components/post-comment'
+import PostCommentBox from '../../components/post-comment'
 import { PostComment } from '../../types/post-comment'
 import { selectPostCommentsByPostId } from '../../api/post-comment'
 import { CurrentUserProps } from '../../types/current-user-props'
 
-export const PostPage = ({ currentUser }: CurrentUserProps) => {
+export default function PostPage({ currentUser }: CurrentUserProps) {
   const { id } = useParams()
   const [post, setPost] = useState<Post>(postDefault)
   const [author, setAuthor] = useState<User>(userDefault)
@@ -65,17 +65,14 @@ export const PostPage = ({ currentUser }: CurrentUserProps) => {
             }}
           >
             {/*title*/}
-            <Typography component="div" sx={{ fontSize: 34, fontWeight: 600 }}>
+            <Typography
+              component="div"
+              sx={{ fontSize: 34, fontWeight: 600, pb: 2 }}
+            >
               {post.title}
             </Typography>
             {/*author*/}
-            <AuthorLine
-              id={author.id}
-              name={author.username}
-              avatar={author.avatar}
-              dateTime={post.createTime}
-              likeNum={author.postLikeNum}
-            />
+            <AuthorLine author={author} dateTime={post.createTime} />
             {/*cover*/}
             <Box>
               <img
@@ -130,7 +127,11 @@ export const PostPage = ({ currentUser }: CurrentUserProps) => {
               maxWidth: '100%',
             }}
           >
-            <PostCommentBox postComments={comments} currentUser={currentUser} />
+            <PostCommentBox
+              postId={post.id}
+              postComments={comments}
+              currentUser={currentUser}
+            />
           </Box>
         </Paper>
       </Grid>

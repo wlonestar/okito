@@ -24,7 +24,11 @@ const components = {
       <code
         className={className}
         {...props}
-        style={{ backgroundColor: '#eee' }}
+        // style={{
+        //   // @ts-ignore
+        //   backgroundColor: (theme) =>
+        //     theme.palette.mode === 'light' ? '#eee' : '#222',
+        // }}
       >
         {children}
       </code>
@@ -63,7 +67,7 @@ interface Md2htmlProps {
   content: string
 }
 
-export const Md2html = ({ content }: Md2htmlProps) => {
+export default function Md2html({ content }: Md2htmlProps) {
   return (
     <ReactMarkdown
       children={content}

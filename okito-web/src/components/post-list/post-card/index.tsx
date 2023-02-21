@@ -14,14 +14,15 @@ import { Tag } from '../../../types/tag'
 import { selectTagsByPostId } from '../../../api/tag'
 import { userDefault, User } from '../../../types/user'
 import { countPostCommentsByPostId } from '../../../api/post-comment'
-import { ActionList } from './action-list'
-import { MetaList } from './meta-list'
+import ActionList from './action-list'
+import MetaList from './meta-list'
 
 interface PostCardProps {
   post: Post
+  currentUser: User | null
 }
 
-export const PostCard = ({ post }: PostCardProps) => {
+export const PostCard = ({ post, currentUser }: PostCardProps) => {
   const [author, setAuthor] = useState<User>(userDefault)
   const [tags, setTags] = useState<Tag[]>([])
   const [commentsNum, setCommentsNum] = useState<number>(0)
@@ -60,7 +61,11 @@ export const PostCard = ({ post }: PostCardProps) => {
             <Typography sx={{ mb: 1.5 }} color="text.secondary">
               {post.summary}
             </Typography>
-            <ActionList post={post} commentsNum={commentsNum} />
+            <ActionList
+              post={post}
+              commentsNum={commentsNum}
+              currentUser={currentUser}
+            />
           </Grid>
           {/*cover*/}
           <Grid item xs={12} md={3} lg={3}>

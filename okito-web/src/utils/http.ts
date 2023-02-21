@@ -37,7 +37,7 @@ export const http = async (
     const data = await res.json()
     if (res.ok) {
       const user: User = data.data
-      console.log(user)
+      // console.log(user)
       return user
     } else {
       return Promise.reject(data)

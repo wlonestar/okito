@@ -8,12 +8,12 @@ interface CustomMenuProps {
   handleMenuClose: () => void
 }
 
-export const CustomMenu = ({
+export default function CustomMenu({
   anchorEl,
   menuId,
   isMenuOpen,
   handleMenuClose,
-}: CustomMenuProps) => {
+}: CustomMenuProps) {
   return (
     <Menu
       anchorEl={anchorEl}

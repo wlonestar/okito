@@ -6,3 +6,30 @@ export function selectUserById(id: number) {
     method: 'GET',
   })
 }
+
+export function selectUserColumnFollowByUserIdAndColumnId(param: {
+  columnId: number
+  userId: number | undefined
+}) {
+  return client({
+    url: '/user/column/single',
+    method: 'GET',
+    params: {
+      ...param,
+    },
+  })
+}
+
+export function updateFollowColumn(param: {
+  columnId: number
+  userId: number | undefined
+  follow: boolean
+}) {
+  return client({
+    url: `/user/column`,
+    method: 'PUT',
+    data: {
+      ...param,
+    },
+  })
+}

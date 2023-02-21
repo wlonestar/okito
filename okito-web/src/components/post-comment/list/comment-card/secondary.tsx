@@ -5,8 +5,8 @@ import { User, userDefault } from '../../../../types/user'
 import { useMount } from '../../../../utils/hook'
 import { selectUserById } from '../../../../api/user'
 import { selectPostCommentById } from '../../../../api/post-comment'
-import { CommentActionList } from './comment-action-list'
-import { CommentImage } from './comment-image'
+import CommentActionList from './comment-action-list'
+import CommentImage from './comment-image'
 
 const ReplyUserLink = ({ user }: { user: User }) => {
   return (
@@ -27,10 +27,14 @@ const ReplyUserLink = ({ user }: { user: User }) => {
 interface SecondaryProps {
   comment: PostComment
   open: boolean
-  toggleOpen: (open: boolean) => void
+  toggleOpen: (open: boolean, commentId: number | null) => void
 }
 
-export const Secondary = ({ comment, open, toggleOpen }: SecondaryProps) => {
+export default function Secondary({
+  comment,
+  open,
+  toggleOpen,
+}: SecondaryProps) {
   const [author, setAuthor] = useState<User>(userDefault)
   const [replyAuthor, setReplyAuthor] = useState<User>(userDefault)
 
@@ -45,13 +49,7 @@ export const Secondary = ({ comment, open, toggleOpen }: SecondaryProps) => {
   })
 
   return (
-    <Grid
-      container
-      spacing={2}
-      sx={{
-        pt: 2,
-      }}
-    >
+    <Grid container spacing={2} sx={{ pt: 2 }}>
       <Grid item>
         <CommentImage author={author} />
       </Grid>
@@ -65,7 +63,8 @@ export const Secondary = ({ comment, open, toggleOpen }: SecondaryProps) => {
               component="span"
             >
               <Link
-                href={`/user/1`}
+                href={`/user/${author.id}`}
+                target="_blank"
                 underline="none"
                 sx={{
                   color: (theme) =>
