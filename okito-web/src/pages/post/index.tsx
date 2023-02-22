@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { useMount } from '../../utils/hook'
+import { useMount, useSort } from '../../utils/hook'
 import { useParams } from 'react-router-dom'
 import { Box, Button, Grid, Paper, Typography } from '@mui/material'
 import { Aside } from '../home/aside'
 import { Post, postDefault } from '../../types/post'
 import { selectPostById } from '../../api/post'
-import AuthorLine from '../../components/author-line'
+import AuthorTitle from '../../components/author-title'
 import { User, userDefault } from '../../types/user'
 import { selectUserById } from '../../api/user'
 import Md2html from '../../components/md2html'
@@ -13,7 +13,7 @@ import { Category, categoryDefault } from '../../types/category'
 import { Tag } from '../../types/tag'
 import { selectCategoryById } from '../../api/category'
 import { selectTagsByPostId } from '../../api/tag'
-import PostCommentBox from '../../components/post-comment'
+import PostComments from '../../components/post/post-comment'
 import { PostComment } from '../../types/post-comment'
 import { selectPostCommentsByPostId } from '../../api/post-comment'
 import { CurrentUserProps } from '../../types/current-user-props'
@@ -24,7 +24,7 @@ export default function PostPage({ currentUser }: CurrentUserProps) {
   const [author, setAuthor] = useState<User>(userDefault)
   const [cate, setCate] = useState<Category>(categoryDefault)
   const [tags, setTags] = useState<Tag[]>([])
-  const [comments, setComments] = useState<PostComment[]>([])
+  const [postComments, setPostComments] = useState<PostComment[]>([])
 
   useMount(async () => {
     console.log(id)
@@ -36,12 +36,11 @@ export default function PostPage({ currentUser }: CurrentUserProps) {
     setCate(cate.data)
     const tags = await selectTagsByPostId(post.data.id)
     setTags(tags.data)
-    const commentsData = await selectPostCommentsByPostId(post.data.id)
-    const comments = commentsData.data.filter(
+    const postCommentsData = await selectPostCommentsByPostId(post.data.id)
+    const postComments = postCommentsData.data.filter(
       (comment: PostComment) => comment.parentId === null
     )
-    setComments(comments)
-    console.log(comments)
+    setPostComments(useSort(postComments, 'likeNum', 'desc'))
   })
 
   return (
@@ -72,7 +71,7 @@ export default function PostPage({ currentUser }: CurrentUserProps) {
               {post.title}
             </Typography>
             {/*author*/}
-            <AuthorLine
+            <AuthorTitle
               author={author}
               viewNum={author.postViewNum}
               dateTime={post.createTime}
@@ -114,7 +113,7 @@ export default function PostPage({ currentUser }: CurrentUserProps) {
             </Box>
           </Box>
         </Paper>
-        {/*comments*/}
+        {/*postComments*/}
         <Paper sx={{ mt: 3 }}>
           <Box
             sx={{
@@ -131,9 +130,9 @@ export default function PostPage({ currentUser }: CurrentUserProps) {
               maxWidth: '100%',
             }}
           >
-            <PostCommentBox
+            <PostComments
               postId={post.id}
-              postComments={comments}
+              postComments={postComments}
               currentUser={currentUser}
             />
           </Box>

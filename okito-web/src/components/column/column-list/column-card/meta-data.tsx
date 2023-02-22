@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import { Column } from '../../../../types/column'
 import { formatDateTime } from '../../../../utils/date'
-import { PointerDivider } from '../../../inline-divider'
+import { PointerDivider } from '../../../divider'
 
 interface ActionListProps {
   column: Column

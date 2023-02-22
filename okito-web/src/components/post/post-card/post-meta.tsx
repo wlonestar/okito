@@ -3,15 +3,15 @@ import { User } from '../../../types/user'
 import { Tag } from '../../../types/tag'
 import { Grid, Link, Typography } from '@mui/material'
 import { formatDateTime } from '../../../utils/date'
-import { VerticalDivider, PointerDivider } from '../../inline-divider'
+import { VerticalDivider, PointerDivider } from '../../divider'
 
-interface MetaListProps {
+interface PostMetaProps {
   post: Post
   author: User
   tags: Tag[]
 }
 
-export default function MetaList({ post, author, tags }: MetaListProps) {
+export default function PostMeta({ post, author, tags }: PostMetaProps) {
   return (
     <Grid item xs={12}>
       <Typography component="div" sx={{ fontSize: 14 }} color="text.secondary">

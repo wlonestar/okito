@@ -28,7 +28,6 @@ export default function PinPage({ currentUser }: PinPageProps) {
   }
 
   useMount(() => {
-    console.log('pin page', currentUser)
     selectAllPins().then((res) => {
       const data: Pin[] = useSort(res.data, 'createTime', 'desc')
       setPins(data)

@@ -1,12 +1,14 @@
 import { PinComment } from '../../../types/pin-comment'
 import { User, userDefault } from '../../../types/user'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useMount } from '../../../utils/hook'
 import { selectUserById } from '../../../api/user'
 import { selectPinCommentsSecondaryById } from '../../../api/pin-comment'
 import { Box, Collapse, Divider, Grid, Link, Typography } from '@mui/material'
-import CommentImage from '../../post-comment/list/comment-card/comment-image'
-import PinCommentActionList from './action-list'
+import AuthorAvatar from '../../author-avatar'
+import CommentAction from './comment-action'
+import Secondary from './secondary'
+import InputBox from './input-box'
 
 interface CommentCardProps {
   pinId: number
@@ -14,7 +16,11 @@ interface CommentCardProps {
   currentUser: User | null
 }
 
-function CommentCard({ pinId, comment, currentUser }: CommentCardProps) {
+export default function CommentCard({
+  pinId,
+  comment,
+  currentUser,
+}: CommentCardProps) {
   const [author, setAuthor] = useState<User>(userDefault)
   const [secondaryComments, setSecondaryComments] = useState<PinComment[]>([])
   const [open, setOpen] = useState<boolean>(false)
@@ -30,14 +36,19 @@ function CommentCard({ pinId, comment, currentUser }: CommentCardProps) {
     setAuthor(author.data)
     const comments = await selectPinCommentsSecondaryById(comment.id)
     setSecondaryComments(comments.data)
-    console.log(comments)
   })
+
+  const authorAvatar = {
+    id: author.id,
+    username: author.username,
+    avatar: author.avatar,
+  }
 
   return (
     <>
       <Grid container spacing={2} sx={{ pt: 2 }}>
         <Grid item>
-          <CommentImage author={author} />
+          <AuthorAvatar author={authorAvatar} width={32} height={32} />
         </Grid>
         <Grid item xs={12} sm container>
           <Grid item xs container direction="column" spacing={2}>
@@ -45,12 +56,9 @@ function CommentCard({ pinId, comment, currentUser }: CommentCardProps) {
               <Link
                 href={`/user/${author.id}`}
                 underline="none"
-                sx={{
-                  color: (theme) =>
-                    theme.palette.mode === 'light' ? '#222' : '#ddd',
-                }}
+                color="text.primary"
               >
-                <Typography variant="body2" color="text.secondary" gutterBottom>
+                <Typography variant="body2" color="text.primary" gutterBottom>
                   {author.username}
                 </Typography>
               </Link>
@@ -61,26 +69,28 @@ function CommentCard({ pinId, comment, currentUser }: CommentCardProps) {
               >
                 {comment.content}
               </Typography>
-              <PinCommentActionList
+              <CommentAction
                 comment={comment}
                 open={open}
                 toggleOpen={toggleOpen}
+                currentUser={currentUser}
               />
               <Box>
-                {/*{secondaryComments.map((comment) => (*/}
-                {/*  <Secondary*/}
-                {/*    key={comment.id}*/}
-                {/*    comment={comment}*/}
-                {/*    open={open}*/}
-                {/*    toggleOpen={toggleOpen}*/}
-                {/*  />*/}
-                {/*))}*/}
+                {secondaryComments.map((comment) => (
+                  <Secondary
+                    key={comment.id}
+                    comment={comment}
+                    open={open}
+                    toggleOpen={toggleOpen}
+                    currentUser={currentUser}
+                  />
+                ))}
                 <Collapse in={open}>
-                  {/*<ReplyBox*/}
-                  {/*  currentUser={currentUser}*/}
-                  {/*  postId={postId}*/}
-                  {/*  replyCommentId={replyCommentId}*/}
-                  {/*/>*/}
+                  <InputBox
+                    pinId={pinId}
+                    replyCommentId={replyCommentId}
+                    currentUser={currentUser}
+                  />
                 </Collapse>
               </Box>
             </Grid>
@@ -89,29 +99,5 @@ function CommentCard({ pinId, comment, currentUser }: CommentCardProps) {
       </Grid>
       <Divider sx={{ mt: 2, mb: 2 }} />
     </>
-  )
-}
-
-interface CommentListProps {
-  pinId: number
-  pinComments: PinComment[]
-  currentUser: User | null
-}
-
-export default function CommentList({
-  pinId,
-  pinComments,
-  currentUser,
-}: CommentListProps) {
-  return (
-    <Box>
-      {pinComments.map((comment) => (
-        <CommentCard
-          pinId={pinId}
-          comment={comment}
-          currentUser={currentUser}
-        />
-      ))}
-    </Box>
   )
 }

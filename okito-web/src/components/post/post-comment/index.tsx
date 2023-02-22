@@ -1,21 +1,16 @@
 import React, { SyntheticEvent, useState } from 'react'
 import { Box, Tab, Tabs, Typography } from '@mui/material'
-import { TabPanel, tabProps } from '../tab'
-import ReplyBox from './reply'
-import { PostComment } from '../../types/post-comment'
-import CommentList from './list'
-import { User } from '../../types/user'
-import { TabsProp } from '../../types/tabs-prop'
+import { tabProps } from '../../tab'
+import InputBox from './input-box'
+import { PostComment } from '../../../types/post-comment'
+import CommentList from './comment-list'
+import { User } from '../../../types/user'
+import { TabsProp } from '../../../types/tabs-prop'
+import { useSort } from '../../../utils/hook'
 
 const tabs: TabsProp[] = [
-  {
-    index: 0,
-    label: '最热',
-  },
-  {
-    index: 1,
-    label: '最新',
-  },
+  { index: 0, label: '最热' },
+  { index: 1, label: '最新' },
 ]
 
 export interface PostCommentListProps {
@@ -24,7 +19,7 @@ export interface PostCommentListProps {
   currentUser: User | null
 }
 
-export default function PostCommentBox({
+export default function PostComments({
   postId,
   postComments,
   currentUser,
@@ -35,9 +30,9 @@ export default function PostCommentBox({
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
     if (newValue === 0) {
-      postComments.sort((a, b) => (a.likeNum < b.likeNum ? 1 : 0))
+      postComments = useSort(postComments, 'likeNum', 'desc')
     } else if (newValue === 1) {
-      postComments.sort((a, b) => (a.uploadTime < b.uploadTime ? 1 : 0))
+      postComments = useSort(postComments, 'uploadTime', 'desc')
     }
   }
 
@@ -53,20 +48,16 @@ export default function PostCommentBox({
           ))}
         </Tabs>
       </Box>
-      <ReplyBox
+      <InputBox
         currentUser={currentUser}
         postId={postId}
         replyCommentId={replyCommentId}
       />
-      {tabs.map(({ index }) => (
-        <TabPanel key={index} value={value} index={index}>
-          <CommentList
-            postId={postId}
-            postComments={postComments}
-            currentUser={currentUser}
-          />
-        </TabPanel>
-      ))}
+      <CommentList
+        postId={postId}
+        postComments={postComments}
+        currentUser={currentUser}
+      />
     </Box>
   )
 }

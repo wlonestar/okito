@@ -1,5 +1,5 @@
 import React, { SyntheticEvent, useEffect, useState } from 'react'
-import PostList from '../../../components/post-list'
+import PostList from '../../../components/post/post-list'
 import { useAuth } from '../../../context/auth-context'
 import { useMount, useSort } from '../../../utils/hook'
 import { Post } from '../../../types/post'

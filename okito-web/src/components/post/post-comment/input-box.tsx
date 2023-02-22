@@ -1,23 +1,24 @@
+import { Box, Button, TextField } from '@mui/material'
 import React, { FormEvent } from 'react'
-import { User } from '../../../types/user'
 import { defaultAvatar } from '../../../consts'
-import { PinCommentParam } from '../../../types/pin-comment'
-import { addPinComment } from '../../../api/pin-comment'
-import { Box, Button, ButtonBase, TextField } from '@mui/material'
+import { User } from '../../../types/user'
+import { PostCommentParam } from '../../../types/post-comment'
+import { addPostComment } from '../../../api/post-comment'
+import AuthorAvatar from '../../author-avatar'
 
-interface PinCommentInputProps {
-  pinId: number
+interface ReplyBoxProps {
+  postId: number
   replyCommentId: number | null
   currentUser: User | null
 }
 
-export default function PinCommentInput({
-  pinId,
+export default function InputBox({
+  postId,
   replyCommentId,
   currentUser,
-}: PinCommentInputProps) {
+}: ReplyBoxProps) {
   const reply = {
-    href: currentUser === null ? '' : currentUser.id,
+    id: currentUser === null ? 0 : currentUser.id,
     username: currentUser === null ? 'default' : currentUser.username,
     avatar: currentUser === null ? defaultAvatar : currentUser.avatar,
   }
@@ -26,17 +27,18 @@ export default function PinCommentInput({
     if (currentUser !== null) {
       event.preventDefault()
       const data = new FormData(event.currentTarget)
-      const commentParam: PinCommentParam = {
+      const commentParam: PostCommentParam = {
         id: 0,
         content: data.get('content')?.toString(),
         uploadTime: new Date(),
         authorId: currentUser.id,
-        pinId: pinId,
+        postId: postId,
         parentId: replyCommentId,
       }
-      console.log(commentParam)
-      addPinComment(commentParam).then((res) => {
-        console.log(res)
+      addPostComment(commentParam).then((res) => {
+        if (res.status !== 20) {
+          console.log(res)
+        }
       })
     } else {
       window.location.assign('/login')
@@ -50,32 +52,15 @@ export default function PinCommentInput({
       noValidate
       sx={{ mt: 3, mb: 4 }}
     >
-      <ButtonBase
-        href={`/user/${reply.href}`}
-        target="_blank"
-        sx={{ width: 32, height: 32, mr: 2 }}
-      >
-        <img
-          style={{
-            margin: 'auto',
-            display: 'block',
-            maxWidth: '100%',
-            maxHeight: '100%',
-            borderRadius: '16px',
-          }}
-          alt={reply.username}
-          src={reply.avatar}
-        />
-      </ButtonBase>
+      <AuthorAvatar author={reply} />
       <TextField
         variant="outlined"
         multiline
-        rows={1}
-        size="small"
+        rows={2}
         id="content"
         name="content"
         placeholder="输入评论"
-        sx={{ mr: 2, width: '75%' }}
+        sx={{ ml: 1, mr: 2, width: '75%' }}
       />
       <Button variant="contained" type="submit">
         {'发送'}

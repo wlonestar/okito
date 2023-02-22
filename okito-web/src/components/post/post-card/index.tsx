@@ -14,8 +14,8 @@ import { Tag } from '../../../types/tag'
 import { selectTagsByPostId } from '../../../api/tag'
 import { userDefault, User } from '../../../types/user'
 import { countPostCommentsByPostId } from '../../../api/post-comment'
-import ActionList from './action-list'
-import MetaList from './meta-list'
+import PostAction from './post-action'
+import PostMeta from './post-meta'
 
 interface PostCardProps {
   post: Post
@@ -28,12 +28,12 @@ export const PostCard = ({ post, currentUser }: PostCardProps) => {
   const [commentsNum, setCommentsNum] = useState<number>(0)
 
   useMount(async () => {
-    const res1 = await selectUserById(post.authorId)
-    setAuthor(res1.data)
-    const res2 = await selectTagsByPostId(post.id)
-    setTags(res2.data)
-    const res3 = await countPostCommentsByPostId(post.id)
-    setCommentsNum(res3.data)
+    const author = await selectUserById(post.authorId)
+    setAuthor(author.data)
+    const tags = await selectTagsByPostId(post.id)
+    setTags(tags.data)
+    const commentNum = await countPostCommentsByPostId(post.id)
+    setCommentsNum(commentNum.data)
   })
 
   return (
@@ -44,7 +44,7 @@ export const PostCard = ({ post, currentUser }: PostCardProps) => {
       <CardContent>
         <Grid container spacing={1}>
           {/*time, author and tags*/}
-          <MetaList post={post} author={author} tags={tags} />
+          <PostMeta post={post} author={author} tags={tags} />
           {/*title, summary and actions*/}
           <Grid item xs={12} md={9} lg={9}>
             <Link href={`/post/${post.id}`} target="_blank" underline="none">
@@ -61,7 +61,7 @@ export const PostCard = ({ post, currentUser }: PostCardProps) => {
             <Typography sx={{ mb: 1.5 }} color="text.secondary">
               {post.summary}
             </Typography>
-            <ActionList
+            <PostAction
               post={post}
               commentsNum={commentsNum}
               currentUser={currentUser}

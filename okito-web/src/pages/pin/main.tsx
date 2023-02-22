@@ -1,7 +1,7 @@
 import { Box, Button, Paper, TextField } from '@mui/material'
 import { FormEvent } from 'react'
 import { Pin, PinParam } from '../../types/pin'
-import PinCard from '../../components/pin-card'
+import PinCard from '../../components/pin/pin-card'
 import { User } from '../../types/user'
 import { addPin } from '../../api/pin'
 

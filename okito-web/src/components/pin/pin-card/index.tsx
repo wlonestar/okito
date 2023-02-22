@@ -1,13 +1,13 @@
 import { Box, Divider, Paper, Typography } from '@mui/material'
-import { Pin } from '../../types/pin'
-import { useMount } from '../../utils/hook'
+import { Pin } from '../../../types/pin'
+import { useMount } from '../../../utils/hook'
 import { useState } from 'react'
-import { User, userDefault } from '../../types/user'
-import { selectUserById } from '../../api/user'
-import { countPinCommentsByPinId } from '../../api/pin-comment'
-import AuthorLine from '../author-line'
-import ActionList from './action-list'
-import PinComments from './pin-comment'
+import { User, userDefault } from '../../../types/user'
+import { selectUserById } from '../../../api/user'
+import { countPinCommentsByPinId } from '../../../api/pin-comment'
+import AuthorTitle from '../../author-title'
+import PinAction from './pin-action'
+import PinComments from '../pin-comment'
 
 interface PinCardProps {
   pin: Pin
@@ -33,7 +33,7 @@ export default function PinCard({ pin, currentUser }: PinCardProps) {
   return (
     <Paper sx={{ mt: 2 }}>
       <Box sx={{ padding: 2 }}>
-        <AuthorLine
+        <AuthorTitle
           author={author}
           viewNum={pin.viewNum}
           dateTime={pin.createTime}
@@ -42,7 +42,7 @@ export default function PinCard({ pin, currentUser }: PinCardProps) {
           {pin.content}
         </Typography>
         <Divider />
-        <ActionList
+        <PinAction
           pin={pin}
           open={open}
           toggleOpen={toggleOpen}

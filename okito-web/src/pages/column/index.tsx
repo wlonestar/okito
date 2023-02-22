@@ -14,7 +14,7 @@ import { Box, Tab, Tabs } from '@mui/material'
 import { Post } from '../../types/post'
 import { selectPostsByColumnId } from '../../api/post'
 import { TabPanel, tabProps } from '../../components/tab'
-import { PostCard } from '../../components/post-list/post-card'
+import { PostCard } from '../../components/post/post-card'
 import { TabsProp } from '../../types/tabs-prop'
 
 const tabs: TabsProp[] = [

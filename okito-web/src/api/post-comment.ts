@@ -38,3 +38,32 @@ export function addPostComment(param: PostCommentParam) {
     data: param,
   })
 }
+
+interface SelectPinCommentLikeProp {
+  commentId: number
+  userId: number
+}
+
+export function selectPostCommentLikeById(param: SelectPinCommentLikeProp) {
+  return client({
+    url: `${prefix}/like/single`,
+    method: 'GET',
+    params: {
+      ...param,
+    },
+  })
+}
+
+interface LikeActionToPinCommentProp {
+  commentId: number
+  userId: number
+  type: number
+}
+
+export function likeActionToPostComment(param: LikeActionToPinCommentProp) {
+  return client({
+    url: `${prefix}/like`,
+    method: 'PUT',
+    data: param,
+  })
+}

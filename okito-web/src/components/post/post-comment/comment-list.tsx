@@ -1,5 +1,5 @@
 import { Box } from '@mui/material'
-import { PostCommentListProps } from '../index'
+import { PostCommentListProps } from './index'
 import CommentCard from './comment-card'
 
 export default function CommentList({
@@ -14,7 +14,7 @@ export default function CommentList({
           key={comment.id}
           postId={postId}
           comment={comment}
-          user={currentUser}
+          currentUser={currentUser}
         />
       ))}
     </Box>

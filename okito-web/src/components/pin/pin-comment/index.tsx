@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Box, Collapse } from '@mui/material'
 import { User } from '../../../types/user'
-import PinCommentInput from './comment-input'
+import InputBox from './input-box'
 import CommentList from './comment-list'
 import { PinComment } from '../../../types/pin-comment'
-import { useMount } from '../../../utils/hook'
+import { useMount, useSort } from '../../../utils/hook'
 import { selectPinCommentsByPinId } from '../../../api/pin-comment'
 
 interface PinCommentProps {
@@ -24,7 +24,10 @@ export default function PinComments({
 
   useMount(() => {
     selectPinCommentsByPinId(pinId).then((res) => {
-      setPinComments(res.data)
+      const comments = res.data.filter(
+        (comment: PinComment) => comment.parentId === null
+      )
+      setPinComments(useSort(comments, 'likeNum', 'desc'))
     })
   })
 
@@ -32,7 +35,7 @@ export default function PinComments({
     <Collapse in={open}>
       <Box>
         {/*input box*/}
-        <PinCommentInput
+        <InputBox
           pinId={pinId}
           replyCommentId={replyCommentId}
           currentUser={currentUser}

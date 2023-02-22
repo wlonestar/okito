@@ -4,12 +4,12 @@ import IosShareOutlinedIcon from '@mui/icons-material/IosShareOutlined'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import SmsOutlinedIcon from '@mui/icons-material/SmsOutlined'
-import { User } from '../../types/user'
-import { useMount } from '../../utils/hook'
-import { Pin } from '../../types/pin'
-import { likeActionToPin, selectPinLikeById } from '../../api/pin'
+import { User } from '../../../types/user'
+import { useMount } from '../../../utils/hook'
+import { Pin } from '../../../types/pin'
+import { likeActionToPin, selectPinLikeById } from '../../../api/pin'
 
-interface ActionListProps {
+interface PinActionProps {
   pin: Pin
   open: boolean
   toggleOpen: (open: boolean) => void
@@ -17,17 +17,18 @@ interface ActionListProps {
   currentUser: User | null
 }
 
-export default function ActionList({
+export default function PinAction({
   pin,
   open,
   toggleOpen,
   commentNum,
   currentUser,
-}: ActionListProps) {
+}: PinActionProps) {
   const [likeType, setLikeType] = useState<number>(0)
   const [likeNum, setLikeNum] = useState<number>(pin.likeNum)
+  const [commentOpen, setCommentOpen] = useState<boolean>(false)
 
-  const handleClickLike = async () => {
+  const handleClickLike = () => {
     if (currentUser !== null) {
       let like = 0
       if (likeType === 0 || likeType === 2) {
@@ -38,26 +39,25 @@ export default function ActionList({
         setLikeType(0)
         setLikeNum(likeNum - 1)
       }
-      // console.log(like)
       const param = { pinId: pin.id, userId: currentUser.id, type: like }
-      // console.log(param)
-      await likeActionToPin(param)
+      likeActionToPin(param).then((res) => {
+        if (res.status !== 20) {
+          console.log(res)
+        }
+      })
     } else {
       window.location.assign('/login')
     }
   }
 
   const handleClickComment = () => {
-    console.log('click comment')
+    setCommentOpen(!commentOpen)
     toggleOpen(open)
   }
 
   useMount(() => {
     if (currentUser !== null) {
-      const param = {
-        pinId: pin.id,
-        userId: currentUser.id,
-      }
+      const param = { pinId: pin.id, userId: currentUser.id }
       selectPinLikeById(param).then((res) => {
         if (res.status === 20) {
           const type = res.data.type
@@ -104,7 +104,7 @@ export default function ActionList({
           }}
         >
           <Icon sx={{ pr: 4 }}>
-            <SmsOutlinedIcon />
+            <SmsOutlinedIcon color={commentOpen ? 'primary' : 'inherit'} />
           </Icon>
           <Typography color="text.secondary">{commentNum}</Typography>
         </Link>

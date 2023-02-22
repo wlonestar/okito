@@ -1,49 +1,54 @@
 import { Box, Collapse, Divider, Grid, Link, Typography } from '@mui/material'
-import { PostComment } from '../../../../types/post-comment'
-import { useState } from 'react'
-import { User, userDefault } from '../../../../types/user'
-import { useMount } from '../../../../utils/hook'
-import { selectUserById } from '../../../../api/user'
-import { selectPostCommentsSecondaryById } from '../../../../api/post-comment'
-import ReplyBox from '../../reply'
+import { PostComment } from '../../../types/post-comment'
+import React, { useState } from 'react'
+import { User, userDefault } from '../../../types/user'
+import { useMount } from '../../../utils/hook'
+import { selectUserById } from '../../../api/user'
+import { selectPostCommentsSecondaryById } from '../../../api/post-comment'
+import InputBox from './input-box'
 import Secondary from './secondary'
-import CommentActionList from './comment-action-list'
-import CommentImage from './comment-image'
+import CommentActionList from './comment-action'
+import AuthorAvatar from '../../author-avatar'
 
 interface CommentCardProps {
   postId: number
   comment: PostComment
-  user: User | null
+  currentUser: User | null
 }
 
 export default function CommentCard({
   postId,
   comment,
-  user,
+  currentUser,
 }: CommentCardProps) {
   const [author, setAuthor] = useState<User>(userDefault)
   const [secondaryComments, setSecondaryComments] = useState<PostComment[]>([])
   const [open, setOpen] = useState<boolean>(false)
   const [replyCommentId, setReplyCommentId] = useState<number | null>(null)
 
+  const toggleOpen = (open: boolean, commentId: number | null) => {
+    setOpen(!open)
+    setReplyCommentId(commentId)
+  }
+
   useMount(async () => {
     const author = await selectUserById(comment.authorId)
     setAuthor(author.data)
     const comments = await selectPostCommentsSecondaryById(comment.id)
     setSecondaryComments(comments.data)
-    console.log(comments)
   })
 
-  function toggleOpen(open: boolean, commentId: number | null) {
-    setOpen(!open)
-    setReplyCommentId(commentId)
+  const authorAvatar = {
+    id: author.id,
+    username: author.username,
+    avatar: author.avatar,
   }
 
   return (
     <>
       <Grid container spacing={2} sx={{ pt: 2 }}>
         <Grid item>
-          <CommentImage author={author} />
+          <AuthorAvatar author={authorAvatar} />
         </Grid>
         <Grid item xs={12} sm container>
           <Grid item xs container direction="column" spacing={2}>
@@ -51,10 +56,7 @@ export default function CommentCard({
               <Link
                 href={`/user/${author.id}`}
                 underline="none"
-                sx={{
-                  color: (theme) =>
-                    theme.palette.mode === 'light' ? '#222' : '#ddd',
-                }}
+                color="text.primary"
               >
                 <Typography variant="body2" color="text.secondary" gutterBottom>
                   {author.username}
@@ -71,6 +73,7 @@ export default function CommentCard({
                 comment={comment}
                 open={open}
                 toggleOpen={toggleOpen}
+                currentUser={currentUser}
               />
               <Box>
                 {secondaryComments.map((comment) => (
@@ -79,13 +82,14 @@ export default function CommentCard({
                     comment={comment}
                     open={open}
                     toggleOpen={toggleOpen}
+                    currentUser={currentUser}
                   />
                 ))}
                 <Collapse in={open}>
-                  <ReplyBox
-                    currentUser={user}
+                  <InputBox
                     postId={postId}
                     replyCommentId={replyCommentId}
+                    currentUser={currentUser}
                   />
                 </Collapse>
               </Box>

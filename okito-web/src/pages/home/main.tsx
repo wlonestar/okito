@@ -4,7 +4,7 @@ import { TabPanel, tabProps } from '../../components/tab'
 import { Post } from '../../types/post'
 import { selectAllPosts } from '../../api/post'
 import { useMount, useSort } from '../../utils/hook'
-import PostList from '../../components/post-list'
+import PostList from '../../components/post/post-list'
 import { TabsProp } from '../../types/tabs-prop'
 import { CurrentUserProps } from '../../types/current-user-props'
 

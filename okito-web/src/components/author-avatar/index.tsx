@@ -1,16 +1,27 @@
 import { ButtonBase } from '@mui/material'
-import { User } from '../../../../types/user'
 
-interface CommentImageProps {
-  author: User
+export interface AuthorAvatarProp {
+  id: number
+  username: string
+  avatar: string
 }
 
-export default function CommentImage({ author }: CommentImageProps) {
+interface AuthorAvatarProps {
+  author: AuthorAvatarProp
+  width?: number
+  height?: number
+}
+
+export default function AuthorAvatar({
+  author,
+  width = 32,
+  height = 32,
+}: AuthorAvatarProps) {
   return (
     <ButtonBase
       href={`/user/${author.id}`}
       target="_blank"
-      sx={{ width: 42, height: 42 }}
+      sx={{ width: width, height: height }}
     >
       <img
         style={{
@@ -20,7 +31,7 @@ export default function CommentImage({ author }: CommentImageProps) {
           maxHeight: '100%',
           borderRadius: '21px',
         }}
-        alt={author.avatar}
+        alt={author.username}
         src={author.avatar}
       />
     </ButtonBase>

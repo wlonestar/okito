@@ -21,7 +21,7 @@ import {
 } from '../../../api/user'
 import { useMount } from '../../../utils/hook'
 import { User } from '../../../types/user'
-import AuthorLine from '../../author-line'
+import AuthorTitle from '../../author-title'
 import ActionList from '../column-list/column-card/action-list'
 
 interface ColumnTitleProps {
@@ -109,7 +109,7 @@ export default function ColumnTitle({
           {/*title, summary and actions*/}
           <Grid item xs={12} md={9} lg={9}>
             <Box sx={{ pt: -1, pb: 2 }}>
-              <AuthorLine author={author} viewNum={author.postViewNum} />
+              <AuthorTitle author={author} viewNum={author.postViewNum} />
             </Box>
             <Typography
               sx={{
