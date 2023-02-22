@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useMount, useSort } from '../../utils/hook'
 import { useParams } from 'react-router-dom'
 import { Box, Button, Grid, Paper, Typography } from '@mui/material'
-import { Aside } from '../home/aside'
+import { Side } from '../home/side'
 import { Post, postDefault } from '../../types/post'
 import { selectPostById } from '../../api/post'
 import AuthorTitle from '../../components/author-title'
@@ -139,7 +139,7 @@ export default function PostPage({ currentUser }: CurrentUserProps) {
         </Paper>
       </Grid>
       <Grid item xs={12} md={3}>
-        <Aside />
+        <Side />
       </Grid>
     </Grid>
   )

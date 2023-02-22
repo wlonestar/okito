@@ -30,9 +30,10 @@ export default function AuthorTitle({
         <Grid item xs container direction="column" spacing={2}>
           <Grid item xs>
             <Link
-              href={`/user/${author.id}`}
               underline="none"
               color="text.primary"
+              href={`/user/${author.id}`}
+              target="_blank"
             >
               <Typography variant="body2" gutterBottom fontWeight="500">
                 {author.username}

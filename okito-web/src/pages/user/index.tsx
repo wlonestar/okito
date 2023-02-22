@@ -27,7 +27,7 @@ export default function UserPage({ currentUser }: UserPageProps) {
   })
 
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={3} sx={{ margin: '0 auto', mb: 3 }}>
       <Grid item xs={12} md={8.5}>
         <Major user={user} currentUser={currentUser} />
       </Grid>

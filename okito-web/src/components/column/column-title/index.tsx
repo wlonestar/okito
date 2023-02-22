@@ -82,10 +82,10 @@ export default function ColumnTitle({
   return (
     <Card
       variant="outlined"
-      sx={{ borderWidth: '0px 0px thin', borderRadius: 0, height: '200px' }}
+      sx={{ borderWidth: '0px 0px thin', borderRadius: '5px', height: '200px' }}
     >
       <CardContent>
-        <Link href={`/column/${column.id}`} target="_blank" underline="none">
+        <Link underline="none" href={`/column/${column.id}`} target="_blank">
           <Typography
             variant="h6"
             component="div"

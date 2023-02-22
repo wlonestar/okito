@@ -60,21 +60,13 @@ export const Main = ({ currentUser }: CurrentUserProps) => {
         }}
       >
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            aria-label="basic tabs example"
-          >
+          <Tabs value={value} onChange={handleChange}>
             {tabs.map(({ index, label }) => (
               <Tab key={index} label={label} {...tabProps(index)} />
             ))}
           </Tabs>
         </Box>
-        {tabs.map(({ index }) => (
-          <TabPanel key={index} value={value} index={index}>
-            <PostList posts={posts} currentUser={currentUser} />
-          </TabPanel>
-        ))}
+        <PostList posts={posts} currentUser={currentUser} />
       </Box>
     </Paper>
   )

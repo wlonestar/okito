@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { SyntheticEvent, useState } from 'react'
 import { Link, To } from 'react-router-dom'
 import { Box, Tab, Tabs } from '@mui/material'
 
@@ -14,11 +14,6 @@ const tabs: TabProps[] = [
     key: 'Home',
     to: '/',
   },
-  // {
-  //   label: 'Post',
-  //   key: 'Post',
-  //   to: '/post',
-  // },
   {
     label: '想法',
     key: 'Pin',
@@ -27,8 +22,9 @@ const tabs: TabProps[] = [
 ]
 
 export default function Nav() {
-  const [value, setValue] = React.useState(0)
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const [value, setValue] = useState(0)
+
+  const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
 

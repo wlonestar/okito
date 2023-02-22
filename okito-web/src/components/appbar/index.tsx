@@ -101,12 +101,7 @@ export const CustomAppBar = ({ theme, user }: CustomAppBarProps) => {
               : 'rgba(0, 0, 0, 0)',
         }}
       >
-        <Toolbar
-          sx={{
-            width: '1200px',
-            margin: '0 auto',
-          }}
-        >
+        <Toolbar sx={{ width: '1200px', margin: '0 auto' }}>
           <SiteLogo />
           <Nav />
           <Box sx={{ flexGrow: 1 }} />

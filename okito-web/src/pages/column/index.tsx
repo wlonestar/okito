@@ -10,10 +10,10 @@ import {
 import { User, userDefault } from '../../types/user'
 import ColumnTitle from '../../components/column/column-title'
 import { selectUserById } from '../../api/user'
-import { Box, Tab, Tabs } from '@mui/material'
+import { Box, Paper, Tab, Tabs } from '@mui/material'
 import { Post } from '../../types/post'
 import { selectPostsByColumnId } from '../../api/post'
-import { TabPanel, tabProps } from '../../components/tab'
+import { tabProps } from '../../components/tab'
 import { PostCard } from '../../components/post/post-card'
 import { TabsProp } from '../../types/tabs-prop'
 
@@ -50,15 +50,12 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
       setPosts(data)
     }
   }
-  const useColumn = (id: number) => {
-    return selectColumnById(id)
-  }
 
   useMount(async () => {
     console.log(id)
     const columnId = id as unknown as number
     console.log(columnId)
-    const column = await useColumn(columnId)
+    const column = await selectColumnById(columnId)
     setColumn(column.data)
     const postsNum = await countPostsByColumnId(columnId)
     setPostsNum(postsNum.data)
@@ -68,11 +65,9 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
     setAuthor(author.data)
     if (currentUser !== null) {
       if (currentUser.id === column.data.authorId) {
-        // console.log('is homepage')
         setHomepage(true)
       }
     } else {
-      // console.log('not login')
     }
     const posts = await selectPostsByColumnId(columnId)
     const data: Post[] = useSort(posts.data, 'createTime', 'desc')
@@ -80,36 +75,28 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
   })
 
   return (
-    <Box>
-      <ColumnTitle
-        column={column}
-        postsNum={postsNum}
-        followNum={followNum}
-        author={author}
-        homepage={homepage}
-        currentUser={currentUser}
-      />
+    <Box sx={{ maxWidth: '1080px', margin: '0 auto', mt: 3, mb: 3 }}>
+      <Paper>
+        <ColumnTitle
+          column={column}
+          postsNum={postsNum}
+          followNum={followNum}
+          author={author}
+          homepage={homepage}
+          currentUser={currentUser}
+        />
+      </Paper>
       <Box
         sx={{ borderBottom: 1, borderColor: 'divider', right: '10px', pt: 2 }}
       >
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="basic tabs example"
-        >
+        <Tabs value={value} onChange={handleChange}>
           {tabs.map(({ index, label }) => (
             <Tab key={index} label={label} {...tabProps(index)} />
           ))}
         </Tabs>
       </Box>
-      {tabs.map(({ index }) => (
-        <TabPanel key={index} value={value} index={index}>
-          <Box>
-            {posts.map((post) => (
-              <PostCard key={post.id} post={post} currentUser={currentUser} />
-            ))}
-          </Box>
-        </TabPanel>
+      {posts.map((post) => (
+        <PostCard key={post.id} post={post} currentUser={currentUser} />
       ))}
     </Box>
   )
