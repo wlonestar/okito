@@ -1,6 +1,5 @@
 package com.okito.okito.modules.users.model.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -47,7 +46,6 @@ public class User implements Serializable {
   private String intro;
 
   @Column(name = "join_time")
-  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS")
   private LocalDateTime joinTime;
 
   @Column(name = "role_id")
