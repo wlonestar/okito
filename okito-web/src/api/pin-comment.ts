@@ -10,7 +10,7 @@ export function selectPinCommentsByPinId(pinId: number) {
   })
 }
 
-export function selectPinCommentsSecondaryByPinId(id: number) {
+export function selectPinCommentsSecondaryById(id: number) {
   return client({
     url: `${prefix}/secondary/${id}`,
     method: 'GET',

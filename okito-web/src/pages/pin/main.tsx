@@ -5,11 +5,11 @@ import PinCard from '../../components/pin-card'
 import { User } from '../../types/user'
 import { addPin } from '../../api/pin'
 
-interface InputBoxProps {
+interface PinBoxProps {
   currentUser: User | null
 }
 
-function InputBox({ currentUser }: InputBoxProps) {
+function PinBox({ currentUser }: PinBoxProps) {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     if (currentUser !== null) {
       event.preventDefault()
@@ -72,7 +72,7 @@ function PinList({ pins, currentUser }: MainProps) {
 export default function Main({ pins, currentUser }: MainProps) {
   return (
     <Box>
-      <InputBox currentUser={currentUser} />
+      <PinBox currentUser={currentUser} />
       <PinList pins={pins} currentUser={currentUser} />
     </Box>
   )

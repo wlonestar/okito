@@ -10,7 +10,7 @@ export function selectPostCommentsByPostId(id: number) {
   })
 }
 
-export function selectPostCommentsSecondaryByPostId(id: number) {
+export function selectPostCommentsSecondaryById(id: number) {
   return client({
     url: `${prefix}/secondary/${id}`,
     method: 'GET',

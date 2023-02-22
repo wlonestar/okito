@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { User, userDefault } from '../../../../types/user'
 import { useMount } from '../../../../utils/hook'
 import { selectUserById } from '../../../../api/user'
-import { selectPostCommentsSecondaryByPostId } from '../../../../api/post-comment'
+import { selectPostCommentsSecondaryById } from '../../../../api/post-comment'
 import ReplyBox from '../../reply'
 import Secondary from './secondary'
 import CommentActionList from './comment-action-list'
@@ -29,7 +29,7 @@ export default function CommentCard({
   useMount(async () => {
     const author = await selectUserById(comment.authorId)
     setAuthor(author.data)
-    const comments = await selectPostCommentsSecondaryByPostId(comment.id)
+    const comments = await selectPostCommentsSecondaryById(comment.id)
     setSecondaryComments(comments.data)
     console.log(comments)
   })
@@ -49,7 +49,7 @@ export default function CommentCard({
           <Grid item xs container direction="column" spacing={2}>
             <Grid item xs>
               <Link
-                href={`/user/1`}
+                href={`/user/${author.id}`}
                 underline="none"
                 sx={{
                   color: (theme) =>

@@ -7,6 +7,7 @@ import { selectUserById } from '../../api/user'
 import { countPinCommentsByPinId } from '../../api/pin-comment'
 import AuthorLine from '../author-line'
 import ActionList from './action-list'
+import PinComments from './pin-comment'
 
 interface PinCardProps {
   pin: Pin
@@ -16,6 +17,11 @@ interface PinCardProps {
 export default function PinCard({ pin, currentUser }: PinCardProps) {
   const [author, setAuthor] = useState<User>(userDefault)
   const [commentNum, setCommentNum] = useState<number>(0)
+  const [open, setOpen] = useState<boolean>(false)
+
+  const toggleOpen = (open: boolean) => {
+    setOpen(!open)
+  }
 
   useMount(async () => {
     const author = await selectUserById(pin.authorId)
@@ -36,7 +42,19 @@ export default function PinCard({ pin, currentUser }: PinCardProps) {
           {pin.content}
         </Typography>
         <Divider />
-        <ActionList commentNum={commentNum} likeNum={pin.likeNum} />
+        <ActionList
+          pin={pin}
+          open={open}
+          toggleOpen={toggleOpen}
+          commentNum={commentNum}
+          currentUser={currentUser}
+        />
+        <PinComments
+          open={open}
+          pinId={pin.id}
+          replyCommentId={null}
+          currentUser={currentUser}
+        />
       </Box>
     </Paper>
   )

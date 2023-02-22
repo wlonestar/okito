@@ -30,3 +30,32 @@ export function addPin(param: PinParam) {
     data: param,
   })
 }
+
+interface SelectPinLikeProp {
+  pinId: number
+  userId: number
+}
+
+export function selectPinLikeById(param: SelectPinLikeProp) {
+  return client({
+    url: `${prefix}/like/single`,
+    method: 'GET',
+    params: {
+      ...param,
+    },
+  })
+}
+
+interface LikeActionToPinProp {
+  pinId: number
+  userId: number
+  type: number
+}
+
+export function likeActionToPin(param: LikeActionToPinProp) {
+  return client({
+    url: `${prefix}/like`,
+    method: 'PUT',
+    data: param,
+  })
+}
