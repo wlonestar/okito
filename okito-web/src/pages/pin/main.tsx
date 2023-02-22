@@ -23,8 +23,11 @@ function PinBox({ currentUser }: PinBoxProps) {
       }
       console.log(pinParam)
       addPin(pinParam).then((res) => {
-        console.log(res)
+        if (res.status !== 20) {
+          console.log(res)
+        }
       })
+      window.location.reload()
     } else {
       window.location.assign('/login')
     }

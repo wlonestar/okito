@@ -23,6 +23,13 @@ export function selectPinById(id: number) {
   })
 }
 
+export function countPinsByAuthorId(authorId: number) {
+  return client({
+    url: `${prefix}/count/author/${authorId}`,
+    method: 'GET',
+  })
+}
+
 export function addPin(param: PinParam) {
   return client({
     url: `${prefix}`,
