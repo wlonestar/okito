@@ -8,6 +8,7 @@ import com.okito.okito.modules.users.model.entity.User;
 import com.okito.okito.modules.users.model.param.LoginParam;
 import com.okito.okito.modules.users.model.param.RegisterParam;
 import com.okito.okito.modules.users.model.param.SignUpParam;
+import com.okito.okito.modules.users.model.view.UserView;
 import com.okito.okito.modules.users.service.UserService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -52,8 +53,9 @@ public class AuthController {
       log.info("{}", token);
       user.setToken(token);
       userService.update(user);
+      UserView userView = userService.selectViewById(user.getId());
 //      return RespResult.success(StpUtil.getTokenInfo());
-      return RespResult.success(user);
+      return RespResult.success(userView);
     }
     return RespResult.fail(RespStatus.ERROR.getStatus(), "login failed, email or password incorrect");
   }
@@ -105,6 +107,7 @@ public class AuthController {
       user.setJoinTime(defaultTime);
       user.setRoleId(defaultRoleId);
       userService.add(user);
+      // TODO: should return userView
       return RespResult.success(user);
     }
     return RespResult.fail(RespStatus.ERROR.getStatus(), "register failed, username or email exists");

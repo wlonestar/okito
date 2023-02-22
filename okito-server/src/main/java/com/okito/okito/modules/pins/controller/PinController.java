@@ -4,6 +4,7 @@ import com.okito.okito.common.annotation.TimeLog;
 import com.okito.okito.common.constant.consts.RespResult;
 import com.okito.okito.common.constant.enums.RespStatus;
 import com.okito.okito.modules.pins.model.entity.Pin;
+import com.okito.okito.modules.pins.model.param.PinParam;
 import com.okito.okito.modules.pins.model.view.PinView;
 import com.okito.okito.modules.pins.service.PinService;
 import jakarta.annotation.Resource;
@@ -85,6 +86,18 @@ public class PinController {
   }
 
   /**
+   * count pins by author id
+   *
+   * @param authorId author id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/count/author/{authorId}")
+  public RespResult<?> countByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
+    long count = pinService.countByAuthorId(authorId);
+    return  RespResult.success(count);
+  }
+
+  /**
    * select pin by id
    *
    * @param id id
@@ -103,11 +116,19 @@ public class PinController {
   /**
    * add a pin
    *
-   * @param pin pin
+   * @param param pin param
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.POST, path = "")
-  public RespResult<?> add(@NonNull @RequestBody Pin pin) {
+  public RespResult<?> add(@NonNull @RequestBody PinParam param) {
+    Pin pin = Pin.builder()
+      .id(param.getId())
+      .content(param.getContent())
+      .createTime(param.getCreateTime())
+      .updateTime(param.getUpdateTime())
+      .authorId(param.getAuthorId())
+      .viewNum(0L)
+      .build();
     pinService.add(pin);
     return RespResult.success();
   }
