@@ -72,7 +72,11 @@ export default function PostPage({ currentUser }: CurrentUserProps) {
               {post.title}
             </Typography>
             {/*author*/}
-            <AuthorLine author={author} dateTime={post.createTime} />
+            <AuthorLine
+              author={author}
+              viewNum={author.postViewNum}
+              dateTime={post.createTime}
+            />
             {/*cover*/}
             <Box>
               <img

@@ -27,7 +27,11 @@ export default function PinCard({ pin, currentUser }: PinCardProps) {
   return (
     <Paper sx={{ mt: 2 }}>
       <Box sx={{ padding: 2 }}>
-        <AuthorLine author={author} dateTime={pin.createTime} />
+        <AuthorLine
+          author={author}
+          viewNum={pin.viewNum}
+          dateTime={pin.createTime}
+        />
         <Typography variant="body1" sx={{ mt: 2, mb: 2 }}>
           {pin.content}
         </Typography>

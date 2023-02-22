@@ -5,10 +5,15 @@ import { PointerDivider } from '../inline-divider'
 
 export interface AuthorLineProps {
   author: User
+  viewNum: number
   dateTime?: Date
 }
 
-export default function AuthorLine({ author, dateTime }: AuthorLineProps) {
+export default function AuthorLine({
+  author,
+  viewNum,
+  dateTime,
+}: AuthorLineProps) {
   return (
     <Grid container spacing={2}>
       <Grid item>
@@ -50,7 +55,8 @@ export default function AuthorLine({ author, dateTime }: AuthorLineProps) {
                 {formatDateTime(dateTime)}
                 <PointerDivider />
                 {'阅读 '}
-                {author.postLikeNum === 0 ? '' : author.postLikeNum}
+                {viewNum}
+                {/*{author.postLikeNum === 0 ? '' : author.postLikeNum}*/}
               </>
             </Typography>
           </Grid>

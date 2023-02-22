@@ -109,7 +109,7 @@ export default function ColumnTitle({
           {/*title, summary and actions*/}
           <Grid item xs={12} md={9} lg={9}>
             <Box sx={{ pt: -1, pb: 2 }}>
-              <AuthorLine author={author} />
+              <AuthorLine author={author} viewNum={author.postViewNum} />
             </Box>
             <Typography
               sx={{

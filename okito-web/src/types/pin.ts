@@ -4,7 +4,7 @@ export interface Pin {
   createTime: Date
   updateTime: Date
   authorId: number
-  // TODO: add viewNum
+  viewNum: number
   likeNum: number
 }
 
@@ -14,6 +14,7 @@ export const pinDefault: Pin = {
   createTime: new Date(),
   updateTime: new Date(),
   authorId: 0,
+  viewNum: 0,
   likeNum: 0,
 }
 

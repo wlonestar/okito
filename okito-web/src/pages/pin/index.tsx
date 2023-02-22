@@ -1,13 +1,12 @@
-import { Box, Grid, Paper, Tab, Tabs } from '@mui/material'
+import React, { SyntheticEvent, useState } from 'react'
+import { Grid } from '@mui/material'
 import Main from './main'
 import Side from './side'
-import React, { SyntheticEvent, useState } from 'react'
 import { Pin } from '../../types/pin'
 import { useMount, useSort } from '../../utils/hook'
 import { selectAllPins } from '../../api/pin'
 import { User } from '../../types/user'
-import { selectPostsByAuthorId } from '../../api/post'
-import { Link } from 'react-router-dom'
+import Nav from './nav'
 
 interface PinPageProps {
   currentUser: User | null
@@ -31,36 +30,15 @@ export default function PinPage({ currentUser }: PinPageProps) {
   useMount(() => {
     console.log('pin page', currentUser)
     selectAllPins().then((res) => {
-      setPins(res.data)
+      const data: Pin[] = useSort(res.data, 'createTime', 'desc')
+      setPins(data)
     })
   })
 
   return (
-    <Grid container spacing={3} sx={{ margin: '0 auto' }}>
+    <Grid container spacing={3} sx={{ margin: '0 auto', mb: 3 }}>
       <Grid item xs={12} md={2}>
-        {/*<Nav />*/}
-        <Paper>
-          <Box>
-            <Tabs
-              value={value}
-              onChange={handleChange}
-              sx={{ marginLeft: 'auto' }}
-            >
-              <Tab
-                label={'最新'}
-                tabIndex={0}
-                component={Link}
-                to={`/pin?sort=new`}
-              />{' '}
-              <Tab
-                label={'热门'}
-                tabIndex={1}
-                component={Link}
-                to={`/pin?sort=hot`}
-              />
-            </Tabs>
-          </Box>
-        </Paper>
+        <Nav value={value} handleChange={handleChange} />
       </Grid>
       <Grid item xs={12} md={7}>
         <Main pins={pins} currentUser={currentUser} />
