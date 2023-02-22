@@ -94,6 +94,7 @@ public class PinController {
   public RespResult<?> selectById(@NonNull @PathVariable(name = "id") Long id) {
     PinView pinView = pinService.selectById(id);
     if (!Objects.equals(pinView, null)) {
+      pinService.updatePinViewNum(id);
       return RespResult.success(pinView);
     }
     return RespResult.fail(RespStatus.NOT_EXIST);

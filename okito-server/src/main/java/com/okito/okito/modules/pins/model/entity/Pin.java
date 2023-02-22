@@ -38,5 +38,7 @@ public class Pin implements Serializable {
   private Long authorId;
 
   // TODO: add viewNum
+  @Column(name = "view_num")
+  private Long viewNum;
 
 }

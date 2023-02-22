@@ -28,6 +28,8 @@ public interface PinService {
 
   boolean update(Pin pin);
 
+  void updatePinViewNum(Long pinId);
+
   boolean deleteById(Long id);
 
 }
