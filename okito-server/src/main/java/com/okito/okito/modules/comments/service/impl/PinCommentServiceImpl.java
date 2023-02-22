@@ -112,7 +112,7 @@ public class PinCommentServiceImpl implements PinCommentService {
   public boolean add(PinComment pinComment) {
     Long pinId = pinComment.getPinId();
     if (!Objects.isNull(pinId)) {
-      Long parentId = pinComment.getPinId();
+      Long parentId = pinComment.getParentId();
       if (!Objects.isNull(parentId)) {
         PinComment parentComment = pinCommentRepository.findById(parentId).orElse(null);
         if (!Objects.isNull(parentComment) && pinId.equals(parentComment.getPinId())) {
