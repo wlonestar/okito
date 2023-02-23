@@ -29,17 +29,14 @@ export default function ContentList({ user, currentUser }: ContentListProps) {
   return (
     <Box>
       <Paper sx={{ mt: 2, mb: 2 }}>
-        <Box
-          sx={{
-            width: '100%',
-            borderColor: (theme) =>
-              theme.palette.mode === 'light'
-                ? 'rgba(231, 235, 240)'
-                : 'rgba(194, 224, 255, 0.08)',
-            margin: 'auto',
-          }}
-        >
-          <Box sx={{ width: '100%' }}>
+        <Box sx={{ width: '100%', margin: 'auto' }}>
+          <Box
+            sx={{
+              width: '100%',
+              borderRadius: '5px',
+              borderWidth: '1px 1px thin',
+            }}
+          >
             <Tabs value={value} onChange={handleChange}>
               {tabs.map(({ index, label, path }) => (
                 <Tab
@@ -48,6 +45,10 @@ export default function ContentList({ user, currentUser }: ContentListProps) {
                   tabIndex={index}
                   component={Link}
                   to={`/user/${id}${path}`}
+                  sx={{
+                    borderRadius: '5px',
+                    borderWidth: '1px 1px thin',
+                  }}
                 />
               ))}
             </Tabs>

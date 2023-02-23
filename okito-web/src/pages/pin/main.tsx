@@ -1,9 +1,9 @@
 import { Box, Button, Paper, TextField } from '@mui/material'
 import { FormEvent } from 'react'
 import { Pin, PinParam } from '../../types/pin'
-import PinCard from '../../components/pin/pin-card'
 import { User } from '../../types/user'
 import { addPin } from '../../api/pin'
+import PinList from '../../components/pin/pin-list'
 
 interface PinBoxProps {
   currentUser: User | null
@@ -59,16 +59,6 @@ function PinBox({ currentUser }: PinBoxProps) {
 interface MainProps {
   pins: Pin[]
   currentUser: User | null
-}
-
-function PinList({ pins, currentUser }: MainProps) {
-  return (
-    <>
-      {pins.map((pin) => (
-        <PinCard key={pin.id} pin={pin} currentUser={currentUser} />
-      ))}
-    </>
-  )
 }
 
 export default function Main({ pins, currentUser }: MainProps) {

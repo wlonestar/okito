@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box, Paper } from '@mui/material'
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
 import { Column } from '../../../types/column'
@@ -37,12 +37,14 @@ export default function ColumnsTab() {
   })
 
   return (
-    <Box>
-      <ColumnList
-        columns={columns}
-        homepage={homepage}
-        currentUser={currentUser}
-      />
-    </Box>
+    <Paper>
+      <Box>
+        <ColumnList
+          columns={columns}
+          homepage={homepage}
+          currentUser={currentUser}
+        />
+      </Box>
+    </Paper>
   )
 }

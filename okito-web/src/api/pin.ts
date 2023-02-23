@@ -10,7 +10,7 @@ export function selectAllPins() {
   })
 }
 
-export function selectAllPinsByAuthorId(authorId: number) {
+export function selectPinsByAuthorId(authorId: number) {
   return client({
     url: `${prefix}/author/${authorId}`,
   })

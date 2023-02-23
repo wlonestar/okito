@@ -43,6 +43,8 @@ export default function PostsTab() {
           display: 'flex',
           alignItems: 'center',
           flexWrap: 'wrap',
+          borderRadius: '5px',
+          borderWidth: '1px 1px thin',
         }}
       >
         <Tabs value={value} onChange={handleChange} sx={{ marginLeft: 'auto' }}>
