@@ -5,7 +5,7 @@ import { selectUserById } from '../../../api/user'
 import { Grid, Link, Typography } from '@mui/material'
 import { PinComment } from '../../../types/pin-comment'
 import AuthorAvatar from '../../author-avatar'
-import { ReplyUserLink } from '../../user-link'
+import { ReplyUserLink } from '../../user/user-link'
 import CommentAction from './comment-action'
 import { selectPinCommentById } from '../../../api/pin-comment'
 

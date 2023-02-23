@@ -6,7 +6,7 @@ import { useMount } from '../../../utils/hook'
 import { selectUserById } from '../../../api/user'
 import { selectPostCommentById } from '../../../api/post-comment'
 import CommentActionList from './comment-action'
-import { ReplyUserLink } from '../../user-link'
+import { ReplyUserLink } from '../../user/user-link'
 import AuthorAvatar from '../../author-avatar'
 
 interface SecondaryProps {

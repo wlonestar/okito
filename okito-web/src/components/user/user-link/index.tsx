@@ -1,4 +1,4 @@
-import { User } from '../../types/user'
+import { User } from '../../../types/user'
 import { Link, Typography } from '@mui/material'
 
 export const ReplyUserLink = ({ user }: { user: User }) => {

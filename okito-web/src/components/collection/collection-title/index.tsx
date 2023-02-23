@@ -40,21 +40,23 @@ export default function CollectionTitle({
   const [followNum, setFollowNum] = useState<number>(0)
   const [followed, setFollowed] = useState<boolean>(false)
   const [isAuthor, setIsAuthor] = useState<boolean>(false)
-
   const [anchorElColumn, setAnchorElColumn] = useState<null | HTMLElement>(null)
 
   const handleClick = () => {
-    const param = {
-      userId: currentUser?.id,
-      collectionId: collection.id,
-      follow: !followed,
-    }
-    console.log(param)
-    updateFollowCollection(param).then((res) => {
-      if (res.status === 20) {
-        setFollowed(!followed)
+    if (currentUser !== null) {
+      const param = {
+        userId: currentUser?.id,
+        collectionId: collection.id,
+        follow: !followed,
       }
-    })
+      updateFollowCollection(param).then((res) => {
+        if (res.status === 20) {
+          setFollowed(!followed)
+        }
+      })
+    } else {
+      window.location.assign('/login')
+    }
   }
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {

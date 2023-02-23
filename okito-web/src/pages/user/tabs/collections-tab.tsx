@@ -26,12 +26,13 @@ export default function CollectionsTab() {
   }
 
   useMount(async () => {
-    const cc = await selectCollectionsByAuthorId(id as unknown as number)
+    const userId = id as unknown as number
+    const cc = await selectCollectionsByAuthorId(userId)
     if (cc.status === 20) {
       const data: Collection[] = useSort(cc.data, 'updateTime', 'desc')
       setCreateCollections(data)
     }
-    const fc = await selectCollectionsByFollowerId(id as unknown as number)
+    const fc = await selectCollectionsByFollowerId(userId)
     if (fc.status === 20) {
       const data: Collection[] = useSort(fc.data, 'updateTime', 'desc')
       setFollowCollections(data)

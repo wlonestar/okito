@@ -1,5 +1,19 @@
 import client from '../utils/axios-client'
 
+export function selectUserFollowingByUserId(userId: number) {
+  return client({
+    url: `/user/following/${userId}`,
+    method: 'GET',
+  })
+}
+
+export function selectUserFollowerByUserId(userId: number) {
+  return client({
+    url: `/user/follower/${userId}`,
+    method: 'GET',
+  })
+}
+
 export function selectUserById(id: number) {
   return client({
     url: `/user/${id}`,
@@ -54,6 +68,33 @@ export function updateFollowCollection(param: {
 }) {
   return client({
     url: `/user/collection`,
+    method: 'PUT',
+    data: {
+      ...param,
+    },
+  })
+}
+
+export function selectUserFollowByUserIdAndFollowedId(param: {
+  followerId: number | undefined
+  followedId: number
+}) {
+  return client({
+    url: '/user/follow/single',
+    method: 'GET',
+    params: {
+      ...param,
+    },
+  })
+}
+
+export function updateUserFollow(param: {
+  followerId: number | undefined
+  followedId: number
+  follow: boolean
+}) {
+  return client({
+    url: '/user/follow',
     method: 'PUT',
     data: {
       ...param,

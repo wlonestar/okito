@@ -29,7 +29,7 @@ export default function AuthorAvatar({
           display: 'block',
           maxWidth: '100%',
           maxHeight: '100%',
-          borderRadius: '21px',
+          borderRadius: width / 2,
         }}
         alt={author.username}
         src={author.avatar}
