@@ -10,7 +10,7 @@ interface PinBoxProps {
 }
 
 function PinBox({ currentUser }: PinBoxProps) {
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     if (currentUser !== null) {
       event.preventDefault()
       const data = new FormData(event.currentTarget)
@@ -21,7 +21,6 @@ function PinBox({ currentUser }: PinBoxProps) {
         updateTime: new Date(),
         authorId: currentUser.id,
       }
-      console.log(pinParam)
       addPin(pinParam).then((res) => {
         if (res.status !== 20) {
           console.log(res)

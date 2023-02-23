@@ -8,6 +8,8 @@ import { likeActionToPost, selectPostLikeById } from '../../../api/post'
 import { User } from '../../../types/user'
 import { useMount } from '../../../utils/hook'
 import { useState } from 'react'
+import { addActivity } from '../../../api/activity'
+import { Activity } from '../../../types/activity'
 
 interface PostActionProps {
   post: Post
@@ -23,7 +25,7 @@ export default function PostAction({
   const [likeType, setLikeType] = useState<number>(0)
   const [likeNum, setLikeNum] = useState<number>(post.likeNum)
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (currentUser !== null) {
       let like = 0
       if (likeType === 0 || likeType === 2) {

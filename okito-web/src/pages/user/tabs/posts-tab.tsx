@@ -5,7 +5,7 @@ import { useMount, useSort } from '../../../utils/hook'
 import { Post } from '../../../types/post'
 import { selectPostsByAuthorId } from '../../../api/post'
 import { Link, useParams } from 'react-router-dom'
-import { Box, Divider, Tab, Tabs } from '@mui/material'
+import { Box, Divider, Paper, Tab, Tabs } from '@mui/material'
 
 export default function PostsTab() {
   const { id } = useParams()
@@ -13,10 +13,6 @@ export default function PostsTab() {
   const currentUser = user
   const [posts, setPosts] = useState<Post[]>([])
   const [value, setValue] = useState(0)
-
-  const usePosts = (userId: number) => {
-    return selectPostsByAuthorId(userId)
-  }
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
@@ -30,7 +26,7 @@ export default function PostsTab() {
   }
 
   useMount(() => {
-    usePosts(id as unknown as number).then((res) => {
+    selectPostsByAuthorId(id as unknown as number).then((res) => {
       if (res.status === 20) {
         const posts: Post[] = res.data
         const data = useSort(posts, 'viewNum', 'desc')
@@ -40,7 +36,7 @@ export default function PostsTab() {
   })
 
   return (
-    <>
+    <Paper>
       <Box
         sx={{
           width: '100%',
@@ -66,6 +62,6 @@ export default function PostsTab() {
       </Box>
       <Divider />
       <PostList posts={posts} currentUser={currentUser} />
-    </>
+    </Paper>
   )
 }
