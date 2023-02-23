@@ -18,6 +18,10 @@ public interface UserService {
 
   List<UserView> selectAllByTagId(Long tagId);
 
+  List<UserView> selectFollowingByUserId(Long userId);
+
+  List<UserView> selectFollowerByUserId(Long userId);
+
   List<String> selectAllUsernames();
 
   List<String> selectAllEmails();

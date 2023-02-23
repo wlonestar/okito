@@ -53,14 +53,14 @@ public class ColumnController {
   }
 
   /**
-   * select all followed columns by userId
+   * select all followed columns by follower id
    *
-   * @param userId userId
+   * @param followerId followerId
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/follow/{userId}")
-  public RespResult<?> selectAllFollowedByUserId(@NonNull @PathVariable(name = "userId") Long userId) {
-    return RespResult.success(columnService.selectAllFollowedByUserId(userId));
+  @RequestMapping(method = RequestMethod.GET, path = "/follower/{followerId}")
+  public RespResult<?> selectAllFollowedByUserId(@NonNull @PathVariable(name = "followerId") Long followerId) {
+    return RespResult.success(columnService.selectAllByFollowerId(followerId));
   }
 
   /**

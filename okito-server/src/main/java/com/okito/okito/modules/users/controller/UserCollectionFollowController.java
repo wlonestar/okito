@@ -158,7 +158,7 @@ public class UserCollectionFollowController {
    */
   @RequestMapping(method = RequestMethod.POST, path = "")
   public RespResult<?> add(@NonNull @RequestBody UserCollectionFollowParam param) {
-    UserCollectionFollowId id = new UserCollectionFollowId(param.getUserId(), param.getCollectId());
+    UserCollectionFollowId id = new UserCollectionFollowId(param.getUserId(), param.getCollectionId());
     UserCollectionFollow collection = userCollectionFollowService.selectById(id);
     if (!Objects.equals(collection, null)) {
       userCollectionFollowService.add(new UserCollectionFollow(id, param.getFollow()));
@@ -175,14 +175,16 @@ public class UserCollectionFollowController {
    */
   @RequestMapping(method = RequestMethod.PUT, path = "")
   public RespResult<?> update(@NonNull @RequestBody UserCollectionFollowParam param) {
-    UserCollectionFollowId id = new UserCollectionFollowId(param.getUserId(), param.getCollectId());
+    UserCollectionFollowId id = new UserCollectionFollowId(param.getUserId(), param.getCollectionId());
     UserCollectionFollow collection = userCollectionFollowService.selectById(id);
     if (!Objects.equals(collection, null)) {
       collection.setFollow(param.getFollow());
       userCollectionFollowService.update(collection);
-      return RespResult.success();
+    } else {
+      collection = new UserCollectionFollow(new UserCollectionFollowId(param.getUserId(), param.getCollectionId()), param.getFollow());
+      userCollectionFollowService.add(collection);
     }
-    return RespResult.fail(RespStatus.NOT_EXIST);
+    return RespResult.success(collection);
   }
 
   /**

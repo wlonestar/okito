@@ -41,6 +41,11 @@ public class CollectionServiceImpl implements CollectionService {
   }
 
   @Override
+  public List<Collection> selectAllByFollowerId(Long followerId) {
+    return collectionRepository.findAllByFollowerId(followerId);
+  }
+
+  @Override
   public Page<Collection> selectAll(Pageable pageable) {
     return collectionRepository.findAll(pageable);
   }
@@ -48,6 +53,11 @@ public class CollectionServiceImpl implements CollectionService {
   @Override
   public Collection selectById(Long id) {
     return collectionRepository.findById(id).orElse(null);
+  }
+
+  @Override
+  public long countByAuthorId(Long authorId) {
+    return collectionRepository.countAllByAuthorId(authorId);
   }
 
   @Override

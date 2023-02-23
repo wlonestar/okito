@@ -1,5 +1,6 @@
 package com.okito.okito.modules.users.repository;
 
+import com.okito.okito.modules.posts.model.entity.Collection;
 import com.okito.okito.modules.users.model.entity.UserCollectionFollow;
 import com.okito.okito.modules.users.model.entity.UserCollectionFollowId;
 import org.springframework.data.domain.Page;
@@ -33,6 +34,10 @@ public interface UserCollectionFollowRepository extends JpaRepository<UserCollec
   @Query(value = "select new UserCollectionFollow(u.id, u.follow) from UserCollectionFollow u " +
       "where u.id.collectId = ?1 and u.follow = ?2")
   Page<UserCollectionFollow> findAllByCollectionIdAndType(Long collectionId, Boolean follow, Pageable pageable);
+
+  @Query(value = "select new Collection(c.id, c.name, c.cover, c.description, c.createTime, c.updateTime, c.authorId) " +
+    "from Collection c where c.id in (select uc.id.collectId from UserCollectionFollow uc where uc.id.userId = ?1 and uc.follow = true)")
+  List<Collection> findAllByFollowerId(Long followerId);
 
   @Query(value = "select count(*) from user_collection_follow where collect_id = ?1 and follow = true", nativeQuery = true)
   long countFollowByCollectionId(Long collectionId);

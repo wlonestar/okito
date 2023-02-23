@@ -27,6 +27,28 @@ public class UserController {
   private UserService userService;
 
   /**
+   * select all following users by user id
+   *
+   * @param userId user id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/following/{userId}")
+  public RespResult<?> selectAllFollowingByUserId(@NonNull @PathVariable(name = "userId") Long userId) {
+    return RespResult.success(userService.selectFollowingByUserId(userId));
+  }
+
+  /**
+   * select all followers by user id
+   *
+   * @param userId user id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/follower/{userId}")
+  public RespResult<?> selectAllFollowerByUserId(@NonNull @PathVariable(name = "userId") Long userId) {
+    return RespResult.success(userService.selectFollowerByUserId(userId));
+  }
+
+  /**
    * select user by id
    *
    * @param id id

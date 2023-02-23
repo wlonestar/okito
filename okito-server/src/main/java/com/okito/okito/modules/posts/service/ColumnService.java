@@ -17,7 +17,7 @@ public interface ColumnService {
 
   List<Column> selectAllByAuthorId(Long authorId);
 
-  List<Column> selectAllFollowedByUserId(Long userId);
+  List<Column> selectAllByFollowerId(Long userId);
 
   Page<Column> selectAll(Pageable pageable);
 

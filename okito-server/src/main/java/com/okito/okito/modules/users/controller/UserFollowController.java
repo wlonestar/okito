@@ -106,6 +106,25 @@ public class UserFollowController {
   }
 
   /**
+   * select UserColumn by id
+   *
+   * @param followerId   userId
+   * @param followedId columnId
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/single")
+  public RespResult<?> selectById(
+    @NonNull @RequestParam(name = "followerId") Long followerId,
+    @NonNull @RequestParam(name = "followedId") Long followedId) {
+    UserFollowId id = new UserFollowId(followerId, followedId);
+    UserFollow follow = userFollowService.selectById(id);
+    if (!Objects.equals(follow, null)) {
+      return RespResult.success(follow);
+    }
+    return RespResult.success(new UserFollow(new UserFollowId(followerId, followedId), false));
+  }
+
+  /**
    * add userFollow
    *
    * @param param userFollowParam
@@ -116,7 +135,7 @@ public class UserFollowController {
     UserFollowId id = new UserFollowId(param.getFollowerId(), param.getFollowedId());
     UserFollow userFollow = userFollowService.selectById(id);
     if (!Objects.equals(userFollow, null)) {
-      userFollowService.add(new UserFollow(id, param.getType()));
+      userFollowService.add(new UserFollow(id, param.getFollow()));
       return RespResult.success();
     }
     return RespResult.fail(RespStatus.ALREADY_EXIST);
@@ -131,13 +150,15 @@ public class UserFollowController {
   @RequestMapping(method = RequestMethod.PUT, path = "")
   public RespResult<?> update(@NonNull @RequestBody UserFollowParam param) {
     UserFollowId id = new UserFollowId(param.getFollowerId(), param.getFollowedId());
-    UserFollow userFollow = userFollowService.selectById(id);
-    if (!Objects.equals(userFollow, null)) {
-      userFollow.setFollow(param.getType());
-      userFollowService.update(userFollow);
-      return RespResult.success();
+    UserFollow follow = userFollowService.selectById(id);
+    if (!Objects.equals(follow, null)) {
+      follow.setFollow(param.getFollow());
+      userFollowService.update(follow);
+    } else {
+      follow = new UserFollow(new UserFollowId(param.getFollowerId(), param.getFollowedId()), param.getFollow());
+      userFollowService.add(follow);
     }
-    return RespResult.fail(RespStatus.NOT_EXIST);
+    return RespResult.success(follow);
   }
 
   /**

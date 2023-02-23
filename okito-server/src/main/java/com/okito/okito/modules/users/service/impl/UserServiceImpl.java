@@ -42,6 +42,16 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
+  public List<UserView> selectFollowingByUserId(Long userId) {
+    return userViewRepository.findAllFollowingByUserId(userId);
+  }
+
+  @Override
+  public List<UserView> selectFollowerByUserId(Long userId) {
+    return userViewRepository.findAllFollowerByUserId(userId);
+  }
+
+  @Override
   public List<String> selectAllUsernames() {
     return userRepository.findUsernames();
   }

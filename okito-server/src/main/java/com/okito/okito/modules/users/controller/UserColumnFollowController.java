@@ -150,15 +150,15 @@ public class UserColumnFollowController {
   @RequestMapping(method = RequestMethod.PUT, path = "")
   public RespResult<?> update(@NonNull @RequestBody UserColumnFollowParam param) {
     UserColumnFollowId id = new UserColumnFollowId(param.getUserId(), param.getColumnId());
-    UserColumnFollow collection = userColumnFollowService.selectById(id);
-    if (!Objects.equals(collection, null)) {
-      collection.setFollow(param.getFollow());
-      userColumnFollowService.update(collection);
+    UserColumnFollow column = userColumnFollowService.selectById(id);
+    if (!Objects.equals(column, null)) {
+      column.setFollow(param.getFollow());
+      userColumnFollowService.update(column);
     } else {
-      collection = new UserColumnFollow(new UserColumnFollowId(param.getUserId(), param.getColumnId()), param.getFollow());
-      userColumnFollowService.add(collection);
+      column = new UserColumnFollow(new UserColumnFollowId(param.getUserId(), param.getColumnId()), param.getFollow());
+      userColumnFollowService.add(column);
     }
-    return RespResult.success(collection);
+    return RespResult.success(column);
   }
 
   /**

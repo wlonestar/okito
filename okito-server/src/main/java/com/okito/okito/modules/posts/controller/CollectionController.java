@@ -42,7 +42,7 @@ public class CollectionController {
   }
 
   /**
-   * select all collections
+   * select all collections by author id
    *
    * @param authorId author id
    * @return RespResult<?>
@@ -50,6 +50,17 @@ public class CollectionController {
   @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
   public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
     return RespResult.success(collectionService.selectAllByAuthorId(authorId));
+  }
+
+  /**
+   * select all collections by follower id
+   *
+   * @param followerId follower id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/follower/{followerId}")
+  public RespResult<?> selectAllByFollowerId(@NonNull @PathVariable(name = "followerId") Long followerId) {
+    return RespResult.success(collectionService.selectAllByFollowerId(followerId));
   }
 
   /**
@@ -77,6 +88,17 @@ public class CollectionController {
       return RespResult.success(column);
     }
     return RespResult.fail(RespStatus.NOT_EXIST);
+  }
+
+  /**
+   * count collections by author id
+   *
+   * @param authorId author id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/count/posts/{authorId}")
+  public RespResult<?> countCollectionsByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
+    return RespResult.success(collectionService.countByAuthorId(authorId));
   }
 
   /**

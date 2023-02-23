@@ -12,6 +12,6 @@ public class UserFollowParam {
 
   private Long followerId;
   private Long followedId;
-  private Short type;
+  private Boolean follow;
 
 }

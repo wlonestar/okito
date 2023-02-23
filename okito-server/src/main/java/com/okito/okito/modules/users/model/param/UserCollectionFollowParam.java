@@ -11,7 +11,7 @@ import lombok.Data;
 public class UserCollectionFollowParam {
 
   private Long userId;
-  private Long collectId;
+  private Long collectionId;
   private Boolean follow;
 
 }

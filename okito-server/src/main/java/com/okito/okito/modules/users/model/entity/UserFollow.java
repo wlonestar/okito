@@ -26,6 +26,6 @@ public class UserFollow implements Serializable {
   private UserFollowId id;
 
   @Column(name = "follow")
-  private Short follow;
+  private Boolean follow;
 
 }
