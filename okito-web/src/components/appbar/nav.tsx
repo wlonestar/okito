@@ -4,8 +4,9 @@ import { Box, Tab, Tabs } from '@mui/material'
 import { useMount } from '../../utils/hook'
 
 const tabs = [
-  { index: 0, label: '首页', path: '/' },
-  { index: 1, label: '想法', path: '/pin' },
+  { index: 0, label: '', path: '' },
+  { index: 1, label: '首页', path: '/' },
+  { index: 2, label: '想法', path: '/pin' },
 ]
 
 export default function Nav() {
@@ -19,28 +20,39 @@ export default function Nav() {
     const path = window.location.pathname
     console.log(path)
     if (path === '/') {
-      setValue(0)
-    } else if (path === '/pin') {
       setValue(1)
-    } else {
-      // TODO: if not in toolbar tabs
+    } else if (path === '/pin') {
       setValue(2)
+    } else {
+      setValue(0)
     }
   })
 
   return (
     <Box>
       <Tabs value={value} onChange={handleChange}>
-        {tabs.map(({ index, label, path }) => (
-          <Tab
-            key={index}
-            label={label}
-            tabIndex={index}
-            component={Link}
-            to={`${path}`}
-            sx={{ p: 0, minWidth: '70px' }}
-          />
-        ))}
+        {tabs.map(({ index, label, path }) =>
+          index === 0 ? (
+            <Tab
+              hidden
+              key={index}
+              label={label}
+              tabIndex={index}
+              component={Link}
+              to={`${path}`}
+              sx={{ p: 0, minWidth: '0px' }}
+            />
+          ) : (
+            <Tab
+              key={index}
+              label={label}
+              tabIndex={index}
+              component={Link}
+              to={`${path}`}
+              sx={{ p: 0, minWidth: '70px' }}
+            />
+          )
+        )}
       </Tabs>
     </Box>
   )

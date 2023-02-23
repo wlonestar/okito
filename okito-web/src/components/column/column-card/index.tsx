@@ -29,14 +29,14 @@ import ActionList from './action-list'
 
 interface ColumnCardProps {
   column: Column
-  currentUser: User | null
   homepage: boolean
+  currentUser: User | null
 }
 
 export default function ColumnCard({
   column,
-  currentUser,
   homepage,
+  currentUser,
 }: ColumnCardProps) {
   const [postsNum, setPostsNum] = useState<number>(0)
   const [followNum, setFollowNum] = useState<number>(0)
@@ -45,8 +45,8 @@ export default function ColumnCard({
 
   const handleClick = () => {
     const param = {
-      columnId: column.id,
       userId: currentUser?.id,
+      columnId: column.id,
       follow: !followed,
     }
     updateFollowColumn(param).then((res) => {
@@ -66,14 +66,17 @@ export default function ColumnCard({
 
   useMount(async () => {
     const postsNum = await countPostsByColumnId(column.id)
-    setPostsNum(postsNum.data)
+    if (postsNum.status === 20) {
+      setPostsNum(postsNum.data)
+    }
     const followNum = await countFollowByColumnId(column.id)
-    setFollowNum(followNum.data)
+    if (followNum.status === 20) {
+      setFollowNum(followNum.data)
+    }
     const param = { userId: currentUser?.id, columnId: column.id }
-    const res = await selectUserColumnFollowByUserIdAndColumnId(param)
-    if (res.status === 20) {
-      const data = res.data
-      if (data.follow) {
+    const followData = await selectUserColumnFollowByUserIdAndColumnId(param)
+    if (followData.status === 20) {
+      if (followData.data.follow) {
         setFollowed(true)
       }
     }

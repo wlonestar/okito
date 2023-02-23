@@ -1,6 +1,6 @@
 import React, { SyntheticEvent, useState } from 'react'
 import { Box, Paper, Tab, Tabs } from '@mui/material'
-import { TabPanel, tabProps } from '../../components/tab'
+import { tabProps } from '../../components/tab'
 import { Post } from '../../types/post'
 import { selectAllPosts } from '../../api/post'
 import { useMount, useSort } from '../../utils/hook'

@@ -8,8 +8,8 @@ export function selectUserById(id: number) {
 }
 
 export function selectUserColumnFollowByUserIdAndColumnId(param: {
-  columnId: number
   userId: number | undefined
+  columnId: number
 }) {
   return client({
     url: '/user/column/single',
@@ -21,12 +21,39 @@ export function selectUserColumnFollowByUserIdAndColumnId(param: {
 }
 
 export function updateFollowColumn(param: {
-  columnId: number
   userId: number | undefined
+  columnId: number
   follow: boolean
 }) {
   return client({
     url: `/user/column`,
+    method: 'PUT',
+    data: {
+      ...param,
+    },
+  })
+}
+
+export function selectUserCollectionFollowByUserIdAndCollectionId(param: {
+  userId: number | undefined
+  collectionId: number
+}) {
+  return client({
+    url: '/user/collection/single',
+    method: 'GET',
+    params: {
+      ...param,
+    },
+  })
+}
+
+export function updateFollowCollection(param: {
+  userId: number | undefined
+  collectionId: number
+  follow: boolean
+}) {
+  return client({
+    url: `/user/collection`,
     method: 'PUT',
     data: {
       ...param,

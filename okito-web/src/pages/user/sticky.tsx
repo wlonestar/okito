@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   Box,
   Button,
@@ -14,22 +15,16 @@ import {
 import { User } from '../../types/user'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import { VisibilityRounded } from '@mui/icons-material'
-import React from 'react'
 import { formatDate } from '../../utils/date'
 
 interface StickyProps {
   user: User
+  collectionsNum?: number
 }
 
 const Achieve = ({ user }: StickyProps) => {
   return (
-    <Paper
-      sx={{
-        p: 2,
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
+    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
       <Box>
         <Typography>{'个人成就'}</Typography>
       </Box>
@@ -89,11 +84,11 @@ const Follow = ({ user }: StickyProps) => {
   )
 }
 
-const MoreInfo = ({ user }: StickyProps) => {
+const MoreInfo = ({ user, collectionsNum }: StickyProps) => {
   return (
     <Paper sx={{ mt: 2 }}>
       <List dense={false}>
-        <ListItem secondaryAction={'test'}>
+        <ListItem secondaryAction={collectionsNum}>
           <ListItemText>
             <Link
               underline="hover"
@@ -127,12 +122,12 @@ const MoreInfo = ({ user }: StickyProps) => {
   )
 }
 
-export default function Sticky({ user }: StickyProps) {
+export default function Sticky({ user, collectionsNum }: StickyProps) {
   return (
     <>
       <Achieve user={user} />
       <Follow user={user} />
-      <MoreInfo user={user} />
+      <MoreInfo user={user} collectionsNum={collectionsNum} />
     </>
   )
 }

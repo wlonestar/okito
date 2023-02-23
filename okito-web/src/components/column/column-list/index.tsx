@@ -20,8 +20,8 @@ export default function ColumnList({
         <ColumnCard
           key={column.id}
           column={column}
-          currentUser={currentUser}
           homepage={homepage}
+          currentUser={currentUser}
         />
       ))}
     </Box>

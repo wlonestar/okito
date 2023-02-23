@@ -4,30 +4,23 @@ import { useState } from 'react'
 import { Column } from '../../../types/column'
 import ColumnList from '../../../components/column/column-list'
 import { selectColumnsByAuthorId } from '../../../api/column'
-import { useMount } from '../../../utils/hook'
+import { useMount, useSort } from '../../../utils/hook'
 import { useAuth } from '../../../context/auth-context'
 
 export default function ColumnsTab() {
   const { id } = useParams()
-  const [columns, setColumns] = useState<Column[]>([])
   const { user } = useAuth()
   const currentUser = user
   const [homepage, setHomepage] = useState<boolean>(false)
-
-  const useColumns = (userId: number) => {
-    return selectColumnsByAuthorId(userId)
-  }
+  const [columns, setColumns] = useState<Column[]>([])
 
   useMount(async () => {
-    const res = await useColumns(id as unknown as number)
-    const columns: Column[] = res.data
-    columns.sort((a, b) => (a.createTime > b.createTime ? 0 : 1))
+    const columnsData = await selectColumnsByAuthorId(id as unknown as number)
+    const columns: Column[] = useSort(columnsData.data, 'createTime', 'desc')
     setColumns(columns)
-    if (currentUser !== null) {
-      if (columns.length > 0) {
-        if (currentUser.id === res.data[0].authorId) {
-          setHomepage(true)
-        }
+    if (currentUser !== null && columnsData.data.length > 0) {
+      if (currentUser.id === columnsData.data[0].authorId) {
+        setHomepage(true)
       }
     }
   })
