@@ -133,7 +133,7 @@ public class UserFollowController {
     UserFollowId id = new UserFollowId(param.getFollowerId(), param.getFollowedId());
     UserFollow userFollow = userFollowService.selectById(id);
     if (!Objects.equals(userFollow, null)) {
-      userFollow.setType(param.getType());
+      userFollow.setFollow(param.getType());
       userFollowService.update(userFollow);
       return RespResult.success();
     }

@@ -69,7 +69,7 @@ public class UserFollowServiceImpl implements UserFollowService {
   public boolean update(UserFollow userFollow) {
     UserFollow newUserFollow = userFollowRepository.findById(userFollow.getId()).orElse(null);
     if (!Objects.equals(newUserFollow, null)) {
-      newUserFollow.setType(userFollow.getType());
+      newUserFollow.setFollow(userFollow.getFollow());
       userFollowRepository.save(newUserFollow);
     } else {
       userFollowRepository.save(userFollow);

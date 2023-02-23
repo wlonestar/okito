@@ -21,22 +21,22 @@ public interface UserFollowRepository extends JpaRepository<UserFollow, UserFoll
 
   @Query(value = "select new UserView (u.id, u.username, u.password, u.email, u.avatar, u.bio, u.homepage, " +
       "u.intro, u.joinTime, u.followerNum, u.followedNum, u.postLikeNum) from UserView  u where u.id in " +
-      "(select uf.id.followerId from UserFollow uf where uf.type = 1 and uf.id.followedId = ?1)")
+      "(select uf.id.followerId from UserFollow uf where uf.follow = 1 and uf.id.followedId = ?1)")
   List<UserView> findFollowersByUserId(Long userId);
 
   @Query(value = "select new UserView (u.id, u.username, u.password, u.email, u.avatar, u.bio, u.homepage, " +
       "u.intro, u.joinTime, u.followerNum, u.followedNum, u.postLikeNum) from UserView  u where u.id in " +
-      "(select uf.id.followerId from UserFollow uf where uf.type = 1 and uf.id.followedId = ?1)")
+      "(select uf.id.followerId from UserFollow uf where uf.follow = 1 and uf.id.followedId = ?1)")
   Page<UserView> findFollowersByUserId(Long userId, Pageable pageable);
 
   @Query(value = "select new UserView (u.id, u.username, u.password, u.email, u.avatar, u.bio, u.homepage, " +
       "u.intro, u.joinTime, u.followerNum, u.followedNum, u.postLikeNum) from UserView  u where u.id in " +
-      "(select uf.id.followedId from UserFollow uf where uf.type = 1 and uf.id.followerId = ?1)")
+      "(select uf.id.followedId from UserFollow uf where uf.follow = 1 and uf.id.followerId = ?1)")
   List<UserView> findFollowedsByUserId(Long userId);
 
   @Query(value = "select new UserView (u.id, u.username, u.password, u.email, u.avatar, u.bio, u.homepage, " +
       "u.intro, u.joinTime, u.followerNum, u.followedNum, u.postLikeNum) from UserView  u where u.id in " +
-      "(select uf.id.followedId from UserFollow uf where uf.type = 1 and uf.id.followerId = ?1)")
+      "(select uf.id.followedId from UserFollow uf where uf.follow = 1 and uf.id.followerId = ?1)")
   Page<UserView> findFollowedsByUserId(Long userId, Pageable pageable);
 
 }

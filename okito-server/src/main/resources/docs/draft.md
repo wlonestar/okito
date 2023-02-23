@@ -9,25 +9,27 @@ actionType 动作的类别
 
 actionSubType 动作的子分类
 
-- like 点赞
+- like 点赞 1
 
-  - post 文章
+  - post 文章 1
   
-  - pin 想法
+  - pin 想法 2
 
-- follow 关注
+- follow 关注 2
 
-  - user 用户
+  - user 用户 1
 
-  - column 专栏
+  - column 专栏 2
 
-  - collection 收藏夹
-
-- upload 发布
-
-  - post 文章
+  - collection 收藏夹 3
   
-  - pin 想法
+  - tag 标签 4
+
+- upload 发布 3
+
+  - post 文章 1 
+  
+  - pin 想法 2
 
 targetId 对象的 id
 

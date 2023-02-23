@@ -1,5 +1,6 @@
 package com.okito.okito.modules.posts.model.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -19,5 +20,8 @@ public class TagFollow implements Serializable {
 
   @EmbeddedId
   private TagFollowId id;
+
+  @Column(name = "follow")
+  private Boolean follow;
 
 }

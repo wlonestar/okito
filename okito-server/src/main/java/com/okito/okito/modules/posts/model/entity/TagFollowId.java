@@ -18,7 +18,7 @@ public class TagFollowId implements Serializable {
   @Column(name = "tag_id")
   private Long tagId;
 
-  @Column(name = "follower_id")
-  private Long followerId;
+  @Column(name = "user_id")
+  private Long userId;
 
 }

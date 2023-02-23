@@ -35,7 +35,6 @@ public class UserController {
   @RequestMapping(method = RequestMethod.GET, path = "/{id}")
   public RespResult<?> selectById(@NonNull @PathVariable(name = "id") Long id) {
     UserView user = userService.selectViewById(id);
-    log.info("{}", user);
     if (!Objects.equals(user, null)) {
       return RespResult.success(user);
     }

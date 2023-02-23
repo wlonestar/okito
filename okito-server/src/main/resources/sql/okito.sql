@@ -12,9 +12,20 @@
  Target Server Version : 150001 (150001)
  File Encoding         : 65001
 
- Date: 22/02/2023 10:47:41
+ Date: 23/02/2023 13:58:55
 */
 
+
+-- ----------------------------
+-- Sequence structure for activity_id_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "public"."activity_id_seq";
+CREATE SEQUENCE "public"."activity_id_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 1
+CACHE 1;
 
 -- ----------------------------
 -- Sequence structure for category_id_seq
@@ -369,6 +380,35 @@ START 1
 CACHE 1;
 
 -- ----------------------------
+-- Table structure for activity
+-- ----------------------------
+DROP TABLE IF EXISTS "public"."activity";
+CREATE TABLE "public"."activity" (
+  "id" int8 NOT NULL DEFAULT nextval('activity_id_seq'::regclass),
+  "user_id" int8 NOT NULL,
+  "action_type" int2 NOT NULL,
+  "action_sub_type" int2 NOT NULL,
+  "target_id" int8 NOT NULL,
+  "exec_time" timestamptz(6) NOT NULL
+)
+;
+
+-- ----------------------------
+-- Records of activity
+-- ----------------------------
+INSERT INTO "public"."activity" VALUES (1, 4, 1, 1, 17, '2023-02-23 01:04:11.194+08');
+INSERT INTO "public"."activity" VALUES (2, 4, 3, 2, 20, '2023-02-23 10:09:26.685564+08');
+INSERT INTO "public"."activity" VALUES (3, 4, 1, 2, 20, '2023-02-23 10:22:31.779266+08');
+INSERT INTO "public"."activity" VALUES (4, 4, 1, 2, 18, '2023-02-23 10:22:32.823156+08');
+INSERT INTO "public"."activity" VALUES (5, 4, 1, 1, 16, '2023-02-23 10:24:14.592519+08');
+INSERT INTO "public"."activity" VALUES (6, 4, 1, 1, 20, '2023-02-23 10:38:03.671809+08');
+INSERT INTO "public"."activity" VALUES (7, 4, 1, 1, 19, '2023-02-23 10:38:24.997041+08');
+INSERT INTO "public"."activity" VALUES (8, 4, 1, 1, 20, '2023-02-23 10:38:33.989236+08');
+INSERT INTO "public"."activity" VALUES (11, 4, 1, 1, 15, '2023-02-23 11:03:04.983114+08');
+INSERT INTO "public"."activity" VALUES (12, 4, 3, 2, 21, '2023-02-23 13:57:35.861114+08');
+INSERT INTO "public"."activity" VALUES (13, 4, 1, 2, 3, '2023-02-23 13:58:37.138332+08');
+
+-- ----------------------------
 -- Table structure for category
 -- ----------------------------
 DROP TABLE IF EXISTS "public"."category";
@@ -488,15 +528,21 @@ CREATE TABLE "public"."pin" (
 -- ----------------------------
 -- Records of pin
 -- ----------------------------
+INSERT INTO "public"."pin" VALUES (16, '为股份和v不能猎人分类1', '2023-02-22 12:27:48.91+08', '2023-02-22 12:27:48.91+08', 4, 1);
+INSERT INTO "public"."pin" VALUES (18, 'wrfwert', '2023-02-23 01:24:37.543+08', '2023-02-23 01:24:37.543+08', 4, 1);
+INSERT INTO "public"."pin" VALUES (8, 'er y rtyj yrb j83545trt o56j45 63 4py mv23op5j3 ', '2018-03-10 05:00:59.905023+08', '2023-01-30 08:06:18.497+08', 1, 1);
+INSERT INTO "public"."pin" VALUES (20, '口语他非常v酷狗v不', '2023-02-23 02:09:26.504+08', '2023-02-23 02:09:26.504+08', 4, 3);
+INSERT INTO "public"."pin" VALUES (3, 'werfu8oghbretilvh bxcvl ujbn ktj.jnoui4nedrsfopiu  roit;hjy;ortdf nlrth rteyhb ', '2014-10-06 13:55:52.905023+08', '2023-01-30 08:06:14.793+08', 3, 1);
 INSERT INTO "public"."pin" VALUES (12, 'fgertgerertert', '2023-01-30 08:06:36.525+08', '2023-01-30 08:06:36.525+08', 2, 0);
-INSERT INTO "public"."pin" VALUES (8, 'er y rtyj yrb j83545trt o56j45 63 4py mv23op5j3 ', '2018-03-10 05:00:59.905023+08', '2023-01-30 08:06:18.497+08', 1, 0);
-INSERT INTO "public"."pin" VALUES (3, 'werfu8oghbretilvh bxcvl ujbn ktj.jnoui4nedrsfopiu  roit;hjy;ortdf nlrth rteyhb ', '2014-10-06 13:55:52.905023+08', '2023-01-30 08:06:14.793+08', 3, 0);
 INSERT INTO "public"."pin" VALUES (10, 'dfg ertger rtgdf drtyhhert erg ertery ert erthyetre er', '2008-01-16 00:37:51.905023+08', '2023-01-30 08:06:20.328+08', 2, 0);
 INSERT INTO "public"."pin" VALUES (5, '还怪别人他瑞特  肉体和媒体哟没11人 ', '2010-08-25 15:49:50.905023+08', '2023-01-30 08:06:15.891+08', 3, 0);
 INSERT INTO "public"."pin" VALUES (9, '2345rdfhrtue5n  45y tgghfg ert45 45ngh ', '2010-08-31 02:33:18.905023+08', '2023-01-30 08:06:19.263+08', 2, 121);
 INSERT INTO "public"."pin" VALUES (1, '4tfge m34t53 gterlk 3t3 4ghe rtg drtbv', '2006-11-12 17:02:42.905023+08', '2023-01-30 08:06:21.495+08', 4, 1);
 INSERT INTO "public"."pin" VALUES (7, '大润发根据二能让他莫哦1', '2013-04-30 01:24:03.905023+08', '2023-01-30 08:06:17.598+08', 3, 4);
-INSERT INTO "public"."pin" VALUES (11, 'sdfcsdrfgsd', '2023-01-30 08:04:44.434+08', '2023-01-30 08:06:22.293+08', 3, 13);
+INSERT INTO "public"."pin" VALUES (11, 'sdfcsdrfgsd', '2023-01-30 08:04:44.434+08', '2023-01-30 08:06:22.293+08', 3, 15);
+INSERT INTO "public"."pin" VALUES (17, '我陪你吧', '2023-02-22 12:28:56.815+08', '2023-02-22 12:28:56.815+08', 4, 0);
+INSERT INTO "public"."pin" VALUES (19, '给我v吧第三方', '2023-02-23 01:27:02.692+08', '2023-02-23 01:27:02.692+08', 4, 0);
+INSERT INTO "public"."pin" VALUES (21, '为覅u荷兰人功夫', '2023-02-23 05:57:35.848+08', '2023-02-23 05:57:35.848+08', 4, 0);
 INSERT INTO "public"."pin" VALUES (2, '4 tgb 45yh rh ryhrt yhth rrt请问肉fig v内容不能放过就离开一会就让他', '2003-08-13 04:00:31.905023+08', '2023-01-30 08:06:13.384+08', 3, 0);
 INSERT INTO "public"."pin" VALUES (6, 'dfui ghvetrn; rt0i tgjert ineoi;r eoritjg 0e er jrti9 jrtbfgs n ier hhojgfoi jerte ht', '2021-03-31 00:04:27.905023+08', '2023-01-30 08:06:16.594+08', 1, 2);
 INSERT INTO "public"."pin" VALUES (13, '我是傻逼', '2023-02-21 13:51:15.256+08', '2023-02-21 13:51:15.256+08', 4, 25);
@@ -544,10 +590,14 @@ INSERT INTO "public"."pin_comment" VALUES (20, '所有产值后来出走咖喱�
 INSERT INTO "public"."pin_comment" VALUES (13, '眼皮一起标识谗言色子。', '2023-01-05 23:03:37.576281+08', 4, 10, 19);
 INSERT INTO "public"."pin_comment" VALUES (27, '有些弟妹何止踩水地层，万一挽歌心领懒鬼。', '2023-01-05 23:03:37.612785+08', 2, 2, 2);
 INSERT INTO "public"."pin_comment" VALUES (30, '那个越剧正点心悦诚服大众山货呀？那个中非延误绞车。', '2023-01-05 23:03:37.622177+08', 2, 2, 2);
-INSERT INTO "public"."pin_comment" VALUES (26, '那些阳离子尽然闹鬼草鱼书报。', '2023-01-05 23:03:37.609749+08', 4, 3, 26);
 INSERT INTO "public"."pin_comment" VALUES (25, '这些军警凑巧按图索骥西藏自治区，与其这些考卷蠢蠢欲动客人。', '2023-01-05 23:03:37.605519+08', 1, 6, 10);
 INSERT INTO "public"."pin_comment" VALUES (29, '楼梯一度晕船污水基本功呀？至此积极性腼腆密度。', '2023-01-05 23:03:37.618843+08', 3, 8, 24);
 INSERT INTO "public"."pin_comment" VALUES (28, '明斯克逐一报时分子生物学尘寰。', '2023-01-05 23:03:37.615802+08', 2, 10, 13);
+INSERT INTO "public"."pin_comment" VALUES (31, 'nweggerugel wef we', '2023-02-22 15:10:37.99+08', 4, 7, 7);
+INSERT INTO "public"."pin_comment" VALUES (32, 'ewtwtrwet5', '2023-02-22 15:11:14.785+08', 4, 7, NULL);
+INSERT INTO "public"."pin_comment" VALUES (26, '那些阳离子尽然闹鬼草鱼书报。', '2023-01-05 23:03:37.609749+08', 4, 3, 21);
+INSERT INTO "public"."pin_comment" VALUES (33, '光谱未公布普呢认为', '2023-02-22 20:28:10.215+08', 4, 16, NULL);
+INSERT INTO "public"."pin_comment" VALUES (34, '问题Igbo', '2023-02-22 20:28:25.079+08', 4, 16, 33);
 
 -- ----------------------------
 -- Table structure for pin_comment_like
@@ -580,7 +630,13 @@ INSERT INTO "public"."pin_comment_like" VALUES (10, 2, 1);
 INSERT INTO "public"."pin_comment_like" VALUES (18, 1, 1);
 INSERT INTO "public"."pin_comment_like" VALUES (28, 3, 0);
 INSERT INTO "public"."pin_comment_like" VALUES (10, 4, 0);
-INSERT INTO "public"."pin_comment_like" VALUES (22, 4, 1);
+INSERT INTO "public"."pin_comment_like" VALUES (8, 4, 1);
+INSERT INTO "public"."pin_comment_like" VALUES (3, 4, 1);
+INSERT INTO "public"."pin_comment_like" VALUES (17, 4, 1);
+INSERT INTO "public"."pin_comment_like" VALUES (20, 4, 1);
+INSERT INTO "public"."pin_comment_like" VALUES (1, 4, 1);
+INSERT INTO "public"."pin_comment_like" VALUES (23, 4, 1);
+INSERT INTO "public"."pin_comment_like" VALUES (22, 4, 0);
 
 -- ----------------------------
 -- Table structure for pin_like
@@ -604,14 +660,18 @@ INSERT INTO "public"."pin_like" VALUES (9, 3, 0);
 INSERT INTO "public"."pin_like" VALUES (9, 2, 0);
 INSERT INTO "public"."pin_like" VALUES (1, 3, 1);
 INSERT INTO "public"."pin_like" VALUES (2, 2, 1);
-INSERT INTO "public"."pin_like" VALUES (8, 4, 1);
 INSERT INTO "public"."pin_like" VALUES (6, 1, 1);
 INSERT INTO "public"."pin_like" VALUES (2, 1, 0);
 INSERT INTO "public"."pin_like" VALUES (12, 4, 1);
 INSERT INTO "public"."pin_like" VALUES (9, 4, 1);
-INSERT INTO "public"."pin_like" VALUES (11, 4, 1);
 INSERT INTO "public"."pin_like" VALUES (6, 4, 1);
 INSERT INTO "public"."pin_like" VALUES (13, 4, 0);
+INSERT INTO "public"."pin_like" VALUES (11, 4, 1);
+INSERT INTO "public"."pin_like" VALUES (16, 4, 1);
+INSERT INTO "public"."pin_like" VALUES (18, 4, 1);
+INSERT INTO "public"."pin_like" VALUES (8, 4, 0);
+INSERT INTO "public"."pin_like" VALUES (20, 4, 1);
+INSERT INTO "public"."pin_like" VALUES (3, 4, 1);
 
 -- ----------------------------
 -- Table structure for post
@@ -1049,10 +1109,9 @@ INSERT INTO "public"."post" VALUES (14, 'Prof.', 'ifksiMZR6J', 'https://mypic-13
 INSERT INTO "public"."post" VALUES (13, 'Prof.', 'Dnn0VL8ZnD', 'https://mypic-1305118058.cos.ap-hongkong.myqcloud.com/img/320858ac51504dbe83ee5ac50d4d5813.jpg', 'To successfully establish a new connection to local/remote server - no matter via SSL or SSH, set the database login information in the General tab. Monitored servers include MySQL, MariaDB and SQL Server, and compatible with cloud databases like Amazon RDS, Amazon Aurora, Oracle Cloud, Google Cloud and Microsoft Azure. The Information Pane shows the detailed object information, project activities, the DDL of database objects, object dependencies, membership of users/roles and preview. A query is used to extract data from the database in a readable format according to the user''s request. Secure SHell (SSH) is a program to log in into another computer over a network, execute commands on a remote server, and move files from one machine to another. If it scares you, it might be a good thing to try. Such sessions are also susceptible to session hijacking, where a malicious user takes over your session once you have authenticated. Anyone who has never made a mistake has never tried anything new. Navicat provides a wide range advanced features, such as compelling code editing capabilities, smart code-completion, SQL formatting, and more. Remember that failure is an event, not a person. Such sessions are also susceptible to session hijacking, where a malicious user takes over your session once you have authenticated. I will greet this day with love in my heart. A man is not old until regrets take the place of dreams. SSH serves to prevent such vulnerabilities and allows you to access a remote server''s shell without compromising security. If the Show objects under schema in navigation pane option is checked at the Preferences window, all database objects are also displayed in the pane. With its well-designed Graphical User Interface(GUI), Navicat lets you quickly and easily create, organize, access and share information in a secure and easy way. Navicat provides powerful tools for working with queries: Query Editor for editing the query text directly, and Query Builder, Find Builder or Aggregate Builder for building queries visually. You must be the change you wish to see in the world. The reason why a great man is great is that he resolves to be a great man. Navicat Cloud could not connect and access your databases. By which it means, it could only store your connection settings, queries, model files, and virtual group; your database passwords and data (e.g. tables, views, etc) will not be stored to Navicat Cloud. If your Internet Service Provider (ISP) does not provide direct access to its server, Secure Tunneling Protocol (SSH) / HTTP is another solution. All the Navicat Cloud objects are located under different projects. You can share the project to other Navicat Cloud accounts for collaboration. I may not have gone where I intended to go, but I think I have ended up where I needed to be. Navicat Data Modeler is a powerful and cost-effective database design tool which helps you build high-quality conceptual, logical and physical data models. To get a secure connection, the first thing you need to do is to install OpenSSL Library and download Database Source. The past has no power over the present moment. To successfully establish a new connection to local/remote server - no matter via SSL, SSH or HTTP, set the database login information in the General tab. HTTP Tunneling is a method for connecting to a server that uses the same protocol (http://) and the same port (port 80) as a web server does. The On Startup feature allows you to control what tabs appear when you launch Navicat. Such sessions are also susceptible to session hijacking, where a malicious user takes over your session once you have authenticated. You must be the change you wish to see in the world. After comparing data, the window shows the number of records that will be inserted, updated or deleted in the target. The reason why a great man is great is that he resolves to be a great man. There is no way to happiness. Happiness is the way. You can select any connections, objects or projects, and then select the corresponding buttons on the Information Pane. A query is used to extract data from the database in a readable format according to the user''s request. You cannot save people, you can just love them. Flexible settings enable you to set up a custom key for comparison and synchronization. Anyone who has ever made anything of importance was disciplined. The Synchronize to Database function will give you a full picture of all database differences. After logged in the Navicat Cloud feature, the Navigation pane will be divided into Navicat Cloud and My Connections sections. The On Startup feature allows you to control what tabs appear when you launch Navicat. I may not have gone where I intended to go, but I think I have ended up where I needed to be.', '2002-05-11 11:57:04.905023+08', '2020-04-12 03:18:38.905023+08', 6, 3, 'f', 2);
 INSERT INTO "public"."post" VALUES (8, 'Mr.', 'Bj9hE4VOcq', 'https://mypic-1305118058.cos.ap-hongkong.myqcloud.com/img/IMG20221212153340.jpg', 'You cannot save people, you can just love them. Anyone who has ever made anything of importance was disciplined. Import Wizard allows you to import data to tables/collections from CSV, TXT, XML, DBF and more. If it scares you, it might be a good thing to try. The On Startup feature allows you to control what tabs appear when you launch Navicat. To successfully establish a new connection to local/remote server - no matter via SSL, SSH or HTTP, set the database login information in the General tab. In other words, Navicat provides the ability for data in different databases and/or schemas to be kept up-to-date so that each repository contains the same information. Actually it is just in an idea when feel oneself can achieve and cannot achieve. Flexible settings enable you to set up a custom key for comparison and synchronization. The Navigation pane employs tree structure which allows you to take action upon the database and their objects through their pop-up menus quickly and easily. If the plan doesn’t work, change the plan, but never the goal. Typically, it is employed as an encrypted version of Telnet. The Information Pane shows the detailed object information, project activities, the DDL of database objects, object dependencies, membership of users/roles and preview. If you wait, all that happens is you get older. A query is used to extract data from the database in a readable format according to the user''s request. If it scares you, it might be a good thing to try. Navicat Monitor requires a repository to store alerts and metrics for historical analysis. Navicat Cloud could not connect and access your databases. By which it means, it could only store your connection settings, queries, model files, and virtual group; your database passwords and data (e.g. tables, views, etc) will not be stored to Navicat Cloud. SSH serves to prevent such vulnerabilities and allows you to access a remote server''s shell without compromising security. It wasn’t raining when Noah built the ark. Difficult circumstances serve as a textbook of life for people. All the Navicat Cloud objects are located under different projects. You can share the project to other Navicat Cloud accounts for collaboration. You can select any connections, objects or projects, and then select the corresponding buttons on the Information Pane. What you get by achieving your goals is not as important as what you become by achieving your goals. Difficult circumstances serve as a textbook of life for people. It is used while your ISPs do not allow direct connections, but allows establishing HTTP connections. In the Objects tab, you can use the List List, Detail Detail and ER Diagram ER Diagram buttons to change the object view. Genius is an infinite capacity for taking pains. Navicat allows you to transfer data from one database and/or schema to another with detailed analytical process. Navicat Monitor requires a repository to store alerts and metrics for historical analysis. Actually it is just in an idea when feel oneself can achieve and cannot achieve. It can also manage cloud databases such as Amazon Redshift, Amazon RDS, Alibaba Cloud. Features in Navicat are sophisticated enough to provide professional developers for all their specific needs, yet easy to learn for users who are new to database server. What you get by achieving your goals is not as important as what you become by achieving your goals. In the Objects tab, you can use the List List, Detail Detail and ER Diagram ER Diagram buttons to change the object view. Genius is an infinite capacity for taking pains. Creativity is intelligence having fun. The Navigation pane employs tree structure which allows you to take action upon the database and their objects through their pop-up menus quickly and easily. Optimism is the one quality more associated with success and happiness than any other. If it scares you, it might be a good thing to try. If opportunity doesn’t knock, build a door. Secure SHell (SSH) is a program to log in into another computer over a network, execute commands on a remote server, and move files from one machine to another. It wasn’t raining when Noah built the ark. Navicat Monitor is a safe, simple and agentless remote server monitoring tool that is packed with powerful features to make your monitoring effective as possible. Anyone who has never made a mistake has never tried anything new. If the plan doesn’t work, change the plan, but never the goal. All the Navicat Cloud objects are located under different projects. You can share the project to other Navicat Cloud accounts for collaboration. Always keep your eyes open. Keep watching. Because whatever you see can inspire you. Flexible settings enable you to set up a custom key for comparison and synchronization. All journeys have secret destinations of which the traveler is unaware. Secure Sockets Layer(SSL) is a protocol for transmitting private documents via the Internet. The Main Window consists of several toolbars and panes for you to work on connections, database objects and advanced tools. The Synchronize to Database function will give you a full picture of all database differences. It is used while your ISPs do not allow direct connections, but allows establishing HTTP connections. To connect to a database or schema, simply double-click it in the pane. Creativity is intelligence having fun. Navicat authorizes you to make connection to remote servers running on different platforms (i.e. Windows, macOS, Linux and UNIX), and supports PAM and GSSAPI authentication. After comparing data, the window shows the number of records that will be inserted, updated or deleted in the target. You can select any connections, objects or projects, and then select the corresponding buttons on the Information Pane.', '2010-05-13 18:56:38.905023+08', '2002-03-20 20:05:47.905023+08', 4, 4, 't', 2);
 INSERT INTO "public"."post" VALUES (19, 'Mr.', 'hCSsvhw0KS', 'https://mypic-1305118058.cos.ap-hongkong.myqcloud.com/img/320858ac51504dbe83ee5ac50d4d5813.jpg', 'It is used while your ISPs do not allow direct connections, but allows establishing HTTP connections. I may not have gone where I intended to go, but I think I have ended up where I needed to be. Navicat allows you to transfer data from one database and/or schema to another with detailed analytical process. In the Objects tab, you can use the List List, Detail Detail and ER Diagram ER Diagram buttons to change the object view. After logged in the Navicat Cloud feature, the Navigation pane will be divided into Navicat Cloud and My Connections sections. After comparing data, the window shows the number of records that will be inserted, updated or deleted in the target. Secure SHell (SSH) is a program to log in into another computer over a network, execute commands on a remote server, and move files from one machine to another. Optimism is the one quality more associated with success and happiness than any other. It provides strong authentication and secure encrypted communications between two hosts, known as SSH Port Forwarding (Tunneling), over an insecure network. Export Wizard allows you to export data from tables, collections, views, or query results to any available formats. To get a secure connection, the first thing you need to do is to install OpenSSL Library and download Database Source. All journeys have secret destinations of which the traveler is unaware. Always keep your eyes open. Keep watching. Because whatever you see can inspire you.', '2009-07-30 16:33:58.905023+08', '2004-12-27 22:17:26.905023+08', 4, 3, 't', 0);
-INSERT INTO "public"."post" VALUES (15, 'Ms.', 'OzVl3wV2IB', 'https://mypic-1305118058.cos.ap-hongkong.myqcloud.com/img/IMG20221212153340.jpg', 'After logged in the Navicat Cloud feature, the Navigation pane will be divided into Navicat Cloud and My Connections sections. With its well-designed Graphical User Interface(GUI), Navicat lets you quickly and easily create, organize, access and share information in a secure and easy way. If you wait, all that happens is you get older. After comparing data, the window shows the number of records that will be inserted, updated or deleted in the target. Typically, it is employed as an encrypted version of Telnet. To start working with your server in Navicat, you should first establish a connection or several connections using the Connection window. After logged in the Navicat Cloud feature, the Navigation pane will be divided into Navicat Cloud and My Connections sections. The On Startup feature allows you to control what tabs appear when you launch Navicat. Typically, it is employed as an encrypted version of Telnet. Actually it is just in an idea when feel oneself can achieve and cannot achieve. Such sessions are also susceptible to session hijacking, where a malicious user takes over your session once you have authenticated. Remember that failure is an event, not a person. It can also manage cloud databases such as Amazon Redshift, Amazon RDS, Alibaba Cloud. Features in Navicat are sophisticated enough to provide professional developers for all their specific needs, yet easy to learn for users who are new to database server. In other words, Navicat provides the ability for data in different databases and/or schemas to be kept up-to-date so that each repository contains the same information. To start working with your server in Navicat, you should first establish a connection or several connections using the Connection window. If your Internet Service Provider (ISP) does not provide direct access to its server, Secure Tunneling Protocol (SSH) / HTTP is another solution. Optimism is the one quality more associated with success and happiness than any other. Navicat Cloud could not connect and access your databases. By which it means, it could only store your connection settings, queries, model files, and virtual group; your database passwords and data (e.g. tables, views, etc) will not be stored to Navicat Cloud. What you get by achieving your goals is not as important as what you become by achieving your goals. If you wait, all that happens is you get older. It provides strong authentication and secure encrypted communications between two hosts, known as SSH Port Forwarding (Tunneling), over an insecure network.', '2020-04-03 07:44:42.905023+08', '2019-07-03 13:58:10.905023+08', 8, 2, 't', 0);
 INSERT INTO "public"."post" VALUES (12, 'Miss.', 'q4f2rFxRlf', 'https://mypic-1305118058.cos.ap-hongkong.myqcloud.com/img/IMG20221212153340.jpg', 'A man is not old until regrets take the place of dreams. Navicat Cloud provides a cloud service for synchronizing connections, queries, model files and virtual group information from Navicat, other Navicat family members, different machines and different platforms. All journeys have secret destinations of which the traveler is unaware. Actually it is just in an idea when feel oneself can achieve and cannot achieve. All the Navicat Cloud objects are located under different projects. You can share the project to other Navicat Cloud accounts for collaboration. Genius is an infinite capacity for taking pains. Navicat Monitor requires a repository to store alerts and metrics for historical analysis. How we spend our days is, of course, how we spend our lives. After logged in the Navicat Cloud feature, the Navigation pane will be divided into Navicat Cloud and My Connections sections. The Information Pane shows the detailed object information, project activities, the DDL of database objects, object dependencies, membership of users/roles and preview. If the Show objects under schema in navigation pane option is checked at the Preferences window, all database objects are also displayed in the pane. Navicat is a multi-connections Database Administration tool allowing you to connect to MySQL, Oracle, PostgreSQL, SQLite, SQL Server, MariaDB and/or MongoDB databases, making database administration to multiple kinds of database so easy. SSH serves to prevent such vulnerabilities and allows you to access a remote server''s shell without compromising security. Navicat Data Modeler enables you to build high-quality conceptual, logical and physical data models for a wide variety of audiences. Navicat Data Modeler enables you to build high-quality conceptual, logical and physical data models for a wide variety of audiences. Creativity is intelligence having fun. Typically, it is employed as an encrypted version of Telnet. Navicat Cloud could not connect and access your databases. By which it means, it could only store your connection settings, queries, model files, and virtual group; your database passwords and data (e.g. tables, views, etc) will not be stored to Navicat Cloud. Anyone who has ever made anything of importance was disciplined. It collects process metrics such as CPU load, RAM usage, and a variety of other resources over SSH/SNMP. Typically, it is employed as an encrypted version of Telnet. Instead of wondering when your next vacation is, maybe you should set up a life you don’t need to escape from. A man is not old until regrets take the place of dreams. It wasn’t raining when Noah built the ark. If you wait, all that happens is you get older. The Navigation pane employs tree structure which allows you to take action upon the database and their objects through their pop-up menus quickly and easily.', '2013-10-20 07:03:03.905023+08', '2007-08-15 12:00:56.905023+08', 2, 1, 'f', 0);
 INSERT INTO "public"."post" VALUES (9, 'Mrs.', 'KJS9o7z5uU', 'https://mypic-1305118058.cos.ap-hongkong.myqcloud.com/img/IMG20221212153340.jpg', 'The Main Window consists of several toolbars and panes for you to work on connections, database objects and advanced tools. To clear or reload various internal caches, flush tables, or acquire locks, control-click your connection in the Navigation pane and select Flush and choose the flush option. You must have the reload privilege to use this feature. Optimism is the one quality more associated with success and happiness than any other. To successfully establish a new connection to local/remote server - no matter via SSL or SSH, set the database login information in the General tab. To successfully establish a new connection to local/remote server - no matter via SSL, SSH or HTTP, set the database login information in the General tab. Navicat Monitor requires a repository to store alerts and metrics for historical analysis. The On Startup feature allows you to control what tabs appear when you launch Navicat. It can also manage cloud databases such as Amazon Redshift, Amazon RDS, Alibaba Cloud. Features in Navicat are sophisticated enough to provide professional developers for all their specific needs, yet easy to learn for users who are new to database server. To clear or reload various internal caches, flush tables, or acquire locks, control-click your connection in the Navigation pane and select Flush and choose the flush option. You must have the reload privilege to use this feature. Flexible settings enable you to set up a custom key for comparison and synchronization. Flexible settings enable you to set up a custom key for comparison and synchronization. Navicat Data Modeler is a powerful and cost-effective database design tool which helps you build high-quality conceptual, logical and physical data models. To start working with your server in Navicat, you should first establish a connection or several connections using the Connection window. SQL Editor allows you to create and edit SQL text, prepare and execute selected queries. The Main Window consists of several toolbars and panes for you to work on connections, database objects and advanced tools. After comparing data, the window shows the number of records that will be inserted, updated or deleted in the target. It collects process metrics such as CPU load, RAM usage, and a variety of other resources over SSH/SNMP. It wasn’t raining when Noah built the ark. If the plan doesn’t work, change the plan, but never the goal. The Synchronize to Database function will give you a full picture of all database differences. Remember that failure is an event, not a person. To clear or reload various internal caches, flush tables, or acquire locks, control-click your connection in the Navigation pane and select Flush and choose the flush option. You must have the reload privilege to use this feature. A man is not old until regrets take the place of dreams. The Synchronize to Database function will give you a full picture of all database differences. If your Internet Service Provider (ISP) does not provide direct access to its server, Secure Tunneling Protocol (SSH) / HTTP is another solution.', '2000-12-20 16:17:54.905023+08', '2000-12-03 14:35:50.905023+08', 9, 3, 't', 0);
-INSERT INTO "public"."post" VALUES (2, 'Mr.', 'E1kpMn9iAP', 'https://mypic-1305118058.cos.ap-hongkong.myqcloud.com/img/320858ac51504dbe83ee5ac50d4d5813.jpg', 'To clear or reload various internal caches, flush tables, or acquire locks, control-click your connection in the Navigation pane and select Flush and choose the flush option. You must have the reload privilege to use this feature. Secure SHell (SSH) is a program to log in into another computer over a network, execute commands on a remote server, and move files from one machine to another. After logged in the Navicat Cloud feature, the Navigation pane will be divided into Navicat Cloud and My Connections sections. If the Show objects under schema in navigation pane option is checked at the Preferences window, all database objects are also displayed in the pane. The On Startup feature allows you to control what tabs appear when you launch Navicat. If your Internet Service Provider (ISP) does not provide direct access to its server, Secure Tunneling Protocol (SSH) / HTTP is another solution. Monitored servers include MySQL, MariaDB and SQL Server, and compatible with cloud databases like Amazon RDS, Amazon Aurora, Oracle Cloud, Google Cloud and Microsoft Azure. To clear or reload various internal caches, flush tables, or acquire locks, control-click your connection in the Navigation pane and select Flush and choose the flush option. You must have the reload privilege to use this feature. If the plan doesn’t work, change the plan, but never the goal. The Information Pane shows the detailed object information, project activities, the DDL of database objects, object dependencies, membership of users/roles and preview. Instead of wondering when your next vacation is, maybe you should set up a life you don’t need to escape from. HTTP Tunneling is a method for connecting to a server that uses the same protocol (http://) and the same port (port 80) as a web server does. Navicat Monitor is a safe, simple and agentless remote server monitoring tool that is packed with powerful features to make your monitoring effective as possible. The reason why a great man is great is that he resolves to be a great man. To start working with your server in Navicat, you should first establish a connection or several connections using the Connection window. All the Navicat Cloud objects are located under different projects. You can share the project to other Navicat Cloud accounts for collaboration. Monitored servers include MySQL, MariaDB and SQL Server, and compatible with cloud databases like Amazon RDS, Amazon Aurora, Oracle Cloud, Google Cloud and Microsoft Azure. The On Startup feature allows you to control what tabs appear when you launch Navicat. Navicat Monitor requires a repository to store alerts and metrics for historical analysis. Genius is an infinite capacity for taking pains. Difficult circumstances serve as a textbook of life for people. The On Startup feature allows you to control what tabs appear when you launch Navicat. It provides strong authentication and secure encrypted communications between two hosts, known as SSH Port Forwarding (Tunneling), over an insecure network. Navicat provides powerful tools for working with queries: Query Editor for editing the query text directly, and Query Builder, Find Builder or Aggregate Builder for building queries visually. Navicat Cloud provides a cloud service for synchronizing connections, queries, model files and virtual group information from Navicat, other Navicat family members, different machines and different platforms. If the plan doesn’t work, change the plan, but never the goal. Remember that failure is an event, not a person. To start working with your server in Navicat, you should first establish a connection or several connections using the Connection window. Navicat authorizes you to make connection to remote servers running on different platforms (i.e. Windows, macOS, Linux and UNIX), and supports PAM and GSSAPI authentication. The first step is as good as half over. Navicat Cloud could not connect and access your databases. By which it means, it could only store your connection settings, queries, model files, and virtual group; your database passwords and data (e.g. tables, views, etc) will not be stored to Navicat Cloud. Always keep your eyes open. Keep watching. Because whatever you see can inspire you. There is no way to happiness. Happiness is the way. You will succeed because most people are lazy. To open a query using an external editor, control-click it and select Open with External Editor. You can set the file path of an external editor in Preferences. You will succeed because most people are lazy. Such sessions are also susceptible to session hijacking, where a malicious user takes over your session once you have authenticated. The Information Pane shows the detailed object information, project activities, the DDL of database objects, object dependencies, membership of users/roles and preview. If the Show objects under schema in navigation pane option is checked at the Preferences window, all database objects are also displayed in the pane. It can also manage cloud databases such as Amazon Redshift, Amazon RDS, Alibaba Cloud. Features in Navicat are sophisticated enough to provide professional developers for all their specific needs, yet easy to learn for users who are new to database server.', '2016-10-24 14:29:41.905023+08', '2010-03-30 03:31:18.905023+08', 8, 1, 't', 12);
+INSERT INTO "public"."post" VALUES (2, 'Mr.', 'E1kpMn9iAP', 'https://mypic-1305118058.cos.ap-hongkong.myqcloud.com/img/320858ac51504dbe83ee5ac50d4d5813.jpg', 'To clear or reload various internal caches, flush tables, or acquire locks, control-click your connection in the Navigation pane and select Flush and choose the flush option. You must have the reload privilege to use this feature. Secure SHell (SSH) is a program to log in into another computer over a network, execute commands on a remote server, and move files from one machine to another. After logged in the Navicat Cloud feature, the Navigation pane will be divided into Navicat Cloud and My Connections sections. If the Show objects under schema in navigation pane option is checked at the Preferences window, all database objects are also displayed in the pane. The On Startup feature allows you to control what tabs appear when you launch Navicat. If your Internet Service Provider (ISP) does not provide direct access to its server, Secure Tunneling Protocol (SSH) / HTTP is another solution. Monitored servers include MySQL, MariaDB and SQL Server, and compatible with cloud databases like Amazon RDS, Amazon Aurora, Oracle Cloud, Google Cloud and Microsoft Azure. To clear or reload various internal caches, flush tables, or acquire locks, control-click your connection in the Navigation pane and select Flush and choose the flush option. You must have the reload privilege to use this feature. If the plan doesn’t work, change the plan, but never the goal. The Information Pane shows the detailed object information, project activities, the DDL of database objects, object dependencies, membership of users/roles and preview. Instead of wondering when your next vacation is, maybe you should set up a life you don’t need to escape from. HTTP Tunneling is a method for connecting to a server that uses the same protocol (http://) and the same port (port 80) as a web server does. Navicat Monitor is a safe, simple and agentless remote server monitoring tool that is packed with powerful features to make your monitoring effective as possible. The reason why a great man is great is that he resolves to be a great man. To start working with your server in Navicat, you should first establish a connection or several connections using the Connection window. All the Navicat Cloud objects are located under different projects. You can share the project to other Navicat Cloud accounts for collaboration. Monitored servers include MySQL, MariaDB and SQL Server, and compatible with cloud databases like Amazon RDS, Amazon Aurora, Oracle Cloud, Google Cloud and Microsoft Azure. The On Startup feature allows you to control what tabs appear when you launch Navicat. Navicat Monitor requires a repository to store alerts and metrics for historical analysis. Genius is an infinite capacity for taking pains. Difficult circumstances serve as a textbook of life for people. The On Startup feature allows you to control what tabs appear when you launch Navicat. It provides strong authentication and secure encrypted communications between two hosts, known as SSH Port Forwarding (Tunneling), over an insecure network. Navicat provides powerful tools for working with queries: Query Editor for editing the query text directly, and Query Builder, Find Builder or Aggregate Builder for building queries visually. Navicat Cloud provides a cloud service for synchronizing connections, queries, model files and virtual group information from Navicat, other Navicat family members, different machines and different platforms. If the plan doesn’t work, change the plan, but never the goal. Remember that failure is an event, not a person. To start working with your server in Navicat, you should first establish a connection or several connections using the Connection window. Navicat authorizes you to make connection to remote servers running on different platforms (i.e. Windows, macOS, Linux and UNIX), and supports PAM and GSSAPI authentication. The first step is as good as half over. Navicat Cloud could not connect and access your databases. By which it means, it could only store your connection settings, queries, model files, and virtual group; your database passwords and data (e.g. tables, views, etc) will not be stored to Navicat Cloud. Always keep your eyes open. Keep watching. Because whatever you see can inspire you. There is no way to happiness. Happiness is the way. You will succeed because most people are lazy. To open a query using an external editor, control-click it and select Open with External Editor. You can set the file path of an external editor in Preferences. You will succeed because most people are lazy. Such sessions are also susceptible to session hijacking, where a malicious user takes over your session once you have authenticated. The Information Pane shows the detailed object information, project activities, the DDL of database objects, object dependencies, membership of users/roles and preview. If the Show objects under schema in navigation pane option is checked at the Preferences window, all database objects are also displayed in the pane. It can also manage cloud databases such as Amazon Redshift, Amazon RDS, Alibaba Cloud. Features in Navicat are sophisticated enough to provide professional developers for all their specific needs, yet easy to learn for users who are new to database server.', '2016-10-24 14:29:41.905023+08', '2010-03-30 03:31:18.905023+08', 8, 1, 't', 30);
 INSERT INTO "public"."post" VALUES (1, 'Git多分支开发注意事项', 'Git多分支开发注意事项', 'https://mypic-1305118058.cos.ap-hongkong.myqcloud.com/img/320858ac51504dbe83ee5ac50d4d5813.jpg', '
 
 ## 0x01
@@ -1089,6 +1148,7 @@ eg. Web 全栈项目中，分成几个不同分支 `dev-server`, `dev-app`, `dev
 
 -- 完 --
 ', '2016-04-25 02:55:13.905023+08', '2009-03-21 19:11:11.905023+08', 2, 3, 't', 8);
+INSERT INTO "public"."post" VALUES (15, 'Ms.', 'OzVl3wV2IB', 'https://mypic-1305118058.cos.ap-hongkong.myqcloud.com/img/IMG20221212153340.jpg', 'After logged in the Navicat Cloud feature, the Navigation pane will be divided into Navicat Cloud and My Connections sections. With its well-designed Graphical User Interface(GUI), Navicat lets you quickly and easily create, organize, access and share information in a secure and easy way. If you wait, all that happens is you get older. After comparing data, the window shows the number of records that will be inserted, updated or deleted in the target. Typically, it is employed as an encrypted version of Telnet. To start working with your server in Navicat, you should first establish a connection or several connections using the Connection window. After logged in the Navicat Cloud feature, the Navigation pane will be divided into Navicat Cloud and My Connections sections. The On Startup feature allows you to control what tabs appear when you launch Navicat. Typically, it is employed as an encrypted version of Telnet. Actually it is just in an idea when feel oneself can achieve and cannot achieve. Such sessions are also susceptible to session hijacking, where a malicious user takes over your session once you have authenticated. Remember that failure is an event, not a person. It can also manage cloud databases such as Amazon Redshift, Amazon RDS, Alibaba Cloud. Features in Navicat are sophisticated enough to provide professional developers for all their specific needs, yet easy to learn for users who are new to database server. In other words, Navicat provides the ability for data in different databases and/or schemas to be kept up-to-date so that each repository contains the same information. To start working with your server in Navicat, you should first establish a connection or several connections using the Connection window. If your Internet Service Provider (ISP) does not provide direct access to its server, Secure Tunneling Protocol (SSH) / HTTP is another solution. Optimism is the one quality more associated with success and happiness than any other. Navicat Cloud could not connect and access your databases. By which it means, it could only store your connection settings, queries, model files, and virtual group; your database passwords and data (e.g. tables, views, etc) will not be stored to Navicat Cloud. What you get by achieving your goals is not as important as what you become by achieving your goals. If you wait, all that happens is you get older. It provides strong authentication and secure encrypted communications between two hosts, known as SSH Port Forwarding (Tunneling), over an insecure network.', '2020-04-03 07:44:42.905023+08', '2019-07-03 13:58:10.905023+08', 8, 2, 't', 2);
 
 -- ----------------------------
 -- Table structure for post_collection
@@ -1195,6 +1255,10 @@ INSERT INTO "public"."post_comment_like" VALUES (13, 1, 0);
 INSERT INTO "public"."post_comment_like" VALUES (3, 4, 0);
 INSERT INTO "public"."post_comment_like" VALUES (7, 1, 1);
 INSERT INTO "public"."post_comment_like" VALUES (14, 4, 1);
+INSERT INTO "public"."post_comment_like" VALUES (20, 4, 2);
+INSERT INTO "public"."post_comment_like" VALUES (16, 4, 1);
+INSERT INTO "public"."post_comment_like" VALUES (18, 4, 1);
+INSERT INTO "public"."post_comment_like" VALUES (9, 4, 1);
 
 -- ----------------------------
 -- Table structure for post_like
@@ -1234,7 +1298,14 @@ INSERT INTO "public"."post_like" VALUES (13, 1, 1);
 INSERT INTO "public"."post_like" VALUES (10, 1, 0);
 INSERT INTO "public"."post_like" VALUES (15, 1, 1);
 INSERT INTO "public"."post_like" VALUES (14, 1, 1);
-INSERT INTO "public"."post_like" VALUES (20, 4, 0);
+INSERT INTO "public"."post_like" VALUES (2, 4, 1);
+INSERT INTO "public"."post_like" VALUES (6, 4, 0);
+INSERT INTO "public"."post_like" VALUES (20, 4, 1);
+INSERT INTO "public"."post_like" VALUES (15, 4, 0);
+INSERT INTO "public"."post_like" VALUES (16, 4, 0);
+INSERT INTO "public"."post_like" VALUES (18, 4, 0);
+INSERT INTO "public"."post_like" VALUES (17, 4, 0);
+INSERT INTO "public"."post_like" VALUES (19, 4, 1);
 
 -- ----------------------------
 -- Table structure for post_tag
@@ -1304,7 +1375,7 @@ INSERT INTO "public"."sys_user" VALUES (9, '我i聚梦空间那我', '111', 'wer
 INSERT INTO "public"."sys_user" VALUES (1, 'wjl', '123', 'wjl@163.com', 'https://mypic-1305118058.cos.ap-hongkong.myqcloud.com/img/483850ff-576b-4941-9595-cde286070364.jpg', NULL, NULL, NULL, '2023-01-04 20:31:36.905023+08', 1, 'e33b6421-4d5d-419b-a830-755c1c7e8c48');
 INSERT INTO "public"."sys_user" VALUES (2, '问题官方v的', 'xxx', 'aaa@163.com', 'https://mypic-1305118058.cos.ap-hongkong.myqcloud.com/img/e590db1f-9d83-4af3-b49c-b0c9b9ffd9bc.jpg', NULL, NULL, NULL, '2023-01-04 20:31:54.905023+08', 2, 'e6f9ebae-07cd-42f5-86bd-7a5236698b4b');
 INSERT INTO "public"."sys_user" VALUES (3, '让覅u会被人', 'yyy', 'bbb@163.com', 'https://mypic-1305118058.cos.ap-hongkong.myqcloud.com/img/cddfd2bf-1f79-45dc-b650-2840300735d8.jpg', NULL, 'https://mui.com', NULL, '2023-01-04 20:32:14.905023+08', 2, 'a82cd754-a2c2-4b18-bf83-48b2b0301183');
-INSERT INTO "public"."sys_user" VALUES (4, 'CCC', 'zzz', 'ccc@163.com', 'https://mypic-1305118058.cos.ap-hongkong.myqcloud.com/img/b924ce27-b536-4ec0-9b3c-0f86f7779beb.jpg', NULL, NULL, NULL, '2023-01-04 20:32:28.905023+08', 2, '4bdb9514-7966-492d-a030-dd67e4e35c7d');
+INSERT INTO "public"."sys_user" VALUES (4, 'CCC', 'zzz', 'ccc@163.com', 'https://mypic-1305118058.cos.ap-hongkong.myqcloud.com/img/b924ce27-b536-4ec0-9b3c-0f86f7779beb.jpg', NULL, NULL, NULL, '2023-01-04 20:32:28.905023+08', 2, 'c9ae907b-e7dc-4483-8a9c-0cbe9ff32128');
 
 -- ----------------------------
 -- Table structure for tag
@@ -1338,19 +1409,20 @@ INSERT INTO "public"."tag" VALUES (3, 'Matsumoto Ren', 'https://mypic-1305118058
 DROP TABLE IF EXISTS "public"."tag_follow";
 CREATE TABLE "public"."tag_follow" (
   "tag_id" int8 NOT NULL DEFAULT nextval('tag_follow_tag_id_seq'::regclass),
-  "follower_id" int8 NOT NULL DEFAULT nextval('tag_follow_follower_id_seq'::regclass)
+  "user_id" int8 NOT NULL DEFAULT nextval('tag_follow_follower_id_seq'::regclass),
+  "follow" bool NOT NULL
 )
 ;
 
 -- ----------------------------
 -- Records of tag_follow
 -- ----------------------------
-INSERT INTO "public"."tag_follow" VALUES (1, 1);
-INSERT INTO "public"."tag_follow" VALUES (1, 2);
-INSERT INTO "public"."tag_follow" VALUES (1, 3);
-INSERT INTO "public"."tag_follow" VALUES (2, 1);
-INSERT INTO "public"."tag_follow" VALUES (2, 2);
-INSERT INTO "public"."tag_follow" VALUES (3, 3);
+INSERT INTO "public"."tag_follow" VALUES (1, 1, 't');
+INSERT INTO "public"."tag_follow" VALUES (1, 2, 't');
+INSERT INTO "public"."tag_follow" VALUES (1, 3, 't');
+INSERT INTO "public"."tag_follow" VALUES (2, 1, 't');
+INSERT INTO "public"."tag_follow" VALUES (2, 2, 't');
+INSERT INTO "public"."tag_follow" VALUES (3, 3, 't');
 
 -- ----------------------------
 -- Table structure for user_collection_follow
@@ -1368,6 +1440,7 @@ f-unfollow';
 -- ----------------------------
 -- Records of user_collection_follow
 -- ----------------------------
+INSERT INTO "public"."user_collection_follow" VALUES (1, 1, 't');
 
 -- ----------------------------
 -- Table structure for user_column_follow
@@ -1401,11 +1474,9 @@ DROP TABLE IF EXISTS "public"."user_follow";
 CREATE TABLE "public"."user_follow" (
   "follower_id" int8 NOT NULL DEFAULT nextval('user_follow_follower_id_seq'::regclass),
   "followed_id" int8 NOT NULL DEFAULT nextval('user_follow_followed_id_seq'::regclass),
-  "type" int2 NOT NULL
+  "follow" bool NOT NULL
 )
 ;
-COMMENT ON COLUMN "public"."user_follow"."type" IS '0 -> unfollow
-1 -> follow';
 COMMENT ON TABLE "public"."user_follow" IS 'follower -> followed
 a -> b
 a 关注了 b';
@@ -1413,16 +1484,134 @@ a 关注了 b';
 -- ----------------------------
 -- Records of user_follow
 -- ----------------------------
-INSERT INTO "public"."user_follow" VALUES (1, 2, 1);
-INSERT INTO "public"."user_follow" VALUES (1, 3, 1);
-INSERT INTO "public"."user_follow" VALUES (1, 4, 1);
-INSERT INTO "public"."user_follow" VALUES (2, 1, 1);
-INSERT INTO "public"."user_follow" VALUES (2, 3, 1);
-INSERT INTO "public"."user_follow" VALUES (3, 1, 1);
-INSERT INTO "public"."user_follow" VALUES (3, 4, 1);
-INSERT INTO "public"."user_follow" VALUES (4, 1, 1);
-INSERT INTO "public"."user_follow" VALUES (4, 2, 0);
-INSERT INTO "public"."user_follow" VALUES (4, 3, 0);
+
+-- ----------------------------
+-- Function structure for add_activity_pin
+-- ----------------------------
+DROP FUNCTION IF EXISTS "public"."add_activity_pin"();
+CREATE OR REPLACE FUNCTION "public"."add_activity_pin"()
+  RETURNS "pg_catalog"."trigger" AS $BODY$ begin 
+	insert into activity 
+	values(nextval('activity_id_seq'), new.author_id, 3, 2, new.id, current_timestamp);
+	return null;
+end; $BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+-- ----------------------------
+-- Function structure for add_activity_pin_like
+-- ----------------------------
+DROP FUNCTION IF EXISTS "public"."add_activity_pin_like"();
+CREATE OR REPLACE FUNCTION "public"."add_activity_pin_like"()
+  RETURNS "pg_catalog"."trigger" AS $BODY$ begin 
+	insert into activity 
+	select nextval('activity_id_seq'), new.user_id, 1, 2, new.pin_id, current_timestamp
+	where not exists (
+		select null from activity
+		where (user_id, action_type, action_sub_type, target_id) = (new.user_id, 1, 2, new.pin_id)
+	);
+	return null;
+end; $BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+-- ----------------------------
+-- Function structure for add_activity_post
+-- ----------------------------
+DROP FUNCTION IF EXISTS "public"."add_activity_post"();
+CREATE OR REPLACE FUNCTION "public"."add_activity_post"()
+  RETURNS "pg_catalog"."trigger" AS $BODY$ begin 
+	insert into activity 
+	values(nextval('activity_id_seq'), new.author_id, 3, 1, new.id, current_timestamp);
+	return null;
+end; $BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+-- ----------------------------
+-- Function structure for add_activity_post_like
+-- ----------------------------
+DROP FUNCTION IF EXISTS "public"."add_activity_post_like"();
+CREATE OR REPLACE FUNCTION "public"."add_activity_post_like"()
+  RETURNS "pg_catalog"."trigger" AS $BODY$ begin 
+	insert into activity
+	select nextval('activity_id_seq'), new.user_id, 1, 1, new.post_id, current_timestamp
+	where not exists (
+		select null from activity
+		where (user_id, action_type, action_sub_type, target_id) = (new.user_id, 1, 1, new.post_id)
+	);
+	return null;
+end; $BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+-- ----------------------------
+-- Function structure for add_activity_tag_follow
+-- ----------------------------
+DROP FUNCTION IF EXISTS "public"."add_activity_tag_follow"();
+CREATE OR REPLACE FUNCTION "public"."add_activity_tag_follow"()
+  RETURNS "pg_catalog"."trigger" AS $BODY$ begin 
+	insert into activity 
+	select nextval('activity_id_seq'), new.user_id, 2, 4, new.tag_id, current_timestamp
+	where not exists (
+		select null from activity
+		where (user_id, action_type, action_sub_type, target_id) = (new.user_id, 2, 4, new.tag_id)
+	);
+	return null;
+end; $BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+-- ----------------------------
+-- Function structure for add_activity_user_collection_follow
+-- ----------------------------
+DROP FUNCTION IF EXISTS "public"."add_activity_user_collection_follow"();
+CREATE OR REPLACE FUNCTION "public"."add_activity_user_collection_follow"()
+  RETURNS "pg_catalog"."trigger" AS $BODY$ begin 
+	insert into activity 
+	select nextval('activity_id_seq'), new.user_id, 2, 3, new.collect_id, current_timestamp
+	where not exists (
+		select null from activity
+		where (user_id, action_type, action_sub_type, target_id) = (new.user_id, 2, 3, new.collect_id)
+	);
+	return null;
+end; $BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+-- ----------------------------
+-- Function structure for add_activity_user_column_follow
+-- ----------------------------
+DROP FUNCTION IF EXISTS "public"."add_activity_user_column_follow"();
+CREATE OR REPLACE FUNCTION "public"."add_activity_user_column_follow"()
+  RETURNS "pg_catalog"."trigger" AS $BODY$ begin 
+	insert into activity 
+	select nextval('activity_id_seq'), new.user_id, 2, 2, new.column_id, current_timestamp
+	where not exists (
+		select null from activity
+		where (user_id, action_type, action_sub_type, target_id) = (new.user_id, 2, 2, new.column_id)
+	);
+	return null;
+end; $BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+-- ----------------------------
+-- Function structure for add_activity_user_follow
+-- ----------------------------
+DROP FUNCTION IF EXISTS "public"."add_activity_user_follow"();
+CREATE OR REPLACE FUNCTION "public"."add_activity_user_follow"()
+  RETURNS "pg_catalog"."trigger" AS $BODY$ begin 
+	insert into activity 
+	select nextval('activity_id_seq'), new.follower_id, 2, 1, new.followed_id, current_timestamp
+	where not exists (
+		select null from activity
+		where (user_id, action_type, action_sub_type, target_id) = (new.follower_id, 2, 1, new.followed_id)
+	);
+	return null;
+end; $BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
 
 -- ----------------------------
 -- View structure for pin_comment_view
@@ -1519,6 +1708,27 @@ CREATE VIEW "public"."post_view" AS  SELECT p.id,
           GROUP BY post_like.post_id) l ON p.id = l.post_id;
 
 -- ----------------------------
+-- View structure for pin_view
+-- ----------------------------
+DROP VIEW IF EXISTS "public"."pin_view";
+CREATE VIEW "public"."pin_view" AS  SELECT p.id,
+    p.content,
+    p.create_time,
+    p.update_time,
+    p.author_id,
+    p.view_num,
+        CASE
+            WHEN l.like_num IS NULL THEN 0::bigint
+            ELSE l.like_num
+        END AS like_num
+   FROM pin p
+     LEFT JOIN ( SELECT pin_like.pin_id,
+            count(*) AS like_num
+           FROM pin_like
+          WHERE pin_like.type = 1
+          GROUP BY pin_like.pin_id) l ON p.id = l.pin_id;
+
+-- ----------------------------
 -- View structure for user_view
 -- ----------------------------
 DROP VIEW IF EXISTS "public"."user_view";
@@ -1552,12 +1762,12 @@ CREATE VIEW "public"."user_view" AS  SELECT u.id,
      LEFT JOIN ( SELECT user_follow.follower_id,
             count(*) AS followed_num
            FROM user_follow
-          WHERE user_follow.type = 1
+          WHERE user_follow.follow = true
           GROUP BY user_follow.follower_id) followed ON u.id = followed.follower_id
      LEFT JOIN ( SELECT user_follow.followed_id,
             count(*) AS follower_num
            FROM user_follow
-          WHERE user_follow.type = 1
+          WHERE user_follow.follow = true
           GROUP BY user_follow.followed_id) follower ON u.id = follower.followed_id
      LEFT JOIN ( SELECT post_view.author_id,
             sum(post_view.view_num) AS post_view_num
@@ -1569,25 +1779,11 @@ CREATE VIEW "public"."user_view" AS  SELECT u.id,
           GROUP BY post_view.author_id) p2 ON u.id = p2.author_id;
 
 -- ----------------------------
--- View structure for pin_view
+-- Alter sequences owned by
 -- ----------------------------
-DROP VIEW IF EXISTS "public"."pin_view";
-CREATE VIEW "public"."pin_view" AS  SELECT p.id,
-    p.content,
-    p.create_time,
-    p.update_time,
-    p.author_id,
-    p.view_num,
-        CASE
-            WHEN l.like_num IS NULL THEN 0::bigint
-            ELSE l.like_num
-        END AS like_num
-   FROM pin p
-     LEFT JOIN ( SELECT pin_like.pin_id,
-            count(*) AS like_num
-           FROM pin_like
-          WHERE pin_like.type = 1
-          GROUP BY pin_like.pin_id) l ON p.id = l.pin_id;
+ALTER SEQUENCE "public"."activity_id_seq"
+OWNED BY "public"."activity"."id";
+SELECT setval('"public"."activity_id_seq"', 13, true);
 
 -- ----------------------------
 -- Alter sequences owned by
@@ -1615,7 +1811,7 @@ SELECT setval('"public"."column_id_seq"', 1, false);
 -- ----------------------------
 ALTER SEQUENCE "public"."pin_comment_id_seq"
 OWNED BY "public"."pin_comment"."id";
-SELECT setval('"public"."pin_comment_id_seq"', 1, false);
+SELECT setval('"public"."pin_comment_id_seq"', 34, true);
 
 -- ----------------------------
 -- Alter sequences owned by
@@ -1636,7 +1832,7 @@ SELECT setval('"public"."pin_comment_like_user_id_seq"', 1, false);
 -- ----------------------------
 ALTER SEQUENCE "public"."pin_id_seq"
 OWNED BY "public"."pin"."id";
-SELECT setval('"public"."pin_id_seq"', 13, true);
+SELECT setval('"public"."pin_id_seq"', 21, true);
 
 -- ----------------------------
 -- Alter sequences owned by
@@ -1754,7 +1950,7 @@ SELECT setval('"public"."sys_user_id_seq"', 9, true);
 -- Alter sequences owned by
 -- ----------------------------
 ALTER SEQUENCE "public"."tag_follow_follower_id_seq"
-OWNED BY "public"."tag_follow"."follower_id";
+OWNED BY "public"."tag_follow"."user_id";
 SELECT setval('"public"."tag_follow_follower_id_seq"', 1, false);
 
 -- ----------------------------
@@ -1814,6 +2010,11 @@ OWNED BY "public"."user_follow"."follower_id";
 SELECT setval('"public"."user_follow_follower_id_seq"', 1, false);
 
 -- ----------------------------
+-- Primary Key structure for table activity
+-- ----------------------------
+ALTER TABLE "public"."activity" ADD CONSTRAINT "activity_pkey" PRIMARY KEY ("id");
+
+-- ----------------------------
 -- Primary Key structure for table category
 -- ----------------------------
 ALTER TABLE "public"."category" ADD CONSTRAINT "category_pkey" PRIMARY KEY ("id");
@@ -1827,6 +2028,13 @@ ALTER TABLE "public"."collection" ADD CONSTRAINT "collection_pkey" PRIMARY KEY (
 -- Primary Key structure for table p_column
 -- ----------------------------
 ALTER TABLE "public"."p_column" ADD CONSTRAINT "column_pkey" PRIMARY KEY ("id");
+
+-- ----------------------------
+-- Triggers structure for table pin
+-- ----------------------------
+CREATE TRIGGER "activity_after_insert_pin" AFTER INSERT ON "public"."pin"
+FOR EACH ROW
+EXECUTE PROCEDURE "public"."add_activity_pin"();
 
 -- ----------------------------
 -- Primary Key structure for table pin
@@ -1844,9 +2052,24 @@ ALTER TABLE "public"."pin_comment" ADD CONSTRAINT "pin_comment_pkey" PRIMARY KEY
 ALTER TABLE "public"."pin_comment_like" ADD CONSTRAINT "pin_comment_like_pkey" PRIMARY KEY ("comment_id", "user_id");
 
 -- ----------------------------
+-- Triggers structure for table pin_like
+-- ----------------------------
+CREATE TRIGGER "activity_after_insert_or_update_pin_like" AFTER INSERT OR UPDATE ON "public"."pin_like"
+FOR EACH ROW
+WHEN ((new.type = 1))
+EXECUTE PROCEDURE "public"."add_activity_pin_like"();
+
+-- ----------------------------
 -- Primary Key structure for table pin_like
 -- ----------------------------
 ALTER TABLE "public"."pin_like" ADD CONSTRAINT "pin_like_pkey" PRIMARY KEY ("pin_id", "user_id");
+
+-- ----------------------------
+-- Triggers structure for table post
+-- ----------------------------
+CREATE TRIGGER "activity_after_insert_post" AFTER INSERT ON "public"."post"
+FOR EACH ROW
+EXECUTE PROCEDURE "public"."add_activity_post"();
 
 -- ----------------------------
 -- Primary Key structure for table post
@@ -1874,6 +2097,14 @@ ALTER TABLE "public"."post_comment" ADD CONSTRAINT "post_comment_pkey" PRIMARY K
 ALTER TABLE "public"."post_comment_like" ADD CONSTRAINT "post_comment_like_pkey" PRIMARY KEY ("comment_id", "user_id");
 
 -- ----------------------------
+-- Triggers structure for table post_like
+-- ----------------------------
+CREATE TRIGGER "activity_after_insert_or_update_post_like" AFTER INSERT OR UPDATE ON "public"."post_like"
+FOR EACH ROW
+WHEN ((new.type = 1))
+EXECUTE PROCEDURE "public"."add_activity_post_like"();
+
+-- ----------------------------
 -- Primary Key structure for table post_like
 -- ----------------------------
 ALTER TABLE "public"."post_like" ADD CONSTRAINT "post_like_pkey" PRIMARY KEY ("post_id", "user_id");
@@ -1899,9 +2130,25 @@ ALTER TABLE "public"."sys_user" ADD CONSTRAINT "sys_user_pkey" PRIMARY KEY ("id"
 ALTER TABLE "public"."tag" ADD CONSTRAINT "tag_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
+-- Triggers structure for table tag_follow
+-- ----------------------------
+CREATE TRIGGER "activity_after_insert_or_update_tag_follow" AFTER INSERT OR UPDATE ON "public"."tag_follow"
+FOR EACH ROW
+WHEN ((new.follow = true))
+EXECUTE PROCEDURE "public"."add_activity_tag_follow"();
+
+-- ----------------------------
 -- Primary Key structure for table tag_follow
 -- ----------------------------
-ALTER TABLE "public"."tag_follow" ADD CONSTRAINT "tag_follow_pkey" PRIMARY KEY ("tag_id", "follower_id");
+ALTER TABLE "public"."tag_follow" ADD CONSTRAINT "tag_follow_pkey" PRIMARY KEY ("tag_id", "user_id");
+
+-- ----------------------------
+-- Triggers structure for table user_collection_follow
+-- ----------------------------
+CREATE TRIGGER "activity_after_insert_or_update_user_collection_follow" AFTER INSERT OR UPDATE ON "public"."user_collection_follow"
+FOR EACH ROW
+WHEN ((new.follow = true))
+EXECUTE PROCEDURE "public"."add_activity_user_collection_follow"();
 
 -- ----------------------------
 -- Primary Key structure for table user_collection_follow
@@ -1909,14 +2156,35 @@ ALTER TABLE "public"."tag_follow" ADD CONSTRAINT "tag_follow_pkey" PRIMARY KEY (
 ALTER TABLE "public"."user_collection_follow" ADD CONSTRAINT "user_collection_pkey" PRIMARY KEY ("user_id", "collect_id");
 
 -- ----------------------------
+-- Triggers structure for table user_column_follow
+-- ----------------------------
+CREATE TRIGGER "activity_after_insert_or_update_user_column_follow" AFTER INSERT OR UPDATE ON "public"."user_column_follow"
+FOR EACH ROW
+WHEN ((new.follow = true))
+EXECUTE PROCEDURE "public"."add_activity_user_column_follow"();
+
+-- ----------------------------
 -- Primary Key structure for table user_column_follow
 -- ----------------------------
 ALTER TABLE "public"."user_column_follow" ADD CONSTRAINT "user_column_pkey" PRIMARY KEY ("user_id", "column_id");
 
 -- ----------------------------
+-- Triggers structure for table user_follow
+-- ----------------------------
+CREATE TRIGGER "activity_after_insert_or_update_user_follow" AFTER INSERT OR UPDATE ON "public"."user_follow"
+FOR EACH ROW
+WHEN ((new.follow = true))
+EXECUTE PROCEDURE "public"."add_activity_user_follow"();
+
+-- ----------------------------
 -- Primary Key structure for table user_follow
 -- ----------------------------
 ALTER TABLE "public"."user_follow" ADD CONSTRAINT "user_follow_pkey" PRIMARY KEY ("follower_id", "followed_id");
+
+-- ----------------------------
+-- Foreign Keys structure for table activity
+-- ----------------------------
+ALTER TABLE "public"."activity" ADD CONSTRAINT "activity_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "public"."sys_user" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- ----------------------------
 -- Foreign Keys structure for table collection
@@ -2003,7 +2271,7 @@ ALTER TABLE "public"."sys_user" ADD CONSTRAINT "fk_sys_user_role_1" FOREIGN KEY 
 -- ----------------------------
 -- Foreign Keys structure for table tag_follow
 -- ----------------------------
-ALTER TABLE "public"."tag_follow" ADD CONSTRAINT "fk_tag_follow_sys_user_1" FOREIGN KEY ("follower_id") REFERENCES "public"."sys_user" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE "public"."tag_follow" ADD CONSTRAINT "fk_tag_follow_sys_user_1" FOREIGN KEY ("user_id") REFERENCES "public"."sys_user" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE "public"."tag_follow" ADD CONSTRAINT "fk_tag_follow_tag_1" FOREIGN KEY ("tag_id") REFERENCES "public"."tag" ("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- ----------------------------

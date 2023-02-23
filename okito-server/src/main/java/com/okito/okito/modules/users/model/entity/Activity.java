@@ -1,7 +1,10 @@
 package com.okito.okito.modules.users.model.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -19,7 +22,7 @@ import java.time.LocalDateTime;
  * <p>
  * - like 点赞
  * <p>
- *   - post 文章
+ *   * post 文章
  * <p>
  *   - pin 想法
  * <p>
@@ -47,12 +50,15 @@ import java.time.LocalDateTime;
  */
 @Data
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "activity")
 public class Activity implements Serializable {
 
   @Id
   @Column(name = "id")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private Long id;
 
   @Column(name = "user_id")

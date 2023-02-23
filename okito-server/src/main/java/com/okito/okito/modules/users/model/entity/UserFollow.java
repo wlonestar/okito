@@ -25,7 +25,7 @@ public class UserFollow implements Serializable {
   @EmbeddedId
   private UserFollowId id;
 
-  @Column(name = "type")
-  private Short type;
+  @Column(name = "follow")
+  private Short follow;
 
 }
