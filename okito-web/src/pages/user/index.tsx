@@ -20,7 +20,6 @@ export default function UserPage({ currentUser }: UserPageProps) {
   }
 
   useMount(() => {
-    console.log(id)
     useUser(id as unknown as number).then((res) => {
       setUser(res.data)
     })

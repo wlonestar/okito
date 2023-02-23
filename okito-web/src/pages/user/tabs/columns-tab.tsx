@@ -23,16 +23,12 @@ export default function ColumnsTab() {
     const columns: Column[] = res.data
     columns.sort((a, b) => (a.createTime > b.createTime ? 0 : 1))
     setColumns(columns)
-
     if (currentUser !== null) {
       if (columns.length > 0) {
         if (currentUser.id === res.data[0].authorId) {
-          console.log('is homepage')
           setHomepage(true)
         }
       }
-    } else {
-      console.log('not login')
     }
   })
 

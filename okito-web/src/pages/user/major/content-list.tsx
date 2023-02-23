@@ -2,6 +2,7 @@ import React, { SyntheticEvent, useState } from 'react'
 import { Box, Divider, Paper, Tab, Tabs } from '@mui/material'
 import { User } from '../../../types/user'
 import { Link, Outlet, useParams } from 'react-router-dom'
+import { useMount } from '../../../utils/hook'
 
 const tabs = [
   { index: 0, label: '动态', path: '' },
@@ -19,12 +20,27 @@ interface ContentListProps {
 
 export default function ContentList({ user, currentUser }: ContentListProps) {
   const { id } = useParams()
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState<number>(0)
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
-    // TODO
   }
+
+  useMount(() => {
+    // set current active tab
+    const tab = window.location.pathname.split('/').pop()
+    if (tab === 'posts') {
+      setValue(1)
+    } else if (tab === 'columns') {
+      setValue(2)
+    } else if (tab === 'pins') {
+      setValue(3)
+    } else if (tab === 'collections') {
+      setValue(4)
+    } else if (tab === 'follows') {
+      setValue(5)
+    }
+  })
 
   return (
     <Box>

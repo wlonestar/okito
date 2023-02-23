@@ -9,19 +9,19 @@ import {
   Link,
   Typography,
 } from '@mui/material'
-import { Column } from '../../../../types/column'
-import { User } from '../../../../types/user'
+import { Column } from '../../../types/column'
+import { User } from '../../../types/user'
 import MetaData from './meta-data'
 import React, { useState } from 'react'
-import { useMount } from '../../../../utils/hook'
+import { useMount } from '../../../utils/hook'
 import {
   countFollowByColumnId,
   countPostsByColumnId,
-} from '../../../../api/column'
+} from '../../../api/column'
 import {
   selectUserColumnFollowByUserIdAndColumnId,
   updateFollowColumn,
-} from '../../../../api/user'
+} from '../../../api/user'
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined'
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined'
@@ -69,10 +69,7 @@ export default function ColumnCard({
     setPostsNum(postsNum.data)
     const followNum = await countFollowByColumnId(column.id)
     setFollowNum(followNum.data)
-    const param = {
-      userId: currentUser?.id,
-      columnId: column.id,
-    }
+    const param = { userId: currentUser?.id, columnId: column.id }
     const res = await selectUserColumnFollowByUserIdAndColumnId(param)
     if (res.status === 20) {
       const data = res.data

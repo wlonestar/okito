@@ -13,7 +13,7 @@ import {
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined'
-import MetaData from '../column-list/column-card/meta-data'
+import MetaData from '../column-card/meta-data'
 import { Column } from '../../../types/column'
 import {
   selectUserColumnFollowByUserIdAndColumnId,
@@ -22,7 +22,7 @@ import {
 import { useMount } from '../../../utils/hook'
 import { User } from '../../../types/user'
 import AuthorTitle from '../../author-title'
-import ActionList from '../column-list/column-card/action-list'
+import ActionList from '../column-card/action-list'
 
 interface ColumnTitleProps {
   column: Column

@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 import { Column } from '../../../types/column'
-import ColumnCard from './column-card'
+import ColumnCard from '../column-card'
 import { User } from '../../../types/user'
 
 interface ColumnListProps {

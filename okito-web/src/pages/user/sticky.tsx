@@ -72,14 +72,14 @@ const Follow = ({ user }: StickyProps) => {
     <Paper sx={{ mt: 2 }}>
       <Grid container>
         <Grid item xs>
-          <Button fullWidth sx={{ p: 2 }}>
+          <Button fullWidth sx={{ p: 2 }} href={`/user/${user.id}/follows`}>
             <Typography variant="body1">{'关注了'}</Typography>
             <Typography variant="body2">{user.followedNum}</Typography>
           </Button>
         </Grid>
         <Divider orientation="vertical" flexItem />
         <Grid item xs>
-          <Button fullWidth sx={{ p: 2 }}>
+          <Button fullWidth sx={{ p: 2 }} href={`/user/${user.id}/follows`}>
             <Typography variant="body1">{'关注者'}</Typography>
             <Typography variant="body2">{user.followerNum}</Typography>
           </Button>
@@ -99,7 +99,7 @@ const MoreInfo = ({ user }: StickyProps) => {
               underline="hover"
               color="text.primary"
               sx={{ ':hover': { color: 'text.secondary' } }}
-              href={'/'}
+              href={`/user/${user.id}/collections`}
             >
               {'收藏夹'}
             </Link>
@@ -112,7 +112,7 @@ const MoreInfo = ({ user }: StickyProps) => {
               underline="hover"
               color="text.primary"
               sx={{ ':hover': { color: 'text.secondary' } }}
-              href={'/'}
+              href={`/user/${user.id}/follow`}
             >
               {'关注标签'}
             </Link>
