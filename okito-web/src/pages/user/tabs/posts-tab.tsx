@@ -11,8 +11,8 @@ export default function PostsTab() {
   const { id } = useParams()
   const { user } = useAuth()
   const currentUser = user
+  const [value, setValue] = useState<number>(0)
   const [posts, setPosts] = useState<Post[]>([])
-  const [value, setValue] = useState(0)
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)

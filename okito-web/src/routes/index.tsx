@@ -12,6 +12,7 @@ const PostPage = lazy(() => import('../pages/post'))
 const TagsPage = lazy(() => import('../pages/tags'))
 const TagPage = lazy(() => import('../pages/tag'))
 const ColumnPage = lazy(() => import('../pages/column'))
+const CollectionPage = lazy(() => import('../pages/collection'))
 const PinPage = lazy(() => import('../pages/pin'))
 const UserPage = lazy(() => import('../pages/user'))
 
@@ -35,6 +36,10 @@ export default function CustomRoutes(params: CurrentUserProps) {
           <Route path="/tag" element={<TagsPage />} />
           <Route path="/tag/:id" element={<TagPage />} />
           <Route path="/column/:id" element={<ColumnPage {...params} />} />
+          <Route
+            path="/collection/:id"
+            element={<CollectionPage {...params} />}
+          />
           <Route path="/pin" element={<PinPage {...params} />} />
           <Route path="/user/:id" element={<UserPage {...params} />}>
             <Route path="/user/:id/" element={<HomeTab />} />

@@ -93,7 +93,7 @@ const MoreInfo = ({ user }: StickyProps) => {
   return (
     <Paper sx={{ mt: 2 }}>
       <List dense={false}>
-        <ListItem secondaryAction={1}>
+        <ListItem secondaryAction={'test'}>
           <ListItemText>
             <Link
               underline="hover"
@@ -106,7 +106,7 @@ const MoreInfo = ({ user }: StickyProps) => {
           </ListItemText>
         </ListItem>
         <Divider />
-        <ListItem secondaryAction={1}>
+        <ListItem secondaryAction={'test'}>
           <ListItemText>
             <Link
               underline="hover"
