@@ -34,4 +34,7 @@ public interface UserCollectionFollowRepository extends JpaRepository<UserCollec
       "where u.id.collectId = ?1 and u.follow = ?2")
   Page<UserCollectionFollow> findAllByCollectionIdAndType(Long collectionId, Boolean follow, Pageable pageable);
 
+  @Query(value = "select count(*) from user_collection_follow where collect_id = ?1 and follow = true", nativeQuery = true)
+  long countFollowByCollectionId(Long collectionId);
+
 }

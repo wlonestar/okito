@@ -40,4 +40,7 @@ public interface PostCollectionRepository extends JpaRepository<PostCollection, 
 //      "from Collection c where c.id in (select pc.id.collectId from PostCollection pc where pc.id.postId = ?1)")
 //  Page<Collection> findAllByPostId(Long postId, Pageable pageable);
 
+  @Query(value = "select count(*) from post_collection where collect_id = ?1", nativeQuery = true)
+  long countByCollectionId(Long collectionId);
+
 }

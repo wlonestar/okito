@@ -2,7 +2,9 @@ package com.okito.okito.modules.posts.service.impl;
 
 import com.okito.okito.modules.posts.model.entity.Collection;
 import com.okito.okito.modules.posts.repository.CollectionRepository;
+import com.okito.okito.modules.posts.repository.PostCollectionRepository;
 import com.okito.okito.modules.posts.service.CollectionService;
+import com.okito.okito.modules.users.repository.UserCollectionFollowRepository;
 import jakarta.annotation.Resource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,9 +24,20 @@ public class CollectionServiceImpl implements CollectionService {
   @Resource
   private CollectionRepository collectionRepository;
 
+  @Resource
+  private PostCollectionRepository postCollectionRepository;
+
+  @Resource
+  private UserCollectionFollowRepository userCollectionFollowRepository;
+
   @Override
   public List<Collection> selectAll() {
     return collectionRepository.findAll();
+  }
+
+  @Override
+  public List<Collection> selectAllByAuthorId(Long authorId) {
+    return collectionRepository.findAllByAuthorId(authorId);
   }
 
   @Override
@@ -35,6 +48,16 @@ public class CollectionServiceImpl implements CollectionService {
   @Override
   public Collection selectById(Long id) {
     return collectionRepository.findById(id).orElse(null);
+  }
+
+  @Override
+  public long countPostsByCollectionId(Long collectionId) {
+    return postCollectionRepository.countByCollectionId(collectionId);
+  }
+
+  @Override
+  public long countFollowByCollectionId(Long collectId) {
+    return userCollectionFollowRepository.countFollowByCollectionId(collectId);
   }
 
   @Override

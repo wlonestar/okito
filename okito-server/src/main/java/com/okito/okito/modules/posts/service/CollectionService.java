@@ -15,9 +15,15 @@ public interface CollectionService {
 
   List<Collection> selectAll();
 
+  List<Collection> selectAllByAuthorId(Long authorId);
+
   Page<Collection> selectAll(Pageable pageable);
 
   Collection selectById(Long id);
+
+  long countPostsByCollectionId(Long collectId);
+
+  long countFollowByCollectionId(Long collectId);
 
   boolean add(Collection collection);
 
