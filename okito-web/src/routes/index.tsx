@@ -6,6 +6,7 @@ import { lazy, Suspense } from 'react'
 
 const SignInPage = lazy(() => import('../pages/auth/sign-in'))
 const SignUpPage = lazy(() => import('../pages/auth/sign-up'))
+const AboutPage = lazy(() => import('../pages/about'))
 const HomePage = lazy(() => import('../pages/home'))
 const PostsPage = lazy(() => import('../pages/posts'))
 const PostPage = lazy(() => import('../pages/post'))
@@ -29,6 +30,7 @@ export default function CustomRoutes(params: CurrentUserProps) {
       <Routes>
         <Route path="/login" element={<SignInPage />} />
         <Route path="/register" element={<SignUpPage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route element={<Layout {...params} />} errorElement={<ErrorPage />}>
           <Route path="/" element={<HomePage {...params} />} />
           <Route path="/post" element={<PostsPage />} />

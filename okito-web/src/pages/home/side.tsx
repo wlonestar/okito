@@ -39,7 +39,7 @@ export const Side = () => {
         <Link
           underline="none"
           color="text.primary"
-          href={'https://github.com/wlonestar/okito'}
+          href={'/about'}
           target="_blank"
           sx={{ cursor: 'pointer' }}
         >
