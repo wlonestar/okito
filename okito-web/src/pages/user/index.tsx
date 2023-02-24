@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material'
 import { User, userDefault } from '../../types/user'
 import { useParams } from 'react-router-dom'
-import { selectUserById } from '../../api/user'
+import { countFollowTagsNumByUserId, selectUserById } from '../../api/user'
 import React, { useState } from 'react'
 import { useMount } from '../../utils/hook'
 import Major from './major'
@@ -16,18 +16,21 @@ export default function UserPage({ currentUser }: UserPageProps) {
   const { id } = useParams()
   const [user, setUser] = useState<User>(userDefault)
   const [collectionsNum, setCollectionsNum] = useState<number>(0)
+  const [tagsNum, setTagsNum] = useState<number>(0)
 
   useMount(async () => {
-    const user = await selectUserById(id as unknown as number)
+    const userId = id as unknown as number
+    const user = await selectUserById(userId)
     if (user.status === 20) {
       setUser(user.data)
     }
-    const collections = await countCollectionsByAuthorId(
-      id as unknown as number
-    )
+    const collections = await countCollectionsByAuthorId(userId)
     if (collections.status === 20) {
-      console.log(collections)
       setCollectionsNum(collections.data)
+    }
+    const tags = await countFollowTagsNumByUserId(userId)
+    if (tags.status === 20) {
+      setTagsNum(tags.data)
     }
   })
 
@@ -37,7 +40,7 @@ export default function UserPage({ currentUser }: UserPageProps) {
         <Major user={user} currentUser={currentUser} />
       </Grid>
       <Grid item xs={12} md={3.5}>
-        <Sticky user={user} collectionsNum={collectionsNum} />
+        <Sticky user={user} collectionsNum={collectionsNum} tagsNum={tagsNum} />
       </Grid>
     </Grid>
   )

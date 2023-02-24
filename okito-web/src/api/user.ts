@@ -101,3 +101,10 @@ export function updateUserFollow(param: {
     },
   })
 }
+
+export function countFollowTagsNumByUserId(userId: number) {
+  return client({
+    url: `/user/count/tag/${userId}`,
+    method: 'GET',
+  })
+}

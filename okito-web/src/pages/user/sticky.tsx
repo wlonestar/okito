@@ -20,6 +20,7 @@ import { formatDate } from '../../utils/date'
 interface StickyProps {
   user: User
   collectionsNum?: number
+  tagsNum?: number
 }
 
 const Achieve = ({ user }: StickyProps) => {
@@ -67,14 +68,22 @@ const Follow = ({ user }: StickyProps) => {
     <Paper sx={{ mt: 2 }}>
       <Grid container>
         <Grid item xs>
-          <Button fullWidth sx={{ p: 2 }} href={`/user/${user.id}/follows`}>
+          <Button
+            fullWidth
+            sx={{ p: 2 }}
+            href={`/user/${user.id}/follows?q=following`}
+          >
             <Typography variant="body1">{'关注了'}</Typography>
             <Typography variant="body2">{user.followedNum}</Typography>
           </Button>
         </Grid>
         <Divider orientation="vertical" flexItem />
         <Grid item xs>
-          <Button fullWidth sx={{ p: 2 }} href={`/user/${user.id}/follows`}>
+          <Button
+            fullWidth
+            sx={{ p: 2 }}
+            href={`/user/${user.id}/follows?q=followers`}
+          >
             <Typography variant="body1">{'关注者'}</Typography>
             <Typography variant="body2">{user.followerNum}</Typography>
           </Button>
@@ -84,7 +93,7 @@ const Follow = ({ user }: StickyProps) => {
   )
 }
 
-const MoreInfo = ({ user, collectionsNum }: StickyProps) => {
+const MoreInfo = ({ user, collectionsNum, tagsNum }: StickyProps) => {
   return (
     <Paper sx={{ mt: 2 }}>
       <List dense={false}>
@@ -101,13 +110,13 @@ const MoreInfo = ({ user, collectionsNum }: StickyProps) => {
           </ListItemText>
         </ListItem>
         <Divider />
-        <ListItem secondaryAction={'test'}>
+        <ListItem secondaryAction={tagsNum}>
           <ListItemText>
             <Link
               underline="hover"
               color="text.primary"
               sx={{ ':hover': { color: 'text.secondary' } }}
-              href={`/user/${user.id}/follow`}
+              href={`/user/${user.id}/follows?q=followed_tags`}
             >
               {'关注标签'}
             </Link>
@@ -122,12 +131,12 @@ const MoreInfo = ({ user, collectionsNum }: StickyProps) => {
   )
 }
 
-export default function Sticky({ user, collectionsNum }: StickyProps) {
+export default function Sticky({ user, collectionsNum, tagsNum }: StickyProps) {
   return (
     <>
       <Achieve user={user} />
       <Follow user={user} />
-      <MoreInfo user={user} collectionsNum={collectionsNum} />
+      <MoreInfo user={user} collectionsNum={collectionsNum} tagsNum={tagsNum} />
     </>
   )
 }

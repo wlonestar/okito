@@ -13,6 +13,9 @@ import {
   selectUserFollowingByUserId,
 } from '../../../api/user'
 import UserTitle from '../../../components/user/user-title'
+import { Tag } from '../../../types/tag'
+import { selectTagsByFollowerId } from '../../../api/tag'
+import TagTitle from '../../../components/tag/tag-title'
 
 export default function FollowsTab() {
   const { id } = useParams()
@@ -20,22 +23,30 @@ export default function FollowsTab() {
   const currentUser = user
   const [homepage, setHomepage] = useState<boolean>(false)
   const [value, setValue] = useState<number>(0)
-  const [followedColumns, setFollowedColumns] = useState<Column[]>([])
+
   const [followingUsers, setFollowingUsers] = useState<User[]>([])
   const [followerUsers, setFollowerUsers] = useState<User[]>([])
+  const [followedColumns, setFollowedColumns] = useState<Column[]>([])
+  const [followedTags, setFollowedTags] = useState<Tag[]>([])
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
 
   useMount(async () => {
+    const tab = window.location.href.split('=').pop()
+    console.log(tab)
+    if (tab === 'followers') {
+      setValue(1)
+    } else if (tab === 'followed_columns') {
+      setValue(2)
+    } else if (tab === 'followed_tags') {
+      setValue(3)
+    }
+
     const userId = id as unknown as number
     if (currentUser !== null && currentUser.id === userId) {
       setHomepage(true)
-    }
-    const columns = await selectColumnsByFollowerId(userId)
-    if (columns.status === 20) {
-      setFollowedColumns(columns.data)
     }
     const following = await selectUserFollowingByUserId(userId)
     if (following.status === 20) {
@@ -44,6 +55,14 @@ export default function FollowsTab() {
     const follower = await selectUserFollowerByUserId(userId)
     if (follower.status === 20) {
       setFollowerUsers(follower.data)
+    }
+    const columns = await selectColumnsByFollowerId(userId)
+    if (columns.status === 20) {
+      setFollowedColumns(columns.data)
+    }
+    const tags = await selectTagsByFollowerId(userId)
+    if (tags.status === 20) {
+      setFollowedTags(tags.data)
     }
   })
 
@@ -98,7 +117,9 @@ export default function FollowsTab() {
           />
         </TabPanel>
         <TabPanel index={3} value={value}>
-          {'followed_tags'}
+          {followedTags.map((tag) => (
+            <TagTitle key={tag.id} tag={tag} currentUser={currentUser} />
+          ))}
         </TabPanel>
       </Paper>
     </Paper>

@@ -22,3 +22,30 @@ export function selectTagById(id: number) {
     method: 'GET',
   })
 }
+
+export function selectTagFollowByUserIdAndTagId(param: {
+  userId: number | undefined
+  tagId: number
+}) {
+  return client({
+    url: '/tag/follow/single',
+    method: 'GET',
+    params: {
+      ...param,
+    },
+  })
+}
+
+export function updateTagFollow(param: {
+  userId: number | undefined
+  tagId: number
+  follow: boolean
+}) {
+  return client({
+    url: '/tag/follow',
+    method: 'PUT',
+    data: {
+      ...param,
+    },
+  })
+}
