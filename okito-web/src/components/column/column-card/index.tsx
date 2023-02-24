@@ -69,15 +69,17 @@ export default function ColumnCard({
     if (postsNum.status === 20) {
       setPostsNum(postsNum.data)
     }
-    const followNum = await countFollowByColumnId(column.id)
-    if (followNum.status === 20) {
-      setFollowNum(followNum.data)
-    }
-    const param = { userId: currentUser?.id, columnId: column.id }
-    const followData = await selectUserColumnFollowByUserIdAndColumnId(param)
-    if (followData.status === 20) {
-      if (followData.data.follow) {
-        setFollowed(true)
+    if (currentUser !== null) {
+      const followNum = await countFollowByColumnId(column.id)
+      if (followNum.status === 20) {
+        setFollowNum(followNum.data)
+      }
+      const param = { userId: currentUser?.id, columnId: column.id }
+      const followData = await selectUserColumnFollowByUserIdAndColumnId(param)
+      if (followData.status === 20) {
+        if (followData.data.follow) {
+          setFollowed(true)
+        }
       }
     }
   })

@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react'
+import React, { FormEvent, useRef, useState } from 'react'
 import { User } from '../../../types/user'
 import { defaultAvatar } from '../../../consts'
 import { PinCommentParam } from '../../../types/pin-comment'
@@ -17,15 +17,17 @@ export default function InputBox({
   replyCommentId,
   currentUser,
 }: InputBoxProps) {
+  const [disable, setDisable] = useState<boolean>(true)
   const reply = {
     id: currentUser === null ? 0 : currentUser.id,
     username: currentUser === null ? 'default' : currentUser.username,
     avatar: currentUser === null ? defaultAvatar : currentUser.avatar,
   }
+  const valueRef = useRef('')
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
     if (currentUser !== null) {
-      event.preventDefault()
       const data = new FormData(event.currentTarget)
       const commentParam: PinCommentParam = {
         id: 0,
@@ -46,6 +48,16 @@ export default function InputBox({
     }
   }
 
+  const handleChange = () => {
+    // @ts-ignore
+    const value = valueRef.current.value
+    if (value.trim() !== '') {
+      setDisable(false)
+    } else {
+      setDisable(true)
+    }
+  }
+
   return (
     <Box
       component="form"
@@ -62,9 +74,11 @@ export default function InputBox({
         id="content"
         name="content"
         placeholder="输入评论"
+        onChange={handleChange}
+        inputRef={valueRef}
         sx={{ ml: 2, mr: 2, width: '75%' }}
       />
-      <Button variant="contained" type="submit">
+      <Button variant="contained" type="submit" disabled={disable}>
         {'发送'}
       </Button>
     </Box>

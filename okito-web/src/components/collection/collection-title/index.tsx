@@ -72,21 +72,22 @@ export default function CollectionTitle({
     if (posts.status === 20) {
       setPostsNum(posts.data)
     }
-    const follows = await countFollowNumByCollectionId(collection.id)
-    if (follows.status === 20) {
-      setFollowNum(follows.data)
-    }
-    const param = { userId: currentUser?.id, collectionId: collection.id }
-    const followData = await selectUserCollectionFollowByUserIdAndCollectionId(
-      param
-    )
-    if (followData.status === 20) {
-      if (followData.data.follow) {
-        setFollowed(true)
+    if (currentUser !== null) {
+      const follows = await countFollowNumByCollectionId(collection.id)
+      if (follows.status === 20) {
+        setFollowNum(follows.data)
       }
-    }
-    if (collection.authorId === currentUser?.id) {
-      setIsAuthor(true)
+      const param = { userId: currentUser.id, collectionId: collection.id }
+      const followData =
+        await selectUserCollectionFollowByUserIdAndCollectionId(param)
+      if (followData.status === 20) {
+        if (followData.data.follow) {
+          setFollowed(true)
+        }
+      }
+      if (collection.authorId === currentUser.id) {
+        setIsAuthor(true)
+      }
     }
   })
 

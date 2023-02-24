@@ -1,5 +1,5 @@
 import { Box, Button, TextField } from '@mui/material'
-import React, { FormEvent } from 'react'
+import React, { FormEvent, useRef, useState } from 'react'
 import { defaultAvatar } from '../../../consts'
 import { User } from '../../../types/user'
 import { PostCommentParam } from '../../../types/post-comment'
@@ -17,11 +17,13 @@ export default function InputBox({
   replyCommentId,
   currentUser,
 }: ReplyBoxProps) {
+  const [disable, setDisable] = useState<boolean>(true)
   const reply = {
     id: currentUser === null ? 0 : currentUser.id,
     username: currentUser === null ? 'default' : currentUser.username,
     avatar: currentUser === null ? defaultAvatar : currentUser.avatar,
   }
+  const valueRef = useRef('')
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     if (currentUser !== null) {
@@ -46,12 +48,22 @@ export default function InputBox({
     }
   }
 
+  const handleChange = () => {
+    // @ts-ignore
+    const value = valueRef.current.value
+    if (value.trim() !== '') {
+      setDisable(false)
+    } else {
+      setDisable(true)
+    }
+  }
+
   return (
     <Box
       component="form"
       onSubmit={handleSubmit}
       noValidate
-      sx={{ mt: 3, mb: 4 }}
+      sx={{ mt: 3, mb: 4, display: 'flex', alignItems: 'flex-start' }}
     >
       <AuthorAvatar author={reply} />
       <TextField
@@ -61,9 +73,12 @@ export default function InputBox({
         id="content"
         name="content"
         placeholder="输入评论"
-        sx={{ ml: 1, mr: 2, width: '75%' }}
+        fullWidth
+        onChange={handleChange}
+        inputRef={valueRef}
+        sx={{ ml: 2, mr: 2 }}
       />
-      <Button variant="contained" type="submit">
+      <Button variant="contained" type="submit" disabled={disable}>
         {'发送'}
       </Button>
     </Box>

@@ -46,10 +46,12 @@ export default function UserTitle({ user, currentUser }: UserTitleProps) {
       followerId: currentUser?.id,
       followedId: user.id,
     }
-    const follow = await selectUserFollowByUserIdAndFollowedId(param)
-    if (follow.status === 20) {
-      if (follow.data.follow) {
-        setFollowed(true)
+    if (currentUser !== null) {
+      const follow = await selectUserFollowByUserIdAndFollowedId(param)
+      if (follow.status === 20) {
+        if (follow.data.follow) {
+          setFollowed(true)
+        }
       }
     }
   })

@@ -1,5 +1,5 @@
 import { Box, Button, Paper, TextField } from '@mui/material'
-import { FormEvent } from 'react'
+import { FormEvent, useRef, useState } from 'react'
 import { Pin, PinParam } from '../../types/pin'
 import { User } from '../../types/user'
 import { addPin } from '../../api/pin'
@@ -10,9 +10,12 @@ interface PinBoxProps {
 }
 
 function PinBox({ currentUser }: PinBoxProps) {
+  const [disable, setDisable] = useState<boolean>(true)
+  const valueRef = useRef('')
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
     if (currentUser !== null) {
-      event.preventDefault()
       const data = new FormData(event.currentTarget)
       const pinParam: PinParam = {
         id: 0,
@@ -32,6 +35,16 @@ function PinBox({ currentUser }: PinBoxProps) {
     }
   }
 
+  const handleChange = () => {
+    // @ts-ignore
+    const value = valueRef.current.value
+    if (value.trim() !== '') {
+      setDisable(false)
+    } else {
+      setDisable(true)
+    }
+  }
+
   return (
     <Paper>
       <Box component="form" onSubmit={handleSubmit} noValidate sx={{ p: 3 }}>
@@ -43,11 +56,18 @@ function PinBox({ currentUser }: PinBoxProps) {
           name="content"
           placeholder="一起分享新鲜事！"
           fullWidth
+          onChange={handleChange}
+          inputRef={valueRef}
         />
         <Box
           sx={{ width: '100%', display: 'flex', alignItems: 'center', pt: 2 }}
         >
-          <Button variant="contained" type="submit" sx={{ marginLeft: 'auto' }}>
+          <Button
+            variant="contained"
+            type="submit"
+            sx={{ marginLeft: 'auto' }}
+            disabled={disable}
+          >
             {'发布'}
           </Button>
         </Box>
