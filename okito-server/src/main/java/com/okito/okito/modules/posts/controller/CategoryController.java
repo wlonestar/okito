@@ -7,9 +7,6 @@ import com.okito.okito.modules.posts.model.entity.Category;
 import com.okito.okito.modules.posts.service.CategoryService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,18 +36,6 @@ public class CategoryController {
   @RequestMapping(method = RequestMethod.GET, path = "")
   public RespResult<?> selectAll() {
     return RespResult.success(categoryService.selectAll());
-  }
-
-  /**
-   * select all categories by page
-   *
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page")
-  public RespResult<?> selectAll(
-      @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(categoryService.selectAll(pageable));
   }
 
   /**

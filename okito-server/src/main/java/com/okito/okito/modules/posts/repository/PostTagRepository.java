@@ -29,11 +29,13 @@ public interface PostTagRepository extends JpaRepository<PostTag, PostTagId> {
       "from TagView t where t.id in (select pt.id.tagId from PostTag pt where pt.id.postId = ?1)")
   List<TagView> findAllByPostId(Long postId);
 
+  // TODO: move to post repository
   @Query(value = "select new PostView(p.id, p.title, p.summary, p.cover, p.content, " +
       "p.createTime, p.updateTime, p.draft, p.cateId, p.authorId, p.viewNum, p.likeNum) " +
       "from PostView p where p.id in (select pt.id.postId from PostTag pt where pt.id.tagId = ?1)")
   Page<PostView> findAllByTagId(Long tagId, Pageable pageable);
 
+  // TODO: move to post repository
   @Query(value = "select new TagView(t.id, t.name, t.description, t.cover, t.followNum, t.postNum) " +
       "from TagView t where t.id in (select pt.id.tagId from PostTag pt where pt.id.postId = ?1)")
   Page<TagView> findAllByPostId(Long postId, Pageable pageable);

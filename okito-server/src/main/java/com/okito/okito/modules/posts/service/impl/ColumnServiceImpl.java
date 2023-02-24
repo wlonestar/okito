@@ -7,8 +7,6 @@ import com.okito.okito.modules.posts.service.ColumnService;
 import com.okito.okito.modules.users.repository.UserColumnFollowRepository;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -48,11 +46,6 @@ public class ColumnServiceImpl implements ColumnService {
   }
 
   @Override
-  public Page<Column> selectAll(Pageable pageable) {
-    return columnRepository.findAll(pageable);
-  }
-
-  @Override
   public Column selectById(Long id) {
     return columnRepository.findById(id).orElse(null);
   }
@@ -63,8 +56,8 @@ public class ColumnServiceImpl implements ColumnService {
   }
 
   @Override
-  public long countFollowByColumnId(Long columnId) {
-    return userColumnFollowRepository.countFollowByColumnId(columnId);
+  public long countFollowNumByColumnId(Long columnId) {
+    return userColumnFollowRepository.countFollowNumByColumnId(columnId);
   }
 
   @Override

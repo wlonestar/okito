@@ -1,8 +1,6 @@
 package com.okito.okito.modules.posts.service;
 
 import com.okito.okito.modules.posts.model.entity.Category;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -16,8 +14,6 @@ public interface CategoryService {
   List<Category> selectAll();
 
   List<String> selectAllNames();
-
-  Page<Category> selectAll(Pageable pageable);
 
   Category selectById(Long id);
 

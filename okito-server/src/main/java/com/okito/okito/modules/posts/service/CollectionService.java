@@ -1,8 +1,6 @@
 package com.okito.okito.modules.posts.service;
 
 import com.okito.okito.modules.posts.model.entity.Collection;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -19,15 +17,13 @@ public interface CollectionService {
 
   List<Collection> selectAllByFollowerId(Long followerId);
 
-  Page<Collection> selectAll(Pageable pageable);
-
   Collection selectById(Long id);
 
   long countByAuthorId(Long authorId);
 
   long countPostsByCollectionId(Long collectId);
 
-  long countFollowByCollectionId(Long collectId);
+  long countFollowNumByCollectionId(Long collectId);
 
   boolean add(Collection collection);
 

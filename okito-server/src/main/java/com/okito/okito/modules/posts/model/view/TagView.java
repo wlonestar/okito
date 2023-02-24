@@ -26,8 +26,8 @@ public class TagView implements Serializable {
   @Id
   private Long id;
   private String name;
-  private String description;
   private String cover;
+  private String description;
   private Long followNum;
   private Long postNum;
 

@@ -4,8 +4,6 @@ import com.okito.okito.modules.posts.model.entity.Category;
 import com.okito.okito.modules.posts.repository.CategoryRepository;
 import com.okito.okito.modules.posts.service.CategoryService;
 import jakarta.annotation.Resource;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,11 +28,6 @@ public class CategoryServiceImpl implements CategoryService {
   @Override
   public List<String> selectAllNames() {
     return categoryRepository.findAllNames();
-  }
-
-  @Override
-  public Page<Category> selectAll(Pageable pageable) {
-    return categoryRepository.findAll(pageable);
   }
 
   @Override
@@ -78,7 +71,6 @@ public class CategoryServiceImpl implements CategoryService {
 
   @Override
   public boolean deleteById(Long id) {
-    // TODO: delete cascade
     Category category = categoryRepository.findById(id).orElse(null);
     if (!Objects.equals(category, null)) {
       categoryRepository.deleteById(id);

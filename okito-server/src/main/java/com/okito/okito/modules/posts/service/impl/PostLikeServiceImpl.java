@@ -5,8 +5,6 @@ import com.okito.okito.modules.posts.model.entity.PostLikeId;
 import com.okito.okito.modules.posts.repository.PostLikeRepository;
 import com.okito.okito.modules.posts.service.PostLikeService;
 import jakarta.annotation.Resource;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,16 +29,6 @@ public class PostLikeServiceImpl implements PostLikeService {
   @Override
   public List<PostLike> selectAllByUserId(Long userId) {
     return postLikeRepository.findAllByUserId(userId);
-  }
-
-  @Override
-  public Page<PostLike> selectAll(Pageable pageable) {
-    return postLikeRepository.findAll(pageable);
-  }
-
-  @Override
-  public Page<PostLike> selectAllByUserId(Long userId, Pageable pageable) {
-    return postLikeRepository.findAllByPostId(userId, pageable);
   }
 
   @Override

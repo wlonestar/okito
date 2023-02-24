@@ -7,9 +7,6 @@ import com.okito.okito.modules.posts.model.entity.Column;
 import com.okito.okito.modules.posts.service.ColumnService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
@@ -64,18 +61,6 @@ public class ColumnController {
   }
 
   /**
-   * select all columns by page
-   *
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page")
-  public RespResult<?> selectAll(
-      @NonNull @PageableDefault(sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(columnService.selectAll(pageable));
-  }
-
-  /**
    * select column by id
    *
    * @param id id
@@ -108,8 +93,8 @@ public class ColumnController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/count/follow/{columnId}")
-  public RespResult<?> countFollowByColumnId(@NonNull @PathVariable(name = "columnId") Long columnId) {
-    return RespResult.success(columnService.countFollowByColumnId(columnId));
+  public RespResult<?> countFollowNumByColumnId(@NonNull @PathVariable(name = "columnId") Long columnId) {
+    return RespResult.success(columnService.countFollowNumByColumnId(columnId));
   }
 
   /**

@@ -2,8 +2,6 @@ package com.okito.okito.modules.users.service;
 
 import com.okito.okito.modules.users.model.entity.User;
 import com.okito.okito.modules.users.model.view.UserView;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -16,8 +14,6 @@ public interface UserService {
 
   List<UserView> selectAll();
 
-  List<UserView> selectAllByTagId(Long tagId);
-
   List<UserView> selectFollowingByUserId(Long userId);
 
   List<UserView> selectFollowerByUserId(Long userId);
@@ -26,17 +22,13 @@ public interface UserService {
 
   List<String> selectAllEmails();
 
-  Page<UserView> selectAll(Pageable pageable);
-
-  Page<UserView> selectAllByTagId(Long tagId, Pageable pageable);
-
-  User selectByUsernameAndPassword(String username, String password);
-
   User selectByEmailAndPassword(String email, String password);
 
   User selectById(Long id);
 
   UserView selectViewById(Long id);
+
+  long countFollowTagsNumById(Long id);
 
   boolean add(User user);
 

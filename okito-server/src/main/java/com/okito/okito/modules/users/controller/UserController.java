@@ -63,4 +63,15 @@ public class UserController {
     return RespResult.fail(RespStatus.NOT_EXIST);
   }
 
+  /**
+   * count follow tags num by user id
+   *
+   * @param userId user id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/count/tag/{userId}")
+  public RespResult<?> countFollowTagsNum(@NonNull @PathVariable(name = "userId") Long userId) {
+    return RespResult.success(userService.countFollowTagsNumById(userId));
+  }
+
 }

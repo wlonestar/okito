@@ -1,8 +1,6 @@
 package com.okito.okito.modules.posts.service;
 
 import com.okito.okito.modules.posts.model.entity.Column;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -19,13 +17,11 @@ public interface ColumnService {
 
   List<Column> selectAllByFollowerId(Long userId);
 
-  Page<Column> selectAll(Pageable pageable);
-
   Column selectById(Long id);
 
   long countPostsByColumnId(Long columnId);
 
-  long countFollowByColumnId(Long columnId);
+  long countFollowNumByColumnId(Long columnId);
 
   boolean add(Column column);
 

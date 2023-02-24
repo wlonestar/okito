@@ -19,15 +19,11 @@ import java.util.List;
 @Repository
 public interface PostColumnRepository extends JpaRepository<PostColumn, PostColumnId> {
 
+  // TODO: move to post repository
   @Query(value = "select new PostView(p.id, p.title, p.summary, p.cover, p.content, " +
       "p.createTime, p.updateTime, p.draft, p.cateId, p.authorId, p.viewNum, p.likeNum) " +
       "from PostView p where p.id in (select pc.id.postId from PostColumn pc where pc.id.columnId = ?1)")
   List<PostView> findAllByColumnId(Long columnId);
-
-  @Query(value = "select new PostView(p.id, p.title, p.summary, p.cover, p.content, " +
-      "p.createTime, p.updateTime, p.draft, p.cateId, p.authorId, p.viewNum, p.likeNum) " +
-      "from PostView p where p.id in (select pc.id.postId from PostColumn pc where pc.id.columnId = ?1)")
-  Page<PostView> findAllByColumnId(Long columnId, Pageable pageable);
 
   @Query(value = "select count(*) from post_column where column_id = ?1", nativeQuery = true)
   long countByColumnId(Long columnId);

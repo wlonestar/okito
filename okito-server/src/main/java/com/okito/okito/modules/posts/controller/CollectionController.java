@@ -7,9 +7,6 @@ import com.okito.okito.modules.posts.model.entity.Collection;
 import com.okito.okito.modules.posts.service.CollectionService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
@@ -64,18 +61,6 @@ public class CollectionController {
   }
 
   /**
-   * select all collections by page
-   *
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page")
-  public RespResult<?> selectAll(
-      @NonNull @PageableDefault(sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(collectionService.selectAll(pageable));
-  }
-
-  /**
    * select collection by id
    *
    * @param id id
@@ -102,6 +87,8 @@ public class CollectionController {
   }
 
   /**
+   * TODO: move to post controller
+   * <p>
    * count posts by collection id
    *
    * @param collectionId collection id
@@ -119,8 +106,8 @@ public class CollectionController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/count/follow/{collectionId}")
-  public RespResult<?> countFollowByCollectionId(@NonNull @PathVariable(name = "collectionId") Long collectionId) {
-    return RespResult.success(collectionService.countFollowByCollectionId(collectionId));
+  public RespResult<?> countFollowNumByCollectionId(@NonNull @PathVariable(name = "collectionId") Long collectionId) {
+    return RespResult.success(collectionService.countFollowNumByCollectionId(collectionId));
   }
 
   /**

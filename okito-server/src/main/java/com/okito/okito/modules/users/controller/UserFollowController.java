@@ -9,9 +9,6 @@ import com.okito.okito.modules.users.model.param.UserFollowParam;
 import com.okito.okito.modules.users.service.UserFollowService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
@@ -63,46 +60,6 @@ public class UserFollowController {
   @RequestMapping(method = RequestMethod.GET, path = "/followed/{userId}")
   public RespResult<?> selectFollowedsByUserId(@NonNull @PathVariable(name = "userId") Long userId) {
     return RespResult.success(userFollowService.selectFollowedsByUserId(userId));
-  }
-
-  /**
-   * select all userFollows by page
-   *
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page")
-  public RespResult<?> selectAll(
-      @NonNull @PageableDefault(sort = "type", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(userFollowService.selectAll(pageable));
-  }
-
-  /**
-   * select followers by userId and page
-   *
-   * @param userId   userId
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/follower/{userId}")
-  public RespResult<?> selectFollowersByUserId(
-      @NonNull @PathVariable(name = "userId") Long userId,
-      @NonNull @PageableDefault(sort = "type", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(userFollowService.selectFollowersByUserId(userId, pageable));
-  }
-
-  /**
-   * select followeds by userId and page
-   *
-   * @param userId   userId
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/followed/{userId}")
-  public RespResult<?> selectFollowedsByUserId(
-      @NonNull @PathVariable(name = "userId") Long userId,
-      @NonNull @PageableDefault(sort = "type", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(userFollowService.selectFollowedsByUserId(userId, pageable));
   }
 
   /**
