@@ -35,7 +35,6 @@ export default function FollowsTab() {
 
   useMount(async () => {
     const tab = window.location.href.split('=').pop()
-    console.log(tab)
     if (tab === 'followers') {
       setValue(1)
     } else if (tab === 'followed_columns') {

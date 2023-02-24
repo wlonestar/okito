@@ -13,7 +13,7 @@ import { PointerDivider } from '../../divider'
 import React, { useState } from 'react'
 import { useMount } from '../../../utils/hook'
 import {
-  countFollowByCollectionId,
+  countFollowNumByCollectionId,
   countPostsByCollectionId,
 } from '../../../api/collection'
 import {
@@ -72,7 +72,7 @@ export default function CollectionTitle({
     if (posts.status === 20) {
       setPostsNum(posts.data)
     }
-    const follows = await countFollowByCollectionId(collection.id)
+    const follows = await countFollowNumByCollectionId(collection.id)
     if (follows.status === 20) {
       setFollowNum(follows.data)
     }

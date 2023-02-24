@@ -18,7 +18,6 @@ export default function Nav() {
 
   useMount(() => {
     const path = window.location.pathname
-    console.log(path)
     if (path === '/') {
       setValue(1)
     } else if (path === '/pin') {

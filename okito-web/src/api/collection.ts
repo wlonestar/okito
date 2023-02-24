@@ -30,7 +30,7 @@ export function countPostsByCollectionId(collectionId: number) {
   })
 }
 
-export function countFollowByCollectionId(collectionId: number) {
+export function countFollowNumByCollectionId(collectionId: number) {
   return client({
     url: `${prefix}/count/follow/${collectionId}`,
     method: 'GET',
