@@ -49,33 +49,54 @@ const AuthorCard = ({ currentUser }: AuthorCardProps) => {
           </Link>
         </Box>
         <Divider sx={{ m: 2 }} />
-        <Box
-          sx={{
-            p: 2,
-            display: 'flex',
-            justifyContent: 'space-evenly',
-            alignItems: 'center',
-          }}
-        >
-          <Box sx={{ mr: 3 }}>
-            <Typography variant="h6" fontWeight={600}>
-              {pinNum}
-            </Typography>
-            <Typography color="text.secondary">想法</Typography>
+        {currentUser !== null ? (
+          <Box
+            sx={{
+              p: 2,
+              display: 'flex',
+              justifyContent: 'space-evenly',
+              alignItems: 'center',
+            }}
+          >
+            <Link
+              underline="none"
+              color="text.primary"
+              href={`/user/${currentUser.id}/pins`}
+              target="_blank"
+              sx={{ mr: 3 }}
+            >
+              <Typography variant="h6" fontWeight={600}>
+                {pinNum}
+              </Typography>
+              <Typography color="text.secondary">想法</Typography>
+            </Link>
+            <Link
+              underline="none"
+              color="text.primary"
+              href={`/user/${currentUser.id}/follows?q=following`}
+              target="_blank"
+              sx={{ mr: 3 }}
+            >
+              <Typography variant="h6" fontWeight={600}>
+                {user.followedNum}
+              </Typography>
+              <Typography color="text.secondary">关注</Typography>
+            </Link>
+            <Link
+              underline="none"
+              color="text.primary"
+              href={`/user/${currentUser.id}/follows?q=followers`}
+              target="_blank"
+            >
+              <Typography variant="h6" fontWeight={600}>
+                {user.followerNum}
+              </Typography>
+              <Typography color="text.secondary">关注者</Typography>
+            </Link>
           </Box>
-          <Box sx={{ mr: 3 }}>
-            <Typography variant="h6" fontWeight={600}>
-              {user.followedNum}
-            </Typography>
-            <Typography color="text.secondary">关注</Typography>
-          </Box>
-          <Box>
-            <Typography variant="h6" fontWeight={600}>
-              {user.followerNum}
-            </Typography>
-            <Typography color="text.secondary">关注者</Typography>
-          </Box>
-        </Box>
+        ) : (
+          ''
+        )}
       </Box>
     </Paper>
   )

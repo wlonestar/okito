@@ -40,6 +40,7 @@ export default function InputBox({
           console.log(res)
         }
       })
+      window.location.reload()
     } else {
       window.location.assign('/login')
     }

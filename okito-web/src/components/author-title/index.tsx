@@ -8,12 +8,16 @@ interface AuthorTitleProps {
   author: User
   viewNum: number
   dateTime?: Date
+  width?: number
+  height?: number
 }
 
 export default function AuthorTitle({
   author,
   viewNum,
   dateTime,
+  width = 32,
+  height = 32,
 }: AuthorTitleProps) {
   const authorAvatar = {
     id: author.id,
@@ -24,7 +28,7 @@ export default function AuthorTitle({
   return (
     <Grid container spacing={2}>
       <Grid item>
-        <AuthorAvatar author={authorAvatar} width={32} height={32} />
+        <AuthorAvatar author={authorAvatar} width={width} height={height} />
       </Grid>
       <Grid item xs={12} sm container>
         <Grid item xs container direction="column" spacing={2}>
