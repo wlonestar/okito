@@ -46,13 +46,7 @@ export default function ContentList({ user, currentUser }: ContentListProps) {
     <Box>
       <Paper sx={{ mt: 2, mb: 2 }}>
         <Box sx={{ width: '100%', margin: 'auto' }}>
-          <Box
-            sx={{
-              width: '100%',
-              borderRadius: '5px',
-              borderWidth: '1px 1px thin',
-            }}
-          >
+          <Box sx={{ width: '100%' }}>
             <Tabs value={value} onChange={handleChange}>
               {tabs.map(({ index, label, path }) => (
                 <Tab

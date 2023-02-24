@@ -3,14 +3,14 @@ import { SignInForm } from './types/sign-in-param'
 import { User } from './types/user'
 import { SignUpForm } from './types/sign-up-param'
 
-const localStorageKey = '__auth_provider_token__'
+const localAuthStorageKey = '__auth_provider_token__'
 
 export const getToken = () => {
-  return window.localStorage.getItem(localStorageKey)
+  return window.localStorage.getItem(localAuthStorageKey)
 }
 
 export const setToken = (token?: string) => {
-  window.localStorage.setItem(localStorageKey, token || '')
+  window.localStorage.setItem(localAuthStorageKey, token || '')
 }
 
 export const handleUserResponse = (user: User) => {
@@ -54,5 +54,5 @@ export const register = (data: SignUpForm) => {
 }
 
 export const logout = async () => {
-  window.localStorage.removeItem(localStorageKey)
+  window.localStorage.removeItem(localAuthStorageKey)
 }

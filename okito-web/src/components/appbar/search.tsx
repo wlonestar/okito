@@ -1,14 +1,14 @@
 import React from 'react'
 import { InputBase, Theme } from '@mui/material'
-import { alpha, styled } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  backgroundColor: 'rgba(196, 196, 196, 0.15)',
   '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
+    backgroundColor: 'rgba(196, 196, 196, 0.25)',
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
@@ -40,13 +40,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
       width: '20ch',
     },
-    borderStyle: 'solid',
-    borderWidth: '1px 1px thin',
-    borderRadius: '5px',
-    borderColor: (theme: { palette: { mode: string } }) =>
-      theme.palette.mode === 'light'
-        ? 'rgba(231, 235, 240, 0.8)'
-        : 'rgba(194, 224, 255, 0.8)',
   },
 }))
 

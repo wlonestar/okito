@@ -46,19 +46,7 @@ export const Main = ({ currentUser }: CurrentUserProps) => {
 
   return (
     <Paper>
-      <Box
-        sx={{
-          width: '100%',
-          borderColor: (theme) =>
-            theme.palette.mode === 'light'
-              ? 'rgba(231, 235, 240)'
-              : 'rgba(194, 224, 255, 0.08)',
-          borderStyle: 'solid',
-          borderRadius: '5px',
-          borderWidth: '1px 1px thin',
-          margin: 'auto',
-        }}
-      >
+      <Box sx={{ width: '100%', margin: 'auto' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs value={value} onChange={handleChange}>
             {tabs.map(({ index, label }) => (

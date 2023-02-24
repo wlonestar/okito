@@ -42,7 +42,7 @@ export default function PostPage({ currentUser }: CurrentUserProps) {
   })
 
   return (
-    <Grid container spacing={3} sx={{ margin: '0 auto', mb: 3 }}>
+    <Grid container spacing={3} sx={{ mt: 1, mb: 3 }}>
       <Grid item xs={12} md={9}>
         <Main
           post={post}
@@ -54,7 +54,7 @@ export default function PostPage({ currentUser }: CurrentUserProps) {
         />
       </Grid>
       <Grid item xs={12} md={3}>
-        <Side />
+        <Side author={author} currentUser={currentUser} />
       </Grid>
     </Grid>
   )

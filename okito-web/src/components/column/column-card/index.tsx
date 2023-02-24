@@ -1,9 +1,9 @@
 import {
   Box,
   Button,
-  Card,
   CardContent,
   CardMedia,
+  Divider,
   Grid,
   IconButton,
   Link,
@@ -83,102 +83,102 @@ export default function ColumnCard({
   })
 
   return (
-    <Card
-      variant="outlined"
-      sx={{ borderWidth: '0px 0px thin', borderRadius: 0, height: '160px' }}
-    >
-      <CardContent>
-        <Grid container spacing={2}>
-          {/*cover*/}
-          <Grid item xs={12} md={3} lg={3}>
-            <CardMedia
-              component="img"
-              height="120"
-              image={column.cover}
-              alt={column.cover}
-              loading="lazy"
-            />
-          </Grid>
-          {/*title, summary and actions*/}
-          <Grid item xs={12} md={9} lg={9}>
-            <Box
-              sx={{
-                width: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                flexWrap: 'wrap',
-              }}
-            >
-              <Link
-                href={`/column/${column.id}`}
-                target="_blank"
-                underline="none"
-              >
-                <Typography
-                  variant="h6"
-                  component="div"
-                  fontWeight="500"
-                  color="text.primary"
-                >
-                  {column.name}
-                </Typography>
-              </Link>
-              {homepage ? (
-                <IconButton
-                  sx={{ size: 'small', marginLeft: 'auto' }}
-                  onClick={handleOpenUserMenu}
-                >
-                  <MoreHorizOutlinedIcon />
-                </IconButton>
-              ) : followed ? (
-                <Button
-                  variant="contained"
-                  size="small"
-                  onClick={handleClick}
-                  sx={{ marginLeft: 'auto' }}
-                  color="inherit"
-                >
-                  <CheckOutlinedIcon />
-                  {'已关注'}
-                </Button>
-              ) : (
-                <Button
-                  variant="contained"
-                  size="small"
-                  onClick={handleClick}
-                  sx={{ marginLeft: 'auto' }}
-                >
-                  <AddOutlinedIcon />
-                  {'关注'}
-                </Button>
-              )}
-              <ActionList
-                column={column}
-                anchorElColumn={anchorElColumn}
-                handleCloseActionMenu={handleCloseActionMenu}
+    <Box>
+      <Box sx={{ height: '160px' }}>
+        <CardContent>
+          <Grid container spacing={2}>
+            {/*cover*/}
+            <Grid item xs={12} md={3} lg={3}>
+              <CardMedia
+                component="img"
+                height="120"
+                image={column.cover}
+                alt={column.cover}
+                loading="lazy"
               />
-            </Box>
-            <Typography
-              sx={{
-                mb: 1.5,
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                display: '-webkit-box',
-                lineHeight: '24px',
-                maxHeight: '48px',
-              }}
-              color="text.secondary"
-            >
-              {column.description}
-            </Typography>
-            <MetaData
-              column={column}
-              postsNum={postsNum}
-              followNum={followNum}
-            />
+            </Grid>
+            {/*title, summary and actions*/}
+            <Grid item xs={12} md={9} lg={9}>
+              <Box
+                sx={{
+                  width: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexWrap: 'wrap',
+                }}
+              >
+                <Link
+                  href={`/column/${column.id}`}
+                  target="_blank"
+                  underline="none"
+                >
+                  <Typography
+                    variant="h6"
+                    component="div"
+                    fontWeight="500"
+                    color="text.primary"
+                  >
+                    {column.name}
+                  </Typography>
+                </Link>
+                {homepage ? (
+                  <IconButton
+                    sx={{ size: 'small', marginLeft: 'auto' }}
+                    onClick={handleOpenUserMenu}
+                  >
+                    <MoreHorizOutlinedIcon />
+                  </IconButton>
+                ) : followed ? (
+                  <Button
+                    variant="contained"
+                    size="small"
+                    onClick={handleClick}
+                    sx={{ marginLeft: 'auto' }}
+                    color="inherit"
+                  >
+                    <CheckOutlinedIcon />
+                    {'已关注'}
+                  </Button>
+                ) : (
+                  <Button
+                    variant="contained"
+                    size="small"
+                    onClick={handleClick}
+                    sx={{ marginLeft: 'auto' }}
+                  >
+                    <AddOutlinedIcon />
+                    {'关注'}
+                  </Button>
+                )}
+                <ActionList
+                  column={column}
+                  anchorElColumn={anchorElColumn}
+                  handleCloseActionMenu={handleCloseActionMenu}
+                />
+              </Box>
+              <Typography
+                sx={{
+                  mb: 1.5,
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  display: '-webkit-box',
+                  lineHeight: '24px',
+                  maxHeight: '48px',
+                }}
+                color="text.secondary"
+              >
+                {column.description}
+              </Typography>
+              <MetaData
+                column={column}
+                postsNum={postsNum}
+                followNum={followNum}
+              />
+            </Grid>
           </Grid>
-        </Grid>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Box>
+      <Divider sx={{ ml: 2, mr: 2 }} />
+    </Box>
   )
 }

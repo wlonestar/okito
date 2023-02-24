@@ -75,7 +75,7 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
   })
 
   return (
-    <Box sx={{ maxWidth: '1080px', margin: '0 auto', mt: 3, mb: 3 }}>
+    <Box sx={{ maxWidth: '1080px', mt: 3, mb: 3 }}>
       <Paper>
         <ColumnTitle
           column={column}

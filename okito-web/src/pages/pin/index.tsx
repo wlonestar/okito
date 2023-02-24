@@ -35,7 +35,7 @@ export default function PinPage({ currentUser }: PinPageProps) {
   })
 
   return (
-    <Grid container spacing={3} sx={{ margin: '0 auto', mb: 3 }}>
+    <Grid container spacing={3} sx={{ mt: 1, mb: 3 }}>
       <Grid item xs={12} md={2}>
         <Nav value={value} handleChange={handleChange} />
       </Grid>

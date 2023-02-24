@@ -24,21 +24,7 @@ export default function PostContent({
 }: PostContentProps) {
   return (
     <Paper>
-      <Box
-        sx={{
-          width: '100%',
-          borderColor: (theme) =>
-            theme.palette.mode === 'light'
-              ? 'rgba(231, 235, 240)'
-              : 'rgba(194, 224, 255, 0.08)',
-          borderStyle: 'solid',
-          borderRadius: '5px',
-          borderWidth: '1px 1px thin',
-          margin: 'auto',
-          p: 3,
-          maxWidth: '100%',
-        }}
-      >
+      <Box sx={{ width: '100%', margin: 'auto', p: 3, maxWidth: '100%' }}>
         {/*title*/}
         <Typography
           component="div"

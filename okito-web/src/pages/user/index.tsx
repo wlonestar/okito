@@ -17,9 +17,14 @@ export default function UserPage({ currentUser }: UserPageProps) {
   const [user, setUser] = useState<User>(userDefault)
   const [collectionsNum, setCollectionsNum] = useState<number>(0)
   const [tagsNum, setTagsNum] = useState<number>(0)
+  const [homepage, setHomepage] = useState<boolean>(false)
 
+  useMount(() => {})
   useMount(async () => {
     const userId = id as unknown as number
+    if (currentUser !== null && currentUser.id === parseInt(String(userId))) {
+      setHomepage(true)
+    }
     const user = await selectUserById(userId)
     if (user.status === 20) {
       setUser(user.data)
@@ -35,9 +40,9 @@ export default function UserPage({ currentUser }: UserPageProps) {
   })
 
   return (
-    <Grid container spacing={3} sx={{ margin: '0 auto', mb: 3 }}>
+    <Grid container spacing={3} sx={{ mt: 1, mb: 3 }}>
       <Grid item xs={12} md={8.5}>
-        <Major user={user} currentUser={currentUser} />
+        <Major user={user} homepage={homepage} currentUser={currentUser} />
       </Grid>
       <Grid item xs={12} md={3.5}>
         <Sticky user={user} collectionsNum={collectionsNum} tagsNum={tagsNum} />

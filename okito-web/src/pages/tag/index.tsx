@@ -73,7 +73,7 @@ export default function TagPage() {
   })
 
   return (
-    <Box sx={{ maxWidth: '1080px', margin: '0 auto', mt: 3, mb: 3 }}>
+    <Box sx={{ maxWidth: '1080px', mt: 3, mb: 3 }}>
       <TagTitle tag={tag} posts={posts} />
       <Box sx={{ pb: 3 }}>
         <img

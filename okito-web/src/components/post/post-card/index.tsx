@@ -1,7 +1,8 @@
 import {
-  Card,
+  Box,
   CardContent,
   CardMedia,
+  Divider,
   Grid,
   Link,
   Typography,
@@ -37,48 +38,48 @@ export const PostCard = ({ post, currentUser }: PostCardProps) => {
   })
 
   return (
-    <Card
-      variant="outlined"
-      sx={{ borderWidth: '0px 0px thin', borderRadius: 0 }}
-    >
-      <CardContent>
-        <Grid container spacing={1}>
-          {/*time, author and tags*/}
-          <PostMeta post={post} author={author} tags={tags} />
-          {/*title, summary and actions*/}
-          <Grid item xs={12} md={9} lg={9}>
-            <Link href={`/post/${post.id}`} target="_blank" underline="none">
-              <Typography
-                variant="h5"
-                component="div"
-                fontWeight="500"
-                color="text.primary"
-                sx={{ pb: 1 }}
-              >
-                {post.title}
+    <Box>
+      <Box>
+        <CardContent>
+          <Grid container spacing={1}>
+            {/*time, author and tags*/}
+            <PostMeta post={post} author={author} tags={tags} />
+            {/*title, summary and actions*/}
+            <Grid item xs={12} md={9} lg={9}>
+              <Link href={`/post/${post.id}`} target="_blank" underline="none">
+                <Typography
+                  variant="h5"
+                  component="div"
+                  fontWeight="500"
+                  color="text.primary"
+                  sx={{ pb: 1 }}
+                >
+                  {post.title}
+                </Typography>
+              </Link>
+              <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                {post.summary}
               </Typography>
-            </Link>
-            <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              {post.summary}
-            </Typography>
-            <PostAction
-              post={post}
-              commentsNum={commentsNum}
-              currentUser={currentUser}
-            />
+              <PostAction
+                post={post}
+                commentsNum={commentsNum}
+                currentUser={currentUser}
+              />
+            </Grid>
+            {/*cover*/}
+            <Grid item xs={12} md={3} lg={3}>
+              <CardMedia
+                component="img"
+                height="100"
+                image={post.cover}
+                alt={post.cover}
+                loading="lazy"
+              />
+            </Grid>
           </Grid>
-          {/*cover*/}
-          <Grid item xs={12} md={3} lg={3}>
-            <CardMedia
-              component="img"
-              height="100"
-              image={post.cover}
-              alt={post.cover}
-              loading="lazy"
-            />
-          </Grid>
-        </Grid>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Box>
+      <Divider sx={{ ml: 2, mr: 2 }} />
+    </Box>
   )
 }

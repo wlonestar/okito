@@ -15,10 +15,10 @@ export const ColorModeContext = createContext({
   toggleColorMode: () => {},
 })
 
-type colorMode = 'light' | 'dark'
+type ColorMode = 'light' | 'dark'
 
 export const Layout = ({ currentUser }: CurrentUserProps) => {
-  let defaultMode: colorMode = 'light'
+  let defaultMode: ColorMode = 'light'
   if (
     window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -26,7 +26,7 @@ export const Layout = ({ currentUser }: CurrentUserProps) => {
     defaultMode = 'dark'
   }
 
-  const [mode, setMode] = useState<colorMode>(defaultMode)
+  const [mode, setMode] = useState<ColorMode>(defaultMode)
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
