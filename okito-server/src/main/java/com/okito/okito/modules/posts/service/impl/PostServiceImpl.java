@@ -31,15 +31,6 @@ public class PostServiceImpl implements PostService {
   private CategoryRepository categoryRepository;
 
   @Resource
-  private PostTagRepository postTagRepository;
-
-  @Resource
-  private PostCollectionRepository postCollectionRepository;
-
-  @Resource
-  private PostColumnRepository postColumnRepository;
-
-  @Resource
   private UserRepository userRepository;
 
   @Override
@@ -54,17 +45,17 @@ public class PostServiceImpl implements PostService {
 
   @Override
   public List<PostView> selectAllByTagId(Long tagId) {
-    return postTagRepository.findAllByTagId(tagId);
+    return postViewRepository.findAllByTagId(tagId);
   }
 
   @Override
   public List<PostView> selectAllByCollectionId(Long collectionId) {
-    return postCollectionRepository.findAllByCollectionId(collectionId);
+    return postViewRepository.findAllByCollectionId(collectionId);
   }
 
   @Override
   public List<PostView> selectAllByColumnId(Long columnId) {
-    return postColumnRepository.findAllByColumnId(columnId);
+    return postViewRepository.findAllByColumnId(columnId);
   }
 
   @Override

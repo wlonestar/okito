@@ -2,8 +2,6 @@ package com.okito.okito.modules.posts.service.impl;
 
 import com.okito.okito.modules.posts.model.entity.Tag;
 import com.okito.okito.modules.posts.model.view.TagView;
-import com.okito.okito.modules.posts.repository.PostTagRepository;
-import com.okito.okito.modules.posts.repository.TagFollowRepository;
 import com.okito.okito.modules.posts.repository.TagRepository;
 import com.okito.okito.modules.posts.repository.TagViewRepository;
 import com.okito.okito.modules.posts.service.TagService;
@@ -27,12 +25,6 @@ public class TagServiceImpl implements TagService {
   @Resource
   private TagViewRepository tagViewRepository;
 
-  @Resource
-  private PostTagRepository postTagRepository;
-
-  @Resource
-  private TagFollowRepository tagFollowRepository;
-
   @Override
   public List<TagView> selectAll() {
     return tagViewRepository.findAll();
@@ -40,7 +32,7 @@ public class TagServiceImpl implements TagService {
 
   @Override
   public List<TagView> selectAllByPostId(Long postId) {
-    return postTagRepository.findAllByPostId(postId);
+    return tagViewRepository.findAllByPostId(postId);
   }
 
   @Override

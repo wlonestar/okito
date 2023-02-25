@@ -87,8 +87,6 @@ public class CollectionController {
   }
 
   /**
-   * TODO: move to post controller
-   * <p>
    * count posts by collection id
    *
    * @param collectionId collection id
