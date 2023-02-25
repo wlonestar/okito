@@ -9,9 +9,9 @@ export function selectColumnsByAuthorId(authorId: number) {
   })
 }
 
-export function selectColumnsFollowedByUserId(userId: number) {
+export function selectColumnsByFollowerId(followerId: number) {
   return client({
-    url: `${prefix}/follow/${userId}`,
+    url: `${prefix}/follower/${followerId}`,
     method: 'GET',
   })
 }

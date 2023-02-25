@@ -26,7 +26,7 @@ export default function SiteLogo() {
             pr: 2,
           }}
         >
-          okito
+          {'okito'}
         </Typography>
       </Link>
     </>

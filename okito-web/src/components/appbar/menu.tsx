@@ -1,27 +1,37 @@
 import React from 'react'
 import { Menu, MenuItem } from '@mui/material'
+import { useAuth } from '../../context/auth-context'
 
 interface CustomMenuProps {
   anchorEl: HTMLElement | null
-  menuId: string
+  setAnchorEl: any
   isMenuOpen: boolean
   handleMenuClose: () => void
 }
 
 export default function CustomMenu({
   anchorEl,
-  menuId,
+  setAnchorEl,
   isMenuOpen,
   handleMenuClose,
 }: CustomMenuProps) {
+  const { logout } = useAuth()
+
+  const handleLogout = () => {
+    setAnchorEl(null)
+    logout().then(() => {
+      console.log('logout')
+    })
+  }
+
   return (
     <Menu
+      sx={{ mt: 5 }}
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: 'top',
         horizontal: 'right',
       }}
-      id={menuId}
       keepMounted
       transformOrigin={{
         vertical: 'top',
@@ -32,6 +42,7 @@ export default function CustomMenu({
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleLogout}>Log Out</MenuItem>
     </Menu>
   )
 }

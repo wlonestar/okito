@@ -3,18 +3,18 @@ import { SignInForm } from './types/sign-in-param'
 import { User } from './types/user'
 import { SignUpForm } from './types/sign-up-param'
 
-const localStorageKey = '__auth_provider_token__'
+const localAuthStorageKey = '__auth_provider_token__'
 
 export const getToken = () => {
-  return window.localStorage.getItem(localStorageKey)
+  return window.localStorage.getItem(localAuthStorageKey)
 }
 
 export const setToken = (token?: string) => {
-  window.localStorage.setItem(localStorageKey, token || '')
+  window.localStorage.setItem(localAuthStorageKey, token || '')
 }
 
 export const handleUserResponse = (user: User) => {
-  setToken(user.token)
+  setToken(user.token || '')
   return user
 }
 
@@ -28,9 +28,13 @@ export const login = (data: SignInForm) => {
   }).then(async (res) => {
     if (res.ok) {
       const data = await res.json()
-      const user: User = data.data
-      console.log(user)
-      return handleUserResponse(user)
+      if (data.status === 20) {
+        const user: User = data.data
+        // console.log(data)
+        return handleUserResponse(user)
+      } else {
+        return Promise.reject(data)
+      }
     } else {
       return Promise.reject(data)
     }
@@ -53,6 +57,7 @@ export const register = (data: SignUpForm) => {
   })
 }
 
+// TODO
 export const logout = async () => {
-  window.localStorage.removeItem(localStorageKey)
+  window.localStorage.removeItem(localAuthStorageKey)
 }

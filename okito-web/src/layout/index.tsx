@@ -15,10 +15,10 @@ export const ColorModeContext = createContext({
   toggleColorMode: () => {},
 })
 
-type colorMode = 'light' | 'dark'
+type ColorMode = 'light' | 'dark'
 
 export const Layout = ({ currentUser }: CurrentUserProps) => {
-  let defaultMode: colorMode = 'light'
+  let defaultMode: ColorMode = 'light'
   if (
     window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -26,7 +26,7 @@ export const Layout = ({ currentUser }: CurrentUserProps) => {
     defaultMode = 'dark'
   }
 
-  const [mode, setMode] = useState<colorMode>(defaultMode)
+  const [mode, setMode] = useState<ColorMode>(defaultMode)
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
@@ -59,7 +59,6 @@ export const Layout = ({ currentUser }: CurrentUserProps) => {
                   ? theme.palette.grey[100]
                   : theme.palette.grey[900],
               flexGrow: 1,
-              p: 3,
               overflow: 'auto',
             }}
           >
@@ -67,7 +66,7 @@ export const Layout = ({ currentUser }: CurrentUserProps) => {
             <Container
               maxWidth={false}
               sx={{
-                maxWidth: '1080px',
+                maxWidth: '1200px',
               }}
             >
               <Outlet />

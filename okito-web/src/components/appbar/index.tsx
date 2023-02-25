@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   AppBar,
   Box,
@@ -7,17 +7,23 @@ import {
   Badge,
   Theme,
   Button,
+  Typography,
 } from '@mui/material'
 import SiteLogo from './site-logo'
 import CustomSearch from './search'
 import DarkIcon from './dark-icon'
 import Nav from './nav'
 import { User } from '../../types/user'
-import { CurrentUserProps } from '../../types/current-user-props'
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined'
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined'
+import CustomMenu from './menu'
 
-const Authenticated = ({ currentUser }: CurrentUserProps) => {
+interface AuthenticatedProps {
+  handleOpenMenu: (event: React.MouseEvent<HTMLElement>) => void
+  currentUser: User | null
+}
+
+const Authenticated = ({ handleOpenMenu, currentUser }: AuthenticatedProps) => {
   return (
     <>
       <IconButton
@@ -38,9 +44,17 @@ const Authenticated = ({ currentUser }: CurrentUserProps) => {
           <MailOutlinedIcon />
         </Badge>
       </IconButton>
-      <IconButton
-        href={`/user/${currentUser?.id}`}
+      <Button
+        size="small"
+        variant="contained"
+        href={'/creator'}
         target="_blank"
+        sx={{ mr: 1, mt: 0.5, mb: 0.5 }}
+      >
+        <Typography variant="body2">{'创作中心'}</Typography>
+      </Button>
+      <IconButton
+        onClick={handleOpenMenu}
         sx={{
           padding: '4px',
           width: 42,
@@ -80,6 +94,16 @@ interface CustomAppBarProps {
 }
 
 export const CustomAppBar = ({ theme, user }: CustomAppBarProps) => {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+
+  const handleOpenMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleCloseMenu = () => {
+    setAnchorEl(null)
+  }
+
   return (
     <>
       <AppBar
@@ -101,12 +125,7 @@ export const CustomAppBar = ({ theme, user }: CustomAppBarProps) => {
               : 'rgba(0, 0, 0, 0)',
         }}
       >
-        <Toolbar
-          sx={{
-            width: '1080px',
-            margin: '0 auto',
-          }}
-        >
+        <Toolbar sx={{ width: '1200px', margin: '0 auto' }}>
           <SiteLogo />
           <Nav />
           <Box sx={{ flexGrow: 1 }} />
@@ -122,9 +141,18 @@ export const CustomAppBar = ({ theme, user }: CustomAppBarProps) => {
             {user === null ? (
               <UnAuthenticated />
             ) : (
-              <Authenticated currentUser={user} />
+              <Authenticated
+                handleOpenMenu={handleOpenMenu}
+                currentUser={user}
+              />
             )}
           </Box>
+          <CustomMenu
+            anchorEl={anchorEl}
+            setAnchorEl={setAnchorEl}
+            isMenuOpen={Boolean(anchorEl)}
+            handleMenuClose={handleCloseMenu}
+          />
           <DarkIcon theme={theme} />
         </Toolbar>
       </AppBar>

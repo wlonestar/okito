@@ -1,13 +1,13 @@
-import { useParams } from 'react-router-dom'
 import React, { SyntheticEvent, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { Tag, tagDefault } from '../../types/tag'
 import { Post } from '../../types/post'
-import { useMount, useSort } from '../../utils/hook'
+import { useMount, useSort } from '../../utils'
 import { selectTagById } from '../../api/tag'
 import { selectPostsByTagId } from '../../api/post'
 import { Box, Tab, Tabs, Typography } from '@mui/material'
-import { PostCard } from '../../components/post-list/post-card'
-import { TabPanel, tabProps } from '../../components/tab'
+import { PostCard } from '../../components/post/post-card'
+import { tabProps } from '../../components/tab'
 import { TabsProp } from '../../types/tabs-prop'
 import { useAuth } from '../../context/auth-context'
 
@@ -73,7 +73,7 @@ export default function TagPage() {
   })
 
   return (
-    <Box>
+    <Box sx={{ maxWidth: '1080px', mt: 3, mb: 3 }}>
       <TagTitle tag={tag} posts={posts} />
       <Box sx={{ pb: 3 }}>
         <img
@@ -88,24 +88,14 @@ export default function TagPage() {
         />
       </Box>
       <Box sx={{ borderBottom: 1, borderColor: 'divider', right: '10px' }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="basic tabs example"
-        >
+        <Tabs value={value} onChange={handleChange}>
           {tabs.map(({ index, label }) => (
             <Tab key={index} label={label} {...tabProps(index)} />
           ))}
         </Tabs>
       </Box>
-      {tabs.map(({ index }) => (
-        <TabPanel key={index} value={value} index={index}>
-          <Box>
-            {posts.map((post) => (
-              <PostCard key={post.id} post={post} currentUser={currentUser} />
-            ))}
-          </Box>
-        </TabPanel>
+      {posts.map((post) => (
+        <PostCard key={post.id} post={post} currentUser={currentUser} />
       ))}
     </Box>
   )

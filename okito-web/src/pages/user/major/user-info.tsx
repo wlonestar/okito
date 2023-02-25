@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Box,
   Button,
@@ -9,6 +9,7 @@ import {
   Typography,
 } from '@mui/material'
 import { User } from '../../../types/user'
+import { useMount } from '../../../utils'
 
 const Img = styled('img')({
   margin: 'auto',
@@ -19,26 +20,18 @@ const Img = styled('img')({
 
 interface UserInfoProps {
   user: User
+  homepage: boolean
   currentUser: User | null
 }
 
-export default function UserInfo({ user, currentUser }: UserInfoProps) {
+export default function UserInfo({
+  user,
+  homepage,
+  currentUser,
+}: UserInfoProps) {
   return (
     <Paper>
-      <Box
-        sx={{
-          width: '100%',
-          borderColor: (theme) =>
-            theme.palette.mode === 'light'
-              ? 'rgba(231, 235, 240)'
-              : 'rgba(194, 224, 255, 0.08)',
-          borderStyle: 'solid',
-          borderRadius: '5px',
-          borderWidth: '1px 1px thin',
-          margin: 'auto',
-          p: 2,
-        }}
-      >
+      <Box sx={{ width: '100%', margin: 'auto', p: 2 }}>
         <Grid container spacing={2}>
           {/*image*/}
           <Grid item>
@@ -54,25 +47,36 @@ export default function UserInfo({ user, currentUser }: UserInfoProps) {
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs sx={{ ml: 1 }}>
-                <Typography gutterBottom variant="subtitle1" component="div">
+                <Typography
+                  gutterBottom
+                  variant="h6"
+                  fontWeight={600}
+                  component="div"
+                >
                   {user.username}
                 </Typography>
                 <Typography variant="body2" gutterBottom>
                   ID: {user.id}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {user.intro || ' '}
+                  {user.bio || ' '}
                 </Typography>
               </Grid>
-              <Grid item>
-                <Button>{'编辑个人资料'}</Button>
-              </Grid>
+              {homepage ? (
+                <Grid item>
+                  <Button href="/user/settings" target="_blank">
+                    {'编辑个人资料'}
+                  </Button>
+                </Grid>
+              ) : (
+                ''
+              )}
             </Grid>
             <Grid item>
               {user.homepage ? (
-                <Link underline="none" href={user.homepage} target="_blank">
+                <Link underline="hover" href={user.homepage} target="_blank">
                   <Typography
-                    variant="subtitle1"
+                    variant="body2"
                     component="div"
                     color="text.secondary"
                   >

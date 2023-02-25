@@ -1,8 +1,8 @@
+import React from 'react'
 import {
   Box,
   Button,
   Divider,
-  Grid,
   Icon,
   Link,
   List,
@@ -14,24 +14,21 @@ import {
 import { User } from '../../types/user'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import { VisibilityRounded } from '@mui/icons-material'
-import React from 'react'
 import { formatDate } from '../../utils/date'
 
 interface StickyProps {
   user: User
+  collectionsNum?: number
+  tagsNum?: number
 }
 
 const Achieve = ({ user }: StickyProps) => {
   return (
-    <Paper
-      sx={{
-        p: 2,
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
+    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
       <Box>
-        <Typography>{'个人成就'}</Typography>
+        <Typography variant="body1" fontWeight={600}>
+          {'个人成就'}
+        </Typography>
       </Box>
       <Divider sx={{ mb: 2, mt: 2 }} />
       <Box
@@ -70,49 +67,59 @@ const Achieve = ({ user }: StickyProps) => {
 const Follow = ({ user }: StickyProps) => {
   return (
     <Paper sx={{ mt: 2 }}>
-      <Grid container>
-        <Grid item xs>
-          <Button fullWidth sx={{ p: 2 }}>
-            <Typography variant="body1">{'关注了'}</Typography>
-            <Typography variant="body2">{user.followedNum}</Typography>
-          </Button>
-        </Grid>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-evenly',
+        }}
+      >
+        <Button
+          fullWidth
+          sx={{ p: 2 }}
+          href={`/user/${user.id}/follows?q=following`}
+        >
+          <Typography variant="body1">{'关注了'}</Typography>
+          <Typography variant="body2">{user.followedNum}</Typography>
+        </Button>
         <Divider orientation="vertical" flexItem />
-        <Grid item xs>
-          <Button fullWidth sx={{ p: 2 }}>
-            <Typography variant="body1">{'关注者'}</Typography>
-            <Typography variant="body2">{user.followerNum}</Typography>
-          </Button>
-        </Grid>
-      </Grid>
+        <Button
+          fullWidth
+          sx={{ p: 2 }}
+          href={`/user/${user.id}/follows?q=followers`}
+        >
+          <Typography variant="body1">{'关注者'}</Typography>
+          <Typography variant="body2">{user.followerNum}</Typography>
+        </Button>
+      </Box>
     </Paper>
   )
 }
 
-const MoreInfo = ({ user }: StickyProps) => {
+const MoreInfo = ({ user, collectionsNum, tagsNum }: StickyProps) => {
   return (
     <Paper sx={{ mt: 2 }}>
       <List dense={false}>
-        <ListItem secondaryAction={1}>
+        <ListItem secondaryAction={collectionsNum}>
           <ListItemText>
             <Link
               underline="hover"
               color="text.primary"
               sx={{ ':hover': { color: 'text.secondary' } }}
-              href={'/'}
+              href={`/user/${user.id}/collections`}
             >
               {'收藏夹'}
             </Link>
           </ListItemText>
         </ListItem>
         <Divider />
-        <ListItem secondaryAction={1}>
+        <ListItem secondaryAction={tagsNum}>
           <ListItemText>
             <Link
               underline="hover"
               color="text.primary"
               sx={{ ':hover': { color: 'text.secondary' } }}
-              href={'/'}
+              href={`/user/${user.id}/follows?q=followed_tags`}
             >
               {'关注标签'}
             </Link>
@@ -127,12 +134,12 @@ const MoreInfo = ({ user }: StickyProps) => {
   )
 }
 
-export default function Sticky({ user }: StickyProps) {
+export default function Sticky({ user, collectionsNum, tagsNum }: StickyProps) {
   return (
     <>
       <Achieve user={user} />
       <Follow user={user} />
-      <MoreInfo user={user} />
+      <MoreInfo user={user} collectionsNum={collectionsNum} tagsNum={tagsNum} />
     </>
   )
 }

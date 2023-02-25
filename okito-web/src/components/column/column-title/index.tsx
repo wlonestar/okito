@@ -13,16 +13,16 @@ import {
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined'
-import MetaData from '../column-list/column-card/meta-data'
+import MetaData from '../column-card/meta-data'
 import { Column } from '../../../types/column'
 import {
   selectUserColumnFollowByUserIdAndColumnId,
   updateFollowColumn,
 } from '../../../api/user'
-import { useMount } from '../../../utils/hook'
+import { useMount } from '../../../utils'
 import { User } from '../../../types/user'
-import AuthorLine from '../../author-line'
-import ActionList from '../column-list/column-card/action-list'
+import AuthorTitle from '../../author-title'
+import ActionList from '../column-card/action-list'
 
 interface ColumnTitleProps {
   column: Column
@@ -82,10 +82,10 @@ export default function ColumnTitle({
   return (
     <Card
       variant="outlined"
-      sx={{ borderWidth: '0px 0px thin', borderRadius: 0, height: '200px' }}
+      sx={{ borderWidth: '0px 0px thin', borderRadius: '5px', height: '200px' }}
     >
       <CardContent>
-        <Link href={`/column/${column.id}`} target="_blank" underline="none">
+        <Link underline="none" href={`/column/${column.id}`} target="_blank">
           <Typography
             variant="h6"
             component="div"
@@ -109,7 +109,7 @@ export default function ColumnTitle({
           {/*title, summary and actions*/}
           <Grid item xs={12} md={9} lg={9}>
             <Box sx={{ pt: -1, pb: 2 }}>
-              <AuthorLine author={author} />
+              <AuthorTitle author={author} viewNum={author.postViewNum} />
             </Box>
             <Typography
               sx={{

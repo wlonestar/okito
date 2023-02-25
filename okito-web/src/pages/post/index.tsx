@@ -1,22 +1,20 @@
 import React, { useState } from 'react'
-import { useMount } from '../../utils/hook'
+import { useMount, useSort } from '../../utils'
 import { useParams } from 'react-router-dom'
-import { Box, Button, Grid, Paper, Typography } from '@mui/material'
-import { Aside } from '../home/aside'
+import { Grid } from '@mui/material'
 import { Post, postDefault } from '../../types/post'
 import { selectPostById } from '../../api/post'
-import AuthorLine from '../../components/author-line'
 import { User, userDefault } from '../../types/user'
 import { selectUserById } from '../../api/user'
-import Md2html from '../../components/md2html'
 import { Category, categoryDefault } from '../../types/category'
 import { Tag } from '../../types/tag'
 import { selectCategoryById } from '../../api/category'
 import { selectTagsByPostId } from '../../api/tag'
-import PostCommentBox from '../../components/post-comment'
 import { PostComment } from '../../types/post-comment'
 import { selectPostCommentsByPostId } from '../../api/post-comment'
 import { CurrentUserProps } from '../../types/current-user-props'
+import Side from './side'
+import Main from './main'
 
 export default function PostPage({ currentUser }: CurrentUserProps) {
   const { id } = useParams()
@@ -24,7 +22,7 @@ export default function PostPage({ currentUser }: CurrentUserProps) {
   const [author, setAuthor] = useState<User>(userDefault)
   const [cate, setCate] = useState<Category>(categoryDefault)
   const [tags, setTags] = useState<Tag[]>([])
-  const [comments, setComments] = useState<PostComment[]>([])
+  const [postComments, setPostComments] = useState<PostComment[]>([])
 
   useMount(async () => {
     console.log(id)
@@ -36,107 +34,27 @@ export default function PostPage({ currentUser }: CurrentUserProps) {
     setCate(cate.data)
     const tags = await selectTagsByPostId(post.data.id)
     setTags(tags.data)
-    const commentsData = await selectPostCommentsByPostId(post.data.id)
-    const comments = commentsData.data.filter(
+    const postCommentsData = await selectPostCommentsByPostId(post.data.id)
+    const postComments = postCommentsData.data.filter(
       (comment: PostComment) => comment.parentId === null
     )
-    setComments(comments)
-    console.log(comments)
+    setPostComments(useSort(postComments, 'likeNum', 'desc'))
   })
 
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={3} sx={{ mt: 1, mb: 3 }}>
       <Grid item xs={12} md={9}>
-        {/*post*/}
-        <Paper>
-          <Box
-            sx={{
-              width: '100%',
-              borderColor: (theme) =>
-                theme.palette.mode === 'light'
-                  ? 'rgba(231, 235, 240)'
-                  : 'rgba(194, 224, 255, 0.08)',
-              borderStyle: 'solid',
-              borderRadius: '5px',
-              borderWidth: '1px 1px thin',
-              margin: 'auto',
-              p: 3,
-              maxWidth: '100%',
-            }}
-          >
-            {/*title*/}
-            <Typography
-              component="div"
-              sx={{ fontSize: 34, fontWeight: 600, pb: 2 }}
-            >
-              {post.title}
-            </Typography>
-            {/*author*/}
-            <AuthorLine author={author} dateTime={post.createTime} />
-            {/*cover*/}
-            <Box>
-              <img
-                style={{
-                  margin: 'auto',
-                  display: 'block',
-                  maxWidth: '100%',
-                  maxHeight: '100%',
-                  paddingTop: '10px',
-                  paddingBottom: '10px',
-                }}
-                alt="complex"
-                src={post.cover}
-              />
-            </Box>
-            {/*content*/}
-            <Md2html content={post.content} />
-            {/*category & tags*/}
-            <Box pt={1}>
-              {'分类：'}
-              <Button href={`/category/${cate.id}`}>{cate.name}</Button>
-            </Box>
-            <Box pt={1} hidden={!(tags.length > 0)}>
-              {'标签：'}
-              {tags.map((tag) => (
-                <Button
-                  key={tag.id}
-                  href={`/tag/${tag.id}`}
-                  variant="outlined"
-                  sx={{ ml: 1 }}
-                >
-                  {tag.name}
-                </Button>
-              ))}
-            </Box>
-          </Box>
-        </Paper>
-        {/*comments*/}
-        <Paper sx={{ mt: 3 }}>
-          <Box
-            sx={{
-              width: '100%',
-              borderColor: (theme) =>
-                theme.palette.mode === 'light'
-                  ? 'rgba(231, 235, 240)'
-                  : 'rgba(194, 224, 255, 0.08)',
-              borderStyle: 'solid',
-              borderRadius: '5px',
-              borderWidth: '1px 1px thin',
-              margin: 'auto',
-              p: 3,
-              maxWidth: '100%',
-            }}
-          >
-            <PostCommentBox
-              postId={post.id}
-              postComments={comments}
-              currentUser={currentUser}
-            />
-          </Box>
-        </Paper>
+        <Main
+          post={post}
+          author={author}
+          cate={cate}
+          tags={tags}
+          comments={postComments}
+          currentUser={currentUser}
+        />
       </Grid>
       <Grid item xs={12} md={3}>
-        <Aside />
+        <Side author={author} currentUser={currentUser} />
       </Grid>
     </Grid>
   )
