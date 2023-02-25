@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Column } from '../../../types/column'
 import ColumnList from '../../../components/column/column-list'
 import { selectColumnsByAuthorId } from '../../../api/column'
-import { useMount, useSort } from '../../../utils/hook'
+import { useMount, useSort } from '../../../utils'
 import { useAuth } from '../../../context/auth-context'
 
 export default function ColumnsTab() {

@@ -1,6 +1,6 @@
 import { Box, Divider, Typography } from '@mui/material'
 import { Pin } from '../../../types/pin'
-import { useMount } from '../../../utils/hook'
+import { useMount } from '../../../utils'
 import { useState } from 'react'
 import { User, userDefault } from '../../../types/user'
 import { selectUserById } from '../../../api/user'

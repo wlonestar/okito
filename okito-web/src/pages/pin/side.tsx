@@ -1,7 +1,7 @@
 import { Box, Divider, Link, Paper, Typography } from '@mui/material'
 import AuthorAvatar from '../../components/author-avatar'
 import { User, userDefault } from '../../types/user'
-import { useMount } from '../../utils/hook'
+import { useMount } from '../../utils'
 import { useState } from 'react'
 import { countPinsByAuthorId } from '../../api/pin'
 import { selectUserById } from '../../api/user'

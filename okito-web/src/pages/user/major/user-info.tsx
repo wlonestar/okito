@@ -9,7 +9,7 @@ import {
   Typography,
 } from '@mui/material'
 import { User } from '../../../types/user'
-import { useMount } from '../../../utils/hook'
+import { useMount } from '../../../utils'
 
 const Img = styled('img')({
   margin: 'auto',

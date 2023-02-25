@@ -3,7 +3,7 @@ import { Box, Button, Divider, Paper, Tab, Tabs } from '@mui/material'
 import { Link, useParams } from 'react-router-dom'
 import { useAuth } from '../../../context/auth-context'
 import { Collection } from '../../../types/collection'
-import { useMount, useSort } from '../../../utils/hook'
+import { useMount, useSort } from '../../../utils'
 import {
   selectCollectionsByAuthorId,
   selectCollectionsByFollowerId,

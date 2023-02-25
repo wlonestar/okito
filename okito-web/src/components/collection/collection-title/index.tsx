@@ -11,7 +11,7 @@ import {
 import { formatDate } from '../../../utils/date'
 import { PointerDivider } from '../../divider'
 import React, { useState } from 'react'
-import { useMount } from '../../../utils/hook'
+import { useMount } from '../../../utils'
 import {
   countFollowNumByCollectionId,
   countPostsByCollectionId,

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { sortOrder } from '../consts'
 
 export const useMount = (callback: () => void) => {
@@ -37,4 +37,15 @@ export const useSort = <
       ? 1
       : -1
   )
+}
+
+export const useMountRef = () => {
+  const mountedRef = useRef(false)
+  useEffect(() => {
+    mountedRef.current = true
+    return () => {
+      mountedRef.current = false
+    }
+  })
+  return mountedRef
 }

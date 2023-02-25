@@ -1,7 +1,7 @@
 import { PinComment } from '../../../types/pin-comment'
 import { User, userDefault } from '../../../types/user'
 import React, { useState } from 'react'
-import { useMount } from '../../../utils/hook'
+import { useMount } from '../../../utils'
 import { selectUserById } from '../../../api/user'
 import { selectPinCommentsSecondaryById } from '../../../api/pin-comment'
 import { Box, Collapse, Divider, Grid, Link, Typography } from '@mui/material'

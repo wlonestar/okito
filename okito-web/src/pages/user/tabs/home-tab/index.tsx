@@ -1,7 +1,7 @@
 import { ReactNode, useState } from 'react'
 import { Box, Paper } from '@mui/material'
 import { useParams } from 'react-router-dom'
-import { useMount, useSort } from '../../../../utils/hook'
+import { useMount, useSort } from '../../../../utils'
 import { Activity } from '../../../../types/activity'
 import { selectActivitiesByUserId } from '../../../../api/activity'
 import { useAuth } from '../../../../context/auth-context'

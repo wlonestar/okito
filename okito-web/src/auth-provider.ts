@@ -57,6 +57,7 @@ export const register = (data: SignUpForm) => {
   })
 }
 
+// TODO
 export const logout = async () => {
   window.localStorage.removeItem(localAuthStorageKey)
 }

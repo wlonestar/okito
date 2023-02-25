@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { User, userDefault } from '../../../types/user'
-import { useMount } from '../../../utils/hook'
+import { useMount } from '../../../utils'
 import { selectUserById } from '../../../api/user'
 import { Grid, Link, Typography } from '@mui/material'
 import { PinComment } from '../../../types/pin-comment'

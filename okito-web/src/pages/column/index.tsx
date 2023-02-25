@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import { useMount, useSort } from '../../utils/hook'
+import { useMount, useSort } from '../../utils'
 import React, { SyntheticEvent, useState } from 'react'
 import { Column, columnDefault } from '../../types/column'
 import {

@@ -13,7 +13,7 @@ import { Column } from '../../../types/column'
 import { User } from '../../../types/user'
 import MetaData from './meta-data'
 import React, { useState } from 'react'
-import { useMount } from '../../../utils/hook'
+import { useMount } from '../../../utils'
 import {
   countFollowByColumnId,
   countPostsByColumnId,

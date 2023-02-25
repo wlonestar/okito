@@ -1,7 +1,7 @@
 import React, { SyntheticEvent, useState } from 'react'
 import PostList from '../../../components/post/post-list'
 import { useAuth } from '../../../context/auth-context'
-import { useMount, useSort } from '../../../utils/hook'
+import { useMount, useSort } from '../../../utils'
 import { Post } from '../../../types/post'
 import { selectPostsByAuthorId } from '../../../api/post'
 import { Link, useParams } from 'react-router-dom'

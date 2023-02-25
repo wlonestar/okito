@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Box, Button, Divider, Link, Typography } from '@mui/material'
 import { User } from '../../../types/user'
 import AuthorAvatar from '../../author-avatar'
-import { useMount } from '../../../utils/hook'
+import { useMount } from '../../../utils'
 import {
   selectUserFollowByUserIdAndFollowedId,
   updateUserFollow,

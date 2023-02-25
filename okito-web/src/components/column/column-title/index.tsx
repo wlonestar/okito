@@ -19,7 +19,7 @@ import {
   selectUserColumnFollowByUserIdAndColumnId,
   updateFollowColumn,
 } from '../../../api/user'
-import { useMount } from '../../../utils/hook'
+import { useMount } from '../../../utils'
 import { User } from '../../../types/user'
 import AuthorTitle from '../../author-title'
 import ActionList from '../column-card/action-list'

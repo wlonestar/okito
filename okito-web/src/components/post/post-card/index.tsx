@@ -9,7 +9,7 @@ import {
 } from '@mui/material'
 import { Post } from '../../../types/post'
 import { useState } from 'react'
-import { useMount } from '../../../utils/hook'
+import { useMount } from '../../../utils'
 import { selectUserById } from '../../../api/user'
 import { Tag } from '../../../types/tag'
 import { selectTagsByPostId } from '../../../api/tag'

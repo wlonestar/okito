@@ -2,7 +2,7 @@ import React, { SyntheticEvent, useState } from 'react'
 import { Box, Divider, Paper, Tab, Tabs } from '@mui/material'
 import { User } from '../../../types/user'
 import { Link, Outlet, useParams } from 'react-router-dom'
-import { useMount } from '../../../utils/hook'
+import { useMount } from '../../../utils'
 
 const tabs = [
   { index: 0, label: '动态', path: '' },

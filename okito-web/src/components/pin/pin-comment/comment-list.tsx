@@ -1,7 +1,7 @@
 import React, { SyntheticEvent, useState } from 'react'
 import { PinComment } from '../../../types/pin-comment'
 import { User } from '../../../types/user'
-import { useSort } from '../../../utils/hook'
+import { useSort } from '../../../utils'
 import { Box, Tab, Tabs, Typography } from '@mui/material'
 import { tabProps } from '../../tab'
 import { TabsProp } from '../../../types/tabs-prop'

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useMount, useSort } from '../../utils/hook'
+import { useMount, useSort } from '../../utils'
 import { useParams } from 'react-router-dom'
 import { Grid } from '@mui/material'
 import { Post, postDefault } from '../../types/post'

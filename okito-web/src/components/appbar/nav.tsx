@@ -1,7 +1,7 @@
 import React, { SyntheticEvent, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Box, Tab, Tabs } from '@mui/material'
-import { useMount } from '../../utils/hook'
+import { useMount } from '../../utils'
 
 const tabs = [
   { index: 0, label: '', path: '' },

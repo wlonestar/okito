@@ -6,7 +6,7 @@ import { PostComment } from '../../../types/post-comment'
 import CommentList from './comment-list'
 import { User } from '../../../types/user'
 import { TabsProp } from '../../../types/tabs-prop'
-import { useSort } from '../../../utils/hook'
+import { useSort } from '../../../utils'
 
 const tabs: TabsProp[] = [
   { index: 0, label: '最热' },

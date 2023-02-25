@@ -9,7 +9,7 @@ import {
   Typography,
 } from '@mui/material'
 import React, { useState } from 'react'
-import { useMount } from '../../../utils/hook'
+import { useMount } from '../../../utils'
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined'
 import {

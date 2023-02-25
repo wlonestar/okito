@@ -7,7 +7,7 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import { User } from '../../../types/user'
 import { useState } from 'react'
-import { useMount } from '../../../utils/hook'
+import { useMount } from '../../../utils'
 import {
   likeActionToPostComment,
   selectPostCommentLikeById,

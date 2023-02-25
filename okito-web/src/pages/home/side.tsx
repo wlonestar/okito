@@ -1,6 +1,6 @@
 import { Box, Link, Paper, Typography } from '@mui/material'
 import { useState } from 'react'
-import { useMount } from '../../utils/hook'
+import { useMount } from '../../utils'
 
 type Message = '上午好！' | '下午好！' | '晚上好！' | '你好！'
 

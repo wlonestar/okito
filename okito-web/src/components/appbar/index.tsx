@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   AppBar,
   Box,
@@ -14,11 +14,16 @@ import CustomSearch from './search'
 import DarkIcon from './dark-icon'
 import Nav from './nav'
 import { User } from '../../types/user'
-import { CurrentUserProps } from '../../types/current-user-props'
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined'
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined'
+import CustomMenu from './menu'
 
-const Authenticated = ({ currentUser }: CurrentUserProps) => {
+interface AuthenticatedProps {
+  handleOpenMenu: (event: React.MouseEvent<HTMLElement>) => void
+  currentUser: User | null
+}
+
+const Authenticated = ({ handleOpenMenu, currentUser }: AuthenticatedProps) => {
   return (
     <>
       <IconButton
@@ -49,8 +54,7 @@ const Authenticated = ({ currentUser }: CurrentUserProps) => {
         <Typography variant="body2">{'创作中心'}</Typography>
       </Button>
       <IconButton
-        href={`/user/${currentUser?.id}`}
-        target="_blank"
+        onClick={handleOpenMenu}
         sx={{
           padding: '4px',
           width: 42,
@@ -90,6 +94,16 @@ interface CustomAppBarProps {
 }
 
 export const CustomAppBar = ({ theme, user }: CustomAppBarProps) => {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+
+  const handleOpenMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleCloseMenu = () => {
+    setAnchorEl(null)
+  }
+
   return (
     <>
       <AppBar
@@ -127,9 +141,18 @@ export const CustomAppBar = ({ theme, user }: CustomAppBarProps) => {
             {user === null ? (
               <UnAuthenticated />
             ) : (
-              <Authenticated currentUser={user} />
+              <Authenticated
+                handleOpenMenu={handleOpenMenu}
+                currentUser={user}
+              />
             )}
           </Box>
+          <CustomMenu
+            anchorEl={anchorEl}
+            setAnchorEl={setAnchorEl}
+            isMenuOpen={Boolean(anchorEl)}
+            handleMenuClose={handleCloseMenu}
+          />
           <DarkIcon theme={theme} />
         </Toolbar>
       </AppBar>

@@ -5,7 +5,7 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import SmsOutlinedIcon from '@mui/icons-material/SmsOutlined'
 import { User } from '../../../types/user'
-import { useMount } from '../../../utils/hook'
+import { useMount } from '../../../utils'
 import { Pin } from '../../../types/pin'
 import { likeActionToPin, selectPinLikeById } from '../../../api/pin'
 

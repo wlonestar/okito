@@ -14,7 +14,7 @@ import {
   selectUserFollowByUserIdAndFollowedId,
   updateUserFollow,
 } from '../../api/user'
-import { useMount } from '../../utils/hook'
+import { useMount } from '../../utils'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import { VisibilityRounded } from '@mui/icons-material'
 

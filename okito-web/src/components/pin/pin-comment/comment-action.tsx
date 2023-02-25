@@ -9,7 +9,7 @@ import {
   likeActionToPinComment,
   selectPinCommentLikeById,
 } from '../../../api/pin-comment'
-import { useMount } from '../../../utils/hook'
+import { useMount } from '../../../utils'
 
 interface CommentActionProps {
   comment: PinComment

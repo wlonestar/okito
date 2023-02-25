@@ -4,7 +4,7 @@ import { User } from '../../../types/user'
 import InputBox from './input-box'
 import CommentList from './comment-list'
 import { PinComment } from '../../../types/pin-comment'
-import { useMount, useSort } from '../../../utils/hook'
+import { useMount, useSort } from '../../../utils'
 import { selectPinCommentsByPinId } from '../../../api/pin-comment'
 
 interface PinCommentProps {

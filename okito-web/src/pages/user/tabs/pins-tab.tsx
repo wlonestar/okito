@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useAuth } from '../../../context/auth-context'
 import { useState } from 'react'
 import { Pin } from '../../../types/pin'
-import { useMount, useSort } from '../../../utils/hook'
+import { useMount, useSort } from '../../../utils'
 import { selectPinsByAuthorId } from '../../../api/pin'
 import PinList from '../../../components/pin/pin-list'
 
