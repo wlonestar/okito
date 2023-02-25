@@ -16,6 +16,13 @@ export function selectCollectionsByFollowerId(followerId: number) {
   })
 }
 
+export function selectCollectionById(id: number) {
+  return client({
+    url: `${prefix}/${id}`,
+    method: 'GET',
+  })
+}
+
 export function countCollectionsByAuthorId(authorId: number) {
   return client({
     url: `${prefix}/count/posts/${authorId}`,

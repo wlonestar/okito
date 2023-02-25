@@ -1,7 +1,7 @@
 import { Activity } from '../../../../types/activity'
 import { User } from '../../../../types/user'
 import { Pin } from '../../../../types/pin'
-import { Box, Link, Paper, Typography } from '@mui/material'
+import { Box, Divider, Link, Paper, Typography } from '@mui/material'
 import { formatDateTime } from '../../../../utils/date'
 import PinCard from '../../../../components/pin/pin-card'
 
@@ -25,16 +25,18 @@ export const LikePinCard = ({
           display: 'flex',
           alignItems: 'center',
           p: 2,
-          pb: 0,
         }}
       >
         <Link
           underline="hover"
           color="text.primary"
           href={`/user/${user.id}`}
+          target="_blank"
           sx={{ mr: 2 }}
         >
-          <Typography>{user.username}</Typography>
+          <Typography variant="body1" fontWeight={600}>
+            {user.username}
+          </Typography>
         </Link>
         <Typography>{'赞了这篇想法'}</Typography>
         <Typography
@@ -45,6 +47,7 @@ export const LikePinCard = ({
           {formatDateTime(activity.execTime)}
         </Typography>
       </Box>
+      <Divider sx={{ ml: 2, mr: 2 }} />
       <PinCard pin={pin} currentUser={currentUser} />
     </Paper>
   )

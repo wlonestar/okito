@@ -1,7 +1,7 @@
 import { Activity } from '../../../../types/activity'
 import { User } from '../../../../types/user'
 import { Post } from '../../../../types/post'
-import { Box, Link, Paper, Typography } from '@mui/material'
+import { Box, Divider, Link, Paper, Typography } from '@mui/material'
 import { formatDateTime } from '../../../../utils/date'
 import { PostCard } from '../../../../components/post/post-card'
 
@@ -19,13 +19,12 @@ export const LikePostCard = ({
   currentUser,
 }: LikePostCardProps) => {
   return (
-    <Paper sx={{ mt: 2 }}>
+    <Paper>
       <Box
         sx={{
           display: 'flex',
           alignItems: 'center',
           p: 2,
-          pb: 0,
         }}
       >
         <Link
@@ -45,6 +44,7 @@ export const LikePostCard = ({
           {formatDateTime(activity.execTime)}
         </Typography>
       </Box>
+      <Divider sx={{ ml: 2, mr: 2 }} />
       <PostCard post={post} currentUser={currentUser} />
     </Paper>
   )

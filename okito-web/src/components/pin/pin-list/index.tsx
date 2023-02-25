@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box, Paper } from '@mui/material'
 import PinCard from '../pin-card'
 import { Pin } from '../../../types/pin'
 import { User } from '../../../types/user'
@@ -12,7 +12,11 @@ export default function PinList({ pins, currentUser }: PinListProps) {
   return (
     <Box>
       {pins.map((pin) => (
-        <PinCard key={pin.id} pin={pin} currentUser={currentUser} />
+        <Paper key={pin.id}>
+          <Box sx={{ mt: 2 }}>
+            <PinCard pin={pin} currentUser={currentUser} />
+          </Box>
+        </Paper>
       ))}
     </Box>
   )
