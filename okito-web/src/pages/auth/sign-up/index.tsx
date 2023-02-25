@@ -1,33 +1,12 @@
-import { FormEvent } from 'react'
 import { Navigate } from 'react-router-dom'
-import {
-  Box,
-  Button,
-  CssBaseline,
-  Link,
-  TextField,
-  Typography,
-} from '@mui/material'
+import { Box, CssBaseline, Typography } from '@mui/material'
 import Image from '../../../assets/img/background.jpg'
 import { siteName } from '../../../consts'
 import { useAuth } from '../../../context/auth-context'
-import { SignUpForm } from '../../../types/sign-up-param'
+import { SignUpCard } from './sign-up-card'
 
 export default function SignUpPage() {
   const { register, user } = useAuth()
-
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const data = new FormData(event.currentTarget)
-    const registerParam: SignUpForm = {
-      email: data.get('email')?.toString(),
-      username: data.get('username')?.toString(),
-      password: data.get('password')?.toString(),
-    }
-    register(registerParam).then(() => {
-      window.location.assign('/login')
-    })
-  }
 
   if (user !== null) {
     return <Navigate replace to="/" />
@@ -62,7 +41,7 @@ export default function SignUpPage() {
           <Box
             sx={{
               width: '630px',
-              height: '480px',
+              height: '430px',
               borderRadius: '5px',
               backgroundColor: 'rgba(255, 255, 255, 0.85)',
               backdropFilter: 'blur(8px)',
@@ -70,55 +49,7 @@ export default function SignUpPage() {
               flexDirection: 'column',
             }}
           >
-            <Box
-              component="form"
-              onSubmit={handleSubmit}
-              noValidate
-              sx={{ margin: '30px' }}
-            >
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                name="email"
-                label="邮箱"
-                autoComplete="email"
-                autoFocus
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="username"
-                name="username"
-                label="用户名"
-                autoComplete="current-username"
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="password"
-                name="password"
-                label="密码"
-                type="password"
-                autoComplete="current-password"
-              />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                {'注册'}
-              </Button>
-              <Box sx={{ display: 'flex' }}>
-                <Link href={'/login'} variant="body2" sx={{ ml: 'auto' }}>
-                  {'已有账号？去登录'}
-                </Link>
-              </Box>
-            </Box>
+            <SignUpCard register={register} />
           </Box>
         </Box>
       </Box>

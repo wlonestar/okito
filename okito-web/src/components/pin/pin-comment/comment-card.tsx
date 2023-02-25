@@ -48,7 +48,7 @@ export default function CommentCard({
     <>
       <Grid container spacing={2} sx={{ pt: 2 }}>
         <Grid item>
-          <AuthorAvatar author={authorAvatar} width={32} height={32} />
+          <AuthorAvatar author={authorAvatar} />
         </Grid>
         <Grid item xs={12} sm container>
           <Grid item xs container direction="column" spacing={2}>

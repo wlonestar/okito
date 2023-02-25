@@ -108,3 +108,23 @@ export function countFollowTagsNumByUserId(userId: number) {
     method: 'GET',
   })
 }
+
+export function checkEmailExists(email: string) {
+  return client({
+    url: '/user/check/email',
+    method: 'GET',
+    params: {
+      email: email,
+    },
+  })
+}
+
+export function checkUsernameExists(username: string) {
+  return client({
+    url: '/user/check/username',
+    method: 'GET',
+    params: {
+      username: username,
+    },
+  })
+}
