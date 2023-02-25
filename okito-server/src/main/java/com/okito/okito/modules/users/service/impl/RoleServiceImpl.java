@@ -4,8 +4,6 @@ import com.okito.okito.modules.users.model.entity.Role;
 import com.okito.okito.modules.users.repository.RoleRepository;
 import com.okito.okito.modules.users.service.RoleService;
 import jakarta.annotation.Resource;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,11 +23,6 @@ public class RoleServiceImpl implements RoleService {
   @Override
   public List<Role> selectAll() {
     return roleRepository.findAll();
-  }
-
-  @Override
-  public Page<Role> selectAll(Pageable pageable) {
-    return roleRepository.findAll(pageable);
   }
 
   @Override

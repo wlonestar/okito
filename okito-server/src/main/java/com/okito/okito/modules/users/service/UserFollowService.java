@@ -3,8 +3,6 @@ package com.okito.okito.modules.users.service;
 import com.okito.okito.modules.users.model.entity.UserFollow;
 import com.okito.okito.modules.users.model.entity.UserFollowId;
 import com.okito.okito.modules.users.model.view.UserView;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -20,12 +18,6 @@ public interface UserFollowService {
   List<UserView> selectFollowersByUserId(Long userId);
 
   List<UserView> selectFollowedsByUserId(Long userId);
-
-  Page<UserFollow> selectAll(Pageable pageable);
-
-  Page<UserView> selectFollowersByUserId(Long userId, Pageable pageable);
-
-  Page<UserView> selectFollowedsByUserId(Long userId, Pageable pageable);
 
   UserFollow selectById(UserFollowId id);
 

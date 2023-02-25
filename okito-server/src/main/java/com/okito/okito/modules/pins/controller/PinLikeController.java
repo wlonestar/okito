@@ -7,6 +7,7 @@ import com.okito.okito.modules.pins.model.entity.PinLike;
 import com.okito.okito.modules.pins.model.entity.PinLikeId;
 import com.okito.okito.modules.pins.model.param.PinLikeParam;
 import com.okito.okito.modules.pins.service.PinLikeService;
+import com.okito.okito.modules.pins.service.PinService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
@@ -32,6 +33,9 @@ public class PinLikeController {
 
   @Resource
   private PinLikeService pinLikeService;
+
+  @Resource
+  private PinService pinService;
 
   /**
    * select all pinLikes
@@ -109,9 +113,9 @@ public class PinLikeController {
   public RespResult<?> add(@NonNull @RequestBody PinLikeParam param) {
     PinLikeId id = new PinLikeId(param.getPinId(), param.getUserId());
     PinLike pinLike = pinLikeService.selectById(id);
-    log.info("{}", pinLike);
     if (Objects.equals(pinLike, null)) {
       pinLikeService.add(new PinLike(id, param.getType()));
+      pinService.updatePinViewNum(param.getPinId());
       return RespResult.success();
     }
     return RespResult.fail(RespStatus.ALREADY_EXIST);
@@ -119,7 +123,6 @@ public class PinLikeController {
 
   /**
    * update a pinLike
-   * TODO: have not been tested
    *
    * @param param pinLikeParam
    * @return RespResult<?>
@@ -134,14 +137,16 @@ public class PinLikeController {
       } else {
         pinLike.setType(param.getType());
         pinLikeService.update(pinLike);
-        return RespResult.success("update success");
+        pinService.updatePinViewNum(param.getPinId());
+        return RespResult.success();
       }
     } else {
       PinLike newPinLike = new PinLike();
       newPinLike.setId(id);
       newPinLike.setType(param.getType());
       pinLikeService.add(newPinLike);
-      return RespResult.success("update success");
+      pinService.updatePinViewNum(param.getPinId());
+      return RespResult.success();
     }
   }
 

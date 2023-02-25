@@ -1,8 +1,6 @@
 package com.okito.okito.modules.users.service;
 
 import com.okito.okito.modules.users.model.entity.Role;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -14,8 +12,6 @@ import java.util.List;
 public interface RoleService {
 
   List<Role> selectAll();
-
-  Page<Role> selectAll(Pageable pageable);
 
   Role selectById(Long id);
 

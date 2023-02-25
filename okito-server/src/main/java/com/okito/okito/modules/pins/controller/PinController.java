@@ -4,6 +4,7 @@ import com.okito.okito.common.annotation.TimeLog;
 import com.okito.okito.common.constant.consts.RespResult;
 import com.okito.okito.common.constant.enums.RespStatus;
 import com.okito.okito.modules.pins.model.entity.Pin;
+import com.okito.okito.modules.pins.model.param.PinParam;
 import com.okito.okito.modules.pins.model.view.PinView;
 import com.okito.okito.modules.pins.service.PinService;
 import jakarta.annotation.Resource;
@@ -49,7 +50,7 @@ public class PinController {
    * @param authorId authorId
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/{authorId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
   public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
     return RespResult.success(pinService.selectAllByAuthorId(authorId));
   }
@@ -75,13 +76,25 @@ public class PinController {
    * @param pageable format => page=1&size=5&sort=id,asc
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/{authorId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/page/author/{authorId}")
   public RespResult<?> selectAllByAuthorId(
       @NonNull @PathVariable(name = "authorId") Long authorId,
       @NonNull @PageableDefault(sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable) {
     log.info("page={}&size={}&sort={}", pageable.getPageNumber(),
         pageable.getPageSize(), pageable.getSort());
     return RespResult.success(pinService.selectAllByAuthorId(authorId, pageable));
+  }
+
+  /**
+   * count pins by author id
+   *
+   * @param authorId author id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/count/author/{authorId}")
+  public RespResult<?> countByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
+    long count = pinService.countByAuthorId(authorId);
+    return  RespResult.success(count);
   }
 
   /**
@@ -94,6 +107,7 @@ public class PinController {
   public RespResult<?> selectById(@NonNull @PathVariable(name = "id") Long id) {
     PinView pinView = pinService.selectById(id);
     if (!Objects.equals(pinView, null)) {
+      pinService.updatePinViewNum(id);
       return RespResult.success(pinView);
     }
     return RespResult.fail(RespStatus.NOT_EXIST);
@@ -102,11 +116,19 @@ public class PinController {
   /**
    * add a pin
    *
-   * @param pin pin
+   * @param param pin param
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.POST, path = "")
-  public RespResult<?> add(@NonNull @RequestBody Pin pin) {
+  public RespResult<?> add(@NonNull @RequestBody PinParam param) {
+    Pin pin = Pin.builder()
+      .id(param.getId())
+      .content(param.getContent())
+      .createTime(param.getCreateTime())
+      .updateTime(param.getUpdateTime())
+      .authorId(param.getAuthorId())
+      .viewNum(0L)
+      .build();
     pinService.add(pin);
     return RespResult.success();
   }

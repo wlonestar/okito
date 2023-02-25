@@ -24,9 +24,13 @@ public interface PinService {
 
   PinView selectById(Long id);
 
+  long countByAuthorId(Long authorId);
+
   boolean add(Pin pin);
 
   boolean update(Pin pin);
+
+  void updatePinViewNum(Long pinId);
 
   boolean deleteById(Long id);
 

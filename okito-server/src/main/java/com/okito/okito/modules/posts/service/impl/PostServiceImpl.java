@@ -8,8 +8,6 @@ import com.okito.okito.modules.posts.service.PostService;
 import com.okito.okito.modules.users.model.entity.User;
 import com.okito.okito.modules.users.repository.UserRepository;
 import jakarta.annotation.Resource;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,15 +31,6 @@ public class PostServiceImpl implements PostService {
   private CategoryRepository categoryRepository;
 
   @Resource
-  private PostTagRepository postTagRepository;
-
-  @Resource
-  private PostCollectionRepository postCollectionRepository;
-
-  @Resource
-  private PostColumnRepository postColumnRepository;
-
-  @Resource
   private UserRepository userRepository;
 
   @Override
@@ -56,52 +45,22 @@ public class PostServiceImpl implements PostService {
 
   @Override
   public List<PostView> selectAllByTagId(Long tagId) {
-    return postTagRepository.findAllByTagId(tagId);
+    return postViewRepository.findAllByTagId(tagId);
   }
 
   @Override
   public List<PostView> selectAllByCollectionId(Long collectionId) {
-    return postCollectionRepository.findAllByCollectionId(collectionId);
+    return postViewRepository.findAllByCollectionId(collectionId);
   }
 
   @Override
   public List<PostView> selectAllByColumnId(Long columnId) {
-    return postColumnRepository.findAllByColumnId(columnId);
+    return postViewRepository.findAllByColumnId(columnId);
   }
 
   @Override
   public List<PostView> selectAllByAuthorId(Long authorId) {
     return postViewRepository.findAllByAuthorId(authorId);
-  }
-
-  @Override
-  public Page<PostView> selectAll(Pageable pageable) {
-    return postViewRepository.findAll(pageable);
-  }
-
-  @Override
-  public Page<PostView> selectAllByCateId(Long cateId, Pageable pageable) {
-    return postViewRepository.findAllByCateId(cateId, pageable);
-  }
-
-  @Override
-  public Page<PostView> selectAllByTagId(Long tagId, Pageable pageable) {
-    return postTagRepository.findAllByTagId(tagId, pageable);
-  }
-
-  @Override
-  public Page<PostView> selectAllByCollectionId(Long collectionId, Pageable pageable) {
-    return postCollectionRepository.findAllByCollectionId(collectionId, pageable);
-  }
-
-  @Override
-  public Page<PostView> selectAllByColumnId(Long columnId, Pageable pageable) {
-    return postColumnRepository.findAllByColumnId(columnId, pageable);
-  }
-
-  @Override
-  public Page<PostView> selectAllByAuthorId(Long authorId, Pageable pageable) {
-    return postViewRepository.findAllByAuthorId(authorId, pageable);
   }
 
   @Override
@@ -160,12 +119,6 @@ public class PostServiceImpl implements PostService {
       postRepository.deleteById(id);
       return true;
     }
-    return false;
-  }
-
-  @Override
-  public boolean deleteBatch(List<Long> ids) {
-    postRepository.deleteAllById(ids);
     return false;
   }
 

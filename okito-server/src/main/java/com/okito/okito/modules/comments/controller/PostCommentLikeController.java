@@ -27,7 +27,7 @@ import java.util.Objects;
 @Slf4j
 @TimeLog
 @RestController
-@RequestMapping(path = "/comment/post/like")
+@RequestMapping(path = "/post/comment/like")
 public class PostCommentLikeController {
 
   @Resource

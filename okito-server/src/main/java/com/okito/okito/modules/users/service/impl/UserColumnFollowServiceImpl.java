@@ -5,8 +5,6 @@ import com.okito.okito.modules.users.model.entity.UserColumnFollowId;
 import com.okito.okito.modules.users.repository.UserColumnFollowRepository;
 import com.okito.okito.modules.users.service.UserColumnFollowService;
 import jakarta.annotation.Resource;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,31 +27,6 @@ public class UserColumnFollowServiceImpl implements UserColumnFollowService {
   }
 
   @Override
-  public List<UserColumnFollow> selectByUserIdAndType(Long userId) {
-    return userColumnFollowRepository.findAllByUserIdAndType(userId);
-  }
-
-  @Override
-  public List<UserColumnFollow> selectByColumnIdAndType(Long columnId) {
-    return userColumnFollowRepository.findAllByColumnIdAndType(columnId);
-  }
-
-  @Override
-  public Page<UserColumnFollow> selectAll(Pageable pageable) {
-    return userColumnFollowRepository.findAll(pageable);
-  }
-
-  @Override
-  public Page<UserColumnFollow> selectByUserIdAndType(Long userId, Pageable pageable) {
-    return userColumnFollowRepository.findAllByUserIdAndType(userId, pageable);
-  }
-
-  @Override
-  public Page<UserColumnFollow> selectByColumnIdAndType(Long columnId, Pageable pageable) {
-    return userColumnFollowRepository.findAllByColumnIdAndType(columnId, pageable);
-  }
-
-  @Override
   public UserColumnFollow selectById(UserColumnFollowId id) {
     return userColumnFollowRepository.findById(id).orElse(null);
   }
@@ -61,7 +34,7 @@ public class UserColumnFollowServiceImpl implements UserColumnFollowService {
   @Override
   public boolean add(UserColumnFollow userColumnFollow) {
     userColumnFollowRepository.save(userColumnFollow);
-    return false;
+    return true;
   }
 
   @Override

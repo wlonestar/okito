@@ -27,7 +27,7 @@ import java.util.Objects;
 @Slf4j
 @TimeLog
 @RestController
-@RequestMapping(path = "/comment/pin/like")
+@RequestMapping(path = "/pin/comment/like")
 public class PinCommentLikeController {
 
   @Resource

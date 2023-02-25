@@ -2,10 +2,10 @@ package com.okito.okito.modules.posts.service.impl;
 
 import com.okito.okito.modules.posts.model.entity.Collection;
 import com.okito.okito.modules.posts.repository.CollectionRepository;
+import com.okito.okito.modules.posts.repository.PostCollectionRepository;
 import com.okito.okito.modules.posts.service.CollectionService;
+import com.okito.okito.modules.users.repository.UserCollectionFollowRepository;
 import jakarta.annotation.Resource;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,19 +22,45 @@ public class CollectionServiceImpl implements CollectionService {
   @Resource
   private CollectionRepository collectionRepository;
 
+  @Resource
+  private PostCollectionRepository postCollectionRepository;
+
+  @Resource
+  private UserCollectionFollowRepository userCollectionFollowRepository;
+
   @Override
   public List<Collection> selectAll() {
     return collectionRepository.findAll();
   }
 
   @Override
-  public Page<Collection> selectAll(Pageable pageable) {
-    return collectionRepository.findAll(pageable);
+  public List<Collection> selectAllByAuthorId(Long authorId) {
+    return collectionRepository.findAllByAuthorId(authorId);
+  }
+
+  @Override
+  public List<Collection> selectAllByFollowerId(Long followerId) {
+    return collectionRepository.findAllByFollowerId(followerId);
   }
 
   @Override
   public Collection selectById(Long id) {
     return collectionRepository.findById(id).orElse(null);
+  }
+
+  @Override
+  public long countByAuthorId(Long authorId) {
+    return collectionRepository.countAllByAuthorId(authorId);
+  }
+
+  @Override
+  public long countPostsByCollectionId(Long collectionId) {
+    return postCollectionRepository.countByCollectionId(collectionId);
+  }
+
+  @Override
+  public long countFollowNumByCollectionId(Long collectId) {
+    return userCollectionFollowRepository.countFollowNumByCollectionId(collectId);
   }
 
   @Override

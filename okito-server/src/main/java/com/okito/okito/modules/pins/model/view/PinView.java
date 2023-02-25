@@ -26,6 +26,7 @@ public class PinView implements Serializable {
   private LocalDateTime createTime;
   private LocalDateTime updateTime;
   private Long authorId;
+  private Long viewNum;
   private Long likeNum;
 
 }

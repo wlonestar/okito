@@ -7,9 +7,6 @@ import com.okito.okito.modules.posts.model.entity.Column;
 import com.okito.okito.modules.posts.service.ColumnService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
@@ -53,26 +50,14 @@ public class ColumnController {
   }
 
   /**
-   * select all followed columns by userId
+   * select all followed columns by follower id
    *
-   * @param userId userId
+   * @param followerId followerId
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/follow/{userId}")
-  public RespResult<?> selectAllFollowedByUserId(@NonNull @PathVariable(name = "userId") Long userId) {
-    return RespResult.success(columnService.selectAllFollowedByUserId(userId));
-  }
-
-  /**
-   * select all columns by page
-   *
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page")
-  public RespResult<?> selectAll(
-      @NonNull @PageableDefault(sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(columnService.selectAll(pageable));
+  @RequestMapping(method = RequestMethod.GET, path = "/follower/{followerId}")
+  public RespResult<?> selectAllFollowedByUserId(@NonNull @PathVariable(name = "followerId") Long followerId) {
+    return RespResult.success(columnService.selectAllByFollowerId(followerId));
   }
 
   /**
@@ -108,8 +93,8 @@ public class ColumnController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/count/follow/{columnId}")
-  public RespResult<?> countFollowByColumnId(@NonNull @PathVariable(name = "columnId") Long columnId) {
-    return RespResult.success(columnService.countFollowByColumnId(columnId));
+  public RespResult<?> countFollowNumByColumnId(@NonNull @PathVariable(name = "columnId") Long columnId) {
+    return RespResult.success(columnService.countFollowNumByColumnId(columnId));
   }
 
   /**

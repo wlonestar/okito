@@ -7,9 +7,6 @@ import com.okito.okito.modules.posts.model.entity.Collection;
 import com.okito.okito.modules.posts.service.CollectionService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,15 +39,25 @@ public class CollectionController {
   }
 
   /**
-   * select all collections by page
+   * select all collections by author id
    *
-   * @param pageable format => page=1&size=5&sort=id,asc
+   * @param authorId author id
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/page")
-  public RespResult<?> selectAll(
-      @NonNull @PageableDefault(sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(collectionService.selectAll(pageable));
+  @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
+  public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
+    return RespResult.success(collectionService.selectAllByAuthorId(authorId));
+  }
+
+  /**
+   * select all collections by follower id
+   *
+   * @param followerId follower id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/follower/{followerId}")
+  public RespResult<?> selectAllByFollowerId(@NonNull @PathVariable(name = "followerId") Long followerId) {
+    return RespResult.success(collectionService.selectAllByFollowerId(followerId));
   }
 
   /**
@@ -66,6 +73,39 @@ public class CollectionController {
       return RespResult.success(column);
     }
     return RespResult.fail(RespStatus.NOT_EXIST);
+  }
+
+  /**
+   * count collections by author id
+   *
+   * @param authorId author id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/count/posts/{authorId}")
+  public RespResult<?> countCollectionsByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
+    return RespResult.success(collectionService.countByAuthorId(authorId));
+  }
+
+  /**
+   * count posts by collection id
+   *
+   * @param collectionId collection id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/count/collection/{collectionId}")
+  public RespResult<?> countPostsByCollectionId(@NonNull @PathVariable(name = "collectionId") Long collectionId) {
+    return RespResult.success(collectionService.countPostsByCollectionId(collectionId));
+  }
+
+  /**
+   * count posts num by collection id
+   *
+   * @param collectionId collection id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/count/follow/{collectionId}")
+  public RespResult<?> countFollowNumByCollectionId(@NonNull @PathVariable(name = "collectionId") Long collectionId) {
+    return RespResult.success(collectionService.countFollowNumByCollectionId(collectionId));
   }
 
   /**

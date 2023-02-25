@@ -6,18 +6,22 @@ import com.okito.okito.modules.comments.repository.PinCommentRepository;
 import com.okito.okito.modules.comments.repository.PinCommentViewRepository;
 import com.okito.okito.modules.comments.service.PinCommentService;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * @author <a href="mailto:wlonestar@163.com">wjl</a>
  * @version 0.0.1
  * @time 2023/1/5 22:50
  */
+@Slf4j
 @Service
 public class PinCommentServiceImpl implements PinCommentService {
 
@@ -44,7 +48,34 @@ public class PinCommentServiceImpl implements PinCommentService {
 
   @Override
   public List<PinCommentView> selectSecondaryComments(Long id) {
-    return pinCommentViewRepository.findAllByParentId(id);
+    List<PinCommentView> res = new ArrayList<>();
+    PinCommentView parentComment = pinCommentViewRepository.findById(id).orElse(null);
+    if (!Objects.equals(parentComment, null)) {
+      // if no son, no grandson
+      List<PinCommentView> secondaryComments = pinCommentViewRepository.findAllByParentId(id);
+      if (secondaryComments.size() != 0) {
+        res.addAll(secondaryComments);
+        List<PinCommentView> pinCommentViews = selectAllByPinId(parentComment.getPinId());
+        pinCommentViews = pinCommentViews.stream()
+          .filter(comment -> !Objects.equals(comment.getParentId(), null))
+          .filter(comment -> !Objects.equals(comment.getParentId(), id))
+          .collect(Collectors.toList());
+        pinCommentViews.forEach(comment -> {
+          PinCommentView commentParent = pinCommentViewRepository.findById(comment.getParentId()).orElse(null);
+          while (!Objects.equals(commentParent, null)) {
+            if (res.contains(commentParent)) {
+              res.add(comment);
+              break;
+            }
+            if (Objects.equals(commentParent.getParentId(), null)) {
+              break;
+            }
+            commentParent = pinCommentViewRepository.findById(commentParent.getParentId()).orElse(null);
+          }
+        });
+      }
+    }
+    return res;
   }
 
   @Override
@@ -73,18 +104,27 @@ public class PinCommentServiceImpl implements PinCommentService {
   }
 
   @Override
+  public long countByPinId(Long pinId) {
+    return pinCommentRepository.countByPinId(pinId);
+  }
+
+  @Override
   public boolean add(PinComment pinComment) {
     Long pinId = pinComment.getPinId();
-    PinComment parentComment = pinCommentRepository.findById(pinComment.getParentId()).orElse(null);
-    if (!Objects.equals(parentComment, null)) {
-      if (parentComment.getPinId().equals(pinId)) {
-        pinCommentRepository.save(pinComment);
-        return true;
+    if (!Objects.isNull(pinId)) {
+      Long parentId = pinComment.getParentId();
+      if (!Objects.isNull(parentId)) {
+        PinComment parentComment = pinCommentRepository.findById(parentId).orElse(null);
+        if (!Objects.isNull(parentComment) && pinId.equals(parentComment.getPinId())) {
+          pinCommentRepository.save(pinComment);
+          return true;
+        }
+        return false;
       }
-      return false;
+      pinCommentRepository.save(pinComment);
+      return true;
     }
-    pinCommentRepository.save(pinComment);
-    return true;
+    return false;
   }
 
   @Override

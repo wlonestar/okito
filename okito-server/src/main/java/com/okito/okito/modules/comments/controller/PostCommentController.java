@@ -153,7 +153,7 @@ public class PostCommentController {
   }
 
   /**
-   * count postComment By post id
+   * count postComments By post id
    *
    * @param postId post id
    * @return RespResult<?>

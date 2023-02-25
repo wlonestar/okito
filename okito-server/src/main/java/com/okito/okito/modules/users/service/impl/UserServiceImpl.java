@@ -7,8 +7,6 @@ import com.okito.okito.modules.users.repository.UserRepository;
 import com.okito.okito.modules.users.repository.UserViewRepository;
 import com.okito.okito.modules.users.service.UserService;
 import jakarta.annotation.Resource;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,8 +35,13 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public List<UserView> selectAllByTagId(Long tagId) {
-    return tagFollowRepository.findAllByTagId(tagId);
+  public List<UserView> selectFollowingByUserId(Long userId) {
+    return userViewRepository.findAllFollowingByUserId(userId);
+  }
+
+  @Override
+  public List<UserView> selectFollowerByUserId(Long userId) {
+    return userViewRepository.findAllFollowerByUserId(userId);
   }
 
   @Override
@@ -49,22 +52,6 @@ public class UserServiceImpl implements UserService {
   @Override
   public List<String> selectAllEmails() {
     return userRepository.findEmails();
-  }
-
-  @Override
-  public Page<UserView> selectAll(Pageable pageable) {
-    return userViewRepository.findAll(pageable);
-  }
-
-  @Override
-  public Page<UserView> selectAllByTagId(Long tagId, Pageable pageable) {
-    return tagFollowRepository.findAllByTagId(tagId, pageable);
-  }
-
-  @Override
-  public User selectByUsernameAndPassword(String username, String password) {
-    User user = userRepository.findUserByUsernameAndPassword(username, password);
-    return Objects.equals(user, null) ? null : user;
   }
 
   @Override
@@ -81,6 +68,11 @@ public class UserServiceImpl implements UserService {
   @Override
   public UserView selectViewById(Long id) {
     return userViewRepository.findById(id).orElse(null);
+  }
+
+  @Override
+  public long countFollowTagsNumById(Long id) {
+    return tagFollowRepository.countAllByUserId(id);
   }
 
   @Override

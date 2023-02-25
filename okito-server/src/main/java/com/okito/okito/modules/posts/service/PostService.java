@@ -2,8 +2,6 @@ package com.okito.okito.modules.posts.service;
 
 import com.okito.okito.modules.posts.model.entity.Post;
 import com.okito.okito.modules.posts.model.view.PostView;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -26,18 +24,6 @@ public interface PostService {
 
   List<PostView> selectAllByAuthorId(Long authorId);
 
-  Page<PostView> selectAll(Pageable pageable);
-
-  Page<PostView> selectAllByCateId(Long cateId, Pageable pageable);
-
-  Page<PostView> selectAllByTagId(Long tagId, Pageable pageable);
-
-  Page<PostView> selectAllByCollectionId(Long collectionId, Pageable pageable);
-
-  Page<PostView> selectAllByColumnId(Long columnId, Pageable pageable);
-
-  Page<PostView> selectAllByAuthorId(Long authorId, Pageable pageable);
-
   PostView selectById(Long id);
 
   boolean add(Post post);
@@ -47,7 +33,5 @@ public interface PostService {
   void updatePostViewNum(Long postId);
 
   boolean deleteById(Long id);
-
-  boolean deleteBatch(List<Long> ids);
 
 }

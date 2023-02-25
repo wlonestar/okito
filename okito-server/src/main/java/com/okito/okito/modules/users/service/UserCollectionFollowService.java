@@ -2,8 +2,6 @@ package com.okito.okito.modules.users.service;
 
 import com.okito.okito.modules.users.model.entity.UserCollectionFollow;
 import com.okito.okito.modules.users.model.entity.UserCollectionFollowId;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -15,16 +13,6 @@ import java.util.List;
 public interface UserCollectionFollowService {
 
   List<UserCollectionFollow> selectAll();
-
-  List<UserCollectionFollow> selectByUserIdAndType(Long userId, Boolean follow);
-
-  List<UserCollectionFollow> selectByCollectionIdAndType(Long collectionId, Boolean follow);
-
-  Page<UserCollectionFollow> selectAll(Pageable pageable);
-
-  Page<UserCollectionFollow> selectByUserIdAndType(Long userId, Boolean follow, Pageable pageable);
-
-  Page<UserCollectionFollow> selectByCollectionIdAndType(Long collectionId, Boolean follow, Pageable pageable);
 
   UserCollectionFollow selectById(UserCollectionFollowId id);
 

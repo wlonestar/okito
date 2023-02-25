@@ -7,9 +7,6 @@ import com.okito.okito.modules.users.model.entity.Role;
 import com.okito.okito.modules.users.service.RoleService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,18 +36,6 @@ public class RoleController {
   @RequestMapping(method = RequestMethod.GET, path = "")
   public RespResult<?> selectAll() {
     return RespResult.success(roleService.selectAll());
-  }
-
-  /**
-   * select all roles by page
-   *
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page")
-  public RespResult<?> selectAll(
-      @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(roleService.selectAll(pageable));
   }
 
   /**

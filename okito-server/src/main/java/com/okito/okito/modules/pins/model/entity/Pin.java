@@ -2,7 +2,10 @@ package com.okito.okito.modules.pins.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -14,6 +17,9 @@ import java.time.LocalDateTime;
  */
 @Data
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "pin")
 public class Pin implements Serializable {
 
@@ -27,14 +33,15 @@ public class Pin implements Serializable {
   private String content;
 
   @Column(name = "create_time")
-//  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS")
   private LocalDateTime createTime;
 
   @Column(name = "update_time")
-//  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS")
   private LocalDateTime updateTime;
 
   @Column(name = "author_id")
   private Long authorId;
+
+  @Column(name = "view_num")
+  private Long viewNum;
 
 }

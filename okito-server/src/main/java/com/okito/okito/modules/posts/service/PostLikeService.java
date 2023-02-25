@@ -2,8 +2,6 @@ package com.okito.okito.modules.posts.service;
 
 import com.okito.okito.modules.posts.model.entity.PostLike;
 import com.okito.okito.modules.posts.model.entity.PostLikeId;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -17,10 +15,6 @@ public interface PostLikeService {
   List<PostLike> selectAll();
 
   List<PostLike> selectAllByUserId(Long userId);
-
-  Page<PostLike> selectAll(Pageable pageable);
-
-  Page<PostLike> selectAllByUserId(Long userId, Pageable pageable);
 
   PostLike selectById(PostLikeId id);
 

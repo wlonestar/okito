@@ -6,8 +6,6 @@ import com.okito.okito.modules.users.model.view.UserView;
 import com.okito.okito.modules.users.repository.UserFollowRepository;
 import com.okito.okito.modules.users.service.UserFollowService;
 import jakarta.annotation.Resource;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -40,21 +38,6 @@ public class UserFollowServiceImpl implements UserFollowService {
   }
 
   @Override
-  public Page<UserFollow> selectAll(Pageable pageable) {
-    return userFollowRepository.findAll(pageable);
-  }
-
-  @Override
-  public Page<UserView> selectFollowersByUserId(Long userId, Pageable pageable) {
-    return userFollowRepository.findFollowersByUserId(userId, pageable);
-  }
-
-  @Override
-  public Page<UserView> selectFollowedsByUserId(Long userId, Pageable pageable) {
-    return userFollowRepository.findFollowedsByUserId(userId, pageable);
-  }
-
-  @Override
   public UserFollow selectById(UserFollowId id) {
     return userFollowRepository.findById(id).orElse(null);
   }
@@ -69,7 +52,7 @@ public class UserFollowServiceImpl implements UserFollowService {
   public boolean update(UserFollow userFollow) {
     UserFollow newUserFollow = userFollowRepository.findById(userFollow.getId()).orElse(null);
     if (!Objects.equals(newUserFollow, null)) {
-      newUserFollow.setType(userFollow.getType());
+      newUserFollow.setFollow(userFollow.getFollow());
       userFollowRepository.save(newUserFollow);
     } else {
       userFollowRepository.save(userFollow);

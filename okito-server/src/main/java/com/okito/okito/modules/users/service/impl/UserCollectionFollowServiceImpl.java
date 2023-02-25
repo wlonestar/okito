@@ -5,8 +5,6 @@ import com.okito.okito.modules.users.model.entity.UserCollectionFollowId;
 import com.okito.okito.modules.users.repository.UserCollectionFollowRepository;
 import com.okito.okito.modules.users.service.UserCollectionFollowService;
 import jakarta.annotation.Resource;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,31 +24,6 @@ public class UserCollectionFollowServiceImpl implements UserCollectionFollowServ
   @Override
   public List<UserCollectionFollow> selectAll() {
     return userCollectionFollowRepository.findAll();
-  }
-
-  @Override
-  public List<UserCollectionFollow> selectByUserIdAndType(Long userId, Boolean follow) {
-    return userCollectionFollowRepository.findAllByUserIdAndType(userId, follow);
-  }
-
-  @Override
-  public List<UserCollectionFollow> selectByCollectionIdAndType(Long collectionId, Boolean follow) {
-    return userCollectionFollowRepository.findAllByCollectionIdAndType(collectionId, follow);
-  }
-
-  @Override
-  public Page<UserCollectionFollow> selectAll(Pageable pageable) {
-    return userCollectionFollowRepository.findAll(pageable);
-  }
-
-  @Override
-  public Page<UserCollectionFollow> selectByUserIdAndType(Long userId, Boolean follow, Pageable pageable) {
-    return userCollectionFollowRepository.findAllByUserIdAndType(userId, follow, pageable);
-  }
-
-  @Override
-  public Page<UserCollectionFollow> selectByCollectionIdAndType(Long collectionId, Boolean follow, Pageable pageable) {
-    return userCollectionFollowRepository.findAllByCollectionIdAndType(collectionId, follow, pageable);
   }
 
   @Override

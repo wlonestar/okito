@@ -9,9 +9,6 @@ import com.okito.okito.modules.posts.model.param.PostLikeParam;
 import com.okito.okito.modules.posts.service.PostLikeService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
@@ -52,32 +49,6 @@ public class PostLikeController {
   @RequestMapping(method = RequestMethod.GET, path = "/{userId}")
   public RespResult<?> selectAllByUserId(@NonNull @PathVariable(name = "userId") Long userId) {
     return RespResult.success(postLikeService.selectAllByUserId(userId));
-  }
-
-  /**
-   * select all postLikes by page
-   *
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page")
-  public RespResult<?> selectAll(
-      @NonNull @PageableDefault(sort = "type", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(postLikeService.selectAll(pageable));
-  }
-
-  /**
-   * select all postLikes by userId and page
-   *
-   * @param userId   userId
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/{userId}")
-  public RespResult<?> selectAllByUserId(
-      @NonNull @PathVariable(name = "userId") Long userId,
-      @NonNull @PageableDefault(sort = "name", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(postLikeService.selectAllByUserId(userId, pageable));
   }
 
   /**

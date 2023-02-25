@@ -60,6 +60,11 @@ public class PinServiceImpl implements PinService {
   }
 
   @Override
+  public long countByAuthorId(Long authorId) {
+    return pinRepository.countByAuthorId(authorId);
+  }
+
+  @Override
   public boolean add(Pin pin) {
     pinRepository.save(pin);
     return true;
@@ -75,6 +80,15 @@ public class PinServiceImpl implements PinService {
       return true;
     }
     return false;
+  }
+
+  @Override
+  public void updatePinViewNum(Long pinId) {
+    Pin pin = pinRepository.findById(pinId).orElse(null);
+    if (!Objects.equals(pin, null)) {
+      pin.setViewNum(pin.getViewNum() + 1);
+      pinRepository.save(pin);
+    }
   }
 
   @Override

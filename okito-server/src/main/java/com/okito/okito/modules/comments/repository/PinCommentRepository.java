@@ -14,6 +14,8 @@ import java.util.List;
 @Repository
 public interface PinCommentRepository extends JpaRepository<PinComment, Long> {
 
+  long countByPinId(Long pinId);
+
   List<PinComment> findAllByParentId(Long id);
 
 }
