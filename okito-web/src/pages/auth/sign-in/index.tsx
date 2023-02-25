@@ -4,20 +4,54 @@ import {
   Checkbox,
   CssBaseline,
   FormControlLabel,
-  Grid,
   Link,
   TextField,
   Typography,
 } from '@mui/material'
 import Image from '../../../assets/img/background.jpg'
 import { siteName } from '../../../consts'
-import { FormEvent } from 'react'
+import { FormEvent, useRef, useState } from 'react'
 import { SignInForm } from '../../../types/sign-in-param'
 import { Navigate } from 'react-router-dom'
 import { useAuth } from '../../../context/auth-context'
 
 export default function SignInPage() {
   const { login, user } = useAuth()
+  const emailValueRef = useRef('')
+  const passwordValueRef = useRef('')
+  const [emailValid, setEmailValid] = useState(false)
+  const [passwordValid, setPasswordValid] = useState(false)
+  const [emailHelper, setEmailHelper] = useState<string>('')
+  const [passwordHelper, setPasswordHelper] = useState<string>('')
+
+  const handleEmailChange = () => {
+    // @ts-ignore
+    const email = emailValueRef.current.value
+    if (email.trim() !== '') {
+      if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email.trim())) {
+        setEmailValid(true)
+        setEmailHelper('')
+      } else {
+        setEmailValid(false)
+        setEmailHelper('邮箱格式不正确')
+      }
+    } else {
+      setEmailValid(false)
+      setEmailHelper('请输入邮箱')
+    }
+  }
+
+  const handlePasswordChange = () => {
+    // @ts-ignore
+    const password = passwordValueRef.current.value
+    if (password.trim() !== '') {
+      setPasswordValid(true)
+      setPasswordHelper('')
+    } else {
+      setPasswordValid(false)
+      setPasswordHelper('请输入密码')
+    }
+  }
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -88,6 +122,10 @@ export default function SignInPage() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                error={!emailValid}
+                helperText={emailHelper}
+                inputRef={emailValueRef}
+                onChange={handleEmailChange}
               />
               <TextField
                 margin="normal"
@@ -98,6 +136,10 @@ export default function SignInPage() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                error={!passwordValid}
+                helperText={passwordHelper}
+                inputRef={passwordValueRef}
+                onChange={handlePasswordChange}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
@@ -107,22 +149,19 @@ export default function SignInPage() {
                 type="submit"
                 fullWidth
                 variant="contained"
+                disabled={!(emailValid && passwordValid)}
                 sx={{ mt: 3, mb: 2 }}
               >
                 {'登录'}
               </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2" underline="hover">
-                    {'忘记密码？'}
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href={'/register'} variant="body2" underline="hover">
-                    {'还没有账号？先去注册'}
-                  </Link>
-                </Grid>
-              </Grid>
+              <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Link href="#" variant="body2" underline="hover">
+                  {'忘记密码？'}
+                </Link>
+                <Link href={'/register'} variant="body2" underline="hover">
+                  {'还没有账号？先去注册'}
+                </Link>
+              </Box>
             </Box>
           </Box>
         </Box>

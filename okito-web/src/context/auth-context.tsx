@@ -6,7 +6,6 @@ import * as auth from '../auth-provider'
 import { http } from '../utils/http'
 import { useMount } from '../utils/hook'
 
-// TODO: need to modify uri
 const bootstrapUser = async () => {
   let user = null
   const token = auth.getToken()

@@ -14,7 +14,7 @@ export const setToken = (token?: string) => {
 }
 
 export const handleUserResponse = (user: User) => {
-  setToken(user.token)
+  setToken(user.token || '')
   return user
 }
 
@@ -28,9 +28,13 @@ export const login = (data: SignInForm) => {
   }).then(async (res) => {
     if (res.ok) {
       const data = await res.json()
-      const user: User = data.data
-      console.log(user)
-      return handleUserResponse(user)
+      if (data.status === 20) {
+        const user: User = data.data
+        // console.log(data)
+        return handleUserResponse(user)
+      } else {
+        return Promise.reject(data)
+      }
     } else {
       return Promise.reject(data)
     }

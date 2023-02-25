@@ -14,8 +14,8 @@ interface AuthorAvatarProps {
 
 export default function AuthorAvatar({
   author,
-  width = 32,
-  height = 32,
+  width = 40,
+  height = 40,
 }: AuthorAvatarProps) {
   return (
     <ButtonBase

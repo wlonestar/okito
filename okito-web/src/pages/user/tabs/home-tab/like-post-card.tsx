@@ -33,7 +33,9 @@ export const LikePostCard = ({
           href={`/user/${user.id}`}
           sx={{ mr: 2 }}
         >
-          <Typography>{user.username}</Typography>
+          <Typography variant="body1" fontWeight={600}>
+            {user.username}
+          </Typography>
         </Link>
         <Typography>{'赞了这篇文章'}</Typography>
         <Typography

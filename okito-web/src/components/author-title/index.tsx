@@ -16,8 +16,8 @@ export default function AuthorTitle({
   author,
   viewNum,
   dateTime,
-  width = 32,
-  height = 32,
+  width = 40,
+  height = 40,
 }: AuthorTitleProps) {
   const authorAvatar = {
     id: author.id,

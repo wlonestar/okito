@@ -64,7 +64,9 @@ export default function UserInfo({
               </Grid>
               {homepage ? (
                 <Grid item>
-                  <Button>{'编辑个人资料'}</Button>
+                  <Button href="/user/settings" target="_blank">
+                    {'编辑个人资料'}
+                  </Button>
                 </Grid>
               ) : (
                 ''

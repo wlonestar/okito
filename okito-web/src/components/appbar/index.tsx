@@ -7,6 +7,7 @@ import {
   Badge,
   Theme,
   Button,
+  Typography,
 } from '@mui/material'
 import SiteLogo from './site-logo'
 import CustomSearch from './search'
@@ -38,6 +39,15 @@ const Authenticated = ({ currentUser }: CurrentUserProps) => {
           <MailOutlinedIcon />
         </Badge>
       </IconButton>
+      <Button
+        size="small"
+        variant="contained"
+        href={'/creator'}
+        target="_blank"
+        sx={{ mr: 1, mt: 0.5, mb: 0.5 }}
+      >
+        <Typography variant="body2">{'创作中心'}</Typography>
+      </Button>
       <IconButton
         href={`/user/${currentUser?.id}`}
         target="_blank"

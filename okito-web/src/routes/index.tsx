@@ -15,14 +15,17 @@ const TagPage = lazy(() => import('../pages/tag'))
 const ColumnPage = lazy(() => import('../pages/column'))
 const CollectionPage = lazy(() => import('../pages/collection'))
 const PinPage = lazy(() => import('../pages/pin'))
-const UserPage = lazy(() => import('../pages/user'))
 
+const UserPage = lazy(() => import('../pages/user'))
 const HomeTab = lazy(() => import('../pages/user/tabs/home-tab'))
 const PostsTab = lazy(() => import('../pages/user/tabs/posts-tab'))
 const ColumnsTab = lazy(() => import('../pages/user/tabs/columns-tab'))
 const PinsTab = lazy(() => import('../pages/user/tabs/pins-tab'))
 const CollectionsTab = lazy(() => import('../pages/user/tabs/collections-tab'))
 const FollowsTab = lazy(() => import('../pages/user/tabs/follows-tab'))
+
+const SettingsPage = lazy(() => import('../pages/user/settings'))
+const CreatorPage = lazy(() => import('../pages/creator'))
 
 export default function CustomRoutes(params: CurrentUserProps) {
   return (
@@ -51,6 +54,8 @@ export default function CustomRoutes(params: CurrentUserProps) {
             <Route path="/user/:id/collections" element={<CollectionsTab />} />
             <Route path="/user/:id/follows" element={<FollowsTab />} />
           </Route>
+          <Route path="/user/settings" element={<SettingsPage {...params} />} />
+          <Route path="/creator" element={<CreatorPage {...params} />} />
         </Route>
       </Routes>
     </Suspense>

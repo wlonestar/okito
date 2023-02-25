@@ -4,7 +4,6 @@ import {
   Box,
   Button,
   CssBaseline,
-  Grid,
   Link,
   TextField,
   Typography,
@@ -114,14 +113,11 @@ export default function SignUpPage() {
               >
                 {'注册'}
               </Button>
-              <Grid container>
-                <Grid item xs></Grid>
-                <Grid item>
-                  <Link href={'/login'} variant="body2">
-                    {'已有账号？去登录'}
-                  </Link>
-                </Grid>
-              </Grid>
+              <Box sx={{ display: 'flex' }}>
+                <Link href={'/login'} variant="body2" sx={{ ml: 'auto' }}>
+                  {'已有账号？去登录'}
+                </Link>
+              </Box>
             </Box>
           </Box>
         </Box>
