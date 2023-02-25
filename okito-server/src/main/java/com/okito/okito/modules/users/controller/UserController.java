@@ -74,4 +74,28 @@ public class UserController {
     return RespResult.success(userService.countFollowTagsNumById(userId));
   }
 
+  /**
+   * check the request email exists
+   *
+   * @param email email
+   * @return boolean
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/check/email")
+  public RespResult<?> checkEmailExists(@NonNull @RequestParam(name = "email") String email) {
+    boolean contains = userService.selectAllEmails().contains(email);
+    return RespResult.success(contains);
+  }
+
+  /**
+   * check the request username exists
+   *
+   * @param username username
+   * @return boolean
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/check/username")
+  public RespResult<?> checkUsernameExists(@NonNull @RequestParam(name = "username") String username) {
+    boolean contains = userService.selectAllUsernames().contains(username);
+    return RespResult.success(contains);
+  }
+
 }
