@@ -3,6 +3,7 @@ import { Layout } from '../layout'
 import { ErrorPage } from '../pages/error'
 import { lazy, Suspense } from 'react'
 import { User } from '../types/user'
+import { Box, CircularProgress } from '@mui/material'
 
 const SignInPage = lazy(() => import('../pages/auth/sign-in'))
 const SignUpPage = lazy(() => import('../pages/auth/sign-up'))
@@ -26,6 +27,22 @@ const FollowsTab = lazy(() => import('../pages/user/tabs/follows-tab'))
 
 const SettingsPage = lazy(() => import('../pages/user/settings'))
 const CreatorPage = lazy(() => import('../pages/creator'))
+const CategoryPage = lazy(() => import('../pages/category'))
+
+const Loading = () => {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+      }}
+    >
+      <CircularProgress />
+    </Box>
+  )
+}
 
 interface CustomRoutesProps {
   currentUser: User | null
@@ -33,7 +50,7 @@ interface CustomRoutesProps {
 
 export default function CustomRoutes(params: CustomRoutesProps) {
   return (
-    <Suspense fallback={<div className="container">Loading...</div>}>
+    <Suspense fallback={<Loading />}>
       <Routes>
         <Route path="/login" element={<SignInPage />} />
         <Route path="/register" element={<SignUpPage />} />
@@ -69,6 +86,7 @@ export default function CustomRoutes(params: CustomRoutesProps) {
           </Route>
           <Route path="/user/settings" element={<SettingsPage {...params} />} />
           <Route path="/creator" element={<CreatorPage {...params} />} />
+          <Route path="/category/:id" element={<CategoryPage />} />
         </Route>
       </Routes>
     </Suspense>
