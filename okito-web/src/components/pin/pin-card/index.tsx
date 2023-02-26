@@ -1,4 +1,4 @@
-import { Box, Divider, Typography } from '@mui/material'
+import { Box, Divider, Paper, Typography } from '@mui/material'
 import { Pin } from '../../../types/pin'
 import { useMount } from '../../../utils'
 import { useState } from 'react'
@@ -32,7 +32,7 @@ export default function PinCard({ pin, currentUser }: PinCardProps) {
 
   return (
     <Box>
-      <Box sx={{ p: 2 }}>
+      <Paper sx={{ p: 2 }}>
         <AuthorTitle
           author={author}
           viewNum={pin.viewNum}
@@ -55,7 +55,7 @@ export default function PinCard({ pin, currentUser }: PinCardProps) {
           replyCommentId={null}
           currentUser={currentUser}
         />
-      </Box>
+      </Paper>
     </Box>
   )
 }

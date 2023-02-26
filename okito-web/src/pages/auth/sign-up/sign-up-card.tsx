@@ -1,6 +1,6 @@
+import { FormEvent, useRef, useState } from 'react'
 import { SignUpForm } from '../../../types/sign-up-param'
 import { Box, Button, Link, TextField } from '@mui/material'
-import { FormEvent, useRef, useState } from 'react'
 import { checkEmailExists, checkUsernameExists } from '../../../api/user'
 
 interface SignUpCardProps {
@@ -11,11 +11,9 @@ export const SignUpCard = ({ register }: SignUpCardProps) => {
   const emailValueRef = useRef('')
   const usernameValueRef = useRef('')
   const passwordValueRef = useRef('')
-
   const [emailValid, setEmailValid] = useState<boolean>(false)
   const [usernameValid, setUsernameValid] = useState<boolean>(false)
   const [passwordValid, setPasswordValid] = useState<boolean>(false)
-
   const [emailHelper, setEmailHelper] = useState<string>('')
   const [usernameHelper, setUsernameHelper] = useState<string>('')
   const [passwordHelper, setPasswordHelper] = useState<string>('')
@@ -90,6 +88,7 @@ export const SignUpCard = ({ register }: SignUpCardProps) => {
         window.location.assign('/login')
       })
       .catch((e) => {
+        // register failed
         console.log(e)
       })
   }
