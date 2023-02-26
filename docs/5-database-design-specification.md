@@ -1,17 +1,17 @@
 # Database design specification 
 
-> author: wjl 2022-11-23
+> author: wjl 2023-02-26
 >
 > still needs to be improved
 
 ## E-R Diagram
 
-![Database E-R Diagram](./img/database-er.jpg)
+![Database E-R Diagram](../img/okito.jpg)
 
 ## Database physical design model
 
-![Navicat Physical Model](./db_design/virosa_db.svg)
+![Navicat Physical Model](../img/okito.svg)
 
 ## Database generation script
 
-[Database generation script](./db_design/virosa.sql)
+[Database generation script](../img/okito.sql)

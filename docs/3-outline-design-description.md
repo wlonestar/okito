@@ -30,7 +30,7 @@ Users create columns for their own or other people's articles, such as a series 
 
 Users can publish their ideas. Unlike articles, the content of ideas is not long and does not have to be strongly related to technology. It is fine to post some daily ideas.
 
-Users can write articles online, and the article editor supports Markdown syntax, supports a part of LaTex syntax, and can display mathematical formulas.
+Users can write articles online, and the article editor supports Markdown syntax, supports a part of LaTeX syntax, and can display mathematical formulas.
 
 Articles that users are not satisfied with or have not yet completed can be saved as drafts and not published yet.
 
