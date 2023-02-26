@@ -15,10 +15,10 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-  @Query(value = "select username from sys_user", nativeQuery = true)
+  @Query(value = "select u.username from User u")
   List<String> findUsernames();
 
-  @Query(value = "select email from sys_user", nativeQuery = true)
+  @Query(value = "select u.email from User u")
   List<String> findEmails();
 
   User findUserByEmailAndPassword(String email, String password);

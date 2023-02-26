@@ -16,7 +16,7 @@ import java.util.List;
 @Repository
 public interface TagRepository extends JpaRepository<Tag, Long> {
 
-  @Query(value = "select name from tag", nativeQuery = true)
+  @Query(value = "select t.name from Tag t")
   List<String> findAllNames();
 
   @Query(value = "select new TagView(t.id, t.name, t.cover, t.description, t.followNum, t.postNum) from TagView t " +
