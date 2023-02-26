@@ -138,6 +138,7 @@ export default function Side({
             underline="none"
             color="text.secondary"
             onClick={handleClickLike}
+            target="_blank"
             sx={{ display: 'flex' }}
           >
             {likeType === 0 || likeType === 2 ? (

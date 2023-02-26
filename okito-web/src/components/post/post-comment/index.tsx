@@ -23,7 +23,7 @@ export default function PostComments({
   postComments,
   currentUser,
 }: PostCommentListProps) {
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState<number>(0)
   const replyCommentId = null
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
