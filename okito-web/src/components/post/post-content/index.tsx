@@ -12,7 +12,6 @@ interface PostContentProps {
   author: User
   cate: Category
   tags: Tag[]
-  currentUser: User | null
 }
 
 export default function PostContent({
@@ -20,7 +19,6 @@ export default function PostContent({
   author,
   cate,
   tags,
-  currentUser,
 }: PostContentProps) {
   return (
     <Paper>
@@ -60,7 +58,9 @@ export default function PostContent({
         {/*category & tags*/}
         <Box pt={1}>
           {'分类：'}
-          <Button href={`/category/${cate.id}`}>{cate.name}</Button>
+          <Button href={`/category/${cate.id}`} target="_blank">
+            {cate.name}
+          </Button>
         </Box>
         <Box pt={1} hidden={!(tags.length > 0)}>
           {'标签：'}
@@ -68,6 +68,7 @@ export default function PostContent({
             <Button
               key={tag.id}
               href={`/tag/${tag.id}`}
+              target="_blank"
               variant="outlined"
               sx={{ ml: 1 }}
             >

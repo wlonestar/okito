@@ -1,16 +1,18 @@
 import React, { SyntheticEvent, useState } from 'react'
 import PostList from '../../../components/post/post-list'
-import { useAuth } from '../../../context/auth-context'
 import { useMount, useSort } from '../../../utils'
 import { Post } from '../../../types/post'
 import { selectPostsByAuthorId } from '../../../api/post'
 import { Link, useParams } from 'react-router-dom'
 import { Box, Divider, Paper, Tab, Tabs } from '@mui/material'
+import { User } from '../../../types/user'
 
-export default function PostsTab() {
+interface PostsTabProps {
+  currentUser: User | null
+}
+
+export default function PostsTab({ currentUser }: PostsTabProps) {
   const { id } = useParams()
-  const { user } = useAuth()
-  const currentUser = user
   const [value, setValue] = useState<number>(0)
   const [posts, setPosts] = useState<Post[]>([])
 

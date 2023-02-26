@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Post } from '../../../types/post'
 import { Box, Grid, Icon, Link, Typography } from '@mui/material'
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
@@ -7,9 +8,6 @@ import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined'
 import { likeActionToPost, selectPostLikeById } from '../../../api/post'
 import { User } from '../../../types/user'
 import { useMount } from '../../../utils'
-import { useState } from 'react'
-import { addActivity } from '../../../api/activity'
-import { Activity } from '../../../types/activity'
 
 interface PostActionProps {
   post: Post

@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   Box,
   Button,
@@ -9,98 +10,81 @@ import {
 } from '@mui/material'
 import { User } from '../../types/user'
 import AuthorAvatar from '../../components/author-avatar'
-import React, { useState } from 'react'
-import {
-  selectUserFollowByUserIdAndFollowedId,
-  updateUserFollow,
-} from '../../api/user'
-import { useMount } from '../../utils'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import { VisibilityRounded } from '@mui/icons-material'
+import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
+import SmsOutlinedIcon from '@mui/icons-material/SmsOutlined'
+import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined'
 
 interface SideProps {
+  likeType: number
+  handleClickLike: () => void
+  show: boolean
+  followed: boolean
+  handleClickFollow: () => void
   author: User
-  currentUser: User | null
 }
 
-export default function Side({ author, currentUser }: SideProps) {
-  const [followed, setFollowed] = useState<boolean>(false)
-  const [show, setShow] = useState<boolean>(false)
-  const authorAvatar = {
-    id: author.id,
-    username: author.username,
-    avatar: author.avatar,
-  }
-
-  const handleClick = () => {
-    if (currentUser !== null) {
-      const param = {
-        followerId: currentUser?.id,
-        followedId: author.id,
-        follow: !followed,
-      }
-      updateUserFollow(param).then((res) => {
-        if (res.status === 20) {
-          setFollowed(!followed)
-        }
-      })
-    } else {
-      window.location.assign('/login')
-    }
-  }
-
-  useMount(async () => {
-    if (currentUser !== null) {
-      if (currentUser.id !== author.id) {
-        setShow(true)
-      }
-      const param = {
-        followerId: currentUser?.id,
-        followedId: author.id,
-      }
-      const follow = await selectUserFollowByUserIdAndFollowedId(param)
-      if (follow.status === 20) {
-        if (follow.data.follow) {
-          setFollowed(true)
-        }
-      }
-    }
-    console.log(show)
-  })
-
+export default function Side({
+  likeType,
+  handleClickLike,
+  show,
+  followed,
+  handleClickFollow,
+  author,
+}: SideProps) {
   return (
     <Box>
       <Paper>
         <Box sx={{ p: 2, display: 'flex', alignItems: 'center' }}>
-          <AuthorAvatar author={authorAvatar} width={48} height={48} />
+          <AuthorAvatar
+            author={{
+              id: author.id,
+              username: author.username,
+              avatar: author.avatar,
+            }}
+            width={48}
+            height={48}
+          />
           <Link
             underline="none"
             color="text.primary"
-            href={`/user/${authorAvatar.id}`}
+            href={`/user/${author.id}`}
             target="_blank"
             sx={{ ml: 2, cursor: 'pointer' }}
           >
-            <Typography fontWeight={500}>{authorAvatar.username}</Typography>
+            <Typography fontWeight={500}>{author.username}</Typography>
           </Link>
         </Box>
         {show ? (
           <Box
             sx={{
-              pb: 2,
-              pl: 2,
-              pr: 2,
+              p: 2,
+              pt: 0,
               display: 'flex',
               justifyContent: 'space-around',
             }}
           >
-            <Button
-              variant="contained"
-              fullWidth
-              sx={{ mr: 2 }}
-              onClick={handleClick}
-            >
-              {'关注'}
-            </Button>
+            {followed ? (
+              <Button
+                color="inherit"
+                variant="contained"
+                fullWidth
+                sx={{ mr: 2 }}
+                onClick={handleClickFollow}
+              >
+                {'已关注'}
+              </Button>
+            ) : (
+              <Button
+                variant="contained"
+                fullWidth
+                sx={{ mr: 2 }}
+                onClick={handleClickFollow}
+              >
+                {'关注'}
+              </Button>
+            )}
             <Button variant="outlined" fullWidth>
               {'私信'}
             </Button>
@@ -139,6 +123,44 @@ export default function Side({ author, currentUser }: SideProps) {
             </Icon>
             <Typography color="text.secondary">{`文章被阅读 ${author.postViewNum}`}</Typography>
           </Box>
+        </Box>
+      </Paper>
+      <Paper sx={{ mt: 2 }}>
+        <Box
+          sx={{
+            p: 2,
+            display: 'flex',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+          }}
+        >
+          <Link
+            underline="none"
+            color="text.secondary"
+            onClick={handleClickLike}
+            sx={{ display: 'flex' }}
+          >
+            {likeType === 0 || likeType === 2 ? (
+              <ThumbUpOutlinedIcon />
+            ) : (
+              <ThumbUpIcon color="primary" />
+            )}
+          </Link>
+          <Link
+            underline="none"
+            color="text.secondary"
+            href={'#comment'}
+            sx={{ display: 'flex' }}
+          >
+            <SmsOutlinedIcon />
+          </Link>
+          <Link
+            underline="none"
+            color="text.secondary"
+            sx={{ display: 'flex' }}
+          >
+            <StarBorderOutlinedIcon />
+          </Link>
         </Box>
       </Paper>
     </Box>

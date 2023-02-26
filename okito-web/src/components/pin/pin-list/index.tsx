@@ -12,11 +12,9 @@ export default function PinList({ pins, currentUser }: PinListProps) {
   return (
     <Box>
       {pins.map((pin) => (
-        <Paper key={pin.id}>
-          <Box sx={{ mt: 2 }}>
-            <PinCard pin={pin} currentUser={currentUser} />
-          </Box>
-        </Paper>
+        <Box key={pin.id} sx={{ mt: 2 }}>
+          <PinCard pin={pin} currentUser={currentUser} />
+        </Box>
       ))}
     </Box>
   )

@@ -8,8 +8,8 @@ export default function SiteLogo() {
       <IconButton
         href="/"
         sx={{
-          paddingRight: '12px',
-          marginRight: '4px',
+          pr: '12px',
+          mr: '4px',
           ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' },
         }}
       >

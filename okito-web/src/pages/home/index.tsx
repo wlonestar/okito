@@ -2,9 +2,13 @@ import React from 'react'
 import { Grid } from '@mui/material'
 import { Side } from './side'
 import { Main } from './main'
-import { CurrentUserProps } from '../../types/current-user-props'
+import { User } from '../../types/user'
 
-export default function HomePage({ currentUser }: CurrentUserProps) {
+interface HomePageProps {
+  currentUser: User | null
+}
+
+export default function HomePage({ currentUser }: HomePageProps) {
   return (
     <Grid
       container
@@ -13,8 +17,8 @@ export default function HomePage({ currentUser }: CurrentUserProps) {
         maxWidth: '1080px',
         mt: 1,
         mb: 3,
-        marginLeft: 'auto',
-        marginRight: 'auto',
+        ml: 'auto',
+        mr: 'auto',
       }}
     >
       <Grid item xs={12} md={9}>

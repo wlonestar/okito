@@ -1,8 +1,8 @@
-import { Box, Divider, Typography } from '@mui/material'
+import { Box, Divider, Paper, Typography } from '@mui/material'
 import { Pin } from '../../../types/pin'
 import { useMount } from '../../../utils'
 import { useState } from 'react'
-import { User, userDefault } from '../../../types/user'
+import { User, defaultUser } from '../../../types/user'
 import { selectUserById } from '../../../api/user'
 import { countPinCommentsByPinId } from '../../../api/pin-comment'
 import AuthorTitle from '../../author-title'
@@ -15,7 +15,7 @@ interface PinCardProps {
 }
 
 export default function PinCard({ pin, currentUser }: PinCardProps) {
-  const [author, setAuthor] = useState<User>(userDefault)
+  const [author, setAuthor] = useState<User>(defaultUser)
   const [commentNum, setCommentNum] = useState<number>(0)
   const [open, setOpen] = useState<boolean>(false)
 
@@ -32,7 +32,7 @@ export default function PinCard({ pin, currentUser }: PinCardProps) {
 
   return (
     <Box>
-      <Box sx={{ p: 2 }}>
+      <Paper sx={{ p: 2 }}>
         <AuthorTitle
           author={author}
           viewNum={pin.viewNum}
@@ -55,7 +55,7 @@ export default function PinCard({ pin, currentUser }: PinCardProps) {
           replyCommentId={null}
           currentUser={currentUser}
         />
-      </Box>
+      </Paper>
     </Box>
   )
 }

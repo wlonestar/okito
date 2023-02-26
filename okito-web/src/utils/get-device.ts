@@ -1,4 +1,4 @@
-export const getBrowser = (): string => {
+export const getDevice = (): string => {
   const userAgent = navigator.userAgent
   let browserName: string
   if (userAgent.match(/chrome|chromium|crios/i)) {

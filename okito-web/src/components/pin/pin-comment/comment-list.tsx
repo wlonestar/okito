@@ -4,10 +4,9 @@ import { User } from '../../../types/user'
 import { useSort } from '../../../utils'
 import { Box, Tab, Tabs, Typography } from '@mui/material'
 import { tabProps } from '../../tab'
-import { TabsProp } from '../../../types/tabs-prop'
 import CommentCard from './comment-card'
 
-const tabs: TabsProp[] = [
+const tabs = [
   { index: 0, label: '最热' },
   { index: 1, label: '最新' },
 ]

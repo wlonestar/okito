@@ -1,7 +1,7 @@
 import { Grid, Link, Typography } from '@mui/material'
 import { PostComment } from '../../../types/post-comment'
 import { useState } from 'react'
-import { User, userDefault } from '../../../types/user'
+import { User, defaultUser } from '../../../types/user'
 import { useMount } from '../../../utils'
 import { selectUserById } from '../../../api/user'
 import { selectPostCommentById } from '../../../api/post-comment'
@@ -22,8 +22,8 @@ export default function Secondary({
   toggleOpen,
   currentUser,
 }: SecondaryProps) {
-  const [author, setAuthor] = useState<User>(userDefault)
-  const [replyAuthor, setReplyAuthor] = useState<User>(userDefault)
+  const [author, setAuthor] = useState<User>(defaultUser)
+  const [replyAuthor, setReplyAuthor] = useState<User>(defaultUser)
 
   useMount(async () => {
     const author = await selectUserById(comment.authorId)

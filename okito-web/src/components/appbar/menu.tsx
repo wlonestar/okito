@@ -15,13 +15,15 @@ export default function CustomMenu({
   isMenuOpen,
   handleMenuClose,
 }: CustomMenuProps) {
-  const { logout } = useAuth()
+  const { user, logout } = useAuth()
 
-  const handleLogout = () => {
+  const handleHref = () => {
+    window.location.assign(`/user/${user?.id}`)
+  }
+
+  const handleLogout = async () => {
     setAnchorEl(null)
-    logout().then(() => {
-      console.log('logout')
-    })
+    await logout()
   }
 
   return (
@@ -40,9 +42,8 @@ export default function CustomMenu({
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      <MenuItem onClick={handleLogout}>Log Out</MenuItem>
+      <MenuItem onClick={handleHref}>{'个人主页'}</MenuItem>
+      <MenuItem onClick={handleLogout}>{'注销'}</MenuItem>
     </Menu>
   )
 }

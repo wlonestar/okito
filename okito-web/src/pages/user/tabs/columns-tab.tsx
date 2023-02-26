@@ -5,12 +5,14 @@ import { Column } from '../../../types/column'
 import ColumnList from '../../../components/column/column-list'
 import { selectColumnsByAuthorId } from '../../../api/column'
 import { useMount, useSort } from '../../../utils'
-import { useAuth } from '../../../context/auth-context'
+import { User } from '../../../types/user'
 
-export default function ColumnsTab() {
+interface ColumnsTabProps {
+  currentUser: User | null
+}
+
+export default function ColumnsTab({ currentUser }: ColumnsTabProps) {
   const { id } = useParams()
-  const { user } = useAuth()
-  const currentUser = user
   const [homepage, setHomepage] = useState<boolean>(false)
   const [columns, setColumns] = useState<Column[]>([])
 

@@ -1,13 +1,13 @@
 import { useParams } from 'react-router-dom'
 import { useMount, useSort } from '../../utils'
 import React, { SyntheticEvent, useState } from 'react'
-import { Column, columnDefault } from '../../types/column'
+import { Column, defaultColumn } from '../../types/column'
 import {
   countFollowByColumnId,
   countPostsByColumnId,
   selectColumnById,
 } from '../../api/column'
-import { User, userDefault } from '../../types/user'
+import { User, defaultUser } from '../../types/user'
 import ColumnTitle from '../../components/column/column-title'
 import { selectUserById } from '../../api/user'
 import { Box, Paper, Tab, Tabs } from '@mui/material'
@@ -15,9 +15,8 @@ import { Post } from '../../types/post'
 import { selectPostsByColumnId } from '../../api/post'
 import { tabProps } from '../../components/tab'
 import { PostCard } from '../../components/post/post-card'
-import { TabsProp } from '../../types/tabs-prop'
 
-const tabs: TabsProp[] = [
+const tabs = [
   { index: 0, label: '默认' },
   { index: 1, label: '最新发布' },
   { index: 2, label: '最早发布' },
@@ -29,10 +28,10 @@ interface ColumnPageProps {
 
 export default function ColumnPage({ currentUser }: ColumnPageProps) {
   const { id } = useParams()
-  const [column, setColumn] = useState<Column>(columnDefault)
+  const [column, setColumn] = useState<Column>(defaultColumn)
   const [postsNum, setPostsNum] = useState<number>(0)
   const [followNum, setFollowNum] = useState<number>(0)
-  const [author, setAuthor] = useState<User>(userDefault)
+  const [author, setAuthor] = useState<User>(defaultUser)
   const [homepage, setHomepage] = useState<boolean>(false)
   const [posts, setPosts] = useState<Post[]>([])
   const [value, setValue] = useState(0)
@@ -86,18 +85,20 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
           currentUser={currentUser}
         />
       </Paper>
-      <Box
-        sx={{ borderBottom: 1, borderColor: 'divider', right: '10px', pt: 2 }}
-      >
-        <Tabs value={value} onChange={handleChange}>
-          {tabs.map(({ index, label }) => (
-            <Tab key={index} label={label} {...tabProps(index)} />
-          ))}
-        </Tabs>
-      </Box>
-      {posts.map((post) => (
-        <PostCard key={post.id} post={post} currentUser={currentUser} />
-      ))}
+      <Paper sx={{ mt: 3 }}>
+        <Box
+          sx={{ borderBottom: 1, borderColor: 'divider', right: '10px', pt: 2 }}
+        >
+          <Tabs value={value} onChange={handleChange}>
+            {tabs.map(({ index, label }) => (
+              <Tab key={index} label={label} {...tabProps(index)} />
+            ))}
+          </Tabs>
+        </Box>
+        {posts.map((post) => (
+          <PostCard key={post.id} post={post} currentUser={currentUser} />
+        ))}
+      </Paper>
     </Box>
   )
 }

@@ -10,8 +10,15 @@ export default function CollectionPage({ currentUser }: CollectionPageProps) {
   const { id } = useParams()
 
   return (
-    <Box>
-      <Typography>collection {id}</Typography>
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        mt: 4,
+      }}
+    >
+      <Typography>{'这片区域以后再来探索吧'}</Typography>
     </Box>
   )
 }

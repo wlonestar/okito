@@ -27,13 +27,7 @@ export default function Main({
 }: MainProps) {
   return (
     <Box>
-      <PostContent
-        post={post}
-        author={author}
-        cate={cate}
-        tags={tags}
-        currentUser={currentUser}
-      />
+      <PostContent post={post} author={author} cate={cate} tags={tags} />
       <Paper sx={{ mt: 3 }}>
         <Box
           sx={{

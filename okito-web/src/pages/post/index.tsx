@@ -2,30 +2,83 @@ import React, { useState } from 'react'
 import { useMount, useSort } from '../../utils'
 import { useParams } from 'react-router-dom'
 import { Grid } from '@mui/material'
-import { Post, postDefault } from '../../types/post'
-import { selectPostById } from '../../api/post'
-import { User, userDefault } from '../../types/user'
-import { selectUserById } from '../../api/user'
-import { Category, categoryDefault } from '../../types/category'
+import { Post, defaultPost } from '../../types/post'
+import {
+  likeActionToPost,
+  selectPostById,
+  selectPostLikeById,
+} from '../../api/post'
+import { User, defaultUser } from '../../types/user'
+import {
+  selectUserById,
+  selectUserFollowByUserIdAndFollowedId,
+  updateUserFollow,
+} from '../../api/user'
+import { Category, defaultCategory } from '../../types/category'
 import { Tag } from '../../types/tag'
 import { selectCategoryById } from '../../api/category'
 import { selectTagsByPostId } from '../../api/tag'
 import { PostComment } from '../../types/post-comment'
 import { selectPostCommentsByPostId } from '../../api/post-comment'
-import { CurrentUserProps } from '../../types/current-user-props'
 import Side from './side'
 import Main from './main'
 
-export default function PostPage({ currentUser }: CurrentUserProps) {
+interface PostPageProps {
+  currentUser: User | null
+}
+
+export default function PostPage({ currentUser }: PostPageProps) {
   const { id } = useParams()
-  const [post, setPost] = useState<Post>(postDefault)
-  const [author, setAuthor] = useState<User>(userDefault)
-  const [cate, setCate] = useState<Category>(categoryDefault)
+  const [post, setPost] = useState<Post>(defaultPost)
+  const [author, setAuthor] = useState<User>(defaultUser)
+  const [cate, setCate] = useState<Category>(defaultCategory)
   const [tags, setTags] = useState<Tag[]>([])
   const [postComments, setPostComments] = useState<PostComment[]>([])
+  const [likeType, setLikeType] = useState<number>(0)
+  const [likeNum, setLikeNum] = useState<number>(post.likeNum)
+  const [followed, setFollowed] = useState<boolean>(false)
+  const [show, setShow] = useState<boolean>(false)
+
+  const handleClickFollow = () => {
+    if (currentUser !== null) {
+      const param = {
+        followerId: currentUser?.id,
+        followedId: author.id,
+        follow: !followed,
+      }
+      updateUserFollow(param).then((res) => {
+        if (res.status === 20) {
+          setFollowed(!followed)
+        }
+      })
+    } else {
+      window.location.assign('/login')
+    }
+  }
+
+  const handleClickLike = () => {
+    if (currentUser !== null) {
+      let like = 0
+      if (likeType === 0 || likeType === 2) {
+        like = 1
+        setLikeType(1)
+        setLikeNum(likeNum + 1)
+      } else if (likeType === 1) {
+        setLikeType(0)
+        setLikeNum(likeNum - 1)
+      }
+      const param = { postId: post.id, userId: currentUser.id, type: like }
+      likeActionToPost(param).then((res) => {
+        if (res.status !== 20) {
+          console.log(res)
+        }
+      })
+    } else {
+      window.location.assign('/login')
+    }
+  }
 
   useMount(async () => {
-    console.log(id)
     const post = await selectPostById(id as unknown as number)
     setPost(post.data)
     const user = await selectUserById(post.data.authorId)
@@ -34,6 +87,26 @@ export default function PostPage({ currentUser }: CurrentUserProps) {
     setCate(cate.data)
     const tags = await selectTagsByPostId(post.data.id)
     setTags(tags.data)
+
+    if (currentUser !== null) {
+      if (currentUser.id !== user.data.id) {
+        setShow(true)
+      }
+      const like = await selectPostLikeById({
+        postId: post.data.id,
+        userId: currentUser.id,
+      })
+      if (like.status === 20) {
+        setLikeType(like.data.type)
+      }
+      const follow = await selectUserFollowByUserIdAndFollowedId({
+        followerId: currentUser.id,
+        followedId: user.data.id,
+      })
+      if (follow.status === 20) {
+        setFollowed(follow.data.follow)
+      }
+    }
     const postCommentsData = await selectPostCommentsByPostId(post.data.id)
     const postComments = postCommentsData.data.filter(
       (comment: PostComment) => comment.parentId === null
@@ -54,7 +127,14 @@ export default function PostPage({ currentUser }: CurrentUserProps) {
         />
       </Grid>
       <Grid item xs={12} md={3}>
-        <Side author={author} currentUser={currentUser} />
+        <Side
+          likeType={likeType}
+          handleClickLike={handleClickLike}
+          show={show}
+          followed={followed}
+          handleClickFollow={handleClickFollow}
+          author={author}
+        />
       </Grid>
     </Grid>
   )

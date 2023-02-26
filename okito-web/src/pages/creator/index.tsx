@@ -7,8 +7,15 @@ interface CreatorPageProps {
 
 export default function CreatorPage({ currentUser }: CreatorPageProps) {
   return (
-    <Box>
-      <Typography>{'creator'}</Typography>
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        mt: 4,
+      }}
+    >
+      <Typography>{'这片区域以后再来探索吧'}</Typography>
     </Box>
   )
 }

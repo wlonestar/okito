@@ -9,7 +9,7 @@ import {
   Toolbar,
 } from '@mui/material'
 import { CustomAppBar } from '../components/appbar'
-import { CurrentUserProps } from '../types/current-user-props'
+import { User } from '../types/user'
 
 export const ColorModeContext = createContext({
   toggleColorMode: () => {},
@@ -17,7 +17,11 @@ export const ColorModeContext = createContext({
 
 type ColorMode = 'light' | 'dark'
 
-export const Layout = ({ currentUser }: CurrentUserProps) => {
+interface LayoutProps {
+  currentUser: User | null
+}
+
+export const Layout = ({ currentUser }: LayoutProps) => {
   let defaultMode: ColorMode = 'light'
   if (
     window.matchMedia &&

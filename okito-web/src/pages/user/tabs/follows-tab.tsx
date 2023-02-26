@@ -1,6 +1,5 @@
 import { Box, Divider, Paper, Tab, Tabs } from '@mui/material'
 import { Link, useParams } from 'react-router-dom'
-import { useAuth } from '../../../context/auth-context'
 import { SyntheticEvent, useState } from 'react'
 import { useMount } from '../../../utils'
 import { TabPanel } from '../../../components/tab'
@@ -17,13 +16,14 @@ import { Tag } from '../../../types/tag'
 import { selectTagsByFollowerId } from '../../../api/tag'
 import TagTitle from '../../../components/tag/tag-title'
 
-export default function FollowsTab() {
+interface FollowsTabProps {
+  currentUser: User | null
+}
+
+export default function FollowsTab({ currentUser }: FollowsTabProps) {
   const { id } = useParams()
-  const { user } = useAuth()
-  const currentUser = user
   const [homepage, setHomepage] = useState<boolean>(false)
   const [value, setValue] = useState<number>(0)
-
   const [followingUsers, setFollowingUsers] = useState<User[]>([])
   const [followerUsers, setFollowerUsers] = useState<User[]>([])
   const [followedColumns, setFollowedColumns] = useState<Column[]>([])

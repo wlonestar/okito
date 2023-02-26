@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom'
 import { Layout } from '../layout'
 import { ErrorPage } from '../pages/error'
-import { CurrentUserProps } from '../types/current-user-props'
 import { lazy, Suspense } from 'react'
+import { User } from '../types/user'
 
 const SignInPage = lazy(() => import('../pages/auth/sign-in'))
 const SignUpPage = lazy(() => import('../pages/auth/sign-up'))
@@ -27,7 +27,11 @@ const FollowsTab = lazy(() => import('../pages/user/tabs/follows-tab'))
 const SettingsPage = lazy(() => import('../pages/user/settings'))
 const CreatorPage = lazy(() => import('../pages/creator'))
 
-export default function CustomRoutes(params: CurrentUserProps) {
+interface CustomRoutesProps {
+  currentUser: User | null
+}
+
+export default function CustomRoutes(params: CustomRoutesProps) {
   return (
     <Suspense fallback={<div className="container">Loading...</div>}>
       <Routes>
@@ -47,12 +51,21 @@ export default function CustomRoutes(params: CurrentUserProps) {
           />
           <Route path="/pin" element={<PinPage {...params} />} />
           <Route path="/user/:id" element={<UserPage {...params} />}>
-            <Route path="/user/:id/" element={<HomeTab />} />
-            <Route path="/user/:id/posts" element={<PostsTab />} />
-            <Route path="/user/:id/columns" element={<ColumnsTab />} />
-            <Route path="/user/:id/pins" element={<PinsTab />} />
-            <Route path="/user/:id/collections" element={<CollectionsTab />} />
-            <Route path="/user/:id/follows" element={<FollowsTab />} />
+            <Route path="/user/:id/" element={<HomeTab {...params} />} />
+            <Route path="/user/:id/posts" element={<PostsTab {...params} />} />
+            <Route
+              path="/user/:id/columns"
+              element={<ColumnsTab {...params} />}
+            />
+            <Route path="/user/:id/pins" element={<PinsTab {...params} />} />
+            <Route
+              path="/user/:id/collections"
+              element={<CollectionsTab {...params} />}
+            />
+            <Route
+              path="/user/:id/follows"
+              element={<FollowsTab {...params} />}
+            />
           </Route>
           <Route path="/user/settings" element={<SettingsPage {...params} />} />
           <Route path="/creator" element={<CreatorPage {...params} />} />

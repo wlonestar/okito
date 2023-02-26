@@ -39,7 +39,7 @@ const LoginFailAlert = ({ open, handleClose }: LoginFailAlertProps) => {
 
 export default function SignInPage() {
   const { login, user } = useAuth()
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState<boolean>(false)
 
   const handleOpen = () => {
     setOpen(true)

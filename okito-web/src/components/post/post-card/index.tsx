@@ -13,7 +13,7 @@ import { useMount } from '../../../utils'
 import { selectUserById } from '../../../api/user'
 import { Tag } from '../../../types/tag'
 import { selectTagsByPostId } from '../../../api/tag'
-import { userDefault, User } from '../../../types/user'
+import { defaultUser, User } from '../../../types/user'
 import { countPostCommentsByPostId } from '../../../api/post-comment'
 import PostAction from './post-action'
 import PostMeta from './post-meta'
@@ -24,7 +24,7 @@ interface PostCardProps {
 }
 
 export const PostCard = ({ post, currentUser }: PostCardProps) => {
-  const [author, setAuthor] = useState<User>(userDefault)
+  const [author, setAuthor] = useState<User>(defaultUser)
   const [tags, setTags] = useState<Tag[]>([])
   const [commentsNum, setCommentsNum] = useState<number>(0)
 

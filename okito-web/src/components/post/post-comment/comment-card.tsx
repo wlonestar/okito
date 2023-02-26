@@ -1,7 +1,7 @@
 import { Box, Collapse, Divider, Grid, Link, Typography } from '@mui/material'
 import { PostComment } from '../../../types/post-comment'
 import React, { useState } from 'react'
-import { User, userDefault } from '../../../types/user'
+import { User, defaultUser } from '../../../types/user'
 import { useMount } from '../../../utils'
 import { selectUserById } from '../../../api/user'
 import { selectPostCommentsSecondaryById } from '../../../api/post-comment'
@@ -21,7 +21,7 @@ export default function CommentCard({
   comment,
   currentUser,
 }: CommentCardProps) {
-  const [author, setAuthor] = useState<User>(userDefault)
+  const [author, setAuthor] = useState<User>(defaultUser)
   const [secondaryComments, setSecondaryComments] = useState<PostComment[]>([])
   const [open, setOpen] = useState<boolean>(false)
   const [replyCommentId, setReplyCommentId] = useState<number | null>(null)

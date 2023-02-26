@@ -1,7 +1,7 @@
 import { baseUrl } from './consts'
-import { SignInForm } from './types/sign-in-param'
 import { User } from './types/user'
-import { SignUpForm } from './types/sign-up-param'
+import { SignInForm, SignUpForm } from './types/auth-form'
+import { getDevice } from './utils/get-device'
 
 const localAuthStorageKey = '__auth_provider_token__'
 
@@ -30,7 +30,6 @@ export const login = (data: SignInForm) => {
       const data = await res.json()
       if (data.status === 20) {
         const user: User = data.data
-        // console.log(data)
         return handleUserResponse(user)
       } else {
         return Promise.reject(data)
@@ -57,7 +56,21 @@ export const register = (data: SignUpForm) => {
   })
 }
 
-// TODO
 export const logout = async () => {
+  fetch(`${baseUrl}/auth/logout`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'auth-token': `Bearer ${getToken()}`,
+    },
+    body: JSON.stringify(getDevice()),
+  }).then(async (res) => {
+    if (res.ok) {
+      const data = await res.json()
+      console.log(data)
+    } else {
+      console.log(res)
+    }
+  })
   window.localStorage.removeItem(localAuthStorageKey)
 }

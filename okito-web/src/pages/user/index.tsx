@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material'
-import { User, userDefault } from '../../types/user'
+import { User, defaultUser } from '../../types/user'
 import { useParams } from 'react-router-dom'
 import { countFollowTagsNumByUserId, selectUserById } from '../../api/user'
 import React, { useState } from 'react'
@@ -14,7 +14,7 @@ interface UserPageProps {
 
 export default function UserPage({ currentUser }: UserPageProps) {
   const { id } = useParams()
-  const [user, setUser] = useState<User>(userDefault)
+  const [user, setUser] = useState<User>(defaultUser)
   const [collectionsNum, setCollectionsNum] = useState<number>(0)
   const [tagsNum, setTagsNum] = useState<number>(0)
   const [homepage, setHomepage] = useState<boolean>(false)

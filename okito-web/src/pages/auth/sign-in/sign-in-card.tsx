@@ -1,6 +1,5 @@
 import { FormEvent, useRef, useState } from 'react'
-import { SignInForm } from '../../../types/sign-in-param'
-import { getBrowser } from '../../../utils/get-browser'
+import { getDevice } from '../../../utils/get-device'
 import {
   Box,
   Button,
@@ -9,6 +8,7 @@ import {
   Link,
   TextField,
 } from '@mui/material'
+import { SignInForm } from '../../../types/auth-form'
 
 interface SignInCardProps {
   login: (form: SignInForm) => Promise<void>
@@ -54,7 +54,7 @@ export const SignInCard = ({ login, handleOpen }: SignInCardProps) => {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const browser = getBrowser()
+    const browser = getDevice()
     const data = new FormData(event.currentTarget)
     const loginParam: SignInForm = {
       email: data.get('email')?.toString(),

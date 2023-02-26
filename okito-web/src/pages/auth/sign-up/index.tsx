@@ -1,9 +1,9 @@
 import { Navigate } from 'react-router-dom'
 import { Box, CssBaseline, Typography } from '@mui/material'
-import Image from '../../../assets/img/background.jpg'
 import { siteName } from '../../../consts'
 import { useAuth } from '../../../context/auth-context'
 import { SignUpCard } from './sign-up-card'
+import Image from '../../../assets/img/background.jpg'
 
 export default function SignUpPage() {
   const { register, user } = useAuth()
