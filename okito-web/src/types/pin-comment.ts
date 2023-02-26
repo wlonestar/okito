@@ -8,16 +8,6 @@ export interface PinComment {
   likeNum: number
 }
 
-export const pinCommentDefault: PinComment = {
-  id: 0,
-  content: '',
-  uploadTime: new Date(),
-  authorId: 0,
-  pinId: 0,
-  parentId: null,
-  likeNum: 0,
-}
-
 export interface PinCommentParam {
   id: number
   content?: string

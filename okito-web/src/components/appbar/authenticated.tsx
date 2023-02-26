@@ -17,7 +17,6 @@ export const Authenticated = ({
     <>
       <IconButton
         size="large"
-        aria-label="show 17 new notifications"
         sx={{ ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' }, mr: 1 }}
       >
         <Badge badgeContent={17} color="error">
@@ -26,7 +25,6 @@ export const Authenticated = ({
       </IconButton>
       <IconButton
         size="large"
-        aria-label="show 4 new mails"
         sx={{ ':hover': { backgroundColor: 'rgba(0, 0, 0, 0)' }, mr: 1 }}
       >
         <Badge badgeContent={4} color="error">

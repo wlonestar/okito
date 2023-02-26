@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 import { useMount, useSort } from '../../../../utils'
 import { Activity } from '../../../../types/activity'
 import { selectActivitiesByUserId } from '../../../../api/activity'
-import { useAuth } from '../../../../context/auth-context'
 import { selectPinById } from '../../../../api/pin'
 import { selectUserById } from '../../../../api/user'
 import { LikePinCard } from './like-pin-card'
@@ -27,10 +26,12 @@ interface ActivityCard {
   node: ReactNode
 }
 
-export default function HomeTab() {
+interface HomeTabProps {
+  currentUser: User | null
+}
+
+export default function HomeTab({ currentUser }: HomeTabProps) {
   const { id } = useParams()
-  const { user } = useAuth()
-  const currentUser = user
   const [activityCards, setActivityCards] = useState<ActivityCard[]>([])
 
   const handleActivityType = async (activity: Activity, user: User) => {

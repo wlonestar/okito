@@ -1,16 +1,18 @@
 import { Box } from '@mui/material'
 import { useParams } from 'react-router-dom'
-import { useAuth } from '../../../context/auth-context'
 import { useState } from 'react'
 import { Pin } from '../../../types/pin'
 import { useMount, useSort } from '../../../utils'
 import { selectPinsByAuthorId } from '../../../api/pin'
 import PinList from '../../../components/pin/pin-list'
+import { User } from '../../../types/user'
 
-export default function PinsTab() {
+interface PinsTabProps {
+  currentUser: User | null
+}
+
+export default function PinsTab({ currentUser }: PinsTabProps) {
   const { id } = useParams()
-  const { user } = useAuth()
-  const currentUser = user
   const [pins, setPins] = useState<Pin[]>([])
 
   useMount(() => {

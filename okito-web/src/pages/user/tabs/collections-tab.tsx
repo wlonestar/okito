@@ -1,7 +1,6 @@
 import React, { SyntheticEvent, useState } from 'react'
 import { Box, Button, Divider, Paper, Tab, Tabs } from '@mui/material'
 import { Link, useParams } from 'react-router-dom'
-import { useAuth } from '../../../context/auth-context'
 import { Collection } from '../../../types/collection'
 import { useMount, useSort } from '../../../utils'
 import {
@@ -11,11 +10,14 @@ import {
 import CollectionTitle from '../../../components/collection/collection-title'
 import { TabPanel } from '../../../components/tab'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined'
+import { User } from '../../../types/user'
 
-export default function CollectionsTab() {
+interface CollectionsTabProps {
+  currentUser: User | null
+}
+
+export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
   const { id } = useParams()
-  const { user } = useAuth()
-  const currentUser = user
   const [homepage, setHomepage] = useState<boolean>(false)
   const [value, setValue] = useState<number>(0)
   const [createCollections, setCreateCollections] = useState<Collection[]>([])

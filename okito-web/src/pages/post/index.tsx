@@ -2,25 +2,28 @@ import React, { useState } from 'react'
 import { useMount, useSort } from '../../utils'
 import { useParams } from 'react-router-dom'
 import { Grid } from '@mui/material'
-import { Post, postDefault } from '../../types/post'
+import { Post, defaultPost } from '../../types/post'
 import { selectPostById } from '../../api/post'
-import { User, userDefault } from '../../types/user'
+import { User, defaultUser } from '../../types/user'
 import { selectUserById } from '../../api/user'
-import { Category, categoryDefault } from '../../types/category'
+import { Category, defaultCategory } from '../../types/category'
 import { Tag } from '../../types/tag'
 import { selectCategoryById } from '../../api/category'
 import { selectTagsByPostId } from '../../api/tag'
 import { PostComment } from '../../types/post-comment'
 import { selectPostCommentsByPostId } from '../../api/post-comment'
-import { CurrentUserProps } from '../../types/current-user-props'
 import Side from './side'
 import Main from './main'
 
-export default function PostPage({ currentUser }: CurrentUserProps) {
+interface PostPageProps {
+  currentUser: User | null
+}
+
+export default function PostPage({ currentUser }: PostPageProps) {
   const { id } = useParams()
-  const [post, setPost] = useState<Post>(postDefault)
-  const [author, setAuthor] = useState<User>(userDefault)
-  const [cate, setCate] = useState<Category>(categoryDefault)
+  const [post, setPost] = useState<Post>(defaultPost)
+  const [author, setAuthor] = useState<User>(defaultUser)
+  const [cate, setCate] = useState<Category>(defaultCategory)
   const [tags, setTags] = useState<Tag[]>([])
   const [postComments, setPostComments] = useState<PostComment[]>([])
 

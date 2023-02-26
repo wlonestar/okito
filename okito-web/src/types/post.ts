@@ -13,7 +13,7 @@ export interface Post {
   likeNum: number
 }
 
-export const postDefault: Post = {
+export const defaultPost: Post = {
   id: 0,
   title: '',
   summary: '',

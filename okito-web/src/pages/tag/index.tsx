@@ -1,6 +1,6 @@
 import React, { SyntheticEvent, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Tag, tagDefault } from '../../types/tag'
+import { Tag, defaultTag } from '../../types/tag'
 import { Post } from '../../types/post'
 import { useMount, useSort } from '../../utils'
 import { selectTagById } from '../../api/tag'
@@ -8,10 +8,9 @@ import { selectPostsByTagId } from '../../api/post'
 import { Box, Tab, Tabs, Typography } from '@mui/material'
 import { PostCard } from '../../components/post/post-card'
 import { tabProps } from '../../components/tab'
-import { TabsProp } from '../../types/tabs-prop'
 import { useAuth } from '../../context/auth-context'
 
-const tabs: TabsProp[] = [
+const tabs = [
   { index: 0, label: '推荐' },
   { index: 1, label: '最新' },
   { index: 2, label: '最热' },
@@ -44,7 +43,7 @@ export default function TagPage() {
   const { id } = useParams()
   const { user } = useAuth()
   const currentUser = user
-  const [tag, setTag] = useState<Tag>(tagDefault)
+  const [tag, setTag] = useState<Tag>(defaultTag)
   const [posts, setPosts] = useState<Post[]>([])
   const [value, setValue] = useState(0)
 

@@ -1,5 +1,5 @@
 import { PinComment } from '../../../types/pin-comment'
-import { User, userDefault } from '../../../types/user'
+import { User, defaultUser } from '../../../types/user'
 import React, { useState } from 'react'
 import { useMount } from '../../../utils'
 import { selectUserById } from '../../../api/user'
@@ -21,7 +21,7 @@ export default function CommentCard({
   comment,
   currentUser,
 }: CommentCardProps) {
-  const [author, setAuthor] = useState<User>(userDefault)
+  const [author, setAuthor] = useState<User>(defaultUser)
   const [secondaryComments, setSecondaryComments] = useState<PinComment[]>([])
   const [open, setOpen] = useState<boolean>(false)
   const [replyCommentId, setReplyCommentId] = useState<number | null>(null)

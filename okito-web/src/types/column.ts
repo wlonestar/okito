@@ -8,7 +8,7 @@ export interface Column {
   authorId: number
 }
 
-export const columnDefault: Column = {
+export const defaultColumn: Column = {
   id: 0,
   name: '',
   cover: '',

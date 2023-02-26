@@ -5,16 +5,19 @@ import { Post } from '../../types/post'
 import { selectAllPosts } from '../../api/post'
 import { useMount, useSort } from '../../utils'
 import PostList from '../../components/post/post-list'
-import { TabsProp } from '../../types/tabs-prop'
-import { CurrentUserProps } from '../../types/current-user-props'
+import { User } from '../../types/user'
 
-const tabs: TabsProp[] = [
+const tabs = [
   { index: 0, label: '推荐' },
   { index: 1, label: '最新' },
   { index: 2, label: '热门' },
 ]
 
-export const Main = ({ currentUser }: CurrentUserProps) => {
+interface MainProps {
+  currentUser: User | null
+}
+
+export const Main = ({ currentUser }: MainProps) => {
   const [value, setValue] = useState(0)
   const [posts, setPosts] = useState<Post[]>([])
 

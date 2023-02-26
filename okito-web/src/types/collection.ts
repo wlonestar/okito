@@ -7,13 +7,3 @@ export interface Collection {
   updateTime: Date
   authorId: number
 }
-
-export const collectionDefault: Collection = {
-  id: 0,
-  name: '',
-  cover: '',
-  description: '',
-  createTime: new Date(),
-  updateTime: new Date(),
-  authorId: 0,
-}

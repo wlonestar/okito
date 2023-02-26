@@ -54,10 +54,7 @@ export default function Side({ author, currentUser }: SideProps) {
       if (currentUser.id !== author.id) {
         setShow(true)
       }
-      const param = {
-        followerId: currentUser?.id,
-        followedId: author.id,
-      }
+      const param = { followerId: currentUser?.id, followedId: author.id }
       const follow = await selectUserFollowByUserIdAndFollowedId(param)
       if (follow.status === 20) {
         if (follow.data.follow) {
@@ -65,7 +62,6 @@ export default function Side({ author, currentUser }: SideProps) {
         }
       }
     }
-    console.log(show)
   })
 
   return (
@@ -83,12 +79,11 @@ export default function Side({ author, currentUser }: SideProps) {
             <Typography fontWeight={500}>{authorAvatar.username}</Typography>
           </Link>
         </Box>
-        {show ? (
+        {show && currentUser?.id !== author.id ? (
           <Box
             sx={{
-              pb: 2,
-              pl: 2,
-              pr: 2,
+              p: 2,
+              pt: 0,
               display: 'flex',
               justifyContent: 'space-around',
             }}

@@ -1,7 +1,7 @@
 import { FormEvent, useRef, useState } from 'react'
-import { SignUpForm } from '../../../types/sign-up-param'
 import { Box, Button, Link, TextField } from '@mui/material'
 import { checkEmailExists, checkUsernameExists } from '../../../api/user'
+import { SignUpForm } from '../../../types/auth-form'
 
 interface SignUpCardProps {
   register: (form: SignUpForm) => Promise<void>
