@@ -15,7 +15,7 @@ import java.util.List;
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 
-  @Query(value = "select name from category", nativeQuery = true)
+  @Query(value = "select c.name from Category c")
   List<String> findAllNames();
 
 }
