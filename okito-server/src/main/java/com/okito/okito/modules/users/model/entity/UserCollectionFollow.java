@@ -17,9 +17,9 @@ import java.io.Serializable;
  */
 @Data
 @Entity
-@Table(name = "user_collection_follow")
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "user_collection_follow")
 public class UserCollectionFollow implements Serializable {
 
   @EmbeddedId

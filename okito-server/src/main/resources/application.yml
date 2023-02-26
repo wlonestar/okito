@@ -48,3 +48,4 @@ sa-token:
   is-share: false
   token-style: uuid
   is-log: true
+  is-concurrent: false

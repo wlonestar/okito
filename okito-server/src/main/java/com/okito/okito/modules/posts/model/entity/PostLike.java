@@ -5,6 +5,7 @@ import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,9 +18,10 @@ import java.io.Serializable;
  */
 @Data
 @Entity
-@Table(name = "post_like")
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "post_like")
 public class PostLike implements Serializable {
 
   @EmbeddedId

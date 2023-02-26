@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Immutable;
@@ -18,10 +19,11 @@ import java.time.LocalDateTime;
  */
 @Data
 @Entity
+@Builder
 @Immutable
-@Table(name = "post_view")
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "post_view")
 public class PostView implements Serializable {
 
   @Id

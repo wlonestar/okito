@@ -96,10 +96,8 @@ public class PinServiceImpl implements PinService {
     Pin pin = pinRepository.findById(id).orElse(null);
     if (!Objects.equals(pin, null)) {
       // delete cascade
-      // TODO: need to set in db
       List<PinLike> pinLikes = pinLikeRepository.findAllByPinId(id);
       pinLikeRepository.deleteAll(pinLikes);
-
       pinRepository.deleteById(id);
       return true;
     }
