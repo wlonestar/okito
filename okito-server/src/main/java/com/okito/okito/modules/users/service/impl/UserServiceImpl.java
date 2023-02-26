@@ -86,7 +86,6 @@ public class UserServiceImpl implements UserService {
     User newUser = userRepository.findById(user.getId()).orElse(null);
     if (!Objects.equals(newUser, null)) {
       newUser.setToken(user.getToken());
-      // TODO: more fields need to update
       userRepository.save(newUser);
       return true;
     }

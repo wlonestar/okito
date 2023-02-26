@@ -4,11 +4,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Immutable;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * @author <a href="mailto:wlonestar@163.com">wjl</a>
@@ -17,10 +19,11 @@ import java.io.Serializable;
  */
 @Data
 @Entity
+@Builder
 @Immutable
-@Table(name = "user_view")
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "user_view")
 public class UserView implements Serializable {
 
   @Id
@@ -33,7 +36,7 @@ public class UserView implements Serializable {
   private String bio;
   private String homepage;
   private String intro;
-  private String joinTime;
+  private LocalDateTime joinTime;
   private Long followerNum;
   private Long followedNum;
   private Long postViewNum;

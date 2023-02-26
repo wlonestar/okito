@@ -25,7 +25,6 @@ import java.util.concurrent.Executors;
  */
 public final class COSUtil {
 
-  // TODO: need to replace with virosa configuration
   private static final String secretId = "xxx";
   private static final String secretKey = "xxx";
   private static final String region = "ap-nanjing";

@@ -17,9 +17,9 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 @Builder
-@Table(name = "p_column")
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "p_column")
 public class Column implements Serializable {
 
   @Id

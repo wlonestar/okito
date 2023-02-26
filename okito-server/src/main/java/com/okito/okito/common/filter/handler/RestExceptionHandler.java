@@ -28,9 +28,6 @@ public class RestExceptionHandler {
 //    return RespResult.fail(RespStatus.ERROR.getStatus(), e.getMessage());
 //  }
 
-  // TODO: need to add more
-
-
   @ExceptionHandler(DateTimeParseException.class)
   @ResponseStatus(HttpStatus.BAD_REQUEST)
   public RespResult<?> dateTimeParseException(Exception e) {
@@ -38,7 +35,6 @@ public class RestExceptionHandler {
     return RespResult.fail(RespStatus.PARSE_ERROR.getStatus(), e.getMessage());
   }
 
-  // TODO: need to rename
   @ExceptionHandler(PropertyReferenceException.class)
   @ResponseStatus(HttpStatus.BAD_REQUEST)
   public RespResult<?> propertyReferenceException(Exception e) {

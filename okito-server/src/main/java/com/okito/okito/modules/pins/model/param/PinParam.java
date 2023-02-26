@@ -1,6 +1,8 @@
 package com.okito.okito.modules.pins.model.param;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
@@ -10,6 +12,8 @@ import java.time.LocalDateTime;
  * @time 2023/2/22 20:24
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class PinParam {
 
   private Long id;

@@ -14,7 +14,6 @@ public enum RespStatus {
 
   OK(20, "ok"),
 
-  // TODO: need to add
   NOT_EXIST(31, "object does not exist"),
   ALREADY_EXIST(32, "object already exists"),
   OBJECT_NULL(33, "the object is null"),

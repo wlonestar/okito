@@ -45,6 +45,8 @@ sa-token:
   token-name: auth-token
   timeout: 2592000
   activity-timeout: -1
-  is-share: false
   token-style: uuid
+  token-prefix: Bearer
   is-log: true
+  is-share: false
+  is-concurrent: false

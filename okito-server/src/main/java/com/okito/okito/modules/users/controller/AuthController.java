@@ -60,8 +60,6 @@ public class AuthController {
 
   /**
    * user register
-   * <p>
-   * TODO: before register should confirm captcha by email
    *
    * @param param register param
    * @return RespResult<?>
@@ -79,7 +77,6 @@ public class AuthController {
       user.setJoinTime(defaultTime);
       user.setRoleId(defaultRoleId);
       userService.add(user);
-      // TODO: should return userView
       return RespResult.success(user);
     }
     return RespResult.fail(RespStatus.ERROR.getStatus(), "register failed, username or email exists");
@@ -101,12 +98,12 @@ public class AuthController {
   /**
    * user logout
    *
-   * @param token token
+   * @param device device
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.POST, path = "/logout")
-  public RespResult<?> logout(@NonNull @RequestParam(name = "token") String token) {
-    StpUtil.logoutByTokenValue(token);
+  public RespResult<?> logout(@NonNull @RequestBody String device) {
+    StpUtil.logout(StpUtil.getLoginId(), device);
     return RespResult.success("logout success");
   }
 

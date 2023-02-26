@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Immutable;
@@ -17,10 +18,11 @@ import java.io.Serializable;
  */
 @Data
 @Entity
+@Builder
 @Immutable
-@Table(name = "tag_view")
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "tag_view")
 public class TagView implements Serializable {
 
   @Id
