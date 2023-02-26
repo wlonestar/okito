@@ -61,7 +61,6 @@ public class RoleServiceImpl implements RoleService {
   public boolean deleteById(Long id) {
     Role role = roleRepository.findById(id).orElse(null);
     if (!Objects.equals(role, null)) {
-      // TODO: delete users cascade
       roleRepository.deleteById(id);
       return true;
     }
