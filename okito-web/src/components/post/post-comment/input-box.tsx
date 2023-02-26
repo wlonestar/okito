@@ -66,6 +66,7 @@ export default function InputBox({
       sx={{ mt: 3, mb: 4, display: 'flex', alignItems: 'flex-start' }}
     >
       <AuthorAvatar author={reply} />
+      <Box sx={{ mr: 2 }} />
       <TextField
         variant="outlined"
         multiline
@@ -76,9 +77,13 @@ export default function InputBox({
         fullWidth
         onChange={handleChange}
         inputRef={valueRef}
-        sx={{ ml: 2, mr: 2 }}
       />
-      <Button variant="contained" type="submit" disabled={disable}>
+      <Button
+        variant="contained"
+        type="submit"
+        sx={{ ml: 2 }}
+        disabled={disable}
+      >
         {'发送'}
       </Button>
     </Box>

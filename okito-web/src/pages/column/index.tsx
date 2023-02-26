@@ -85,18 +85,20 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
           currentUser={currentUser}
         />
       </Paper>
-      <Box
-        sx={{ borderBottom: 1, borderColor: 'divider', right: '10px', pt: 2 }}
-      >
-        <Tabs value={value} onChange={handleChange}>
-          {tabs.map(({ index, label }) => (
-            <Tab key={index} label={label} {...tabProps(index)} />
-          ))}
-        </Tabs>
-      </Box>
-      {posts.map((post) => (
-        <PostCard key={post.id} post={post} currentUser={currentUser} />
-      ))}
+      <Paper sx={{ mt: 3 }}>
+        <Box
+          sx={{ borderBottom: 1, borderColor: 'divider', right: '10px', pt: 2 }}
+        >
+          <Tabs value={value} onChange={handleChange}>
+            {tabs.map(({ index, label }) => (
+              <Tab key={index} label={label} {...tabProps(index)} />
+            ))}
+          </Tabs>
+        </Box>
+        {posts.map((post) => (
+          <PostCard key={post.id} post={post} currentUser={currentUser} />
+        ))}
+      </Paper>
     </Box>
   )
 }

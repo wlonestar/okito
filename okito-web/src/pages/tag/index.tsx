@@ -5,7 +5,7 @@ import { Post } from '../../types/post'
 import { useMount, useSort } from '../../utils'
 import { selectTagById } from '../../api/tag'
 import { selectPostsByTagId } from '../../api/post'
-import { Box, Tab, Tabs, Typography } from '@mui/material'
+import { Box, Paper, Tab, Tabs, Typography } from '@mui/material'
 import { PostCard } from '../../components/post/post-card'
 import { tabProps } from '../../components/tab'
 import { useAuth } from '../../context/auth-context'
@@ -86,16 +86,18 @@ export default function TagPage() {
           src={tag.cover}
         />
       </Box>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider', right: '10px' }}>
-        <Tabs value={value} onChange={handleChange}>
-          {tabs.map(({ index, label }) => (
-            <Tab key={index} label={label} {...tabProps(index)} />
-          ))}
-        </Tabs>
-      </Box>
-      {posts.map((post) => (
-        <PostCard key={post.id} post={post} currentUser={currentUser} />
-      ))}
+      <Paper>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider', right: '10px' }}>
+          <Tabs value={value} onChange={handleChange}>
+            {tabs.map(({ index, label }) => (
+              <Tab key={index} label={label} {...tabProps(index)} />
+            ))}
+          </Tabs>
+        </Box>
+        {posts.map((post) => (
+          <PostCard key={post.id} post={post} currentUser={currentUser} />
+        ))}
+      </Paper>
     </Box>
   )
 }
