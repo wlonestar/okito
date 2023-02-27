@@ -33,6 +33,10 @@ public class PostServiceImpl implements PostService {
   @Resource
   private UserRepository userRepository;
 
+  public List<PostView> selectRecommend100() {
+    return postViewRepository.findRecommend100();
+  }
+
   @Override
   public List<PostView> selectAll() {
     return postViewRepository.findAll();
@@ -61,6 +65,11 @@ public class PostServiceImpl implements PostService {
   @Override
   public List<PostView> selectAllByAuthorId(Long authorId) {
     return postViewRepository.findAllByAuthorId(authorId);
+  }
+
+  @Override
+  public List<PostView> selectAllByUserFollowed(Long userId) {
+    return postViewRepository.findAllByUserFollowed(userId);
   }
 
   @Override

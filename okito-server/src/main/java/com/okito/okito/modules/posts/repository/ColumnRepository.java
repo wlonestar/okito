@@ -17,8 +17,9 @@ public interface ColumnRepository extends JpaRepository<Column, Long> {
 
   List<Column> findAllByAuthorId(Long authorId);
 
-  @Query(value = "select new Column(c.id, c.name, c.cover, c.description, c.createTime, c.updateTime, c.authorId) from Column c " +
-    "where c.id in (select uc.id.columnId from UserColumnFollow uc where uc.id.userId = ?1 and uc.follow = true)")
+  @Query(
+    value = "select c from Column c where c.id in " +
+      "(select uc.id.columnId from UserColumnFollow uc where uc.id.userId = ?1 and uc.follow = true)")
   List<Column> findAllByFollowerId(Long userId);
 
 }

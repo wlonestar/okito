@@ -30,6 +30,16 @@ public class PostController {
   private PostService postService;
 
   /**
+   * select recommend 100 posts
+   *
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/recommend")
+  public RespResult<?> selectTop100() {
+    return RespResult.success(postService.selectRecommend100());
+  }
+
+  /**
    * select all posts
    *
    * @return RespResult<?>
@@ -92,6 +102,17 @@ public class PostController {
   @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
   public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
     return RespResult.success(postService.selectAllByAuthorId(authorId));
+  }
+
+  /**
+   * select posts written by user followed by id
+   *
+   * @param userId user id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/follow/{userId}")
+  public RespResult<?> selectAllByUserFollowed(@NonNull @PathVariable(name = "userId") Long userId) {
+    return RespResult.success(postService.selectAllByUserFollowed(userId));
   }
 
   /**

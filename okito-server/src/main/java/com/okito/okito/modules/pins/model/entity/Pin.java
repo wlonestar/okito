@@ -1,6 +1,5 @@
 package com.okito.okito.modules.pins.model.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,9 +23,8 @@ import java.time.LocalDateTime;
 public class Pin implements Serializable {
 
   @Id
-  @SequenceGenerator(name = "pin_id_seq", sequenceName = "pin_id_seq", allocationSize = 1)
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pin_id_seq")
-  @Column(name = "id", updatable = false)
+  @Column(name = "id")
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private Long id;
 
   @Column(name = "content")

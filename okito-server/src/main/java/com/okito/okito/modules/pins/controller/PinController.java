@@ -35,6 +35,16 @@ public class PinController {
   private PinService pinService;
 
   /**
+   * select recommend 100 pins
+   *
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/recommend")
+  public RespResult<?> selectTop100() {
+    return RespResult.success(pinService.selectRecommend100());
+  }
+
+  /**
    * select all pins
    *
    * @return RespResult<?>
@@ -53,6 +63,17 @@ public class PinController {
   @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
   public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
     return RespResult.success(pinService.selectAllByAuthorId(authorId));
+  }
+
+  /**
+   * select all pins written by user followed by id
+   *
+   * @param userId user id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/followed/{userId}")
+  public RespResult<?> selectAllByUserFollowed(@NonNull @PathVariable(name = "userId") Long userId) {
+    return RespResult.success(pinService.selectAllByUserFollowed(userId));
   }
 
   /**

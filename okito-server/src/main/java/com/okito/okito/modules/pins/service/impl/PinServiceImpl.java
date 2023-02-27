@@ -35,6 +35,11 @@ public class PinServiceImpl implements PinService {
   private PinLikeRepository pinLikeRepository;
 
   @Override
+  public List<PinView> selectRecommend100() {
+    return pinViewRepository.findRecommend100();
+  }
+
+  @Override
   public List<PinView> selectAll() {
     return pinViewRepository.findAll();
   }
@@ -42,6 +47,11 @@ public class PinServiceImpl implements PinService {
   @Override
   public List<PinView> selectAllByAuthorId(Long authorId) {
     return pinViewRepository.findAllByAuthorId(authorId);
+  }
+
+  @Override
+  public List<PinView> selectAllByUserFollowed(Long userId) {
+    return pinViewRepository.findAllByUserFollowed(userId);
   }
 
   @Override

@@ -18,13 +18,13 @@ import java.util.List;
 @Repository
 public interface PinLikeRepository extends JpaRepository<PinLike, PinLikeId> {
 
-  @Query(value = "select p.id.pinId, p.id.userId, p.type from PinLike p where p.id.userId = ?1")
+  @Query(value = "select p from PinLike p where p.id.userId = ?1")
   List<PinLike> findAllByUserId(Long userId);
 
-  @Query(value = "select p.id.pinId, p.id.userId, p.type from PinLike p where p.id.pinId = ?1")
+  @Query(value = "select p from PinLike p where p.id.pinId = ?1")
   List<PinLike> findAllByPinId(Long pinId);
 
-  @Query(value = "select p.id.pinId, p.id.userId, p.type from PinLike p where p.id.userId = ?1")
+  @Query(value = "select p from PinLike p where p.id.userId = ?1")
   Page<PinLike> findAllByUserIdAndPage(Long userId, Pageable pageable);
 
 }
