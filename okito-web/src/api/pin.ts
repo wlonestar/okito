@@ -3,6 +3,13 @@ import { PinParam } from '../types/pin'
 
 const prefix: string = '/pin'
 
+export function selectRecommend100Pins() {
+  return client({
+    url: `${prefix}/recommend`,
+    method: 'GET',
+  })
+}
+
 export function selectAllPins() {
   return client({
     url: `${prefix}`,
