@@ -19,9 +19,9 @@ Modern UI and Cross-platform
 
 - [ ] Test plan
 
-- [x] [Outline design description](docs/3-outline-design-notes.md)
+- [x] [Outline design description](docs/3-outline-design-description.md)
 
-- [x] [Detailed design description](docs/4-detailed-design-notes.md)
+- [x] [Detailed design description](docs/4-detailed-design-description.md)
 
 - [x] [Database design specification](docs/5-database-design-specification.md)
 

@@ -10,9 +10,9 @@
 
 - [ ] Test plan
 
-- [x] [Outline design description](/3-outline-design-notes)
+- [x] [Outline design description](/3-outline-design-description)
 
-- [x] [Detailed design description](/4-detailed-design-notes)
+- [x] [Detailed design description](/4-detailed-design-description)
 
 - [x] [Database design specification](/5-database-design-specification)
 
