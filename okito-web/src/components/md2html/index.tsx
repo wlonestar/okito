@@ -1,13 +1,14 @@
 import React from 'react'
+import { Box } from '@mui/material'
 import { CodeProps } from 'react-markdown/lib/ast-to-react'
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import dark from 'react-syntax-highlighter/dist/esm/styles/hljs/dark'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import ReactMarkdown from 'react-markdown'
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import remarkGfm from 'remark-gfm'
 import rehypeKatex from 'rehype-katex'
-import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import CodeCopyButton from './copy-code'
-import { Box } from '@mui/material'
+import './style.scss'
 
 const components = {
   code({ node, inline, className, children, ...props }: CodeProps) {
@@ -16,16 +17,21 @@ const components = {
       <SyntaxHighlighter
         children={String(children).replace(/\n$/, '')}
         // @ts-ignore
-        style={dark}
-        language={match[1]}
-        PreTag="div"
+        style={atomDark}
+        language={match[1].toLowerCase()}
+        PreTag="section"
         {...props}
       />
     ) : (
       <code
         className={className}
         {...props}
-        style={{ fontFamily: 'Fira Code' }}
+        style={{
+          color: '#476582',
+          backgroundColor: 'rgba(27,31,35,.05)',
+          padding: '.2rem .5rem',
+          borderRadius: '3px',
+        }}
       >
         {children}
       </code>
@@ -40,14 +46,9 @@ const components = {
         fontFamily: 'Fira Code',
       }}
     >
-      {/*<CodeCopyButton>{children}</CodeCopyButton>*/}
+      <CodeCopyButton>{children}</CodeCopyButton>
       {children}
     </pre>
-  ),
-
-  // @ts-ignore
-  span: ({ children }) => (
-    <span style={{ fontFamily: 'Fira Code' }}>{children}</span>
   ),
 
   // @ts-ignore
@@ -75,6 +76,7 @@ export default function Md2html({ content }: Md2htmlProps) {
   return (
     <Box sx={{ fontFamily: 'Fira Code' }}>
       <ReactMarkdown
+        className="react-markdown"
         children={content}
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeKatex, rehypeRaw]}

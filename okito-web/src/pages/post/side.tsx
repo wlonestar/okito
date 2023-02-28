@@ -15,8 +15,11 @@ import { VisibilityRounded } from '@mui/icons-material'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined'
 import SmsOutlinedIcon from '@mui/icons-material/SmsOutlined'
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined'
+import MarkdownNavbar from 'markdown-navbar'
+import '../../components/md2html/style.scss'
 
 interface SideProps {
+  content: string
   likeType: number
   handleClickLike: () => void
   show: boolean
@@ -26,6 +29,7 @@ interface SideProps {
 }
 
 export default function Side({
+  content,
   likeType,
   handleClickLike,
   show,
@@ -163,6 +167,9 @@ export default function Side({
             <StarBorderOutlinedIcon />
           </Link>
         </Box>
+      </Paper>
+      <Paper sx={{ mt: 2 }}>
+        <MarkdownNavbar className="markdown-navbar" source={content} />
       </Paper>
     </Box>
   )

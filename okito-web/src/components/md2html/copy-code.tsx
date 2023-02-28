@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '@mui/material'
+import { Link } from '@mui/material'
 
 export default function CodeCopyButton({ children }: { children: any }) {
   const [copy, setCopy] = React.useState('copy')
@@ -15,7 +15,6 @@ export default function CodeCopyButton({ children }: { children: any }) {
   return (
     <div
       style={{
-        color: '#333',
         position: 'absolute',
         right: '10px',
         top: '-2px',
@@ -24,20 +23,17 @@ export default function CodeCopyButton({ children }: { children: any }) {
         transition: 'all 0.3s ease-in-out',
       }}
     >
-      <Button
-        size="small"
+      <Link
         onClick={handleClick}
         sx={{
-          fontSize: '8px',
-          color: '#f3f3f3',
-          backgroundColor: '#333',
-          borderStyle: 'solid',
-          borderRadius: '5px',
+          fontSize: '14px',
+          color: '#1976d2',
+          padding: '0.25rem',
           '&:hover': { transform: 'scale(1.1)', opacity: '0.9' },
         }}
       >
         {copy}
-      </Button>
+      </Link>
     </div>
   )
 }

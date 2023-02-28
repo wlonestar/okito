@@ -146,6 +146,7 @@ export default function PostPage({ currentUser }: PostPageProps) {
         </Grid>
         <Grid item xs={12} md={3} sx={{ pl: 1.5, pr: 1.5, pt: 2.5 }}>
           <Side
+            content={post.content}
             likeType={likeType}
             handleClickLike={handleClickLike}
             show={show}
