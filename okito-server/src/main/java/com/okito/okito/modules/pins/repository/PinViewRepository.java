@@ -17,15 +17,20 @@ import java.util.List;
 @Repository
 public interface PinViewRepository extends ReadOnlyRepository<PinView, Long> {
 
-  @Query(value = "select p from PinView p order by random() limit 100")
+  @Query(value = "select * from pin_view order by random() limit 100", nativeQuery = true)
   List<PinView> findRecommend100();
+
+  @Query(value = "select * from pin_view where create_time between now() - interval '72 HOURS' and now() " +
+    "order by view_num desc limit 100", nativeQuery = true)
+  List<PinView> findHot100();
 
   List<PinView> findAllByAuthorId(Long authorId);
 
-  @Query(value = "select p from PinView p where p.authorId in " +
-    "(select u.id.followedId from UserFollow u where u.id.followerId = ?1 and u.follow = true)")
+  @Query(value = "select * from pin_view p where p.author_id in " +
+    "(select u.followed_id from user_follow u where u.follower_id = ?1 and u.follow = true)", nativeQuery = true)
   List<PinView> findAllByUserFollowed(Long userId);
 
+  @Deprecated
   Page<PinView> findAllByAuthorId(Long authorId, Pageable pageable);
 
 }

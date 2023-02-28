@@ -44,6 +44,16 @@ public class PinController {
   }
 
   /**
+   * select hot 100 pins
+   *
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/hot")
+  public RespResult<?> selectHot100() {
+    return RespResult.success(pinService.selectHot100());
+  }
+
+  /**
    * search by keywords
    *
    * @param keywords keywords
@@ -81,7 +91,7 @@ public class PinController {
    * @param userId user id
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/followed/{userId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/follow/{userId}")
   public RespResult<?> selectAllByUserFollowed(@NonNull @PathVariable(name = "userId") Long userId) {
     return RespResult.success(pinService.selectAllByUserFollowed(userId));
   }

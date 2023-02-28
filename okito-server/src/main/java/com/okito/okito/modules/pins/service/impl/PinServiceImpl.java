@@ -44,6 +44,11 @@ public class PinServiceImpl implements PinService {
   }
 
   @Override
+  public List<PinView> selectHot100() {
+    return pinViewRepository.findHot100();
+  }
+
+  @Override
   public List<PinView> searchByKeywords(String keywords) {
     return pinViewRepositoryCustom.searchByKeywords(keywords);
   }
