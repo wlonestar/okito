@@ -10,8 +10,6 @@ import com.okito.okito.modules.pins.repository.PinViewRepositoryCustom;
 import com.okito.okito.modules.pins.service.PinService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -44,6 +42,11 @@ public class PinServiceImpl implements PinService {
   }
 
   @Override
+  public List<PinView> selectHot100() {
+    return pinViewRepository.findHot100();
+  }
+
+  @Override
   public List<PinView> searchByKeywords(String keywords) {
     return pinViewRepositoryCustom.searchByKeywords(keywords);
   }
@@ -61,16 +64,6 @@ public class PinServiceImpl implements PinService {
   @Override
   public List<PinView> selectAllByUserFollowed(Long userId) {
     return pinViewRepository.findAllByUserFollowed(userId);
-  }
-
-  @Override
-  public Page<PinView> selectAll(Pageable pageable) {
-    return pinViewRepository.findAll(pageable);
-  }
-
-  @Override
-  public Page<PinView> selectAllByAuthorId(Long authorId, Pageable pageable) {
-    return pinViewRepository.findAllByAuthorId(authorId, pageable);
   }
 
   @Override

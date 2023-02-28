@@ -39,7 +39,7 @@ public class ColumnController {
   }
 
   /**
-   * select all followed columns by authorId
+   * select followed columns by authorId
    *
    * @param authorId authorId
    * @return RespResult<?>
@@ -50,7 +50,7 @@ public class ColumnController {
   }
 
   /**
-   * select all followed columns by follower id
+   * select followed columns by follower id
    *
    * @param followerId followerId
    * @return RespResult<?>

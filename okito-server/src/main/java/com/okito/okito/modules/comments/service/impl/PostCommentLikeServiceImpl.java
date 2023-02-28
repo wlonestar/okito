@@ -9,8 +9,6 @@ import com.okito.okito.modules.comments.service.PostCommentLikeService;
 import com.okito.okito.modules.users.model.entity.User;
 import com.okito.okito.modules.users.repository.UserRepository;
 import jakarta.annotation.Resource;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,16 +39,6 @@ public class PostCommentLikeServiceImpl implements PostCommentLikeService {
   @Override
   public List<PostCommentLike> selectAllByUserId(Long userId) {
     return postCommentLikeRepository.findAllByUserId(userId);
-  }
-
-  @Override
-  public Page<PostCommentLike> selectAll(Pageable pageable) {
-    return postCommentLikeRepository.findAll(pageable);
-  }
-
-  @Override
-  public Page<PostCommentLike> selectAllByUserId(Long userId, Pageable pageable) {
-    return postCommentLikeRepository.findAllByUserIdAndPage(userId, pageable);
   }
 
   @Override

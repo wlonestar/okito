@@ -7,19 +7,19 @@
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "kyle.strosin"
+            "example": "garfield.christiansen"
           },
           "password": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "0mxs7x"
+            "example": "666zkp"
           },
           "email": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "ray.gutkowski@hotmail.com"
+            "example": "wilburn.feest@yahoo.com"
           }
         }
       },
@@ -29,17 +29,17 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "432"
+            "example": "192"
           },
           "userId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "979"
+            "example": "85"
           },
           "type": {
             "description": "No comments found.",
-            "example": "25284"
+            "example": "14129"
           }
         }
       },
@@ -49,25 +49,25 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "964"
+            "example": "240"
           },
           "name": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "kyle.strosin"
+            "example": "garfield.christiansen"
           },
           "cover": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "qx0287"
+            "example": "h9jp5c"
           },
           "description": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "gup0oj"
+            "example": "uxg22y"
           }
         }
       },
@@ -77,7 +77,7 @@
             "format": "string",
             "description": "device",
             "type": "string",
-            "example": "w3rof1"
+            "example": "ru7j21"
           }
         }
       },
@@ -87,17 +87,17 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "413"
+            "example": "532"
           },
           "userId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "359"
+            "example": "228"
           },
           "type": {
             "description": "No comments found.",
-            "example": "21533"
+            "example": "32527"
           }
         }
       },
@@ -107,43 +107,43 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "338"
+            "example": "769"
           },
           "title": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "ex5wfy"
+            "example": "hxf7kd"
           },
           "summary": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "on776a"
+            "example": "gn3u9a"
           },
           "cover": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "raz1eq"
+            "example": "vro4l8"
           },
           "content": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "xjv47b"
+            "example": "jo8pve"
           },
           "createTime": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "2023-02-27 16:38:56"
+            "example": "2023-03-01 08:52:10"
           },
           "updateTime": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "2023-02-27 16:38:56"
+            "example": "2023-03-01 08:52:10"
           },
           "draft": {
             "format": "boolean",
@@ -155,19 +155,19 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "168"
+            "example": "15"
           },
           "authorId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "236"
+            "example": "19"
           },
           "viewNum": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "173"
+            "example": "808"
           }
         }
       },
@@ -177,33 +177,33 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "445"
+            "example": "321"
           },
           "userId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "704"
+            "example": "292"
           },
           "actionType": {
             "description": "No comments found.",
-            "example": "17614"
+            "example": "4783"
           },
           "actionSubType": {
             "description": "No comments found.",
-            "example": "11063"
+            "example": "28772"
           },
           "targetId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "938"
+            "example": "931"
           },
           "execTime": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "2023-02-27 16:38:56"
+            "example": "2023-03-01 08:52:10"
           }
         }
       },
@@ -213,37 +213,37 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "9"
+            "example": "591"
           },
           "content": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "pp87dg"
+            "example": "18345y"
           },
           "uploadTime": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "2023-02-27 16:38:56"
+            "example": "2023-03-01 08:52:10"
           },
           "authorId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "747"
+            "example": "610"
           },
           "postId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "652"
+            "example": "71"
           },
           "parentId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "209"
+            "example": "705"
           }
         }
       },
@@ -253,37 +253,37 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "925"
+            "example": "918"
           },
           "content": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "boy6ae"
+            "example": "z4h2o4"
           },
           "uploadTime": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "2023-02-27 16:38:56"
+            "example": "2023-03-01 08:52:10"
           },
           "authorId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "189"
+            "example": "477"
           },
           "pinId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "60"
+            "example": "61"
           },
           "parentId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "987"
+            "example": "962"
           }
         }
       },
@@ -293,31 +293,31 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "426"
+            "example": "847"
           },
           "content": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "c5prju"
+            "example": "shc8fe"
           },
           "createTime": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "2023-02-27 16:38:56"
+            "example": "2023-03-01 08:52:10"
           },
           "updateTime": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "2023-02-27 16:38:56"
+            "example": "2023-03-01 08:52:10"
           },
           "authorId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "232"
+            "example": "709"
           }
         }
       },
@@ -327,19 +327,19 @@
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "ray.gutkowski@hotmail.com"
+            "example": "wilburn.feest@yahoo.com"
           },
           "password": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "ie3wes"
+            "example": "5k0ez1"
           },
           "device": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "c1zrzj"
+            "example": "1xn7dn"
           }
         }
       },
@@ -349,13 +349,13 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "928"
+            "example": "208"
           },
           "name": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "kyle.strosin"
+            "example": "garfield.christiansen"
           }
         }
       },
@@ -365,13 +365,13 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "756"
+            "example": "55"
           },
           "followedId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "853"
+            "example": "799"
           },
           "follow": {
             "format": "boolean",
@@ -387,13 +387,13 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "1677487135946"
+            "example": "1677631930413"
           },
           "status": {
             "format": "int32",
             "description": "No comments found.",
             "type": "integer",
-            "example": "534"
+            "example": "202"
           },
           "message": {
             "format": "string",
@@ -414,37 +414,37 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "579"
+            "example": "904"
           },
           "content": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "ueeo8j"
+            "example": "nt394s"
           },
           "createTime": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "2023-02-27 16:38:56"
+            "example": "2023-03-01 08:52:10"
           },
           "updateTime": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "2023-02-27 16:38:56"
+            "example": "2023-03-01 08:52:10"
           },
           "authorId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "325"
+            "example": "733"
           },
           "viewNum": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "466"
+            "example": "369"
           }
         }
       },
@@ -454,17 +454,17 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "224"
+            "example": "521"
           },
           "userId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "747"
+            "example": "611"
           },
           "type": {
             "description": "No comments found.",
-            "example": "7756"
+            "example": "14958"
           }
         }
       },
@@ -474,43 +474,43 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "759"
+            "example": "481"
           },
           "name": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "kyle.strosin"
+            "example": "garfield.christiansen"
           },
           "cover": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "bkbvw2"
+            "example": "tp2fr4"
           },
           "description": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "c0njb7"
+            "example": "fdwei3"
           },
           "createTime": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "2023-02-27 16:38:56"
+            "example": "2023-03-01 08:52:10"
           },
           "updateTime": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "2023-02-27 16:38:56"
+            "example": "2023-03-01 08:52:10"
           },
           "authorId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "954"
+            "example": "91"
           }
         }
       },
@@ -520,43 +520,43 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "111"
+            "example": "154"
           },
           "name": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "kyle.strosin"
+            "example": "garfield.christiansen"
           },
           "cover": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "b5u9s0"
+            "example": "6su38y"
           },
           "description": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "0aigls"
+            "example": "zxh0l6"
           },
           "createTime": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "2023-02-27 16:38:56"
+            "example": "2023-03-01 08:52:10"
           },
           "updateTime": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "2023-02-27 16:38:56"
+            "example": "2023-03-01 08:52:10"
           },
           "authorId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "392"
+            "example": "825"
           }
         }
       },
@@ -566,13 +566,13 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "890"
+            "example": "380"
           },
           "collectionId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "556"
+            "example": "45"
           },
           "follow": {
             "format": "boolean",
@@ -588,25 +588,25 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "775"
+            "example": "95"
           },
           "name": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "kyle.strosin"
+            "example": "garfield.christiansen"
           },
           "cover": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "a5pion"
+            "example": "6b4mzl"
           },
           "description": {
             "format": "string",
             "description": "No comments found.",
             "type": "string",
-            "example": "yfca1i"
+            "example": "w8wbso"
           }
         }
       },
@@ -616,17 +616,17 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "599"
+            "example": "754"
           },
           "userId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "144"
+            "example": "364"
           },
           "type": {
             "description": "No comments found.",
-            "example": "2533"
+            "example": "23788"
           }
         }
       },
@@ -636,13 +636,13 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "484"
+            "example": "581"
           },
           "columnId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "446"
+            "example": "806"
           },
           "follow": {
             "format": "boolean",
@@ -658,13 +658,13 @@
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "446"
+            "example": "197"
           },
           "tagId": {
             "format": "int64",
             "description": "No comments found.",
             "type": "number",
-            "example": "10"
+            "example": "769"
           },
           "follow": {
             "format": "boolean",
@@ -685,9 +685,9 @@
   "paths": {
     "/post/comment/like/{userId}": {
       "get": {
-        "summary": "select all postCommentLikes by userId",
+        "summary": "select postCommentLikes by userId",
         "deprecated": false,
-        "description": "select all postCommentLikes by userId",
+        "description": "select postCommentLikes by userId",
         "tags": [
           "post comment like controller"
         ],
@@ -702,7 +702,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 360,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 730,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -719,7 +719,7 @@
             "in": "path",
             "description": "userId",
             "required": true,
-            "example": "690",
+            "example": "424",
             "name": "userId"
           }
         ]
@@ -744,7 +744,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 234,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 974,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -761,7 +761,7 @@
             "in": "query",
             "description": "  userId",
             "required": true,
-            "example": "889",
+            "example": "778",
             "name": "userId"
           },
           {
@@ -772,10 +772,40 @@
             "in": "query",
             "description": "columnId",
             "required": true,
-            "example": "7",
+            "example": "511",
             "name": "columnId"
           }
         ]
+      }
+    },
+    "/post/hot": {
+      "get": {
+        "summary": "select hot 100 posts",
+        "deprecated": false,
+        "description": "select hot 100 posts",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 220,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "posthot",
+        "parameters": []
       }
     },
     "/user/collection/single": {
@@ -797,7 +827,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 445,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 392,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -814,7 +844,7 @@
             "in": "query",
             "description": "      userId",
             "required": true,
-            "example": "780",
+            "example": "289",
             "name": "userId"
           },
           {
@@ -825,7 +855,7 @@
             "in": "query",
             "description": "collectionId",
             "required": true,
-            "example": "144",
+            "example": "498",
             "name": "collectionId"
           }
         ]
@@ -833,9 +863,9 @@
     },
     "/pin/comment/pin/{pinId}": {
       "get": {
-        "summary": "select all pinComments by pinId",
+        "summary": "select pinComments by pinId",
         "deprecated": false,
-        "description": "select all pinComments by pinId",
+        "description": "select pinComments by pinId",
         "tags": [
           "pin comment controller"
         ],
@@ -850,7 +880,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 806,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 619,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -867,7 +897,7 @@
             "in": "path",
             "description": "pinId",
             "required": true,
-            "example": "688",
+            "example": "86",
             "name": "pinId"
           }
         ]
@@ -892,7 +922,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 575,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 310,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -909,7 +939,7 @@
             "in": "path",
             "description": "collectionId",
             "required": true,
-            "example": "237",
+            "example": "283",
             "name": "collectionId"
           }
         ]
@@ -932,7 +962,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"commentId\": 158,\n  \"userId\": 602,\n  \"type\": 10312\n}"
+                  "value": "{\n  \"commentId\": 999,\n  \"userId\": 353,\n  \"type\": 22873\n}"
                 }
               }
             }
@@ -949,7 +979,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 562,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 792,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -977,7 +1007,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 689,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 557,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -994,7 +1024,7 @@
             "in": "query",
             "description": "commentId",
             "required": true,
-            "example": "91",
+            "example": "862",
             "name": "commentId"
           },
           {
@@ -1005,7 +1035,7 @@
             "in": "query",
             "description": "   userId",
             "required": true,
-            "example": "386",
+            "example": "22",
             "name": "userId"
           }
         ]
@@ -1026,7 +1056,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"commentId\": 336,\n  \"userId\": 115,\n  \"type\": 19454\n}"
+                  "value": "{\n  \"commentId\": 743,\n  \"userId\": 528,\n  \"type\": 18913\n}"
                 }
               }
             }
@@ -1043,7 +1073,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 390,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 456,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1071,7 +1101,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 455,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 473,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1099,7 +1129,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 881,\n  \"name\": \"kyle.strosin\",\n  \"cover\": \"0f98ws\",\n  \"description\": \"tnbnht\",\n  \"createTime\": \"2023-02-27 16:38:56\",\n  \"updateTime\": \"2023-02-27 16:38:56\",\n  \"authorId\": 302\n}"
+                  "value": "{\n  \"id\": 324,\n  \"name\": \"garfield.christiansen\",\n  \"cover\": \"thjcgg\",\n  \"description\": \"97v08w\",\n  \"createTime\": \"2023-03-01 08:52:10\",\n  \"updateTime\": \"2023-03-01 08:52:10\",\n  \"authorId\": 177\n}"
                 }
               }
             }
@@ -1116,7 +1146,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 64,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 973,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1142,7 +1172,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 879,\n  \"name\": \"kyle.strosin\",\n  \"cover\": \"s4ll61\",\n  \"description\": \"ojkpq1\",\n  \"createTime\": \"2023-02-27 16:38:56\",\n  \"updateTime\": \"2023-02-27 16:38:56\",\n  \"authorId\": 264\n}"
+                  "value": "{\n  \"id\": 430,\n  \"name\": \"garfield.christiansen\",\n  \"cover\": \"uo69uq\",\n  \"description\": \"ik82gn\",\n  \"createTime\": \"2023-03-01 08:52:10\",\n  \"updateTime\": \"2023-03-01 08:52:10\",\n  \"authorId\": 435\n}"
                 }
               }
             }
@@ -1159,7 +1189,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 449,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 572,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1187,7 +1217,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 342,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 281,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1217,7 +1247,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 112,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 498,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1234,7 +1264,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "203",
+            "example": "724",
             "name": "id"
           }
         ]
@@ -1257,7 +1287,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 65,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 849,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1274,7 +1304,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "622",
+            "example": "921",
             "name": "id"
           }
         ]
@@ -1299,7 +1329,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 612,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 536,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1316,7 +1346,7 @@
             "in": "path",
             "description": "post id",
             "required": true,
-            "example": "611",
+            "example": "350",
             "name": "postId"
           }
         ]
@@ -1324,11 +1354,11 @@
     },
     "/user/follower/{userId}": {
       "get": {
-        "summary": "select all followers by user id",
+        "summary": "select followers by user id",
         "deprecated": false,
-        "description": "select all followers by user id",
+        "description": "select followers by user id",
         "tags": [
-          ""
+          "user controller"
         ],
         "responses": {
           "200": {
@@ -1341,7 +1371,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 821,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 166,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1358,7 +1388,7 @@
             "in": "path",
             "description": "user id",
             "required": true,
-            "example": "866",
+            "example": "996",
             "name": "userId"
           }
         ]
@@ -1370,7 +1400,7 @@
         "deprecated": false,
         "description": "add a TagFollow",
         "tags": [
-          ""
+          "tag follow controller"
         ],
         "requestBody": {
           "content": {
@@ -1381,7 +1411,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"userId\": 825,\n  \"tagId\": 770,\n  \"follow\": true\n}"
+                  "value": "{\n  \"userId\": 492,\n  \"tagId\": 366,\n  \"follow\": true\n}"
                 }
               }
             }
@@ -1398,7 +1428,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 704,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 237,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1413,7 +1443,7 @@
         "deprecated": false,
         "description": "update tag follow param",
         "tags": [
-          ""
+          "tag follow controller"
         ],
         "requestBody": {
           "content": {
@@ -1424,7 +1454,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"userId\": 693,\n  \"tagId\": 909,\n  \"follow\": true\n}"
+                  "value": "{\n  \"userId\": 848,\n  \"tagId\": 469,\n  \"follow\": true\n}"
                 }
               }
             }
@@ -1441,7 +1471,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 521,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 0,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1458,7 +1488,7 @@
         "deprecated": false,
         "description": "count follow tags num by user id",
         "tags": [
-          ""
+          "user controller"
         ],
         "responses": {
           "200": {
@@ -1471,7 +1501,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 329,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 472,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1488,7 +1518,7 @@
             "in": "path",
             "description": "user id",
             "required": true,
-            "example": "868",
+            "example": "701",
             "name": "userId"
           }
         ]
@@ -1511,7 +1541,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"postId\": 742,\n  \"userId\": 602,\n  \"type\": 17915\n}"
+                  "value": "{\n  \"postId\": 102,\n  \"userId\": 915,\n  \"type\": 7116\n}"
                 }
               }
             }
@@ -1528,7 +1558,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 975,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 647,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1556,7 +1586,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 434,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 306,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1573,7 +1603,7 @@
             "in": "query",
             "description": "postId",
             "required": true,
-            "example": "954",
+            "example": "822",
             "name": "postId"
           },
           {
@@ -1584,7 +1614,7 @@
             "in": "query",
             "description": "userId",
             "required": true,
-            "example": "44",
+            "example": "194",
             "name": "userId"
           }
         ]
@@ -1605,7 +1635,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"postId\": 59,\n  \"userId\": 678,\n  \"type\": 2675\n}"
+                  "value": "{\n  \"postId\": 730,\n  \"userId\": 323,\n  \"type\": 25818\n}"
                 }
               }
             }
@@ -1622,7 +1652,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 325,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 344,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1650,7 +1680,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 899,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 715,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1678,7 +1708,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 981,\n  \"content\": \"352twy\",\n  \"uploadTime\": \"2023-02-27 16:38:56\",\n  \"authorId\": 932,\n  \"postId\": 728,\n  \"parentId\": 405\n}"
+                  "value": "{\n  \"id\": 241,\n  \"content\": \"d0irs2\",\n  \"uploadTime\": \"2023-03-01 08:52:10\",\n  \"authorId\": 679,\n  \"postId\": 48,\n  \"parentId\": 531\n}"
                 }
               }
             }
@@ -1695,7 +1725,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 471,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 528,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1723,7 +1753,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 676,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 331,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1751,7 +1781,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 862,\n  \"content\": \"4p6en7\",\n  \"uploadTime\": \"2023-02-27 16:38:56\",\n  \"authorId\": 670,\n  \"pinId\": 612,\n  \"parentId\": 364\n}"
+                  "value": "{\n  \"id\": 626,\n  \"content\": \"q3kbgg\",\n  \"uploadTime\": \"2023-03-01 08:52:10\",\n  \"authorId\": 386,\n  \"pinId\": 671,\n  \"parentId\": 549\n}"
                 }
               }
             }
@@ -1768,7 +1798,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 974,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 720,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1796,7 +1826,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 341,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 323,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1804,36 +1834,6 @@
           }
         },
         "operationId": "pincomment",
-        "parameters": []
-      }
-    },
-    "/pin/like/page": {
-      "get": {
-        "summary": "select all pinLikes by page",
-        "deprecated": false,
-        "description": "select all pinLikes by page",
-        "tags": [
-          "pin like controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 818,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "pinlikepage",
         "parameters": []
       }
     },
@@ -1856,7 +1856,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 716,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 471,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1873,7 +1873,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "584",
+            "example": "793",
             "name": "id"
           }
         ]
@@ -1896,7 +1896,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 580,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 468,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -1913,19 +1913,19 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "196",
+            "example": "615",
             "name": "id"
           }
         ]
       }
     },
-    "/pin/comment/page": {
+    "/post/title": {
       "get": {
-        "summary": "select all pinComments by page",
+        "summary": "search posts by title",
         "deprecated": false,
-        "description": "select all pinComments by page",
+        "description": "search posts by title",
         "tags": [
-          "pin comment controller"
+          "post controller"
         ],
         "responses": {
           "200": {
@@ -1938,85 +1938,24 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 745,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 186,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
             }
           }
         },
-        "operationId": "pincommentpage",
-        "parameters": []
-      }
-    },
-    "/activity/page": {
-      "get": {
-        "summary": "select all activities by page",
-        "deprecated": false,
-        "description": "select all activities by page",
-        "tags": [
-          "activity controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 732,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "activitypage",
-        "parameters": []
-      }
-    },
-    "/post/comment/like/page/{userId}": {
-      "get": {
-        "summary": "select all postCommentLikes by userId and page",
-        "deprecated": false,
-        "description": "select all postCommentLikes by userId and page",
-        "tags": [
-          "post comment like controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 66,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "postcommentlikepage{userId}",
+        "operationId": "posttitle",
         "parameters": [
           {
             "schema": {
-              "format": "int64",
-              "type": "integer"
+              "type": "string"
             },
-            "in": "path",
-            "description": "  userId",
+            "in": "query",
+            "description": "title",
             "required": true,
-            "example": "859",
-            "name": "userId"
+            "example": "8755h1",
+            "name": "q"
           }
         ]
       }
@@ -2040,7 +1979,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 103,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 919,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2057,7 +1996,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "647",
+            "example": "97",
             "name": "id"
           }
         ]
@@ -2080,7 +2019,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 393,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 389,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2097,7 +2036,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "802",
+            "example": "107",
             "name": "id"
           }
         ]
@@ -2122,7 +2061,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 571,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 522,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2139,7 +2078,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "678",
+            "example": "8",
             "name": "id"
           }
         ]
@@ -2162,7 +2101,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 168,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 587,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2179,7 +2118,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "244",
+            "example": "213",
             "name": "id"
           }
         ]
@@ -2187,9 +2126,9 @@
     },
     "/collection/follower/{followerId}": {
       "get": {
-        "summary": "select all collections by follower id",
+        "summary": "select collections by follower id",
         "deprecated": false,
-        "description": "select all collections by follower id",
+        "description": "select collections by follower id",
         "tags": [
           "collection controller"
         ],
@@ -2204,7 +2143,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 2,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 280,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2221,7 +2160,7 @@
             "in": "path",
             "description": "follower id",
             "required": true,
-            "example": "52",
+            "example": "281",
             "name": "followerId"
           }
         ]
@@ -2229,9 +2168,9 @@
     },
     "/tag/follower/{followerId}": {
       "get": {
-        "summary": "select all tags by followerId",
+        "summary": "select tags by followerId",
         "deprecated": false,
-        "description": "select all tags by followerId",
+        "description": "select tags by followerId",
         "tags": [
           "tag controller"
         ],
@@ -2246,7 +2185,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 612,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 997,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2263,40 +2202,10 @@
             "in": "path",
             "description": "followerId",
             "required": true,
-            "example": "682",
+            "example": "922",
             "name": "followerId"
           }
         ]
-      }
-    },
-    "/pin/top": {
-      "get": {
-        "summary": "select recommend 100 pins",
-        "deprecated": false,
-        "description": "select recommend 100 pins",
-        "tags": [
-          "pin controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 19,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "pintop",
-        "parameters": []
       }
     },
     "/auth/login": {
@@ -2316,7 +2225,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"email\": \"ray.gutkowski@hotmail.com\",\n  \"password\": \"1mg8n4\",\n  \"device\": \"ipphyy\"\n}"
+                  "value": "{\n  \"email\": \"wilburn.feest@yahoo.com\",\n  \"password\": \"1gxbkk\",\n  \"device\": \"12fmae\"\n}"
                 }
               }
             }
@@ -2333,7 +2242,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 911,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 814,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2363,7 +2272,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 534,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 994,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2380,7 +2289,7 @@
             "in": "path",
             "description": "pin id",
             "required": true,
-            "example": "681",
+            "example": "868",
             "name": "pinId"
           }
         ]
@@ -2388,9 +2297,9 @@
     },
     "/pin/comment/author/{authorId}": {
       "get": {
-        "summary": "select all pinComments by authorId",
+        "summary": "select pinComments by authorId",
         "deprecated": false,
-        "description": "select all pinComments by authorId",
+        "description": "select pinComments by authorId",
         "tags": [
           "pin comment controller"
         ],
@@ -2405,7 +2314,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 962,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 946,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2422,7 +2331,7 @@
             "in": "path",
             "description": "authorId",
             "required": true,
-            "example": "913",
+            "example": "241",
             "name": "authorId"
           }
         ]
@@ -2430,9 +2339,9 @@
     },
     "/post/comment/author/{authorId}": {
       "get": {
-        "summary": "select all postComments by authorId",
+        "summary": "select postComments by authorId",
         "deprecated": false,
-        "description": "select all postComments by authorId",
+        "description": "select postComments by authorId",
         "tags": [
           "post comment controller"
         ],
@@ -2447,7 +2356,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 574,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 151,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2464,47 +2373,17 @@
             "in": "path",
             "description": "authorId",
             "required": true,
-            "example": "40",
+            "example": "590",
             "name": "authorId"
           }
         ]
       }
     },
-    "/post/comment/page": {
-      "get": {
-        "summary": "select all postComments by page",
-        "deprecated": false,
-        "description": "select all postComments by page",
-        "tags": [
-          "post comment controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 885,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "postcommentpage",
-        "parameters": []
-      }
-    },
     "/post/like/{userId}": {
       "get": {
-        "summary": "select all postLikes by userId",
+        "summary": "select postLikes by userId",
         "deprecated": false,
-        "description": "select all postLikes by userId",
+        "description": "select postLikes by userId",
         "tags": [
           "post like controller"
         ],
@@ -2519,7 +2398,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 630,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 27,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2536,7 +2415,7 @@
             "in": "path",
             "description": "userId",
             "required": true,
-            "example": "822",
+            "example": "143",
             "name": "userId"
           }
         ]
@@ -2561,7 +2440,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 412,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 900,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2578,7 +2457,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "895",
+            "example": "606",
             "name": "id"
           }
         ]
@@ -2601,7 +2480,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 700,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 360,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2618,89 +2497,17 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "630",
+            "example": "846",
             "name": "id"
           }
         ]
       }
     },
-    "/pin/comment/like/page/{userId}": {
-      "get": {
-        "summary": "select all pinCommentLikes by userId and page",
-        "deprecated": false,
-        "description": "select all pinCommentLikes by userId and page",
-        "tags": [
-          "pin comment like controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 522,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "pincommentlikepage{userId}",
-        "parameters": [
-          {
-            "schema": {
-              "format": "int64",
-              "type": "integer"
-            },
-            "in": "path",
-            "description": "  userId",
-            "required": true,
-            "example": "568",
-            "name": "userId"
-          }
-        ]
-      }
-    },
-    "/pin/comment/like/page": {
-      "get": {
-        "summary": "select all pinCommentLikes by page",
-        "deprecated": false,
-        "description": "select all pinCommentLikes by page",
-        "tags": [
-          "pin comment like controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 753,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "pincommentlikepage",
-        "parameters": []
-      }
-    },
     "/pin/like/{userId}": {
       "get": {
-        "summary": "select all pinLikes by userId",
+        "summary": "select pinLikes by userId",
         "deprecated": false,
-        "description": "select all pinLikes by userId",
+        "description": "select pinLikes by userId",
         "tags": [
           "pin like controller"
         ],
@@ -2715,7 +2522,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 632,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 733,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2732,7 +2539,7 @@
             "in": "path",
             "description": "userId",
             "required": true,
-            "example": "638",
+            "example": "42",
             "name": "userId"
           }
         ]
@@ -2757,7 +2564,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 299,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 514,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2774,7 +2581,7 @@
             "in": "path",
             "description": "collection id",
             "required": true,
-            "example": "496",
+            "example": "796",
             "name": "collectionId"
           }
         ]
@@ -2782,9 +2589,9 @@
     },
     "/pin/author/{authorId}": {
       "get": {
-        "summary": "select all pins by authorId",
+        "summary": "select pins by authorId",
         "deprecated": false,
-        "description": "select all pins by authorId",
+        "description": "select pins by authorId",
         "tags": [
           "pin controller"
         ],
@@ -2799,7 +2606,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 249,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 902,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2816,8 +2623,50 @@
             "in": "path",
             "description": "authorId",
             "required": true,
-            "example": "306",
+            "example": "420",
             "name": "authorId"
+          }
+        ]
+      }
+    },
+    "/post/follow/{userId}": {
+      "get": {
+        "summary": "select posts written by user followed by id",
+        "deprecated": false,
+        "description": "select posts written by user followed by id",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 619,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postfollow{userId}",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "path",
+            "description": "user id",
+            "required": true,
+            "example": "249",
+            "name": "userId"
           }
         ]
       }
@@ -2841,7 +2690,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 861,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 497,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2858,17 +2707,58 @@
             "in": "path",
             "description": "tagId",
             "required": true,
-            "example": "508",
+            "example": "520",
             "name": "tagId"
+          }
+        ]
+      }
+    },
+    "/post/search": {
+      "get": {
+        "summary": "search posts by title",
+        "deprecated": false,
+        "description": "search posts by title",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 219,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "postsearch",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "description": "keywords",
+            "required": true,
+            "example": "z7ipv3",
+            "name": "q"
           }
         ]
       }
     },
     "/activity/user/{userId}": {
       "get": {
-        "summary": "select all activities by user id",
+        "summary": "select activities by user id",
         "deprecated": false,
-        "description": "select all activities by user id",
+        "description": "select activities by user id",
         "tags": [
           "activity controller"
         ],
@@ -2883,7 +2773,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 262,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 57,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2900,7 +2790,7 @@
             "in": "path",
             "description": "user id",
             "required": true,
-            "example": "630",
+            "example": "234",
             "name": "userId"
           }
         ]
@@ -2912,7 +2802,7 @@
         "deprecated": false,
         "description": "select tagFollow by id",
         "tags": [
-          ""
+          "tag follow controller"
         ],
         "responses": {
           "200": {
@@ -2925,7 +2815,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 348,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 866,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -2942,7 +2832,7 @@
             "in": "query",
             "description": "user id",
             "required": true,
-            "example": "984",
+            "example": "953",
             "name": "userId"
           },
           {
@@ -2953,50 +2843,8 @@
             "in": "query",
             "description": "tag id",
             "required": true,
-            "example": "899",
+            "example": "982",
             "name": "tagId"
-          }
-        ]
-      }
-    },
-    "/pin/like/page/{userId}": {
-      "get": {
-        "summary": "select all pinLikes by userId and page",
-        "deprecated": false,
-        "description": "select all pinLikes by userId and page",
-        "tags": [
-          "pin like controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 676,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "pinlikepage{userId}",
-        "parameters": [
-          {
-            "schema": {
-              "format": "int64",
-              "type": "integer"
-            },
-            "in": "path",
-            "description": "  userId",
-            "required": true,
-            "example": "585",
-            "name": "userId"
           }
         ]
       }
@@ -3020,7 +2868,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 49,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 365,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3037,7 +2885,7 @@
             "in": "path",
             "description": "columnId",
             "required": true,
-            "example": "910",
+            "example": "720",
             "name": "columnId"
           }
         ]
@@ -3060,7 +2908,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"pinId\": 496,\n  \"userId\": 143,\n  \"type\": 26624\n}"
+                  "value": "{\n  \"pinId\": 566,\n  \"userId\": 362,\n  \"type\": 30858\n}"
                 }
               }
             }
@@ -3077,7 +2925,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 901,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 709,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3105,7 +2953,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 934,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 467,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3122,7 +2970,7 @@
             "in": "query",
             "description": " pinId",
             "required": true,
-            "example": "66",
+            "example": "107",
             "name": "pinId"
           },
           {
@@ -3133,7 +2981,7 @@
             "in": "query",
             "description": "userId",
             "required": true,
-            "example": "520",
+            "example": "171",
             "name": "userId"
           }
         ]
@@ -3154,7 +3002,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"pinId\": 549,\n  \"userId\": 858,\n  \"type\": 31539\n}"
+                  "value": "{\n  \"pinId\": 304,\n  \"userId\": 874,\n  \"type\": 21506\n}"
                 }
               }
             }
@@ -3171,7 +3019,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 676,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 756,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3199,7 +3047,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 477,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 318,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3229,7 +3077,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 211,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 275,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3246,7 +3094,7 @@
             "in": "path",
             "description": "userId",
             "required": true,
-            "example": "905",
+            "example": "192",
             "name": "userId"
           }
         ]
@@ -3271,7 +3119,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 628,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 998,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3288,7 +3136,7 @@
             "in": "query",
             "description": " pinId",
             "required": true,
-            "example": "74",
+            "example": "732",
             "name": "pinId"
           },
           {
@@ -3299,7 +3147,7 @@
             "in": "query",
             "description": "userId",
             "required": true,
-            "example": "17",
+            "example": "904",
             "name": "userId"
           }
         ]
@@ -3324,7 +3172,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 222,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 432,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3341,10 +3189,40 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "49",
+            "example": "444",
             "name": "id"
           }
         ]
+      }
+    },
+    "/post/top": {
+      "get": {
+        "summary": "select top 100 posts",
+        "deprecated": false,
+        "description": "select top 100 posts",
+        "tags": [
+          "post controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 36,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "posttop",
+        "parameters": []
       }
     },
     "/pin": {
@@ -3364,7 +3242,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 303,\n  \"content\": \"c44uk3\",\n  \"createTime\": \"2023-02-27 16:38:56\",\n  \"updateTime\": \"2023-02-27 16:38:56\",\n  \"authorId\": 187\n}"
+                  "value": "{\n  \"id\": 956,\n  \"content\": \"dykeq8\",\n  \"createTime\": \"2023-03-01 08:52:10\",\n  \"updateTime\": \"2023-03-01 08:52:10\",\n  \"authorId\": 113\n}"
                 }
               }
             }
@@ -3381,7 +3259,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 268,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 309,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3407,7 +3285,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 453,\n  \"content\": \"djwgkp\",\n  \"createTime\": \"2023-02-27 16:38:56\",\n  \"updateTime\": \"2023-02-27 16:38:56\",\n  \"authorId\": 543,\n  \"viewNum\": 789\n}"
+                  "value": "{\n  \"id\": 708,\n  \"content\": \"4n92gu\",\n  \"createTime\": \"2023-03-01 08:52:10\",\n  \"updateTime\": \"2023-03-01 08:52:10\",\n  \"authorId\": 254,\n  \"viewNum\": 768\n}"
                 }
               }
             }
@@ -3424,7 +3302,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 109,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 704,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3452,7 +3330,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 873,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 268,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3482,7 +3360,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 299,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 123,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3499,7 +3377,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "606",
+            "example": "732",
             "name": "id"
           }
         ]
@@ -3522,7 +3400,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 229,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 113,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3539,7 +3417,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "52",
+            "example": "607",
             "name": "id"
           }
         ]
@@ -3562,7 +3440,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 689,\n  \"name\": \"kyle.strosin\",\n  \"cover\": \"9b5buc\",\n  \"description\": \"7gofhc\"\n}"
+                  "value": "{\n  \"id\": 947,\n  \"name\": \"garfield.christiansen\",\n  \"cover\": \"pac5jk\",\n  \"description\": \"8fyow7\"\n}"
                 }
               }
             }
@@ -3579,7 +3457,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 18,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 623,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3605,7 +3483,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 811,\n  \"name\": \"kyle.strosin\",\n  \"cover\": \"jhcapo\",\n  \"description\": \"ecjd7r\"\n}"
+                  "value": "{\n  \"id\": 390,\n  \"name\": \"garfield.christiansen\",\n  \"cover\": \"9ie5kd\",\n  \"description\": \"lu1vwp\"\n}"
                 }
               }
             }
@@ -3622,7 +3500,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 800,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 879,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3650,7 +3528,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 746,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 280,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3661,53 +3539,11 @@
         "parameters": []
       }
     },
-    "/pin/page/author/{authorId}": {
-      "get": {
-        "summary": "select all pins by page and by authorId",
-        "deprecated": false,
-        "description": "select all pins by page and by authorId",
-        "tags": [
-          "pin controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 453,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "pinpageauthor{authorId}",
-        "parameters": [
-          {
-            "schema": {
-              "format": "int64",
-              "type": "integer"
-            },
-            "in": "path",
-            "description": "authorId",
-            "required": true,
-            "example": "464",
-            "name": "authorId"
-          }
-        ]
-      }
-    },
     "/collection/author/{authorId}": {
       "get": {
-        "summary": "select all collections by author id",
+        "summary": "select collections by author id",
         "deprecated": false,
-        "description": "select all collections by author id",
+        "description": "select collections by author id",
         "tags": [
           "collection controller"
         ],
@@ -3722,7 +3558,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 571,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 105,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3739,7 +3575,7 @@
             "in": "path",
             "description": "author id",
             "required": true,
-            "example": "333",
+            "example": "484",
             "name": "authorId"
           }
         ]
@@ -3762,7 +3598,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"username\": \"kyle.strosin\",\n  \"password\": \"i87t6k\",\n  \"email\": \"ray.gutkowski@hotmail.com\"\n}"
+                  "value": "{\n  \"username\": \"garfield.christiansen\",\n  \"password\": \"d18flh\",\n  \"email\": \"wilburn.feest@yahoo.com\"\n}"
                 }
               }
             }
@@ -3779,7 +3615,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 552,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 262,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3788,48 +3624,6 @@
         },
         "operationId": "authregister",
         "parameters": []
-      }
-    },
-    "/post/comment/page/author/{authorId}": {
-      "get": {
-        "summary": "select all postComments by authorId and page",
-        "deprecated": false,
-        "description": "select all postComments by authorId and page",
-        "tags": [
-          "post comment controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 21,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "postcommentpageauthor{authorId}",
-        "parameters": [
-          {
-            "schema": {
-              "format": "int64",
-              "type": "integer"
-            },
-            "in": "path",
-            "description": "authorId",
-            "required": true,
-            "example": "604",
-            "name": "authorId"
-          }
-        ]
       }
     },
     "/auth/check": {
@@ -3851,7 +3645,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 43,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 536,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3867,7 +3661,7 @@
             "in": "query",
             "description": "tokenValue",
             "required": true,
-            "example": "rtw1ia",
+            "example": "osqiak",
             "name": "tokenValue"
           }
         ]
@@ -3875,9 +3669,9 @@
     },
     "/column/author/{authorId}": {
       "get": {
-        "summary": "select all followed columns by authorId",
+        "summary": "select followed columns by authorId",
         "deprecated": false,
-        "description": "select all followed columns by authorId",
+        "description": "select followed columns by authorId",
         "tags": [
           "column controller"
         ],
@@ -3892,7 +3686,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 254,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 584,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3909,7 +3703,7 @@
             "in": "path",
             "description": "authorId",
             "required": true,
-            "example": "447",
+            "example": "610",
             "name": "authorId"
           }
         ]
@@ -3934,7 +3728,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 518,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 944,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -3951,19 +3745,19 @@
             "in": "path",
             "description": "authorId",
             "required": true,
-            "example": "728",
+            "example": "238",
             "name": "authorId"
           }
         ]
       }
     },
-    "/post/comment/page/post/{postId}": {
+    "/pin/follow/{userId}": {
       "get": {
-        "summary": "select all postComments by postId and page",
+        "summary": "select pins written by user followed by id",
         "deprecated": false,
-        "description": "select all postComments by postId and page",
+        "description": "select pins written by user followed by id",
         "tags": [
-          "post comment controller"
+          "pin controller"
         ],
         "responses": {
           "200": {
@@ -3976,14 +3770,14 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 387,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 749,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
             }
           }
         },
-        "operationId": "postcommentpagepost{postId}",
+        "operationId": "pinfollow{userId}",
         "parameters": [
           {
             "schema": {
@@ -3991,10 +3785,10 @@
               "type": "integer"
             },
             "in": "path",
-            "description": "  postId",
+            "description": "user id",
             "required": true,
-            "example": "689",
-            "name": "postId"
+            "example": "851",
+            "name": "userId"
           }
         ]
       }
@@ -4018,7 +3812,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 506,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 376,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4035,7 +3829,7 @@
             "in": "path",
             "description": "author id",
             "required": true,
-            "example": "434",
+            "example": "528",
             "name": "authorId"
           }
         ]
@@ -4060,7 +3854,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 593,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 794,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4077,7 +3871,7 @@
             "in": "query",
             "description": "postId",
             "required": true,
-            "example": "747",
+            "example": "567",
             "name": "postId"
           },
           {
@@ -4088,7 +3882,7 @@
             "in": "query",
             "description": "userId",
             "required": true,
-            "example": "451",
+            "example": "66",
             "name": "userId"
           }
         ]
@@ -4113,7 +3907,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 649,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 295,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4130,7 +3924,7 @@
             "in": "query",
             "description": "commentId",
             "required": true,
-            "example": "504",
+            "example": "38",
             "name": "commentId"
           },
           {
@@ -4141,7 +3935,7 @@
             "in": "query",
             "description": "   userId",
             "required": true,
-            "example": "963",
+            "example": "696",
             "name": "userId"
           }
         ]
@@ -4166,7 +3960,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 838,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 921,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4183,50 +3977,8 @@
             "in": "path",
             "description": "userId",
             "required": true,
-            "example": "338",
+            "example": "702",
             "name": "userId"
-          }
-        ]
-      }
-    },
-    "/pin/comment/page/author/{authorId}": {
-      "get": {
-        "summary": "select all pinComments by authorId and page",
-        "deprecated": false,
-        "description": "select all pinComments by authorId and page",
-        "tags": [
-          "pin comment controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 763,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "pincommentpageauthor{authorId}",
-        "parameters": [
-          {
-            "schema": {
-              "format": "int64",
-              "type": "integer"
-            },
-            "in": "path",
-            "description": "authorId",
-            "required": true,
-            "example": "901",
-            "name": "authorId"
           }
         ]
       }
@@ -4250,7 +4002,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 193,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 792,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4267,7 +4019,7 @@
             "in": "query",
             "description": "  userId",
             "required": true,
-            "example": "484",
+            "example": "154",
             "name": "followerId"
           },
           {
@@ -4278,7 +4030,7 @@
             "in": "query",
             "description": "columnId",
             "required": true,
-            "example": "993",
+            "example": "8",
             "name": "followedId"
           }
         ]
@@ -4286,9 +4038,9 @@
     },
     "/column/follower/{followerId}": {
       "get": {
-        "summary": "select all followed columns by follower id",
+        "summary": "select followed columns by follower id",
         "deprecated": false,
-        "description": "select all followed columns by follower id",
+        "description": "select followed columns by follower id",
         "tags": [
           "column controller"
         ],
@@ -4303,7 +4055,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 770,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 583,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4320,7 +4072,7 @@
             "in": "path",
             "description": "followerId",
             "required": true,
-            "example": "482",
+            "example": "499",
             "name": "followerId"
           }
         ]
@@ -4328,9 +4080,9 @@
     },
     "/tag/post/{postId}": {
       "get": {
-        "summary": "select all tags by postId",
+        "summary": "select tags by postId",
         "deprecated": false,
-        "description": "select all tags by postId",
+        "description": "select tags by postId",
         "tags": [
           "tag controller"
         ],
@@ -4345,7 +4097,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 116,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 659,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4362,7 +4114,7 @@
             "in": "path",
             "description": "postId",
             "required": true,
-            "example": "733",
+            "example": "112",
             "name": "postId"
           }
         ]
@@ -4374,7 +4126,7 @@
         "deprecated": false,
         "description": "check the request username exists",
         "tags": [
-          ""
+          "user controller"
         ],
         "responses": {
           "200": {
@@ -4387,7 +4139,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 745,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 217,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4403,7 +4155,7 @@
             "in": "query",
             "description": "username",
             "required": true,
-            "example": "kyle.strosin",
+            "example": "garfield.christiansen",
             "name": "username"
           }
         ]
@@ -4426,7 +4178,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"userId\": 561,\n  \"columnId\": 776,\n  \"follow\": true\n}"
+                  "value": "{\n  \"userId\": 195,\n  \"columnId\": 731,\n  \"follow\": true\n}"
                 }
               }
             }
@@ -4443,7 +4195,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 574,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 587,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4471,7 +4223,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 175,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 474,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4488,7 +4240,7 @@
             "in": "query",
             "description": "  userId",
             "required": true,
-            "example": "564",
+            "example": "478",
             "name": "userId"
           },
           {
@@ -4499,7 +4251,7 @@
             "in": "query",
             "description": "columnId",
             "required": true,
-            "example": "366",
+            "example": "638",
             "name": "columnId"
           }
         ]
@@ -4520,7 +4272,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"userId\": 754,\n  \"columnId\": 262,\n  \"follow\": true\n}"
+                  "value": "{\n  \"userId\": 944,\n  \"columnId\": 39,\n  \"follow\": true\n}"
                 }
               }
             }
@@ -4537,7 +4289,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 581,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 650,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4565,7 +4317,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 266,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 904,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4595,7 +4347,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 973,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 827,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4612,10 +4364,40 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "335",
+            "example": "964",
             "name": "id"
           }
         ]
+      }
+    },
+    "/pin/recommend": {
+      "get": {
+        "summary": "select recommend 100 pins",
+        "deprecated": false,
+        "description": "select recommend 100 pins",
+        "tags": [
+          "pin controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 843,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pinrecommend",
+        "parameters": []
       }
     },
     "/auth/logout": {
@@ -4635,7 +4417,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "b5fs32"
+                  "value": "6e0bv5"
                 }
               }
             }
@@ -4652,7 +4434,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 795,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 86,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4661,48 +4443,6 @@
         },
         "operationId": "authlogout",
         "parameters": []
-      }
-    },
-    "/post/comment/page/secondary/{id}": {
-      "get": {
-        "summary": "select secondary comments by id and page",
-        "deprecated": false,
-        "description": "select secondary comments by id and page",
-        "tags": [
-          "post comment controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 223,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "postcommentpagesecondary{id}",
-        "parameters": [
-          {
-            "schema": {
-              "format": "int64",
-              "type": "integer"
-            },
-            "in": "path",
-            "description": "      id",
-            "required": true,
-            "example": "249",
-            "name": "id"
-          }
-        ]
       }
     },
     "/collection/{id}": {
@@ -4724,7 +4464,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 249,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 654,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4741,7 +4481,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "651",
+            "example": "188",
             "name": "id"
           }
         ]
@@ -4764,7 +4504,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 999,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 610,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4781,7 +4521,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "841",
+            "example": "512",
             "name": "id"
           }
         ]
@@ -4789,9 +4529,9 @@
     },
     "/post/comment/post/{postId}": {
       "get": {
-        "summary": "select all postComments by postId",
+        "summary": "select postComments by postId",
         "deprecated": false,
-        "description": "select all postComments by postId",
+        "description": "select postComments by postId",
         "tags": [
           "post comment controller"
         ],
@@ -4806,7 +4546,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 634,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 714,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4823,7 +4563,7 @@
             "in": "path",
             "description": "postId",
             "required": true,
-            "example": "602",
+            "example": "382",
             "name": "postId"
           }
         ]
@@ -4846,7 +4586,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 162,\n  \"title\": \"mrws4j\",\n  \"summary\": \"27ivh7\",\n  \"cover\": \"mo8tvo\",\n  \"content\": \"2jmkch\",\n  \"createTime\": \"2023-02-27 16:38:56\",\n  \"updateTime\": \"2023-02-27 16:38:56\",\n  \"draft\": true,\n  \"cateId\": 438,\n  \"authorId\": 777,\n  \"viewNum\": 440\n}"
+                  "value": "{\n  \"id\": 20,\n  \"title\": \"9r7d0f\",\n  \"summary\": \"wg2dga\",\n  \"cover\": \"x3adob\",\n  \"content\": \"8rvv3a\",\n  \"createTime\": \"2023-03-01 08:52:10\",\n  \"updateTime\": \"2023-03-01 08:52:10\",\n  \"draft\": true,\n  \"cateId\": 125,\n  \"authorId\": 50,\n  \"viewNum\": 163\n}"
                 }
               }
             }
@@ -4863,7 +4603,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 644,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 121,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4889,7 +4629,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 683,\n  \"title\": \"2aomga\",\n  \"summary\": \"aopj7u\",\n  \"cover\": \"70u1y1\",\n  \"content\": \"b539hr\",\n  \"createTime\": \"2023-02-27 16:38:56\",\n  \"updateTime\": \"2023-02-27 16:38:56\",\n  \"draft\": true,\n  \"cateId\": 529,\n  \"authorId\": 148,\n  \"viewNum\": 350\n}"
+                  "value": "{\n  \"id\": 200,\n  \"title\": \"vu1gp2\",\n  \"summary\": \"q3h1ek\",\n  \"cover\": \"a2ugy0\",\n  \"content\": \"kn6t58\",\n  \"createTime\": \"2023-03-01 08:52:10\",\n  \"updateTime\": \"2023-03-01 08:52:10\",\n  \"draft\": true,\n  \"cateId\": 594,\n  \"authorId\": 896,\n  \"viewNum\": 841\n}"
                 }
               }
             }
@@ -4906,7 +4646,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 173,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 744,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4934,7 +4674,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 95,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 769,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -4945,53 +4685,11 @@
         "parameters": []
       }
     },
-    "/pin/comment/page/pin/{pinId}": {
-      "get": {
-        "summary": "select all pinComments by pinId and page",
-        "deprecated": false,
-        "description": "select all pinComments by pinId and page",
-        "tags": [
-          "pin comment controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 45,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "pincommentpagepin{pinId}",
-        "parameters": [
-          {
-            "schema": {
-              "format": "int64",
-              "type": "integer"
-            },
-            "in": "path",
-            "description": "   pinId",
-            "required": true,
-            "example": "31",
-            "name": "pinId"
-          }
-        ]
-      }
-    },
     "/pin/comment/like/{userId}": {
       "get": {
-        "summary": "select all pinCommentLikes by userId",
+        "summary": "select pinCommentLikes by userId",
         "deprecated": false,
-        "description": "select all pinCommentLikes by userId",
+        "description": "select pinCommentLikes by userId",
         "tags": [
           "pin comment like controller"
         ],
@@ -5006,7 +4704,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 707,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 940,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5023,7 +4721,7 @@
             "in": "path",
             "description": "userId",
             "required": true,
-            "example": "479",
+            "example": "227",
             "name": "userId"
           }
         ]
@@ -5048,7 +4746,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 703,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 993,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5065,7 +4763,7 @@
             "in": "path",
             "description": "column id",
             "required": true,
-            "example": "569",
+            "example": "815",
             "name": "columnId"
           }
         ]
@@ -5090,7 +4788,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 522,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 171,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5107,19 +4805,19 @@
             "in": "path",
             "description": "column id",
             "required": true,
-            "example": "167",
+            "example": "341",
             "name": "columnId"
           }
         ]
       }
     },
-    "/user/check/email": {
+    "/pin/hot": {
       "get": {
-        "summary": "check the request email exists",
+        "summary": "select hot 100 pins",
         "deprecated": false,
-        "description": "check the request email exists",
+        "description": "select hot 100 pins",
         "tags": [
-          ""
+          "pin controller"
         ],
         "responses": {
           "200": {
@@ -5132,7 +4830,37 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 301,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 887,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pinhot",
+        "parameters": []
+      }
+    },
+    "/user/check/email": {
+      "get": {
+        "summary": "check the request email exists",
+        "deprecated": false,
+        "description": "check the request email exists",
+        "tags": [
+          "user controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 907,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5148,7 +4876,7 @@
             "in": "query",
             "description": "email",
             "required": true,
-            "example": "ray.gutkowski@hotmail.com",
+            "example": "wilburn.feest@yahoo.com",
             "name": "email"
           }
         ]
@@ -5171,7 +4899,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"commentId\": 738,\n  \"userId\": 696,\n  \"type\": 30220\n}"
+                  "value": "{\n  \"commentId\": 568,\n  \"userId\": 426,\n  \"type\": 24979\n}"
                 }
               }
             }
@@ -5188,7 +4916,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 895,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 275,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5216,7 +4944,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 850,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 321,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5233,7 +4961,7 @@
             "in": "query",
             "description": "commentId",
             "required": true,
-            "example": "90",
+            "example": "586",
             "name": "commentId"
           },
           {
@@ -5244,7 +4972,7 @@
             "in": "query",
             "description": "   userId",
             "required": true,
-            "example": "91",
+            "example": "593",
             "name": "userId"
           }
         ]
@@ -5265,7 +4993,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"commentId\": 878,\n  \"userId\": 209,\n  \"type\": 31511\n}"
+                  "value": "{\n  \"commentId\": 173,\n  \"userId\": 768,\n  \"type\": 27304\n}"
                 }
               }
             }
@@ -5282,7 +5010,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 513,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 123,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5310,7 +5038,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 534,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 54,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5318,36 +5046,6 @@
           }
         },
         "operationId": "pincommentlike",
-        "parameters": []
-      }
-    },
-    "/post/comment/like/page": {
-      "get": {
-        "summary": "select all postCommentLikes by page",
-        "deprecated": false,
-        "description": "select all postCommentLikes by page",
-        "tags": [
-          "post comment like controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 74,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "postcommentlikepage",
         "parameters": []
       }
     },
@@ -5370,7 +5068,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 684,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 406,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5387,7 +5085,7 @@
             "in": "path",
             "description": "author id",
             "required": true,
-            "example": "325",
+            "example": "292",
             "name": "authorId"
           }
         ]
@@ -5412,7 +5110,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 924,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 929,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5429,7 +5127,7 @@
             "in": "query",
             "description": "commentId",
             "required": true,
-            "example": "20",
+            "example": "167",
             "name": "commentId"
           },
           {
@@ -5440,7 +5138,7 @@
             "in": "query",
             "description": "   userId",
             "required": true,
-            "example": "164",
+            "example": "305",
             "name": "userId"
           }
         ]
@@ -5463,7 +5161,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 770,\n  \"name\": \"kyle.strosin\",\n  \"cover\": \"qco2zw\",\n  \"description\": \"bw983t\"\n}"
+                  "value": "{\n  \"id\": 340,\n  \"name\": \"garfield.christiansen\",\n  \"cover\": \"1oy4z5\",\n  \"description\": \"qxyzi0\"\n}"
                 }
               }
             }
@@ -5480,7 +5178,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 226,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 608,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5506,7 +5204,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 143,\n  \"name\": \"kyle.strosin\",\n  \"cover\": \"icypuu\",\n  \"description\": \"5y2ahe\"\n}"
+                  "value": "{\n  \"id\": 582,\n  \"name\": \"garfield.christiansen\",\n  \"cover\": \"7flwh6\",\n  \"description\": \"0d2ktu\"\n}"
                 }
               }
             }
@@ -5523,7 +5221,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 862,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 297,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5551,7 +5249,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 281,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 884,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5579,7 +5277,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 239,\n  \"name\": \"kyle.strosin\",\n  \"cover\": \"53o5pa\",\n  \"description\": \"bo45ov\",\n  \"createTime\": \"2023-02-27 16:38:56\",\n  \"updateTime\": \"2023-02-27 16:38:56\",\n  \"authorId\": 954\n}"
+                  "value": "{\n  \"id\": 418,\n  \"name\": \"garfield.christiansen\",\n  \"cover\": \"iqfzor\",\n  \"description\": \"atdx7a\",\n  \"createTime\": \"2023-03-01 08:52:10\",\n  \"updateTime\": \"2023-03-01 08:52:10\",\n  \"authorId\": 444\n}"
                 }
               }
             }
@@ -5596,7 +5294,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 80,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 990,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5622,7 +5320,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 0,\n  \"name\": \"kyle.strosin\",\n  \"cover\": \"51dejo\",\n  \"description\": \"mku4z9\",\n  \"createTime\": \"2023-02-27 16:38:56\",\n  \"updateTime\": \"2023-02-27 16:38:56\",\n  \"authorId\": 509\n}"
+                  "value": "{\n  \"id\": 133,\n  \"name\": \"garfield.christiansen\",\n  \"cover\": \"e9hunc\",\n  \"description\": \"7yyqbs\",\n  \"createTime\": \"2023-03-01 08:52:10\",\n  \"updateTime\": \"2023-03-01 08:52:10\",\n  \"authorId\": 140\n}"
                 }
               }
             }
@@ -5639,7 +5337,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 86,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 741,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5667,7 +5365,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 150,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 340,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5684,7 +5382,7 @@
         "deprecated": false,
         "description": "select user by id",
         "tags": [
-          ""
+          "user controller"
         ],
         "responses": {
           "200": {
@@ -5697,7 +5395,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 542,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 750,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5714,7 +5412,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "444",
+            "example": "778",
             "name": "id"
           }
         ]
@@ -5739,7 +5437,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 907,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 984,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5756,7 +5454,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "167",
+            "example": "198",
             "name": "id"
           }
         ]
@@ -5779,7 +5477,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 185,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 501,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5796,49 +5494,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "184",
-            "name": "id"
-          }
-        ]
-      }
-    },
-    "/pin/comment/page/secondary/{id}": {
-      "get": {
-        "summary": "select secondary comments by id and page",
-        "deprecated": false,
-        "description": "select secondary comments by id and page",
-        "tags": [
-          "pin comment controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 936,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "pincommentpagesecondary{id}",
-        "parameters": [
-          {
-            "schema": {
-              "format": "int64",
-              "type": "integer"
-            },
-            "in": "path",
-            "description": "      id",
-            "required": true,
-            "example": "620",
+            "example": "320",
             "name": "id"
           }
         ]
@@ -5846,11 +5502,11 @@
     },
     "/user/following/{userId}": {
       "get": {
-        "summary": "select all following users by user id",
+        "summary": "select following users by user id",
         "deprecated": false,
-        "description": "select all following users by user id",
+        "description": "select following users by user id",
         "tags": [
-          ""
+          "user controller"
         ],
         "responses": {
           "200": {
@@ -5863,7 +5519,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 471,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 411,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5880,8 +5536,49 @@
             "in": "path",
             "description": "user id",
             "required": true,
-            "example": "606",
+            "example": "707",
             "name": "userId"
+          }
+        ]
+      }
+    },
+    "/pin/search": {
+      "get": {
+        "summary": "search by keywords",
+        "deprecated": false,
+        "description": "search by keywords",
+        "tags": [
+          "pin controller"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/RespResult"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 206,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "pinsearch",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "description": "keywords",
+            "required": true,
+            "example": "9or7nt",
+            "name": "q"
           }
         ]
       }
@@ -5903,7 +5600,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 637,\n  \"userId\": 855,\n  \"actionType\": 13461,\n  \"actionSubType\": 25194,\n  \"targetId\": 958,\n  \"execTime\": \"2023-02-27 16:38:56\"\n}"
+                  "value": "{\n  \"id\": 900,\n  \"userId\": 966,\n  \"actionType\": 32013,\n  \"actionSubType\": 19917,\n  \"targetId\": 967,\n  \"execTime\": \"2023-03-01 08:52:10\"\n}"
                 }
               }
             }
@@ -5920,7 +5617,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 136,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 947,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5948,7 +5645,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 822,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 831,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -5976,7 +5673,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"userId\": 428,\n  \"collectionId\": 448,\n  \"follow\": true\n}"
+                  "value": "{\n  \"userId\": 492,\n  \"collectionId\": 288,\n  \"follow\": true\n}"
                 }
               }
             }
@@ -5993,7 +5690,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 575,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 430,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6021,7 +5718,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 818,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 705,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6038,7 +5735,7 @@
             "in": "query",
             "description": "      userId",
             "required": true,
-            "example": "544",
+            "example": "163",
             "name": "userId"
           },
           {
@@ -6049,7 +5746,7 @@
             "in": "query",
             "description": "collectionId",
             "required": true,
-            "example": "489",
+            "example": "242",
             "name": "collectionId"
           }
         ]
@@ -6070,7 +5767,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"userId\": 737,\n  \"collectionId\": 328,\n  \"follow\": true\n}"
+                  "value": "{\n  \"userId\": 995,\n  \"collectionId\": 881,\n  \"follow\": true\n}"
                 }
               }
             }
@@ -6087,7 +5784,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 941,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 682,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6115,7 +5812,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 443,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 78,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6143,7 +5840,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 999,\n  \"name\": \"kyle.strosin\"\n}"
+                  "value": "{\n  \"id\": 462,\n  \"name\": \"garfield.christiansen\"\n}"
                 }
               }
             }
@@ -6160,7 +5857,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 860,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 363,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6186,7 +5883,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"id\": 793,\n  \"name\": \"kyle.strosin\"\n}"
+                  "value": "{\n  \"id\": 716,\n  \"name\": \"garfield.christiansen\"\n}"
                 }
               }
             }
@@ -6203,7 +5900,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 349,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 591,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6231,7 +5928,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 171,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 963,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6259,7 +5956,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"followerId\": 390,\n  \"followedId\": 968,\n  \"follow\": true\n}"
+                  "value": "{\n  \"followerId\": 704,\n  \"followedId\": 275,\n  \"follow\": true\n}"
                 }
               }
             }
@@ -6276,7 +5973,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 134,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 810,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6304,7 +6001,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 241,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 818,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6321,7 +6018,7 @@
             "in": "query",
             "description": "followerId",
             "required": true,
-            "example": "380",
+            "example": "228",
             "name": "followerId"
           },
           {
@@ -6332,7 +6029,7 @@
             "in": "query",
             "description": "followedId",
             "required": true,
-            "example": "140",
+            "example": "437",
             "name": "followedId"
           }
         ]
@@ -6353,7 +6050,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"followerId\": 316,\n  \"followedId\": 732,\n  \"follow\": true\n}"
+                  "value": "{\n  \"followerId\": 394,\n  \"followedId\": 557,\n  \"follow\": true\n}"
                 }
               }
             }
@@ -6370,7 +6067,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 856,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 463,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6398,7 +6095,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 351,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 90,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6428,7 +6125,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 847,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 419,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6445,7 +6142,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "233",
+            "example": "136",
             "name": "id"
           }
         ]
@@ -6468,7 +6165,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 983,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 664,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6485,7 +6182,7 @@
             "in": "path",
             "description": "id",
             "required": true,
-            "example": "851",
+            "example": "369",
             "name": "id"
           }
         ]
@@ -6510,7 +6207,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 512,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 334,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6527,40 +6224,10 @@
             "in": "path",
             "description": "collection id",
             "required": true,
-            "example": "462",
+            "example": "151",
             "name": "collectionId"
           }
         ]
-      }
-    },
-    "/pin/page": {
-      "get": {
-        "summary": "select all pins by page",
-        "deprecated": false,
-        "description": "select all pins by page",
-        "tags": [
-          "pin controller"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/RespResult"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 972,\n  \"message\": \"success\",\n  \"data\": {}\n}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "pinpage",
-        "parameters": []
       }
     },
     "/post/recommend": {
@@ -6582,7 +6249,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 325,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 120,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6612,7 +6279,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"timestamp\": 1677487135946,\n  \"status\": 725,\n  \"message\": \"success\",\n  \"data\": {}\n}"
+                    "value": "{\n  \"timestamp\": 1677631930413,\n  \"status\": 38,\n  \"message\": \"success\",\n  \"data\": {}\n}"
                   }
                 }
               }
@@ -6629,7 +6296,7 @@
             "in": "path",
             "description": "cateId",
             "required": true,
-            "example": "95",
+            "example": "942",
             "name": "cateId"
           }
         ]
@@ -6642,48 +6309,12 @@
   },
   "tags": [
     {
-      "name": "post like controller",
-      "description": "post like controller"
-    },
-    {
-      "name": "",
-      "description": ""
-    },
-    {
-      "name": "pin controller",
-      "description": "pin controller"
-    },
-    {
-      "name": "",
-      "description": ""
-    },
-    {
-      "name": "pin comment like controller",
-      "description": "pin comment like controller"
-    },
-    {
-      "name": "collection controller",
-      "description": "collection controller"
-    },
-    {
-      "name": "user collection controller",
-      "description": "user collection controller"
-    },
-    {
-      "name": "pin like controller",
-      "description": "pin like controller"
-    },
-    {
-      "name": "role controller",
-      "description": "role controller"
+      "name": "user column controller",
+      "description": "user column controller"
     },
     {
       "name": "user follow controller",
       "description": "user follow controller"
-    },
-    {
-      "name": "pin comment controller",
-      "description": "pin comment controller"
     },
     {
       "name": "activity controller",
@@ -6694,32 +6325,68 @@
       "description": "auth controller"
     },
     {
-      "name": "user column controller",
-      "description": "user column controller"
+      "name": "role controller",
+      "description": "role controller"
     },
     {
-      "name": "column controller",
-      "description": "column controller"
+      "name": "post like controller",
+      "description": "post like controller"
     },
     {
       "name": "post comment like controller",
       "description": "post comment like controller"
     },
     {
-      "name": "post comment controller",
-      "description": "post comment controller"
+      "name": "pin controller",
+      "description": "pin controller"
     },
     {
-      "name": "category controller",
-      "description": "category controller"
+      "name": "tag controller",
+      "description": "tag controller"
+    },
+    {
+      "name": "user controller",
+      "description": "user controller"
+    },
+    {
+      "name": "pin comment controller",
+      "description": "pin comment controller"
+    },
+    {
+      "name": "collection controller",
+      "description": "collection controller"
+    },
+    {
+      "name": "column controller",
+      "description": "column controller"
     },
     {
       "name": "post controller",
       "description": "post controller"
     },
     {
-      "name": "tag controller",
-      "description": "tag controller"
+      "name": "pin like controller",
+      "description": "pin like controller"
+    },
+    {
+      "name": "category controller",
+      "description": "category controller"
+    },
+    {
+      "name": "post comment controller",
+      "description": "post comment controller"
+    },
+    {
+      "name": "tag follow controller",
+      "description": "tag follow controller"
+    },
+    {
+      "name": "pin comment like controller",
+      "description": "pin comment like controller"
+    },
+    {
+      "name": "user collection controller",
+      "description": "user collection controller"
     }
   ]
 }

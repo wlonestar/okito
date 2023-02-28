@@ -9,9 +9,6 @@ import com.okito.okito.modules.comments.model.param.PinCommentLikeParam;
 import com.okito.okito.modules.comments.service.PinCommentLikeService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,7 +41,7 @@ public class PinCommentLikeController {
   }
 
   /**
-   * select all pinCommentLikes by userId
+   * select pinCommentLikes by userId
    *
    * @param userId userId
    * @return RespResult<?>
@@ -52,32 +49,6 @@ public class PinCommentLikeController {
   @RequestMapping(method = RequestMethod.GET, path = "/{userId}")
   public RespResult<?> selectAllByUserId(@NonNull @PathVariable(name = "userId") Long userId) {
     return RespResult.success(pinCommentLikeService.selectAllByUserId(userId));
-  }
-
-  /**
-   * select all pinCommentLikes by page
-   *
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page")
-  public RespResult<?> selectAllByPage(
-      @NonNull @PageableDefault(sort = "type", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(pinCommentLikeService.selectAll(pageable));
-  }
-
-  /**
-   * select all pinCommentLikes by userId and page
-   *
-   * @param userId   userId
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/{userId}")
-  public RespResult<?> selectAllByUserIdAndPage(
-      @NonNull @PathVariable(name = "userId") Long userId,
-      @NonNull @PageableDefault(sort = "type", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(pinCommentLikeService.selectAllByUserId(userId, pageable));
   }
 
   /**

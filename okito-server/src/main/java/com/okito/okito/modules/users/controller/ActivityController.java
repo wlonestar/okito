@@ -8,9 +8,6 @@ import com.okito.okito.modules.users.service.ActivityService;
 import com.okito.okito.modules.users.service.UserService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
@@ -46,7 +43,7 @@ public class ActivityController {
   }
 
   /**
-   * select all activities by user id
+   * select activities by user id
    *
    * @param userId user id
    * @return RespResult<?>
@@ -54,17 +51,6 @@ public class ActivityController {
   @RequestMapping(method = RequestMethod.GET, path = "/user/{userId}")
   public RespResult<?> selectAllByUserId(@NonNull @PathVariable(name = "userId") Long userId) {
     return RespResult.success(activityService.selectAllByUserId(userId));
-  }
-
-  /**
-   * select all activities by page
-   *
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page")
-  public RespResult<?> selectAll(
-    @NonNull @PageableDefault(sort = "execTime", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(activityService.selectAll(pageable));
   }
 
   /**

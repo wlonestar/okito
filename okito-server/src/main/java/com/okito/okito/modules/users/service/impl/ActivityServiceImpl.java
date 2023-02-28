@@ -4,8 +4,6 @@ import com.okito.okito.modules.users.model.entity.Activity;
 import com.okito.okito.modules.users.repository.ActivityRepository;
 import com.okito.okito.modules.users.service.ActivityService;
 import jakarta.annotation.Resource;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,11 +27,6 @@ public class ActivityServiceImpl implements ActivityService {
   @Override
   public List<Activity> selectAllByUserId(Long userId) {
     return activityRepository.findAllByUserId(userId);
-  }
-
-  @Override
-  public Page<Activity> selectAll(Pageable pageable) {
-    return activityRepository.findAll(pageable);
   }
 
   @Override

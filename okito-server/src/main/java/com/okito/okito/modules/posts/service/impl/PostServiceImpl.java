@@ -41,6 +41,16 @@ public class PostServiceImpl implements PostService {
   }
 
   @Override
+  public List<PostView> selectHot100() {
+    return postViewRepository.findHot100();
+  }
+
+  @Override
+  public List<PostView> selectTop100() {
+    return postViewRepository.findTop100();
+  }
+
+  @Override
   public List<PostView> searchTitle(String title) {
     return postViewRepositoryCustom.searchByTitle(title);
   }

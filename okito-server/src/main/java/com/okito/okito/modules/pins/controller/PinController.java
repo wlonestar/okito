@@ -9,9 +9,6 @@ import com.okito.okito.modules.pins.model.view.PinView;
 import com.okito.okito.modules.pins.service.PinService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,6 +41,16 @@ public class PinController {
   }
 
   /**
+   * select hot 100 pins
+   *
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/hot")
+  public RespResult<?> selectHot100() {
+    return RespResult.success(pinService.selectHot100());
+  }
+
+  /**
    * search by keywords
    *
    * @param keywords keywords
@@ -65,7 +72,7 @@ public class PinController {
   }
 
   /**
-   * select all pins by authorId
+   * select pins by authorId
    *
    * @param authorId authorId
    * @return RespResult<?>
@@ -76,44 +83,14 @@ public class PinController {
   }
 
   /**
-   * select all pins written by user followed by id
+   * select pins written by user followed by id
    *
    * @param userId user id
    * @return RespResult<?>
    */
-  @RequestMapping(method = RequestMethod.GET, path = "/followed/{userId}")
+  @RequestMapping(method = RequestMethod.GET, path = "/follow/{userId}")
   public RespResult<?> selectAllByUserFollowed(@NonNull @PathVariable(name = "userId") Long userId) {
     return RespResult.success(pinService.selectAllByUserFollowed(userId));
-  }
-
-  /**
-   * select all pins by page
-   *
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page")
-  public RespResult<?> selectAll(
-      @NonNull @PageableDefault(sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable) {
-    log.info("page={}&size={}&sort={}", pageable.getPageNumber(),
-        pageable.getPageSize(), pageable.getSort());
-    return RespResult.success(pinService.selectAll(pageable));
-  }
-
-  /**
-   * select all pins by page and by authorId
-   *
-   * @param authorId authorId
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/author/{authorId}")
-  public RespResult<?> selectAllByAuthorId(
-      @NonNull @PathVariable(name = "authorId") Long authorId,
-      @NonNull @PageableDefault(sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable) {
-    log.info("page={}&size={}&sort={}", pageable.getPageNumber(),
-        pageable.getPageSize(), pageable.getSort());
-    return RespResult.success(pinService.selectAllByAuthorId(authorId, pageable));
   }
 
   /**

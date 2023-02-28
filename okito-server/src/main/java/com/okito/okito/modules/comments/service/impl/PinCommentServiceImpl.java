@@ -7,8 +7,6 @@ import com.okito.okito.modules.comments.repository.PinCommentViewRepository;
 import com.okito.okito.modules.comments.service.PinCommentService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -76,26 +74,6 @@ public class PinCommentServiceImpl implements PinCommentService {
       }
     }
     return res;
-  }
-
-  @Override
-  public Page<PinCommentView> selectAll(Pageable pageable) {
-    return pinCommentViewRepository.findAll(pageable);
-  }
-
-  @Override
-  public Page<PinCommentView> selectAllByPinId(Long pinId, Pageable pageable) {
-    return pinCommentViewRepository.findAllByPinId(pinId, pageable);
-  }
-
-  @Override
-  public Page<PinCommentView> selectAllByAuthorId(Long authorId, Pageable pageable) {
-    return pinCommentViewRepository.findAllByAuthorId(authorId, pageable);
-  }
-
-  @Override
-  public Page<PinCommentView> selectSecondaryComments(Long id, Pageable pageable) {
-    return pinCommentViewRepository.findAllByParentId(id, pageable);
   }
 
   @Override

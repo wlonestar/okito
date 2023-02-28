@@ -1,8 +1,6 @@
 package com.okito.okito.modules.comments.repository;
 
 import com.okito.okito.modules.comments.model.view.PostCommentView;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -21,11 +19,5 @@ public interface PostCommentViewRepository extends JpaRepository<PostCommentView
   List<PostCommentView> findAllByAuthorId(Long authorId);
 
   List<PostCommentView> findAllByParentId(Long id);
-
-  Page<PostCommentView> findAllByPostId(Long postId, Pageable pageable);
-
-  Page<PostCommentView> findAllByAuthorId(Long authorId, Pageable pageable);
-
-  Page<PostCommentView> findAllByParentId(Long id, Pageable pageable);
 
 }

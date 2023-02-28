@@ -35,8 +35,28 @@ public class PostController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/recommend")
-  public RespResult<?> selectTop100() {
+  public RespResult<?> selectRecommend100() {
     return RespResult.success(postService.selectRecommend100());
+  }
+
+  /**
+   * select hot 100 posts
+   *
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/hot")
+  public RespResult<?> selectHot100() {
+    return RespResult.success(postService.selectHot100());
+  }
+
+  /**
+   * select top 100 posts
+   *
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/top")
+  public RespResult<?> selectTop100() {
+    return RespResult.success(postService.selectTop100());
   }
 
   /**

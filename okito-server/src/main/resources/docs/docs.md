@@ -2,7 +2,7 @@
 
 | Version | Update Time | Status | Author | Description |
 |---------|-------------|--------|--------|-------------|
-|v2023-02-27 16:39:01|2023-02-27 16:39:01|auto|@wjl|Created by smart-doc|
+|v2023-03-01 08:52:08|2023-03-01 08:52:08|auto|@wjl|Created by smart-doc|
 
 
 
@@ -34,14 +34,14 @@ curl -X GET -i http://localhost:8088/pin/comment
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 676,
+  "timestamp": 1677631931596,
+  "status": 271,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all pinComments by pinId
+### select pinComments by pinId
 **URL:** http://localhost:8088/pin/comment/pin/{pinId}
 
 **Type:** GET
@@ -50,7 +50,7 @@ curl -X GET -i http://localhost:8088/pin/comment
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all pinComments by pinId
+**Description:** select pinComments by pinId
 
 **Path-parameters:**
 
@@ -60,7 +60,7 @@ curl -X GET -i http://localhost:8088/pin/comment
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/pin/comment/pin/292
+curl -X GET -i http://localhost:8088/pin/comment/pin/358
 ```
 **Response-fields:**
 
@@ -74,14 +74,14 @@ curl -X GET -i http://localhost:8088/pin/comment/pin/292
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 158,
+  "timestamp": 1677631931596,
+  "status": 326,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all pinComments by authorId
+### select pinComments by authorId
 **URL:** http://localhost:8088/pin/comment/author/{authorId}
 
 **Type:** GET
@@ -90,7 +90,7 @@ curl -X GET -i http://localhost:8088/pin/comment/pin/292
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all pinComments by authorId
+**Description:** select pinComments by authorId
 
 **Path-parameters:**
 
@@ -100,7 +100,7 @@ curl -X GET -i http://localhost:8088/pin/comment/pin/292
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/pin/comment/author/58
+curl -X GET -i http://localhost:8088/pin/comment/author/209
 ```
 **Response-fields:**
 
@@ -114,8 +114,8 @@ curl -X GET -i http://localhost:8088/pin/comment/author/58
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 870,
+  "timestamp": 1677631931596,
+  "status": 846,
   "message": "success",
   "data": {}
 }
@@ -140,7 +140,7 @@ curl -X GET -i http://localhost:8088/pin/comment/author/58
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/pin/comment/secondary/122
+curl -X GET -i http://localhost:8088/pin/comment/secondary/292
 ```
 **Response-fields:**
 
@@ -154,162 +154,8 @@ curl -X GET -i http://localhost:8088/pin/comment/secondary/122
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 379,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select all pinComments by page
-**URL:** http://localhost:8088/pin/comment/page
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select all pinComments by page
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/pin/comment/page
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 979,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select all pinComments by pinId and page
-**URL:** http://localhost:8088/pin/comment/page/pin/{pinId}
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select all pinComments by pinId and page
-
-**Path-parameters:**
-
-| Parameter | Type | Required | Description | Since |
-|-----------|------|----------|-------------|-------|
-|pinId|int64|true|   pinId|-|
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/pin/comment/page/pin/913
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 331,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select all pinComments by authorId and page
-**URL:** http://localhost:8088/pin/comment/page/author/{authorId}
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select all pinComments by authorId and page
-
-**Path-parameters:**
-
-| Parameter | Type | Required | Description | Since |
-|-----------|------|----------|-------------|-------|
-|authorId|int64|true|authorId|-|
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/pin/comment/page/author/345
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 201,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select secondary comments by id and page
-**URL:** http://localhost:8088/pin/comment/page/secondary/{id}
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select secondary comments by id and page
-
-**Path-parameters:**
-
-| Parameter | Type | Required | Description | Since |
-|-----------|------|----------|-------------|-------|
-|id|int64|true|      id|-|
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/pin/comment/page/secondary/874
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 888,
+  "timestamp": 1677631931596,
+  "status": 140,
   "message": "success",
   "data": {}
 }
@@ -334,7 +180,7 @@ curl -X GET -i http://localhost:8088/pin/comment/page/secondary/874
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/pin/comment/count/pin/573
+curl -X GET -i http://localhost:8088/pin/comment/count/pin/596
 ```
 **Response-fields:**
 
@@ -348,8 +194,8 @@ curl -X GET -i http://localhost:8088/pin/comment/count/pin/573
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 524,
+  "timestamp": 1677631931596,
+  "status": 635,
   "message": "success",
   "data": {}
 }
@@ -374,7 +220,7 @@ curl -X GET -i http://localhost:8088/pin/comment/count/pin/573
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/pin/comment/846
+curl -X GET -i http://localhost:8088/pin/comment/504
 ```
 **Response-fields:**
 
@@ -388,8 +234,8 @@ curl -X GET -i http://localhost:8088/pin/comment/846
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 967,
+  "timestamp": 1677631931596,
+  "status": 233,
   "message": "success",
   "data": {}
 }
@@ -420,12 +266,12 @@ curl -X GET -i http://localhost:8088/pin/comment/846
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/pin/comment --data '{
-  "id": 777,
-  "content": "0kus46",
-  "uploadTime": "2023-02-27 16:39:40",
-  "authorId": 577,
-  "pinId": 136,
-  "parentId": 548
+  "id": 235,
+  "content": "7aavce",
+  "uploadTime": "2023-03-01 08:52:11",
+  "authorId": 567,
+  "pinId": 255,
+  "parentId": 264
 }'
 ```
 **Response-fields:**
@@ -440,8 +286,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/pin/co
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 727,
+  "timestamp": 1677631931596,
+  "status": 857,
   "message": "success",
   "data": {}
 }
@@ -466,7 +312,7 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/pin/co
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/pin/comment/778
+curl -X DELETE -i http://localhost:8088/pin/comment/225
 ```
 **Response-fields:**
 
@@ -480,8 +326,8 @@ curl -X DELETE -i http://localhost:8088/pin/comment/778
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 860,
+  "timestamp": 1677631931596,
+  "status": 864,
   "message": "success",
   "data": {}
 }
@@ -515,14 +361,14 @@ curl -X GET -i http://localhost:8088/pin/comment/like
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 558,
+  "timestamp": 1677631931596,
+  "status": 515,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all pinCommentLikes by userId
+### select pinCommentLikes by userId
 **URL:** http://localhost:8088/pin/comment/like/{userId}
 
 **Type:** GET
@@ -531,7 +377,7 @@ curl -X GET -i http://localhost:8088/pin/comment/like
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all pinCommentLikes by userId
+**Description:** select pinCommentLikes by userId
 
 **Path-parameters:**
 
@@ -541,7 +387,7 @@ curl -X GET -i http://localhost:8088/pin/comment/like
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/pin/comment/like/838
+curl -X GET -i http://localhost:8088/pin/comment/like/155
 ```
 **Response-fields:**
 
@@ -555,82 +401,8 @@ curl -X GET -i http://localhost:8088/pin/comment/like/838
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 709,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select all pinCommentLikes by page
-**URL:** http://localhost:8088/pin/comment/like/page
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select all pinCommentLikes by page
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/pin/comment/like/page
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 507,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select all pinCommentLikes by userId and page
-**URL:** http://localhost:8088/pin/comment/like/page/{userId}
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select all pinCommentLikes by userId and page
-
-**Path-parameters:**
-
-| Parameter | Type | Required | Description | Since |
-|-----------|------|----------|-------------|-------|
-|userId|int64|true|  userId|-|
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/pin/comment/like/page/117
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 268,
+  "timestamp": 1677631931596,
+  "status": 86,
   "message": "success",
   "data": {}
 }
@@ -656,7 +428,7 @@ curl -X GET -i http://localhost:8088/pin/comment/like/page/117
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/pin/comment/like/single?commentId=394&userId=381 --data '&394&381'
+curl -X GET -i http://localhost:8088/pin/comment/like/single?commentId=697&userId=329 --data '&697&329'
 ```
 **Response-fields:**
 
@@ -670,8 +442,8 @@ curl -X GET -i http://localhost:8088/pin/comment/like/single?commentId=394&userI
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 971,
+  "timestamp": 1677631931596,
+  "status": 278,
   "message": "success",
   "data": {}
 }
@@ -699,9 +471,9 @@ curl -X GET -i http://localhost:8088/pin/comment/like/single?commentId=394&userI
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/pin/comment/like --data '{
-  "commentId": 77,
-  "userId": 557,
-  "type": 27314
+  "commentId": 762,
+  "userId": 931,
+  "type": 16631
 }'
 ```
 **Response-fields:**
@@ -716,8 +488,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/pin/co
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 627,
+  "timestamp": 1677631931596,
+  "status": 392,
   "message": "success",
   "data": {}
 }
@@ -745,9 +517,9 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/pin/co
 **Request-example:**
 ```
 curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/pin/comment/like --data '{
-  "commentId": 678,
-  "userId": 205,
-  "type": 30859
+  "commentId": 131,
+  "userId": 334,
+  "type": 16023
 }'
 ```
 **Response-fields:**
@@ -762,8 +534,8 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/pin/com
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 840,
+  "timestamp": 1677631931596,
+  "status": 674,
   "message": "success",
   "data": {}
 }
@@ -789,7 +561,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/pin/com
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/pin/comment/like?commentId=509&userId=114 --data '&509&114'
+curl -X DELETE -i http://localhost:8088/pin/comment/like?commentId=178&userId=796 --data '&178&796'
 ```
 **Response-fields:**
 
@@ -803,8 +575,8 @@ curl -X DELETE -i http://localhost:8088/pin/comment/like?commentId=509&userId=11
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 430,
+  "timestamp": 1677631931596,
+  "status": 106,
   "message": "success",
   "data": {}
 }
@@ -838,14 +610,14 @@ curl -X GET -i http://localhost:8088/post/comment
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 716,
+  "timestamp": 1677631931596,
+  "status": 930,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all postComments by postId
+### select postComments by postId
 **URL:** http://localhost:8088/post/comment/post/{postId}
 
 **Type:** GET
@@ -854,7 +626,7 @@ curl -X GET -i http://localhost:8088/post/comment
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all postComments by postId
+**Description:** select postComments by postId
 
 **Path-parameters:**
 
@@ -864,7 +636,7 @@ curl -X GET -i http://localhost:8088/post/comment
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/post/comment/post/987
+curl -X GET -i http://localhost:8088/post/comment/post/397
 ```
 **Response-fields:**
 
@@ -878,14 +650,14 @@ curl -X GET -i http://localhost:8088/post/comment/post/987
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 731,
+  "timestamp": 1677631931596,
+  "status": 186,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all postComments by authorId
+### select postComments by authorId
 **URL:** http://localhost:8088/post/comment/author/{authorId}
 
 **Type:** GET
@@ -894,7 +666,7 @@ curl -X GET -i http://localhost:8088/post/comment/post/987
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all postComments by authorId
+**Description:** select postComments by authorId
 
 **Path-parameters:**
 
@@ -904,7 +676,7 @@ curl -X GET -i http://localhost:8088/post/comment/post/987
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/post/comment/author/815
+curl -X GET -i http://localhost:8088/post/comment/author/245
 ```
 **Response-fields:**
 
@@ -918,8 +690,8 @@ curl -X GET -i http://localhost:8088/post/comment/author/815
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 518,
+  "timestamp": 1677631931596,
+  "status": 129,
   "message": "success",
   "data": {}
 }
@@ -944,7 +716,7 @@ curl -X GET -i http://localhost:8088/post/comment/author/815
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/post/comment/secondary/33
+curl -X GET -i http://localhost:8088/post/comment/secondary/962
 ```
 **Response-fields:**
 
@@ -958,162 +730,8 @@ curl -X GET -i http://localhost:8088/post/comment/secondary/33
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 340,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select all postComments by page
-**URL:** http://localhost:8088/post/comment/page
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select all postComments by page
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/post/comment/page
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 541,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select all postComments by postId and page
-**URL:** http://localhost:8088/post/comment/page/post/{postId}
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select all postComments by postId and page
-
-**Path-parameters:**
-
-| Parameter | Type | Required | Description | Since |
-|-----------|------|----------|-------------|-------|
-|postId|int64|true|  postId|-|
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/post/comment/page/post/139
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 78,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select all postComments by authorId and page
-**URL:** http://localhost:8088/post/comment/page/author/{authorId}
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select all postComments by authorId and page
-
-**Path-parameters:**
-
-| Parameter | Type | Required | Description | Since |
-|-----------|------|----------|-------------|-------|
-|authorId|int64|true|authorId|-|
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/post/comment/page/author/408
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 642,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select secondary comments by id and page
-**URL:** http://localhost:8088/post/comment/page/secondary/{id}
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select secondary comments by id and page
-
-**Path-parameters:**
-
-| Parameter | Type | Required | Description | Since |
-|-----------|------|----------|-------------|-------|
-|id|int64|true|      id|-|
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/post/comment/page/secondary/155
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 759,
+  "timestamp": 1677631931596,
+  "status": 656,
   "message": "success",
   "data": {}
 }
@@ -1138,7 +756,7 @@ curl -X GET -i http://localhost:8088/post/comment/page/secondary/155
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/post/comment/6
+curl -X GET -i http://localhost:8088/post/comment/291
 ```
 **Response-fields:**
 
@@ -1152,8 +770,8 @@ curl -X GET -i http://localhost:8088/post/comment/6
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 881,
+  "timestamp": 1677631931596,
+  "status": 328,
   "message": "success",
   "data": {}
 }
@@ -1178,7 +796,7 @@ curl -X GET -i http://localhost:8088/post/comment/6
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/post/comment/count/post/558
+curl -X GET -i http://localhost:8088/post/comment/count/post/88
 ```
 **Response-fields:**
 
@@ -1192,8 +810,8 @@ curl -X GET -i http://localhost:8088/post/comment/count/post/558
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 21,
+  "timestamp": 1677631931596,
+  "status": 260,
   "message": "success",
   "data": {}
 }
@@ -1224,12 +842,12 @@ curl -X GET -i http://localhost:8088/post/comment/count/post/558
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/post/comment --data '{
-  "id": 439,
-  "content": "nvfv4w",
-  "uploadTime": "2023-02-27 16:39:40",
-  "authorId": 796,
-  "postId": 955,
-  "parentId": 426
+  "id": 808,
+  "content": "k8zpiw",
+  "uploadTime": "2023-03-01 08:52:11",
+  "authorId": 272,
+  "postId": 696,
+  "parentId": 200
 }'
 ```
 **Response-fields:**
@@ -1244,8 +862,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/post/c
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 470,
+  "timestamp": 1677631931596,
+  "status": 180,
   "message": "success",
   "data": {}
 }
@@ -1270,7 +888,7 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/post/c
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/post/comment/214
+curl -X DELETE -i http://localhost:8088/post/comment/947
 ```
 **Response-fields:**
 
@@ -1284,8 +902,8 @@ curl -X DELETE -i http://localhost:8088/post/comment/214
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 635,
+  "timestamp": 1677631931596,
+  "status": 432,
   "message": "success",
   "data": {}
 }
@@ -1319,14 +937,14 @@ curl -X GET -i http://localhost:8088/post/comment/like
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 889,
+  "timestamp": 1677631931596,
+  "status": 935,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all postCommentLikes by userId
+### select postCommentLikes by userId
 **URL:** http://localhost:8088/post/comment/like/{userId}
 
 **Type:** GET
@@ -1335,7 +953,7 @@ curl -X GET -i http://localhost:8088/post/comment/like
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all postCommentLikes by userId
+**Description:** select postCommentLikes by userId
 
 **Path-parameters:**
 
@@ -1345,7 +963,7 @@ curl -X GET -i http://localhost:8088/post/comment/like
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/post/comment/like/647
+curl -X GET -i http://localhost:8088/post/comment/like/788
 ```
 **Response-fields:**
 
@@ -1359,82 +977,8 @@ curl -X GET -i http://localhost:8088/post/comment/like/647
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 427,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select all postCommentLikes by page
-**URL:** http://localhost:8088/post/comment/like/page
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select all postCommentLikes by page
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/post/comment/like/page
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 623,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select all postCommentLikes by userId and page
-**URL:** http://localhost:8088/post/comment/like/page/{userId}
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select all postCommentLikes by userId and page
-
-**Path-parameters:**
-
-| Parameter | Type | Required | Description | Since |
-|-----------|------|----------|-------------|-------|
-|userId|int64|true|  userId|-|
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/post/comment/like/page/838
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 672,
+  "timestamp": 1677631931596,
+  "status": 42,
   "message": "success",
   "data": {}
 }
@@ -1460,7 +1004,7 @@ curl -X GET -i http://localhost:8088/post/comment/like/page/838
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/post/comment/like/single?commentId=383&userId=748 --data '&383&748'
+curl -X GET -i http://localhost:8088/post/comment/like/single?commentId=479&userId=780 --data '&479&780'
 ```
 **Response-fields:**
 
@@ -1474,8 +1018,8 @@ curl -X GET -i http://localhost:8088/post/comment/like/single?commentId=383&user
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 570,
+  "timestamp": 1677631931596,
+  "status": 18,
   "message": "success",
   "data": {}
 }
@@ -1503,9 +1047,9 @@ curl -X GET -i http://localhost:8088/post/comment/like/single?commentId=383&user
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/post/comment/like --data '{
-  "commentId": 591,
-  "userId": 52,
-  "type": 13721
+  "commentId": 967,
+  "userId": 299,
+  "type": 15239
 }'
 ```
 **Response-fields:**
@@ -1520,8 +1064,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/post/c
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 1,
+  "timestamp": 1677631931596,
+  "status": 466,
   "message": "success",
   "data": {}
 }
@@ -1549,9 +1093,9 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/post/c
 **Request-example:**
 ```
 curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/post/comment/like --data '{
-  "commentId": 875,
-  "userId": 734,
-  "type": 25095
+  "commentId": 817,
+  "userId": 144,
+  "type": 13031
 }'
 ```
 **Response-fields:**
@@ -1566,8 +1110,8 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/post/co
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 825,
+  "timestamp": 1677631931596,
+  "status": 949,
   "message": "success",
   "data": {}
 }
@@ -1593,7 +1137,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/post/co
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/post/comment/like?commentId=283&userId=517 --data '&283&517'
+curl -X DELETE -i http://localhost:8088/post/comment/like?commentId=80&userId=410 --data '&80&410'
 ```
 **Response-fields:**
 
@@ -1607,7 +1151,7 @@ curl -X DELETE -i http://localhost:8088/post/comment/like?commentId=283&userId=5
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
+  "timestamp": 1677631931596,
   "status": 112,
   "message": "success",
   "data": {}
@@ -1642,8 +1186,82 @@ curl -X GET -i http://localhost:8088/pin/recommend
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 381,
+  "timestamp": 1677631931596,
+  "status": 479,
+  "message": "success",
+  "data": {}
+}
+```
+
+### select hot 100 pins
+**URL:** http://localhost:8088/pin/hot
+
+**Type:** GET
+
+**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
+
+**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
+
+**Description:** select hot 100 pins
+
+**Request-example:**
+```
+curl -X GET -i http://localhost:8088/pin/hot
+```
+**Response-fields:**
+
+| Field | Type | Description | Since |
+|-------|------|-------------|-------|
+|timestamp|int64|No comments found.|-|
+|status|int32|No comments found.|-|
+|message|string|No comments found.|-|
+|data|object|No comments found.|-|
+
+**Response-example:**
+```
+{
+  "timestamp": 1677631931596,
+  "status": 33,
+  "message": "success",
+  "data": {}
+}
+```
+
+### search by keywords
+**URL:** http://localhost:8088/pin/search
+
+**Type:** GET
+
+**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
+
+**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
+
+**Description:** search by keywords
+
+**Query-parameters:**
+
+| Parameter | Type | Required | Description | Since |
+|-----------|------|----------|-------------|-------|
+|q|string|true|keywords|-|
+
+**Request-example:**
+```
+curl -X GET -i http://localhost:8088/pin/search?q=yb7lbd --data '&yb7lbd'
+```
+**Response-fields:**
+
+| Field | Type | Description | Since |
+|-------|------|-------------|-------|
+|timestamp|int64|No comments found.|-|
+|status|int32|No comments found.|-|
+|message|string|No comments found.|-|
+|data|object|No comments found.|-|
+
+**Response-example:**
+```
+{
+  "timestamp": 1677631931596,
+  "status": 676,
   "message": "success",
   "data": {}
 }
@@ -1676,14 +1294,14 @@ curl -X GET -i http://localhost:8088/pin
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 895,
+  "timestamp": 1677631931596,
+  "status": 683,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all pins by authorId
+### select pins by authorId
 **URL:** http://localhost:8088/pin/author/{authorId}
 
 **Type:** GET
@@ -1692,7 +1310,7 @@ curl -X GET -i http://localhost:8088/pin
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all pins by authorId
+**Description:** select pins by authorId
 
 **Path-parameters:**
 
@@ -1702,7 +1320,7 @@ curl -X GET -i http://localhost:8088/pin
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/pin/author/306
+curl -X GET -i http://localhost:8088/pin/author/366
 ```
 **Response-fields:**
 
@@ -1716,82 +1334,48 @@ curl -X GET -i http://localhost:8088/pin/author/306
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 391,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select all pins by page
-**URL:** http://localhost:8088/pin/page
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select all pins by page
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/pin/page
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 876,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select all pins by page and by authorId
-**URL:** http://localhost:8088/pin/page/author/{authorId}
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select all pins by page and by authorId
-
-**Path-parameters:**
-
-| Parameter | Type | Required | Description | Since |
-|-----------|------|----------|-------------|-------|
-|authorId|int64|true|authorId|-|
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/pin/page/author/222
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
+  "timestamp": 1677631931596,
   "status": 705,
+  "message": "success",
+  "data": {}
+}
+```
+
+### select pins written by user followed by id
+**URL:** http://localhost:8088/pin/follow/{userId}
+
+**Type:** GET
+
+**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
+
+**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
+
+**Description:** select pins written by user followed by id
+
+**Path-parameters:**
+
+| Parameter | Type | Required | Description | Since |
+|-----------|------|----------|-------------|-------|
+|userId|int64|true|user id|-|
+
+**Request-example:**
+```
+curl -X GET -i http://localhost:8088/pin/follow/554
+```
+**Response-fields:**
+
+| Field | Type | Description | Since |
+|-------|------|-------------|-------|
+|timestamp|int64|No comments found.|-|
+|status|int32|No comments found.|-|
+|message|string|No comments found.|-|
+|data|object|No comments found.|-|
+
+**Response-example:**
+```
+{
+  "timestamp": 1677631931596,
+  "status": 101,
   "message": "success",
   "data": {}
 }
@@ -1816,7 +1400,7 @@ curl -X GET -i http://localhost:8088/pin/page/author/222
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/pin/count/author/703
+curl -X GET -i http://localhost:8088/pin/count/author/778
 ```
 **Response-fields:**
 
@@ -1830,8 +1414,8 @@ curl -X GET -i http://localhost:8088/pin/count/author/703
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 458,
+  "timestamp": 1677631931596,
+  "status": 755,
   "message": "success",
   "data": {}
 }
@@ -1856,7 +1440,7 @@ curl -X GET -i http://localhost:8088/pin/count/author/703
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/pin/172
+curl -X GET -i http://localhost:8088/pin/657
 ```
 **Response-fields:**
 
@@ -1870,8 +1454,8 @@ curl -X GET -i http://localhost:8088/pin/172
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 930,
+  "timestamp": 1677631931596,
+  "status": 434,
   "message": "success",
   "data": {}
 }
@@ -1901,11 +1485,11 @@ curl -X GET -i http://localhost:8088/pin/172
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/pin --data '{
-  "id": 170,
-  "content": "uwkibz",
-  "createTime": "2023-02-27 16:39:40",
-  "updateTime": "2023-02-27 16:39:40",
-  "authorId": 554
+  "id": 1,
+  "content": "as8ym1",
+  "createTime": "2023-03-01 08:52:11",
+  "updateTime": "2023-03-01 08:52:11",
+  "authorId": 132
 }'
 ```
 **Response-fields:**
@@ -1920,8 +1504,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/pin --
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 597,
+  "timestamp": 1677631931596,
+  "status": 437,
   "message": "success",
   "data": {}
 }
@@ -1952,12 +1536,12 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/pin --
 **Request-example:**
 ```
 curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/pin --data '{
-  "id": 591,
-  "content": "omjpub",
-  "createTime": "2023-02-27 16:39:40",
-  "updateTime": "2023-02-27 16:39:40",
-  "authorId": 667,
-  "viewNum": 486
+  "id": 875,
+  "content": "cgg0ox",
+  "createTime": "2023-03-01 08:52:11",
+  "updateTime": "2023-03-01 08:52:11",
+  "authorId": 890,
+  "viewNum": 829
 }'
 ```
 **Response-fields:**
@@ -1972,8 +1556,8 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/pin --d
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 475,
+  "timestamp": 1677631931596,
+  "status": 870,
   "message": "success",
   "data": {}
 }
@@ -1998,7 +1582,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/pin --d
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/pin/744
+curl -X DELETE -i http://localhost:8088/pin/248
 ```
 **Response-fields:**
 
@@ -2012,8 +1596,8 @@ curl -X DELETE -i http://localhost:8088/pin/744
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 747,
+  "timestamp": 1677631931596,
+  "status": 692,
   "message": "success",
   "data": {}
 }
@@ -2047,14 +1631,14 @@ curl -X GET -i http://localhost:8088/pin/like
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 96,
+  "timestamp": 1677631931596,
+  "status": 223,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all pinLikes by userId
+### select pinLikes by userId
 **URL:** http://localhost:8088/pin/like/{userId}
 
 **Type:** GET
@@ -2063,7 +1647,7 @@ curl -X GET -i http://localhost:8088/pin/like
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all pinLikes by userId
+**Description:** select pinLikes by userId
 
 **Path-parameters:**
 
@@ -2073,7 +1657,7 @@ curl -X GET -i http://localhost:8088/pin/like
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/pin/like/110
+curl -X GET -i http://localhost:8088/pin/like/468
 ```
 **Response-fields:**
 
@@ -2087,82 +1671,8 @@ curl -X GET -i http://localhost:8088/pin/like/110
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 581,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select all pinLikes by page
-**URL:** http://localhost:8088/pin/like/page
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select all pinLikes by page
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/pin/like/page
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 412,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select all pinLikes by userId and page
-**URL:** http://localhost:8088/pin/like/page/{userId}
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select all pinLikes by userId and page
-
-**Path-parameters:**
-
-| Parameter | Type | Required | Description | Since |
-|-----------|------|----------|-------------|-------|
-|userId|int64|true|  userId|-|
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/pin/like/page/186
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 508,
+  "timestamp": 1677631931596,
+  "status": 75,
   "message": "success",
   "data": {}
 }
@@ -2188,7 +1698,7 @@ curl -X GET -i http://localhost:8088/pin/like/page/186
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/pin/like/single?pinId=366&userId=873 --data '&366&873'
+curl -X GET -i http://localhost:8088/pin/like/single?pinId=890&userId=104 --data '&890&104'
 ```
 **Response-fields:**
 
@@ -2202,8 +1712,8 @@ curl -X GET -i http://localhost:8088/pin/like/single?pinId=366&userId=873 --data
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 515,
+  "timestamp": 1677631931596,
+  "status": 682,
   "message": "success",
   "data": {}
 }
@@ -2231,9 +1741,9 @@ curl -X GET -i http://localhost:8088/pin/like/single?pinId=366&userId=873 --data
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/pin/like --data '{
-  "pinId": 35,
-  "userId": 102,
-  "type": 26863
+  "pinId": 39,
+  "userId": 822,
+  "type": 12827
 }'
 ```
 **Response-fields:**
@@ -2248,8 +1758,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/pin/li
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 690,
+  "timestamp": 1677631931596,
+  "status": 331,
   "message": "success",
   "data": {}
 }
@@ -2277,9 +1787,9 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/pin/li
 **Request-example:**
 ```
 curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/pin/like --data '{
-  "pinId": 625,
-  "userId": 251,
-  "type": 15004
+  "pinId": 859,
+  "userId": 678,
+  "type": 4695
 }'
 ```
 **Response-fields:**
@@ -2294,8 +1804,8 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/pin/lik
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 68,
+  "timestamp": 1677631931596,
+  "status": 611,
   "message": "success",
   "data": {}
 }
@@ -2321,7 +1831,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/pin/lik
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/pin/like?pinId=252&userId=746 --data '&252&746'
+curl -X DELETE -i http://localhost:8088/pin/like?pinId=592&userId=505 --data '&592&505'
 ```
 **Response-fields:**
 
@@ -2335,8 +1845,8 @@ curl -X DELETE -i http://localhost:8088/pin/like?pinId=252&userId=746 --data '&2
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 333,
+  "timestamp": 1677631931596,
+  "status": 298,
   "message": "success",
   "data": {}
 }
@@ -2370,8 +1880,8 @@ curl -X GET -i http://localhost:8088/category
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 840,
+  "timestamp": 1677631931596,
+  "status": 692,
   "message": "success",
   "data": {}
 }
@@ -2396,7 +1906,7 @@ curl -X GET -i http://localhost:8088/category
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/category/891
+curl -X GET -i http://localhost:8088/category/582
 ```
 **Response-fields:**
 
@@ -2410,8 +1920,8 @@ curl -X GET -i http://localhost:8088/category/891
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 121,
+  "timestamp": 1677631931596,
+  "status": 540,
   "message": "success",
   "data": {}
 }
@@ -2440,10 +1950,10 @@ curl -X GET -i http://localhost:8088/category/891
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/category --data '{
-  "id": 54,
-  "name": "bernardine.schoen",
-  "cover": "zjsrcx",
-  "description": "gv9yt4"
+  "id": 512,
+  "name": "marty.marquardt",
+  "cover": "tyfe0j",
+  "description": "5cnfnk"
 }'
 ```
 **Response-fields:**
@@ -2458,8 +1968,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/catego
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 417,
+  "timestamp": 1677631931596,
+  "status": 395,
   "message": "success",
   "data": {}
 }
@@ -2488,10 +1998,10 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/catego
 **Request-example:**
 ```
 curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/category --data '{
-  "id": 881,
-  "name": "bernardine.schoen",
-  "cover": "fis9ri",
-  "description": "4ppn8g"
+  "id": 419,
+  "name": "marty.marquardt",
+  "cover": "hjqb4t",
+  "description": "92f8tl"
 }'
 ```
 **Response-fields:**
@@ -2506,8 +2016,8 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/categor
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 953,
+  "timestamp": 1677631931596,
+  "status": 844,
   "message": "success",
   "data": {}
 }
@@ -2532,7 +2042,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/categor
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/category/767
+curl -X DELETE -i http://localhost:8088/category/745
 ```
 **Response-fields:**
 
@@ -2546,8 +2056,8 @@ curl -X DELETE -i http://localhost:8088/category/767
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 778,
+  "timestamp": 1677631931596,
+  "status": 609,
   "message": "success",
   "data": {}
 }
@@ -2581,14 +2091,14 @@ curl -X GET -i http://localhost:8088/collection
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 442,
+  "timestamp": 1677631931596,
+  "status": 173,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all collections by author id
+### select collections by author id
 **URL:** http://localhost:8088/collection/author/{authorId}
 
 **Type:** GET
@@ -2597,7 +2107,7 @@ curl -X GET -i http://localhost:8088/collection
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all collections by author id
+**Description:** select collections by author id
 
 **Path-parameters:**
 
@@ -2607,7 +2117,7 @@ curl -X GET -i http://localhost:8088/collection
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/collection/author/503
+curl -X GET -i http://localhost:8088/collection/author/271
 ```
 **Response-fields:**
 
@@ -2621,14 +2131,14 @@ curl -X GET -i http://localhost:8088/collection/author/503
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 444,
+  "timestamp": 1677631931596,
+  "status": 163,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all collections by follower id
+### select collections by follower id
 **URL:** http://localhost:8088/collection/follower/{followerId}
 
 **Type:** GET
@@ -2637,7 +2147,7 @@ curl -X GET -i http://localhost:8088/collection/author/503
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all collections by follower id
+**Description:** select collections by follower id
 
 **Path-parameters:**
 
@@ -2647,7 +2157,7 @@ curl -X GET -i http://localhost:8088/collection/author/503
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/collection/follower/794
+curl -X GET -i http://localhost:8088/collection/follower/454
 ```
 **Response-fields:**
 
@@ -2661,8 +2171,8 @@ curl -X GET -i http://localhost:8088/collection/follower/794
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 612,
+  "timestamp": 1677631931596,
+  "status": 176,
   "message": "success",
   "data": {}
 }
@@ -2687,7 +2197,7 @@ curl -X GET -i http://localhost:8088/collection/follower/794
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/collection/767
+curl -X GET -i http://localhost:8088/collection/806
 ```
 **Response-fields:**
 
@@ -2701,8 +2211,8 @@ curl -X GET -i http://localhost:8088/collection/767
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 793,
+  "timestamp": 1677631931596,
+  "status": 393,
   "message": "success",
   "data": {}
 }
@@ -2727,7 +2237,7 @@ curl -X GET -i http://localhost:8088/collection/767
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/collection/count/posts/885
+curl -X GET -i http://localhost:8088/collection/count/posts/848
 ```
 **Response-fields:**
 
@@ -2741,8 +2251,8 @@ curl -X GET -i http://localhost:8088/collection/count/posts/885
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 512,
+  "timestamp": 1677631931596,
+  "status": 432,
   "message": "success",
   "data": {}
 }
@@ -2767,7 +2277,7 @@ curl -X GET -i http://localhost:8088/collection/count/posts/885
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/collection/count/collection/181
+curl -X GET -i http://localhost:8088/collection/count/collection/68
 ```
 **Response-fields:**
 
@@ -2781,8 +2291,8 @@ curl -X GET -i http://localhost:8088/collection/count/collection/181
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 319,
+  "timestamp": 1677631931596,
+  "status": 69,
   "message": "success",
   "data": {}
 }
@@ -2807,7 +2317,7 @@ curl -X GET -i http://localhost:8088/collection/count/collection/181
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/collection/count/follow/547
+curl -X GET -i http://localhost:8088/collection/count/follow/504
 ```
 **Response-fields:**
 
@@ -2821,8 +2331,8 @@ curl -X GET -i http://localhost:8088/collection/count/follow/547
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 921,
+  "timestamp": 1677631931596,
+  "status": 261,
   "message": "success",
   "data": {}
 }
@@ -2854,13 +2364,13 @@ curl -X GET -i http://localhost:8088/collection/count/follow/547
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/collection --data '{
-  "id": 566,
-  "name": "bernardine.schoen",
-  "cover": "il3ry6",
-  "description": "dphp9h",
-  "createTime": "2023-02-27 16:39:40",
-  "updateTime": "2023-02-27 16:39:40",
-  "authorId": 690
+  "id": 959,
+  "name": "marty.marquardt",
+  "cover": "yp6ei9",
+  "description": "y5hk4m",
+  "createTime": "2023-03-01 08:52:11",
+  "updateTime": "2023-03-01 08:52:11",
+  "authorId": 633
 }'
 ```
 **Response-fields:**
@@ -2875,8 +2385,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/collec
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 476,
+  "timestamp": 1677631931596,
+  "status": 486,
   "message": "success",
   "data": {}
 }
@@ -2908,13 +2418,13 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/collec
 **Request-example:**
 ```
 curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/collection --data '{
-  "id": 657,
-  "name": "bernardine.schoen",
-  "cover": "8vummi",
-  "description": "1nry8c",
-  "createTime": "2023-02-27 16:39:40",
-  "updateTime": "2023-02-27 16:39:40",
-  "authorId": 980
+  "id": 166,
+  "name": "marty.marquardt",
+  "cover": "gzj01r",
+  "description": "aogc9g",
+  "createTime": "2023-03-01 08:52:11",
+  "updateTime": "2023-03-01 08:52:11",
+  "authorId": 88
 }'
 ```
 **Response-fields:**
@@ -2929,8 +2439,8 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/collect
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 784,
+  "timestamp": 1677631931596,
+  "status": 983,
   "message": "success",
   "data": {}
 }
@@ -2955,7 +2465,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/collect
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/collection/212
+curl -X DELETE -i http://localhost:8088/collection/12
 ```
 **Response-fields:**
 
@@ -2969,8 +2479,8 @@ curl -X DELETE -i http://localhost:8088/collection/212
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 264,
+  "timestamp": 1677631931596,
+  "status": 99,
   "message": "success",
   "data": {}
 }
@@ -3004,14 +2514,14 @@ curl -X GET -i http://localhost:8088/column
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 681,
+  "timestamp": 1677631931596,
+  "status": 405,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all followed columns by authorId
+### select followed columns by authorId
 **URL:** http://localhost:8088/column/author/{authorId}
 
 **Type:** GET
@@ -3020,7 +2530,7 @@ curl -X GET -i http://localhost:8088/column
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all followed columns by authorId
+**Description:** select followed columns by authorId
 
 **Path-parameters:**
 
@@ -3030,7 +2540,7 @@ curl -X GET -i http://localhost:8088/column
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/column/author/261
+curl -X GET -i http://localhost:8088/column/author/804
 ```
 **Response-fields:**
 
@@ -3044,14 +2554,14 @@ curl -X GET -i http://localhost:8088/column/author/261
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 495,
+  "timestamp": 1677631931596,
+  "status": 199,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all followed columns by follower id
+### select followed columns by follower id
 **URL:** http://localhost:8088/column/follower/{followerId}
 
 **Type:** GET
@@ -3060,7 +2570,7 @@ curl -X GET -i http://localhost:8088/column/author/261
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all followed columns by follower id
+**Description:** select followed columns by follower id
 
 **Path-parameters:**
 
@@ -3070,7 +2580,7 @@ curl -X GET -i http://localhost:8088/column/author/261
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/column/follower/424
+curl -X GET -i http://localhost:8088/column/follower/513
 ```
 **Response-fields:**
 
@@ -3084,8 +2594,8 @@ curl -X GET -i http://localhost:8088/column/follower/424
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 13,
+  "timestamp": 1677631931596,
+  "status": 737,
   "message": "success",
   "data": {}
 }
@@ -3110,7 +2620,7 @@ curl -X GET -i http://localhost:8088/column/follower/424
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/column/318
+curl -X GET -i http://localhost:8088/column/981
 ```
 **Response-fields:**
 
@@ -3124,8 +2634,8 @@ curl -X GET -i http://localhost:8088/column/318
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 57,
+  "timestamp": 1677631931596,
+  "status": 135,
   "message": "success",
   "data": {}
 }
@@ -3150,7 +2660,7 @@ curl -X GET -i http://localhost:8088/column/318
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/column/count/post/273
+curl -X GET -i http://localhost:8088/column/count/post/745
 ```
 **Response-fields:**
 
@@ -3164,8 +2674,8 @@ curl -X GET -i http://localhost:8088/column/count/post/273
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 924,
+  "timestamp": 1677631931596,
+  "status": 885,
   "message": "success",
   "data": {}
 }
@@ -3190,7 +2700,7 @@ curl -X GET -i http://localhost:8088/column/count/post/273
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/column/count/follow/652
+curl -X GET -i http://localhost:8088/column/count/follow/820
 ```
 **Response-fields:**
 
@@ -3204,8 +2714,8 @@ curl -X GET -i http://localhost:8088/column/count/follow/652
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 747,
+  "timestamp": 1677631931596,
+  "status": 344,
   "message": "success",
   "data": {}
 }
@@ -3237,13 +2747,13 @@ curl -X GET -i http://localhost:8088/column/count/follow/652
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/column --data '{
-  "id": 61,
-  "name": "bernardine.schoen",
-  "cover": "9vdxd7",
-  "description": "hrtxfc",
-  "createTime": "2023-02-27 16:39:40",
-  "updateTime": "2023-02-27 16:39:40",
-  "authorId": 832
+  "id": 745,
+  "name": "marty.marquardt",
+  "cover": "egvwoa",
+  "description": "udl1z1",
+  "createTime": "2023-03-01 08:52:11",
+  "updateTime": "2023-03-01 08:52:11",
+  "authorId": 926
 }'
 ```
 **Response-fields:**
@@ -3258,8 +2768,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/column
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 648,
+  "timestamp": 1677631931596,
+  "status": 925,
   "message": "success",
   "data": {}
 }
@@ -3291,13 +2801,13 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/column
 **Request-example:**
 ```
 curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/column --data '{
-  "id": 892,
-  "name": "bernardine.schoen",
-  "cover": "bth661",
-  "description": "i5t9sc",
-  "createTime": "2023-02-27 16:39:40",
-  "updateTime": "2023-02-27 16:39:40",
-  "authorId": 218
+  "id": 975,
+  "name": "marty.marquardt",
+  "cover": "jzsemj",
+  "description": "uihs6o",
+  "createTime": "2023-03-01 08:52:11",
+  "updateTime": "2023-03-01 08:52:11",
+  "authorId": 555
 }'
 ```
 **Response-fields:**
@@ -3312,8 +2822,8 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/column 
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 699,
+  "timestamp": 1677631931596,
+  "status": 865,
   "message": "success",
   "data": {}
 }
@@ -3338,7 +2848,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/column 
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/column/430
+curl -X DELETE -i http://localhost:8088/column/182
 ```
 **Response-fields:**
 
@@ -3352,8 +2862,8 @@ curl -X DELETE -i http://localhost:8088/column/430
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 471,
+  "timestamp": 1677631931596,
+  "status": 143,
   "message": "success",
   "data": {}
 }
@@ -3387,8 +2897,76 @@ curl -X GET -i http://localhost:8088/post/recommend
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 504,
+  "timestamp": 1677631931596,
+  "status": 471,
+  "message": "success",
+  "data": {}
+}
+```
+
+### select hot 100 posts
+**URL:** http://localhost:8088/post/hot
+
+**Type:** GET
+
+**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
+
+**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
+
+**Description:** select hot 100 posts
+
+**Request-example:**
+```
+curl -X GET -i http://localhost:8088/post/hot
+```
+**Response-fields:**
+
+| Field | Type | Description | Since |
+|-------|------|-------------|-------|
+|timestamp|int64|No comments found.|-|
+|status|int32|No comments found.|-|
+|message|string|No comments found.|-|
+|data|object|No comments found.|-|
+
+**Response-example:**
+```
+{
+  "timestamp": 1677631931596,
+  "status": 80,
+  "message": "success",
+  "data": {}
+}
+```
+
+### select top 100 posts
+**URL:** http://localhost:8088/post/top
+
+**Type:** GET
+
+**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
+
+**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
+
+**Description:** select top 100 posts
+
+**Request-example:**
+```
+curl -X GET -i http://localhost:8088/post/top
+```
+**Response-fields:**
+
+| Field | Type | Description | Since |
+|-------|------|-------------|-------|
+|timestamp|int64|No comments found.|-|
+|status|int32|No comments found.|-|
+|message|string|No comments found.|-|
+|data|object|No comments found.|-|
+
+**Response-example:**
+```
+{
+  "timestamp": 1677631931596,
+  "status": 293,
   "message": "success",
   "data": {}
 }
@@ -3421,8 +2999,88 @@ curl -X GET -i http://localhost:8088/post
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 528,
+  "timestamp": 1677631931596,
+  "status": 944,
+  "message": "success",
+  "data": {}
+}
+```
+
+### search posts by title
+**URL:** http://localhost:8088/post/title
+
+**Type:** GET
+
+**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
+
+**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
+
+**Description:** search posts by title
+
+**Query-parameters:**
+
+| Parameter | Type | Required | Description | Since |
+|-----------|------|----------|-------------|-------|
+|q|string|true|title|-|
+
+**Request-example:**
+```
+curl -X GET -i http://localhost:8088/post/title?q=7rn2cu --data '&7rn2cu'
+```
+**Response-fields:**
+
+| Field | Type | Description | Since |
+|-------|------|-------------|-------|
+|timestamp|int64|No comments found.|-|
+|status|int32|No comments found.|-|
+|message|string|No comments found.|-|
+|data|object|No comments found.|-|
+
+**Response-example:**
+```
+{
+  "timestamp": 1677631931596,
+  "status": 880,
+  "message": "success",
+  "data": {}
+}
+```
+
+### search posts by title
+**URL:** http://localhost:8088/post/search
+
+**Type:** GET
+
+**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
+
+**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
+
+**Description:** search posts by title
+
+**Query-parameters:**
+
+| Parameter | Type | Required | Description | Since |
+|-----------|------|----------|-------------|-------|
+|q|string|true|keywords|-|
+
+**Request-example:**
+```
+curl -X GET -i http://localhost:8088/post/search?q=xgu9f4 --data '&xgu9f4'
+```
+**Response-fields:**
+
+| Field | Type | Description | Since |
+|-------|------|-------------|-------|
+|timestamp|int64|No comments found.|-|
+|status|int32|No comments found.|-|
+|message|string|No comments found.|-|
+|data|object|No comments found.|-|
+
+**Response-example:**
+```
+{
+  "timestamp": 1677631931596,
+  "status": 324,
   "message": "success",
   "data": {}
 }
@@ -3447,7 +3105,7 @@ curl -X GET -i http://localhost:8088/post
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/post/cate/930
+curl -X GET -i http://localhost:8088/post/cate/352
 ```
 **Response-fields:**
 
@@ -3461,8 +3119,8 @@ curl -X GET -i http://localhost:8088/post/cate/930
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 33,
+  "timestamp": 1677631931596,
+  "status": 114,
   "message": "success",
   "data": {}
 }
@@ -3487,7 +3145,7 @@ curl -X GET -i http://localhost:8088/post/cate/930
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/post/tag/884
+curl -X GET -i http://localhost:8088/post/tag/641
 ```
 **Response-fields:**
 
@@ -3501,8 +3159,8 @@ curl -X GET -i http://localhost:8088/post/tag/884
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 670,
+  "timestamp": 1677631931596,
+  "status": 632,
   "message": "success",
   "data": {}
 }
@@ -3527,7 +3185,7 @@ curl -X GET -i http://localhost:8088/post/tag/884
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/post/collection/816
+curl -X GET -i http://localhost:8088/post/collection/898
 ```
 **Response-fields:**
 
@@ -3541,8 +3199,8 @@ curl -X GET -i http://localhost:8088/post/collection/816
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 460,
+  "timestamp": 1677631931596,
+  "status": 357,
   "message": "success",
   "data": {}
 }
@@ -3567,7 +3225,7 @@ curl -X GET -i http://localhost:8088/post/collection/816
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/post/column/442
+curl -X GET -i http://localhost:8088/post/column/265
 ```
 **Response-fields:**
 
@@ -3581,8 +3239,8 @@ curl -X GET -i http://localhost:8088/post/column/442
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 808,
+  "timestamp": 1677631931596,
+  "status": 78,
   "message": "success",
   "data": {}
 }
@@ -3607,7 +3265,7 @@ curl -X GET -i http://localhost:8088/post/column/442
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/post/author/983
+curl -X GET -i http://localhost:8088/post/author/727
 ```
 **Response-fields:**
 
@@ -3621,8 +3279,48 @@ curl -X GET -i http://localhost:8088/post/author/983
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 859,
+  "timestamp": 1677631931596,
+  "status": 812,
+  "message": "success",
+  "data": {}
+}
+```
+
+### select posts written by user followed by id
+**URL:** http://localhost:8088/post/follow/{userId}
+
+**Type:** GET
+
+**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
+
+**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
+
+**Description:** select posts written by user followed by id
+
+**Path-parameters:**
+
+| Parameter | Type | Required | Description | Since |
+|-----------|------|----------|-------------|-------|
+|userId|int64|true|user id|-|
+
+**Request-example:**
+```
+curl -X GET -i http://localhost:8088/post/follow/207
+```
+**Response-fields:**
+
+| Field | Type | Description | Since |
+|-------|------|-------------|-------|
+|timestamp|int64|No comments found.|-|
+|status|int32|No comments found.|-|
+|message|string|No comments found.|-|
+|data|object|No comments found.|-|
+
+**Response-example:**
+```
+{
+  "timestamp": 1677631931596,
+  "status": 117,
   "message": "success",
   "data": {}
 }
@@ -3647,7 +3345,7 @@ curl -X GET -i http://localhost:8088/post/author/983
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/post/658
+curl -X GET -i http://localhost:8088/post/100
 ```
 **Response-fields:**
 
@@ -3661,8 +3359,8 @@ curl -X GET -i http://localhost:8088/post/658
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 6,
+  "timestamp": 1677631931596,
+  "status": 461,
   "message": "success",
   "data": {}
 }
@@ -3698,17 +3396,17 @@ curl -X GET -i http://localhost:8088/post/658
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/post --data '{
-  "id": 331,
-  "title": "akhgm3",
-  "summary": "rqdbkr",
-  "cover": "a40puh",
-  "content": "gp98wd",
-  "createTime": "2023-02-27 16:39:40",
-  "updateTime": "2023-02-27 16:39:40",
+  "id": 674,
+  "title": "x54r8d",
+  "summary": "esiamk",
+  "cover": "3yao8e",
+  "content": "g9uhtp",
+  "createTime": "2023-03-01 08:52:11",
+  "updateTime": "2023-03-01 08:52:11",
   "draft": true,
-  "cateId": 422,
-  "authorId": 796,
-  "viewNum": 219
+  "cateId": 363,
+  "authorId": 947,
+  "viewNum": 746
 }'
 ```
 **Response-fields:**
@@ -3723,8 +3421,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/post -
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 214,
+  "timestamp": 1677631931596,
+  "status": 173,
   "message": "success",
   "data": {}
 }
@@ -3760,17 +3458,17 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/post -
 **Request-example:**
 ```
 curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/post --data '{
-  "id": 203,
-  "title": "vc9el4",
-  "summary": "274iqt",
-  "cover": "v3utjn",
-  "content": "nfyp2b",
-  "createTime": "2023-02-27 16:39:40",
-  "updateTime": "2023-02-27 16:39:40",
+  "id": 304,
+  "title": "jedt9f",
+  "summary": "i2f798",
+  "cover": "knvwxd",
+  "content": "y057qg",
+  "createTime": "2023-03-01 08:52:11",
+  "updateTime": "2023-03-01 08:52:11",
   "draft": true,
-  "cateId": 879,
-  "authorId": 520,
-  "viewNum": 74
+  "cateId": 48,
+  "authorId": 549,
+  "viewNum": 344
 }'
 ```
 **Response-fields:**
@@ -3785,8 +3483,8 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/post --
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 528,
+  "timestamp": 1677631931596,
+  "status": 863,
   "message": "success",
   "data": {}
 }
@@ -3811,7 +3509,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/post --
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/post/743
+curl -X DELETE -i http://localhost:8088/post/464
 ```
 **Response-fields:**
 
@@ -3825,8 +3523,8 @@ curl -X DELETE -i http://localhost:8088/post/743
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 176,
+  "timestamp": 1677631931596,
+  "status": 230,
   "message": "success",
   "data": {}
 }
@@ -3860,14 +3558,14 @@ curl -X GET -i http://localhost:8088/post/like
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 647,
+  "timestamp": 1677631931596,
+  "status": 508,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all postLikes by userId
+### select postLikes by userId
 **URL:** http://localhost:8088/post/like/{userId}
 
 **Type:** GET
@@ -3876,7 +3574,7 @@ curl -X GET -i http://localhost:8088/post/like
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all postLikes by userId
+**Description:** select postLikes by userId
 
 **Path-parameters:**
 
@@ -3886,7 +3584,7 @@ curl -X GET -i http://localhost:8088/post/like
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/post/like/437
+curl -X GET -i http://localhost:8088/post/like/285
 ```
 **Response-fields:**
 
@@ -3900,8 +3598,8 @@ curl -X GET -i http://localhost:8088/post/like/437
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 764,
+  "timestamp": 1677631931596,
+  "status": 110,
   "message": "success",
   "data": {}
 }
@@ -3927,7 +3625,7 @@ curl -X GET -i http://localhost:8088/post/like/437
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/post/like/single?postId=79&userId=936 --data '&79&936'
+curl -X GET -i http://localhost:8088/post/like/single?postId=341&userId=65 --data '&341&65'
 ```
 **Response-fields:**
 
@@ -3941,8 +3639,8 @@ curl -X GET -i http://localhost:8088/post/like/single?postId=79&userId=936 --dat
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 624,
+  "timestamp": 1677631931596,
+  "status": 528,
   "message": "success",
   "data": {}
 }
@@ -3970,9 +3668,9 @@ curl -X GET -i http://localhost:8088/post/like/single?postId=79&userId=936 --dat
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/post/like --data '{
-  "postId": 661,
-  "userId": 456,
-  "type": 16506
+  "postId": 899,
+  "userId": 646,
+  "type": 27905
 }'
 ```
 **Response-fields:**
@@ -3987,8 +3685,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/post/l
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 180,
+  "timestamp": 1677631931596,
+  "status": 959,
   "message": "success",
   "data": {}
 }
@@ -4016,9 +3714,9 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/post/l
 **Request-example:**
 ```
 curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/post/like --data '{
-  "postId": 797,
-  "userId": 934,
-  "type": 23974
+  "postId": 785,
+  "userId": 595,
+  "type": 24683
 }'
 ```
 **Response-fields:**
@@ -4033,8 +3731,8 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/post/li
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 241,
+  "timestamp": 1677631931596,
+  "status": 368,
   "message": "success",
   "data": {}
 }
@@ -4060,7 +3758,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/post/li
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/post/like?postId=688&userId=227 --data '&688&227'
+curl -X DELETE -i http://localhost:8088/post/like?postId=21&userId=121 --data '&21&121'
 ```
 **Response-fields:**
 
@@ -4074,8 +3772,8 @@ curl -X DELETE -i http://localhost:8088/post/like?postId=688&userId=227 --data '
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 264,
+  "timestamp": 1677631931596,
+  "status": 750,
   "message": "success",
   "data": {}
 }
@@ -4109,14 +3807,14 @@ curl -X GET -i http://localhost:8088/tag
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 278,
+  "timestamp": 1677631931596,
+  "status": 741,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all tags by postId
+### select tags by postId
 **URL:** http://localhost:8088/tag/post/{postId}
 
 **Type:** GET
@@ -4125,7 +3823,7 @@ curl -X GET -i http://localhost:8088/tag
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all tags by postId
+**Description:** select tags by postId
 
 **Path-parameters:**
 
@@ -4135,7 +3833,7 @@ curl -X GET -i http://localhost:8088/tag
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/tag/post/752
+curl -X GET -i http://localhost:8088/tag/post/69
 ```
 **Response-fields:**
 
@@ -4149,14 +3847,14 @@ curl -X GET -i http://localhost:8088/tag/post/752
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 921,
+  "timestamp": 1677631931596,
+  "status": 41,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all tags by followerId
+### select tags by followerId
 **URL:** http://localhost:8088/tag/follower/{followerId}
 
 **Type:** GET
@@ -4165,7 +3863,7 @@ curl -X GET -i http://localhost:8088/tag/post/752
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all tags by followerId
+**Description:** select tags by followerId
 
 **Path-parameters:**
 
@@ -4175,7 +3873,7 @@ curl -X GET -i http://localhost:8088/tag/post/752
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/tag/follower/696
+curl -X GET -i http://localhost:8088/tag/follower/82
 ```
 **Response-fields:**
 
@@ -4189,8 +3887,8 @@ curl -X GET -i http://localhost:8088/tag/follower/696
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 338,
+  "timestamp": 1677631931596,
+  "status": 320,
   "message": "success",
   "data": {}
 }
@@ -4215,7 +3913,7 @@ curl -X GET -i http://localhost:8088/tag/follower/696
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/tag/14
+curl -X GET -i http://localhost:8088/tag/572
 ```
 **Response-fields:**
 
@@ -4229,8 +3927,8 @@ curl -X GET -i http://localhost:8088/tag/14
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 100,
+  "timestamp": 1677631931596,
+  "status": 633,
   "message": "success",
   "data": {}
 }
@@ -4259,10 +3957,10 @@ curl -X GET -i http://localhost:8088/tag/14
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/tag --data '{
-  "id": 688,
-  "name": "bernardine.schoen",
-  "cover": "ca3jub",
-  "description": "1ad3fb"
+  "id": 242,
+  "name": "marty.marquardt",
+  "cover": "3kwaar",
+  "description": "356zw9"
 }'
 ```
 **Response-fields:**
@@ -4277,8 +3975,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/tag --
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 190,
+  "timestamp": 1677631931596,
+  "status": 690,
   "message": "success",
   "data": {}
 }
@@ -4307,10 +4005,10 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/tag --
 **Request-example:**
 ```
 curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/tag --data '{
-  "id": 458,
-  "name": "bernardine.schoen",
-  "cover": "kvxwuk",
-  "description": "1w9609"
+  "id": 665,
+  "name": "marty.marquardt",
+  "cover": "nuppyg",
+  "description": "se5pzf"
 }'
 ```
 **Response-fields:**
@@ -4325,8 +4023,8 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/tag --d
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 794,
+  "timestamp": 1677631931596,
+  "status": 601,
   "message": "success",
   "data": {}
 }
@@ -4351,7 +4049,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/tag --d
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/tag/380
+curl -X DELETE -i http://localhost:8088/tag/21
 ```
 **Response-fields:**
 
@@ -4365,14 +4063,14 @@ curl -X DELETE -i http://localhost:8088/tag/380
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 467,
+  "timestamp": 1677631931596,
+  "status": 795,
   "message": "success",
   "data": {}
 }
 ```
 
-## 
+## tag follow controller
 ### select tagFollow by id
 **URL:** http://localhost:8088/tag/follow/single
 
@@ -4393,7 +4091,7 @@ curl -X DELETE -i http://localhost:8088/tag/380
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/tag/follow/single?userId=6&tagId=223 --data '&6&223'
+curl -X GET -i http://localhost:8088/tag/follow/single?userId=211&tagId=469 --data '&211&469'
 ```
 **Response-fields:**
 
@@ -4407,8 +4105,8 @@ curl -X GET -i http://localhost:8088/tag/follow/single?userId=6&tagId=223 --data
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 982,
+  "timestamp": 1677631931596,
+  "status": 241,
   "message": "success",
   "data": {}
 }
@@ -4436,8 +4134,8 @@ curl -X GET -i http://localhost:8088/tag/follow/single?userId=6&tagId=223 --data
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/tag/follow --data '{
-  "userId": 277,
-  "tagId": 635,
+  "userId": 900,
+  "tagId": 610,
   "follow": true
 }'
 ```
@@ -4453,8 +4151,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/tag/fo
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 696,
+  "timestamp": 1677631931596,
+  "status": 543,
   "message": "success",
   "data": {}
 }
@@ -4482,8 +4180,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/tag/fo
 **Request-example:**
 ```
 curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/tag/follow --data '{
-  "userId": 941,
-  "tagId": 777,
+  "userId": 954,
+  "tagId": 518,
   "follow": true
 }'
 ```
@@ -4499,8 +4197,8 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/tag/fol
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 761,
+  "timestamp": 1677631931596,
+  "status": 659,
   "message": "success",
   "data": {}
 }
@@ -4534,14 +4232,14 @@ curl -X GET -i http://localhost:8088/activity
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 623,
+  "timestamp": 1677631931596,
+  "status": 770,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all activities by user id
+### select activities by user id
 **URL:** http://localhost:8088/activity/user/{userId}
 
 **Type:** GET
@@ -4550,7 +4248,7 @@ curl -X GET -i http://localhost:8088/activity
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all activities by user id
+**Description:** select activities by user id
 
 **Path-parameters:**
 
@@ -4560,7 +4258,7 @@ curl -X GET -i http://localhost:8088/activity
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/activity/user/654
+curl -X GET -i http://localhost:8088/activity/user/60
 ```
 **Response-fields:**
 
@@ -4574,42 +4272,8 @@ curl -X GET -i http://localhost:8088/activity/user/654
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 785,
-  "message": "success",
-  "data": {}
-}
-```
-
-### select all activities by page
-**URL:** http://localhost:8088/activity/page
-
-**Type:** GET
-
-**Author:** <a href="mailto:wlonestar@163.com">wjl</a>
-
-**Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
-
-**Description:** select all activities by page
-
-**Request-example:**
-```
-curl -X GET -i http://localhost:8088/activity/page
-```
-**Response-fields:**
-
-| Field | Type | Description | Since |
-|-------|------|-------------|-------|
-|timestamp|int64|No comments found.|-|
-|status|int32|No comments found.|-|
-|message|string|No comments found.|-|
-|data|object|No comments found.|-|
-
-**Response-example:**
-```
-{
-  "timestamp": 1677487143366,
-  "status": 858,
+  "timestamp": 1677631931596,
+  "status": 928,
   "message": "success",
   "data": {}
 }
@@ -4640,12 +4304,12 @@ curl -X GET -i http://localhost:8088/activity/page
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/activity --data '{
-  "id": 512,
-  "userId": 363,
-  "actionType": 29834,
-  "actionSubType": 6426,
-  "targetId": 906,
-  "execTime": "2023-02-27 16:39:40"
+  "id": 672,
+  "userId": 133,
+  "actionType": 9644,
+  "actionSubType": 22147,
+  "targetId": 540,
+  "execTime": "2023-03-01 08:52:11"
 }'
 ```
 **Response-fields:**
@@ -4660,8 +4324,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/activi
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 597,
+  "timestamp": 1677631931596,
+  "status": 238,
   "message": "success",
   "data": {}
 }
@@ -4690,9 +4354,9 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/activi
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/auth/login --data '{
-  "email": "ngan.stehr@hotmail.com",
-  "password": "m5d1g2",
-  "device": "bnh01q"
+  "email": "oma.willms@gmail.com",
+  "password": "wir8j9",
+  "device": "5emhqa"
 }'
 ```
 **Response-fields:**
@@ -4707,8 +4371,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/auth/l
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 61,
+  "timestamp": 1677631931596,
+  "status": 306,
   "message": "success",
   "data": {}
 }
@@ -4736,9 +4400,9 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/auth/l
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/auth/register --data '{
-  "username": "bernardine.schoen",
-  "password": "cxpr51",
-  "email": "ngan.stehr@hotmail.com"
+  "username": "marty.marquardt",
+  "password": "bu1e4q",
+  "email": "oma.willms@gmail.com"
 }'
 ```
 **Response-fields:**
@@ -4753,8 +4417,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/auth/r
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 282,
+  "timestamp": 1677631931596,
+  "status": 24,
   "message": "success",
   "data": {}
 }
@@ -4779,7 +4443,7 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/auth/r
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/auth/check?tokenValue=iyvsdg --data '&iyvsdg'
+curl -X GET -i http://localhost:8088/auth/check?tokenValue=qn90xx --data '&qn90xx'
 ```
 **Response-fields:**
 
@@ -4793,8 +4457,8 @@ curl -X GET -i http://localhost:8088/auth/check?tokenValue=iyvsdg --data '&iyvsd
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 266,
+  "timestamp": 1677631931596,
+  "status": 472,
   "message": "success",
   "data": {}
 }
@@ -4819,7 +4483,7 @@ curl -X GET -i http://localhost:8088/auth/check?tokenValue=iyvsdg --data '&iyvsd
 
 **Request-example:**
 ```
-curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/auth/logout --data 'm7b6se'
+curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/auth/logout --data '06byvi'
 ```
 **Response-fields:**
 
@@ -4833,8 +4497,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/auth/l
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 506,
+  "timestamp": 1677631931596,
+  "status": 467,
   "message": "success",
   "data": {}
 }
@@ -4868,8 +4532,8 @@ curl -X GET -i http://localhost:8088/role
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 435,
+  "timestamp": 1677631931596,
+  "status": 784,
   "message": "success",
   "data": {}
 }
@@ -4894,7 +4558,7 @@ curl -X GET -i http://localhost:8088/role
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/role/715
+curl -X GET -i http://localhost:8088/role/835
 ```
 **Response-fields:**
 
@@ -4908,8 +4572,8 @@ curl -X GET -i http://localhost:8088/role/715
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 742,
+  "timestamp": 1677631931596,
+  "status": 791,
   "message": "success",
   "data": {}
 }
@@ -4936,8 +4600,8 @@ curl -X GET -i http://localhost:8088/role/715
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/role --data '{
-  "id": 295,
-  "name": "bernardine.schoen"
+  "id": 577,
+  "name": "marty.marquardt"
 }'
 ```
 **Response-fields:**
@@ -4952,8 +4616,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/role -
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 143,
+  "timestamp": 1677631931596,
+  "status": 571,
   "message": "success",
   "data": {}
 }
@@ -4980,8 +4644,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/role -
 **Request-example:**
 ```
 curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/role --data '{
-  "id": 591,
-  "name": "bernardine.schoen"
+  "id": 337,
+  "name": "marty.marquardt"
 }'
 ```
 **Response-fields:**
@@ -4996,8 +4660,8 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/role --
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 880,
+  "timestamp": 1677631931596,
+  "status": 921,
   "message": "success",
   "data": {}
 }
@@ -5022,7 +4686,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/role --
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/role/790
+curl -X DELETE -i http://localhost:8088/role/378
 ```
 **Response-fields:**
 
@@ -5036,8 +4700,8 @@ curl -X DELETE -i http://localhost:8088/role/790
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 714,
+  "timestamp": 1677631931596,
+  "status": 498,
   "message": "success",
   "data": {}
 }
@@ -5071,8 +4735,8 @@ curl -X GET -i http://localhost:8088/user/collection
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 66,
+  "timestamp": 1677631931596,
+  "status": 792,
   "message": "success",
   "data": {}
 }
@@ -5098,7 +4762,7 @@ curl -X GET -i http://localhost:8088/user/collection
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/user/collection/single?userId=950&collectionId=390 --data '&950&390'
+curl -X GET -i http://localhost:8088/user/collection/single?userId=123&collectionId=583 --data '&123&583'
 ```
 **Response-fields:**
 
@@ -5112,8 +4776,8 @@ curl -X GET -i http://localhost:8088/user/collection/single?userId=950&collectio
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 520,
+  "timestamp": 1677631931596,
+  "status": 491,
   "message": "success",
   "data": {}
 }
@@ -5141,8 +4805,8 @@ curl -X GET -i http://localhost:8088/user/collection/single?userId=950&collectio
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/user/collection --data '{
-  "userId": 623,
-  "collectionId": 850,
+  "userId": 771,
+  "collectionId": 900,
   "follow": true
 }'
 ```
@@ -5158,8 +4822,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/user/c
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 784,
+  "timestamp": 1677631931596,
+  "status": 152,
   "message": "success",
   "data": {}
 }
@@ -5187,8 +4851,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/user/c
 **Request-example:**
 ```
 curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/user/collection --data '{
-  "userId": 252,
-  "collectionId": 441,
+  "userId": 128,
+  "collectionId": 350,
   "follow": true
 }'
 ```
@@ -5204,8 +4868,8 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/user/co
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 632,
+  "timestamp": 1677631931596,
+  "status": 965,
   "message": "success",
   "data": {}
 }
@@ -5231,7 +4895,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/user/co
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/user/collection?userId=974&collectionId=216 --data '&974&216'
+curl -X DELETE -i http://localhost:8088/user/collection?userId=779&collectionId=645 --data '&779&645'
 ```
 **Response-fields:**
 
@@ -5245,8 +4909,8 @@ curl -X DELETE -i http://localhost:8088/user/collection?userId=974&collectionId=
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 321,
+  "timestamp": 1677631931596,
+  "status": 284,
   "message": "success",
   "data": {}
 }
@@ -5280,8 +4944,8 @@ curl -X GET -i http://localhost:8088/user/column
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 62,
+  "timestamp": 1677631931596,
+  "status": 602,
   "message": "success",
   "data": {}
 }
@@ -5307,7 +4971,7 @@ curl -X GET -i http://localhost:8088/user/column
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/user/column/single?userId=871&columnId=455 --data '&871&455'
+curl -X GET -i http://localhost:8088/user/column/single?userId=674&columnId=609 --data '&674&609'
 ```
 **Response-fields:**
 
@@ -5321,8 +4985,8 @@ curl -X GET -i http://localhost:8088/user/column/single?userId=871&columnId=455 
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 293,
+  "timestamp": 1677631931596,
+  "status": 45,
   "message": "success",
   "data": {}
 }
@@ -5350,8 +5014,8 @@ curl -X GET -i http://localhost:8088/user/column/single?userId=871&columnId=455 
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/user/column --data '{
-  "userId": 722,
-  "columnId": 228,
+  "userId": 880,
+  "columnId": 698,
   "follow": true
 }'
 ```
@@ -5367,8 +5031,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/user/c
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 97,
+  "timestamp": 1677631931596,
+  "status": 518,
   "message": "success",
   "data": {}
 }
@@ -5396,8 +5060,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/user/c
 **Request-example:**
 ```
 curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/user/column --data '{
-  "userId": 596,
-  "columnId": 247,
+  "userId": 308,
+  "columnId": 484,
   "follow": true
 }'
 ```
@@ -5413,8 +5077,8 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/user/co
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 56,
+  "timestamp": 1677631931596,
+  "status": 446,
   "message": "success",
   "data": {}
 }
@@ -5440,7 +5104,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/user/co
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/user/column?userId=99&columnId=340 --data '&99&340'
+curl -X DELETE -i http://localhost:8088/user/column?userId=627&columnId=29 --data '&627&29'
 ```
 **Response-fields:**
 
@@ -5454,15 +5118,15 @@ curl -X DELETE -i http://localhost:8088/user/column?userId=99&columnId=340 --dat
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 131,
+  "timestamp": 1677631931596,
+  "status": 326,
   "message": "success",
   "data": {}
 }
 ```
 
-## 
-### select all following users by user id
+## user controller
+### select following users by user id
 **URL:** http://localhost:8088/user/following/{userId}
 
 **Type:** GET
@@ -5471,7 +5135,7 @@ curl -X DELETE -i http://localhost:8088/user/column?userId=99&columnId=340 --dat
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all following users by user id
+**Description:** select following users by user id
 
 **Path-parameters:**
 
@@ -5481,7 +5145,7 @@ curl -X DELETE -i http://localhost:8088/user/column?userId=99&columnId=340 --dat
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/user/following/388
+curl -X GET -i http://localhost:8088/user/following/936
 ```
 **Response-fields:**
 
@@ -5495,14 +5159,14 @@ curl -X GET -i http://localhost:8088/user/following/388
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 689,
+  "timestamp": 1677631931596,
+  "status": 284,
   "message": "success",
   "data": {}
 }
 ```
 
-### select all followers by user id
+### select followers by user id
 **URL:** http://localhost:8088/user/follower/{userId}
 
 **Type:** GET
@@ -5511,7 +5175,7 @@ curl -X GET -i http://localhost:8088/user/following/388
 
 **Content-Type:** application/x-www-form-urlencoded;charset=UTF-8
 
-**Description:** select all followers by user id
+**Description:** select followers by user id
 
 **Path-parameters:**
 
@@ -5521,7 +5185,7 @@ curl -X GET -i http://localhost:8088/user/following/388
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/user/follower/285
+curl -X GET -i http://localhost:8088/user/follower/601
 ```
 **Response-fields:**
 
@@ -5535,8 +5199,8 @@ curl -X GET -i http://localhost:8088/user/follower/285
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 766,
+  "timestamp": 1677631931596,
+  "status": 951,
   "message": "success",
   "data": {}
 }
@@ -5561,7 +5225,7 @@ curl -X GET -i http://localhost:8088/user/follower/285
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/user/727
+curl -X GET -i http://localhost:8088/user/189
 ```
 **Response-fields:**
 
@@ -5575,8 +5239,8 @@ curl -X GET -i http://localhost:8088/user/727
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 408,
+  "timestamp": 1677631931596,
+  "status": 585,
   "message": "success",
   "data": {}
 }
@@ -5601,7 +5265,7 @@ curl -X GET -i http://localhost:8088/user/727
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/user/count/tag/422
+curl -X GET -i http://localhost:8088/user/count/tag/447
 ```
 **Response-fields:**
 
@@ -5615,8 +5279,8 @@ curl -X GET -i http://localhost:8088/user/count/tag/422
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 832,
+  "timestamp": 1677631931596,
+  "status": 81,
   "message": "success",
   "data": {}
 }
@@ -5641,7 +5305,7 @@ curl -X GET -i http://localhost:8088/user/count/tag/422
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/user/check/email?email=ngan.stehr@hotmail.com --data '&ngan.stehr@hotmail.com'
+curl -X GET -i http://localhost:8088/user/check/email?email=oma.willms@gmail.com --data '&oma.willms@gmail.com'
 ```
 **Response-fields:**
 
@@ -5655,8 +5319,8 @@ curl -X GET -i http://localhost:8088/user/check/email?email=ngan.stehr@hotmail.c
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 911,
+  "timestamp": 1677631931596,
+  "status": 979,
   "message": "success",
   "data": {}
 }
@@ -5681,7 +5345,7 @@ curl -X GET -i http://localhost:8088/user/check/email?email=ngan.stehr@hotmail.c
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/user/check/username?username=bernardine.schoen --data '&bernardine.schoen'
+curl -X GET -i http://localhost:8088/user/check/username?username=marty.marquardt --data '&marty.marquardt'
 ```
 **Response-fields:**
 
@@ -5695,8 +5359,8 @@ curl -X GET -i http://localhost:8088/user/check/username?username=bernardine.sch
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 760,
+  "timestamp": 1677631931596,
+  "status": 629,
   "message": "success",
   "data": {}
 }
@@ -5730,8 +5394,8 @@ curl -X GET -i http://localhost:8088/user/follow
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 417,
+  "timestamp": 1677631931596,
+  "status": 664,
   "message": "success",
   "data": {}
 }
@@ -5756,7 +5420,7 @@ curl -X GET -i http://localhost:8088/user/follow
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/user/follow/follower/878
+curl -X GET -i http://localhost:8088/user/follow/follower/250
 ```
 **Response-fields:**
 
@@ -5770,8 +5434,8 @@ curl -X GET -i http://localhost:8088/user/follow/follower/878
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 799,
+  "timestamp": 1677631931596,
+  "status": 177,
   "message": "success",
   "data": {}
 }
@@ -5796,7 +5460,7 @@ curl -X GET -i http://localhost:8088/user/follow/follower/878
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/user/follow/followed/89
+curl -X GET -i http://localhost:8088/user/follow/followed/190
 ```
 **Response-fields:**
 
@@ -5810,8 +5474,8 @@ curl -X GET -i http://localhost:8088/user/follow/followed/89
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 802,
+  "timestamp": 1677631931596,
+  "status": 826,
   "message": "success",
   "data": {}
 }
@@ -5837,7 +5501,7 @@ curl -X GET -i http://localhost:8088/user/follow/followed/89
 
 **Request-example:**
 ```
-curl -X GET -i http://localhost:8088/user/follow/single?followerId=789&followedId=576 --data '&789&576'
+curl -X GET -i http://localhost:8088/user/follow/single?followerId=135&followedId=550 --data '&135&550'
 ```
 **Response-fields:**
 
@@ -5851,8 +5515,8 @@ curl -X GET -i http://localhost:8088/user/follow/single?followerId=789&followedI
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 241,
+  "timestamp": 1677631931596,
+  "status": 364,
   "message": "success",
   "data": {}
 }
@@ -5880,8 +5544,8 @@ curl -X GET -i http://localhost:8088/user/follow/single?followerId=789&followedI
 **Request-example:**
 ```
 curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/user/follow --data '{
-  "followerId": 365,
-  "followedId": 290,
+  "followerId": 363,
+  "followedId": 370,
   "follow": true
 }'
 ```
@@ -5897,8 +5561,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/user/f
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 24,
+  "timestamp": 1677631931596,
+  "status": 704,
   "message": "success",
   "data": {}
 }
@@ -5926,8 +5590,8 @@ curl -X POST -H 'Content-Type: application/json' -i http://localhost:8088/user/f
 **Request-example:**
 ```
 curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/user/follow --data '{
-  "followerId": 74,
-  "followedId": 671,
+  "followerId": 471,
+  "followedId": 29,
   "follow": true
 }'
 ```
@@ -5943,8 +5607,8 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/user/fo
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 211,
+  "timestamp": 1677631931596,
+  "status": 678,
   "message": "success",
   "data": {}
 }
@@ -5970,7 +5634,7 @@ curl -X PUT -H 'Content-Type: application/json' -i http://localhost:8088/user/fo
 
 **Request-example:**
 ```
-curl -X DELETE -i http://localhost:8088/user/follow?followerId=40&followedId=288 --data '&40&288'
+curl -X DELETE -i http://localhost:8088/user/follow?followerId=182&followedId=231 --data '&182&231'
 ```
 **Response-fields:**
 
@@ -5984,8 +5648,8 @@ curl -X DELETE -i http://localhost:8088/user/follow?followerId=40&followedId=288
 **Response-example:**
 ```
 {
-  "timestamp": 1677487143366,
-  "status": 390,
+  "timestamp": 1677631931596,
+  "status": 307,
   "message": "success",
   "data": {}
 }

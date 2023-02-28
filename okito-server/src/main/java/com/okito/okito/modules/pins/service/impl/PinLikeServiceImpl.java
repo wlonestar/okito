@@ -9,8 +9,6 @@ import com.okito.okito.modules.pins.service.PinLikeService;
 import com.okito.okito.modules.users.model.entity.User;
 import com.okito.okito.modules.users.repository.UserRepository;
 import jakarta.annotation.Resource;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,16 +39,6 @@ public class PinLikeServiceImpl implements PinLikeService {
   @Override
   public List<PinLike> selectAllByUserId(Long userId) {
     return pinLikeRepository.findAllByUserId(userId);
-  }
-
-  @Override
-  public Page<PinLike> selectAll(Pageable pageable) {
-    return pinLikeRepository.findAll(pageable);
-  }
-
-  @Override
-  public Page<PinLike> selectAllByUserId(Long userId, Pageable pageable) {
-    return pinLikeRepository.findAllByUserIdAndPage(userId, pageable);
   }
 
   @Override

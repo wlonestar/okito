@@ -39,7 +39,7 @@ public class CollectionController {
   }
 
   /**
-   * select all collections by author id
+   * select collections by author id
    *
    * @param authorId author id
    * @return RespResult<?>
@@ -50,7 +50,7 @@ public class CollectionController {
   }
 
   /**
-   * select all collections by follower id
+   * select collections by follower id
    *
    * @param followerId follower id
    * @return RespResult<?>
