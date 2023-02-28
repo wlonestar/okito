@@ -2,8 +2,6 @@ package com.okito.okito.modules.comments.repository;
 
 import com.okito.okito.common.repository.ReadOnlyRepository;
 import com.okito.okito.modules.comments.model.view.PinCommentView;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -21,11 +19,5 @@ public interface PinCommentViewRepository extends ReadOnlyRepository<PinCommentV
   List<PinCommentView> findAllByAuthorId(Long authorId);
 
   List<PinCommentView> findAllByParentId(Long id);
-
-  Page<PinCommentView> findAllByPinId(Long pinId, Pageable pageable);
-
-  Page<PinCommentView> findAllByAuthorId(Long authorId, Pageable pageable);
-
-  Page<PinCommentView> findAllByParentId(Long id, Pageable pageable);
 
 }

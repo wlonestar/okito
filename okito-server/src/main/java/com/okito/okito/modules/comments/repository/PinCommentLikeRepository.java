@@ -2,8 +2,6 @@ package com.okito.okito.modules.comments.repository;
 
 import com.okito.okito.modules.comments.model.entity.PinCommentLike;
 import com.okito.okito.modules.comments.model.entity.PinCommentLikeId;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -18,13 +16,10 @@ import java.util.List;
 @Repository
 public interface PinCommentLikeRepository extends JpaRepository<PinCommentLike, PinCommentLikeId> {
 
-  @Query(value = "select p from PinCommentLike p where p.id.userId = ?1")
+  @Query(value = "select * from pin_comment_like where user_id = ?1", nativeQuery = true)
   List<PinCommentLike> findAllByUserId(Long userId);
 
-  @Query(value = "select p from PinCommentLike p where p.id.commentId = ?1")
+  @Query(value = "select * from pin_comment_like where comment_id = ?1", nativeQuery = true)
   List<PinCommentLike> findAllByCommentId(Long commentId);
-
-  @Query(value = "select p from PinCommentLike p where p.id.userId = ?1")
-  Page<PinCommentLike> findAllByUserIdAndPage(Long userId, Pageable pageable);
 
 }

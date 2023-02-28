@@ -7,8 +7,6 @@ import com.okito.okito.modules.comments.repository.PostCommentViewRepository;
 import com.okito.okito.modules.comments.service.PostCommentService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -76,26 +74,6 @@ public class PostCommentServiceImpl implements PostCommentService {
       }
     }
     return res;
-  }
-
-  @Override
-  public Page<PostCommentView> selectAll(Pageable pageable) {
-    return postCommentViewRepository.findAll(pageable);
-  }
-
-  @Override
-  public Page<PostCommentView> selectAllByPostId(Long postId, Pageable pageable) {
-    return postCommentViewRepository.findAllByPostId(postId, pageable);
-  }
-
-  @Override
-  public Page<PostCommentView> selectAllByAuthorId(Long authorId, Pageable pageable) {
-    return postCommentViewRepository.findAllByAuthorId(authorId, pageable);
-  }
-
-  @Override
-  public Page<PostCommentView> selectSecondaryComments(Long id, Pageable pageable) {
-    return postCommentViewRepository.findAllByParentId(id, pageable);
   }
 
   @Override

@@ -10,9 +10,6 @@ import com.okito.okito.modules.pins.service.PinService;
 import com.okito.okito.modules.users.service.UserService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
@@ -51,7 +48,7 @@ public class PinCommentController {
   }
 
   /**
-   * select all pinComments by pinId
+   * select pinComments by pinId
    *
    * @param pinId pinId
    * @return RespResult<?>
@@ -62,7 +59,7 @@ public class PinCommentController {
   }
 
   /**
-   * select all pinComments by authorId
+   * select pinComments by authorId
    *
    * @param authorId authorId
    * @return RespResult<?>
@@ -81,60 +78,6 @@ public class PinCommentController {
   @RequestMapping(method = RequestMethod.GET, path = "/secondary/{id}")
   public RespResult<?> selectSecondaryComments(@NonNull @PathVariable(name = "id") Long id) {
     return RespResult.success(pinCommentService.selectSecondaryComments(id));
-  }
-
-  /**
-   * select all pinComments by page
-   *
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page")
-  public RespResult<?> selectAll(
-      @NonNull @PageableDefault(sort = "uploadTime", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(pinCommentService.selectAll(pageable));
-  }
-
-  /**
-   * select all pinComments by pinId and page
-   *
-   * @param pinId    pinId
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/pin/{pinId}")
-  public RespResult<?> selectAllByPinId(
-      @NonNull @PathVariable(name = "pinId") Long pinId,
-      @NonNull @PageableDefault(sort = "uploadTime", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(pinCommentService.selectAllByPinId(pinId, pageable));
-  }
-
-  /**
-   * select all pinComments by authorId and page
-   *
-   * @param authorId authorId
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/author/{authorId}")
-  public RespResult<?> selectAllByAuthorId(
-      @NonNull @PathVariable(name = "authorId") Long authorId,
-      @NonNull @PageableDefault(sort = "uploadTime", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(pinCommentService.selectAllByAuthorId(authorId, pageable));
-  }
-
-  /**
-   * select secondary comments by id and page
-   *
-   * @param id       id
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/secondary/{id}")
-  public RespResult<?> selectSecondaryComments(
-      @NonNull @PathVariable(name = "id") Long id,
-      @NonNull @PageableDefault(sort = "uploadTime", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(pinCommentService.selectSecondaryComments(id, pageable));
   }
 
   /**

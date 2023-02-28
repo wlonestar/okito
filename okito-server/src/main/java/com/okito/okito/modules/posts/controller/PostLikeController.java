@@ -41,7 +41,7 @@ public class PostLikeController {
   }
 
   /**
-   * select all postLikes by userId
+   * select postLikes by userId
    *
    * @param userId userId
    * @return RespResult<?>

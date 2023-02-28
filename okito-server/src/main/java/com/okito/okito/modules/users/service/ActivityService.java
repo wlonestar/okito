@@ -1,8 +1,6 @@
 package com.okito.okito.modules.users.service;
 
 import com.okito.okito.modules.users.model.entity.Activity;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -16,8 +14,6 @@ public interface ActivityService {
   List<Activity> selectAll();
 
   List<Activity> selectAllByUserId(Long userId);
-
-  Page<Activity> selectAll(Pageable pageable);
 
   void add(Activity activity);
 

@@ -1,7 +1,6 @@
 package com.okito.okito.modules.users.repository;
 
 import com.okito.okito.modules.users.model.entity.Activity;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

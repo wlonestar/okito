@@ -39,7 +39,7 @@ public class TagController {
   }
 
   /**
-   * select all tags by postId
+   * select tags by postId
    *
    * @param postId postId
    * @return RespResult<?>
@@ -50,7 +50,7 @@ public class TagController {
   }
 
   /**
-   * select all tags by followerId
+   * select tags by followerId
    *
    * @param followerId followerId
    * @return RespResult<?>

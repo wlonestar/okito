@@ -1,7 +1,7 @@
 {
   "info": {
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_postman_id": "3ac2ee66-5105-40c1-860f-74ba259bf604",
+    "_postman_id": "ff5e29d9-5025-47fb-92d7-1359ac6d1217",
     "name": "okito"
   },
   "item": [
@@ -39,7 +39,7 @@
           "description": "select all pinComments"
         },
         {
-          "name": "select all pinComments by pinId",
+          "name": "select pinComments by pinId",
           "request": {
             "method": "GET",
             "body": {
@@ -50,7 +50,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/comment/pin/481",
+              "raw": "http://localhost:8088/pin/comment/pin/550",
               "protocol": "http",
               "path": [
                 "pin",
@@ -66,18 +66,18 @@
               "variable": [
                 {
                   "key": "pinId",
-                  "value": "481",
+                  "value": "550",
                   "description": "pinId"
                 }
               ]
             },
-            "description": "select all pinComments by pinId",
+            "description": "select pinComments by pinId",
             "header": []
           },
-          "description": "select all pinComments by pinId"
+          "description": "select pinComments by pinId"
         },
         {
-          "name": "select all pinComments by authorId",
+          "name": "select pinComments by authorId",
           "request": {
             "method": "GET",
             "body": {
@@ -88,7 +88,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/comment/author/347",
+              "raw": "http://localhost:8088/pin/comment/author/267",
               "protocol": "http",
               "path": [
                 "pin",
@@ -104,15 +104,15 @@
               "variable": [
                 {
                   "key": "authorId",
-                  "value": "347",
+                  "value": "267",
                   "description": "authorId"
                 }
               ]
             },
-            "description": "select all pinComments by authorId",
+            "description": "select pinComments by authorId",
             "header": []
           },
-          "description": "select all pinComments by authorId"
+          "description": "select pinComments by authorId"
         },
         {
           "name": "select secondary PinComments by id",
@@ -126,7 +126,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/comment/secondary/778",
+              "raw": "http://localhost:8088/pin/comment/secondary/704",
               "protocol": "http",
               "path": [
                 "pin",
@@ -142,7 +142,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "778",
+                  "value": "704",
                   "description": "id"
                 }
               ]
@@ -151,154 +151,6 @@
             "header": []
           },
           "description": "select secondary PinComments by id"
-        },
-        {
-          "name": "select all pinComments by page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/pin/comment/page",
-              "protocol": "http",
-              "path": [
-                "pin",
-                "comment",
-                "page"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": []
-            },
-            "description": "select all pinComments by page",
-            "header": []
-          },
-          "description": "select all pinComments by page"
-        },
-        {
-          "name": "select all pinComments by pinId and page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/pin/comment/page/pin/293",
-              "protocol": "http",
-              "path": [
-                "pin",
-                "comment",
-                "page",
-                "pin",
-                ":pinId"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": [
-                {
-                  "key": "pinId",
-                  "value": "293",
-                  "description": "   pinId"
-                }
-              ]
-            },
-            "description": "select all pinComments by pinId and page",
-            "header": []
-          },
-          "description": "select all pinComments by pinId and page"
-        },
-        {
-          "name": "select all pinComments by authorId and page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/pin/comment/page/author/562",
-              "protocol": "http",
-              "path": [
-                "pin",
-                "comment",
-                "page",
-                "author",
-                ":authorId"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": [
-                {
-                  "key": "authorId",
-                  "value": "562",
-                  "description": "authorId"
-                }
-              ]
-            },
-            "description": "select all pinComments by authorId and page",
-            "header": []
-          },
-          "description": "select all pinComments by authorId and page"
-        },
-        {
-          "name": "select secondary comments by id and page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/pin/comment/page/secondary/212",
-              "protocol": "http",
-              "path": [
-                "pin",
-                "comment",
-                "page",
-                "secondary",
-                ":id"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": [
-                {
-                  "key": "id",
-                  "value": "212",
-                  "description": "      id"
-                }
-              ]
-            },
-            "description": "select secondary comments by id and page",
-            "header": []
-          },
-          "description": "select secondary comments by id and page"
         },
         {
           "name": "count pinComments by pin id",
@@ -312,7 +164,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/comment/count/pin/729",
+              "raw": "http://localhost:8088/pin/comment/count/pin/667",
               "protocol": "http",
               "path": [
                 "pin",
@@ -329,7 +181,7 @@
               "variable": [
                 {
                   "key": "pinId",
-                  "value": "729",
+                  "value": "667",
                   "description": "pin id"
                 }
               ]
@@ -351,7 +203,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/comment/540",
+              "raw": "http://localhost:8088/pin/comment/103",
               "protocol": "http",
               "path": [
                 "pin",
@@ -366,7 +218,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "540",
+                  "value": "103",
                   "description": "id"
                 }
               ]
@@ -382,7 +234,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 550,\n  \"content\": \"4min3f\",\n  \"uploadTime\": \"2023-02-28 13:58:07\",\n  \"authorId\": 452,\n  \"pinId\": 905,\n  \"parentId\": 482\n}",
+              "raw": "{\n  \"id\": 708,\n  \"content\": \"r8yi12\",\n  \"uploadTime\": \"2023-02-28 22:19:16\",\n  \"authorId\": 505,\n  \"pinId\": 410,\n  \"parentId\": 59\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -420,7 +272,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/comment/869",
+              "raw": "http://localhost:8088/pin/comment/451",
               "protocol": "http",
               "path": [
                 "pin",
@@ -435,7 +287,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "869",
+                  "value": "451",
                   "description": "id"
                 }
               ]
@@ -482,7 +334,7 @@
           "description": "select all pinCommentLikes"
         },
         {
-          "name": "select all pinCommentLikes by userId",
+          "name": "select pinCommentLikes by userId",
           "request": {
             "method": "GET",
             "body": {
@@ -493,7 +345,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/comment/like/86",
+              "raw": "http://localhost:8088/pin/comment/like/501",
               "protocol": "http",
               "path": [
                 "pin",
@@ -509,86 +361,15 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "86",
+                  "value": "501",
                   "description": "userId"
                 }
               ]
             },
-            "description": "select all pinCommentLikes by userId",
+            "description": "select pinCommentLikes by userId",
             "header": []
           },
-          "description": "select all pinCommentLikes by userId"
-        },
-        {
-          "name": "select all pinCommentLikes by page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/pin/comment/like/page",
-              "protocol": "http",
-              "path": [
-                "pin",
-                "comment",
-                "like",
-                "page"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": []
-            },
-            "description": "select all pinCommentLikes by page",
-            "header": []
-          },
-          "description": "select all pinCommentLikes by page"
-        },
-        {
-          "name": "select all pinCommentLikes by userId and page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/pin/comment/like/page/375",
-              "protocol": "http",
-              "path": [
-                "pin",
-                "comment",
-                "like",
-                "page",
-                ":userId"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": [
-                {
-                  "key": "userId",
-                  "value": "375",
-                  "description": "  userId"
-                }
-              ]
-            },
-            "description": "select all pinCommentLikes by userId and page",
-            "header": []
-          },
-          "description": "select all pinCommentLikes by userId and page"
+          "description": "select pinCommentLikes by userId"
         },
         {
           "name": "select pinCommentLike by id",
@@ -602,7 +383,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/comment/like/single?commentId=195&userId=880",
+              "raw": "http://localhost:8088/pin/comment/like/single?commentId=444&userId=921",
               "protocol": "http",
               "path": [
                 "pin",
@@ -617,12 +398,12 @@
               "query": [
                 {
                   "key": "commentId",
-                  "value": "195",
+                  "value": "444",
                   "description": "commentId"
                 },
                 {
                   "key": "userId",
-                  "value": "880",
+                  "value": "921",
                   "description": "   userId"
                 }
               ],
@@ -639,7 +420,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"commentId\": 379,\n  \"userId\": 97,\n  \"type\": 9245\n}",
+              "raw": "{\n  \"commentId\": 801,\n  \"userId\": 823,\n  \"type\": 14793\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -672,7 +453,7 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"commentId\": 931,\n  \"userId\": 673,\n  \"type\": 8531\n}",
+              "raw": "{\n  \"commentId\": 225,\n  \"userId\": 610,\n  \"type\": 18600\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -711,7 +492,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/comment/like?commentId=550&userId=414",
+              "raw": "http://localhost:8088/pin/comment/like?commentId=297&userId=65",
               "protocol": "http",
               "path": [
                 "pin",
@@ -725,12 +506,12 @@
               "query": [
                 {
                   "key": "commentId",
-                  "value": "550",
+                  "value": "297",
                   "description": "commentId"
                 },
                 {
                   "key": "userId",
-                  "value": "414",
+                  "value": "65",
                   "description": "   userId"
                 }
               ],
@@ -777,7 +558,7 @@
           "description": "select all postComments"
         },
         {
-          "name": "select all postComments by postId",
+          "name": "select postComments by postId",
           "request": {
             "method": "GET",
             "body": {
@@ -788,7 +569,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/comment/post/789",
+              "raw": "http://localhost:8088/post/comment/post/385",
               "protocol": "http",
               "path": [
                 "post",
@@ -804,18 +585,18 @@
               "variable": [
                 {
                   "key": "postId",
-                  "value": "789",
+                  "value": "385",
                   "description": "postId"
                 }
               ]
             },
-            "description": "select all postComments by postId",
+            "description": "select postComments by postId",
             "header": []
           },
-          "description": "select all postComments by postId"
+          "description": "select postComments by postId"
         },
         {
-          "name": "select all postComments by authorId",
+          "name": "select postComments by authorId",
           "request": {
             "method": "GET",
             "body": {
@@ -826,7 +607,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/comment/author/642",
+              "raw": "http://localhost:8088/post/comment/author/886",
               "protocol": "http",
               "path": [
                 "post",
@@ -842,15 +623,15 @@
               "variable": [
                 {
                   "key": "authorId",
-                  "value": "642",
+                  "value": "886",
                   "description": "authorId"
                 }
               ]
             },
-            "description": "select all postComments by authorId",
+            "description": "select postComments by authorId",
             "header": []
           },
-          "description": "select all postComments by authorId"
+          "description": "select postComments by authorId"
         },
         {
           "name": "select secondary postComments by id",
@@ -864,7 +645,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/comment/secondary/808",
+              "raw": "http://localhost:8088/post/comment/secondary/651",
               "protocol": "http",
               "path": [
                 "post",
@@ -880,7 +661,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "808",
+                  "value": "651",
                   "description": "id"
                 }
               ]
@@ -889,154 +670,6 @@
             "header": []
           },
           "description": "select secondary postComments by id"
-        },
-        {
-          "name": "select all postComments by page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/post/comment/page",
-              "protocol": "http",
-              "path": [
-                "post",
-                "comment",
-                "page"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": []
-            },
-            "description": "select all postComments by page",
-            "header": []
-          },
-          "description": "select all postComments by page"
-        },
-        {
-          "name": "select all postComments by postId and page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/post/comment/page/post/728",
-              "protocol": "http",
-              "path": [
-                "post",
-                "comment",
-                "page",
-                "post",
-                ":postId"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": [
-                {
-                  "key": "postId",
-                  "value": "728",
-                  "description": "  postId"
-                }
-              ]
-            },
-            "description": "select all postComments by postId and page",
-            "header": []
-          },
-          "description": "select all postComments by postId and page"
-        },
-        {
-          "name": "select all postComments by authorId and page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/post/comment/page/author/804",
-              "protocol": "http",
-              "path": [
-                "post",
-                "comment",
-                "page",
-                "author",
-                ":authorId"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": [
-                {
-                  "key": "authorId",
-                  "value": "804",
-                  "description": "authorId"
-                }
-              ]
-            },
-            "description": "select all postComments by authorId and page",
-            "header": []
-          },
-          "description": "select all postComments by authorId and page"
-        },
-        {
-          "name": "select secondary comments by id and page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/post/comment/page/secondary/403",
-              "protocol": "http",
-              "path": [
-                "post",
-                "comment",
-                "page",
-                "secondary",
-                ":id"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": [
-                {
-                  "key": "id",
-                  "value": "403",
-                  "description": "      id"
-                }
-              ]
-            },
-            "description": "select secondary comments by id and page",
-            "header": []
-          },
-          "description": "select secondary comments by id and page"
         },
         {
           "name": "select postComment By id",
@@ -1050,7 +683,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/comment/829",
+              "raw": "http://localhost:8088/post/comment/358",
               "protocol": "http",
               "path": [
                 "post",
@@ -1065,7 +698,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "829",
+                  "value": "358",
                   "description": "id"
                 }
               ]
@@ -1087,7 +720,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/comment/count/post/586",
+              "raw": "http://localhost:8088/post/comment/count/post/46",
               "protocol": "http",
               "path": [
                 "post",
@@ -1104,7 +737,7 @@
               "variable": [
                 {
                   "key": "postId",
-                  "value": "586",
+                  "value": "46",
                   "description": "post id"
                 }
               ]
@@ -1120,7 +753,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 287,\n  \"content\": \"kwd0y1\",\n  \"uploadTime\": \"2023-02-28 13:58:07\",\n  \"authorId\": 482,\n  \"postId\": 809,\n  \"parentId\": 654\n}",
+              "raw": "{\n  \"id\": 731,\n  \"content\": \"9c9zw9\",\n  \"uploadTime\": \"2023-02-28 22:19:16\",\n  \"authorId\": 261,\n  \"postId\": 540,\n  \"parentId\": 955\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1158,7 +791,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/comment/611",
+              "raw": "http://localhost:8088/post/comment/458",
               "protocol": "http",
               "path": [
                 "post",
@@ -1173,7 +806,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "611",
+                  "value": "458",
                   "description": "id"
                 }
               ]
@@ -1220,7 +853,7 @@
           "description": "select all postCommentLikes"
         },
         {
-          "name": "select all postCommentLikes by userId",
+          "name": "select postCommentLikes by userId",
           "request": {
             "method": "GET",
             "body": {
@@ -1231,7 +864,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/comment/like/249",
+              "raw": "http://localhost:8088/post/comment/like/469",
               "protocol": "http",
               "path": [
                 "post",
@@ -1247,86 +880,15 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "249",
+                  "value": "469",
                   "description": "userId"
                 }
               ]
             },
-            "description": "select all postCommentLikes by userId",
+            "description": "select postCommentLikes by userId",
             "header": []
           },
-          "description": "select all postCommentLikes by userId"
-        },
-        {
-          "name": "select all postCommentLikes by page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/post/comment/like/page",
-              "protocol": "http",
-              "path": [
-                "post",
-                "comment",
-                "like",
-                "page"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": []
-            },
-            "description": "select all postCommentLikes by page",
-            "header": []
-          },
-          "description": "select all postCommentLikes by page"
-        },
-        {
-          "name": "select all postCommentLikes by userId and page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/post/comment/like/page/454",
-              "protocol": "http",
-              "path": [
-                "post",
-                "comment",
-                "like",
-                "page",
-                ":userId"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": [
-                {
-                  "key": "userId",
-                  "value": "454",
-                  "description": "  userId"
-                }
-              ]
-            },
-            "description": "select all postCommentLikes by userId and page",
-            "header": []
-          },
-          "description": "select all postCommentLikes by userId and page"
+          "description": "select postCommentLikes by userId"
         },
         {
           "name": "select postCommentLike by id",
@@ -1340,7 +902,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/comment/like/single?commentId=484&userId=990",
+              "raw": "http://localhost:8088/post/comment/like/single?commentId=506&userId=612",
               "protocol": "http",
               "path": [
                 "post",
@@ -1355,12 +917,12 @@
               "query": [
                 {
                   "key": "commentId",
-                  "value": "484",
+                  "value": "506",
                   "description": "commentId"
                 },
                 {
                   "key": "userId",
-                  "value": "990",
+                  "value": "612",
                   "description": "   userId"
                 }
               ],
@@ -1377,7 +939,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"commentId\": 225,\n  \"userId\": 333,\n  \"type\": 27349\n}",
+              "raw": "{\n  \"commentId\": 880,\n  \"userId\": 799,\n  \"type\": 27025\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1410,7 +972,7 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"commentId\": 20,\n  \"userId\": 113,\n  \"type\": 11094\n}",
+              "raw": "{\n  \"commentId\": 660,\n  \"userId\": 993,\n  \"type\": 11108\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1449,7 +1011,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/comment/like?commentId=78&userId=8",
+              "raw": "http://localhost:8088/post/comment/like?commentId=633&userId=657",
               "protocol": "http",
               "path": [
                 "post",
@@ -1463,12 +1025,12 @@
               "query": [
                 {
                   "key": "commentId",
-                  "value": "78",
+                  "value": "633",
                   "description": "commentId"
                 },
                 {
                   "key": "userId",
-                  "value": "8",
+                  "value": "657",
                   "description": "   userId"
                 }
               ],
@@ -1515,6 +1077,36 @@
           "description": "select recommend 100 pins"
         },
         {
+          "name": "select hot 100 pins",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/pin/hot",
+              "protocol": "http",
+              "path": [
+                "pin",
+                "hot"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select hot 100 pins",
+            "header": []
+          },
+          "description": "select hot 100 pins"
+        },
+        {
           "name": "search by keywords",
           "request": {
             "method": "GET",
@@ -1526,7 +1118,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/search?q=cv5tma",
+              "raw": "http://localhost:8088/pin/search?q=txcj04",
               "protocol": "http",
               "path": [
                 "pin",
@@ -1539,7 +1131,7 @@
               "query": [
                 {
                   "key": "q",
-                  "value": "cv5tma",
+                  "value": "txcj04",
                   "description": "keywords"
                 }
               ],
@@ -1580,7 +1172,7 @@
           "description": "select all pins"
         },
         {
-          "name": "select all pins by authorId",
+          "name": "select pins by authorId",
           "request": {
             "method": "GET",
             "body": {
@@ -1591,7 +1183,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/author/31",
+              "raw": "http://localhost:8088/pin/author/978",
               "protocol": "http",
               "path": [
                 "pin",
@@ -1606,18 +1198,18 @@
               "variable": [
                 {
                   "key": "authorId",
-                  "value": "31",
+                  "value": "978",
                   "description": "authorId"
                 }
               ]
             },
-            "description": "select all pins by authorId",
+            "description": "select pins by authorId",
             "header": []
           },
-          "description": "select all pins by authorId"
+          "description": "select pins by authorId"
         },
         {
-          "name": "select all pins written by user followed by id",
+          "name": "select pins written by user followed by id",
           "request": {
             "method": "GET",
             "body": {
@@ -1628,11 +1220,11 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/followed/837",
+              "raw": "http://localhost:8088/pin/follow/748",
               "protocol": "http",
               "path": [
                 "pin",
-                "followed",
+                "follow",
                 ":userId"
               ],
               "host": [
@@ -1643,83 +1235,15 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "837",
+                  "value": "748",
                   "description": "user id"
                 }
               ]
             },
-            "description": "select all pins written by user followed by id",
+            "description": "select pins written by user followed by id",
             "header": []
           },
-          "description": "select all pins written by user followed by id"
-        },
-        {
-          "name": "select all pins by page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/pin/page",
-              "protocol": "http",
-              "path": [
-                "pin",
-                "page"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": []
-            },
-            "description": "select all pins by page",
-            "header": []
-          },
-          "description": "select all pins by page"
-        },
-        {
-          "name": "select all pins by page and by authorId",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/pin/page/author/89",
-              "protocol": "http",
-              "path": [
-                "pin",
-                "page",
-                "author",
-                ":authorId"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": [
-                {
-                  "key": "authorId",
-                  "value": "89",
-                  "description": "authorId"
-                }
-              ]
-            },
-            "description": "select all pins by page and by authorId",
-            "header": []
-          },
-          "description": "select all pins by page and by authorId"
+          "description": "select pins written by user followed by id"
         },
         {
           "name": "count pins by author id",
@@ -1733,7 +1257,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/count/author/371",
+              "raw": "http://localhost:8088/pin/count/author/818",
               "protocol": "http",
               "path": [
                 "pin",
@@ -1749,7 +1273,7 @@
               "variable": [
                 {
                   "key": "authorId",
-                  "value": "371",
+                  "value": "818",
                   "description": "author id"
                 }
               ]
@@ -1771,7 +1295,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/884",
+              "raw": "http://localhost:8088/pin/944",
               "protocol": "http",
               "path": [
                 "pin",
@@ -1785,7 +1309,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "884",
+                  "value": "944",
                   "description": "id"
                 }
               ]
@@ -1801,7 +1325,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 267,\n  \"content\": \"lnyuga\",\n  \"createTime\": \"2023-02-28 13:58:07\",\n  \"updateTime\": \"2023-02-28 13:58:07\",\n  \"authorId\": 744\n}",
+              "raw": "{\n  \"id\": 392,\n  \"content\": \"orrfob\",\n  \"createTime\": \"2023-02-28 22:19:16\",\n  \"updateTime\": \"2023-02-28 22:19:16\",\n  \"authorId\": 640\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1832,7 +1356,7 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 335,\n  \"content\": \"mdm7je\",\n  \"createTime\": \"2023-02-28 13:58:07\",\n  \"updateTime\": \"2023-02-28 13:58:07\",\n  \"authorId\": 92,\n  \"viewNum\": 682\n}",
+              "raw": "{\n  \"id\": 77,\n  \"content\": \"lj3gs7\",\n  \"createTime\": \"2023-02-28 22:19:16\",\n  \"updateTime\": \"2023-02-28 22:19:16\",\n  \"authorId\": 913,\n  \"viewNum\": 815\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1869,7 +1393,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/228",
+              "raw": "http://localhost:8088/pin/666",
               "protocol": "http",
               "path": [
                 "pin",
@@ -1883,7 +1407,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "228",
+                  "value": "666",
                   "description": "id"
                 }
               ]
@@ -1929,7 +1453,7 @@
           "description": "select all pinLikes"
         },
         {
-          "name": "select all pinLikes by userId",
+          "name": "select pinLikes by userId",
           "request": {
             "method": "GET",
             "body": {
@@ -1940,7 +1464,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/like/830",
+              "raw": "http://localhost:8088/pin/like/157",
               "protocol": "http",
               "path": [
                 "pin",
@@ -1955,84 +1479,15 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "830",
+                  "value": "157",
                   "description": "userId"
                 }
               ]
             },
-            "description": "select all pinLikes by userId",
+            "description": "select pinLikes by userId",
             "header": []
           },
-          "description": "select all pinLikes by userId"
-        },
-        {
-          "name": "select all pinLikes by page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/pin/like/page",
-              "protocol": "http",
-              "path": [
-                "pin",
-                "like",
-                "page"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": []
-            },
-            "description": "select all pinLikes by page",
-            "header": []
-          },
-          "description": "select all pinLikes by page"
-        },
-        {
-          "name": "select all pinLikes by userId and page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/pin/like/page/719",
-              "protocol": "http",
-              "path": [
-                "pin",
-                "like",
-                "page",
-                ":userId"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": [
-                {
-                  "key": "userId",
-                  "value": "719",
-                  "description": "  userId"
-                }
-              ]
-            },
-            "description": "select all pinLikes by userId and page",
-            "header": []
-          },
-          "description": "select all pinLikes by userId and page"
+          "description": "select pinLikes by userId"
         },
         {
           "name": "select pinLike by id",
@@ -2046,7 +1501,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/like/single?pinId=641&userId=177",
+              "raw": "http://localhost:8088/pin/like/single?pinId=315&userId=940",
               "protocol": "http",
               "path": [
                 "pin",
@@ -2060,12 +1515,12 @@
               "query": [
                 {
                   "key": "pinId",
-                  "value": "641",
+                  "value": "315",
                   "description": " pinId"
                 },
                 {
                   "key": "userId",
-                  "value": "177",
+                  "value": "940",
                   "description": "userId"
                 }
               ],
@@ -2082,7 +1537,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"pinId\": 566,\n  \"userId\": 727,\n  \"type\": 31817\n}",
+              "raw": "{\n  \"pinId\": 747,\n  \"userId\": 837,\n  \"type\": 31647\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2114,7 +1569,7 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"pinId\": 785,\n  \"userId\": 661,\n  \"type\": 30465\n}",
+              "raw": "{\n  \"pinId\": 813,\n  \"userId\": 557,\n  \"type\": 10746\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2152,7 +1607,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/pin/like?pinId=229&userId=428",
+              "raw": "http://localhost:8088/pin/like?pinId=99&userId=331",
               "protocol": "http",
               "path": [
                 "pin",
@@ -2165,12 +1620,12 @@
               "query": [
                 {
                   "key": "pinId",
-                  "value": "229",
+                  "value": "99",
                   "description": " pinId"
                 },
                 {
                   "key": "userId",
-                  "value": "428",
+                  "value": "331",
                   "description": "userId"
                 }
               ],
@@ -2227,7 +1682,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/category/590",
+              "raw": "http://localhost:8088/category/727",
               "protocol": "http",
               "path": [
                 "category",
@@ -2241,7 +1696,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "590",
+                  "value": "727",
                   "description": "id"
                 }
               ]
@@ -2257,7 +1712,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 635,\n  \"name\": \"katlyn.funk\",\n  \"cover\": \"8du5f9\",\n  \"description\": \"jhoc5d\"\n}",
+              "raw": "{\n  \"id\": 414,\n  \"name\": \"ranee.hoeger\",\n  \"cover\": \"86zb2h\",\n  \"description\": \"6w5m50\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2288,7 +1743,7 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 650,\n  \"name\": \"katlyn.funk\",\n  \"cover\": \"p80sxe\",\n  \"description\": \"gy78wm\"\n}",
+              "raw": "{\n  \"id\": 363,\n  \"name\": \"ranee.hoeger\",\n  \"cover\": \"bubr2w\",\n  \"description\": \"j2vzdt\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2325,7 +1780,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/category/484",
+              "raw": "http://localhost:8088/category/899",
               "protocol": "http",
               "path": [
                 "category",
@@ -2339,7 +1794,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "484",
+                  "value": "899",
                   "description": "id"
                 }
               ]
@@ -2384,7 +1839,7 @@
           "description": "select all collections"
         },
         {
-          "name": "select all collections by author id",
+          "name": "select collections by author id",
           "request": {
             "method": "GET",
             "body": {
@@ -2395,7 +1850,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/collection/author/242",
+              "raw": "http://localhost:8088/collection/author/724",
               "protocol": "http",
               "path": [
                 "collection",
@@ -2410,18 +1865,18 @@
               "variable": [
                 {
                   "key": "authorId",
-                  "value": "242",
+                  "value": "724",
                   "description": "author id"
                 }
               ]
             },
-            "description": "select all collections by author id",
+            "description": "select collections by author id",
             "header": []
           },
-          "description": "select all collections by author id"
+          "description": "select collections by author id"
         },
         {
-          "name": "select all collections by follower id",
+          "name": "select collections by follower id",
           "request": {
             "method": "GET",
             "body": {
@@ -2432,7 +1887,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/collection/follower/922",
+              "raw": "http://localhost:8088/collection/follower/561",
               "protocol": "http",
               "path": [
                 "collection",
@@ -2447,15 +1902,15 @@
               "variable": [
                 {
                   "key": "followerId",
-                  "value": "922",
+                  "value": "561",
                   "description": "follower id"
                 }
               ]
             },
-            "description": "select all collections by follower id",
+            "description": "select collections by follower id",
             "header": []
           },
-          "description": "select all collections by follower id"
+          "description": "select collections by follower id"
         },
         {
           "name": "select collection by id",
@@ -2469,7 +1924,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/collection/687",
+              "raw": "http://localhost:8088/collection/430",
               "protocol": "http",
               "path": [
                 "collection",
@@ -2483,7 +1938,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "687",
+                  "value": "430",
                   "description": "id"
                 }
               ]
@@ -2505,7 +1960,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/collection/count/posts/107",
+              "raw": "http://localhost:8088/collection/count/posts/563",
               "protocol": "http",
               "path": [
                 "collection",
@@ -2521,7 +1976,7 @@
               "variable": [
                 {
                   "key": "authorId",
-                  "value": "107",
+                  "value": "563",
                   "description": "author id"
                 }
               ]
@@ -2543,7 +1998,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/collection/count/collection/25",
+              "raw": "http://localhost:8088/collection/count/collection/344",
               "protocol": "http",
               "path": [
                 "collection",
@@ -2559,7 +2014,7 @@
               "variable": [
                 {
                   "key": "collectionId",
-                  "value": "25",
+                  "value": "344",
                   "description": "collection id"
                 }
               ]
@@ -2581,7 +2036,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/collection/count/follow/97",
+              "raw": "http://localhost:8088/collection/count/follow/259",
               "protocol": "http",
               "path": [
                 "collection",
@@ -2597,7 +2052,7 @@
               "variable": [
                 {
                   "key": "collectionId",
-                  "value": "97",
+                  "value": "259",
                   "description": "collection id"
                 }
               ]
@@ -2613,7 +2068,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 44,\n  \"name\": \"katlyn.funk\",\n  \"cover\": \"qgjggy\",\n  \"description\": \"vl5an4\",\n  \"createTime\": \"2023-02-28 13:58:07\",\n  \"updateTime\": \"2023-02-28 13:58:07\",\n  \"authorId\": 126\n}",
+              "raw": "{\n  \"id\": 684,\n  \"name\": \"ranee.hoeger\",\n  \"cover\": \"p9gs81\",\n  \"description\": \"z45ngr\",\n  \"createTime\": \"2023-02-28 22:19:16\",\n  \"updateTime\": \"2023-02-28 22:19:16\",\n  \"authorId\": 6\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2644,7 +2099,7 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 846,\n  \"name\": \"katlyn.funk\",\n  \"cover\": \"5jbix3\",\n  \"description\": \"0l6sy7\",\n  \"createTime\": \"2023-02-28 13:58:07\",\n  \"updateTime\": \"2023-02-28 13:58:07\",\n  \"authorId\": 967\n}",
+              "raw": "{\n  \"id\": 661,\n  \"name\": \"ranee.hoeger\",\n  \"cover\": \"9xy6qp\",\n  \"description\": \"se22s7\",\n  \"createTime\": \"2023-02-28 22:19:16\",\n  \"updateTime\": \"2023-02-28 22:19:16\",\n  \"authorId\": 668\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2681,7 +2136,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/collection/170",
+              "raw": "http://localhost:8088/collection/269",
               "protocol": "http",
               "path": [
                 "collection",
@@ -2695,7 +2150,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "170",
+                  "value": "269",
                   "description": "id"
                 }
               ]
@@ -2740,7 +2195,7 @@
           "description": "select all columns"
         },
         {
-          "name": "select all followed columns by authorId",
+          "name": "select followed columns by authorId",
           "request": {
             "method": "GET",
             "body": {
@@ -2751,7 +2206,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/column/author/545",
+              "raw": "http://localhost:8088/column/author/779",
               "protocol": "http",
               "path": [
                 "column",
@@ -2766,18 +2221,18 @@
               "variable": [
                 {
                   "key": "authorId",
-                  "value": "545",
+                  "value": "779",
                   "description": "authorId"
                 }
               ]
             },
-            "description": "select all followed columns by authorId",
+            "description": "select followed columns by authorId",
             "header": []
           },
-          "description": "select all followed columns by authorId"
+          "description": "select followed columns by authorId"
         },
         {
-          "name": "select all followed columns by follower id",
+          "name": "select followed columns by follower id",
           "request": {
             "method": "GET",
             "body": {
@@ -2788,7 +2243,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/column/follower/288",
+              "raw": "http://localhost:8088/column/follower/521",
               "protocol": "http",
               "path": [
                 "column",
@@ -2803,15 +2258,15 @@
               "variable": [
                 {
                   "key": "followerId",
-                  "value": "288",
+                  "value": "521",
                   "description": "followerId"
                 }
               ]
             },
-            "description": "select all followed columns by follower id",
+            "description": "select followed columns by follower id",
             "header": []
           },
-          "description": "select all followed columns by follower id"
+          "description": "select followed columns by follower id"
         },
         {
           "name": "select column by id",
@@ -2825,7 +2280,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/column/107",
+              "raw": "http://localhost:8088/column/115",
               "protocol": "http",
               "path": [
                 "column",
@@ -2839,7 +2294,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "107",
+                  "value": "115",
                   "description": "id"
                 }
               ]
@@ -2861,7 +2316,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/column/count/post/623",
+              "raw": "http://localhost:8088/column/count/post/220",
               "protocol": "http",
               "path": [
                 "column",
@@ -2877,7 +2332,7 @@
               "variable": [
                 {
                   "key": "columnId",
-                  "value": "623",
+                  "value": "220",
                   "description": "column id"
                 }
               ]
@@ -2899,7 +2354,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/column/count/follow/786",
+              "raw": "http://localhost:8088/column/count/follow/941",
               "protocol": "http",
               "path": [
                 "column",
@@ -2915,7 +2370,7 @@
               "variable": [
                 {
                   "key": "columnId",
-                  "value": "786",
+                  "value": "941",
                   "description": "column id"
                 }
               ]
@@ -2931,7 +2386,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 116,\n  \"name\": \"katlyn.funk\",\n  \"cover\": \"xyzky2\",\n  \"description\": \"o9288a\",\n  \"createTime\": \"2023-02-28 13:58:07\",\n  \"updateTime\": \"2023-02-28 13:58:07\",\n  \"authorId\": 21\n}",
+              "raw": "{\n  \"id\": 288,\n  \"name\": \"ranee.hoeger\",\n  \"cover\": \"twossr\",\n  \"description\": \"jt604a\",\n  \"createTime\": \"2023-02-28 22:19:16\",\n  \"updateTime\": \"2023-02-28 22:19:16\",\n  \"authorId\": 367\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2962,7 +2417,7 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 715,\n  \"name\": \"katlyn.funk\",\n  \"cover\": \"nnq5td\",\n  \"description\": \"03zzki\",\n  \"createTime\": \"2023-02-28 13:58:07\",\n  \"updateTime\": \"2023-02-28 13:58:07\",\n  \"authorId\": 60\n}",
+              "raw": "{\n  \"id\": 580,\n  \"name\": \"ranee.hoeger\",\n  \"cover\": \"6i3q4q\",\n  \"description\": \"w4bab8\",\n  \"createTime\": \"2023-02-28 22:19:16\",\n  \"updateTime\": \"2023-02-28 22:19:16\",\n  \"authorId\": 91\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -2999,7 +2454,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/column/743",
+              "raw": "http://localhost:8088/column/545",
               "protocol": "http",
               "path": [
                 "column",
@@ -3013,7 +2468,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "743",
+                  "value": "545",
                   "description": "id"
                 }
               ]
@@ -3059,6 +2514,66 @@
           "description": "select recommend 100 posts"
         },
         {
+          "name": "select hot 100 posts",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/hot",
+              "protocol": "http",
+              "path": [
+                "post",
+                "hot"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select hot 100 posts",
+            "header": []
+          },
+          "description": "select hot 100 posts"
+        },
+        {
+          "name": "select top 100 posts",
+          "request": {
+            "method": "GET",
+            "body": {
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8088/post/top",
+              "protocol": "http",
+              "path": [
+                "post",
+                "top"
+              ],
+              "host": [
+                "localhost"
+              ],
+              "port": "8088",
+              "query": [],
+              "variable": []
+            },
+            "description": "select top 100 posts",
+            "header": []
+          },
+          "description": "select top 100 posts"
+        },
+        {
           "name": "select all posts",
           "request": {
             "method": "GET",
@@ -3099,7 +2614,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/title?q=65fnj8",
+              "raw": "http://localhost:8088/post/title?q=ksmjbf",
               "protocol": "http",
               "path": [
                 "post",
@@ -3112,7 +2627,7 @@
               "query": [
                 {
                   "key": "q",
-                  "value": "65fnj8",
+                  "value": "ksmjbf",
                   "description": "title"
                 }
               ],
@@ -3135,7 +2650,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/search?q=wg40x0",
+              "raw": "http://localhost:8088/post/search?q=k95rza",
               "protocol": "http",
               "path": [
                 "post",
@@ -3148,7 +2663,7 @@
               "query": [
                 {
                   "key": "q",
-                  "value": "wg40x0",
+                  "value": "k95rza",
                   "description": "keywords"
                 }
               ],
@@ -3171,7 +2686,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/cate/359",
+              "raw": "http://localhost:8088/post/cate/214",
               "protocol": "http",
               "path": [
                 "post",
@@ -3186,7 +2701,7 @@
               "variable": [
                 {
                   "key": "cateId",
-                  "value": "359",
+                  "value": "214",
                   "description": "cateId"
                 }
               ]
@@ -3208,7 +2723,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/tag/991",
+              "raw": "http://localhost:8088/post/tag/758",
               "protocol": "http",
               "path": [
                 "post",
@@ -3223,7 +2738,7 @@
               "variable": [
                 {
                   "key": "tagId",
-                  "value": "991",
+                  "value": "758",
                   "description": "tagId"
                 }
               ]
@@ -3245,7 +2760,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/collection/751",
+              "raw": "http://localhost:8088/post/collection/567",
               "protocol": "http",
               "path": [
                 "post",
@@ -3260,7 +2775,7 @@
               "variable": [
                 {
                   "key": "collectionId",
-                  "value": "751",
+                  "value": "567",
                   "description": "collectionId"
                 }
               ]
@@ -3282,7 +2797,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/column/366",
+              "raw": "http://localhost:8088/post/column/297",
               "protocol": "http",
               "path": [
                 "post",
@@ -3297,7 +2812,7 @@
               "variable": [
                 {
                   "key": "columnId",
-                  "value": "366",
+                  "value": "297",
                   "description": "columnId"
                 }
               ]
@@ -3319,7 +2834,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/author/700",
+              "raw": "http://localhost:8088/post/author/313",
               "protocol": "http",
               "path": [
                 "post",
@@ -3334,7 +2849,7 @@
               "variable": [
                 {
                   "key": "authorId",
-                  "value": "700",
+                  "value": "313",
                   "description": "authorId"
                 }
               ]
@@ -3356,7 +2871,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/follow/493",
+              "raw": "http://localhost:8088/post/follow/27",
               "protocol": "http",
               "path": [
                 "post",
@@ -3371,7 +2886,7 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "493",
+                  "value": "27",
                   "description": "user id"
                 }
               ]
@@ -3393,7 +2908,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/263",
+              "raw": "http://localhost:8088/post/137",
               "protocol": "http",
               "path": [
                 "post",
@@ -3407,7 +2922,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "263",
+                  "value": "137",
                   "description": "id"
                 }
               ]
@@ -3423,7 +2938,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 741,\n  \"title\": \"dpt8f5\",\n  \"summary\": \"kgzs6x\",\n  \"cover\": \"oium16\",\n  \"content\": \"dv4j26\",\n  \"createTime\": \"2023-02-28 13:58:07\",\n  \"updateTime\": \"2023-02-28 13:58:07\",\n  \"draft\": true,\n  \"cateId\": 335,\n  \"authorId\": 672,\n  \"viewNum\": 950\n}",
+              "raw": "{\n  \"id\": 840,\n  \"title\": \"8wx4ro\",\n  \"summary\": \"873kd2\",\n  \"cover\": \"e44cl4\",\n  \"content\": \"ubm0of\",\n  \"createTime\": \"2023-02-28 22:19:16\",\n  \"updateTime\": \"2023-02-28 22:19:16\",\n  \"draft\": true,\n  \"cateId\": 138,\n  \"authorId\": 615,\n  \"viewNum\": 20\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -3454,7 +2969,7 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 900,\n  \"title\": \"we7r98\",\n  \"summary\": \"ndwozb\",\n  \"cover\": \"a512fx\",\n  \"content\": \"ee6zot\",\n  \"createTime\": \"2023-02-28 13:58:07\",\n  \"updateTime\": \"2023-02-28 13:58:07\",\n  \"draft\": true,\n  \"cateId\": 441,\n  \"authorId\": 354,\n  \"viewNum\": 467\n}",
+              "raw": "{\n  \"id\": 365,\n  \"title\": \"i9523v\",\n  \"summary\": \"g0gviw\",\n  \"cover\": \"ek5s5u\",\n  \"content\": \"g6gkdg\",\n  \"createTime\": \"2023-02-28 22:19:16\",\n  \"updateTime\": \"2023-02-28 22:19:16\",\n  \"draft\": true,\n  \"cateId\": 785,\n  \"authorId\": 703,\n  \"viewNum\": 28\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -3491,7 +3006,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/418",
+              "raw": "http://localhost:8088/post/807",
               "protocol": "http",
               "path": [
                 "post",
@@ -3505,7 +3020,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "418",
+                  "value": "807",
                   "description": "id"
                 }
               ]
@@ -3551,7 +3066,7 @@
           "description": "select all postLikes"
         },
         {
-          "name": "select all postLikes by userId",
+          "name": "select postLikes by userId",
           "request": {
             "method": "GET",
             "body": {
@@ -3562,7 +3077,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/like/382",
+              "raw": "http://localhost:8088/post/like/250",
               "protocol": "http",
               "path": [
                 "post",
@@ -3577,15 +3092,15 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "382",
+                  "value": "250",
                   "description": "userId"
                 }
               ]
             },
-            "description": "select all postLikes by userId",
+            "description": "select postLikes by userId",
             "header": []
           },
-          "description": "select all postLikes by userId"
+          "description": "select postLikes by userId"
         },
         {
           "name": "select postLike by id",
@@ -3599,7 +3114,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/like/single?postId=846&userId=748",
+              "raw": "http://localhost:8088/post/like/single?postId=450&userId=557",
               "protocol": "http",
               "path": [
                 "post",
@@ -3613,12 +3128,12 @@
               "query": [
                 {
                   "key": "postId",
-                  "value": "846",
+                  "value": "450",
                   "description": "postId"
                 },
                 {
                   "key": "userId",
-                  "value": "748",
+                  "value": "557",
                   "description": "userId"
                 }
               ],
@@ -3635,7 +3150,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"postId\": 466,\n  \"userId\": 948,\n  \"type\": 30032\n}",
+              "raw": "{\n  \"postId\": 773,\n  \"userId\": 145,\n  \"type\": 21618\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -3667,7 +3182,7 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"postId\": 739,\n  \"userId\": 119,\n  \"type\": 7851\n}",
+              "raw": "{\n  \"postId\": 84,\n  \"userId\": 963,\n  \"type\": 22975\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -3705,7 +3220,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/post/like?postId=107&userId=888",
+              "raw": "http://localhost:8088/post/like?postId=526&userId=517",
               "protocol": "http",
               "path": [
                 "post",
@@ -3718,12 +3233,12 @@
               "query": [
                 {
                   "key": "postId",
-                  "value": "107",
+                  "value": "526",
                   "description": "postId"
                 },
                 {
                   "key": "userId",
-                  "value": "888",
+                  "value": "517",
                   "description": "userId"
                 }
               ],
@@ -3769,7 +3284,7 @@
           "description": "select all tags"
         },
         {
-          "name": "select all tags by postId",
+          "name": "select tags by postId",
           "request": {
             "method": "GET",
             "body": {
@@ -3780,7 +3295,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/tag/post/729",
+              "raw": "http://localhost:8088/tag/post/776",
               "protocol": "http",
               "path": [
                 "tag",
@@ -3795,18 +3310,18 @@
               "variable": [
                 {
                   "key": "postId",
-                  "value": "729",
+                  "value": "776",
                   "description": "postId"
                 }
               ]
             },
-            "description": "select all tags by postId",
+            "description": "select tags by postId",
             "header": []
           },
-          "description": "select all tags by postId"
+          "description": "select tags by postId"
         },
         {
-          "name": "select all tags by followerId",
+          "name": "select tags by followerId",
           "request": {
             "method": "GET",
             "body": {
@@ -3817,7 +3332,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/tag/follower/521",
+              "raw": "http://localhost:8088/tag/follower/143",
               "protocol": "http",
               "path": [
                 "tag",
@@ -3832,15 +3347,15 @@
               "variable": [
                 {
                   "key": "followerId",
-                  "value": "521",
+                  "value": "143",
                   "description": "followerId"
                 }
               ]
             },
-            "description": "select all tags by followerId",
+            "description": "select tags by followerId",
             "header": []
           },
-          "description": "select all tags by followerId"
+          "description": "select tags by followerId"
         },
         {
           "name": "select tag by id",
@@ -3854,7 +3369,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/tag/667",
+              "raw": "http://localhost:8088/tag/52",
               "protocol": "http",
               "path": [
                 "tag",
@@ -3868,7 +3383,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "667",
+                  "value": "52",
                   "description": "id"
                 }
               ]
@@ -3884,7 +3399,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 967,\n  \"name\": \"katlyn.funk\",\n  \"cover\": \"5x6kzr\",\n  \"description\": \"9p5cwk\"\n}",
+              "raw": "{\n  \"id\": 380,\n  \"name\": \"ranee.hoeger\",\n  \"cover\": \"1lrrhc\",\n  \"description\": \"nfs20j\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -3915,7 +3430,7 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 675,\n  \"name\": \"katlyn.funk\",\n  \"cover\": \"26qon2\",\n  \"description\": \"508l89\"\n}",
+              "raw": "{\n  \"id\": 479,\n  \"name\": \"ranee.hoeger\",\n  \"cover\": \"hroq34\",\n  \"description\": \"40hwep\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -3952,7 +3467,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/tag/37",
+              "raw": "http://localhost:8088/tag/48",
               "protocol": "http",
               "path": [
                 "tag",
@@ -3966,7 +3481,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "37",
+                  "value": "48",
                   "description": "id"
                 }
               ]
@@ -3979,7 +3494,7 @@
       ]
     },
     {
-      "name": "Interface name is not set.",
+      "name": "tag follow controller",
       "item": [
         {
           "name": "select tagFollow by id",
@@ -3993,7 +3508,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/tag/follow/single?userId=434&tagId=210",
+              "raw": "http://localhost:8088/tag/follow/single?userId=879&tagId=192",
               "protocol": "http",
               "path": [
                 "tag",
@@ -4007,12 +3522,12 @@
               "query": [
                 {
                   "key": "userId",
-                  "value": "434",
+                  "value": "879",
                   "description": "user id"
                 },
                 {
                   "key": "tagId",
-                  "value": "210",
+                  "value": "192",
                   "description": "tag id"
                 }
               ],
@@ -4029,7 +3544,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"userId\": 975,\n  \"tagId\": 402,\n  \"follow\": true\n}",
+              "raw": "{\n  \"userId\": 188,\n  \"tagId\": 953,\n  \"follow\": true\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -4061,7 +3576,7 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"userId\": 739,\n  \"tagId\": 573,\n  \"follow\": true\n}",
+              "raw": "{\n  \"userId\": 757,\n  \"tagId\": 663,\n  \"follow\": true\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -4122,7 +3637,7 @@
           "description": "select all activities"
         },
         {
-          "name": "select all activities by user id",
+          "name": "select activities by user id",
           "request": {
             "method": "GET",
             "body": {
@@ -4133,7 +3648,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/activity/user/573",
+              "raw": "http://localhost:8088/activity/user/360",
               "protocol": "http",
               "path": [
                 "activity",
@@ -4148,45 +3663,15 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "573",
+                  "value": "360",
                   "description": "user id"
                 }
               ]
             },
-            "description": "select all activities by user id",
+            "description": "select activities by user id",
             "header": []
           },
-          "description": "select all activities by user id"
-        },
-        {
-          "name": "select all activities by page",
-          "request": {
-            "method": "GET",
-            "body": {
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:8088/activity/page",
-              "protocol": "http",
-              "path": [
-                "activity",
-                "page"
-              ],
-              "host": [
-                "localhost"
-              ],
-              "port": "8088",
-              "query": [],
-              "variable": []
-            },
-            "description": "select all activities by page",
-            "header": []
-          },
-          "description": "select all activities by page"
+          "description": "select activities by user id"
         },
         {
           "name": "add activity",
@@ -4194,7 +3679,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 828,\n  \"userId\": 140,\n  \"actionType\": 1893,\n  \"actionSubType\": 12928,\n  \"targetId\": 566,\n  \"execTime\": \"2023-02-28 13:58:07\"\n}",
+              "raw": "{\n  \"id\": 466,\n  \"userId\": 700,\n  \"actionType\": 15365,\n  \"actionSubType\": 8629,\n  \"targetId\": 476,\n  \"execTime\": \"2023-02-28 22:19:16\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -4230,7 +3715,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"robert.carroll@hotmail.com\",\n  \"password\": \"wylzjs\",\n  \"device\": \"6caqrj\"\n}",
+              "raw": "{\n  \"email\": \"derrick.trantow@yahoo.com\",\n  \"password\": \"2wydc3\",\n  \"device\": \"dwxyky\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -4262,7 +3747,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"username\": \"katlyn.funk\",\n  \"password\": \"migrgr\",\n  \"email\": \"robert.carroll@hotmail.com\"\n}",
+              "raw": "{\n  \"username\": \"ranee.hoeger\",\n  \"password\": \"5zjgqp\",\n  \"email\": \"derrick.trantow@yahoo.com\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -4300,7 +3785,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/auth/check?tokenValue=398c6f",
+              "raw": "http://localhost:8088/auth/check?tokenValue=1o0ira",
               "protocol": "http",
               "path": [
                 "auth",
@@ -4313,7 +3798,7 @@
               "query": [
                 {
                   "key": "tokenValue",
-                  "value": "398c6f",
+                  "value": "1o0ira",
                   "description": "tokenValue"
                 }
               ],
@@ -4330,7 +3815,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "cn51bm",
+              "raw": "oah4ko",
               "options": {
                 "raw": {
                   "language": "json"
@@ -4402,7 +3887,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/role/744",
+              "raw": "http://localhost:8088/role/248",
               "protocol": "http",
               "path": [
                 "role",
@@ -4416,7 +3901,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "744",
+                  "value": "248",
                   "description": "id"
                 }
               ]
@@ -4432,7 +3917,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 376,\n  \"name\": \"katlyn.funk\"\n}",
+              "raw": "{\n  \"id\": 977,\n  \"name\": \"ranee.hoeger\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -4463,7 +3948,7 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\": 580,\n  \"name\": \"katlyn.funk\"\n}",
+              "raw": "{\n  \"id\": 644,\n  \"name\": \"ranee.hoeger\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -4500,7 +3985,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/role/429",
+              "raw": "http://localhost:8088/role/291",
               "protocol": "http",
               "path": [
                 "role",
@@ -4514,7 +3999,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "429",
+                  "value": "291",
                   "description": "id"
                 }
               ]
@@ -4571,7 +4056,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/user/collection/single?userId=444&collectionId=620",
+              "raw": "http://localhost:8088/user/collection/single?userId=937&collectionId=672",
               "protocol": "http",
               "path": [
                 "user",
@@ -4585,12 +4070,12 @@
               "query": [
                 {
                   "key": "userId",
-                  "value": "444",
+                  "value": "937",
                   "description": "      userId"
                 },
                 {
                   "key": "collectionId",
-                  "value": "620",
+                  "value": "672",
                   "description": "collectionId"
                 }
               ],
@@ -4607,7 +4092,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"userId\": 305,\n  \"collectionId\": 306,\n  \"follow\": true\n}",
+              "raw": "{\n  \"userId\": 911,\n  \"collectionId\": 627,\n  \"follow\": true\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -4639,7 +4124,7 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"userId\": 621,\n  \"collectionId\": 863,\n  \"follow\": true\n}",
+              "raw": "{\n  \"userId\": 447,\n  \"collectionId\": 692,\n  \"follow\": true\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -4677,7 +4162,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/user/collection?userId=956&collectionId=53",
+              "raw": "http://localhost:8088/user/collection?userId=189&collectionId=149",
               "protocol": "http",
               "path": [
                 "user",
@@ -4690,12 +4175,12 @@
               "query": [
                 {
                   "key": "userId",
-                  "value": "956",
+                  "value": "189",
                   "description": "      userId"
                 },
                 {
                   "key": "collectionId",
-                  "value": "53",
+                  "value": "149",
                   "description": "collectionId"
                 }
               ],
@@ -4753,7 +4238,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/user/column/single?userId=333&columnId=629",
+              "raw": "http://localhost:8088/user/column/single?userId=219&columnId=716",
               "protocol": "http",
               "path": [
                 "user",
@@ -4767,12 +4252,12 @@
               "query": [
                 {
                   "key": "userId",
-                  "value": "333",
+                  "value": "219",
                   "description": "  userId"
                 },
                 {
                   "key": "columnId",
-                  "value": "629",
+                  "value": "716",
                   "description": "columnId"
                 }
               ],
@@ -4789,7 +4274,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"userId\": 41,\n  \"columnId\": 180,\n  \"follow\": true\n}",
+              "raw": "{\n  \"userId\": 795,\n  \"columnId\": 508,\n  \"follow\": true\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -4821,7 +4306,7 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"userId\": 715,\n  \"columnId\": 303,\n  \"follow\": true\n}",
+              "raw": "{\n  \"userId\": 354,\n  \"columnId\": 299,\n  \"follow\": true\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -4859,7 +4344,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/user/column?userId=201&columnId=904",
+              "raw": "http://localhost:8088/user/column?userId=682&columnId=125",
               "protocol": "http",
               "path": [
                 "user",
@@ -4872,12 +4357,12 @@
               "query": [
                 {
                   "key": "userId",
-                  "value": "201",
+                  "value": "682",
                   "description": "  userId"
                 },
                 {
                   "key": "columnId",
-                  "value": "904",
+                  "value": "125",
                   "description": "columnId"
                 }
               ],
@@ -4891,10 +4376,10 @@
       ]
     },
     {
-      "name": "Interface name is not set.",
+      "name": "user controller",
       "item": [
         {
-          "name": "select all following users by user id",
+          "name": "select following users by user id",
           "request": {
             "method": "GET",
             "body": {
@@ -4905,7 +4390,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/user/following/546",
+              "raw": "http://localhost:8088/user/following/96",
               "protocol": "http",
               "path": [
                 "user",
@@ -4920,18 +4405,18 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "546",
+                  "value": "96",
                   "description": "user id"
                 }
               ]
             },
-            "description": "select all following users by user id",
+            "description": "select following users by user id",
             "header": []
           },
-          "description": "select all following users by user id"
+          "description": "select following users by user id"
         },
         {
-          "name": "select all followers by user id",
+          "name": "select followers by user id",
           "request": {
             "method": "GET",
             "body": {
@@ -4942,7 +4427,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/user/follower/329",
+              "raw": "http://localhost:8088/user/follower/358",
               "protocol": "http",
               "path": [
                 "user",
@@ -4957,15 +4442,15 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "329",
+                  "value": "358",
                   "description": "user id"
                 }
               ]
             },
-            "description": "select all followers by user id",
+            "description": "select followers by user id",
             "header": []
           },
-          "description": "select all followers by user id"
+          "description": "select followers by user id"
         },
         {
           "name": "select user by id",
@@ -4979,7 +4464,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/user/573",
+              "raw": "http://localhost:8088/user/414",
               "protocol": "http",
               "path": [
                 "user",
@@ -4993,7 +4478,7 @@
               "variable": [
                 {
                   "key": "id",
-                  "value": "573",
+                  "value": "414",
                   "description": "id"
                 }
               ]
@@ -5015,7 +4500,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/user/count/tag/867",
+              "raw": "http://localhost:8088/user/count/tag/946",
               "protocol": "http",
               "path": [
                 "user",
@@ -5031,7 +4516,7 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "867",
+                  "value": "946",
                   "description": "user id"
                 }
               ]
@@ -5053,7 +4538,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/user/check/email?email=robert.carroll@hotmail.com",
+              "raw": "http://localhost:8088/user/check/email?email=derrick.trantow@yahoo.com",
               "protocol": "http",
               "path": [
                 "user",
@@ -5067,7 +4552,7 @@
               "query": [
                 {
                   "key": "email",
-                  "value": "robert.carroll@hotmail.com",
+                  "value": "derrick.trantow@yahoo.com",
                   "description": "email"
                 }
               ],
@@ -5090,7 +4575,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/user/check/username?username=katlyn.funk",
+              "raw": "http://localhost:8088/user/check/username?username=ranee.hoeger",
               "protocol": "http",
               "path": [
                 "user",
@@ -5104,7 +4589,7 @@
               "query": [
                 {
                   "key": "username",
-                  "value": "katlyn.funk",
+                  "value": "ranee.hoeger",
                   "description": "username"
                 }
               ],
@@ -5162,7 +4647,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/user/follow/follower/834",
+              "raw": "http://localhost:8088/user/follow/follower/377",
               "protocol": "http",
               "path": [
                 "user",
@@ -5178,7 +4663,7 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "834",
+                  "value": "377",
                   "description": "userId"
                 }
               ]
@@ -5200,7 +4685,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/user/follow/followed/946",
+              "raw": "http://localhost:8088/user/follow/followed/390",
               "protocol": "http",
               "path": [
                 "user",
@@ -5216,7 +4701,7 @@
               "variable": [
                 {
                   "key": "userId",
-                  "value": "946",
+                  "value": "390",
                   "description": "userId"
                 }
               ]
@@ -5238,7 +4723,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/user/follow/single?followerId=809&followedId=860",
+              "raw": "http://localhost:8088/user/follow/single?followerId=681&followedId=127",
               "protocol": "http",
               "path": [
                 "user",
@@ -5252,12 +4737,12 @@
               "query": [
                 {
                   "key": "followerId",
-                  "value": "809",
+                  "value": "681",
                   "description": "  userId"
                 },
                 {
                   "key": "followedId",
-                  "value": "860",
+                  "value": "127",
                   "description": "columnId"
                 }
               ],
@@ -5274,7 +4759,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"followerId\": 156,\n  \"followedId\": 150,\n  \"follow\": true\n}",
+              "raw": "{\n  \"followerId\": 920,\n  \"followedId\": 984,\n  \"follow\": true\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -5306,7 +4791,7 @@
             "method": "PUT",
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"followerId\": 15,\n  \"followedId\": 623,\n  \"follow\": true\n}",
+              "raw": "{\n  \"followerId\": 946,\n  \"followedId\": 609,\n  \"follow\": true\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -5344,7 +4829,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:8088/user/follow?followerId=44&followedId=956",
+              "raw": "http://localhost:8088/user/follow?followerId=445&followedId=231",
               "protocol": "http",
               "path": [
                 "user",
@@ -5357,12 +4842,12 @@
               "query": [
                 {
                   "key": "followerId",
-                  "value": "44",
+                  "value": "445",
                   "description": "followerId"
                 },
                 {
                   "key": "followedId",
-                  "value": "956",
+                  "value": "231",
                   "description": "followedId"
                 }
               ],

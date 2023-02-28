@@ -2,8 +2,6 @@ package com.okito.okito.modules.pins.repository;
 
 import com.okito.okito.common.repository.ReadOnlyRepository;
 import com.okito.okito.modules.pins.model.view.PinView;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -29,8 +27,5 @@ public interface PinViewRepository extends ReadOnlyRepository<PinView, Long> {
   @Query(value = "select * from pin_view p where p.author_id in " +
     "(select u.followed_id from user_follow u where u.follower_id = ?1 and u.follow = true)", nativeQuery = true)
   List<PinView> findAllByUserFollowed(Long userId);
-
-  @Deprecated
-  Page<PinView> findAllByAuthorId(Long authorId, Pageable pageable);
 
 }

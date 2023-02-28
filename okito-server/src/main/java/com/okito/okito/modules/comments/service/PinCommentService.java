@@ -2,8 +2,6 @@ package com.okito.okito.modules.comments.service;
 
 import com.okito.okito.modules.comments.model.entity.PinComment;
 import com.okito.okito.modules.comments.model.view.PinCommentView;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -21,14 +19,6 @@ public interface PinCommentService {
   List<PinCommentView> selectAllByAuthorId(Long authorId);
 
   List<PinCommentView> selectSecondaryComments(Long id);
-
-  Page<PinCommentView> selectAll(Pageable pageable);
-
-  Page<PinCommentView> selectAllByPinId(Long pinId, Pageable pageable);
-
-  Page<PinCommentView> selectAllByAuthorId(Long authorId, Pageable pageable);
-
-  Page<PinCommentView> selectSecondaryComments(Long id, Pageable pageable);
 
   PinCommentView selectById(Long id);
 

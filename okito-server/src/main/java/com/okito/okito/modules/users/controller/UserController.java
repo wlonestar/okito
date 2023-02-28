@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Objects;
 
 /**
+ * user controller
+ *
  * @author <a href="mailto:wlonestar@163.com">wjl</a>
  * @version 0.0.1
  * @time 2023/1/31 20:04
@@ -27,7 +29,7 @@ public class UserController {
   private UserService userService;
 
   /**
-   * select all following users by user id
+   * select following users by user id
    *
    * @param userId user id
    * @return RespResult<?>
@@ -38,7 +40,7 @@ public class UserController {
   }
 
   /**
-   * select all followers by user id
+   * select followers by user id
    *
    * @param userId user id
    * @return RespResult<?>

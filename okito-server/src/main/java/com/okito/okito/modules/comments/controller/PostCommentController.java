@@ -10,9 +10,6 @@ import com.okito.okito.modules.posts.service.PostService;
 import com.okito.okito.modules.users.service.UserService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
@@ -51,7 +48,7 @@ public class PostCommentController {
   }
 
   /**
-   * select all postComments by postId
+   * select postComments by postId
    *
    * @param postId postId
    * @return RespResult<?>
@@ -62,7 +59,7 @@ public class PostCommentController {
   }
 
   /**
-   * select all postComments by authorId
+   * select postComments by authorId
    *
    * @param authorId authorId
    * @return RespResult<?>
@@ -81,60 +78,6 @@ public class PostCommentController {
   @RequestMapping(method = RequestMethod.GET, path = "/secondary/{id}")
   public RespResult<?> selectSecondaryComments(@NonNull @PathVariable(name = "id") Long id) {
     return RespResult.success(postCommentService.selectSecondaryComments(id));
-  }
-
-  /**
-   * select all postComments by page
-   *
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page")
-  public RespResult<?> selectAll(
-      @NonNull @PageableDefault(sort = "uploadTime", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(postCommentService.selectAll(pageable));
-  }
-
-  /**
-   * select all postComments by postId and page
-   *
-   * @param postId   postId
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/post/{postId}")
-  public RespResult<?> selectAllByPostId(
-      @NonNull @PathVariable(name = "postId") Long postId,
-      @NonNull @PageableDefault(sort = "uploadTime", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(postCommentService.selectAllByPostId(postId, pageable));
-  }
-
-  /**
-   * select all postComments by authorId and page
-   *
-   * @param authorId authorId
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/author/{authorId}")
-  public RespResult<?> selectAllByAuthorId(
-      @NonNull @PathVariable(name = "authorId") Long authorId,
-      @NonNull @PageableDefault(sort = "uploadTime", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(postCommentService.selectAllByAuthorId(authorId, pageable));
-  }
-
-  /**
-   * select secondary comments by id and page
-   *
-   * @param id       id
-   * @param pageable format => page=1&size=5&sort=id,asc
-   * @return RespResult<?>
-   */
-  @RequestMapping(method = RequestMethod.GET, path = "/page/secondary/{id}")
-  public RespResult<?> selectSecondaryComments(
-      @NonNull @PathVariable(name = "id") Long id,
-      @NonNull @PageableDefault(sort = "uploadTime", direction = Sort.Direction.DESC) Pageable pageable) {
-    return RespResult.success(postCommentService.selectSecondaryComments(id, pageable));
   }
 
   /**
