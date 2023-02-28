@@ -3,6 +3,8 @@ import { Box, Paper, Tab, Tabs } from '@mui/material'
 import { Link } from 'react-router-dom'
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined'
 import LocalFireDepartmentOutlinedIcon from '@mui/icons-material/LocalFireDepartmentOutlined'
+import StickyNote2OutlinedIcon from '@mui/icons-material/StickyNote2Outlined'
+import { User } from '../../types/user'
 
 interface PinTabProps {
   tabIndex: number
@@ -18,23 +20,24 @@ const pinTabs: PinTabProps[] = [
     label: '最新',
     icon: <AccessTimeOutlinedIcon />,
     iconPosition: 'start',
-    to: '/pin?sort=new',
+    to: '/pin/',
   },
   {
     tabIndex: 1,
     label: '热门',
     icon: <LocalFireDepartmentOutlinedIcon />,
     iconPosition: 'start',
-    to: '/pin?sort=hot',
+    to: '/pin/hot',
   },
 ]
 
 interface NavProps {
   value: number
   handleChange: (event: SyntheticEvent, newValue: number) => void
+  currentUser: User | null
 }
 
-export default function Nav({ value, handleChange }: NavProps) {
+export default function Nav({ value, handleChange, currentUser }: NavProps) {
   return (
     <Paper>
       <Box>
@@ -56,6 +59,20 @@ export default function Nav({ value, handleChange }: NavProps) {
               sx={{ minHeight: '54px', justifyContent: 'start' }}
             />
           ))}
+          {currentUser !== null ? (
+            <Tab
+              key={2}
+              tabIndex={2}
+              label={'关注'}
+              icon={<StickyNote2OutlinedIcon />}
+              iconPosition={'start'}
+              component={Link}
+              to={'/pin/follow'}
+              sx={{ minHeight: '54px', justifyContent: 'start' }}
+            />
+          ) : (
+            ''
+          )}
         </Tabs>
       </Box>
     </Paper>

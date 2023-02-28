@@ -4,6 +4,8 @@ import { ErrorPage } from '../pages/error'
 import { lazy, Suspense } from 'react'
 import { User } from '../types/user'
 import { Box, CircularProgress } from '@mui/material'
+import { HomeFollowTab, HomeHotTab, HomeIndexTab } from '../pages/home/main'
+import { PinFollowTab, PinHotTab, PinIndexTab } from '../pages/pin'
 
 const SignInPage = lazy(() => import('../pages/auth/sign-in'))
 const SignUpPage = lazy(() => import('../pages/auth/sign-up'))
@@ -56,7 +58,11 @@ export default function CustomRoutes(params: CustomRoutesProps) {
         <Route path="/register" element={<SignUpPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route element={<Layout {...params} />} errorElement={<ErrorPage />}>
-          <Route path="/" element={<HomePage {...params} />} />
+          <Route path="/" element={<HomePage {...params} />}>
+            <Route path="/" element={<HomeIndexTab></HomeIndexTab>} />
+            <Route path="/hot" element={<HomeHotTab></HomeHotTab>} />
+            <Route path="/follow" element={<HomeFollowTab />} />
+          </Route>
           <Route path="/post" element={<PostsPage />} />
           <Route path="/post/:id" element={<PostPage {...params} />} />
           <Route path="/tag" element={<TagsPage />} />
@@ -66,7 +72,11 @@ export default function CustomRoutes(params: CustomRoutesProps) {
             path="/collection/:id"
             element={<CollectionPage {...params} />}
           />
-          <Route path="/pin" element={<PinPage {...params} />} />
+          <Route path="/pin" element={<PinPage {...params} />}>
+            <Route path="/pin/" element={<PinIndexTab></PinIndexTab>} />
+            <Route path="/pin/hot" element={<PinHotTab></PinHotTab>} />
+            <Route path="/pin/follow" element={<PinFollowTab />} />
+          </Route>
           <Route path="/user/:id" element={<UserPage {...params} />}>
             <Route path="/user/:id/" element={<HomeTab {...params} />} />
             <Route path="/user/:id/posts" element={<PostsTab {...params} />} />
