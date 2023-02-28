@@ -20,6 +20,14 @@ export function selectAllPins() {
 export function selectPinsByAuthorId(authorId: number) {
   return client({
     url: `${prefix}/author/${authorId}`,
+    method: 'GET',
+  })
+}
+
+export function selectPinsByUserFollowed(userId: number) {
+  return client({
+    url: `${prefix}/followed/${userId}`,
+    method: 'GET',
   })
 }
 

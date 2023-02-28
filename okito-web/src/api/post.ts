@@ -37,6 +37,13 @@ export function selectPostsByAuthorId(authorId: number) {
   })
 }
 
+export function selectPostsByUserFollowed(userId: number) {
+  return client({
+    url: `${prefix}/followed/${userId}`,
+    method: 'GET',
+  })
+}
+
 export function selectPostById(id: number) {
   return client({
     url: `${prefix}/${id}`,
