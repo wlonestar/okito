@@ -78,18 +78,18 @@ export default function PinPage({ currentUser }: PinPageProps) {
   })
 
   return (
-    <Grid container spacing={3} sx={{ mt: 1, mb: 3 }}>
-      <Grid item xs={12} md={2}>
+    <Grid container sx={{ mt: 1, mb: 3 }}>
+      <Grid item xs={12} md={2} sx={{ pl: 1.4, pr: 1.5, pt: 2.5 }}>
         <Nav
           value={value}
           handleChange={handleChange}
           currentUser={currentUser}
         />
       </Grid>
-      <Grid item xs={12} md={7}>
+      <Grid item xs={12} md={7} sx={{ pl: 1.5, pr: 1.5, pt: 2.5 }}>
         <Main pins={pins} currentUser={currentUser} />
       </Grid>
-      <Grid item xs={12} md={3}>
+      <Grid item xs={12} md={3} sx={{ pl: 1.5, pr: 1.5, pt: 2.5 }}>
         <Side currentUser={currentUser} />
       </Grid>
     </Grid>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid } from '@mui/material'
+import { Box, Grid, Tab, Tabs, Toolbar } from '@mui/material'
 import { Side } from './side'
 import { Main } from './main'
 import { User } from '../../types/user'
@@ -12,7 +12,6 @@ export default function HomePage({ currentUser }: HomePageProps) {
   return (
     <Grid
       container
-      spacing={3}
       sx={{
         maxWidth: '1080px',
         mt: 1,
@@ -21,10 +20,10 @@ export default function HomePage({ currentUser }: HomePageProps) {
         mr: 'auto',
       }}
     >
-      <Grid item xs={12} md={9}>
+      <Grid item xs={12} md={9} sx={{ pl: 1.5, pr: 1.5, pt: 2.5 }}>
         <Main currentUser={currentUser} />
       </Grid>
-      <Grid item xs={12} md={3}>
+      <Grid item xs={12} md={3} sx={{ pl: 1.5, pr: 1.5, pt: 2.5 }}>
         <Side />
       </Grid>
     </Grid>
