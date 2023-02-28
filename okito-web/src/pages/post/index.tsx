@@ -153,6 +153,7 @@ export default function PostPage({ currentUser }: PostPageProps) {
             followed={followed}
             handleClickFollow={handleClickFollow}
             author={author}
+            currentUser={currentUser}
           />
         </Grid>
       </Grid>
