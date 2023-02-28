@@ -2,6 +2,13 @@ import client from '../utils/axios-client'
 
 const prefix: string = '/post'
 
+export function selectRecommend100Posts() {
+  return client({
+    url: `${prefix}/recommend`,
+    method: 'GET',
+  })
+}
+
 export function selectAllPosts() {
   return client({
     url: `${prefix}`,
@@ -26,6 +33,13 @@ export function selectPostsByTagId(tagId: number) {
 export function selectPostsByAuthorId(authorId: number) {
   return client({
     url: `${prefix}/author/${authorId}`,
+    method: 'GET',
+  })
+}
+
+export function selectPostsByUserFollowed(userId: number) {
+  return client({
+    url: `${prefix}/followed/${userId}`,
     method: 'GET',
   })
 }
