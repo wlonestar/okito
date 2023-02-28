@@ -3,9 +3,13 @@ import { useParams } from 'react-router-dom'
 import { Tag, defaultTag } from '../../types/tag'
 import { Post } from '../../types/post'
 import { useMount, useSort } from '../../utils'
-import { selectTagById } from '../../api/tag'
+import {
+  selectTagById,
+  selectTagFollowByUserIdAndTagId,
+  updateTagFollow,
+} from '../../api/tag'
 import { selectPostsByTagId } from '../../api/post'
-import { Box, Paper, Tab, Tabs, Typography } from '@mui/material'
+import { Box, Button, Paper, Tab, Tabs, Typography } from '@mui/material'
 import { PostCard } from '../../components/post/post-card'
 import { tabProps } from '../../components/tab'
 import { useAuth } from '../../context/auth-context'
@@ -46,6 +50,7 @@ export default function TagPage() {
   const [tag, setTag] = useState<Tag>(defaultTag)
   const [posts, setPosts] = useState<Post[]>([])
   const [value, setValue] = useState(0)
+  const [followed, setFollowed] = useState<boolean>(false)
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
@@ -61,39 +66,78 @@ export default function TagPage() {
     }
   }
 
+  const handleClick = () => {
+    if (currentUser !== null) {
+      updateTagFollow({
+        userId: currentUser.id,
+        tagId: id as unknown as number,
+        follow: !followed,
+      }).then((res) => {
+        if (res.status === 20) {
+          setFollowed(!followed)
+        }
+      })
+    } else {
+      window.location.assign('/login')
+    }
+  }
+
   useMount(async () => {
-    console.log(id)
     const tagId = id as unknown as number
-    console.log(tagId)
     const tag = await selectTagById(tagId)
     setTag(tag.data)
     const posts = await selectPostsByTagId(tagId)
     setPosts(posts.data)
+    if (currentUser !== null) {
+      const follow = await selectTagFollowByUserIdAndTagId({
+        userId: currentUser.id,
+        tagId: tagId,
+      })
+      if (follow.status === 20) {
+        if (follow.data.follow) {
+          setFollowed(true)
+        }
+      }
+    }
   })
 
   return (
-    <Box sx={{ maxWidth: '1080px', mt: 3, mb: 3 }}>
+    <Box sx={{ maxWidth: '1080px', m: '0 auto', mt: 3, mb: 3 }}>
       <TagTitle tag={tag} posts={posts} />
-      <Box sx={{ pb: 3 }}>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          mb: 2,
+        }}
+      >
         <img
           style={{
-            margin: 'auto',
             display: 'block',
-            width: '40px',
-            height: '40px',
+            width: '36px',
+            height: '36px',
           }}
           alt="complex"
           src={tag.cover}
         />
+        <Box sx={{ ml: 3 }}>
+          {followed ? (
+            <Button variant="contained" color="inherit" onClick={handleClick}>
+              {'已关注'}
+            </Button>
+          ) : (
+            <Button variant="contained" onClick={handleClick}>
+              {'关注'}
+            </Button>
+          )}
+        </Box>
+        <Tabs value={value} onChange={handleChange} sx={{ ml: 'auto' }}>
+          {tabs.map(({ index, label }) => (
+            <Tab key={index} label={label} {...tabProps(index)} />
+          ))}
+        </Tabs>
       </Box>
       <Paper>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider', right: '10px' }}>
-          <Tabs value={value} onChange={handleChange}>
-            {tabs.map(({ index, label }) => (
-              <Tab key={index} label={label} {...tabProps(index)} />
-            ))}
-          </Tabs>
-        </Box>
         {posts.map((post) => (
           <PostCard key={post.id} post={post} currentUser={currentUser} />
         ))}

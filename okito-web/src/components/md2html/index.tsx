@@ -1,12 +1,14 @@
 import React from 'react'
+import { Box } from '@mui/material'
 import { CodeProps } from 'react-markdown/lib/ast-to-react'
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import dark from 'react-syntax-highlighter/dist/esm/styles/hljs/dark'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import ReactMarkdown from 'react-markdown'
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import remarkGfm from 'remark-gfm'
 import rehypeKatex from 'rehype-katex'
-import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import CodeCopyButton from './copy-code'
+import './style.scss'
 
 const components = {
   code({ node, inline, className, children, ...props }: CodeProps) {
@@ -15,37 +17,40 @@ const components = {
       <SyntaxHighlighter
         children={String(children).replace(/\n$/, '')}
         // @ts-ignore
-        style={dark}
-        language={match[1]}
-        PreTag="div"
+        style={atomDark}
+        language={match[1].toLowerCase()}
+        PreTag="section"
         {...props}
       />
     ) : (
       <code
         className={className}
         {...props}
-        // style={{
-        //   // @ts-ignore
-        //   backgroundColor: (theme) =>
-        //     theme.palette.mode === 'light' ? '#eee' : '#222',
-        // }}
+        style={{
+          color: '#476582',
+          backgroundColor: 'rgba(27,31,35,.05)',
+          padding: '.2rem .5rem',
+          borderRadius: '3px',
+        }}
       >
         {children}
       </code>
     )
   },
+
   // @ts-ignore
   pre: ({ children }) => (
     <pre
       style={{
         position: 'relative',
-        fontFamily: '"Fira Code", Roboto, serif !important',
+        fontFamily: 'Fira Code',
       }}
     >
       <CodeCopyButton>{children}</CodeCopyButton>
       {children}
     </pre>
   ),
+
   // @ts-ignore
   p: ({ node, children }) => {
     // @ts-ignore
@@ -69,11 +74,14 @@ interface Md2htmlProps {
 
 export default function Md2html({ content }: Md2htmlProps) {
   return (
-    <ReactMarkdown
-      children={content}
-      remarkPlugins={[remarkGfm]}
-      rehypePlugins={[rehypeKatex, rehypeRaw]}
-      components={components}
-    />
+    <Box sx={{ fontFamily: 'Fira Code' }}>
+      <ReactMarkdown
+        className="react-markdown"
+        children={content}
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeKatex, rehypeRaw]}
+        components={components}
+      />
+    </Box>
   )
 }

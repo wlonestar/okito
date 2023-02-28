@@ -40,11 +40,11 @@ export default function UserPage({ currentUser }: UserPageProps) {
   })
 
   return (
-    <Grid container spacing={3} sx={{ mt: 1, mb: 3 }}>
-      <Grid item xs={12} md={8.5}>
+    <Grid container sx={{ mt: 1, mb: 3 }}>
+      <Grid item xs={12} md={8.5} sx={{ pl: 1.5, pr: 1.5, pt: 2.5 }}>
         <Major user={user} homepage={homepage} currentUser={currentUser} />
       </Grid>
-      <Grid item xs={12} md={3.5}>
+      <Grid item xs={12} md={3.5} sx={{ pl: 1.5, pr: 1.5, pt: 2.5 }}>
         <Sticky user={user} collectionsNum={collectionsNum} tagsNum={tagsNum} />
       </Grid>
     </Grid>

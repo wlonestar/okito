@@ -1,0 +1,41 @@
+.react-markdown {
+  a {
+    color: #1976d2;
+    font-family: 'Fira Code', serif;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    border-radius: 5px;
+    background: #282c34 !important;
+    text-shadow: none !important;
+  }
+
+  code {
+    font-family: 'Fira Code', serif;
+    text-shadow: none !important;
+  }
+
+  blockquote {
+    padding: 0.1rem 1.5rem;
+    margin: 1rem 0;
+    border-left-width: 0.5rem;
+    border-left-style: solid;
+    border-color: gray;
+    background-color: #9d9d9d;
+  }
+
+  p {
+    line-height: 1.8;
+  }
+}
+
+.markdown-navbar {
+  div {
+    padding: 0.2rem 0.2rem;
+  }
+}

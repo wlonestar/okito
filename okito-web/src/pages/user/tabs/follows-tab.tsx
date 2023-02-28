@@ -29,6 +29,21 @@ export default function FollowsTab({ currentUser }: FollowsTabProps) {
   const [followedColumns, setFollowedColumns] = useState<Column[]>([])
   const [followedTags, setFollowedTags] = useState<Tag[]>([])
 
+  const tabs = [
+    { index: 0, label: '关注的用户', path: `/user/${id}/follows?q=following` },
+    { index: 1, label: '关注者', path: `/user/${id}/follows?q=followers` },
+    {
+      index: 2,
+      label: '关注的专栏',
+      path: `/user/${id}/follows?q=followed_columns`,
+    },
+    {
+      index: 3,
+      label: '关注的标签',
+      path: `/user/${id}/follows?q=followed_tags`,
+    },
+  ]
+
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
@@ -67,33 +82,17 @@ export default function FollowsTab({ currentUser }: FollowsTabProps) {
 
   return (
     <Paper>
-      {/*<Typography>follows tabs</Typography>*/}
       <Box sx={{ display: 'flex' }}>
         <Tabs value={value} onChange={handleChange} sx={{ marginLeft: 'auto' }}>
-          <Tab
-            label={'关注的用户'}
-            tabIndex={0}
-            component={Link}
-            to={`/user/${id}/follows?q=following`}
-          />
-          <Tab
-            label={'关注者'}
-            tabIndex={1}
-            component={Link}
-            to={`/user/${id}/follows?q=followers`}
-          />
-          <Tab
-            label={'关注的专栏'}
-            tabIndex={2}
-            component={Link}
-            to={`/user/${id}/follows?q=followed_columns`}
-          />
-          <Tab
-            label={'关注的标签'}
-            tabIndex={3}
-            component={Link}
-            to={`/user/${id}/follows?q=followed_tags`}
-          />
+          {tabs.map(({ index, label, path }) => (
+            <Tab
+              key={index}
+              label={label}
+              tabIndex={index}
+              component={Link}
+              to={path}
+            />
+          ))}
         </Tabs>
       </Box>
       <Divider />

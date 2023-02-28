@@ -9,6 +9,20 @@ export function selectRecommend100Posts() {
   })
 }
 
+export function selectHot100Posts() {
+  return client({
+    url: `${prefix}/hot`,
+    method: 'GET',
+  })
+}
+
+export function selectTop100Posts() {
+  return client({
+    url: `${prefix}/top`,
+    method: 'GET',
+  })
+}
+
 export function selectAllPosts() {
   return client({
     url: `${prefix}`,
@@ -39,7 +53,7 @@ export function selectPostsByAuthorId(authorId: number) {
 
 export function selectPostsByUserFollowed(userId: number) {
   return client({
-    url: `${prefix}/followed/${userId}`,
+    url: `${prefix}/follow/${userId}`,
     method: 'GET',
   })
 }

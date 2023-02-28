@@ -28,7 +28,7 @@ export const useSort = <
   propertyName: keyof A[K][number],
   order: sortOrder
 ) => {
-  return array.sort((a, b) =>
+  return [...array].sort((a, b) =>
     order === 'desc'
       ? a[propertyName] < b[propertyName]
         ? 1

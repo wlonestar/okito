@@ -10,6 +10,13 @@ export function selectRecommend100Pins() {
   })
 }
 
+export function selectHot100Pins() {
+  return client({
+    url: `${prefix}/hot`,
+    method: 'GET',
+  })
+}
+
 export function selectAllPins() {
   return client({
     url: `${prefix}`,
@@ -26,7 +33,7 @@ export function selectPinsByAuthorId(authorId: number) {
 
 export function selectPinsByUserFollowed(userId: number) {
   return client({
-    url: `${prefix}/followed/${userId}`,
+    url: `${prefix}/follow/${userId}`,
     method: 'GET',
   })
 }

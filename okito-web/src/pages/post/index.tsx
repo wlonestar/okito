@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useMount, useSort } from '../../utils'
 import { useParams } from 'react-router-dom'
-import { Grid } from '@mui/material'
+import { Box, Fab, Grid } from '@mui/material'
 import { Post, defaultPost } from '../../types/post'
 import {
   likeActionToPost,
@@ -22,6 +22,7 @@ import { PostComment } from '../../types/post-comment'
 import { selectPostCommentsByPostId } from '../../api/post-comment'
 import Side from './side'
 import Main from './main'
+import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined'
 
 interface PostPageProps {
   currentUser: User | null
@@ -38,6 +39,7 @@ export default function PostPage({ currentUser }: PostPageProps) {
   const [likeNum, setLikeNum] = useState<number>(post.likeNum)
   const [followed, setFollowed] = useState<boolean>(false)
   const [show, setShow] = useState<boolean>(false)
+  const [scrollVisible, setScrollVisible] = useState<boolean>(true)
 
   const handleClickFollow = () => {
     if (currentUser !== null) {
@@ -78,6 +80,10 @@ export default function PostPage({ currentUser }: PostPageProps) {
     }
   }
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
+
   useMount(async () => {
     const post = await selectPostById(id as unknown as number)
     setPost(post.data)
@@ -114,28 +120,58 @@ export default function PostPage({ currentUser }: PostPageProps) {
     setPostComments(useSort(postComments, 'likeNum', 'desc'))
   })
 
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop
+    if (scrolled > 300) {
+      setScrollVisible(false)
+    } else {
+      setScrollVisible(true)
+    }
+  }
+
+  window.addEventListener('scroll', toggleVisible)
+
   return (
-    <Grid container spacing={3} sx={{ mt: 1, mb: 3 }}>
-      <Grid item xs={12} md={9}>
-        <Main
-          post={post}
-          author={author}
-          cate={cate}
-          tags={tags}
-          comments={postComments}
-          currentUser={currentUser}
-        />
+    <Box>
+      <Grid container sx={{ mt: 1, mb: 3 }}>
+        <Grid item xs={12} md={9} sx={{ pl: 1.5, pr: 1.5, pt: 2.5 }}>
+          <Main
+            post={post}
+            author={author}
+            cate={cate}
+            tags={tags}
+            comments={postComments}
+            currentUser={currentUser}
+          />
+        </Grid>
+        <Grid item xs={12} md={3} sx={{ pl: 1.5, pr: 1.5, pt: 2.5 }}>
+          <Side
+            content={post.content}
+            likeType={likeType}
+            handleClickLike={handleClickLike}
+            show={show}
+            followed={followed}
+            handleClickFollow={handleClickFollow}
+            author={author}
+            currentUser={currentUser}
+          />
+        </Grid>
       </Grid>
-      <Grid item xs={12} md={3}>
-        <Side
-          likeType={likeType}
-          handleClickLike={handleClickLike}
-          show={show}
-          followed={followed}
-          handleClickFollow={handleClickFollow}
-          author={author}
-        />
-      </Grid>
-    </Grid>
+      <Box
+        sx={{
+          opacity: 1,
+          transition: 'opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+          position: 'fixed',
+          bottom: '24px',
+          right: '24px',
+          zIndex: 10,
+        }}
+        hidden={scrollVisible}
+      >
+        <Fab size="small" color="primary" onClick={scrollToTop}>
+          <KeyboardArrowUpOutlinedIcon />
+        </Fab>
+      </Box>
+    </Box>
   )
 }
