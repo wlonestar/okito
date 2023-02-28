@@ -14,6 +14,10 @@ public interface PostService {
 
   List<PostView> selectRecommend100();
 
+  List<PostView> searchTitle(String title);
+
+  List<PostView> searchByKeywords(String keywords);
+
   List<PostView> selectAll();
 
   List<PostView> selectAllByCateId(Long cateId);

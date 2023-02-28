@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Objects;
 
-
 /**
  * pin controller
  *
@@ -42,6 +41,17 @@ public class PinController {
   @RequestMapping(method = RequestMethod.GET, path = "/recommend")
   public RespResult<?> selectTop100() {
     return RespResult.success(pinService.selectRecommend100());
+  }
+
+  /**
+   * search by keywords
+   *
+   * @param keywords keywords
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/search")
+  public RespResult<?> searchByKeywords(@RequestParam(name = "q") String keywords) {
+    return RespResult.success(pinService.searchByKeywords(keywords));
   }
 
   /**

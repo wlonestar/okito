@@ -28,6 +28,9 @@ public class PostServiceImpl implements PostService {
   private PostViewRepository postViewRepository;
 
   @Resource
+  private PostViewRepositoryCustom postViewRepositoryCustom;
+
+  @Resource
   private CategoryRepository categoryRepository;
 
   @Resource
@@ -35,6 +38,16 @@ public class PostServiceImpl implements PostService {
 
   public List<PostView> selectRecommend100() {
     return postViewRepository.findRecommend100();
+  }
+
+  @Override
+  public List<PostView> searchTitle(String title) {
+    return postViewRepositoryCustom.searchByTitle(title);
+  }
+
+  @Override
+  public List<PostView> searchByKeywords(String keywords) {
+    return postViewRepositoryCustom.searchByKeywords(keywords);
   }
 
   @Override

@@ -50,6 +50,28 @@ public class PostController {
   }
 
   /**
+   * search posts by title
+   *
+   * @param title title
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/title")
+  public RespResult<?> searchTitle(@NonNull @RequestParam(name = "q") String title) {
+    return RespResult.success(postService.searchTitle(title));
+  }
+
+  /**
+   * search posts by title
+   *
+   * @param keywords keywords
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/search")
+  public RespResult<?> searchByKeywords(@NonNull @RequestParam(name = "q") String keywords) {
+    return RespResult.success(postService.searchByKeywords(keywords));
+  }
+
+  /**
    * select posts by cateId
    *
    * @param cateId cateId
