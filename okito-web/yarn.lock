@@ -1621,6 +1621,11 @@
     lodash.isundefined "^3.0.1"
     lodash.uniq "^4.5.0"
 
+"@fontsource/fira-code@^4.5.13":
+  version "4.5.13"
+  resolved "https://mirrors.cloud.tencent.com/npm/@fontsource/fira-code/-/fira-code-4.5.13.tgz#7ddd62472f7e6002acf9371815090eecf5d28f8c"
+  integrity sha512-T1IG6/2AXSwEKwlrEm3kyIL3RQTMblPyj68HgnBGl0IBGFxgS5LZ7StRdDo/QimJ4Tz6FQGHuy1Y/ShNxaUefA==
+
 "@fontsource/roboto@^4.5.8":
   version "4.5.8"
   resolved "https://mirrors.cloud.tencent.com/npm/@fontsource%2froboto/-/roboto-4.5.8.tgz#56347764786079838faf43f0eeda22dd7328437f"

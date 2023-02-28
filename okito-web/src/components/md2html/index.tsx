@@ -7,6 +7,7 @@ import rehypeKatex from 'rehype-katex'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import CodeCopyButton from './copy-code'
+import { Box } from '@mui/material'
 
 const components = {
   code({ node, inline, className, children, ...props }: CodeProps) {
@@ -24,28 +25,31 @@ const components = {
       <code
         className={className}
         {...props}
-        // style={{
-        //   // @ts-ignore
-        //   backgroundColor: (theme) =>
-        //     theme.palette.mode === 'light' ? '#eee' : '#222',
-        // }}
+        style={{ fontFamily: 'Fira Code' }}
       >
         {children}
       </code>
     )
   },
+
   // @ts-ignore
   pre: ({ children }) => (
     <pre
       style={{
         position: 'relative',
-        fontFamily: '"Fira Code", Roboto, serif !important',
+        fontFamily: 'Fira Code',
       }}
     >
-      <CodeCopyButton>{children}</CodeCopyButton>
+      {/*<CodeCopyButton>{children}</CodeCopyButton>*/}
       {children}
     </pre>
   ),
+
+  // @ts-ignore
+  span: ({ children }) => (
+    <span style={{ fontFamily: 'Fira Code' }}>{children}</span>
+  ),
+
   // @ts-ignore
   p: ({ node, children }) => {
     // @ts-ignore
@@ -69,11 +73,13 @@ interface Md2htmlProps {
 
 export default function Md2html({ content }: Md2htmlProps) {
   return (
-    <ReactMarkdown
-      children={content}
-      remarkPlugins={[remarkGfm]}
-      rehypePlugins={[rehypeKatex, rehypeRaw]}
-      components={components}
-    />
+    <Box sx={{ fontFamily: 'Fira Code' }}>
+      <ReactMarkdown
+        children={content}
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeKatex, rehypeRaw]}
+        components={components}
+      />
+    </Box>
   )
 }
