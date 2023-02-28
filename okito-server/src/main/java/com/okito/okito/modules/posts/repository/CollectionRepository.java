@@ -17,8 +17,8 @@ public interface CollectionRepository extends JpaRepository<Collection, Long> {
 
   List<Collection> findAllByAuthorId(Long authorId);
 
-  @Query(value = "select new Collection(c.id, c.name, c.cover, c.description, c.createTime, c.updateTime, c.authorId) " +
-    "from Collection c where c.id in (select uc.id.collectId from UserCollectionFollow uc where uc.id.userId = ?1 and uc.follow = true)")
+  @Query(value = "select c from Collection c where c.id in " +
+    "(select uc.id.collectId from UserCollectionFollow uc where uc.id.userId = ?1 and uc.follow = true)")
   List<Collection> findAllByFollowerId(Long followerId);
 
   long countAllByAuthorId(Long authorId);

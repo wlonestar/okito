@@ -15,23 +15,27 @@ import java.util.List;
 @Repository
 public interface PostViewRepository extends ReadOnlyRepository<PostView, Long> {
 
+  @Query(value = "select p from PostView p order by random() limit 100")
+  List<PostView> findRecommend100();
+
   List<PostView> findAllByCateId(Long cateId);
 
   List<PostView> findAllByAuthorId(Long authorId);
 
-  @Query(value = "select new PostView(p.id, p.title, p.summary, p.cover, p.content, " +
-    "p.createTime, p.updateTime, p.draft, p.cateId, p.authorId, p.viewNum, p.likeNum) " +
-    "from PostView p where p.id in (select pc.id.postId from PostCollection pc where pc.id.collectId = ?1)")
+  @Query(value = "select p from PostView p where p.id in " +
+    "(select pc.id.postId from PostCollection pc where pc.id.collectId = ?1)")
   List<PostView> findAllByCollectionId(Long collectionId);
 
-  @Query(value = "select new PostView(p.id, p.title, p.summary, p.cover, p.content, " +
-    "p.createTime, p.updateTime, p.draft, p.cateId, p.authorId, p.viewNum, p.likeNum) " +
-    "from PostView p where p.id in (select pc.id.postId from PostColumn pc where pc.id.columnId = ?1)")
+  @Query(value = "select p from PostView p where p.id in " +
+    "(select pc.id.postId from PostColumn pc where pc.id.columnId = ?1)")
   List<PostView> findAllByColumnId(Long columnId);
 
-  @Query(value = "select new PostView(p.id, p.title, p.summary, p.cover, p.content, " +
-    "p.createTime, p.updateTime, p.draft, p.cateId, p.authorId, p.viewNum, p.likeNum) " +
-    "from PostView p where p.id in (select pt.id.postId from PostTag pt where pt.id.tagId = ?1)")
+  @Query(value = "select p from PostView p where p.id in " +
+    "(select pt.id.postId from PostTag pt where pt.id.tagId = ?1)")
   List<PostView> findAllByTagId(Long tagId);
+
+  @Query(value = "select p from PostView p where p.authorId in " +
+    "(select u.id.followedId from UserFollow u where u.id.followerId = ?1 and u.follow = true)")
+  List<PostView> findAllByUserFollowed(Long userId);
 
 }

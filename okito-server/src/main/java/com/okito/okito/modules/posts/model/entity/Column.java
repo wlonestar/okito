@@ -1,10 +1,7 @@
 package com.okito.okito.modules.posts.model.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -14,7 +11,7 @@ import java.time.LocalDateTime;
  * @version 0.0.1
  * @time 2023/1/5 21:00
  */
-@Setter
+@Data
 @Entity
 @Builder
 @NoArgsConstructor
@@ -24,7 +21,7 @@ public class Column implements Serializable {
 
   @Id
   @jakarta.persistence.Column(name = "id")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private Long id;
 
   @jakarta.persistence.Column(name = "name")
@@ -44,33 +41,5 @@ public class Column implements Serializable {
 
   @jakarta.persistence.Column(name = "author_id")
   private Long authorId;
-
-  public Long getId() {
-    return id;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public String getCover() {
-    return cover;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public LocalDateTime getCreateTime() {
-    return createTime;
-  }
-
-  public LocalDateTime getUpdateTime() {
-    return updateTime;
-  }
-
-  public Long getAuthorId() {
-    return authorId;
-  }
 
 }

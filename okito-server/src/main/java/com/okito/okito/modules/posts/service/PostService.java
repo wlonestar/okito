@@ -12,6 +12,12 @@ import java.util.List;
  */
 public interface PostService {
 
+  List<PostView> selectRecommend100();
+
+  List<PostView> searchTitle(String title);
+
+  List<PostView> searchByKeywords(String keywords);
+
   List<PostView> selectAll();
 
   List<PostView> selectAllByCateId(Long cateId);
@@ -23,6 +29,8 @@ public interface PostService {
   List<PostView> selectAllByColumnId(Long columnId);
 
   List<PostView> selectAllByAuthorId(Long authorId);
+
+  List<PostView> selectAllByUserFollowed(Long userId);
 
   PostView selectById(Long id);
 

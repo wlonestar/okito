@@ -14,9 +14,15 @@ import java.util.List;
  */
 public interface PinService {
 
+  List<PinView> selectRecommend100();
+
+  List<PinView> searchByKeywords(String keywords);
+
   List<PinView> selectAll();
 
   List<PinView> selectAllByAuthorId(Long authorId);
+
+  List<PinView> selectAllByUserFollowed(Long userId);
 
   Page<PinView> selectAll(Pageable pageable);
 

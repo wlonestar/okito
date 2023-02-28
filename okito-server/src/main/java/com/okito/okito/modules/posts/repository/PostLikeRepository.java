@@ -16,10 +16,10 @@ import java.util.List;
 @Repository
 public interface PostLikeRepository extends JpaRepository<PostLike, PostLikeId> {
 
-  @Query(value = "select p.id.postId, p.id.userId, p.type from PostLike p where p.id.userId = ?1")
+  @Query(value = "select p from PostLike p where p.id.userId = ?1")
   List<PostLike> findAllByUserId(Long userId);
 
-  @Query(value = "select p.id.postId, p.id.userId, p.type from PostLike p where p.id.postId = ?1")
+  @Query(value = "select p from PostLike p where p.id.postId = ?1")
   List<PostLike> findAllByPostId(Long postId);
 
 }

@@ -19,8 +19,8 @@ public interface TagRepository extends JpaRepository<Tag, Long> {
   @Query(value = "select t.name from Tag t")
   List<String> findAllNames();
 
-  @Query(value = "select new TagView(t.id, t.name, t.cover, t.description, t.followNum, t.postNum) from TagView t " +
-    "where t.id in (select tf.id.tagId from TagFollow tf where tf.id.userId = ?1 and tf.follow = true)")
+  @Query(value = "select t from TagView t where t.id in " +
+    "(select tf.id.tagId from TagFollow tf where tf.id.userId = ?1 and tf.follow = true)")
   List<TagView> findAllByFollowerId(Long userId);
 
 }

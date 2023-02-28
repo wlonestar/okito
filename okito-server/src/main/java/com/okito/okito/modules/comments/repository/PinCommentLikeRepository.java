@@ -18,13 +18,13 @@ import java.util.List;
 @Repository
 public interface PinCommentLikeRepository extends JpaRepository<PinCommentLike, PinCommentLikeId> {
 
-  @Query(value = "select p.id.commentId, p.id.userId, p.type from PinCommentLike p where p.id.userId = ?1")
+  @Query(value = "select p from PinCommentLike p where p.id.userId = ?1")
   List<PinCommentLike> findAllByUserId(Long userId);
 
-  @Query(value = "select p.id.commentId, p.id.userId, p.type from PinCommentLike p where p.id.commentId = ?1")
+  @Query(value = "select p from PinCommentLike p where p.id.commentId = ?1")
   List<PinCommentLike> findAllByCommentId(Long commentId);
 
-  @Query(value = "select p.id.commentId, p.id.userId, p.type from PinCommentLike p where p.id.userId = ?1")
+  @Query(value = "select p from PinCommentLike p where p.id.userId = ?1")
   Page<PinCommentLike> findAllByUserIdAndPage(Long userId, Pageable pageable);
 
 }

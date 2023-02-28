@@ -6,6 +6,7 @@ import com.okito.okito.modules.pins.model.view.PinView;
 import com.okito.okito.modules.pins.repository.PinLikeRepository;
 import com.okito.okito.modules.pins.repository.PinRepository;
 import com.okito.okito.modules.pins.repository.PinViewRepository;
+import com.okito.okito.modules.pins.repository.PinViewRepositoryCustom;
 import com.okito.okito.modules.pins.service.PinService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -32,7 +33,20 @@ public class PinServiceImpl implements PinService {
   private PinViewRepository pinViewRepository;
 
   @Resource
+  private PinViewRepositoryCustom pinViewRepositoryCustom;
+
+  @Resource
   private PinLikeRepository pinLikeRepository;
+
+  @Override
+  public List<PinView> selectRecommend100() {
+    return pinViewRepository.findRecommend100();
+  }
+
+  @Override
+  public List<PinView> searchByKeywords(String keywords) {
+    return pinViewRepositoryCustom.searchByKeywords(keywords);
+  }
 
   @Override
   public List<PinView> selectAll() {
@@ -42,6 +56,11 @@ public class PinServiceImpl implements PinService {
   @Override
   public List<PinView> selectAllByAuthorId(Long authorId) {
     return pinViewRepository.findAllByAuthorId(authorId);
+  }
+
+  @Override
+  public List<PinView> selectAllByUserFollowed(Long userId) {
+    return pinViewRepository.findAllByUserFollowed(userId);
   }
 
   @Override

@@ -30,6 +30,16 @@ public class PostController {
   private PostService postService;
 
   /**
+   * select recommend 100 posts
+   *
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/recommend")
+  public RespResult<?> selectTop100() {
+    return RespResult.success(postService.selectRecommend100());
+  }
+
+  /**
    * select all posts
    *
    * @return RespResult<?>
@@ -37,6 +47,28 @@ public class PostController {
   @RequestMapping(method = RequestMethod.GET, path = "")
   public RespResult<?> selectAll() {
     return RespResult.success(postService.selectAll());
+  }
+
+  /**
+   * search posts by title
+   *
+   * @param title title
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/title")
+  public RespResult<?> searchTitle(@NonNull @RequestParam(name = "q") String title) {
+    return RespResult.success(postService.searchTitle(title));
+  }
+
+  /**
+   * search posts by title
+   *
+   * @param keywords keywords
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/search")
+  public RespResult<?> searchByKeywords(@NonNull @RequestParam(name = "q") String keywords) {
+    return RespResult.success(postService.searchByKeywords(keywords));
   }
 
   /**
@@ -92,6 +124,17 @@ public class PostController {
   @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
   public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
     return RespResult.success(postService.selectAllByAuthorId(authorId));
+  }
+
+  /**
+   * select posts written by user followed by id
+   *
+   * @param userId user id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/follow/{userId}")
+  public RespResult<?> selectAllByUserFollowed(@NonNull @PathVariable(name = "userId") Long userId) {
+    return RespResult.success(postService.selectAllByUserFollowed(userId));
   }
 
   /**

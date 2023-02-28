@@ -18,13 +18,13 @@ import java.util.List;
 @Repository
 public interface PostCommentLikeRepository extends JpaRepository<PostCommentLike, PostCommentLikeId> {
 
-  @Query(value = "select p.id.commentId, p.id.userId, p.type from PostCommentLike p where p.id.userId = ?1")
+  @Query(value = "select p from PostCommentLike p where p.id.userId = ?1")
   List<PostCommentLike> findAllByUserId(Long userId);
 
-  @Query(value = "select p.id.commentId, p.id.userId, p.type from PostCommentLike p where p.id.commentId = ?1")
+  @Query(value = "select p from PostCommentLike p where p.id.commentId = ?1")
   List<PostCommentLike> findAllByCommentId(Long commentId);
 
-  @Query(value = "select p.id.commentId, p.id.userId, p.type from PostCommentLike p where p.id.userId = ?1")
+  @Query(value = "select p from PostCommentLike p where p.id.userId = ?1")
   Page<PostCommentLike> findAllByUserIdAndPage(Long userId, Pageable pageable);
 
 }

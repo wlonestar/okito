@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Objects;
 
-
 /**
  * pin controller
  *
@@ -33,6 +32,27 @@ public class PinController {
 
   @Resource
   private PinService pinService;
+
+  /**
+   * select recommend 100 pins
+   *
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/recommend")
+  public RespResult<?> selectTop100() {
+    return RespResult.success(pinService.selectRecommend100());
+  }
+
+  /**
+   * search by keywords
+   *
+   * @param keywords keywords
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/search")
+  public RespResult<?> searchByKeywords(@RequestParam(name = "q") String keywords) {
+    return RespResult.success(pinService.searchByKeywords(keywords));
+  }
 
   /**
    * select all pins
@@ -53,6 +73,17 @@ public class PinController {
   @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
   public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
     return RespResult.success(pinService.selectAllByAuthorId(authorId));
+  }
+
+  /**
+   * select all pins written by user followed by id
+   *
+   * @param userId user id
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.GET, path = "/followed/{userId}")
+  public RespResult<?> selectAllByUserFollowed(@NonNull @PathVariable(name = "userId") Long userId) {
+    return RespResult.success(pinService.selectAllByUserFollowed(userId));
   }
 
   /**
