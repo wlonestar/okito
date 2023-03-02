@@ -21,7 +21,7 @@ export interface DialogTitleProps {
   onClose: () => void
 }
 
-function CollectionDialogTitle(props: DialogTitleProps) {
+export function CollectionDialogTitle(props: DialogTitleProps) {
   const { children, onClose, ...other } = props
 
   return (

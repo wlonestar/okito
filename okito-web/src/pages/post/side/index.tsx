@@ -8,6 +8,7 @@ import { AuthorCard } from './author-card'
 import { PostInfo } from './post-info'
 import { DialogProps } from '@mui/material/Dialog'
 import { PostAction } from './post-action'
+import { CreateCollectionDialog } from '../../../components/dialog/collection-dialog/create-collection'
 
 interface SideProps {
   content: string
@@ -30,7 +31,8 @@ export default function Side({
   author,
   currentUser,
 }: SideProps) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState<boolean>(false)
+  const [createOpen, setCreateOpen] = useState<boolean>(false)
   const [scroll, setScroll] = useState<DialogProps['scroll']>('paper')
 
   const handleClickOpen = (scrollType: DialogProps['scroll']) => () => {
@@ -42,7 +44,18 @@ export default function Side({
     setOpen(false)
   }
 
+  const handleCreateClose = () => {
+    setCreateOpen(false)
+    setOpen(true)
+  }
+
   const handleCreateCollection = () => {
+    // TODO
+    setOpen(false)
+    setCreateOpen(true)
+  }
+
+  const handleClickSubmit = () => {
     // TODO
   }
 
@@ -70,6 +83,12 @@ export default function Side({
         scroll={scroll}
         handleClose={handleClose}
         handleCreateCollection={handleCreateCollection}
+        currentUser={currentUser}
+      />
+      <CreateCollectionDialog
+        open={createOpen}
+        handleClose={handleCreateClose}
+        handleClickSubmit={handleClickSubmit}
         currentUser={currentUser}
       />
       <Paper sx={{ mt: 2 }}>
