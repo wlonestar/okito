@@ -29,20 +29,28 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
 
   useMount(async () => {
     const userId = id as unknown as number
+    // I don't know why the above convert not work
+    if (currentUser !== null && userId) {
+      if (currentUser.id === parseInt(String(userId))) {
+        setHomepage(true)
+      }
+    }
     const cc = await selectCollectionsByAuthorId(userId)
     if (cc.status === 20) {
       const data: Collection[] = useSort(cc.data, 'updateTime', 'desc')
-      setCreateCollections(data)
+      if (currentUser !== null && currentUser.id == userId) {
+        // show private collections
+        setCreateCollections(data)
+      } else {
+        // only show public collections
+        const publicCollections = data.filter((collection) => collection.type)
+        setCreateCollections(publicCollections)
+      }
     }
     const fc = await selectCollectionsByFollowerId(userId)
     if (fc.status === 20) {
       const data: Collection[] = useSort(fc.data, 'updateTime', 'desc')
       setFollowCollections(data)
-    }
-    if (currentUser !== null && cc.data.length > 0) {
-      if (currentUser.id === cc.data[0].authorId) {
-        setHomepage(true)
-      }
     }
   })
 
@@ -87,7 +95,7 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
       <Divider />
       <Paper>
         {homepage ? (
-          <>
+          <Box>
             <TabPanel index={0} value={value}>
               {createCollections.map((collection) => (
                 <CollectionTitle
@@ -108,9 +116,9 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
                 />
               ))}
             </TabPanel>
-          </>
+          </Box>
         ) : (
-          <>
+          <Box>
             {createCollections.map((collection) => (
               <CollectionTitle
                 key={collection.id}
@@ -119,7 +127,7 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
                 currentUser={currentUser}
               />
             ))}
-          </>
+          </Box>
         )}
       </Paper>
     </Paper>

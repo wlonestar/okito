@@ -1,4 +1,5 @@
 import client from '../utils/axios-client'
+import { Collection } from '../types/collection'
 
 const prefix: string = '/collection'
 
@@ -41,5 +42,15 @@ export function countFollowNumByCollectionId(collectionId: number) {
   return client({
     url: `${prefix}/count/follow/${collectionId}`,
     method: 'GET',
+  })
+}
+
+export function addCollection(param: Collection) {
+  return client({
+    url: '/collection',
+    method: 'POST',
+    data: {
+      ...param,
+    },
   })
 }

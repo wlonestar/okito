@@ -1,20 +1,22 @@
-import { Collection } from '../../../types/collection'
-import { User } from '../../../types/user'
+import { Collection } from '../../../../types/collection'
+import { User } from '../../../../types/user'
 import { Box, Button, Divider, Link, Typography } from '@mui/material'
 import React, { useState } from 'react'
-import { useMount } from '../../../utils'
-import { countPostsByCollectionId } from '../../../api/collection'
+import { useMount } from '../../../../utils'
+import { countPostsByCollectionId } from '../../../../api/collection'
 import {
-  selectUserCollectionFollowByUserIdAndCollectionId,
-  updateFollowCollection,
-} from '../../../api/user'
+  selectPostCollectionById,
+  updatePostCollection,
+} from '../../../../api/post-collection'
 
 interface CollectionPostFollowProps {
+  postId: number
   collection: Collection
   currentUser: User | null
 }
 
 export default function CollectionPostFollow({
+  postId,
   collection,
   currentUser,
 }: CollectionPostFollowProps) {
@@ -24,13 +26,19 @@ export default function CollectionPostFollow({
   const handleClick = () => {
     if (currentUser !== null) {
       const param = {
-        userId: currentUser?.id,
+        postId: postId,
         collectionId: collection.id,
         follow: !followed,
       }
-      updateFollowCollection(param).then((res) => {
+      setFollowed(!followed)
+      if (followed) {
+        setPostsNum(postsNum - 1)
+      } else {
+        setPostsNum(postsNum + 1)
+      }
+      updatePostCollection(param).then((res) => {
         if (res.status === 20) {
-          setFollowed(!followed)
+          console.log(res)
         }
       })
     } else {
@@ -44,9 +52,8 @@ export default function CollectionPostFollow({
       setPostsNum(posts.data)
     }
     if (currentUser !== null) {
-      const param = { userId: currentUser.id, collectionId: collection.id }
-      const followData =
-        await selectUserCollectionFollowByUserIdAndCollectionId(param)
+      const param = { postId: postId, collectionId: collection.id }
+      const followData = await selectPostCollectionById(param)
       if (followData.status === 20) {
         if (followData.data.follow) {
           setFollowed(true)

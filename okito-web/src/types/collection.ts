@@ -1,8 +1,8 @@
 export interface Collection {
   id: number
-  name: string
-  cover: string
-  description: string
+  name?: string
+  type: boolean
+  description?: string
   createTime: Date
   updateTime: Date
   authorId: number

@@ -1,6 +1,5 @@
 import React, { ReactNode, useEffect, useRef, useState } from 'react'
 import Button from '@mui/material/Button'
-import { styled } from '@mui/material/styles'
 import Dialog, { DialogProps } from '@mui/material/Dialog'
 import DialogTitle from '@mui/material/DialogTitle'
 import DialogContent from '@mui/material/DialogContent'
@@ -13,16 +12,8 @@ import { User } from '../../../types/user'
 import { useMount } from '../../../utils'
 import { Collection } from '../../../types/collection'
 import { selectCollectionsByAuthorId } from '../../../api/collection'
-import CollectionPostFollow from '../../collection/collection-post-follow'
-
-const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  '& .MuiDialogContent-root': {
-    padding: theme.spacing(3),
-  },
-  '& .MuiDialogActions-root': {
-    padding: theme.spacing(2),
-  },
-}))
+import CollectionPostFollow from './collection-post-follow'
+import { useParams } from 'react-router-dom'
 
 export interface DialogTitleProps {
   id: string
@@ -30,11 +21,11 @@ export interface DialogTitleProps {
   onClose: () => void
 }
 
-function BootstrapDialogTitle(props: DialogTitleProps) {
+export function CollectionDialogTitle(props: DialogTitleProps) {
   const { children, onClose, ...other } = props
 
   return (
-    <DialogTitle sx={{ m: 0, p: 4 }} {...other}>
+    <DialogTitle component="div" sx={{ m: 0, p: 4 }} {...other}>
       {children}
       {onClose ? (
         <IconButton
@@ -69,6 +60,7 @@ export const CollectionDialog = ({
   handleCreateCollection,
   currentUser,
 }: CollectionDialogProps) => {
+  const { id } = useParams()
   const descriptionElementRef = useRef<HTMLElement>(null)
   const [collections, setCollections] = useState<Collection[]>([])
 
@@ -93,14 +85,14 @@ export const CollectionDialog = ({
 
   return (
     <Box>
-      <BootstrapDialog
+      <Dialog
         open={open}
         onClose={handleClose}
         scroll={scroll}
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
       >
-        <BootstrapDialogTitle
+        <CollectionDialogTitle
           id="customized-dialog-title"
           onClose={handleClose}
         >
@@ -119,17 +111,18 @@ export const CollectionDialog = ({
           >
             {'请选择你想添加的收藏夹'}
           </Typography>
-        </BootstrapDialogTitle>
+        </CollectionDialogTitle>
         <DialogContent>
           {collections.map((collection) => (
             <CollectionPostFollow
               key={collection.id}
+              postId={parseInt(String(id))}
               collection={collection}
               currentUser={currentUser}
             />
           ))}
         </DialogContent>
-        <DialogActions>
+        <DialogActions sx={{ p: 4 }}>
           <Button
             variant="contained"
             sx={{ m: '0 auto' }}
@@ -138,7 +131,7 @@ export const CollectionDialog = ({
             {'新建收藏夹'}
           </Button>
         </DialogActions>
-      </BootstrapDialog>
+      </Dialog>
     </Box>
   )
 }
