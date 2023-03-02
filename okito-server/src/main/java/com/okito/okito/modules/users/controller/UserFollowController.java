@@ -78,7 +78,7 @@ public class UserFollowController {
     if (!Objects.equals(follow, null)) {
       return RespResult.success(follow);
     }
-    return RespResult.success(new UserFollow(new UserFollowId(followerId, followedId), false));
+    return RespResult.success(new UserFollow(id, false));
   }
 
   /**
@@ -112,7 +112,7 @@ public class UserFollowController {
       follow.setFollow(param.getFollow());
       userFollowService.update(follow);
     } else {
-      follow = new UserFollow(new UserFollowId(param.getFollowerId(), param.getFollowedId()), param.getFollow());
+      follow = new UserFollow(id, param.getFollow());
       userFollowService.add(follow);
     }
     return RespResult.success(follow);

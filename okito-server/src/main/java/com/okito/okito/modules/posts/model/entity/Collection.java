@@ -25,7 +25,8 @@ public class Collection implements Serializable {
 
   @Id
   @Column(name = "id")
-  @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  @SequenceGenerator(name = "collection_id_seq", sequenceName = "collection_id_seq", allocationSize = 1)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "collection_id_seq")
   private Long id;
 
   @Column(name = "name")
