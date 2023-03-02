@@ -29,6 +29,7 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
 
   useMount(async () => {
     const userId = id as unknown as number
+    // I don't know why the above convert not work
     if (currentUser !== null && userId) {
       if (currentUser.id === parseInt(String(userId))) {
         setHomepage(true)
@@ -94,7 +95,7 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
       <Divider />
       <Paper>
         {homepage ? (
-          <>
+          <Box>
             <TabPanel index={0} value={value}>
               {createCollections.map((collection) => (
                 <CollectionTitle
@@ -115,9 +116,9 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
                 />
               ))}
             </TabPanel>
-          </>
+          </Box>
         ) : (
-          <>
+          <Box>
             {createCollections.map((collection) => (
               <CollectionTitle
                 key={collection.id}
@@ -126,7 +127,7 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
                 currentUser={currentUser}
               />
             ))}
-          </>
+          </Box>
         )}
       </Paper>
     </Paper>
