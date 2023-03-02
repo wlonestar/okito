@@ -75,7 +75,7 @@ public class CollectionServiceImpl implements CollectionService {
     if (!Objects.equals(newCollection, null)) {
       newCollection.setName(collection.getName());
       newCollection.setDescription(collection.getDescription());
-      newCollection.setCover(collection.getCover());
+      newCollection.setType(collection.getType());
       newCollection.setCreateTime(collection.getCreateTime());
       newCollection.setUpdateTime(collection.getUpdateTime());
       collectionRepository.save(newCollection);

@@ -31,8 +31,8 @@ public class Collection implements Serializable {
   @Column(name = "name")
   private String name;
 
-  @Column(name = "cover")
-  private String cover;
+  @Column(name = "type")
+  private Boolean type;
 
   @Column(name = "description")
   private String description;
