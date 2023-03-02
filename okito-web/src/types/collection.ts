@@ -1,7 +1,7 @@
 export interface Collection {
   id: number
   name: string
-  cover: string
+  type: boolean
   description: string
   createTime: Date
   updateTime: Date

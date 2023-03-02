@@ -23,6 +23,7 @@ import {
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined'
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined'
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import ActionList from './action-list'
 
 interface CollectionTitleProps {
@@ -100,11 +101,17 @@ export default function CollectionTitle({
             color="text.primary"
             href={`/collection/${collection.id}`}
             target="_blank"
-            sx={{ cursor: 'pointer' }}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              cursor: 'pointer',
+              pb: 1.5,
+            }}
           >
-            <Typography variant="h6" fontWeight={600} gutterBottom>
+            <Typography variant="h6" fontWeight={600} sx={{ mr: 1.5 }}>
               {collection.name}
             </Typography>
+            {!collection.type ? <LockOutlinedIcon fontSize="small" /> : ''}
           </Link>
           <Box sx={{ display: 'flex' }}>
             <Typography variant="body2" color="text.secondary">
@@ -112,7 +119,7 @@ export default function CollectionTitle({
               <PointerDivider />
               {postsNum + ' 篇文章'}
               <PointerDivider />
-              {followNum + ' 订阅'}
+              {collection.type ? followNum + ' 订阅' : 'private'}
             </Typography>
           </Box>
         </Box>
