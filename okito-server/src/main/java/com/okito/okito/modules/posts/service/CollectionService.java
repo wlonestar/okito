@@ -25,7 +25,7 @@ public interface CollectionService {
 
   long countFollowNumByCollectionId(Long collectId);
 
-  boolean add(Collection collection);
+  Collection add(Collection collection);
 
   boolean update(Collection collection);
 

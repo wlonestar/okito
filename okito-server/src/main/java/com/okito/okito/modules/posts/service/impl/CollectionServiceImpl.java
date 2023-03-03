@@ -6,6 +6,7 @@ import com.okito.okito.modules.posts.repository.PostCollectionRepository;
 import com.okito.okito.modules.posts.service.CollectionService;
 import com.okito.okito.modules.users.repository.UserCollectionFollowRepository;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.Objects;
  * @version 0.0.1
  * @time 2023/1/12 20:37
  */
+@Slf4j
 @Service
 public class CollectionServiceImpl implements CollectionService {
 
@@ -64,9 +66,11 @@ public class CollectionServiceImpl implements CollectionService {
   }
 
   @Override
-  public boolean add(Collection collection) {
+  public Collection add(Collection collection) {
+    // TODO: currently do not know how to fix it
+    collection.setId(collectionRepository.nextCollectionId() + 1);
     collectionRepository.save(collection);
-    return true;
+    return collection;
   }
 
   @Override

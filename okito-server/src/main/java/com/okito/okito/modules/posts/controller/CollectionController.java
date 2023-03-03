@@ -116,8 +116,9 @@ public class CollectionController {
    */
   @RequestMapping(method = RequestMethod.POST, path = "")
   public RespResult<?> add(@NonNull @RequestBody Collection collection) {
-    collectionService.add(collection);
-    return RespResult.success();
+    Collection add = collectionService.add(collection);
+    log.info("{}", add);
+    return RespResult.success(add);
   }
 
   /**
