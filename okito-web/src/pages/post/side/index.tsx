@@ -8,7 +8,7 @@ import { AuthorCard } from './author-card'
 import { PostInfo } from './post-info'
 import { DialogProps } from '@mui/material/Dialog'
 import { PostAction } from './post-action'
-import { CreateCollectionDialog } from '../../../components/dialog/collection-dialog/create-collection'
+import { EditCollectionDialog } from '../../../components/dialog/collection-dialog/edit-collection'
 import { Collection } from '../../../types/collection'
 import { useMount } from '../../../utils'
 import { selectCollectionsByAuthorId } from '../../../api/collection'
@@ -64,7 +64,6 @@ export default function Side({
       const collections = await selectCollectionsByAuthorId(currentUser.id)
       if (collections.status === 20) {
         setCollections(collections.data)
-        console.log(collections.data)
       }
     }
   })
@@ -96,10 +95,10 @@ export default function Side({
         collections={collections}
         currentUser={currentUser}
       />
-      <CreateCollectionDialog
+      <EditCollectionDialog
         open={createOpen}
-        handleClose={handleCreateClose}
         collections={collections}
+        handleClose={handleCreateClose}
         currentUser={currentUser}
       />
       <Paper sx={{ mt: 2 }}>

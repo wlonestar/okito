@@ -2,19 +2,24 @@ import React from 'react'
 import { Menu, MenuItem, Typography } from '@mui/material'
 import { Collection } from '../../../types/collection'
 
-const actions = ['编辑', '删除']
-
 interface ActionListProps {
   collection: Collection
   anchorElColumn: HTMLElement | null
+  handleOpen: (collection: Collection) => void
   handleCloseActionMenu: () => void
 }
 
 export default function ActionList({
   collection,
   anchorElColumn,
+  handleOpen,
   handleCloseActionMenu,
 }: ActionListProps) {
+  const handleEdit = (id: number) => {
+    console.log('handle edit', id)
+    handleOpen(collection)
+  }
+
   return (
     <Menu
       sx={{ mt: '45px' }}
@@ -25,11 +30,12 @@ export default function ActionList({
       open={Boolean(anchorElColumn)}
       onClose={handleCloseActionMenu}
     >
-      {actions.map((action) => (
-        <MenuItem key={action} onClick={handleCloseActionMenu}>
-          <Typography textAlign="center">{action}</Typography>
-        </MenuItem>
-      ))}
+      <MenuItem onClick={() => handleEdit(collection.id)}>
+        <Typography textAlign="center">{'编辑'}</Typography>
+      </MenuItem>
+      <MenuItem onClick={handleCloseActionMenu}>
+        <Typography textAlign="center">{'删除'}</Typography>
+      </MenuItem>
     </Menu>
   )
 }
