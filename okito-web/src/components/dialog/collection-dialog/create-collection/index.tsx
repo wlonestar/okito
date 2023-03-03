@@ -13,13 +13,16 @@ import Button from '@mui/material/Button'
 import React, { ChangeEvent, FormEvent, useRef, useState } from 'react'
 import { CollectionDialogTitle } from '../index'
 import { addCollection } from '../../../../api/collection'
+import { Collection } from '../../../../types/collection'
 
 interface CreateCollectionCardProps {
+  collections: Collection[]
   handleClose: () => void
   currentUser: User | null
 }
 
 const CreateCollectionCard = ({
+  collections,
   handleClose,
   currentUser,
 }: CreateCollectionCardProps) => {
@@ -40,11 +43,12 @@ const CreateCollectionCard = ({
         updateTime: new Date(),
         authorId: currentUser.id,
       }
-      console.log(param)
       addCollection(param).then((res) => {
         if (res.status !== 20) {
           console.log(res)
         }
+        collections.push(res.data)
+        handleClose()
       })
     }
   }
@@ -132,13 +136,14 @@ const CreateCollectionCard = ({
 interface CreateCollectionDialogProps {
   open: boolean
   handleClose: () => void
-  handleClickSubmit: () => void
+  collections: Collection[]
   currentUser: User | null
 }
 
 export const CreateCollectionDialog = ({
   open,
   handleClose,
+  collections,
   currentUser,
 }: CreateCollectionDialogProps) => {
   return (
@@ -163,6 +168,7 @@ export const CreateCollectionDialog = ({
         </CollectionDialogTitle>
         <DialogContent>
           <CreateCollectionCard
+            collections={collections}
             handleClose={handleClose}
             currentUser={currentUser}
           />

@@ -50,6 +50,7 @@ interface CollectionDialogProps {
   scroll: DialogProps['scroll']
   handleClose: () => void
   handleCreateCollection: () => void
+  collections: Collection[]
   currentUser: User | null
 }
 
@@ -58,11 +59,12 @@ export const CollectionDialog = ({
   scroll,
   handleClose,
   handleCreateCollection,
+  collections,
   currentUser,
 }: CollectionDialogProps) => {
   const { id } = useParams()
   const descriptionElementRef = useRef<HTMLElement>(null)
-  const [collections, setCollections] = useState<Collection[]>([])
+  // const [collections, setCollections] = useState<Collection[]>([])
 
   useEffect(() => {
     if (open) {
@@ -73,15 +75,15 @@ export const CollectionDialog = ({
     }
   }, [open])
 
-  useMount(async () => {
-    if (currentUser !== null) {
-      const collections = await selectCollectionsByAuthorId(currentUser.id)
-      if (collections.status === 20) {
-        setCollections(collections.data)
-        console.log(collections.data)
-      }
-    }
-  })
+  // useMount(async () => {
+  //   if (currentUser !== null) {
+  //     const collections = await selectCollectionsByAuthorId(currentUser.id)
+  //     if (collections.status === 20) {
+  //       setCollections(collections.data)
+  //       console.log(collections.data)
+  //     }
+  //   }
+  // })
 
   return (
     <Box>
