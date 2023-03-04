@@ -54,3 +54,13 @@ export function addCollection(param: Collection) {
     },
   })
 }
+
+export function updateCollection(param: Collection) {
+  return client({
+    url: '/collection',
+    method: 'PUT',
+    data: {
+      ...param,
+    },
+  })
+}

@@ -7,3 +7,13 @@ export interface Collection {
   updateTime: Date
   authorId: number
 }
+
+export const defaultCollection: Collection = {
+  id: 0,
+  name: '',
+  type: false,
+  description: '',
+  createTime: new Date(),
+  updateTime: new Date(),
+  authorId: 0,
+}

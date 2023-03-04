@@ -1,7 +1,7 @@
 import React, { SyntheticEvent, useState } from 'react'
 import { Box, Button, Divider, Paper, Tab, Tabs } from '@mui/material'
 import { Link, useParams } from 'react-router-dom'
-import { Collection } from '../../../types/collection'
+import { Collection, defaultCollection } from '../../../types/collection'
 import { useMount, useSort } from '../../../utils'
 import {
   selectCollectionsByAuthorId,
@@ -11,6 +11,7 @@ import CollectionTitle from '../../../components/collection/collection-title'
 import { TabPanel } from '../../../components/tab'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined'
 import { User } from '../../../types/user'
+import { EditCollectionDialog } from '../../../components/dialog/collection-dialog/edit-collection'
 
 interface CollectionsTabProps {
   currentUser: User | null
@@ -22,6 +23,17 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
   const [value, setValue] = useState<number>(0)
   const [createCollections, setCreateCollections] = useState<Collection[]>([])
   const [followCollections, setFollowCollections] = useState<Collection[]>([])
+  const [open, setOpen] = useState<boolean>(false)
+  const [prevData, setPrevData] = useState<Collection>(defaultCollection)
+
+  const handleClose = () => {
+    setOpen(false)
+  }
+
+  const handleOpen = (collection: Collection) => {
+    setOpen(true)
+    setPrevData(collection)
+  }
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
@@ -102,6 +114,7 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
                   key={collection.id}
                   collection={collection}
                   homepage={homepage}
+                  handleOpen={() => handleOpen(collection)}
                   currentUser={currentUser}
                 />
               ))}
@@ -116,6 +129,13 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
                 />
               ))}
             </TabPanel>
+            <EditCollectionDialog
+              open={open}
+              prevData={prevData}
+              collections={createCollections}
+              handleClose={handleClose}
+              currentUser={currentUser}
+            />
           </Box>
         ) : (
           <Box>

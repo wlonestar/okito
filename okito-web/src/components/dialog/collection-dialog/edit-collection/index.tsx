@@ -12,20 +12,26 @@ import DialogContent from '@mui/material/DialogContent'
 import Button from '@mui/material/Button'
 import React, { ChangeEvent, FormEvent, useRef, useState } from 'react'
 import { CollectionDialogTitle } from '../index'
-import { addCollection } from '../../../../api/collection'
+import { addCollection, updateCollection } from '../../../../api/collection'
+import { Collection } from '../../../../types/collection'
+import { useMount } from '../../../../utils'
 
-interface CreateCollectionCardProps {
+interface EditCollectionCardProps {
+  prevData?: Collection
+  collections: Collection[]
   handleClose: () => void
   currentUser: User | null
 }
 
-const CreateCollectionCard = ({
+const EditCollectionCard = ({
+  prevData,
+  collections,
   handleClose,
   currentUser,
-}: CreateCollectionCardProps) => {
+}: EditCollectionCardProps) => {
   const [value, setValue] = useState<string>('true')
   const nameRef = useRef('')
-  const [disable, setDisable] = useState<boolean>(true)
+  const [disable, setDisable] = useState<boolean>(prevData === undefined)
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -40,12 +46,25 @@ const CreateCollectionCard = ({
         updateTime: new Date(),
         authorId: currentUser.id,
       }
-      console.log(param)
-      addCollection(param).then((res) => {
-        if (res.status !== 20) {
-          console.log(res)
-        }
-      })
+      if (prevData === undefined) {
+        addCollection(param).then((res) => {
+          if (res.status !== 20) {
+            console.log(res)
+          }
+          console.log(res.data)
+          collections.push(res.data)
+          handleClose()
+        })
+      } else {
+        param.id = prevData.id
+        updateCollection(param).then((res) => {
+          if (res.status !== 20) {
+            console.log(res)
+          }
+          console.log(res.data)
+          handleClose()
+        })
+      }
     }
   }
 
@@ -63,6 +82,15 @@ const CreateCollectionCard = ({
     setValue((event.target as HTMLInputElement).value)
   }
 
+  useMount(() => {
+    if (prevData !== undefined) {
+      console.log('update\n', prevData)
+      // nameRef = prevData.name
+    } else {
+      console.log('add')
+    }
+  })
+
   return (
     <Box
       component="form"
@@ -79,6 +107,7 @@ const CreateCollectionCard = ({
         name="name"
         label="收藏夹名称"
         autoFocus
+        defaultValue={prevData !== undefined ? prevData.name : null}
         inputRef={nameRef}
         onChange={handleNameChange}
       />
@@ -91,8 +120,16 @@ const CreateCollectionCard = ({
         id="description"
         name="description"
         label="收藏描述（可选）"
+        defaultValue={prevData !== undefined ? prevData.description : null}
       />
-      <RadioGroup name="type" value={value} onChange={handleRadioChange}>
+      <RadioGroup
+        name="type"
+        value={value}
+        defaultValue={
+          prevData !== undefined ? (prevData.type ? 'true' : 'false') : null
+        }
+        onChange={handleRadioChange}
+      >
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <FormControlLabel value="true" control={<Radio />} label="公开" />
           <Typography variant="body2" color="text.secondary">
@@ -122,25 +159,28 @@ const CreateCollectionCard = ({
           sx={{ m: '0 auto', ml: 1 }}
           disabled={disable}
         >
-          {'新建收藏夹'}
+          {prevData === undefined ? '新建收藏夹' : '更新收藏夹'}
         </Button>
       </Box>
     </Box>
   )
 }
 
-interface CreateCollectionDialogProps {
+interface EditCollectionDialogProps {
   open: boolean
+  prevData?: Collection
+  collections: Collection[]
   handleClose: () => void
-  handleClickSubmit: () => void
   currentUser: User | null
 }
 
-export const CreateCollectionDialog = ({
+export const EditCollectionDialog = ({
   open,
+  prevData,
+  collections,
   handleClose,
   currentUser,
-}: CreateCollectionDialogProps) => {
+}: EditCollectionDialogProps) => {
   return (
     <Box>
       <Dialog
@@ -162,7 +202,9 @@ export const CreateCollectionDialog = ({
           </Typography>
         </CollectionDialogTitle>
         <DialogContent>
-          <CreateCollectionCard
+          <EditCollectionCard
+            prevData={prevData}
+            collections={collections}
             handleClose={handleClose}
             currentUser={currentUser}
           />

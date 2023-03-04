@@ -29,12 +29,14 @@ import ActionList from './action-list'
 interface CollectionTitleProps {
   collection: Collection
   homepage: boolean
+  handleOpen?: (collection: Collection) => void
   currentUser: User | null
 }
 
 export default function CollectionTitle({
   collection,
   homepage,
+  handleOpen,
   currentUser,
 }: CollectionTitleProps) {
   const [postsNum, setPostsNum] = useState<number>(0)
@@ -152,11 +154,16 @@ export default function CollectionTitle({
             {'关注'}
           </Button>
         )}
-        <ActionList
-          collection={collection}
-          anchorElColumn={anchorElColumn}
-          handleCloseActionMenu={handleCloseActionMenu}
-        />
+        {handleOpen !== undefined ? (
+          <ActionList
+            collection={collection}
+            anchorElColumn={anchorElColumn}
+            handleOpen={() => handleOpen(collection)}
+            handleCloseActionMenu={handleCloseActionMenu}
+          />
+        ) : (
+          ''
+        )}
       </Box>
       <Divider sx={{ ml: 2, mr: 2 }} />
     </>

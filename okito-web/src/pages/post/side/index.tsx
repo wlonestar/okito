@@ -8,7 +8,10 @@ import { AuthorCard } from './author-card'
 import { PostInfo } from './post-info'
 import { DialogProps } from '@mui/material/Dialog'
 import { PostAction } from './post-action'
-import { CreateCollectionDialog } from '../../../components/dialog/collection-dialog/create-collection'
+import { EditCollectionDialog } from '../../../components/dialog/collection-dialog/edit-collection'
+import { Collection } from '../../../types/collection'
+import { useMount } from '../../../utils'
+import { selectCollectionsByAuthorId } from '../../../api/collection'
 
 interface SideProps {
   content: string
@@ -35,6 +38,8 @@ export default function Side({
   const [createOpen, setCreateOpen] = useState<boolean>(false)
   const [scroll, setScroll] = useState<DialogProps['scroll']>('paper')
 
+  const [collections, setCollections] = useState<Collection[]>([])
+
   const handleClickOpen = (scrollType: DialogProps['scroll']) => () => {
     setOpen(true)
     setScroll(scrollType)
@@ -50,14 +55,18 @@ export default function Side({
   }
 
   const handleCreateCollection = () => {
-    // TODO
     setOpen(false)
     setCreateOpen(true)
   }
 
-  const handleClickSubmit = () => {
-    // TODO
-  }
+  useMount(async () => {
+    if (currentUser !== null) {
+      const collections = await selectCollectionsByAuthorId(currentUser.id)
+      if (collections.status === 20) {
+        setCollections(collections.data)
+      }
+    }
+  })
 
   return (
     <Box>
@@ -83,12 +92,13 @@ export default function Side({
         scroll={scroll}
         handleClose={handleClose}
         handleCreateCollection={handleCreateCollection}
+        collections={collections}
         currentUser={currentUser}
       />
-      <CreateCollectionDialog
+      <EditCollectionDialog
         open={createOpen}
+        collections={collections}
         handleClose={handleCreateClose}
-        handleClickSubmit={handleClickSubmit}
         currentUser={currentUser}
       />
       <Paper sx={{ mt: 2 }}>
