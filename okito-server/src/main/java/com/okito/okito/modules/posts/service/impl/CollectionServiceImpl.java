@@ -2,6 +2,7 @@ package com.okito.okito.modules.posts.service.impl;
 
 import com.okito.okito.modules.posts.model.entity.Collection;
 import com.okito.okito.modules.posts.repository.CollectionRepository;
+import com.okito.okito.modules.posts.repository.CollectionRepositoryCustom;
 import com.okito.okito.modules.posts.repository.PostCollectionRepository;
 import com.okito.okito.modules.posts.service.CollectionService;
 import com.okito.okito.modules.users.repository.UserCollectionFollowRepository;
@@ -23,6 +24,9 @@ public class CollectionServiceImpl implements CollectionService {
 
   @Resource
   private CollectionRepository collectionRepository;
+
+  @Resource
+  private CollectionRepositoryCustom collectionRepositoryCustom;
 
   @Resource
   private PostCollectionRepository postCollectionRepository;
@@ -67,10 +71,7 @@ public class CollectionServiceImpl implements CollectionService {
 
   @Override
   public Collection add(Collection collection) {
-    // TODO: currently do not know how to fix it
-    collection.setId(collectionRepository.nextCollectionId() + 1);
-    collectionRepository.save(collection);
-    return collection;
+    return collectionRepositoryCustom.add(collection);
   }
 
   @Override

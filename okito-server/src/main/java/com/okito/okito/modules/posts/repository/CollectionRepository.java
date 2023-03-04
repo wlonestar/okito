@@ -15,9 +15,6 @@ import java.util.List;
 @Repository
 public interface CollectionRepository extends JpaRepository<Collection, Long> {
 
-  @Query(value = "select nextval('collection_id_seq')")
-  long nextCollectionId();
-
   List<Collection> findAllByAuthorId(Long authorId);
 
   @Query(value = "select * from collection c where c.id in " +
