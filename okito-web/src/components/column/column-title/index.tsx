@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import {
   Box,
   Button,
-  Card,
   CardContent,
   CardMedia,
   Grid,
@@ -80,9 +79,9 @@ export default function ColumnTitle({
   })
 
   return (
-    <Card
-      variant="outlined"
-      sx={{ borderWidth: '0px 0px thin', borderRadius: '5px', height: '200px' }}
+    <Box
+    // variant="outlined"
+    // sx={{ borderWidth: '0px 0px thin', borderRadius: '5px', height: '200px' }}
     >
       <CardContent>
         <Link underline="none" href={`/column/${column.id}`} target="_blank">
@@ -100,7 +99,7 @@ export default function ColumnTitle({
           <Grid item xs={12} md={3} lg={3}>
             <CardMedia
               component="img"
-              height="120"
+              height="150"
               image={column.cover}
               alt={column.cover}
               loading="lazy"
@@ -118,7 +117,7 @@ export default function ColumnTitle({
                 textOverflow: 'ellipsis',
                 display: '-webkit-box',
                 lineHeight: '24px',
-                maxHeight: '48px',
+                height: '48px',
               }}
               color="text.secondary"
             >
@@ -139,6 +138,7 @@ export default function ColumnTitle({
               />
               {homepage ? (
                 <IconButton
+                  size="small"
                   sx={{ size: 'small', marginLeft: 'auto' }}
                   onClick={handleOpenUserMenu}
                 >
@@ -175,6 +175,6 @@ export default function ColumnTitle({
           </Grid>
         </Grid>
       </CardContent>
-    </Card>
+    </Box>
   )
 }

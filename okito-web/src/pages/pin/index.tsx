@@ -87,7 +87,7 @@ export default function PinPage({ currentUser }: PinPageProps) {
         />
       </Grid>
       <Grid item xs={12} md={7} sx={{ pl: 1.5, pr: 1.5, pt: 2.5 }}>
-        <Main pins={pins} currentUser={currentUser} />
+        <Main pins={pins} setPins={setPins} currentUser={currentUser} />
       </Grid>
       <Grid item xs={12} md={3} sx={{ pl: 1.5, pr: 1.5, pt: 2.5 }}>
         <Side currentUser={currentUser} />

@@ -5,7 +5,7 @@ export interface Pin {
   updateTime: Date
   authorId: number
   viewNum: number
-  likeNum: number
+  likeNum?: number | 0
 }
 
 export interface PinParam {

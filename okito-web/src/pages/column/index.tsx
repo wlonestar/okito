@@ -66,7 +66,6 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
       if (currentUser.id === column.data.authorId) {
         setHomepage(true)
       }
-    } else {
     }
     const posts = await selectPostsByColumnId(columnId)
     const data: Post[] = useSort(posts.data, 'createTime', 'desc')
@@ -86,9 +85,7 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
         />
       </Paper>
       <Paper sx={{ mt: 3 }}>
-        <Box
-          sx={{ borderBottom: 1, borderColor: 'divider', right: '10px', pt: 2 }}
-        >
+        <Box sx={{ borderBottom: 1, borderColor: 'divider', right: '10px' }}>
           <Tabs value={value} onChange={handleChange}>
             {tabs.map(({ index, label }) => (
               <Tab key={index} label={label} {...tabProps(index)} />
