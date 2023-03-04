@@ -48,7 +48,8 @@ public class PostCommentLikeServiceImpl implements PostCommentLikeService {
 
   @Override
   public boolean add(PostCommentLike postCommentLike) {
-    PostComment comment = postCommentRepository.findById(postCommentLike.getId().getCommentId()).orElse(null);
+    PostComment comment = postCommentRepository.findById(postCommentLike.getId().getCommentId())
+        .orElse(null);
     User user = userRepository.findById(postCommentLike.getId().getUserId()).orElse(null);
     boolean flag = !Objects.equals(comment, null) && !Objects.equals(user, null);
     if (flag) {
@@ -60,7 +61,8 @@ public class PostCommentLikeServiceImpl implements PostCommentLikeService {
 
   @Override
   public boolean update(PostCommentLike postCommentLike) {
-    PostCommentLike newCommentLike = postCommentLikeRepository.findById(postCommentLike.getId()).orElse(null);
+    PostCommentLike newCommentLike = postCommentLikeRepository.findById(postCommentLike.getId())
+        .orElse(null);
     if (!Objects.equals(newCommentLike, null)) {
       newCommentLike.setType(postCommentLike.getType());
       postCommentLikeRepository.save(newCommentLike);

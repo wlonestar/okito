@@ -59,7 +59,8 @@ public class PostCommentServiceImpl implements PostCommentService {
             .filter(comment -> !Objects.equals(comment.getParentId(), id))
             .collect(Collectors.toList());
         postCommentViews.forEach(comment -> {
-          PostCommentView commentParent = postCommentViewRepository.findById(comment.getParentId()).orElse(null);
+          PostCommentView commentParent = postCommentViewRepository.findById(comment.getParentId())
+              .orElse(null);
           while (!Objects.equals(commentParent, null)) {
             if (res.contains(commentParent)) {
               res.add(comment);
@@ -68,7 +69,8 @@ public class PostCommentServiceImpl implements PostCommentService {
             if (Objects.equals(commentParent.getParentId(), null)) {
               break;
             }
-            commentParent = postCommentViewRepository.findById(commentParent.getParentId()).orElse(null);
+            commentParent = postCommentViewRepository.findById(commentParent.getParentId())
+                .orElse(null);
           }
         });
       }

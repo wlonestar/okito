@@ -34,13 +34,13 @@ public class TagFollowController {
    * select tagFollow by id
    *
    * @param userId user id
-   * @param tagId tag id
+   * @param tagId  tag id
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/single")
   public RespResult<?> selectById(
-    @NonNull @RequestParam(name = "userId") Long userId,
-    @NonNull @RequestParam(name = "tagId") Long tagId) {
+      @NonNull @RequestParam(name = "userId") Long userId,
+      @NonNull @RequestParam(name = "tagId") Long tagId) {
     TagFollowId id = new TagFollowId(tagId, userId);
     TagFollow follow = tagFollowService.selectById(id);
     if (!Objects.equals(follow, null)) {

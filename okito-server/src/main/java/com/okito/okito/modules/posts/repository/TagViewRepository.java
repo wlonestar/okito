@@ -14,7 +14,7 @@ import java.util.List;
 public interface TagViewRepository extends ReadOnlyRepository<TagView, Long> {
 
   @Query(value = "select t from TagView t where t.id in " +
-    "(select pt.id.tagId from PostTag pt where pt.id.postId = ?1)")
+      "(select pt.id.tagId from PostTag pt where pt.id.postId = ?1)")
   List<TagView> findAllByPostId(Long postId);
 
 }

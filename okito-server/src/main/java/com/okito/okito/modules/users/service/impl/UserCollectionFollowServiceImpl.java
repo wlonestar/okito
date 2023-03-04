@@ -39,7 +39,8 @@ public class UserCollectionFollowServiceImpl implements UserCollectionFollowServ
 
   @Override
   public boolean update(UserCollectionFollow userCollectionFollow) {
-    UserCollectionFollow collection = userCollectionFollowRepository.findById(userCollectionFollow.getId()).orElse(null);
+    UserCollectionFollow collection = userCollectionFollowRepository
+        .findById(userCollectionFollow.getId()).orElse(null);
     if (!Objects.equals(collection, null)) {
       collection.setFollow(userCollectionFollow.getFollow());
       userCollectionFollowRepository.save(collection);

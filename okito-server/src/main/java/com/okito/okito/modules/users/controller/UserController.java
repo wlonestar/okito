@@ -35,7 +35,8 @@ public class UserController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/following/{userId}")
-  public RespResult<?> selectAllFollowingByUserId(@NonNull @PathVariable(name = "userId") Long userId) {
+  public RespResult<?> selectAllFollowingByUserId(
+      @NonNull @PathVariable(name = "userId") Long userId) {
     return RespResult.success(userService.selectFollowingByUserId(userId));
   }
 
@@ -46,7 +47,8 @@ public class UserController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/follower/{userId}")
-  public RespResult<?> selectAllFollowerByUserId(@NonNull @PathVariable(name = "userId") Long userId) {
+  public RespResult<?> selectAllFollowerByUserId(
+      @NonNull @PathVariable(name = "userId") Long userId) {
     return RespResult.success(userService.selectFollowerByUserId(userId));
   }
 
@@ -95,7 +97,8 @@ public class UserController {
    * @return boolean
    */
   @RequestMapping(method = RequestMethod.GET, path = "/check/username")
-  public RespResult<?> checkUsernameExists(@NonNull @RequestParam(name = "username") String username) {
+  public RespResult<?> checkUsernameExists(
+      @NonNull @RequestParam(name = "username") String username) {
     boolean contains = userService.selectAllUsernames().contains(username);
     return RespResult.success(contains);
   }

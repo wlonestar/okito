@@ -12,9 +12,11 @@ import org.springframework.stereotype.Repository;
  * @time 2023/1/17 19:37
  */
 @Repository
-public interface UserCollectionFollowRepository extends JpaRepository<UserCollectionFollow, UserCollectionFollowId> {
+public interface UserCollectionFollowRepository
+    extends JpaRepository<UserCollectionFollow, UserCollectionFollowId> {
 
-  @Query(value = "select count(*) from user_collection_follow where collect_id = ?1 and follow = true", nativeQuery = true)
+  @Query(value = "select count(*) from user_collection_follow " +
+      "where collect_id = ?1 and follow = true", nativeQuery = true)
   long countFollowNumByCollectionId(Long collectionId);
 
 }

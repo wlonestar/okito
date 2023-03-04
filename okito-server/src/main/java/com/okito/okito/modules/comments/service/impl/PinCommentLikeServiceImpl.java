@@ -48,7 +48,8 @@ public class PinCommentLikeServiceImpl implements PinCommentLikeService {
 
   @Override
   public boolean add(PinCommentLike pinCommentLike) {
-    PinComment comment = pinCommentRepository.findById(pinCommentLike.getId().getCommentId()).orElse(null);
+    PinComment comment = pinCommentRepository.findById(pinCommentLike.getId().getCommentId())
+        .orElse(null);
     User user = userRepository.findById(pinCommentLike.getId().getUserId()).orElse(null);
     boolean flag = !Objects.equals(comment, null) && !Objects.equals(user, null);
     if (flag) {
@@ -60,7 +61,8 @@ public class PinCommentLikeServiceImpl implements PinCommentLikeService {
 
   @Override
   public boolean update(PinCommentLike pinCommentLike) {
-    PinCommentLike newCommentLike = pinCommentLikeRepository.findById(pinCommentLike.getId()).orElse(null);
+    PinCommentLike newCommentLike = pinCommentLikeRepository.findById(pinCommentLike.getId())
+        .orElse(null);
     if (!Objects.equals(newCommentLike, null)) {
       newCommentLike.setType(pinCommentLike.getType());
       pinCommentLikeRepository.save(newCommentLike);

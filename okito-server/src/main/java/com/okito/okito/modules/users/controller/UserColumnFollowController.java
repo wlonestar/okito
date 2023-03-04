@@ -90,7 +90,7 @@ public class UserColumnFollowController {
       column.setFollow(param.getFollow());
       userColumnFollowService.update(column);
     } else {
-      column = new UserColumnFollow(new UserColumnFollowId(param.getUserId(), param.getColumnId()), param.getFollow());
+      column = new UserColumnFollow(id, param.getFollow());
       userColumnFollowService.add(column);
     }
     return RespResult.success(column);

@@ -55,7 +55,8 @@ public class AuthController {
       UserView userView = userService.selectViewById(user.getId());
       return RespResult.success(userView);
     }
-    return RespResult.fail(RespStatus.ERROR.getStatus(), "login failed, email or password incorrect");
+    return RespResult.fail(RespStatus.ERROR.getStatus(),
+        "login failed, email or password incorrect");
   }
 
   /**
@@ -79,7 +80,8 @@ public class AuthController {
       userService.add(user);
       return RespResult.success(user);
     }
-    return RespResult.fail(RespStatus.ERROR.getStatus(), "register failed, username or email exists");
+    return RespResult.fail(RespStatus.ERROR.getStatus(),
+        "register failed, username or email exists");
   }
 
   /**

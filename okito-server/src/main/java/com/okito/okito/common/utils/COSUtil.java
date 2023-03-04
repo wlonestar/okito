@@ -58,7 +58,8 @@ public final class COSUtil {
     try {
       Upload upload = transferManager.upload(objectRequest);
       upload.waitForUploadResult();
-      return prefix + URLEncoder.encode(filename, StandardCharsets.UTF_8).replaceAll("\\+", "%20");
+      return prefix + URLEncoder.encode(filename, StandardCharsets.UTF_8)
+          .replaceAll("\\+", "%20");
     } catch (CosClientException | InterruptedException e) {
       e.printStackTrace();
       return null;

@@ -60,7 +60,8 @@ public class PostLikeController {
    */
   @RequestMapping(method = RequestMethod.GET, path = "/single")
   public RespResult<?> selectById(
-      @NonNull @RequestParam(name = "postId") Long postId, @NonNull @RequestParam(name = "userId") Long userId) {
+      @NonNull @RequestParam(name = "postId") Long postId,
+      @NonNull @RequestParam(name = "userId") Long userId) {
     PostLike postLike = postLikeService.selectById(new PostLikeId(postId, userId));
     if (!Objects.equals(postLike, null)) {
       return RespResult.success(postLike);

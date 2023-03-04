@@ -23,18 +23,18 @@ public class PostViewRepositoryCustomImpl implements PostViewRepositoryCustom {
   @Override
   public List<PostView> searchByTitle(String title) {
     String query = "select * from post_view where id in " +
-      "(select p.id from post p where p.fts @@ to_tsquery('%" + title + "%'))";
+        "(select p.id from post p where p.fts @@ to_tsquery('%" + title + "%'))";
     return entityManager.createNativeQuery(query, PostView.class).getResultList();
   }
 
   @Override
   public List<PostView> searchByKeywords(String keywords) {
     String cond = keywords
-      .replaceAll(" or ", "|")
-      .replaceAll(" -", "&!")
-      .replaceAll(" +", "&");
+        .replaceAll(" or ", "|")
+        .replaceAll(" -", "&!")
+        .replaceAll(" +", "&");
     String query = "select * from post_view where id in " +
-      "(select p.id from post p where p.fts @@ to_tsquery('" + cond + "'))";
+        "(select p.id from post p where p.fts @@ to_tsquery('" + cond + "'))";
     return entityManager.createNativeQuery(query, PostView.class).getResultList();
   }
 

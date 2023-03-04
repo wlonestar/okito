@@ -39,7 +39,7 @@ public class RespResult<T> {
     return RespResult.<T>builder()
         .timestamp(System.currentTimeMillis())
         .status(RespStatus.ERROR.getStatus())
-        .message("not implemetion!")
+        .message("not implemented!")
         .build();
   }
 

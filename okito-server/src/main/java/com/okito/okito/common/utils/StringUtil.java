@@ -36,7 +36,8 @@ public final class StringUtil {
   }
 
   public String parseEmail(String str) {
-    Matcher m = Pattern.compile("[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+").matcher(str);
+    String regex = "[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+";
+    Matcher m = Pattern.compile(regex).matcher(str);
     String email = null;
     if (m.find()) {
       email = m.group(0);

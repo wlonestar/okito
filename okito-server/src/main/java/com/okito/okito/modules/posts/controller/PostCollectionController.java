@@ -33,14 +33,14 @@ public class PostCollectionController {
   /**
    * select PostCollection by id
    *
-   * @param postId postId
+   * @param postId       postId
    * @param collectionId collectionId
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/single")
   public RespResult<?> selectById(
-    @NonNull @RequestParam(name = "postId") Long postId,
-    @NonNull @RequestParam(name = "collectionId") Long collectionId) {
+      @NonNull @RequestParam(name = "postId") Long postId,
+      @NonNull @RequestParam(name = "collectionId") Long collectionId) {
     PostCollectionId id = new PostCollectionId(postId, collectionId);
     PostCollection postCollection = postCollectionService.selectById(id);
     if (!Objects.equals(postCollection, null)) {
@@ -63,7 +63,7 @@ public class PostCollectionController {
       postCollectionService.add(new PostCollection(id, param.getFollow()));
       return RespResult.success();
     }
-    return  RespResult.fail(RespStatus.ALREADY_EXIST);
+    return RespResult.fail(RespStatus.ALREADY_EXIST);
   }
 
   /**
@@ -83,26 +83,26 @@ public class PostCollectionController {
       postCollection = new PostCollection(id, param.getFollow());
       postCollectionService.add(postCollection);
     }
-    return  RespResult.success(postCollection);
+    return RespResult.success(postCollection);
   }
 
   /**
    * delete PostCollection by id
    *
-   * @param postId postId
+   * @param postId       postId
    * @param collectionId collectionId
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.DELETE, path = "")
   public RespResult<?> deleteById(
-    @NonNull @RequestParam(name = "postId") Long postId,
-    @NonNull @RequestParam(name = "collectionId") Long collectionId) {
+      @NonNull @RequestParam(name = "postId") Long postId,
+      @NonNull @RequestParam(name = "collectionId") Long collectionId) {
     PostCollectionId id = new PostCollectionId(postId, collectionId);
     boolean flag = postCollectionService.deleteById(id);
     if (flag) {
       return RespResult.success();
     }
-    return  RespResult.fail(RespStatus.NOT_EXIST);
+    return RespResult.fail(RespStatus.NOT_EXIST);
   }
 
 }

@@ -31,9 +31,10 @@ public class ActivityServiceImpl implements ActivityService {
 
   @Override
   public void add(Activity activity) {
-    List<Activity> activities = activityRepository.findAllByUserIdAndActionTypeAndActionSubTypeAndTargetId(
-      activity.getUserId(), activity.getActionType(), activity.getActionSubType(), activity.getTargetId()
-    );
+    List<Activity> activities =
+        activityRepository.findAllByUserIdAndActionTypeAndActionSubTypeAndTargetId(
+            activity.getUserId(), activity.getActionType(),
+            activity.getActionSubType(), activity.getTargetId());
     if (activities.size() != 0) {
       Activity one = activities.get(0);
       activities.remove(0);

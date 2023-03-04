@@ -2,10 +2,12 @@ package com.okito.okito.modules.posts.service.impl;
 
 import com.okito.okito.modules.posts.model.entity.Collection;
 import com.okito.okito.modules.posts.repository.CollectionRepository;
+import com.okito.okito.modules.posts.repository.CollectionRepositoryCustom;
 import com.okito.okito.modules.posts.repository.PostCollectionRepository;
 import com.okito.okito.modules.posts.service.CollectionService;
 import com.okito.okito.modules.users.repository.UserCollectionFollowRepository;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,11 +18,15 @@ import java.util.Objects;
  * @version 0.0.1
  * @time 2023/1/12 20:37
  */
+@Slf4j
 @Service
 public class CollectionServiceImpl implements CollectionService {
 
   @Resource
   private CollectionRepository collectionRepository;
+
+  @Resource
+  private CollectionRepositoryCustom collectionRepositoryCustom;
 
   @Resource
   private PostCollectionRepository postCollectionRepository;
@@ -64,9 +70,8 @@ public class CollectionServiceImpl implements CollectionService {
   }
 
   @Override
-  public boolean add(Collection collection) {
-    collectionRepository.save(collection);
-    return true;
+  public Collection add(Collection collection) {
+    return collectionRepositoryCustom.add(collection);
   }
 
   @Override

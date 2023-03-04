@@ -14,7 +14,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PostCollectionRepository extends JpaRepository<PostCollection, PostCollectionId> {
 
-  @Query(value = "select count(*) from post_collection where collect_id = ?1 and follow = true", nativeQuery = true)
+  @Query(value = "select count(*) from post_collection " +
+      "where collect_id = ?1 and follow = true", nativeQuery = true)
   long countByCollectionId(Long collectionId);
 
 }

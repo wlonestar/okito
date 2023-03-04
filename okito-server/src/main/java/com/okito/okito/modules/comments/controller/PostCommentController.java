@@ -65,7 +65,8 @@ public class PostCommentController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
-  public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
+  public RespResult<?> selectAllByAuthorId(
+      @NonNull @PathVariable(name = "authorId") Long authorId) {
     return RespResult.success(postCommentService.selectAllByAuthorId(authorId));
   }
 

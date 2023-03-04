@@ -23,11 +23,11 @@ public class PinViewRepositoryCustomImpl implements PinViewRepositoryCustom {
   @Override
   public List<PinView> searchByKeywords(String keywords) {
     String cond = keywords
-      .replaceAll(" or ", "|")
-      .replaceAll(" -", "&!")
-      .replaceAll(" +", "&");
+        .replaceAll(" or ", "|")
+        .replaceAll(" -", "&!")
+        .replaceAll(" +", "&");
     String query = "select * from pin_view where id in " +
-      "(select p.id from pin p where p.fts @@ to_tsquery('" + cond + "'))";
+        "(select p.id from pin p where p.fts @@ to_tsquery('" + cond + "'))";
     return entityManager.createNativeQuery(query, PinView.class).getResultList();
   }
 
