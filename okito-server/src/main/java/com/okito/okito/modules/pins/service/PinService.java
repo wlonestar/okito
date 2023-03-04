@@ -28,7 +28,7 @@ public interface PinService {
 
   long countByAuthorId(Long authorId);
 
-  boolean add(Pin pin);
+  Pin add(Pin pin);
 
   boolean update(Pin pin);
 

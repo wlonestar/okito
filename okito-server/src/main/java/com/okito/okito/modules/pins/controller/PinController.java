@@ -132,15 +132,14 @@ public class PinController {
   @RequestMapping(method = RequestMethod.POST, path = "")
   public RespResult<?> add(@NonNull @RequestBody PinParam param) {
     Pin pin = Pin.builder()
-        .id(param.getId())
         .content(param.getContent())
         .createTime(param.getCreateTime())
         .updateTime(param.getUpdateTime())
         .authorId(param.getAuthorId())
         .viewNum(0L)
         .build();
-    pinService.add(pin);
-    return RespResult.success();
+    Pin add = pinService.add(pin);
+    return RespResult.success(add);
   }
 
   /**
