@@ -60,8 +60,10 @@ public class PinCommentLikeController {
    */
   @RequestMapping(method = RequestMethod.GET, path = "/single")
   public RespResult<?> selectById(
-      @NonNull @RequestParam(name = "commentId") Long commentId, @NonNull @RequestParam(name = "userId") Long userId) {
-    PinCommentLike commentLike = pinCommentLikeService.selectById(new PinCommentLikeId(commentId, userId));
+      @NonNull @RequestParam(name = "commentId") Long commentId,
+      @NonNull @RequestParam(name = "userId") Long userId) {
+    PinCommentLikeId id = new PinCommentLikeId(commentId, userId);
+    PinCommentLike commentLike = pinCommentLikeService.selectById(id);
     if (!Objects.equals(commentLike, null)) {
       return RespResult.success(commentLike);
     }
@@ -76,10 +78,10 @@ public class PinCommentLikeController {
    */
   @RequestMapping(method = RequestMethod.POST, path = "")
   public RespResult<?> add(@NonNull @RequestBody PinCommentLikeParam param) {
-    PinCommentLikeId commentLikeId = new PinCommentLikeId(param.getCommentId(), param.getUserId());
-    PinCommentLike commentLike = pinCommentLikeService.selectById(commentLikeId);
+    PinCommentLikeId id = new PinCommentLikeId(param.getCommentId(), param.getUserId());
+    PinCommentLike commentLike = pinCommentLikeService.selectById(id);
     if (Objects.equals(commentLike, null)) {
-      pinCommentLikeService.add(new PinCommentLike(commentLikeId, param.getType()));
+      pinCommentLikeService.add(new PinCommentLike(id, param.getType()));
       return RespResult.success();
     }
     return RespResult.fail(RespStatus.ALREADY_EXIST);

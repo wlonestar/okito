@@ -15,9 +15,11 @@ import org.springframework.web.servlet.HandlerInterceptor;
 public class RequestInterceptor implements HandlerInterceptor {
 
   @Override
-  public boolean preHandle(HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull Object handler)
+  public boolean preHandle(
+      HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull Object handler)
       throws Exception {
-    String url = request.getRemoteHost() + " -> " + request.getMethod() + ":" + request.getRequestURL().toString();
+    String url = request.getRemoteHost() + "->" +
+        request.getMethod() + ":" + request.getRequestURL().toString();
     log.info("{}", url);
     return HandlerInterceptor.super.preHandle(request, response, handler);
   }

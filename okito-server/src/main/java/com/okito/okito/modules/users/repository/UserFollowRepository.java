@@ -18,11 +18,13 @@ import java.util.List;
 public interface UserFollowRepository extends JpaRepository<UserFollow, UserFollowId> {
 
   @Query(value = "select u from UserView u where u.id in " +
-      "(select uf.id.followerId from UserFollow uf where uf.follow = true and uf.id.followedId = ?1)")
+      "(select uf.id.followerId from UserFollow uf " +
+      "where uf.follow = true and uf.id.followedId = ?1)")
   List<UserView> findFollowersByUserId(Long userId);
 
   @Query(value = "select u from UserView u where u.id in " +
-      "(select uf.id.followedId from UserFollow uf where uf.follow = true and uf.id.followerId = ?1)")
+      "(select uf.id.followedId from UserFollow uf " +
+      "where uf.follow = true and uf.id.followerId = ?1)")
   List<UserView> findFollowedsByUserId(Long userId);
 
 }

@@ -29,16 +29,16 @@ public class CollectionRepositoryCustomImpl implements CollectionRepositoryCusto
   public Collection add(Collection collection) {
     collection.setId(nextVal());
     String sql = "insert into collection (id, name, type, description, create_time, update_time, author_id)" +
-      " values (?, ?, ?, ?, ?, ?, ?)";
+        " values (?, ?, ?, ?, ?, ?, ?)";
     entityManager.createNativeQuery(sql)
-      .setParameter(1, collection.getId())
-      .setParameter(2, collection.getName())
-      .setParameter(3, collection.getType())
-      .setParameter(4, collection.getDescription())
-      .setParameter(5, collection.getCreateTime())
-      .setParameter(6, collection.getUpdateTime())
-      .setParameter(7, collection.getAuthorId())
-      .executeUpdate();
+        .setParameter(1, collection.getId())
+        .setParameter(2, collection.getName())
+        .setParameter(3, collection.getType())
+        .setParameter(4, collection.getDescription())
+        .setParameter(5, collection.getCreateTime())
+        .setParameter(6, collection.getUpdateTime())
+        .setParameter(7, collection.getAuthorId())
+        .executeUpdate();
     return collection;
   }
 

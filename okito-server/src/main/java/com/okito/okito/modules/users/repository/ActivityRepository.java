@@ -17,6 +17,6 @@ public interface ActivityRepository extends JpaRepository<Activity, Long> {
   List<Activity> findAllByUserId(Long userId);
 
   List<Activity> findAllByUserIdAndActionTypeAndActionSubTypeAndTargetId(
-    Long userId, Short actionType, Short actionSubType, Long targetId);
+      Long userId, Short actionType, Short actionSubType, Long targetId);
 
 }

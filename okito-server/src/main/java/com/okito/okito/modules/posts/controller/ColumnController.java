@@ -45,7 +45,8 @@ public class ColumnController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
-  public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
+  public RespResult<?> selectAllByAuthorId(
+      @NonNull @PathVariable(name = "authorId") Long authorId) {
     return RespResult.success(columnService.selectAllByAuthorId(authorId));
   }
 
@@ -56,7 +57,8 @@ public class ColumnController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/follower/{followerId}")
-  public RespResult<?> selectAllFollowedByUserId(@NonNull @PathVariable(name = "followerId") Long followerId) {
+  public RespResult<?> selectAllFollowedByUserId(
+      @NonNull @PathVariable(name = "followerId") Long followerId) {
     return RespResult.success(columnService.selectAllByFollowerId(followerId));
   }
 
@@ -82,7 +84,8 @@ public class ColumnController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/count/post/{columnId}")
-  public RespResult<?> countPostsByColumnId(@NonNull @PathVariable(name = "columnId") Long columnId) {
+  public RespResult<?> countPostsByColumnId(
+      @NonNull @PathVariable(name = "columnId") Long columnId) {
     return RespResult.success(columnService.countPostsByColumnId(columnId));
   }
 
@@ -93,7 +96,8 @@ public class ColumnController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/count/follow/{columnId}")
-  public RespResult<?> countFollowNumByColumnId(@NonNull @PathVariable(name = "columnId") Long columnId) {
+  public RespResult<?> countFollowNumByColumnId(
+      @NonNull @PathVariable(name = "columnId") Long columnId) {
     return RespResult.success(columnService.countFollowNumByColumnId(columnId));
   }
 

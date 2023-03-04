@@ -62,7 +62,8 @@ public class PostCommentLikeController {
   public RespResult<?> selectById(
       @NonNull @RequestParam(name = "commentId") Long commentId,
       @NonNull @RequestParam(name = "userId") Long userId) {
-    PostCommentLike commentLike = postCommentLikeService.selectById(new PostCommentLikeId(commentId, userId));
+    PostCommentLikeId id = new PostCommentLikeId(commentId, userId);
+    PostCommentLike commentLike = postCommentLikeService.selectById(id);
     if (!Objects.equals(commentLike, null)) {
       return RespResult.success(commentLike);
     }
@@ -77,10 +78,10 @@ public class PostCommentLikeController {
    */
   @RequestMapping(method = RequestMethod.POST, path = "")
   public RespResult<?> add(@NonNull @RequestBody PostCommentLikeParam param) {
-    PostCommentLikeId commentLikeId = new PostCommentLikeId(param.getCommentId(), param.getUserId());
-    PostCommentLike commentLike = postCommentLikeService.selectById(commentLikeId);
+    PostCommentLikeId id = new PostCommentLikeId(param.getCommentId(), param.getUserId());
+    PostCommentLike commentLike = postCommentLikeService.selectById(id);
     if (Objects.equals(commentLike, null)) {
-      postCommentLikeService.add(new PostCommentLike(commentLikeId, param.getType()));
+      postCommentLikeService.add(new PostCommentLike(id, param.getType()));
       return RespResult.success();
     }
     return RespResult.fail(RespStatus.ALREADY_EXIST);

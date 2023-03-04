@@ -64,7 +64,8 @@ public class PinLikeController {
    */
   @RequestMapping(method = RequestMethod.GET, path = "/single")
   public RespResult<?> selectById(
-      @NonNull @RequestParam(name = "pinId") Long pinId, @NonNull @RequestParam(name = "userId") Long userId) {
+      @NonNull @RequestParam(name = "pinId") Long pinId,
+      @NonNull @RequestParam(name = "userId") Long userId) {
     PinLike pinLike = pinLikeService.selectById(new PinLikeId(pinId, userId));
     if (!Objects.equals(pinLike, null)) {
       return RespResult.success(pinLike);
@@ -128,7 +129,8 @@ public class PinLikeController {
    */
   @RequestMapping(method = RequestMethod.DELETE, path = "")
   public RespResult<?> deleteById(
-      @NonNull @RequestParam(name = "pinId") Long pinId, @NonNull @RequestParam(name = "userId") Long userId) {
+      @NonNull @RequestParam(name = "pinId") Long pinId,
+      @NonNull @RequestParam(name = "userId") Long userId) {
     boolean flag = pinLikeService.deleteById(new PinLikeId(pinId, userId));
     if (flag) {
       return RespResult.success();

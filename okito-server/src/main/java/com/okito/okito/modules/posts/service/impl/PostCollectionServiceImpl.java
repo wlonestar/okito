@@ -33,7 +33,8 @@ public class PostCollectionServiceImpl implements PostCollectionService {
 
   @Override
   public boolean update(PostCollection collection) {
-    PostCollection postCollection = postCollectionRepository.findById(collection.getId()).orElse(null);
+    PostCollection postCollection = postCollectionRepository.findById(collection.getId())
+        .orElse(null);
     if (!Objects.equals(postCollection, null)) {
       postCollection.setFollow(collection.getFollow());
       postCollectionRepository.save(postCollection);

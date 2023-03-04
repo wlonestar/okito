@@ -55,11 +55,12 @@ public class PinCommentServiceImpl implements PinCommentService {
         res.addAll(secondaryComments);
         List<PinCommentView> pinCommentViews = selectAllByPinId(parentComment.getPinId());
         pinCommentViews = pinCommentViews.stream()
-          .filter(comment -> !Objects.equals(comment.getParentId(), null))
-          .filter(comment -> !Objects.equals(comment.getParentId(), id))
-          .collect(Collectors.toList());
+            .filter(comment -> !Objects.equals(comment.getParentId(), null))
+            .filter(comment -> !Objects.equals(comment.getParentId(), id))
+            .collect(Collectors.toList());
         pinCommentViews.forEach(comment -> {
-          PinCommentView commentParent = pinCommentViewRepository.findById(comment.getParentId()).orElse(null);
+          PinCommentView commentParent = pinCommentViewRepository.findById(comment.getParentId())
+              .orElse(null);
           while (!Objects.equals(commentParent, null)) {
             if (res.contains(commentParent)) {
               res.add(comment);
@@ -68,7 +69,8 @@ public class PinCommentServiceImpl implements PinCommentService {
             if (Objects.equals(commentParent.getParentId(), null)) {
               break;
             }
-            commentParent = pinCommentViewRepository.findById(commentParent.getParentId()).orElse(null);
+            commentParent = pinCommentViewRepository.findById(commentParent.getParentId())
+                .orElse(null);
           }
         });
       }

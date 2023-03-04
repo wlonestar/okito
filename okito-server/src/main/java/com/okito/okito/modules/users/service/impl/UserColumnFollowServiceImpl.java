@@ -39,7 +39,8 @@ public class UserColumnFollowServiceImpl implements UserColumnFollowService {
 
   @Override
   public boolean update(UserColumnFollow userColumnFollow) {
-    UserColumnFollow collection = userColumnFollowRepository.findById(userColumnFollow.getId()).orElse(null);
+    UserColumnFollow collection = userColumnFollowRepository
+        .findById(userColumnFollow.getId()).orElse(null);
     if (!Objects.equals(collection, null)) {
       collection.setFollow(userColumnFollow.getFollow());
       userColumnFollowRepository.save(collection);

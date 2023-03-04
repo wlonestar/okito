@@ -78,7 +78,8 @@ public class PinController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
-  public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
+  public RespResult<?> selectAllByAuthorId(
+      @NonNull @PathVariable(name = "authorId") Long authorId) {
     return RespResult.success(pinService.selectAllByAuthorId(authorId));
   }
 
@@ -89,7 +90,8 @@ public class PinController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/follow/{userId}")
-  public RespResult<?> selectAllByUserFollowed(@NonNull @PathVariable(name = "userId") Long userId) {
+  public RespResult<?> selectAllByUserFollowed(
+      @NonNull @PathVariable(name = "userId") Long userId) {
     return RespResult.success(pinService.selectAllByUserFollowed(userId));
   }
 
@@ -102,7 +104,7 @@ public class PinController {
   @RequestMapping(method = RequestMethod.GET, path = "/count/author/{authorId}")
   public RespResult<?> countByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
     long count = pinService.countByAuthorId(authorId);
-    return  RespResult.success(count);
+    return RespResult.success(count);
   }
 
   /**
@@ -130,13 +132,13 @@ public class PinController {
   @RequestMapping(method = RequestMethod.POST, path = "")
   public RespResult<?> add(@NonNull @RequestBody PinParam param) {
     Pin pin = Pin.builder()
-      .id(param.getId())
-      .content(param.getContent())
-      .createTime(param.getCreateTime())
-      .updateTime(param.getUpdateTime())
-      .authorId(param.getAuthorId())
-      .viewNum(0L)
-      .build();
+        .id(param.getId())
+        .content(param.getContent())
+        .createTime(param.getCreateTime())
+        .updateTime(param.getUpdateTime())
+        .authorId(param.getAuthorId())
+        .viewNum(0L)
+        .build();
     pinService.add(pin);
     return RespResult.success();
   }

@@ -47,7 +47,8 @@ public class UserFollowController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/follower/{userId}")
-  public RespResult<?> selectFollowersByUserId(@NonNull @PathVariable(name = "userId") Long userId) {
+  public RespResult<?> selectFollowersByUserId(
+      @NonNull @PathVariable(name = "userId") Long userId) {
     return RespResult.success(userFollowService.selectFollowersByUserId(userId));
   }
 
@@ -58,21 +59,22 @@ public class UserFollowController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/followed/{userId}")
-  public RespResult<?> selectFollowedsByUserId(@NonNull @PathVariable(name = "userId") Long userId) {
+  public RespResult<?> selectFollowedsByUserId(
+      @NonNull @PathVariable(name = "userId") Long userId) {
     return RespResult.success(userFollowService.selectFollowedsByUserId(userId));
   }
 
   /**
    * select UserColumn by id
    *
-   * @param followerId   userId
+   * @param followerId userId
    * @param followedId columnId
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/single")
   public RespResult<?> selectById(
-    @NonNull @RequestParam(name = "followerId") Long followerId,
-    @NonNull @RequestParam(name = "followedId") Long followedId) {
+      @NonNull @RequestParam(name = "followerId") Long followerId,
+      @NonNull @RequestParam(name = "followedId") Long followedId) {
     UserFollowId id = new UserFollowId(followerId, followedId);
     UserFollow follow = userFollowService.selectById(id);
     if (!Objects.equals(follow, null)) {

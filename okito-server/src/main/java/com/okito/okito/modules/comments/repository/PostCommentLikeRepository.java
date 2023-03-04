@@ -14,7 +14,8 @@ import java.util.List;
  * @time 2023/1/11 22:46
  */
 @Repository
-public interface PostCommentLikeRepository extends JpaRepository<PostCommentLike, PostCommentLikeId> {
+public interface PostCommentLikeRepository
+    extends JpaRepository<PostCommentLike, PostCommentLikeId> {
 
   @Query(value = "select * from post_comment_like where user_id = ?1", nativeQuery = true)
   List<PostCommentLike> findAllByUserId(Long userId);

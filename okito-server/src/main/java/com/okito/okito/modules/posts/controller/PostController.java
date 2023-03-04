@@ -120,7 +120,8 @@ public class PostController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/collection/{collectionId}")
-  public RespResult<?> selectAllByCollectionId(@NonNull @PathVariable(name = "collectionId") Long collectionId) {
+  public RespResult<?> selectAllByCollectionId(
+      @NonNull @PathVariable(name = "collectionId") Long collectionId) {
     return RespResult.success(postService.selectAllByCollectionId(collectionId));
   }
 
@@ -131,7 +132,8 @@ public class PostController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/column/{columnId}")
-  public RespResult<?> selectAllByColumnId(@NonNull @PathVariable(name = "columnId") Long columnId) {
+  public RespResult<?> selectAllByColumnId(
+      @NonNull @PathVariable(name = "columnId") Long columnId) {
     return RespResult.success(postService.selectAllByColumnId(columnId));
   }
 
@@ -142,7 +144,8 @@ public class PostController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
-  public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
+  public RespResult<?> selectAllByAuthorId(
+      @NonNull @PathVariable(name = "authorId") Long authorId) {
     return RespResult.success(postService.selectAllByAuthorId(authorId));
   }
 
@@ -153,7 +156,8 @@ public class PostController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/follow/{userId}")
-  public RespResult<?> selectAllByUserFollowed(@NonNull @PathVariable(name = "userId") Long userId) {
+  public RespResult<?> selectAllByUserFollowed(
+      @NonNull @PathVariable(name = "userId") Long userId) {
     return RespResult.success(postService.selectAllByUserFollowed(userId));
   }
 

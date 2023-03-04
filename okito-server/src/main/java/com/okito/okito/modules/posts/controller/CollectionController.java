@@ -45,7 +45,8 @@ public class CollectionController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/author/{authorId}")
-  public RespResult<?> selectAllByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
+  public RespResult<?> selectAllByAuthorId(
+      @NonNull @PathVariable(name = "authorId") Long authorId) {
     return RespResult.success(collectionService.selectAllByAuthorId(authorId));
   }
 
@@ -56,7 +57,8 @@ public class CollectionController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/follower/{followerId}")
-  public RespResult<?> selectAllByFollowerId(@NonNull @PathVariable(name = "followerId") Long followerId) {
+  public RespResult<?> selectAllByFollowerId(
+      @NonNull @PathVariable(name = "followerId") Long followerId) {
     return RespResult.success(collectionService.selectAllByFollowerId(followerId));
   }
 
@@ -82,7 +84,8 @@ public class CollectionController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/count/posts/{authorId}")
-  public RespResult<?> countCollectionsByAuthorId(@NonNull @PathVariable(name = "authorId") Long authorId) {
+  public RespResult<?> countCollectionsByAuthorId(
+      @NonNull @PathVariable(name = "authorId") Long authorId) {
     return RespResult.success(collectionService.countByAuthorId(authorId));
   }
 
@@ -93,7 +96,8 @@ public class CollectionController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/count/collection/{collectionId}")
-  public RespResult<?> countPostsByCollectionId(@NonNull @PathVariable(name = "collectionId") Long collectionId) {
+  public RespResult<?> countPostsByCollectionId(
+      @NonNull @PathVariable(name = "collectionId") Long collectionId) {
     return RespResult.success(collectionService.countPostsByCollectionId(collectionId));
   }
 
@@ -104,7 +108,8 @@ public class CollectionController {
    * @return RespResult<?>
    */
   @RequestMapping(method = RequestMethod.GET, path = "/count/follow/{collectionId}")
-  public RespResult<?> countFollowNumByCollectionId(@NonNull @PathVariable(name = "collectionId") Long collectionId) {
+  public RespResult<?> countFollowNumByCollectionId(
+      @NonNull @PathVariable(name = "collectionId") Long collectionId) {
     return RespResult.success(collectionService.countFollowNumByCollectionId(collectionId));
   }
 

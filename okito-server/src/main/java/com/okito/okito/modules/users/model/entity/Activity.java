@@ -22,23 +22,23 @@ import java.time.LocalDateTime;
  * <p>
  * - like 点赞
  * <p>
- *   * post 文章
+ * * post 文章
  * <p>
- *   - pin 想法
+ * - pin 想法
  * <p>
  * - follow 关注
  * <p>
- *   - user 用户
+ * - user 用户
  * <p>
- *   - column 专栏
+ * - column 专栏
  * <p>
- *   - collection 收藏夹
+ * - collection 收藏夹
  * <p>
  * - upload 发布
  * <p>
- *   - post 文章
+ * - post 文章
  * <p>
- *   - pin 想法
+ * - pin 想法
  * <p>
  * targetId 对象的 id
  * <p>
