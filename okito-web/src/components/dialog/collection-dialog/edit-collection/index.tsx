@@ -11,10 +11,9 @@ import Typography from '@mui/material/Typography'
 import DialogContent from '@mui/material/DialogContent'
 import Button from '@mui/material/Button'
 import React, { ChangeEvent, FormEvent, useRef, useState } from 'react'
-import { CollectionDialogTitle } from '../index'
+import { CustomDialogTitle } from '../index'
 import { addCollection, updateCollection } from '../../../../api/collection'
 import { Collection } from '../../../../types/collection'
-import { useMount } from '../../../../utils'
 
 interface EditCollectionCardProps {
   prevData?: Collection
@@ -81,15 +80,6 @@ const EditCollectionCard = ({
   const handleRadioChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value)
   }
-
-  useMount(() => {
-    if (prevData !== undefined) {
-      console.log('update\n', prevData)
-      // nameRef = prevData.name
-    } else {
-      console.log('add')
-    }
-  })
 
   return (
     <Box
@@ -189,10 +179,7 @@ export const EditCollectionDialog = ({
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
       >
-        <CollectionDialogTitle
-          id="customized-dialog-title"
-          onClose={handleClose}
-        >
+        <CustomDialogTitle id="customized-dialog-title" onClose={handleClose}>
           <Typography
             variant="h5"
             fontWeight={500}
@@ -200,7 +187,7 @@ export const EditCollectionDialog = ({
           >
             {'新建收藏夹'}
           </Typography>
-        </CollectionDialogTitle>
+        </CustomDialogTitle>
         <DialogContent>
           <EditCollectionCard
             prevData={prevData}

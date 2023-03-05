@@ -22,6 +22,7 @@ import { useMount } from '../../../utils'
 import { User } from '../../../types/user'
 import AuthorTitle from '../../author-title'
 import ActionList from '../column-card/action-list'
+import { EditColumnDialog } from '../../dialog/column-dialog/edit-column'
 
 interface ColumnTitleProps {
   column: Column
@@ -42,6 +43,16 @@ export default function ColumnTitle({
 }: ColumnTitleProps) {
   const [followed, setFollowed] = useState<boolean>(false)
   const [anchorElColumn, setAnchorElColumn] = useState<null | HTMLElement>(null)
+  const [open, setOpen] = useState<boolean>(false)
+
+  const handleClose = () => {
+    setOpen(false)
+  }
+
+  const handleOpen = () => {
+    setOpen(true)
+    handleCloseActionMenu()
+  }
 
   const handleClick = () => {
     const param = {
@@ -79,10 +90,7 @@ export default function ColumnTitle({
   })
 
   return (
-    <Box
-    // variant="outlined"
-    // sx={{ borderWidth: '0px 0px thin', borderRadius: '5px', height: '200px' }}
-    >
+    <Box>
       <CardContent>
         <Link underline="none" href={`/column/${column.id}`} target="_blank">
           <Typography
@@ -169,7 +177,14 @@ export default function ColumnTitle({
               <ActionList
                 column={column}
                 anchorElColumn={anchorElColumn}
+                handleOpen={handleOpen}
                 handleCloseActionMenu={handleCloseActionMenu}
+              />
+              <EditColumnDialog
+                open={open}
+                column={column}
+                handleClose={handleClose}
+                currentUser={currentUser}
               />
             </Box>
           </Grid>

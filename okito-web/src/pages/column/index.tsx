@@ -34,7 +34,17 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
   const [author, setAuthor] = useState<User>(defaultUser)
   const [homepage, setHomepage] = useState<boolean>(false)
   const [posts, setPosts] = useState<Post[]>([])
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState<number>(0)
+  //
+  // const [open, setOpen] = useState<boolean>(false)
+  //
+  // const handleClose = () => {
+  //   setOpen(false)
+  // }
+  //
+  // const handleOpen = () => {
+  //   setOpen(true)
+  // }
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
@@ -51,9 +61,7 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
   }
 
   useMount(async () => {
-    console.log(id)
     const columnId = id as unknown as number
-    console.log(columnId)
     const column = await selectColumnById(columnId)
     setColumn(column.data)
     const postsNum = await countPostsByColumnId(columnId)

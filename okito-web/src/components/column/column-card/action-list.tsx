@@ -1,13 +1,11 @@
+import React from 'react'
 import { Menu, MenuItem, Typography } from '@mui/material'
 import { Column } from '../../../types/column'
-import { useMount } from '../../../utils'
-import React from 'react'
-
-const actions = ['管理内容', '修改介绍', '删除']
 
 interface ActionListProps {
   column: Column
   anchorElColumn: HTMLElement | null
+  handleOpen: () => void
   handleCloseActionMenu: () => void
 }
 
@@ -15,6 +13,7 @@ interface ActionListProps {
 export default function ActionList({
   column,
   anchorElColumn,
+  handleOpen,
   handleCloseActionMenu,
 }: ActionListProps) {
   return (
@@ -27,11 +26,15 @@ export default function ActionList({
       open={Boolean(anchorElColumn)}
       onClose={handleCloseActionMenu}
     >
-      {actions.map((action) => (
-        <MenuItem key={action} onClick={handleCloseActionMenu}>
-          <Typography textAlign="center">{action}</Typography>
-        </MenuItem>
-      ))}
+      <MenuItem onClick={handleCloseActionMenu}>
+        <Typography textAlign="center">{'管理内容'}</Typography>
+      </MenuItem>
+      <MenuItem onClick={handleOpen}>
+        <Typography textAlign="center">{'修改介绍'}</Typography>
+      </MenuItem>
+      <MenuItem onClick={handleCloseActionMenu}>
+        <Typography textAlign="center">{'删除'}</Typography>
+      </MenuItem>
     </Menu>
   )
 }

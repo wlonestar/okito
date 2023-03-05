@@ -155,6 +155,7 @@ export default function ColumnCard({
                 <ActionList
                   column={column}
                   anchorElColumn={anchorElColumn}
+                  handleOpen={}
                   handleCloseActionMenu={handleCloseActionMenu}
                 />
               </Box>
