@@ -10,6 +10,9 @@ import { User } from '../../../../types/user'
 import { CustomDialogTitle } from '../../collection-dialog'
 import Button from '@mui/material/Button'
 import React, { ChangeEvent, FormEvent, useRef, useState } from 'react'
+import { listAll, uploadImage } from '../../../../api/file'
+import axios from 'axios'
+import { Image } from '@mui/icons-material'
 
 interface EditColumnCard {
   column: Column
@@ -26,8 +29,8 @@ const EditColumnCard = ({
   const descriptionRef = useRef('')
   const [nameValid, setNameValid] = useState<boolean>(true)
   const [nameHelper, setNameHelper] = useState<string>('')
-
   const [file, setFile] = useState<File>()
+  const [fileUrl, setFileUrl] = useState<string>(column.cover || '')
 
   const handleNameChange = () => {
     // @ts-ignore
@@ -47,17 +50,22 @@ const EditColumnCard = ({
     }
   }
 
-  const fileUploadButton = async () => {
-    // @ts-ignore
-    await document.getElementById('fileButton').click()
-    // @ts-ignore
-    document.getElementById('fileButton').onChange = () => {
-      if (!file) {
-        console.log(file)
-      } else {
-        console.log('no change')
-      }
-    }
+  const fileUploadButton = () => {
+    const data = new FormData()
+    data.append('file', file || '')
+    axios
+      .post('http://localhost:8088/file/upload', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      })
+      .then((r) => {
+        const res = r.data
+        if (res.status === 20) {
+          console.log(res)
+          setFileUrl(res.data)
+        }
+      })
   }
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -115,8 +123,9 @@ const EditColumnCard = ({
         input={descriptionRef}
       />
       <Box>
-        <input id="fileButton" type="file" hidden onChange={handleFileChange} />
+        <input id="fileButton" type="file" onChange={handleFileChange} />
         <Button
+          type="button"
           component="button"
           variant="contained"
           onClick={fileUploadButton}
@@ -124,6 +133,7 @@ const EditColumnCard = ({
           Image Upload
         </Button>
       </Box>
+      <img src={fileUrl} width="500px" height="100%" alt={column.name} />
       <Box sx={{ display: 'flex', p: 2, pl: 0, pr: 0 }}>
         <Button
           variant="contained"
