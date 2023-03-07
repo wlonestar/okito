@@ -58,7 +58,8 @@ public class Activity implements Serializable {
 
   @Id
   @Column(name = "id")
-  @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  @SequenceGenerator(name = "activity_id_seq", sequenceName = "activity_id_seq", allocationSize = 1)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "activity_id_seq")
   private Long id;
 
   @Column(name = "user_id")

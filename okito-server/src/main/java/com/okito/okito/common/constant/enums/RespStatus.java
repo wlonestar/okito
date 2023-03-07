@@ -21,7 +21,8 @@ public enum RespStatus {
 
   ERROR(50, "server error"),
   PARSE_ERROR(51, "parse error"),
-  PARAM_ERROR(52, "param error");
+  PARAM_ERROR(52, "param error"),
+  FILE_EXCEEDED_ERROR(53, "file size is exceeded");
 
   private final int status;
   private final String message;

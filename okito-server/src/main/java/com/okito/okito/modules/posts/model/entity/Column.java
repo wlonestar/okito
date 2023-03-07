@@ -24,7 +24,8 @@ public class Column implements Serializable {
 
   @Id
   @jakarta.persistence.Column(name = "id")
-  @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  @SequenceGenerator(name = "column_id_seq", sequenceName = "column_id_seq", allocationSize = 1)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "column_id_seq")
   private Long id;
 
   @jakarta.persistence.Column(name = "name")

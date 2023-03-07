@@ -123,7 +123,7 @@ public class ColumnController {
   public RespResult<?> update(@NonNull @RequestBody Column column) {
     boolean flag = columnService.update(column);
     if (flag) {
-      return RespResult.success();
+      return RespResult.success(column);
     }
     return RespResult.fail(RespStatus.NOT_EXIST);
   }

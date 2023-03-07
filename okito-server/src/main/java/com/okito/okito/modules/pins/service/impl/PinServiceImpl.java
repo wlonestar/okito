@@ -6,7 +6,7 @@ import com.okito.okito.modules.pins.model.view.PinView;
 import com.okito.okito.modules.pins.repository.PinLikeRepository;
 import com.okito.okito.modules.pins.repository.PinRepository;
 import com.okito.okito.modules.pins.repository.PinViewRepository;
-import com.okito.okito.modules.pins.repository.PinViewRepositoryCustom;
+import com.okito.okito.modules.pins.repository.PinRepositoryCustom;
 import com.okito.okito.modules.pins.service.PinService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -31,7 +31,7 @@ public class PinServiceImpl implements PinService {
   private PinViewRepository pinViewRepository;
 
   @Resource
-  private PinViewRepositoryCustom pinViewRepositoryCustom;
+  private PinRepositoryCustom pinRepositoryCustom;
 
   @Resource
   private PinLikeRepository pinLikeRepository;
@@ -48,7 +48,7 @@ public class PinServiceImpl implements PinService {
 
   @Override
   public List<PinView> searchByKeywords(String keywords) {
-    return pinViewRepositoryCustom.searchByKeywords(keywords);
+    return pinRepositoryCustom.searchByKeywords(keywords);
   }
 
   @Override
@@ -77,9 +77,9 @@ public class PinServiceImpl implements PinService {
   }
 
   @Override
-  public boolean add(Pin pin) {
-    pinRepository.save(pin);
-    return true;
+  public Pin add(Pin pin) {
+//    pinRepository.save(pin);
+    return pinRepositoryCustom.add(pin);
   }
 
   @Override
