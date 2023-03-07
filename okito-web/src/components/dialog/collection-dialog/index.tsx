@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useRef, useState } from 'react'
+import React, { ReactNode, useEffect, useRef } from 'react'
 import Button from '@mui/material/Button'
 import Dialog, { DialogProps } from '@mui/material/Dialog'
 import DialogTitle from '@mui/material/DialogTitle'
@@ -9,9 +9,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import Typography from '@mui/material/Typography'
 import { Box } from '@mui/material'
 import { User } from '../../../types/user'
-import { useMount } from '../../../utils'
 import { Collection } from '../../../types/collection'
-import { selectCollectionsByAuthorId } from '../../../api/collection'
 import CollectionPostFollow from './collection-post-follow'
 import { useParams } from 'react-router-dom'
 
@@ -21,7 +19,7 @@ export interface DialogTitleProps {
   onClose: () => void
 }
 
-export function CollectionDialogTitle(props: DialogTitleProps) {
+export function CustomDialogTitle(props: DialogTitleProps) {
   const { children, onClose, ...other } = props
 
   return (
@@ -64,7 +62,6 @@ export const CollectionDialog = ({
 }: CollectionDialogProps) => {
   const { id } = useParams()
   const descriptionElementRef = useRef<HTMLElement>(null)
-  // const [collections, setCollections] = useState<Collection[]>([])
 
   useEffect(() => {
     if (open) {
@@ -75,16 +72,6 @@ export const CollectionDialog = ({
     }
   }, [open])
 
-  // useMount(async () => {
-  //   if (currentUser !== null) {
-  //     const collections = await selectCollectionsByAuthorId(currentUser.id)
-  //     if (collections.status === 20) {
-  //       setCollections(collections.data)
-  //       console.log(collections.data)
-  //     }
-  //   }
-  // })
-
   return (
     <Box>
       <Dialog
@@ -94,10 +81,7 @@ export const CollectionDialog = ({
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
       >
-        <CollectionDialogTitle
-          id="customized-dialog-title"
-          onClose={handleClose}
-        >
+        <CustomDialogTitle id="customized-dialog-title" onClose={handleClose}>
           <Typography
             variant="h5"
             fontWeight={500}
@@ -113,7 +97,7 @@ export const CollectionDialog = ({
           >
             {'请选择你想添加的收藏夹'}
           </Typography>
-        </CollectionDialogTitle>
+        </CustomDialogTitle>
         <DialogContent>
           {collections.map((collection) => (
             <CollectionPostFollow

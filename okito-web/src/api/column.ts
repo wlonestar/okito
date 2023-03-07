@@ -1,4 +1,5 @@
 import client from '../utils/axios-client'
+import { Column } from '../types/column'
 
 const prefix: string = '/column'
 
@@ -34,5 +35,20 @@ export function countFollowByColumnId(columnId: number) {
   return client({
     url: `${prefix}/count/follow/${columnId}`,
     method: 'GET',
+  })
+}
+
+export function updateColumn(column: Column) {
+  return client({
+    url: `${prefix}`,
+    method: 'PUT',
+    data: column,
+  })
+}
+
+export function deleteColumnById(id: number) {
+  return client({
+    url: `${prefix}/${id}`,
+    method: 'DELETE',
   })
 }

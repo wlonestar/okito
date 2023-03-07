@@ -12,7 +12,7 @@ import {
 import { Column } from '../../../types/column'
 import { User } from '../../../types/user'
 import MetaData from './meta-data'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useMount } from '../../../utils'
 import {
   countFollowByColumnId,
@@ -26,6 +26,8 @@ import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined'
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined'
 import ActionList from './action-list'
+import { EditColumnDialog } from '../../dialog/column-dialog/edit-column'
+import { DeleteColumnDialog } from '../../dialog/column-dialog/delete-column'
 
 interface ColumnCardProps {
   column: Column
@@ -42,6 +44,26 @@ export default function ColumnCard({
   const [followNum, setFollowNum] = useState<number>(0)
   const [followed, setFollowed] = useState<boolean>(false)
   const [anchorElColumn, setAnchorElColumn] = useState<null | HTMLElement>(null)
+  const [editOpen, setEditOpen] = useState<boolean>(false)
+  const [deleteOpen, setDeleteOpen] = useState<boolean>(false)
+
+  const handleEditClose = () => {
+    setEditOpen(false)
+  }
+
+  const handleEditOpen = () => {
+    setEditOpen(true)
+    handleCloseActionMenu()
+  }
+
+  const handleDeleteClose = () => {
+    setDeleteOpen(false)
+  }
+
+  const handleDeleteOpen = () => {
+    setDeleteOpen(true)
+    handleCloseActionMenu()
+  }
 
   const handleClick = () => {
     const param = {
@@ -83,6 +105,8 @@ export default function ColumnCard({
       }
     }
   })
+
+  useEffect(() => {}, [column])
 
   return (
     <Box>
@@ -155,7 +179,21 @@ export default function ColumnCard({
                 <ActionList
                   column={column}
                   anchorElColumn={anchorElColumn}
+                  handleEditOpen={handleEditOpen}
+                  handleDeleteOpen={handleDeleteOpen}
                   handleCloseActionMenu={handleCloseActionMenu}
+                />
+                <EditColumnDialog
+                  open={editOpen}
+                  column={column}
+                  handleClose={handleEditClose}
+                  currentUser={currentUser}
+                />
+                <DeleteColumnDialog
+                  open={deleteOpen}
+                  column={column}
+                  handleClose={handleDeleteClose}
+                  currentUser={currentUser}
                 />
               </Box>
               <Typography

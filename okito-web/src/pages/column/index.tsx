@@ -34,7 +34,7 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
   const [author, setAuthor] = useState<User>(defaultUser)
   const [homepage, setHomepage] = useState<boolean>(false)
   const [posts, setPosts] = useState<Post[]>([])
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState<number>(0)
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
@@ -51,9 +51,7 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
   }
 
   useMount(async () => {
-    console.log(id)
     const columnId = id as unknown as number
-    console.log(columnId)
     const column = await selectColumnById(columnId)
     setColumn(column.data)
     const postsNum = await countPostsByColumnId(columnId)
@@ -66,7 +64,6 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
       if (currentUser.id === column.data.authorId) {
         setHomepage(true)
       }
-    } else {
     }
     const posts = await selectPostsByColumnId(columnId)
     const data: Post[] = useSort(posts.data, 'createTime', 'desc')
@@ -86,9 +83,7 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
         />
       </Paper>
       <Paper sx={{ mt: 3 }}>
-        <Box
-          sx={{ borderBottom: 1, borderColor: 'divider', right: '10px', pt: 2 }}
-        >
+        <Box sx={{ borderBottom: 1, borderColor: 'divider', right: '10px' }}>
           <Tabs value={value} onChange={handleChange}>
             {tabs.map(({ index, label }) => (
               <Tab key={index} label={label} {...tabProps(index)} />

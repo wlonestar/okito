@@ -1,8 +1,8 @@
 export interface Column {
   id: number
-  name: string
-  cover: string
-  description: string
+  name?: string
+  cover?: string
+  description?: string
   createTime: Date
   updateTime: Date
   authorId: number

@@ -1,15 +1,17 @@
 import { Box, Button, Paper, TextField } from '@mui/material'
-import { FormEvent, useRef, useState } from 'react'
+import { Dispatch, FormEvent, SetStateAction, useRef, useState } from 'react'
 import { Pin, PinParam } from '../../types/pin'
 import { User } from '../../types/user'
 import { addPin } from '../../api/pin'
 import PinList from '../../components/pin/pin-list'
 
 interface PinBoxProps {
+  pins: Pin[]
+  setPins: Dispatch<SetStateAction<Pin[]>>
   currentUser: User | null
 }
 
-function PinBox({ currentUser }: PinBoxProps) {
+function PinBox({ pins, setPins, currentUser }: PinBoxProps) {
   const [disable, setDisable] = useState<boolean>(true)
   const valueRef = useRef('')
 
@@ -28,8 +30,11 @@ function PinBox({ currentUser }: PinBoxProps) {
         if (res.status !== 20) {
           console.log(res)
         }
+        const newPin = res.data
+        newPin.likeNum = 0
+        const data = [newPin].concat([...pins])
+        setPins(data)
       })
-      window.location.reload()
     } else {
       window.location.assign('/login')
     }
@@ -78,13 +83,14 @@ function PinBox({ currentUser }: PinBoxProps) {
 
 interface MainProps {
   pins: Pin[]
+  setPins: Dispatch<SetStateAction<Pin[]>>
   currentUser: User | null
 }
 
-export default function Main({ pins, currentUser }: MainProps) {
+export default function Main({ pins, setPins, currentUser }: MainProps) {
   return (
     <Box>
-      <PinBox currentUser={currentUser} />
+      <PinBox pins={pins} setPins={setPins} currentUser={currentUser} />
       <PinList pins={pins} currentUser={currentUser} />
     </Box>
   )

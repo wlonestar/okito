@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Box,
   Button,
-  Card,
   CardContent,
   CardMedia,
   Grid,
@@ -23,6 +22,8 @@ import { useMount } from '../../../utils'
 import { User } from '../../../types/user'
 import AuthorTitle from '../../author-title'
 import ActionList from '../column-card/action-list'
+import { EditColumnDialog } from '../../dialog/column-dialog/edit-column'
+import { DeleteColumnDialog } from '../../dialog/column-dialog/delete-column'
 
 interface ColumnTitleProps {
   column: Column
@@ -43,6 +44,26 @@ export default function ColumnTitle({
 }: ColumnTitleProps) {
   const [followed, setFollowed] = useState<boolean>(false)
   const [anchorElColumn, setAnchorElColumn] = useState<null | HTMLElement>(null)
+  const [editOpen, setEditOpen] = useState<boolean>(false)
+  const [deleteOpen, setDeleteOpen] = useState<boolean>(false)
+
+  const handleEditClose = () => {
+    setEditOpen(false)
+  }
+
+  const handleEditOpen = () => {
+    setEditOpen(true)
+    handleCloseActionMenu()
+  }
+
+  const handleDeleteClose = () => {
+    setDeleteOpen(false)
+  }
+
+  const handleDeleteOpen = () => {
+    setDeleteOpen(true)
+    handleCloseActionMenu()
+  }
 
   const handleClick = () => {
     const param = {
@@ -79,11 +100,10 @@ export default function ColumnTitle({
     }
   })
 
+  useEffect(() => {}, [column])
+
   return (
-    <Card
-      variant="outlined"
-      sx={{ borderWidth: '0px 0px thin', borderRadius: '5px', height: '200px' }}
-    >
+    <Box>
       <CardContent>
         <Link underline="none" href={`/column/${column.id}`} target="_blank">
           <Typography
@@ -100,7 +120,7 @@ export default function ColumnTitle({
           <Grid item xs={12} md={3} lg={3}>
             <CardMedia
               component="img"
-              height="120"
+              height="150"
               image={column.cover}
               alt={column.cover}
               loading="lazy"
@@ -118,7 +138,7 @@ export default function ColumnTitle({
                 textOverflow: 'ellipsis',
                 display: '-webkit-box',
                 lineHeight: '24px',
-                maxHeight: '48px',
+                height: '48px',
               }}
               color="text.secondary"
             >
@@ -139,6 +159,7 @@ export default function ColumnTitle({
               />
               {homepage ? (
                 <IconButton
+                  size="small"
                   sx={{ size: 'small', marginLeft: 'auto' }}
                   onClick={handleOpenUserMenu}
                 >
@@ -169,12 +190,26 @@ export default function ColumnTitle({
               <ActionList
                 column={column}
                 anchorElColumn={anchorElColumn}
+                handleEditOpen={handleEditOpen}
+                handleDeleteOpen={handleDeleteOpen}
                 handleCloseActionMenu={handleCloseActionMenu}
+              />
+              <EditColumnDialog
+                open={editOpen}
+                column={column}
+                handleClose={handleEditClose}
+                currentUser={currentUser}
+              />
+              <DeleteColumnDialog
+                open={deleteOpen}
+                column={column}
+                handleClose={handleDeleteClose}
+                currentUser={currentUser}
               />
             </Box>
           </Grid>
         </Grid>
       </CardContent>
-    </Card>
+    </Box>
   )
 }
