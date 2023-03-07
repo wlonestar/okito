@@ -10,9 +10,8 @@ import { User } from '../../../../types/user'
 import { CustomDialogTitle } from '../../collection-dialog'
 import Button from '@mui/material/Button'
 import React, { ChangeEvent, FormEvent, useRef, useState } from 'react'
-import { listAll, uploadImage } from '../../../../api/file'
 import axios from 'axios'
-import { Image } from '@mui/icons-material'
+import { updateColumn } from '../../../../api/column'
 
 interface EditColumnCard {
   column: Column
@@ -31,6 +30,8 @@ const EditColumnCard = ({
   const [nameHelper, setNameHelper] = useState<string>('')
   const [file, setFile] = useState<File>()
   const [fileUrl, setFileUrl] = useState<string>(column.cover || '')
+  type UploadState = ' ' | 'uploading' | 'success' | 'error'
+  const [uploadState, setUploadState] = useState<UploadState>(' ')
 
   const handleNameChange = () => {
     // @ts-ignore
@@ -64,6 +65,9 @@ const EditColumnCard = ({
         if (res.status === 20) {
           console.log(res)
           setFileUrl(res.data)
+          setUploadState('success')
+        } else {
+          setUploadState('error')
         }
       })
   }
@@ -71,18 +75,22 @@ const EditColumnCard = ({
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     if (currentUser !== null) {
-      console.log('click')
       const data = new FormData(event.currentTarget)
       const param = {
         id: column.id,
         name: data.get('name')?.toString(),
-        cover: column.cover,
+        cover: fileUrl === null ? column.cover : fileUrl,
         description: data.get('description')?.toString(),
         createTime: column.createTime,
         updateTime: new Date(),
         authorId: column.authorId,
       }
-      console.log(param)
+      updateColumn(param).then((res) => {
+        if (res.status === 20) {
+          handleClose()
+          column.cover = param.cover
+        }
+      })
     }
   }
 
@@ -122,15 +130,18 @@ const EditColumnCard = ({
         // @ts-ignore
         input={descriptionRef}
       />
-      <Box>
+      <Box sx={{ mt: 1, mb: 2, display: 'flex', alignItems: 'center' }}>
         <input id="fileButton" type="file" onChange={handleFileChange} />
+        <Typography sx={{ ml: 'auto' }}>{uploadState}</Typography>
         <Button
+          size="small"
           type="button"
           component="button"
           variant="contained"
           onClick={fileUploadButton}
+          sx={{ ml: 'auto' }}
         >
-          Image Upload
+          <Typography>{'上传'}</Typography>
         </Button>
       </Box>
       <img src={fileUrl} width="500px" height="100%" alt={column.name} />

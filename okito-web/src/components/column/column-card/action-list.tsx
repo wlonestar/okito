@@ -1,11 +1,12 @@
 import React from 'react'
-import { Menu, MenuItem, Typography } from '@mui/material'
+import { Link, Menu, MenuItem, Typography } from '@mui/material'
 import { Column } from '../../../types/column'
 
 interface ActionListProps {
   column: Column
   anchorElColumn: HTMLElement | null
-  handleOpen: () => void
+  handleEditOpen: () => void
+  handleDeleteOpen: () => void
   handleCloseActionMenu: () => void
 }
 
@@ -13,7 +14,8 @@ interface ActionListProps {
 export default function ActionList({
   column,
   anchorElColumn,
-  handleOpen,
+  handleEditOpen,
+  handleDeleteOpen,
   handleCloseActionMenu,
 }: ActionListProps) {
   return (
@@ -26,13 +28,25 @@ export default function ActionList({
       open={Boolean(anchorElColumn)}
       onClose={handleCloseActionMenu}
     >
-      <MenuItem onClick={handleCloseActionMenu}>
-        <Typography textAlign="center">{'管理内容'}</Typography>
+      <MenuItem>
+        <Link
+          underline="none"
+          color="text.primary"
+          href={`/creator/content/column/edit/${column.id}`}
+          target="_blank"
+          sx={{
+            ':hover': {
+              backgroundColor: 'rgba(0, 0, 0, 0)',
+            },
+          }}
+        >
+          <Typography textAlign="center">{'管理内容'}</Typography>
+        </Link>
       </MenuItem>
-      <MenuItem onClick={handleOpen}>
+      <MenuItem onClick={handleEditOpen}>
         <Typography textAlign="center">{'修改介绍'}</Typography>
       </MenuItem>
-      <MenuItem onClick={handleCloseActionMenu}>
+      <MenuItem onClick={handleDeleteOpen}>
         <Typography textAlign="center">{'删除'}</Typography>
       </MenuItem>
     </Menu>

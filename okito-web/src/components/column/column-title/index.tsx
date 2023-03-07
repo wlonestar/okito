@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Box,
   Button,
@@ -23,6 +23,7 @@ import { User } from '../../../types/user'
 import AuthorTitle from '../../author-title'
 import ActionList from '../column-card/action-list'
 import { EditColumnDialog } from '../../dialog/column-dialog/edit-column'
+import { DeleteColumnDialog } from '../../dialog/column-dialog/delete-column'
 
 interface ColumnTitleProps {
   column: Column
@@ -43,14 +44,24 @@ export default function ColumnTitle({
 }: ColumnTitleProps) {
   const [followed, setFollowed] = useState<boolean>(false)
   const [anchorElColumn, setAnchorElColumn] = useState<null | HTMLElement>(null)
-  const [open, setOpen] = useState<boolean>(false)
+  const [editOpen, setEditOpen] = useState<boolean>(false)
+  const [deleteOpen, setDeleteOpen] = useState<boolean>(false)
 
-  const handleClose = () => {
-    setOpen(false)
+  const handleEditClose = () => {
+    setEditOpen(false)
   }
 
-  const handleOpen = () => {
-    setOpen(true)
+  const handleEditOpen = () => {
+    setEditOpen(true)
+    handleCloseActionMenu()
+  }
+
+  const handleDeleteClose = () => {
+    setDeleteOpen(false)
+  }
+
+  const handleDeleteOpen = () => {
+    setDeleteOpen(true)
     handleCloseActionMenu()
   }
 
@@ -88,6 +99,8 @@ export default function ColumnTitle({
       }
     }
   })
+
+  useEffect(() => {}, [column])
 
   return (
     <Box>
@@ -177,13 +190,20 @@ export default function ColumnTitle({
               <ActionList
                 column={column}
                 anchorElColumn={anchorElColumn}
-                handleOpen={handleOpen}
+                handleEditOpen={handleEditOpen}
+                handleDeleteOpen={handleDeleteOpen}
                 handleCloseActionMenu={handleCloseActionMenu}
               />
               <EditColumnDialog
-                open={open}
+                open={editOpen}
                 column={column}
-                handleClose={handleClose}
+                handleClose={handleEditClose}
+                currentUser={currentUser}
+              />
+              <DeleteColumnDialog
+                open={deleteOpen}
+                column={column}
+                handleClose={handleDeleteClose}
                 currentUser={currentUser}
               />
             </Box>

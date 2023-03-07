@@ -35,16 +35,6 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
   const [homepage, setHomepage] = useState<boolean>(false)
   const [posts, setPosts] = useState<Post[]>([])
   const [value, setValue] = useState<number>(0)
-  //
-  // const [open, setOpen] = useState<boolean>(false)
-  //
-  // const handleClose = () => {
-  //   setOpen(false)
-  // }
-  //
-  // const handleOpen = () => {
-  //   setOpen(true)
-  // }
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue)
