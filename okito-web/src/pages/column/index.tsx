@@ -51,7 +51,7 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
   }
 
   useMount(async () => {
-    const columnId = id as unknown as number
+    const columnId = Number(id)
     const column = await selectColumnById(columnId)
     setColumn(column.data)
     const postsNum = await countPostsByColumnId(columnId)
@@ -71,7 +71,7 @@ export default function ColumnPage({ currentUser }: ColumnPageProps) {
   })
 
   return (
-    <Box sx={{ maxWidth: '1080px', mt: 3, mb: 3 }}>
+    <Box sx={{ maxWidth: '1080px', mt: 3, mb: 3, ml: 'auto', mr: 'auto' }}>
       <Paper>
         <ColumnTitle
           column={column}

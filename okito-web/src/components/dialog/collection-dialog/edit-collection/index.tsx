@@ -17,7 +17,7 @@ import { Collection } from '../../../../types/collection'
 
 interface EditCollectionCardProps {
   prevData?: Collection
-  collections: Collection[]
+  collections?: Collection[]
   handleClose: () => void
   currentUser: User | null
 }
@@ -51,7 +51,9 @@ const EditCollectionCard = ({
             console.log(res)
           }
           console.log(res.data)
-          collections.push(res.data)
+          if (collections !== undefined) {
+            collections.push(res.data)
+          }
           handleClose()
         })
       } else {
@@ -159,7 +161,7 @@ const EditCollectionCard = ({
 interface EditCollectionDialogProps {
   open: boolean
   prevData?: Collection
-  collections: Collection[]
+  collections?: Collection[]
   handleClose: () => void
   currentUser: User | null
 }
@@ -185,7 +187,7 @@ export const EditCollectionDialog = ({
             fontWeight={500}
             sx={{ textAlign: 'center' }}
           >
-            {'新建收藏夹'}
+            {'编辑收藏夹'}
           </Typography>
         </CustomDialogTitle>
         <DialogContent>

@@ -1,13 +1,13 @@
 import React, { SyntheticEvent, useState } from 'react'
 import { Box, Button, Divider, Paper, Tab, Tabs } from '@mui/material'
 import { Link, useParams } from 'react-router-dom'
-import { Collection, defaultCollection } from '../../../types/collection'
+import { Collection } from '../../../types/collection'
 import { useMount, useSort } from '../../../utils'
 import {
   selectCollectionsByAuthorId,
   selectCollectionsByFollowerId,
 } from '../../../api/collection'
-import CollectionTitle from '../../../components/collection/collection-title'
+import CollectionCard from '../../../components/collection/collection-card'
 import { TabPanel } from '../../../components/tab'
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined'
 import { User } from '../../../types/user'
@@ -24,15 +24,19 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
   const [createCollections, setCreateCollections] = useState<Collection[]>([])
   const [followCollections, setFollowCollections] = useState<Collection[]>([])
   const [open, setOpen] = useState<boolean>(false)
-  const [prevData, setPrevData] = useState<Collection>(defaultCollection)
+  const [prevData, setPrevData] = useState<Collection | undefined>(undefined)
 
   const handleClose = () => {
     setOpen(false)
   }
 
-  const handleOpen = (collection: Collection) => {
+  const handleOpen = (collection: Collection | undefined) => {
     setOpen(true)
     setPrevData(collection)
+  }
+
+  const handleNewCollection = () => {
+    handleOpen(undefined)
   }
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
@@ -94,8 +98,11 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
                 to={`/user/${id}/collections?sort=new`}
               />
             </Tabs>
-            {/*TODO: add a new collection*/}
-            <Button variant="text" sx={{ marginLeft: 'auto', mr: 1 }}>
+            <Button
+              variant="text"
+              sx={{ marginLeft: 'auto', mr: 1 }}
+              onClick={handleNewCollection}
+            >
               <AddOutlinedIcon />
               {'新建收藏夹'}
             </Button>
@@ -110,7 +117,7 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
           <Box>
             <TabPanel index={0} value={value}>
               {createCollections.map((collection) => (
-                <CollectionTitle
+                <CollectionCard
                   key={collection.id}
                   collection={collection}
                   homepage={homepage}
@@ -121,7 +128,7 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
             </TabPanel>
             <TabPanel index={1} value={value}>
               {followCollections.map((collection) => (
-                <CollectionTitle
+                <CollectionCard
                   key={collection.id}
                   collection={collection}
                   homepage={homepage}
@@ -140,7 +147,7 @@ export default function CollectionsTab({ currentUser }: CollectionsTabProps) {
         ) : (
           <Box>
             {createCollections.map((collection) => (
-              <CollectionTitle
+              <CollectionCard
                 key={collection.id}
                 collection={collection}
                 homepage={homepage}

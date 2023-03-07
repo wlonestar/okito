@@ -67,12 +67,7 @@ export const Layout = ({ currentUser }: LayoutProps) => {
             }}
           >
             <Toolbar />
-            <Container
-              maxWidth={false}
-              sx={{
-                maxWidth: '1200px',
-              }}
-            >
+            <Container maxWidth={false} sx={{ maxWidth: '1200px' }}>
               <Outlet />
             </Container>
           </Box>
