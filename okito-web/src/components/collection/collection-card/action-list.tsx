@@ -16,7 +16,6 @@ export default function ActionList({
   handleCloseActionMenu,
 }: ActionListProps) {
   const handleEdit = (id: number) => {
-    console.log('handle edit', id)
     handleOpen(collection)
   }
 

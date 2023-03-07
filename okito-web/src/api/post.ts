@@ -30,6 +30,13 @@ export function selectAllPosts() {
   })
 }
 
+export function selectPostsByCollectionId(collectionId: number) {
+  return client({
+    url: `${prefix}/collection/${collectionId}`,
+    method: 'GET',
+  })
+}
+
 export function selectPostsByColumnId(columnId: number) {
   return client({
     url: `${prefix}/column/${columnId}`,

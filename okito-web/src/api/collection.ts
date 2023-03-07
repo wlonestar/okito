@@ -64,3 +64,10 @@ export function updateCollection(param: Collection) {
     },
   })
 }
+
+export function deleteCollectionById(id: number) {
+  return client({
+    url: `/collection/${id}`,
+    method: 'DELETE',
+  })
+}
