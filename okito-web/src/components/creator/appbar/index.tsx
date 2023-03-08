@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { AppBar, Box, Toolbar, Theme } from '@mui/material'
+import { AppBar, Box, Toolbar, Theme, Typography } from '@mui/material'
 import SiteLogo from '../../appbar/site-logo'
 import DarkIcon from '../../appbar/dark-icon'
 import { User } from '../../../types/user'
 import { Authenticated } from '../../appbar/authenticated'
 import { UnAuthenticated } from '../../appbar/unauthenticated'
+import CustomMenu from '../../appbar/menu'
 
 interface CustomAppBarProps {
   theme: Theme
@@ -45,6 +46,9 @@ export const CreatorAppBar = ({ theme, user }: CustomAppBarProps) => {
       >
         <Toolbar sx={{ width: '1200px', margin: '0 auto' }}>
           <SiteLogo />
+          <Box sx={{ ml: 1, mr: 2 }}>
+            <Typography variant="h6">{'创作中心'}</Typography>
+          </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box
             sx={{
@@ -63,12 +67,12 @@ export const CreatorAppBar = ({ theme, user }: CustomAppBarProps) => {
               />
             )}
           </Box>
-          {/*<CustomMenu*/}
-          {/*  anchorEl={anchorEl}*/}
-          {/*  setAnchorEl={setAnchorEl}*/}
-          {/*  isMenuOpen={Boolean(anchorEl)}*/}
-          {/*  handleMenuClose={handleCloseMenu}*/}
-          {/*/>*/}
+          <CustomMenu
+            anchorEl={anchorEl}
+            setAnchorEl={setAnchorEl}
+            isMenuOpen={Boolean(anchorEl)}
+            handleMenuClose={handleCloseMenu}
+          />
           <DarkIcon theme={theme} />
         </Toolbar>
       </AppBar>

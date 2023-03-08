@@ -10,7 +10,8 @@ import '@fontsource/roboto/700.css'
 import '@fontsource/fira-code'
 import { AppProviders } from './context'
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <AppProviders>
