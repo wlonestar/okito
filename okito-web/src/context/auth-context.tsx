@@ -1,10 +1,9 @@
 import { createContext, ReactNode, useContext, useState } from 'react'
 import { User } from '../types/user'
-import { SignInForm } from '../types/sign-in-param'
-import { SignUpForm } from '../types/sign-up-param'
 import * as auth from '../auth-provider'
 import { http } from '../utils/http'
 import { useMount } from '../utils'
+import { SignInForm, SignUpForm } from '../types/auth-form'
 
 const bootstrapUser = async () => {
   let user = null

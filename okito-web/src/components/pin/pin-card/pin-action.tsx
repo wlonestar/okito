@@ -25,7 +25,9 @@ export default function PinAction({
   currentUser,
 }: PinActionProps) {
   const [likeType, setLikeType] = useState<number>(0)
-  const [likeNum, setLikeNum] = useState<number>(pin.likeNum)
+  const [likeNum, setLikeNum] = useState<number>(
+    pin.likeNum !== undefined ? pin.likeNum : 0
+  )
   const [commentOpen, setCommentOpen] = useState<boolean>(false)
 
   const handleClickLike = () => {

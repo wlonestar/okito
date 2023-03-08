@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Layout } from '../layout'
 import { ErrorPage } from '../pages/error'
 import { lazy, Suspense } from 'react'
-import { User } from '../types/user'
+import { defaultUser, User } from '../types/user'
 import { Box, CircularProgress } from '@mui/material'
 import { HomeFollowTab, HomeHotTab, HomeIndexTab } from '../pages/home/main'
 import { PinFollowTab, PinHotTab, PinIndexTab } from '../pages/pin'
@@ -28,8 +28,8 @@ const CollectionsTab = lazy(() => import('../pages/user/tabs/collections-tab'))
 const FollowsTab = lazy(() => import('../pages/user/tabs/follows-tab'))
 
 const SettingsPage = lazy(() => import('../pages/user/settings'))
-const CreatorPage = lazy(() => import('../pages/creator'))
 const CategoryPage = lazy(() => import('../pages/category'))
+const CreatorPage = lazy(() => import('../pages/creator'))
 
 const Loading = () => {
   return (
@@ -51,6 +51,8 @@ interface CustomRoutesProps {
 }
 
 export default function CustomRoutes(params: CustomRoutesProps) {
+  const user = params.currentUser !== null ? params.currentUser : defaultUser
+
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
@@ -94,10 +96,13 @@ export default function CustomRoutes(params: CustomRoutesProps) {
               element={<FollowsTab {...params} />}
             />
           </Route>
-          <Route path="/user/settings" element={<SettingsPage {...params} />} />
-          <Route path="/creator" element={<CreatorPage {...params} />} />
+          <Route
+            path="/user/settings"
+            element={<SettingsPage currentUser={user} />}
+          />
           <Route path="/category/:id" element={<CategoryPage />} />
         </Route>
+        <Route path="/creator" element={<CreatorPage {...params} />} />
       </Routes>
     </Suspense>
   )
