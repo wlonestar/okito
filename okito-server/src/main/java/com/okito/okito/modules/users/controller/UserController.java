@@ -3,6 +3,8 @@ package com.okito.okito.modules.users.controller;
 import com.okito.okito.common.annotation.TimeLog;
 import com.okito.okito.common.constant.consts.RespResult;
 import com.okito.okito.common.constant.enums.RespStatus;
+import com.okito.okito.modules.users.model.entity.User;
+import com.okito.okito.modules.users.model.param.UserParam;
 import com.okito.okito.modules.users.model.view.UserView;
 import com.okito.okito.modules.users.service.UserService;
 import jakarta.annotation.Resource;
@@ -101,6 +103,30 @@ public class UserController {
       @NonNull @RequestParam(name = "username") String username) {
     boolean contains = userService.selectAllUsernames().contains(username);
     return RespResult.success(contains);
+  }
+
+  /**
+   * update user
+   *
+   * @param param user param
+   * @return RespResult<?>
+   */
+  @RequestMapping(method = RequestMethod.PUT, path = "")
+  public RespResult<?> update(@NonNull @RequestBody UserParam param) {
+    User user = User.builder()
+        .id(param.getId())
+        .username(param.getUsername())
+        .email(param.getEmail())
+        .avatar(param.getAvatar())
+        .bio(param.getBio())
+        .homepage(param.getHomepage())
+        .intro(param.getIntro())
+        .build();
+    boolean flag = userService.update(user);
+    if (flag) {
+      return RespResult.success(user);
+    }
+    return RespResult.fail(RespStatus.NOT_EXIST);
   }
 
 }

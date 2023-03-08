@@ -7,6 +7,7 @@ import com.okito.okito.modules.users.repository.UserRepository;
 import com.okito.okito.modules.users.repository.UserViewRepository;
 import com.okito.okito.modules.users.service.UserService;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.Objects;
  * @version 0.0.1
  * @time 2023/1/5 22:56
  */
+@Slf4j
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -85,7 +87,15 @@ public class UserServiceImpl implements UserService {
   public boolean update(User user) {
     User newUser = userRepository.findById(user.getId()).orElse(null);
     if (!Objects.equals(newUser, null)) {
-      newUser.setToken(user.getToken());
+      log.info("{}", newUser);
+      newUser.setUsername(user.getUsername());
+      newUser.setEmail(user.getEmail());
+      newUser.setToken(user.getToken() == null ? newUser.getToken(): user.getToken());
+      newUser.setAvatar(user.getAvatar());
+      newUser.setBio(user.getBio());
+      newUser.setHomepage(user.getHomepage());
+      newUser.setIntro(user.getIntro());
+      log.info("{}", newUser);
       userRepository.save(newUser);
       return true;
     }
