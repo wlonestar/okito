@@ -1,4 +1,5 @@
 import client from '../utils/axios-client'
+import { UserParam } from '../types/user'
 
 export function selectUserFollowingByUserId(userId: number) {
   return client({
@@ -18,6 +19,14 @@ export function selectUserById(id: number) {
   return client({
     url: `/user/${id}`,
     method: 'GET',
+  })
+}
+
+export function updateUser(param: UserParam) {
+  return client({
+    url: '/user',
+    method: 'PUT',
+    data: param,
   })
 }
 

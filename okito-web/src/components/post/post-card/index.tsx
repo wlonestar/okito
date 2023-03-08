@@ -40,8 +40,8 @@ export const PostCard = ({ post, currentUser }: PostCardProps) => {
   return (
     <Box>
       <Box>
-        <CardContent>
-          <Grid container spacing={1}>
+        <CardContent sx={{ p: 2 }}>
+          <Grid container>
             {/*time, author and tags*/}
             <PostMeta post={post} author={author} tags={tags} />
             {/*title, summary and actions*/}
@@ -52,12 +52,11 @@ export const PostCard = ({ post, currentUser }: PostCardProps) => {
                   component="div"
                   fontWeight="500"
                   color="text.primary"
-                  sx={{ pb: 1 }}
                 >
                   {post.title}
                 </Typography>
               </Link>
-              <Typography sx={{ mb: 1.5 }} color="text.secondary">
+              <Typography sx={{ mb: 1 }} color="text.secondary">
                 {post.summary}
               </Typography>
               <PostAction
@@ -70,7 +69,7 @@ export const PostCard = ({ post, currentUser }: PostCardProps) => {
             <Grid item xs={12} md={3} lg={3}>
               <CardMedia
                 component="img"
-                height="100"
+                height="90"
                 image={post.cover}
                 alt={post.cover}
                 loading="lazy"

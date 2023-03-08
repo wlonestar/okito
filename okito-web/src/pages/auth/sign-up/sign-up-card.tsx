@@ -59,7 +59,7 @@ export const SignUpCard = ({ register }: SignUpCardProps) => {
       }
     } else {
       setUsernameValid(false)
-      setUsernameHelper('请输入密码')
+      setUsernameHelper('请输入用户名')
     }
   }
 

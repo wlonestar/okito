@@ -5,4 +5,6 @@ export const defaultAvatar: string =
 
 export const siteName: string = 'okito'
 
+export type ColorMode = 'light' | 'dark'
+
 export type sortOrder = 'asc' | 'desc'

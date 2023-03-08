@@ -31,3 +31,13 @@ export const defaultUser: User = {
   postViewNum: 0,
   postLikeNum: 0,
 }
+
+export interface UserParam {
+  id: number
+  username?: string
+  email?: string
+  avatar: string
+  bio?: string
+  homepage?: string
+  intro?: string
+}

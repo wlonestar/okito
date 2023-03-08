@@ -10,12 +10,11 @@ import {
 } from '@mui/material'
 import { CustomAppBar } from '../components/appbar'
 import { User } from '../types/user'
+import { ColorMode } from '../consts'
 
 export const ColorModeContext = createContext({
   toggleColorMode: () => {},
 })
-
-type ColorMode = 'light' | 'dark'
 
 interface LayoutProps {
   currentUser: User | null
