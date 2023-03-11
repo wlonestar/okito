@@ -30,6 +30,7 @@ const FollowsTab = lazy(() => import('../pages/user/tabs/follows-tab'))
 const SettingsPage = lazy(() => import('../pages/user/settings'))
 const CategoryPage = lazy(() => import('../pages/category'))
 const CreatorPage = lazy(() => import('../pages/creator'))
+const EditorPage = lazy(() => import('../pages/editor'))
 
 const Loading = () => {
   return (
@@ -102,7 +103,8 @@ export default function CustomRoutes(params: CustomRoutesProps) {
           />
           <Route path="/category/:id" element={<CategoryPage />} />
         </Route>
-        <Route path="/creator" element={<CreatorPage {...params} />} />
+        <Route path="/creator" element={<CreatorPage currentUser={user} />} />
+        <Route path="/editor" element={<EditorPage />} />
       </Routes>
     </Suspense>
   )

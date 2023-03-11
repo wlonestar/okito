@@ -31,15 +31,19 @@ export const Authenticated = ({
           <MailOutlinedIcon />
         </Badge>
       </IconButton>
-      {/*<Button*/}
-      {/*  size="small"*/}
-      {/*  variant="contained"*/}
-      {/*  href={'/creator'}*/}
-      {/*  target="_blank"*/}
-      {/*  sx={{ ml: 1, mr: 2, mt: 0.5, mb: 0.5 }}*/}
-      {/*>*/}
-      {/*  <Typography variant="body2">{'创作中心'}</Typography>*/}
-      {/*</Button>*/}
+      {window.location.pathname.split('/').pop() === 'creator' ? (
+        ''
+      ) : (
+        <Button
+          size="small"
+          variant="contained"
+          href={'/creator'}
+          target="_blank"
+          sx={{ ml: 1, mr: 2, mt: 0.5, mb: 0.5 }}
+        >
+          <Typography variant="body2">{'创作中心'}</Typography>
+        </Button>
+      )}
       <IconButton
         onClick={handleOpenMenu}
         sx={{

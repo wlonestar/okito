@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { AppBar, Box, Toolbar, Theme, Typography } from '@mui/material'
-import SiteLogo from '../../appbar/site-logo'
-import DarkIcon from '../../appbar/dark-icon'
+import SiteLogo from '../../../components/appbar/site-logo'
+import DarkIcon from '../../../components/appbar/dark-icon'
 import { User } from '../../../types/user'
-import { Authenticated } from '../../appbar/authenticated'
-import { UnAuthenticated } from '../../appbar/unauthenticated'
-import CustomMenu from '../../appbar/menu'
+import { Authenticated } from '../../../components/appbar/authenticated'
+import { UnAuthenticated } from '../../../components/appbar/unauthenticated'
+import CustomMenu from '../../../components/appbar/menu'
 
 interface CustomAppBarProps {
   theme: Theme
